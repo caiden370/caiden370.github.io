@@ -1,0 +1,175 @@
+
+{"0":
+  {
+    "words": [
+        { "spanish": "Hola", "english": "Hello" },
+        { "spanish": "Buenos días", "english": "Good morning" },
+        { "spanish": "Buenas tardes", "english": "Good afternoon" },
+        { "spanish": "Buenas noches", "english": "Good evening / Good night" },
+        { "spanish": "¿Cómo estás?", "english": "How are you?" },
+        { "spanish": "¿Qué tal?", "english": "What's up?" },
+        { "spanish": "¿Cómo te va?", "english": "How's it going?" },
+        { "spanish": "¿Qué haces?", "english": "What are you doing?" },
+        { "spanish": "Mucho gusto", "english": "Nice to meet you" },
+        { "spanish": "Igualmente", "english": "Likewise" },
+        { "spanish": "¿Qué onda?", "english": "What's up?" },
+        { "spanish": "¿Qué pasa?", "english": "What's happening?" },
+        { "spanish": "¡Tanto tiempo!", "english": "Long time no see!" },
+        { "spanish": "¡Qué gusto verte!", "english": "So nice to see you!" },
+        { "spanish": "Hasta luego", "english": "See you later" },
+        { "spanish": "Hasta pronto", "english": "See you soon" },
+        { "spanish": "Nos vemos", "english": "See you" },
+        { "spanish": "Adiós", "english": "Goodbye" },
+        { "spanish": "Cuídate", "english": "Take care" },
+        { "spanish": "Que tengas un buen día", "english": "Have a good day" }
+      ],
+
+  "conversations": [
+      {
+        "id": 1,
+        "topic": "Meeting Someone New",
+        "dialog": [
+          { "speaker": "Carlos", "spanish": "Hola, ¿cómo te llamas?", "english": "Hi, what's your name?" },
+          { "speaker": "Sofía", "spanish": "Hola, me llamo Sofía. ¿Y tú?", "english": "Hi, my name is Sofía. And you?" },
+          { "speaker": "Carlos", "spanish": "Me llamo Carlos. Mucho gusto.", "english": "My name is Carlos. Nice to meet you." },
+          { "speaker": "Sofía", "spanish": "Igualmente, Carlos. ¿De dónde eres?", "english": "Likewise, Carlos. Where are you from?" },
+          { "speaker": "Carlos", "spanish": "Soy de México, ¿y tú?", "english": "I'm from Mexico, and you?" },
+          { "speaker": "Sofía", "spanish": "Soy de Colombia, pero vivo aquí.", "english": "I'm from Colombia, but I live here." }
+        ],
+        "questions": [
+          {
+            "question": "¿De dónde es Sofía?",
+            "options": ["De México", "De España", "De Colombia", "De Perú"],
+            "answer": "De Colombia"
+          },
+          {
+            "question": "¿Qué significa 'Mucho gusto'?",
+            "options": ["Goodbye", "Nice to meet you", "Thank you", "How are you?"],
+            "answer": "Nice to meet you"
+          },
+          {
+            "question": "¿Qué pregunta hace Carlos al principio?",
+            "options": ["¿Cómo estás?", "¿Dónde vives?", "¿Cómo te llamas?", "¿Qué haces?"],
+            "answer": "¿Cómo te llamas?"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Casual Conversation",
+        "dialog": [
+          { "speaker": "Lucía", "spanish": "¡Hola! ¿Qué tal tu día?", "english": "Hey! How’s your day going?" },
+          { "speaker": "Mateo", "spanish": "Bien, gracias. Estuve en clase toda la mañana.", "english": "Good, thanks. I was in class all morning." },
+          { "speaker": "Lucía", "spanish": "¿Qué estudias?", "english": "What are you studying?" },
+          { "speaker": "Mateo", "spanish": "Estudio biología. ¿Y tú?", "english": "I'm studying biology. And you?" },
+          { "speaker": "Lucía", "spanish": "Yo estudio informática. ¿Qué haces esta tarde?", "english": "I'm studying computer science. What are you doing this afternoon?" },
+          { "speaker": "Mateo", "spanish": "Nada especial, tal vez vea una película.", "english": "Nothing special, maybe I'll watch a movie." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué estudia Mateo?",
+            "options": ["Informática", "Medicina", "Biología", "Física"],
+            "answer": "Biología"
+          },
+          {
+            "question": "¿Qué hará Mateo por la tarde?",
+            "options": ["Estudiar", "Ver una película", "Trabajar", "Ir al gimnasio"],
+            "answer": "Ver una película"
+          },
+          {
+            "question": "¿Qué estudia Lucía?",
+            "options": ["Arte", "Informática", "Historia", "Matemáticas"],
+            "answer": "Informática"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Running into a Friend",
+        "dialog": [
+          { "speaker": "Andrea", "spanish": "¡Tanto tiempo! ¿Cómo has estado?", "english": "Long time no see! How have you been?" },
+          { "speaker": "Luis", "spanish": "¡Qué gusto verte! He estado bien, ocupado con el trabajo.", "english": "So nice to see you! I've been good, just busy with work." },
+          { "speaker": "Andrea", "spanish": "Sí, te entiendo. Yo también he estado muy ocupada.", "english": "Yeah, I get it. I've been very busy too." },
+          { "speaker": "Luis", "spanish": "¿Te gustaría tomar un café esta semana y ponernos al día?", "english": "Would you like to grab a coffee this week and catch up?" },
+          { "speaker": "Andrea", "spanish": "Claro, me encantaría. ¿El viernes está bien?", "english": "Sure, I’d love that. Is Friday okay?" },
+          { "speaker": "Luis", "spanish": "Perfecto. Te escribo más tarde.", "english": "Perfect. I'll text you later." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué ha estado ocupado Luis?",
+            "options": ["Por la universidad", "Por el trabajo", "Por su familia", "Por vacaciones"],
+            "answer": "Por el trabajo"
+          },
+          {
+            "question": "¿Qué propone Luis?",
+            "options": ["Ir al cine", "Tomar un café", "Ir de compras", "Ir a cenar"],
+            "answer": "Tomar un café"
+          },
+          {
+            "question": "¿Qué día propone Andrea?",
+            "options": ["Miércoles", "Viernes", "Lunes", "Sábado"],
+            "answer": "Viernes"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Polite Goodbye",
+        "dialog": [
+          { "speaker": "Isabel", "spanish": "Bueno, ya me tengo que ir.", "english": "Well, I have to go now." },
+          { "speaker": "Tomás", "spanish": "Está bien, fue un placer hablar contigo.", "english": "Alright, it was a pleasure talking to you." },
+          { "speaker": "Isabel", "spanish": "Igualmente. Que tengas un buen día.", "english": "Likewise. Have a good day." },
+          { "speaker": "Tomás", "spanish": "Cuídate mucho. Nos vemos pronto.", "english": "Take care. See you soon." },
+          { "speaker": "Isabel", "spanish": "Hasta luego.", "english": "See you later." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué Isabel se despide?",
+            "options": ["Tiene que trabajar", "Tiene que irse", "Está cansada", "Tiene hambre"],
+            "answer": "Tiene que irse"
+          },
+          {
+            "question": "¿Qué dice Tomás al final?",
+            "options": ["Hasta mañana", "Nos vemos pronto", "Adiós", "Buenos días"],
+            "answer": "Nos vemos pronto"
+          },
+          {
+            "question": "¿Qué significa 'Cuídate'?",
+            "options": ["Come well", "See you", "Take care", "Wait for me"],
+            "answer": "Take care"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "topic": "Morning Greeting",
+        "dialog": [
+          { "speaker": "Emma", "spanish": "¡Buenos días! ¿Dormiste bien?", "english": "Good morning! Did you sleep well?" },
+          { "speaker": "Nico", "spanish": "Sí, gracias. ¿Y tú?", "english": "Yes, thank you. And you?" },
+          { "speaker": "Emma", "spanish": "Más o menos. Hacía mucho calor anoche.", "english": "So-so. It was really hot last night." },
+          { "speaker": "Nico", "spanish": "Sí, el clima ha estado raro últimamente.", "english": "Yeah, the weather's been strange lately." },
+          { "speaker": "Emma", "spanish": "Bueno, ¡que tengas un buen día!", "english": "Well, have a great day!" },
+          { "speaker": "Nico", "spanish": "Gracias, igualmente.", "english": "Thanks, you too." }
+        ],
+        "questions": [
+          {
+            "question": "¿Cómo durmió Emma?",
+            "options": ["Muy bien", "Mal", "Más o menos", "No durmió"],
+            "answer": "Más o menos"
+          },
+          {
+            "question": "¿Qué problema menciona Emma?",
+            "options": ["Mucho trabajo", "Mucho frío", "Mucho calor", "Mucho ruido"],
+            "answer": "Mucho calor"
+          },
+          {
+            "question": "¿Qué dice Nico al final?",
+            "options": ["Hasta luego", "Gracias, igualmente", "Buenas tardes", "Lo siento"],
+            "answer": "Gracias, igualmente"
+          }
+        ]
+      }
+    ]
+  }    
+           
+}

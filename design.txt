@@ -1,0 +1,50 @@
+BOTTOM NAVBAR:
+* Chapters
+* Profile/Progress
+* Store for custimization
+
+CHAPTERS:
+* scoll through a list of chapters
+* click on a chapter and see a list of games
+* Game selection within each chapter
+* Avatar
+
+GAMES:
+* pokemon style multiple choice game
+* sentence creator
+* fill in the blank multiple choice, no multiple choice
+* translate
+* RPG
+* Unit word game: word multiple choice, matching
+* speed runner game choose the right path (timed)
+* Audio: listen and write what you hear, translate what you hear, respond to what you hear
+
+
+
+
+PROGRESS:
+* exp
+* Total Games Played (track for each section)
+* Unit
+* Coins
+
+STORE:
+* balance
+* things you can buy:
+- background color schemes
+- avatars
+- pets
+- 
+
+
+COLOR SCHEME:
+https://flatuicolors.com/palette/cn
+
+
+
+TODO:
+- Make other games
+- Fill with content
+- Make progress connected
+- Add money and a Store
+- 

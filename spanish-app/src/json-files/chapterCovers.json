@@ -1,0 +1,124 @@
+[
+    {
+      "number": 1,
+      "title": "Greetings & Introductions",
+      "description": "Start with the basics—learn how to say hello, goodbye, introduce yourself, and ask someone how they're doing.",
+      "color": "#eccc68"
+    },
+    {
+      "number": 2,
+      "title": "Everyday Essentials",
+      "description": "Master key expressions and questions used in daily life—like asking for the time, help, or directions.",
+      "color":"#ff7f50"
+    },
+    {
+      "number": 3,
+      "title": "Numbers & Dates",
+      "description": "Learn how to count, use numbers in real-life scenarios, and talk about the days, months, and the calendar.",
+      "color":"#ff6b81"
+      
+    },
+    {
+      "number": 4,
+      "title": "People & Family",
+      "description": "Talk about yourself and the people in your life—learn vocabulary for family members and professions.",
+      "color":"#ffa502"
+    },
+    {
+      "number": 5,
+      "title": "Food & Drink",
+      "description": "Order at a restaurant, express your preferences, and learn common foods and drinks.",
+      "color":"#ff6348"
+    },
+    {
+      "number": 6,
+      "title": "Around the House",
+      "description": "Learn the names of rooms, furniture, and household objects, plus verbs for everyday routines.",
+      "color":"#ff4757"
+    },
+    {
+      "number": 7,
+      "title": "Describing Things",
+      "description": "Use colors, sizes, and adjectives to describe objects, people, and places clearly and naturally.",
+      "color":"#7bed9f"
+    },
+    {
+      "number": 8,
+      "title": "School",
+      "description": "Gain vocabulary for the classroom, school supplies, and how to talk about learning and subjects.",
+      "color": "#70a1ff"
+    },
+    {
+      "number": 9,
+      "title": "The Weather",
+      "description": "Talk about the weather, seasons, and climate with confidence in everyday conversation.",
+      "color":"#5352ed"
+    },
+    {
+      "number": 10,
+      "title": "Places",
+      "description": "Describe and ask for directions to places like the bank, post office, market, or park.",
+      "color": "#2ed573"
+    },
+    {
+      "number": 11,
+      "title": "Hobbies",
+      "description": "Share how you spend your leisure time—discuss sports, music, art, and weekend plans.",
+      "color":"#1e90ff"
+    },
+    {
+      "number": 12,
+      "title": "Travel",
+      "description": "Get around by learning how to talk about public transport, booking trips, and navigating airports or stations.",
+      "color":"#3742fa"
+    },
+    {
+      "number": 13,
+      "title": "Health & The Body",
+      "description": "Explain how you feel, name body parts, visit the doctor, and talk about health routines.",
+      "color": "#eccc68"
+    },
+    {
+      "number": 14,
+      "title": "Shopping & Money",
+      "description": "Practice shopping for clothes, groceries, and souvenirs—and using currency and prices.",
+      "color":"#ff7f50"
+    },
+    {
+      "number": 15,
+      "title": "Latin Cognates",
+      "description": "Learn rules for converting many english words into spanish.",
+      "color":"#ff6b81"
+    },
+    {
+      "number": 16,
+      "title": "Work & Tech",
+      "description": "Talk about jobs, digital tools, email, and how Spanish is used in professional environments.",
+      "color":"#ffa502"
+    },
+    {
+      "number": 17,
+      "title": "Telling Stories",
+      "description": "Learn how to use the past tense to share memories, past actions, and life experiences.",
+      "color":"#ff6348"
+    },
+    {
+      "number": 18,
+      "title": "Giving Opinions",
+      "description": "Practice expressing your likes, dislikes, preferences, and personal opinions respectfully.",
+      "color":"#ff4757"
+    },
+    {
+      "number": 19,
+      "title": "Grammar Power-Up",
+      "description": "Dive deeper into verbs, sentence structure, prepositions, and useful grammar tips to boost fluency.",
+      "color":"#7bed9f"
+    },
+    {
+      "number": 20,
+      "title": "Conversations",
+      "description": "Put it all together—have mini conversations, answer questions, and role-play everyday interactions.",
+      "color": "#70a1ff"
+    }
+  ]
+  
