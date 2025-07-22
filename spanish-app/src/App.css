@@ -439,9 +439,8 @@
   align-items: center;
   flex-direction: row;
   padding: 4px;
-  width: 50\\\\\\\\\\\%;
-  margin-left: 40%;
   border-radius: 5px;
+  width: 60%;
   
 }
 
@@ -453,9 +452,8 @@
   align-items: center;
   flex-direction: row;
   padding: 4px;
-  width: 50%;  
-  margin-right: 40%;
   border-radius: 5px;
+  width: 60%;
 }
 
 .conversation-message-speaker {

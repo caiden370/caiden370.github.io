@@ -17,7 +17,7 @@ export function ConversationBlock({topic, messageList, audioOnly, numMessages}) 
 
     function message(text, translation, speaker, side, key) {
         return (
-            <div key={key} className='conversation-message' style={{justifyContent:{side}}}> 
+            <div key={key} className='conversation-message'> 
                 <div className="conversation-message-speaker" >
                     <Typography variant='caption' align="center">{speaker}</Typography>
                 </div>
@@ -36,7 +36,7 @@ export function ConversationBlock({topic, messageList, audioOnly, numMessages}) 
     function createMessageList() {
         const constrainedNumMessages = Math.min(messageList.length, numMessages);
         let currentMessageList = Array(constrainedNumMessages);
-        for (let i = 0; i<constrainedNumMessages;i++) {
+        for (let i = 0; i<constrainedNumMessages; i++) {
             currentMessageList[i] = messageList[i];
         } 
         return currentMessageList;
