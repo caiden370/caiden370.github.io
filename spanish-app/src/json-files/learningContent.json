@@ -40,17 +40,20 @@
           {
             "question": "¿De dónde es Sofía?",
             "options": ["De México", "De España", "De Colombia", "De Perú"],
-            "answer": "De Colombia"
+            "answer": "De Colombia",
+            "answerIndex":2
           },
           {
             "question": "¿Qué significa 'Mucho gusto'?",
             "options": ["Goodbye", "Nice to meet you", "Thank you", "How are you?"],
-            "answer": "Nice to meet you"
+            "answer": "Nice to meet you",
+            "answerIndex":1
           },
           {
             "question": "¿Qué pregunta hace Carlos al principio?",
             "options": ["¿Cómo estás?", "¿Dónde vives?", "¿Cómo te llamas?", "¿Qué haces?"],
-            "answer": "¿Cómo te llamas?"
+            "answer": "¿Cómo te llamas?",
+            "answerIndex":2
           }
         ]
       },
@@ -69,17 +72,20 @@
           {
             "question": "¿Qué estudia Mateo?",
             "options": ["Informática", "Medicina", "Biología", "Física"],
-            "answer": "Biología"
+            "answer": "Biología",
+            "answerIndex":2
           },
           {
             "question": "¿Qué hará Mateo por la tarde?",
             "options": ["Estudiar", "Ver una película", "Trabajar", "Ir al gimnasio"],
-            "answer": "Ver una película"
+            "answer": "Ver una película",
+            "answerIndex":1
           },
           {
             "question": "¿Qué estudia Lucía?",
             "options": ["Arte", "Informática", "Historia", "Matemáticas"],
-            "answer": "Informática"
+            "answer": "Informática",
+            "answerIndex":1
           }
         ]
       },
@@ -98,17 +104,20 @@
           {
             "question": "¿Por qué ha estado ocupado Luis?",
             "options": ["Por la universidad", "Por el trabajo", "Por su familia", "Por vacaciones"],
-            "answer": "Por el trabajo"
+            "answer": "Por el trabajo",
+            "answerIndex":1
           },
           {
             "question": "¿Qué propone Luis?",
             "options": ["Ir al cine", "Tomar un café", "Ir de compras", "Ir a cenar"],
-            "answer": "Tomar un café"
+            "answer": "Tomar un café",
+            "answerIndex":1
           },
           {
             "question": "¿Qué día propone Andrea?",
             "options": ["Miércoles", "Viernes", "Lunes", "Sábado"],
-            "answer": "Viernes"
+            "answer": "Viernes",
+            "answerIndex":1
           }
         ]
       },
@@ -126,17 +135,20 @@
           {
             "question": "¿Por qué Isabel se despide?",
             "options": ["Tiene que trabajar", "Tiene que irse", "Está cansada", "Tiene hambre"],
-            "answer": "Tiene que irse"
+            "answer": "Tiene que irse",
+            "answerIndex":1
           },
           {
             "question": "¿Qué dice Tomás al final?",
             "options": ["Hasta mañana", "Nos vemos pronto", "Adiós", "Buenos días"],
-            "answer": "Nos vemos pronto"
+            "answer": "Nos vemos pronto",
+            "answerIndex":1
           },
           {
             "question": "¿Qué significa 'Cuídate'?",
             "options": ["Come well", "See you", "Take care", "Wait for me"],
-            "answer": "Take care"
+            "answer": "Take care",
+            "answerIndex":2
           }
         ]
       },
@@ -155,17 +167,20 @@
           {
             "question": "¿Cómo durmió Emma?",
             "options": ["Muy bien", "Mal", "Más o menos", "No durmió"],
-            "answer": "Más o menos"
+            "answer": "Más o menos",
+            "answerIndex":2
           },
           {
             "question": "¿Qué problema menciona Emma?",
             "options": ["Mucho trabajo", "Mucho frío", "Mucho calor", "Mucho ruido"],
-            "answer": "Mucho calor"
+            "answer": "Mucho calor",
+            "answerIndex":2
           },
           {
             "question": "¿Qué dice Nico al final?",
             "options": ["Hasta luego", "Gracias, igualmente", "Buenas tardes", "Lo siento"],
-            "answer": "Gracias, igualmente"
+            "answer": "Gracias, igualmente",
+            "answerIndex":1
           }
         ]
       }

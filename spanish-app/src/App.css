@@ -396,8 +396,8 @@
   overflow: hidden;
 }
 
-.conversation-container{
-  overflow-x: scroll;
+.conversation-container {
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   height: 90%;
@@ -406,10 +406,20 @@
   border-color: #2f3542;
 }
 
+.conversation-next-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  padding-top: 5px;
+  
+}
+
 .conversation-topic{
   min-height: 40px;
   width: 100%;
-  background-color: #458ad9;
+  background-color: #007aff;
   color: white;
   display: flex;
   justify-content: center;
@@ -456,11 +466,312 @@
   width: 60%;
 }
 
-.conversation-message-speaker {
-
-}
 
 .conversation-message-icons{
   display: flex;
   flex-direction: row;
+}
+
+.conversation-message-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 12px 0;
+}
+
+.conversation-message-row.right {
+  align-items: flex-end;
+}
+
+.conversation-message-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.conversation-message-speaker {
+  font-size: 0.85em;
+  color: #888;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.conversation-message-icons {
+  display: flex;
+  gap: 4px;
+}
+
+.conversation-message-bubble {
+  padding: 10px 16px;
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  word-break: break-word;
+  text-align: left;
+  max-width: 70vw;
+  min-width: 40px;
+  margin-left: 8px;
+  margin-right: 8px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.conversation-message-left {
+  background-color: #e5e5ea;
+  color: #000;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 18px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.conversation-message-right {
+  background-color: #007aff;
+  color: #fff;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.conversation-message-text {
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.conversation-message-header {
+  display: flex;
+  flex-direction: row; /* Make sure it's a row! */
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  padding-left: 2px;
+}
+
+.conversation-message-speaker {
+  font-size: 0.78em;
+  font-weight: 500;
+  margin-right: 4px;
+  margin-top: 0;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  /* Prevent vertical writing mode! */
+  writing-mode: initial;
+  text-orientation: initial;
+  display: inline;
+}
+
+.conversation-message-speaker.right {
+  text-align: right;
+  color: white;
+}
+
+.conversation-message-speaker.left {
+  text-align: left;
+  color: black;
+}
+
+.conversation-message-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.icon-small svg, .icon-small button, .icon-small span {
+  font-size: 1em !important;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  opacity: 0.8;
+  margin: 0 1px;
+  vertical-align: middle;
+}
+
+.icon-small.right {
+  color: white;
+}
+
+.icon-small.left {
+  color: black;
+}
+
+
+/* CONVERSATION COMPLETION SCREEN */
+
+.game-completion-container{
+  height: 80%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}  
+
+.completion-message {
+  font-size: 50;
+  color: #16ae55;
+  margin-top: 10px;
+}
+
+.completion-score {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.completion-stats-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.completion-stat-row{
+  display: flex;
+  flex-direction: row;
+  width:80%;
+  padding: 5px;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+
+.completion-stat-total{
+  color: gray;
+  background-color: #f9f1f1;
+}
+
+.completion-stat-label {
+  font-weight: bold;
+  font-size: 38;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: left;
+  align-items: center;
+  width: 70%;
+}
+
+.completion-stat-value{
+  font-weight: bold;
+  font-size: 38;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  text-align: right;
+  align-items: center;
+  width: 30%;
+}
+
+.completion-stat-correct {
+  color: #16ae55;
+  background-color: #d1f0de;
+}
+
+.completion-stat-incorrect {
+  color: #ff4757;
+  background-color: #fcdce1;
+}
+
+.finished-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 4px;
+}
+
+
+
+/* WORD SEARCH */
+
+.ws-letter-grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+
+.ws-letter-grid-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  
+}
+
+.ws-letter-grid-letter {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
+
+}
+
+
+.wordsearch-letter-button{
+  height: 100%;
+  width: 100%;
+}
+
+
+.wordsearch-letter-button.base {
+  background-color: white;
+}
+
+.wordsearch-letter-button.check {
+  background-color: yellow;
+}
+
+.wordsearch-letter-button.correct {
+  background-color: #16ae55;
+}
+
+.wordsearch-letter-button.disabled {
+  background-color: #cccccc;
+}
+
+.ws-wordslist-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ws-wordslist-grid {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 2 columns */
+  gap: 3px; /* space between grid items */
+}
+
+.ws-wordslist-word {
+  background-color: #d9e5ee;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 1px;
+  padding-right: 1px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ws-wordslist-word.complete {
+  background-color:#16ae55;
 }

@@ -40,7 +40,7 @@ function App() {
         setPageContent(<GameMenu chapterIndex={chapterIndex} setGameId={setGameId} setSection={setNavSelection}></GameMenu>); 
         break;    
       case game:
-        setPageContent(<GameWrapper gameId={gameId} chapterIndex={chapterIndex}></GameWrapper>);
+        setPageContent(<GameWrapper gameId={gameId} chapterIndex={chapterIndex} setSection={setNavSelection}></GameWrapper>);
         break;
     }    
   }

@@ -18,6 +18,8 @@ GAMES:
 * Unit word game: word multiple choice, matching
 * speed runner game choose the right path (timed)
 * Audio: listen and write what you hear, translate what you hear, respond to what you hear
+Word search
+Word arrangement
 
 
 

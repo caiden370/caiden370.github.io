@@ -28,7 +28,7 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
     setResult(isCorrect);
     setCurrResult(isCorrect);
     setCorrectIndex(answerIndex);
-    if (!isCorrect) setIncorrectIndex(index);
+    if (!isCorrect) { setIncorrectIndex(index) }  else setIncorrectIndex(null);
     setAnswered(true);
   };
 

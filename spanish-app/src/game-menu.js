@@ -38,10 +38,10 @@ export default function GameMenu({setGameId, setSection}) {
                 <Item color={'#70a1ff'} itemGameId={'3'} text={'Conversation Practice'}></Item>
                 </Grid>
                 <Grid size={6}>
-                <Item color={'#70a1ff'} itemGameId={'4'}></Item>
+                <Item color={'#70a1ff'} itemGameId={'4'} text={'Word Search'}></Item>
                 </Grid>
                 <Grid size={6}>
-                <Item color={'#70a1ff'} itemGameId={'5'}></Item>
+                <Item color={'#70a1ff'} itemGameId={'5'} text={'Sentence Practice'}></Item>
                 </Grid>
                 <Grid size={6}>
                 <Item color={'#70a1ff'} itemGameId={'6'}></Item>
