@@ -67,4 +67,30 @@ export function ProgressBar({ progress }) {
       </div>
     );
   }
+
+
+
+  export function generateRandomIndicesDupless(array, n) {
+    const indices = new Array(n);
+    const choices = new Array(array.length);
+
+    for (let i = 0; i<array.length; i++) {
+        choices[i] = i            
+    }
+
+    let avail = array.length;
+    let r = 0
+    for (let i = 0; i<n; i++) {
+        r = Math.floor(Math.random() * avail);
+        indices[i] = choices[r];
+        choices[r] = choices[avail-1]
+        avail = avail - 1;
+    }
+    return indices
+}
   
+
+export function processText(text) {
+  const punctuationAndSpaceRegex = /[¿¡.,;:!?]/g;
+  return text.replace(punctuationAndSpaceRegex, '')
+}

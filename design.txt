@@ -45,8 +45,25 @@ https://flatuicolors.com/palette/cn
 
 
 TODO:
+- WordSearch:
+    - Make a finished Page (should be a modal that goes over)
+    - Instead of mistakes left or somthing 
+    - 
+
+
+
+
 - Make other games
 - Fill with content
 - Make progress connected
 - Add money and a Store
 - 
+
+
+Games:
+- AI education (spanish app)
+- 
+
+
+Bugs:
+Words search word collisions don't register

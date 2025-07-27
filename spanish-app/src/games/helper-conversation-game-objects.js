@@ -94,14 +94,15 @@ export function ConversationBlock({topic, messageList, audioOnly, numMessages}) 
 //******************************************************************************** */
 export function GameCompletionComponent({ numCorrect, totalQuestions }) {
     function getMessage() {
-      const fractionCorrect = numCorrect / totalQuestions;
-      if (fractionCorrect <= 0.1) return 'Nice Try!';
-      if (fractionCorrect <= 0.3) return 'Good Effort!';
-      if (fractionCorrect <= 0.5) return 'Good!';
-      if (fractionCorrect <= 0.7) return 'Great Job!';
-      if (fractionCorrect <= 0.9) return 'Excellent!';
-      return 'Perfect!';
-    }
+        const fractionCorrect = numCorrect / totalQuestions;
+        if (fractionCorrect <= 0.1) return 'Nice Try!';
+        if (fractionCorrect <= 0.3) return 'Good Effort!';
+        if (fractionCorrect <= 0.5) return 'Good!';
+        if (fractionCorrect <= 0.7) return 'Great Job!';
+        if (fractionCorrect <= 0.9) return 'Great Job!';
+        if (fractionCorrect < 1) return 'Almost Perfect'
+        return 'Perfecto!';
+      }
   
     const percentage = Math.round((numCorrect / totalQuestions) * 100);
   
@@ -271,7 +272,7 @@ export function ConversationMultiChoice({topic, dialog, questions, audioOnly, on
         setNumCorrect(0);
         setCurrQuestionIndex(0);
 
-        
+
     }, [dialog]
     )
 

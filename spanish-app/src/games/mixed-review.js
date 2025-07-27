@@ -39,7 +39,6 @@ export default function MixedReview({ chapterIndex }) {
             setNumCorrect(numCorrect + 1);
         }
     }, [answered]);
-
     
 
     const handleContinue = () => {

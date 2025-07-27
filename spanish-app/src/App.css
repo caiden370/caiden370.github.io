@@ -698,6 +698,17 @@
 
 /* WORD SEARCH */
 
+.wordsearch-container {
+  background: linear-gradient(to bottom, #fa5230, rgb(247, 151, 124), #ffffff);
+  height: 90vh;
+  width: 100%;
+}
+
+.ws-grid-container {
+  height: 100%;
+  width: 100%;
+}
+
 .ws-letter-grid-container {
   display: flex;
   flex-direction: column;
@@ -714,12 +725,8 @@
 }
 
 .ws-letter-grid-letter {
-  width: 40px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 37px;
+  height: 37px;
   border: solid 1px;
 
 }
@@ -728,6 +735,12 @@
 .wordsearch-letter-button{
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20;
 }
 
 
@@ -747,31 +760,102 @@
   background-color: #cccccc;
 }
 
+/* Word List Grid Styles */
+
 .ws-wordslist-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 10px;
 }
 
 .ws-wordslist-grid {
-  width: 90%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 2 columns */
-  gap: 3px; /* space between grid items */
+  width: 97%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  justify-content: center;
 }
 
 .ws-wordslist-word {
   background-color: #d9e5ee;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 1px;
-  padding-right: 1px;
+  padding: 3px 8px;
   border-radius: 10px;
   overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  min-width: fit-content;
 }
 
 .ws-wordslist-word.complete {
-  background-color:#16ae55;
+  background-color: #16ae55;
+}
+
+/* Nice Score Container Styles */
+
+.ws-score-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.ws-score-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #16ae55, #20c464);
+  color: white;
+  font-weight: bold;
+  width: 100px;
+  box-shadow: 0 4px 8px rgba(22, 174, 85, 0.3);
+}
+
+.ws-score-misses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #8b6914;
+  font-weight: bold;
+  width: 100px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+}
+
+.sentence-jumble-container {
+  height: 100%;
+  width: 100%;
+}
+
+.jumbled-selected-sentence-container {
+  display: flex;
+  flex-direction: row;
+  gap:15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  height: 20%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.jumbled-available-words-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+
 }

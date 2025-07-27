@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import "../App.css"
 import learningContent from '../json-files/learningContent.json';
 
@@ -50,7 +50,7 @@ export function LetterBox({r, c, letter, letterIndex, wordIndex, handleClick, in
     
     return (
         <div key={Date.now()} className={`wordsearch-letter-button ${styleClass}`} onClick={handleButtonClick}>
-            <Typography align='center'>{letter}</Typography>
+            {letter}
         </div>
     )
 }
@@ -58,7 +58,7 @@ export function LetterBox({r, c, letter, letterIndex, wordIndex, handleClick, in
 // ************************************************************************************
 // Letter Grid Component
 // ************************************************************************************
-export function LetterGrid({words, Height, Width}) {
+export function LetterGrid({words, Height, Width, onFinished, maxMisses}) {
     const [correctClicks, setCorrectClicks] = useState(0);
     const [misClicks, setMisClicks] = useState(0);
     const [wordsFound, setWordsFound] = useState(0);
@@ -92,6 +92,21 @@ export function LetterGrid({words, Height, Width}) {
 
         setGridData(initializeGrid());
     }, [words, Height, Width]); // Only recreate when these props change
+
+
+    useEffect(
+        () => {
+            if (completedWordsTracker.length == 0) {
+                return;
+            }
+            if (wordsFound >= completedWordsTracker.length || misClicks >= maxMisses) {
+                onFinished(wordsFound, misClicks);
+            }
+
+        }, [wordsFound, misClicks]
+
+
+    )
 
     function processPhrases(phrases) {
         let concatenatedLetters = "";
@@ -173,7 +188,7 @@ export function LetterGrid({words, Height, Width}) {
                 let startR = Math.floor(Math.random()*(Height))
                 let direction = Math.floor(Math.random()*2);
                 let word =words[i].replace(/\s/g, '').replace(punctuationAndSpaceRegex, '');
-                if (collection[word]) {
+                if (collection[word] || word.length < 3) {
                     continue;
                 }
                 collection[word] = true;
@@ -230,10 +245,9 @@ export function LetterGrid({words, Height, Width}) {
         return (
             <>
             <div className='ws-score-container'>
-                <div>
-                    <Typography>Words Found: {wordsFound}</Typography>
-                    <Typography>Misses: {misClicks}</Typography>
-                </div>
+                <div className='ws-score-found'>Found: {wordsFound}</div>
+                <div className='ws-score-misses'>Lives: {maxMisses - misClicks}</div>
+                
             </div>
             <div className='ws-letter-grid-container'>
             {letterArray.map((row, r) => {
@@ -283,6 +297,55 @@ export function LetterGrid({words, Height, Width}) {
     )
 }
 
+
+
+
+
+// ***********************************************************************************
+// Word Search Completion Component
+// ***********************************************************************************
+
+export function GameCompletionComponent({ numFound, numMisses, maxMisses }) {
+    function getMessage() {
+      const fractionCorrect = 1 - (numMisses / maxMisses);
+      if (fractionCorrect <= 0.1) return 'Nice Try!';
+      if (fractionCorrect <= 0.3) return 'Good Effort!';
+      if (fractionCorrect <= 0.5) return 'Good!';
+      if (fractionCorrect <= 0.7) return 'Great Job!';
+      if (fractionCorrect <= 0.9) return 'Great Job!';
+      if (fractionCorrect < 1) return 'Almost Perfect'
+      return 'Perfecto!';
+    }
+  
+  
+    return (
+      <div className="game-completion-container" style={{height: '100%', padding: '0px'}}>
+          {/* Message */}
+          <h1 className="completion-message">
+            {getMessage()}
+          </h1>
+  
+          {/* Stats */}
+          <div className="completion-stats-container">
+            <div className="completion-stat-row completion-stat-total">
+              <span className="completion-stat-label">Total Lives:</span>
+              <span className="completion-stat-value">{maxMisses}</span>
+            </div>
+            
+            <div className="completion-stat-row completion-stat-correct">
+              <span className="completion-stat-label">Words Found:</span>
+              <span className="completion-stat-value">{numFound}</span>
+            </div>
+            
+            <div className="completion-stat-row completion-stat-incorrect">
+              <span className="completion-stat-label">Lives Used:</span>
+              <span className="completion-stat-value">{numMisses}</span>
+            </div>
+          </div>
+        </div>
+    );
+  }
+
 // ************************************************************************************
 // Word Search Component
 // ************************************************************************************
@@ -290,8 +353,12 @@ export function LetterGrid({words, Height, Width}) {
 export default function WordSearch({chapterIndex, setSection}) {
     const [jsonContent, setJsonContent] = useState(null);
     const [wordSearchComponent, setWordSearchComponent] = useState(null);
-    const Height = 15;
-    const Width = 6;
+    const Height = 11;
+    const Width = 8;
+    const [finished, setFinished] = useState(false);
+    const [misses, setMisses] = useState(0);
+    const [found, setFound] = useState(0);
+    const maxMisses = 5;
 
     
 
@@ -339,6 +406,12 @@ export default function WordSearch({chapterIndex, setSection}) {
             words={wordsList}
             Height={Height}
             Width={Width}
+            onFinished={(found, misses)=>{
+                setFinished(true);
+                setFound(found);
+                setMisses(misses)    
+            }}
+            maxMisses={maxMisses}
             >
             </LetterGrid>
             </>
@@ -348,10 +421,34 @@ export default function WordSearch({chapterIndex, setSection}) {
 
 
 
-    return (
+
+    if (finished) {
+        return (
         <div className='wordsearch-container'>
-            <div className='ws-grid-container'>{wordSearchComponent && wordSearchComponent}</div>
+            <div className='ws-grid-container'>
+                <GameCompletionComponent
+                numFound={found}
+                numMisses={misses}
+                maxMisses={maxMisses}
+                >
+
+                </GameCompletionComponent>
+
+
+            </div>
         </div>
-    )
+        )
+    } else {
+        return (
+            <div className='wordsearch-container'>
+                <div className='ws-grid-container'>{wordSearchComponent && wordSearchComponent}</div>
+            </div>
+        )
+
+    }
+
+
+
+
 
 }

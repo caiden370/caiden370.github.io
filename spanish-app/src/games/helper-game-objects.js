@@ -8,6 +8,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import SpeechButton from "../speech";
+import { processText } from "./ui-objects";
 //******************************************************************************** */
 // Multiple Choice
 
@@ -152,14 +153,16 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
         onAnswered();
         setAnswered(true);
         setShowModal(true);
-        if (answer.length != response.length) {
+        const processedAnswer = processText(answer);
+        const processedResp = processText(response);
+        if (processedAnswer.length != processedResp.length) {
             setResult(false);
             setIsCorrect(false);
             return;
         }
 
-        for (let i = 0; i < Math.min(answer.length, response.length); i++) {
-            if ((answer[i]+'').toLowerCase() != (response[i]+'').toLowerCase()) {
+        for (let i = 0; i < Math.min(processedAnswer.length, processedResp.length); i++) {
+          if ((processedAnswer[i]+'').toLowerCase() != (processedResp[i]+'').toLowerCase()) {
                 mistakes += 1
             }
             if (mistakes >= allowedMistakes) {
@@ -270,17 +273,29 @@ export function FillInTheBlank({phraseList, missingIndex, setResult, onAnswered,
   },[phraseList])
   
   function renderLine() {
-    let question = ''
+
+    let question = '';
+    let questionText = '';
+    
+    phraseList.map((word, i)=>{
+      if (i != missingIndex) {
+        question += word + ' ';
+      } else {
+        question += '. ? ? ? ? ? ? ? ? ? ? ? ? ? . ';
+      }})
+
+    
+
     return (
       <>
       <SpeechButton text={question} inSpanish={questionInSpanish}></SpeechButton>
       <div className="mr-fillblank-line">
       {phraseList.map((word, i)=>{
         if (i != missingIndex) {
-          question += word + ' '
+          questionText += word + ' '
           return (<Typography align="center" sx={{fontWeight:'bold'}}>{word}</Typography>)
         } else {
-          question += 'spacio '
+          questionText += 'spacio '
           return (<Typography sx={{fontWeight:'bold'}}>_____</Typography>)
         }
         
@@ -342,14 +357,16 @@ function handleSubmit() {
   onAnswered();
   setAnswered(true);
   setShowModal(true);
-  if (answer.length != response.length) {
+  const processedAnswer = processText(answer);
+  const processedResp = processText(response);
+  if (processedAnswer.length != processedResp.length) {
       setResult(false);
       setIsCorrect(false);
       return;
   }
 
-  for (let i = 0; i < Math.min(answer.length, response.length); i++) {
-      if ((answer[i]+'').toLowerCase() != (response[i]+'').toLowerCase()) {
+  for (let i = 0; i < Math.min(processedAnswer.length, processedResp.length); i++) {
+      if ((processedAnswer[i]+'').toLowerCase() != (processedResp[i]+'').toLowerCase()) {
           mistakes += 1
       }
       if (mistakes >= allowedMistakes) {
@@ -429,14 +446,16 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
       onAnswered();
       setAnswered(true);
       setShowModal(true);
-      if (answer.length != response.length) {
+      const processedAnswer = processText(answer);
+      const processedResp = processText(response);
+      if (processedAnswer.length != processedResp.length) {
           setResult(false);
           setIsCorrect(false);
           return;
       }
 
-      for (let i = 0; i < Math.min(answer.length, response.length); i++) {
-          if ((answer[i]+'').toLowerCase() != (response[i]+'').toLowerCase()) {
+      for (let i = 0; i < Math.min(processedAnswer.length, processedResp.length); i++) {
+          if ((processedAnswer[i]+'').toLowerCase() != (processedResp[i]+'').toLowerCase()) {
               mistakes += 1
           }
           if (mistakes >= allowedMistakes) {
