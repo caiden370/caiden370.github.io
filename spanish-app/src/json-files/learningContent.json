@@ -184,6 +184,198 @@
           }
         ]
       }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "Un Nuevo Comienzo",
+        "sentences": [
+          {
+            "spanish": "Sofía llegó a Madrid por primera vez.",
+            "english": "Sofía arrived in Madrid for the first time."
+          },
+          {
+            "spanish": "Estaba un poco nerviosa, pero emocionada.",
+            "english": "She was a little nervous, but excited."
+          },
+          {
+            "spanish": "Al entrar en el hostal, una mujer sonriente la saludó.",
+            "english": "Upon entering the hostel, a smiling woman greeted her."
+          },
+          {
+            "spanish": "—¡Hola! Buenos días. ¿En qué puedo ayudarte?",
+            "english": "—Hello! Good morning. How can I help you?"
+          },
+          {
+            "spanish": "dijo la mujer.",
+            "english": "said the woman."
+          },
+          {
+            "spanish": "Sofía respondió con una sonrisa.",
+            "english": "Sofía responded with a smile."
+          },
+          {
+            "spanish": "—Buenos días. Me llamo Sofía y tengo una reserva.",
+            "english": "—Good morning. My name is Sofía and I have a reservation."
+          },
+          {
+            "spanish": "La mujer, que se llamaba Elena, revisó su lista.",
+            "english": "The woman, whose name was Elena, checked her list."
+          },
+          {
+            "spanish": "—Ah, sí, Sofía. Mucho gusto. Bienvenida a Madrid.",
+            "english": "—Ah, yes, Sofía. Nice to meet you. Welcome to Madrid."
+          },
+          {
+            "spanish": "—Igualmente, Elena. Gracias.",
+            "english": "—Likewise, Elena. Thank you."
+          },
+          {
+            "spanish": "Después de hacer el registro, Sofía preguntó:",
+            "english": "After checking in, Sofía asked:"
+          },
+          {
+            "spanish": "—¿Qué tal está el día hoy?",
+            "english": "—How's the day today?"
+          },
+          {
+            "spanish": "Elena le dijo que era un día perfecto para explorar la ciudad.",
+            "english": "Elena told her it was a perfect day to explore the city."
+          },
+          {
+            "spanish": "Sofía se sintió aliviada y feliz de haber llegado.",
+            "english": "Sofía felt relieved and happy to have arrived."
+          },
+          {
+            "spanish": "Decidió salir inmediatamente a conocer su nuevo entorno.",
+            "english": "She decided to go out immediately to get to know her new surroundings."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Un Encuentro Inesperado",
+        "sentences": [
+          {
+            "spanish": "Pedro caminaba por el parque, disfrutando de la tarde.",
+            "english": "Pedro was walking through the park, enjoying the afternoon."
+          },
+          {
+            "spanish": "De repente, vio a un viejo amigo, Juan, sentado en un banco.",
+            "english": "Suddenly, he saw an old friend, Juan, sitting on a bench."
+          },
+          {
+            "spanish": "—¡Juan! ¡Tanto tiempo! ¿Qué tal?",
+            "english": "—Juan! Long time no see! What's up?"
+          },
+          {
+            "spanish": "exclamó Pedro, sorprendido.",
+            "english": "exclaimed Pedro, surprised."
+          },
+          {
+            "spanish": "Juan levantó la vista y una gran sonrisa apareció en su rostro.",
+            "english": "Juan looked up and a big smile appeared on his face."
+          },
+          {
+            "spanish": "—¡Pedro! ¡Qué gusto verte! He estado bien, ¿y tú? ¿Cómo te va?",
+            "english": "—Pedro! So nice to see you! I've been good, and you? How's it going?"
+          },
+          {
+            "spanish": "—Muy bien, gracias. ¿Qué haces por aquí?",
+            "english": "—Very well, thanks. What are you doing around here?"
+          },
+          {
+            "spanish": "preguntó Pedro, sentándose a su lado.",
+            "english": "Pedro asked, sitting next to him."
+          },
+          {
+            "spanish": "—Nada especial, solo disfrutando del sol.",
+            "english": "—Nothing special, just enjoying the sun."
+          },
+          {
+            "spanish": "dijo Juan.",
+            "english": "said Juan."
+          },
+          {
+            "spanish": "Estuvieron charlando un rato, poniéndose al día sobre sus vidas.",
+            "english": "They chatted for a while, catching up on their lives."
+          },
+          {
+            "spanish": "Cuando el sol empezó a bajar, decidieron despedirse.",
+            "english": "When the sun began to set, they decided to say goodbye."
+          },
+          {
+            "spanish": "—Bueno, Juan, me tengo que ir. Fue un placer verte.",
+            "english": "—Well, Juan, I have to go. It was a pleasure to see you."
+          },
+          {
+            "spanish": "—Igualmente, Pedro. Cuídate mucho. Nos vemos pronto.",
+            "english": "—Likewise, Pedro. Take care. See you soon."
+          },
+          {
+            "spanish": "Se despidieron con un abrazo, prometiendo no dejar pasar tanto tiempo la próxima vez.",
+            "english": "They said goodbye with a hug, promising not to let so much time pass next time."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "La Rutina Matutina de Ana",
+        "sentences": [
+          {
+            "spanish": "Ana se despertó con el sonido de su alarma.",
+            "english": "Ana woke up to the sound of her alarm."
+          },
+          {
+            "spanish": "Abrió los ojos y dijo en voz baja: —¡Buenos días, mundo!",
+            "english": "She opened her eyes and said softly: —Good morning, world!"
+          },
+          {
+            "spanish": "Se levantó y fue a la cocina, donde su hermano, Luis, ya estaba preparando café.",
+            "english": "She got up and went to the kitchen, where her brother, Luis, was already making coffee."
+          },
+          {
+            "spanish": "—Buenos días, Luis. ¿Qué tal dormiste?",
+            "english": "—Good morning, Luis. How did you sleep?"
+          },
+          {
+            "spanish": "preguntó Ana, bostezando.",
+            "english": "Ana asked, yawning."
+          },
+          {
+            "spanish": "—¡Hola, Ana! Dormí muy bien, gracias. ¿Y tú?",
+            "english": "—Hello, Ana! I slept very well, thanks. And you?"
+          },
+          {
+            "spanish": "—Yo también. Hoy tengo un día ocupado.",
+            "english": "—Me too. I have a busy day today."
+          },
+          {
+            "spanish": "Después de desayunar, ambos se prepararon para salir.",
+            "english": "After breakfast, both got ready to leave."
+          },
+          {
+            "spanish": "Luis se dirigió a su trabajo y Ana a la universidad.",
+            "english": "Luis headed to his job and Ana to the university."
+          },
+          {
+            "spanish": "—Bueno, Luis, me voy. Que tengas un buen día.",
+            "english": "—Well, Luis, I'm leaving. Have a good day."
+          },
+          {
+            "spanish": "dijo Ana, tomando su mochila.",
+            "english": "Ana said, grabbing her backpack."
+          },
+          {
+            "spanish": "—Igualmente, Ana. Cuídate mucho. Nos vemos esta noche.",
+            "english": "—Likewise, Ana. Take care. See you tonight."
+          },
+          {
+            "spanish": "Ana salió del apartamento, lista para enfrentar el día, con una sonrisa en el rostro.",
+            "english": "Ana left the apartment, ready to face the day, with a smile on her face."
+          }
+        ]
+      }
     ]
   }    
            

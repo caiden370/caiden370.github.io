@@ -12,16 +12,20 @@ import { Typography } from '@mui/material';
 import LinearProgress from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
 import { ProgressBar } from './ui-objects';
+import { GameCompletionComponent } from './helper-conversation-game-objects';
 
-export default function MixedReview({ chapterIndex }) {
+export default function MixedReview({ chapterIndex, setSection }) {
     const [jsonContent, setJsonContent] = useState(null);
     const [currResult, setCurrentResult] = useState(null);
     const [answered, setAnswered] = useState(false);
     const [questionComponent, setQuestionComponent] = useState(null);
     const [prev, setPrev] = useState(0);
     const [numCorrect, setNumCorrect] = useState(0);
+    const [numCompleted, setNumCompleted] = useState(0)
+    const totalQuestions = 10;
     const importAll = (r) => r.keys().map(r);
     const images = importAll(require.context('../static/avatars', false, /\.(png|jpe?g|svg)$/));
+    const [finished, setFinished] = useState(false);
 
     useEffect(() => {
         const words = learningContent[chapterIndex.toString()]?.words;
@@ -30,25 +34,19 @@ export default function MixedReview({ chapterIndex }) {
             const content = generateNextQuestionContent(words);
             const component = buildNextQuestionComponent(content);
             setQuestionComponent(component);
+            setFinished(false);
+            setNumCompleted(0);
         }
     }, [chapterIndex]);
 
 
     useEffect(() => {
         if (currResult) {
-            setNumCorrect(numCorrect + 1);
+            // setNumCorrect(numCorrect + 1);
         }
     }, [answered]);
     
 
-    const handleContinue = () => {
-        const content = generateNextQuestionContent(jsonContent);
-        const component = buildNextQuestionComponent(content);
-        setQuestionComponent(component);
-        setAnswered(false);
-        setCurrentResult(null);
-        setPrev(prev + 1);
-    };
 
     function generateNextQuestionContent(wordsArray) {
         let r = Math.floor(Math.random()*3);
@@ -221,6 +219,20 @@ export default function MixedReview({ chapterIndex }) {
     }
 
 
+    const handleContinue = () => {
+        if (numCompleted >= totalQuestions - 1) {
+            setFinished(true);
+        }
+        const content = generateNextQuestionContent(jsonContent);
+        const component = buildNextQuestionComponent(content);
+        setQuestionComponent(component);
+        setAnswered(false);
+        setCurrentResult(null);
+        setPrev(prev + 1);
+        setNumCorrect(numCorrect + 1);
+        setNumCompleted(numCompleted + 1);
+    };
+
     // General content
     function continueButton() {
         return (
@@ -236,21 +248,58 @@ export default function MixedReview({ chapterIndex }) {
     function scoreBar() {
         return (
             <div className='mixed-review-score-container'>
-                <ProgressBar progress={(numCorrect*100 / 5) % 100}></ProgressBar>
+                <ProgressBar progress={(numCompleted*100 / totalQuestions) % 100}></ProgressBar>
             </div>
         )
 
     }
 
+    function handleQuit() {
+        setSection('MenuGame');
+
+    }
+
+    function handleRetry() {
+        setFinished(false);
+        const content = generateNextQuestionContent(jsonContent);
+        const component = buildNextQuestionComponent(content);
+        setQuestionComponent(component);
+        setAnswered(false);
+        setCurrentResult(null);
+        setPrev(0);
+        setNumCorrect(0);
+        setNumCompleted(0);
+    }
 
 
-    return (
-        <div className='mixed-review-container'>
-            <div className='mixed-review-quiz-card'>
-            {scoreBar()}
-            {questionComponent}
-            {answered && continueButton()}
+    if (finished) {
+        return  (<div className="conversation-component-outer-container">
+        <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
+        <div className='finished-row'>
+            <div className='mixed-review-continue'>
+                <Button variant='contained' color='info' onClick={handleQuit}>
+                    <Typography>Quit</Typography>
+                </Button>
+            </div>
+            <div className='mixed-review-continue'>
+            <Button variant='contained' color='success' onClick={handleRetry}>
+                <Typography>Play Again</Typography>
+            </Button>
             </div>
         </div>
-    );
+    </div>)
+
+    } else {
+
+    
+        return (
+            <div className='mixed-review-container'>
+                <div className='mixed-review-quiz-card'>
+                {scoreBar()}
+                {questionComponent}
+                {answered && continueButton()}
+                </div>
+            </div>
+        );
+    }
 }

@@ -2,11 +2,9 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { IconButton, Button } from '@mui/material';
 import { useEffect, useRef } from 'react';
 
-export default function SpeechButton({ text, inSpanish, big }) {
+export default function SpeechButton({ text, inSpanish, big, small }) {
   const synthRef = useRef(window.speechSynthesis);
 
-
-  
   function performSpeak() {
     const voices = synthRef.current.getVoices();
 
@@ -25,10 +23,7 @@ export default function SpeechButton({ text, inSpanish, big }) {
           voice =>
             (voice.lang === 'en-US' || voice.lang.startsWith('en'))
         ) || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
-
     }
-
-
 
     const msg = new SpeechSynthesisUtterance(text);
     msg.voice = preferredVoice;
@@ -46,22 +41,31 @@ export default function SpeechButton({ text, inSpanish, big }) {
     }
   }, []);
 
-
-  let useBigStyle = false
+  // Determine which style to use
+  let buttonStyle = {};
+  
   if (big) {
-    useBigStyle = true
+    buttonStyle = {
+      fontSize: '3rem',
+      padding: '16px',
+      width: '64px',
+      height: '64px'
+    };
+  } else if (small) {
+    buttonStyle = {
+      fontSize: '1rem',
+      padding: '4px',
+      width: '32px',
+      height: '32px'
+    };
   }
-
-  const BigStyle = {fontSize: '3rem',     
-        padding: '16px',       
-        width: '64px',
-        height: '64px'}
+  // If neither big nor small is specified, use default MUI styling
 
   return (
     <div className='speech-button-container'>
-    <IconButton onClick={performSpeak} sx={useBigStyle? BigStyle : {}}>
-      <VolumeUpIcon fontSize='inherit'/>
-    </IconButton>
+      <IconButton onClick={performSpeak} sx={buttonStyle}>
+        <VolumeUpIcon fontSize='inherit'/>
+      </IconButton>
     </div>
   );
 }

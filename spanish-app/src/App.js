@@ -19,11 +19,14 @@ function App() {
 
   const [navSelection, setNavSelection] = useState(chapters);
   const [pageContent, setPageContent] = useState(<ChaptersPage/>);
-  const [coins, setCoins] = useState(100);
   const [globalName, setGlobalName] = useState('Caiden Kiani');
-  const [experience, setExperience] = useState(120);
   const [chapterIndex, setChapterIndex] = useState(0);
   const [gameId, setGameId] = useState('1');
+
+  // STATS TRACKING
+  const [coins, setCoins] = useState(100);
+  const [experience, setExperience] = useState(120);
+
 
   function changePage() {
     switch (navSelection) {

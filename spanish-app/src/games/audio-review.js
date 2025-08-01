@@ -4,10 +4,14 @@ import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { AudioExactTextResponse } from './helper-game-objects';
+import { GameCompletionComponent } from './helper-conversation-game-objects';
 
 
-export default function AudioReview({chapterIndex, }) {
+export default function AudioReview({chapterIndex, setSection }) {
     const [numCorrect, setNumCorrect] = useState(0);
+    const [numCompleted, setNumCompleted] = useState(0);
+    const totalQuestions = 10;
+    const [finished, setFinished] = useState(false);
     const [currResult, setCurrentResult] = useState(null);
     const [questionComponent, setQuestionComponent] = useState(null);
     const [jsonContent, setJsonContent] = useState(null);
@@ -36,14 +40,6 @@ export default function AudioReview({chapterIndex, }) {
 
     
 
-    const handleContinue = () => {
-        const content = generateNextQuestionContent(jsonContent);
-        const component = buildNextQuestionComponent(content);
-        setQuestionComponent(component);
-        setAnswered(false);
-        setCurrentResult(null);
-        setPrev(prev + 1);
-    };
 
     function generateNextQuestionContent(wordsArray) {
         let r = Math.floor(Math.random()*1);
@@ -84,11 +80,27 @@ export default function AudioReview({chapterIndex, }) {
     function scoreBar() {
         return (
             <div className='mixed-review-score-container'>
-                <ProgressBar progress={(numCorrect*100 / 5) % 100}></ProgressBar>
+                <ProgressBar progress={(numCompleted*100 / totalQuestions) % 100}></ProgressBar>
             </div>
         )
 
     }
+
+
+
+
+    const handleContinue = () => {
+        if (numCompleted >= totalQuestions - 1) {
+            setFinished(true);
+        }
+        const content = generateNextQuestionContent(jsonContent);
+        const component = buildNextQuestionComponent(content);
+        setQuestionComponent(component);
+        setAnswered(false);
+        setCurrentResult(null);
+        setPrev(prev + 1);
+        setNumCompleted(numCompleted + 1)
+    };
 
 
     function continueButton() {
@@ -101,17 +113,50 @@ export default function AudioReview({chapterIndex, }) {
         );
     }
 
+    function handleRetry() {
+        const content = generateNextQuestionContent(jsonContent);
+        const component = buildNextQuestionComponent(content);
+        setQuestionComponent(component);
+        setFinished(false);
+        setNumCompleted(0);
+        setNumCorrect(0);
+        setPrev(0);
+        setCurrentResult(null);
+    }
+
+    function handleQuit() {
+        setSection('MenuGame')
+    }
 
 
-
-    return (
-        <div className='mixed-review-container'>
-            <div className='mixed-review-quiz-card'>
-            {scoreBar()}
-            {questionComponent}
-            {answered && continueButton()}
+    if (finished) {
+        return  (<div className="conversation-component-outer-container">
+        <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
+        <div className='finished-row'>
+            <div className='mixed-review-continue'>
+                <Button variant='contained' color='info' onClick={handleQuit}>
+                    <Typography>Quit</Typography>
+                </Button>
+            </div>
+            <div className='mixed-review-continue'>
+            <Button variant='contained' color='success' onClick={handleRetry}>
+                <Typography>Play Again</Typography>
+            </Button>
             </div>
         </div>
-    );
+    </div>)
+
+    } else {
+
+        return (
+            <div className='mixed-review-container'>
+                <div className='mixed-review-quiz-card'>
+                {scoreBar()}
+                {questionComponent}
+                {answered && continueButton()}
+                </div>
+            </div>
+        );
+    }
 
 }

@@ -6,6 +6,7 @@ import './App.css';
 import AudioReview from "./games/audio-review";
 import WordSearch from "./games/word-search"
 import SentencePractice from "./games/sentence";
+import Story from "./games/story";
 
 export default function GameWrapper({gameId, chapterIndex, setSection}) {
     
@@ -15,7 +16,8 @@ export default function GameWrapper({gameId, chapterIndex, setSection}) {
         const game2 = '2';
         const game3 = '3';  
         const game4 = '4';
-        const game5 = '5';      
+        const game5 = '5';
+        const game6 = '6'      
         switch (gameId) {
             case game1:
                 return (<MixedReview chapterIndex={chapterIndex} setSection={setSection}/>);
@@ -26,7 +28,10 @@ export default function GameWrapper({gameId, chapterIndex, setSection}) {
             case game4:
                 return (<WordSearch chapterIndex={chapterIndex} setSection={setSection}></WordSearch>)
             case game5: 
-            return (<SentencePractice chapterIndex={chapterIndex} setSection={setSection}></SentencePractice>)
+                return (<SentencePractice chapterIndex={chapterIndex} setSection={setSection}></SentencePractice>)
+            case game6:
+                return (<Story chapterIndex={chapterIndex} setSection={setSection}></Story>)
+            
         }
     }
     

@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { useState, useEffect, use } from "react";
 import "../App.css"
 import learningContent from '../json-files/learningContent.json';
+import {Button} from "@mui/material";
 
 
 
@@ -16,11 +17,13 @@ export function LetterBox({r, c, letter, letterIndex, wordIndex, handleClick, in
     const correctState = 3;
     const [state, setState] = useState(inheritedState);
     const [styleClass, setStyleClass] = useState(handleClass(state));
+    const [clicked, setClicked] = useState(false);
 
 
 
     function handleButtonClick() {
-        if (state != disabled || state != correctState || state != checkState) {
+        if (!clicked) {
+            setClicked(true);
             handleClick(r, c, wordIndex);
             if (wordIndex >= 0) {
                 setState(correctState);
@@ -305,7 +308,7 @@ export function LetterGrid({words, Height, Width, onFinished, maxMisses}) {
 // Word Search Completion Component
 // ***********************************************************************************
 
-export function GameCompletionComponent({ numFound, numMisses, maxMisses }) {
+export function GameCompletionWordSearchComponent({ numFound, numMisses, maxMisses }) {
     function getMessage() {
       const fractionCorrect = 1 - (numMisses / maxMisses);
       if (fractionCorrect <= 0.1) return 'Nice Try!';
@@ -319,7 +322,7 @@ export function GameCompletionComponent({ numFound, numMisses, maxMisses }) {
   
   
     return (
-      <div className="game-completion-container" style={{height: '100%', padding: '0px'}}>
+      <div className="game-completion-container">
           {/* Message */}
           <h1 className="completion-message">
             {getMessage()}
@@ -368,6 +371,9 @@ export default function WordSearch({chapterIndex, setSection}) {
             setJsonContent(words);   
             let component = renderWordSearchComponent(processWords(words));
             setWordSearchComponent(component);
+            setFinished(false);
+            setMisses(0);
+            setFound(0);
         }
     }, [chapterIndex]);
 
@@ -419,23 +425,43 @@ export default function WordSearch({chapterIndex, setSection}) {
 
     }
 
+    function handleQuit() {
+        setSection('MenuGame');
+    }
+
+    function handleRetry() {
+        setFinished(false);
+        setMisses(0);
+        setFound(0);
+        let component = renderWordSearchComponent(processWords(jsonContent));
+        setWordSearchComponent(component);
+    }
+
 
 
 
     if (finished) {
         return (
-        <div className='wordsearch-container'>
-            <div className='ws-grid-container'>
-                <GameCompletionComponent
+        <div className="conversation-component-outer-container">
+                <GameCompletionWordSearchComponent
                 numFound={found}
                 numMisses={misses}
                 maxMisses={maxMisses}
                 >
 
-                </GameCompletionComponent>
-
-
-            </div>
+                </GameCompletionWordSearchComponent>
+                <div className='finished-row'>
+                    <div className='mixed-review-continue'>
+                        <Button variant='contained' color='info' onClick={handleQuit}>
+                            <Typography>Quit</Typography>
+                        </Button>
+                    </div>
+                    <div className='mixed-review-continue'>
+                    <Button variant='contained' color='success' onClick={handleRetry}>
+                        <Typography>Play Again</Typography>
+                    </Button>
+                    </div>
+                </div>
         </div>
         )
     } else {

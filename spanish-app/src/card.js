@@ -6,17 +6,36 @@ import CardOverflow from '@mui/joy/CardOverflow';
 import Typography from '@mui/joy/Typography';
 import Button from '@mui/joy/Button';
 import './App.css';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
+import { Icon } from '@mui/material';
 
 
 
 
-export default function ChapterCard({number, content, title, color, setSection, setIndex, i}) {
+export default function ChapterCard({number, content, title, color, setSection, setIndex, i, fill}) {
     const GameMenu = 'MenuGame'
+    const numGames = 6;
+    const numStars = fill === null? 0 : fill;
+
+    const stars = Array(numGames)
+    for (let i = 0; i < 6; i++) {
+        if (i < numStars) {
+            stars[i] = true;
+        } else {
+            stars[i] = false;
+        }
+            
+
+    }
+
 
     const handleClick = (e) => {
         setSection(GameMenu);
         setIndex(i);
     }
+
+
 
     return (
         <div className='simple-card-container'>
@@ -27,7 +46,20 @@ export default function ChapterCard({number, content, title, color, setSection, 
 
                 <div className='simple-card-content'>
                     <Typography level='h4' sx={{textAlign: 'left', overflow: 'hidden'}}>{title}</Typography>
-                    <Typography level='title'  sx={{textAlign: 'left', marginLeft:'5px', overflowY: 'hidden'}}>{content}</Typography>
+                    <div className='simple-card-stars-container'>
+                    {
+
+                        stars.map((val) => {
+                            return (
+                                <Icon>
+                                    {val? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : (<StarBorderIcon sx={{color: 'grey'}}/>)}
+                                </Icon>
+                            )
+                        })
+
+                    }
+                    </div>
+                    {/* <Typography level='title'  sx={{textAlign: 'left', marginLeft:'5px', overflowY: 'hidden'}}>{content}</Typography> */}
                 </div>
             </button>
 
