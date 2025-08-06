@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import SpeechButton from "../speech";
 import { processText } from "./ui-objects";
 import Mascot from "../mascot";
+import { playCorrectSound, playIncorrectSound } from "../speech";
 //******************************************************************************** */
 // Multiple Choice
 
@@ -31,6 +32,11 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
     setCurrResult(isCorrect);
     setCorrectIndex(answerIndex);
     if (!isCorrect) { setIncorrectIndex(index) }  else setIncorrectIndex(null);
+    if (isCorrect) {
+      playCorrectSound();
+    } else {
+      playIncorrectSound();
+    }
     setAnswered(true);
   };
 
@@ -71,6 +77,7 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
 
   function validationModal(answer) {
     const statusClass = currResult ? "correct" : "incorrect";
+
     return (
     <div className="mr-text-response-modal-container">
       <div
@@ -168,6 +175,7 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
         if (processedAnswer.length != processedResp.length) {
             setResult(false);
             setIsCorrect(false);
+            playIncorrectSound();
             return;
         }
 
@@ -178,12 +186,14 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
             if (mistakes >= allowedMistakes) {
                 setResult(false);
                 setIsCorrect(false);
+                playIncorrectSound();
                 return;
             }
 
         }
         setResult(true);
         setIsCorrect(true);
+        playCorrectSound();
     }
 
 
@@ -375,6 +385,7 @@ function handleSubmit() {
   if (processedAnswer.length != processedResp.length) {
       setResult(false);
       setIsCorrect(false);
+      playIncorrectSound();
       return;
   }
 
@@ -385,12 +396,14 @@ function handleSubmit() {
       if (mistakes >= allowedMistakes) {
           setResult(false);
           setIsCorrect(false);
+          playIncorrectSound();
           return;
       }
 
   }
   setResult(true);
   setIsCorrect(true);
+  playCorrectSound();
 }
 
 
@@ -469,6 +482,7 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
       if (processedAnswer.length != processedResp.length) {
           setResult(false);
           setIsCorrect(false);
+          playIncorrectSound();
           return;
       }
 
@@ -479,12 +493,14 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
           if (mistakes >= allowedMistakes) {
               setResult(false);
               setIsCorrect(false);
+              playIncorrectSound();
               return;
           }
 
       }
       setResult(true);
       setIsCorrect(true);
+      playCorrectSound();
   }
 
 

@@ -20,7 +20,6 @@ export default function Mascot({color, smiling, speaking, noseSize = 'medium', s
         };
     }
 
-    console.log(containerStyle);
     return (
         <div className="mascot-container" sx={{containerStyle}}>
             <div className='mascot-ear-container'>
