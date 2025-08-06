@@ -143,7 +143,8 @@ export default function Story({chapterIndex, setSection}) {
                 options={options}
                 answerIndex={answerIndex}
                 onAnswered={() => {setAnswered(true)}}
-                questionInSpanish={true}>
+                questionInSpanish={true}
+                noLetters={true}>
             </MultipleChoice>
         )
     }

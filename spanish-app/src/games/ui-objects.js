@@ -6,30 +6,26 @@ import IconButton from '@mui/material/IconButton';
 
 
 export function ProgressBar({ progress }) {
-    return (
-      <Box sx={{ width: '100%', textAlign: 'center', marginBottom:'10px' }}>
-        <LinearProgress
-          variant="determinate"
-          value={progress}
-          color='#f56e4f'
-          sx={{
-            width: '100%',
-            height: '12px',
-            borderRadius: '10px',
-            '& .MuiLinearProgress-bar': {
-              backgroundColor: '#f56e4f',
-            },
-            backgroundColor: 'white',
-            border: 'solid',
-            borderWidth: '0.5px',
-            borderColor: 'black'
-
-          }}
-        />
-      </Box>
-    );
-  }
-
+  return (
+    <Box sx={{ width: '100%', marginBottom: '10px' }}>
+      <LinearProgress
+        variant="determinate"
+        value={progress}
+        sx={{
+          height: 12,
+          borderRadius: 10,
+          backgroundColor: '#f0f0f0', // Light, modern track color
+          '& .MuiLinearProgress-bar': {
+            backgroundImage: 'linear-gradient(to right, #66bb6a, #81c784)',
+            borderRadius: 10,
+            // Override the default transition for a smoother, slower animation
+            transition: 'transform 0.5s linear',
+          },
+        }}
+      />
+    </Box>
+  );
+}
 
   
   export function BasicPopover({buttonContent, popoverText}) {

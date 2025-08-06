@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { ProgressBar } from './ui-objects';
 import SpeechButton from '../speech';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
+import Mascot from '../mascot';
 
 
 
@@ -287,7 +288,7 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
         <>
         <div className='sentence-jumble-container'>
             <div className='sentence-translation'>
-                <Typography>
+                <Typography align='center' sx={{fontWeight:'bold'}}>
                     {translation}
                 </Typography>
 

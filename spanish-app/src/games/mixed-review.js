@@ -1,7 +1,6 @@
 // Multiple Choice Multiple Languages
 // Text response
 // Matching
-// 
 
 import { useState, useEffect } from 'react';
 import { MultipleChoice, TextResponse, FillInTheBlank } from './helper-game-objects';
@@ -42,7 +41,7 @@ export default function MixedReview({ chapterIndex, setSection }) {
 
     useEffect(() => {
         if (currResult) {
-            // setNumCorrect(numCorrect + 1);
+            setNumCorrect(numCorrect + 1);
         }
     }, [answered]);
     
@@ -229,7 +228,6 @@ export default function MixedReview({ chapterIndex, setSection }) {
         setAnswered(false);
         setCurrentResult(null);
         setPrev(prev + 1);
-        setNumCorrect(numCorrect + 1);
         setNumCompleted(numCompleted + 1);
     };
 

@@ -35,6 +35,13 @@
 .mascot-container {
   height: 120px;
   width: 90px;
+  
+  min-height: 120px;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -101,11 +108,68 @@
 } 
 
 .mascot-nose {
-  border-radius: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 15%;
+  margin: 2px 0;
+}
+
+.mascot-nose.small {
+  width: 20%;
+  height: 12%;
+}
+
+.mascot-nose.medium {
+  width: 25%;
+  height: 15%;
+}
+
+.mascot-nose.large {
   width: 30%;
-  background-color: #ecc05a;
-  height: 20%;
-  border-bottom: #000 solid 5px;
+  height: 18%;
+}
+
+.mascot-nose-bridge {
+  width: 60%;
+  height: 40%;
+  background-color: #b78e2f;
+  border-radius: 50% 50% 0 0;
+  /* border: 2px solid #000000; */
+  border-bottom: none;
+  position: relative;
+  z-index: 2;
+}
+
+.mascot-nose-tip {
+  width: 80%;
+  height: 60%;
+  background-color: #b78e2f;
+  border-radius: 50% 50% 50% 50%;
+  /* border: 2px solid #000000; */
+  position: relative;
+  z-index: 1;
+  margin-top: -2px;
+}
+
+.mascot-nostrils {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  z-index: 3;
+}
+
+.mascot-nostril {
+  width: 25%;
+  height: 30%;
+  background-color: #2c1810;
+  border-radius: 50%;
+  border: 1px solid #1a0f0a;
 }
 
 .mascot-mouth-container {
@@ -134,9 +198,6 @@
   width: 20%;
   border-bottom: #000 solid 5px;
 }
-
-
-
 
 /* SIMPLE CARD */
 .simple-card-container {
@@ -349,16 +410,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
 
 .multiple-choice-options {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   align-items: center;
   justify-content: center;
-  padding-top: 10px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .multiple-choice-question {
@@ -393,7 +455,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #fa5230, rgb(247, 151, 124), #ffd9c6)
+  background: linear-gradient(to bottom, #7a87f7, rgb(126, 176, 251), #c3ceff)
 }
 
 .mixed-review-score-container {
@@ -405,10 +467,11 @@
 }
 
 .mixed-review-continue {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .mixed-review-quiz-card {
+  box-sizing: border-box;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -430,22 +493,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
 
 .mr-text-response-question {
+  box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  text-align: center;
   border-radius: 5px;
   width: 100%;
-  height: 20%;
-  margin: 10px;
-  min-height: 100px;
-  background-color: #f56e4f;
-  color: white;
+  /* background-color: #5563ff; */
+  /* color: white; */
+  /* border-bottom: solid rgb(12, 12, 134) 8px; */
+  /* box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -4px -4px 12px rgba(255,255,255,0.4); */
+}
+
+.mr-text-response-question-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
 }
 
 .mr-text-response-answer {
@@ -454,19 +522,18 @@
   align-items: center;
   justify-content: center;
   padding-top: 10px;
-  width: 80%;
-  
+  width: 100%;
 }
 
 .mr-text-response-textfield {
+  box-sizing: border-box;
   width: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
   border-style: solid;
-  border-bottom-width: 10px;
-  border-right-width: 10px;
-  border-top-width: 3px;
-  border-left-width: 3px;
-  border-radius: 5px;
-  border-color: #a4b0be;
+  border-width: 3px;
+  border-radius: 12px;
+  border-color: #6e7ce6;
 }
 
 .mr-text-response-modal-container {
@@ -1028,6 +1095,7 @@
 
 .sentence-word-button.selected {
   box-shadow: 0px 0px 1px 0px;
+  padding: 5px;
 }
 
 .sentence-continue-button-container {
@@ -1038,9 +1106,13 @@
   font-weight: bold;
   padding-top: 20px;
   padding-bottom:20px;
-  background-color: #f56e4f;
-  color: white;
-  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+  border-radius: 12px;
+  background-color: #899bff;
+  border-bottom: solid 8px #381c89;
+  box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -4px -4px 12px rgba(255,255,255,0.4);
 }
 
 .sentence-validation-top-row {

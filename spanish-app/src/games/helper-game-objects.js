@@ -9,12 +9,13 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import SpeechButton from "../speech";
 import { processText } from "./ui-objects";
+import Mascot from "../mascot";
 //******************************************************************************** */
 // Multiple Choice
 
 //******************************************************************************** */
  
-export function MultipleChoice({ setResult, question, options, answerIndex, onAnswered, questionInSpanish}) {
+export function MultipleChoice({ setResult, question, options, answerIndex, onAnswered, questionInSpanish, noLetters}) {
   const [correctIndex, setCorrectIndex] = useState(null);
   const [incorrectIndex, setIncorrectIndex] = useState(null);
   const [answered, setAnswered] = useState(false);
@@ -35,31 +36,35 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
 
   const selectColor = (index) => {
     if (!answered) return 'white';
-    if (index === correctIndex) return 'rgb(88, 191, 83)';
-    if (index === incorrectIndex) return 'rgb(229, 65, 65)';
+    if (index === correctIndex) return 'rgb(165, 230, 161)';
+    if (index === incorrectIndex) return 'rgb(240, 128, 128)';
     return 'white';
   };
 
   const selectBorderColor = (index) => {
-    if (!answered) return 'primary';
-    if (index === correctIndex) return 'rgb(13, 140, 24)';
-    if (index === incorrectIndex) return 'rgb(215, 41, 41)';
-    return 'primary';
+    if (!answered) return 'rgb(186, 186, 186)';
+    if (index === correctIndex) return 'rgb(56, 172, 68)';
+    if (index === incorrectIndex) return 'rgb(185, 36, 36)';
+    return 'rgb(186, 186, 186)';
   };
 
   const selectTextColor = (index) => {
     if (!answered) return 'black';
-    if (index === correctIndex) return 'white';
-    if (index === incorrectIndex) return 'white';
+    if (index === correctIndex) return 'rgb(16, 76, 13)';
+    if (index === incorrectIndex) return 'rgb(81, 10, 10)';
     return 'black';
   };
 
   const selectLetter = (index) => {
     const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+    if (noLetters) {
+      return <></>
+    }
     return (
-      <div className="multiple-choice-letter-container">
-        <Typography align='center'>{letters[index]}</Typography>
-      </div>
+      // <div className="multiple-choice-letter-container">
+      //   <Typography sx={{color: selectTextColor(index)}} align={'left'}>{noLetters && letters[index]}</Typography>
+      // </div>
+      <></>
     )
   }
 
@@ -82,16 +87,19 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
   return (
     <div className="multiple-choice-container">
 
-      <div className="multiple-choice-question">
+      <div className="mr-text-response-question">
+        <Mascot speaking></Mascot>
+        <div className='mr-text-response-question-text'>
         <SpeechButton text={question} inSpanish={questionInSpanish}></SpeechButton>
-        <Typography align="center" sx={{fontWeight:'bold'}}>{question}</Typography>
+        <Typography align="left" sx={{fontWeight:'bold'}}>{question}</Typography>
+        </div>
       </div>
       
       
 
 
       <Box sx={{flexGrow: 1, width: '100%', justifyContent: 'center', display: 'flex',  height: '40%', color: 'primary' }}>
-        <Grid  sx={{width: '100%'}}container spacing={1}>
+        <Grid  sx={{width: '100%'}}container spacing={0}>
       <div className="multiple-choice-options">
         {options.map((op, i) => (
           <Grid size={8} sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
@@ -105,16 +113,18 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 paddingRight: 1,
-                borderRadius: '8px',
+                borderRadius: '14px',
                 backgroundColor: selectColor(i),
-                borderColor: selectBorderColor(i),
-                color: selectTextColor(i),
-                textTransform: 'none'
+                textTransform: 'none',
+                borderLeft: `2px solid ${selectBorderColor(i)}`,
+                borderRight: `2px solid ${selectBorderColor(i)}`,
+                borderTop: `2px solid ${selectBorderColor(i)}`,
+                borderBottom: `4px solid ${selectBorderColor(i)}`, // combine into one shorthand
               }}
             >
               {selectLetter(i)}
               <div style={{ flexGrow: 1, textAlign: 'center' }}>
-                <Typography>{op}</Typography>
+                <Typography align='left' sx={{color:selectTextColor(i)}}>{op}</Typography>
               </div>
 
               <SpeechButton text={op}  inSpanish={!questionInSpanish}/>
@@ -123,7 +133,7 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
         ))}
         
       </div>
-      {answered && validationModal(options[answerIndex])}
+      {/* {answered && validationModal(options[answerIndex])} */}
       </Grid>
       </Box>
     </div>
@@ -247,8 +257,11 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
     return (
         <div className="mr-text-response-container">
             <div className="mr-text-response-question">
-            <SpeechButton inSpanish={questionInSpanish} text={question}></SpeechButton>
-            <Typography align="center" sx={{fontWeight: 'bold'}} >{question}</Typography>
+              <Mascot></Mascot>
+              <div className="mr-text-response-question-text">
+                <SpeechButton inSpanish={questionInSpanish} text={question}></SpeechButton>
+                <Typography align="left" sx={{fontWeight: 'bold'}} >{question}</Typography>
+              </div>
             </div>
             {textField()}
             {showModal && validationModal()}
@@ -412,8 +425,13 @@ function validationModal() {
   return (
     <>
     <div className='mr-fillblank-container'>
-      <div className='mr-fillblank-question'>
-      {renderLine()}
+      <div className='mr-text-response-question'>
+        <Mascot></Mascot>
+        <div className="mr-text-response-question-text">
+          {renderLine()}
+
+        </div>
+      
       </div>
       
       {textField()}
@@ -540,6 +558,7 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
   return (
       <div className="mr-text-response-container">
           <div className="mr-text-response-question">
+          <Mascot></Mascot>
           <SpeechButton inSpanish={questionInSpanish} text={question} big={true}></SpeechButton>
           </div>
           {textField()}
