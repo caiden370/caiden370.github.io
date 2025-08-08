@@ -9,7 +9,7 @@ import { GameCompletionComponent } from "./helper-conversation-game-objects";
 
 
 
-export default function Story({chapterIndex, setSection}) {
+export default function Story({chapterIndex, setSection, updatePoints}) {
     const [numCorrect, setNumCorrect] = useState(0);
     const [numCompleted, setNumCompleted] = useState(0);
     const [totalQuestions, setTotalQuestions] = useState(15);
@@ -21,6 +21,7 @@ export default function Story({chapterIndex, setSection}) {
     const [totalCount, setTotalCount] = useState(10);
     const [finished, setFinished] = useState(false);
     const [storyIndex, setStoryIndex] = useState(0);
+    const [updated, setUpdated] = useState(false);
 
 
 
@@ -39,6 +40,7 @@ export default function Story({chapterIndex, setSection}) {
             setTotalQuestions(stories[storyI].sentences.length);
             setNumCompleted(0);
             setNumCorrect(0);
+            setUpdated(false);
         }
     }, [chapterIndex]);
 
@@ -167,6 +169,7 @@ export default function Story({chapterIndex, setSection}) {
         setTotalQuestions(jsonContent[storyI].sentences.length);
         setNumCompleted(0);
         setNumCorrect(0);
+        setUpdated(false);
     }
     
 
@@ -174,6 +177,10 @@ export default function Story({chapterIndex, setSection}) {
 
 
     if (finished) {
+        if (!updated) {
+            setUpdated(true);
+            updatePoints(numCorrect, numCorrect);
+        }
         return <div className="conversation-component-outer-container">
             <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
             <div className='finished-row'>

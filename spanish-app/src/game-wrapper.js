@@ -8,7 +8,7 @@ import WordSearch from "./games/word-search"
 import SentencePractice from "./games/sentence";
 import Story from "./games/story";
 
-export default function GameWrapper({gameId, chapterIndex, setSection}) {
+export default function GameWrapper({gameId, chapterIndex, setSection, updatePoints}) {
     
     
     function gameSelection(gameId, chapterIndex) {
@@ -20,17 +20,17 @@ export default function GameWrapper({gameId, chapterIndex, setSection}) {
         const game6 = '6'      
         switch (gameId) {
             case game1:
-                return (<MixedReview chapterIndex={chapterIndex} setSection={setSection}/>);
+                return (<MixedReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints}/>);
             case game2:
-                return (<AudioReview chapterIndex={chapterIndex} setSection={setSection}/>);
+                return (<AudioReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints} />);
             case game3:
-                return (<Conversations chapterIndex={chapterIndex} audioOnly={false} setSection={setSection}></Conversations>)
+                return (<Conversations chapterIndex={chapterIndex} audioOnly={false} setSection={setSection} updatePoints={updatePoints}></Conversations>)
             case game4:
-                return (<WordSearch chapterIndex={chapterIndex} setSection={setSection}></WordSearch>)
+                return (<WordSearch chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints}></WordSearch>)
             case game5: 
-                return (<SentencePractice chapterIndex={chapterIndex} setSection={setSection}></SentencePractice>)
+                return (<SentencePractice chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints}></SentencePractice>)
             case game6:
-                return (<Story chapterIndex={chapterIndex} setSection={setSection}></Story>)
+                return (<Story chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints}></Story>)
             
         }
     }

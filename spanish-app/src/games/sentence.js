@@ -5,7 +5,7 @@ import { generateRandomIndicesDupless } from './ui-objects';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { ProgressBar } from './ui-objects';
-import SpeechButton from '../speech';
+import SpeechButton, { playCorrectSound, playIncorrectSound } from '../speech';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
 import Mascot from '../mascot';
 
@@ -15,7 +15,7 @@ import Mascot from '../mascot';
 //Sentence Practice Component
 //******************************************************************************** */
 
-export default function SentencePractice ({chapterIndex, setSection}) {
+export default function SentencePractice ({chapterIndex, setSection, updatePoints}) {
     const [numCompleted, setNumCompleted] = useState(0);
     const [numCorrect, setNumCorrect] = useState(0);
     const totalQuestions = 10;
@@ -24,6 +24,7 @@ export default function SentencePractice ({chapterIndex, setSection}) {
     const [jsonContent, setJsonContent] = useState(null);
     const [answered, setAnswered] = useState(false);
     const [finished, setFinished] = useState(false);
+    const [updated, setUpdated] = useState(false);
 
     useEffect(() => {
         const conversations = learningContent[chapterIndex.toString()]?.conversations;
@@ -35,6 +36,7 @@ export default function SentencePractice ({chapterIndex, setSection}) {
             setAnswered(false);
             setFinished(false);
             setCurResult(false);
+            setUpdated(false);
         }
     }, [chapterIndex]);
 
@@ -134,11 +136,19 @@ export default function SentencePractice ({chapterIndex, setSection}) {
         setFinished(false);
         setNumCompleted(0);
         setNumCorrect(0);
+        setUpdated(false);
     }
 
 
 
     if (finished) {
+
+        if (!updated) {
+            updatePoints(numCorrect, numCorrect);
+            setUpdated(true);
+        }
+
+
         return <div className="conversation-component-outer-container">
         <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
         <div className='finished-row'>
@@ -258,9 +268,11 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
         if (checkSentence()) {
             setCorrect(true);
             setResult(true);
+            playCorrectSound();
         } else {
             setCorrect(false);
             setResult(false);
+            playIncorrectSound();
         }
         
     }

@@ -1,54 +1,89 @@
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { IconButton } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
-import * as Tone from 'tone'; // Import Tone.js
+import * as Tone from 'tone';
 
 /**
- * Plays a short, pleasant "ding" sound for correct feedback.
+ * Plays a "checkmark" sound - two ascending notes like "ding dong" ✓
  */
 export function playCorrectSound() {
   // Ensure Tone.js audio context is started on user interaction
-  // This is crucial for audio to play in modern browsers
   if (Tone.context.state !== 'running') {
     Tone.start();
   }
-  // Create a simple synth
-  const synth = new Tone.Synth().toDestination();
+
+  // Create a bright, playful synth
+  const synth = new Tone.Synth({
+    oscillator: {
+      type: 'triangle'
+    },
+    envelope: {
+      attack: 0.01,
+      decay: 0.15,
+      sustain: 0.1,
+      release: 0.3
+    }
+  }).toDestination();
+
+  // Add some sparkle with reverb
+  const reverb = new Tone.Reverb({
+    decay: 0.6,
+    wet: 0.2
+  }).toDestination();
+
+  synth.connect(reverb);
+
   const now = Tone.now();
 
-  // Play a short, rising arpeggio
-  synth.triggerAttackRelease("C5", "8n", now);
-  synth.triggerAttackRelease("E5", "8n", now + 0.1);
-  synth.triggerAttackRelease("G5", "8n", now + 0.2);
-  synth.triggerAttackRelease("C6", "8n", now + 0.3);
+  // Two ascending notes - like drawing a checkmark ✓
+  synth.triggerAttackRelease("E5", "16n", now);       // ding
+  synth.triggerAttackRelease("B5", "8n", now + 0.12); // dong (perfect fifth up)
 
-  // Dispose of the synth after a short delay to free up resources
-  // This prevents memory leaks and ensures clean audio state
   setTimeout(() => {
+    reverb.dispose();
     synth.dispose();
-  }, 500);
+  }, 700);
 }
 
+
 /**
- * Plays a short, dissonant sound for incorrect feedback.
+ * Plays a "do dun" error sound - two descending notes (gentle disappointment)
  */
 export function playIncorrectSound() {
   // Ensure Tone.js audio context is started on user interaction
   if (Tone.context.state !== 'running') {
     Tone.start();
   }
-  // Create a simple synth
-  const synth = new Tone.Synth().toDestination();
+
+  // Create a softer, warmer synth
+  const synth = new Tone.Synth({
+    oscillator: {
+      type: 'sine'
+    },
+    envelope: {
+      attack: 0.02,
+      decay: 0.15,
+      sustain: 0.2,
+      release: 0.3
+    }
+  }).toDestination();
+
+  // Gentle filtering to keep it soft
+  const filter = new Tone.Filter({
+    frequency: 1000,
+    type: 'lowpass'
+  }).toDestination();
+
+  synth.connect(filter);
+
   const now = Tone.now();
 
-  // Play a short, falling, slightly dissonant chord
-  synth.triggerAttackRelease("C4", "8n", now);
-  synth.triggerAttackRelease("B3", "8n", now + 0.1);
-  synth.triggerAttackRelease("A3", "8n", now + 0.2);
-  synth.triggerAttackRelease("G#3", "8n", now + 0.3);
+  // Two descending notes - "do dun" pattern
+  synth.triggerAttackRelease("G4", "16n", now);       // do (higher)
+  synth.triggerAttackRelease("D4", "8n", now + 0.12); // dun (perfect fourth down)
 
-  // Dispose of the synth after a short delay
   setTimeout(() => {
+    filter.dispose();
     synth.dispose();
   }, 500);
 }

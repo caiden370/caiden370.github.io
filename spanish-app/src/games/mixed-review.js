@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 import { ProgressBar } from './ui-objects';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
 
-export default function MixedReview({ chapterIndex, setSection }) {
+export default function MixedReview({ chapterIndex, setSection, updatePoints }) {
     const [jsonContent, setJsonContent] = useState(null);
     const [currResult, setCurrentResult] = useState(null);
     const [answered, setAnswered] = useState(false);
@@ -25,6 +25,7 @@ export default function MixedReview({ chapterIndex, setSection }) {
     const importAll = (r) => r.keys().map(r);
     const images = importAll(require.context('../static/avatars', false, /\.(png|jpe?g|svg)$/));
     const [finished, setFinished] = useState(false);
+    const [updated, setUpdated] = useState(false)
 
     useEffect(() => {
         const words = learningContent[chapterIndex.toString()]?.words;
@@ -35,6 +36,7 @@ export default function MixedReview({ chapterIndex, setSection }) {
             setQuestionComponent(component);
             setFinished(false);
             setNumCompleted(0);
+            setUpdated(false);
         }
     }, [chapterIndex]);
 
@@ -267,10 +269,16 @@ export default function MixedReview({ chapterIndex, setSection }) {
         setPrev(0);
         setNumCorrect(0);
         setNumCompleted(0);
+        setUpdated(false);
     }
 
 
     if (finished) {
+        if(!updated) {
+            updatePoints(numCorrect, numCorrect);
+            setUpdated(true);
+        }
+
         return  (<div className="conversation-component-outer-container">
         <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
         <div className='finished-row'>

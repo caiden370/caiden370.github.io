@@ -7,7 +7,7 @@ import { AudioExactTextResponse } from './helper-game-objects';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
 
 
-export default function AudioReview({chapterIndex, setSection }) {
+export default function AudioReview({chapterIndex, setSection, updatePoints }) {
     const [numCorrect, setNumCorrect] = useState(0);
     const [numCompleted, setNumCompleted] = useState(0);
     const totalQuestions = 10;
@@ -17,6 +17,7 @@ export default function AudioReview({chapterIndex, setSection }) {
     const [jsonContent, setJsonContent] = useState(null);
     const [answered, setAnswered] = useState(false);
     const [prev, setPrev] = useState(0);
+    const [updated, setUpdated] = useState(false);
 
 
 
@@ -28,6 +29,7 @@ export default function AudioReview({chapterIndex, setSection }) {
             const content = generateNextQuestionContent(words);
             const component = buildNextQuestionComponent(content);
             setQuestionComponent(component);
+            setUpdated(false);
         }
     }, [chapterIndex]);
 
@@ -122,14 +124,20 @@ export default function AudioReview({chapterIndex, setSection }) {
         setNumCorrect(0);
         setPrev(0);
         setCurrentResult(null);
+        setUpdated(false);
     }
 
     function handleQuit() {
-        setSection('MenuGame')
+        setSection('MenuGame');
     }
 
 
     if (finished) {
+
+        if (!updated) {
+            setUpdated(true);
+            updatePoints(numCorrect, numCorrect);
+        }
         return  (<div className="conversation-component-outer-container">
         <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
         <div className='finished-row'>

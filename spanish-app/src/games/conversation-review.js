@@ -7,7 +7,7 @@ import { AudioExactTextResponse } from './helper-game-objects';
 import { ConversationMultiChoice } from './helper-conversation-game-objects';
 
 
-export default function Conversations({chapterIndex, audioOnly, setSection}) {
+export default function Conversations({chapterIndex, audioOnly, setSection, updatePoints}) {
     const [numCorrect, setNumCorrect] = useState(0);
     const [currResult, setCurrentResult] = useState(null);
     const [questionComponent, setQuestionComponent] = useState(null);
@@ -17,6 +17,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection}) {
     const [totalCount, setTotalCount] = useState(10);
     const [scoreBarComponent, setScoreBarComponent] = useState(scoreBar(0));
     const [finished, setFinished] = useState(false);
+    const [updated, setUpdated] = useState(false);
 
     useEffect(() => {
         const conversations = learningContent[chapterIndex.toString()]?.conversations;
@@ -29,12 +30,14 @@ export default function Conversations({chapterIndex, audioOnly, setSection}) {
             setNumCorrect(0);
             setAnswered(false);
             setFinished(false);
+            setUpdated(false);
         }
     }, [chapterIndex]);
 
 
-    function handleOnAnswer(progress) {
+    function handleOnAnswer(progress, numCorrect) {
         setScoreBarComponent(scoreBar(progress));
+        setNumCorrect(numCorrect);
     }
 
     
@@ -48,6 +51,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection}) {
         setFinished(false);
         setNumCorrect(0);
         setScoreBarComponent(scoreBar(0));
+        setUpdated(false);
     };
 
     function generateNextQuestionContent(conversationsArray) {
@@ -124,6 +128,12 @@ export default function Conversations({chapterIndex, audioOnly, setSection}) {
                 </Button>
             </div>
         );
+    }
+
+    if(finished && !updated) {
+        alert('updating');
+        updatePoints(numCorrect, numCorrect);
+        setUpdated(true);
     }
 
     return (

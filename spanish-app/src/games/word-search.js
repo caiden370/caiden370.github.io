@@ -3,6 +3,7 @@ import { useState, useEffect, use } from "react";
 import "../App.css"
 import learningContent from '../json-files/learningContent.json';
 import {Button} from "@mui/material";
+import { playCorrectSound, playIncorrectSound } from "../speech";
 
 
 
@@ -150,7 +151,7 @@ export function LetterGrid({words, Height, Width, onFinished, maxMisses}) {
                 return false;
             }
             for (let c = startC; c < word.length + startC; c++) {
-                if (booleanArray[startR][c] && letterArray[startR][c] != word[c - startC]) {
+                if (booleanArray[startR][c] ) { //&& letterArray[startR][c] != word[c - startC]
                     return false
                 }
             }
@@ -166,7 +167,7 @@ export function LetterGrid({words, Height, Width, onFinished, maxMisses}) {
                 return false;
             }
             for (let r = startR; r < word.length + startR; r++) {
-                if (booleanArray[r][startC] && letterArray[r][startC] != word[r - startR]) {
+                if (booleanArray[r][startC]) {  //&& letterArray[r][startC] != word[r - startR]
                     return false
                 }
             }
@@ -218,11 +219,13 @@ export function LetterGrid({words, Height, Width, onFinished, maxMisses}) {
             });
             if (completedWordsTracker[wordIndex] === 1) {
                 setWordsFound(wordsFound + 1);
+                playCorrectSound();
             }
             
             setCorrectClicks(prev => prev + 1);
         } else {
             setMisClicks(prev => prev + 1);
+            playIncorrectSound();
         }
     }
 
@@ -353,7 +356,7 @@ export function GameCompletionWordSearchComponent({ numFound, numMisses, maxMiss
 // Word Search Component
 // ************************************************************************************
 
-export default function WordSearch({chapterIndex, setSection}) {
+export default function WordSearch({chapterIndex, setSection, updatePoints}) {
     const [jsonContent, setJsonContent] = useState(null);
     const [wordSearchComponent, setWordSearchComponent] = useState(null);
     const Height = 11;
@@ -361,6 +364,7 @@ export default function WordSearch({chapterIndex, setSection}) {
     const [finished, setFinished] = useState(false);
     const [misses, setMisses] = useState(0);
     const [found, setFound] = useState(0);
+    const [updated, setUpdated] = useState(false);
     const maxMisses = 5;
 
     
@@ -374,6 +378,7 @@ export default function WordSearch({chapterIndex, setSection}) {
             setFinished(false);
             setMisses(0);
             setFound(0);
+            setUpdated(false);
         }
     }, [chapterIndex]);
 
@@ -435,12 +440,17 @@ export default function WordSearch({chapterIndex, setSection}) {
         setFound(0);
         let component = renderWordSearchComponent(processWords(jsonContent));
         setWordSearchComponent(component);
+        setUpdated(false);
     }
 
 
 
 
     if (finished) {
+        if (!updated) {
+            setUpdated(true);
+            updatePoints(found, found);
+        }
         return (
         <div className="conversation-component-outer-container">
                 <GameCompletionWordSearchComponent

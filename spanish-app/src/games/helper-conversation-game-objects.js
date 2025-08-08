@@ -308,7 +308,7 @@ export function ConversationMultiChoice({topic, dialog, questions, audioOnly, on
     function handleNextMCQ() {
         if (onAnswered && currQuestionIndex > 0) {
             setProgressSteps(progresSteps + 1);
-            onAnswered(progresSteps + 1);
+            onAnswered(progresSteps + 1, numCorrect);
         }
         if (currQuestionIndex >= questions.length) {
             setFinished(true);

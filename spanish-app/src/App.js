@@ -24,9 +24,13 @@ function App() {
   const [gameId, setGameId] = useState('1');
 
   // STATS TRACKING
-  const [coins, setCoins] = useState(100);
-  const [experience, setExperience] = useState(120);
+  function safeGetItem(key) {
+    return Number(localStorage.getItem(key)) | 0;
+  }
 
+
+  const [coins, setCoins] = useState(safeGetItem('coins'));
+  const [experience, setExperience] = useState(safeGetItem('experience'));
 
   function changePage() {
     switch (navSelection) {
@@ -43,7 +47,7 @@ function App() {
         setPageContent(<GameMenu chapterIndex={chapterIndex} setGameId={setGameId} setSection={setNavSelection}></GameMenu>); 
         break;    
       case game:
-        setPageContent(<GameWrapper gameId={gameId} chapterIndex={chapterIndex} setSection={setNavSelection}></GameWrapper>);
+        setPageContent(<GameWrapper gameId={gameId} chapterIndex={chapterIndex} setSection={setNavSelection} updatePoints={updatePoints}></GameWrapper>);
         break;
     }    
   }
@@ -52,6 +56,23 @@ function App() {
     changePage();
     
   }, [navSelection]);
+
+  useEffect(() => {
+    localStorage.setItem('coins', String(coins));
+    localStorage.setItem('experience', String(experience));
+
+  }, [coins, experience])
+
+
+  function updatePoints(coinsInc, expInc) {
+    setCoins(Number(localStorage.getItem('coins')) + coinsInc);
+    setExperience(Number(localStorage.getItem('experience')) + expInc);
+  }
+
+
+
+
+
 
   return (
     <div className="App">
