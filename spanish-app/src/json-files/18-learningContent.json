@@ -1,0 +1,282 @@
+{
+    "18": {
+      "words": [
+        { "spanish": "Bonito(a)", "english": "Pretty" },
+        { "spanish": "Guapo(a)", "english": "Handsome" },
+        { "spanish": "Hermoso(a)", "english": "Beautiful" },
+        { "spanish": "Inteligente", "english": "Smart" },
+        { "spanish": "Amable", "english": "Kind" },
+        { "spanish": "Gracioso(a)", "english": "Funny" },
+        { "spanish": "Simpático(a)", "english": "Nice, friendly" },
+        { "spanish": "Talentoso(a)", "english": "Talented" },
+        { "spanish": "Trabajador(a)", "english": "Hard-working" },
+        { "spanish": "Creativo(a)", "english": "Creative" },
+        { "spanish": "Genial", "english": "Great" },
+        { "spanish": "Increíble", "english": "Incredible" },
+        { "spanish": "Maravilloso(a)", "english": "Wonderful" },
+        { "spanish": "Educado(a)", "english": "Polite" },
+        { "spanish": "Atento(a)", "english": "Attentive" },
+        { "spanish": "Tu cabello", "english": "Your hair" },
+        { "spanish": "Tu ropa", "english": "Your clothes" },
+        { "spanish": "Tu sonrisa", "english": "Your smile" },
+        { "spanish": "Me gusta tu...", "english": "I like your..." },
+        { "spanish": "Qué bien te ves", "english": "You look great" },
+        { "spanish": "Haces un gran trabajo", "english": "You do a great job" },
+        { "spanish": "Cantas muy bien", "english": "You sing very well" },
+        { "spanish": "Cocinas delicioso", "english": "You cook deliciously" },
+        { "spanish": "Me encanta cómo te vistes", "english": "I love how you dress" },
+        { "spanish": "Qué buena persona eres", "english": "What a good person you are" },
+        { "spanish": "Tu trabajo es impecable", "english": "Your work is impeccable" },
+        { "spanish": "Gracias", "english": "Thank you" },
+        { "spanish": "Muchas gracias", "english": "Thank you very much" },
+        { "spanish": "Te lo agradezco mucho", "english": "I really appreciate it" },
+        { "spanish": "Qué amable", "english": "How kind" },
+        { "spanish": "De nada", "english": "You're welcome" },
+        { "spanish": "Tú también", "english": "You too" },
+        { "spanish": "No es para tanto", "english": "It's not a big deal" },
+        { "spanish": "Tú también lo eres", "english": "You are too" },
+        { "spanish": "Es un placer", "english": "It's a pleasure" },
+        { "spanish": "En serio", "english": "Seriously" },
+        { "spanish": "Me haces reír", "english": "You make me laugh" },
+        { "spanish": "El esfuerzo", "english": "The effort" },
+        { "spanish": "El gusto", "english": "The taste" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Complido sobre la apariencia",
+          "dialog": [
+            { "speaker": "Ana", "spanish": "Hola, María. ¡Qué bien te ves hoy! Me gusta tu vestido.", "english": "Hello, María. You look great today! I like your dress." },
+            { "speaker": "María", "spanish": "¡Gracias, Ana! Eres muy amable. Tú también te ves muy bien.", "english": "Thank you, Ana! You are very kind. You look very good too." },
+            { "speaker": "Ana", "spanish": "Gracias. El color te queda perfecto. Tu cabello también es muy bonito.", "english": "Thank you. The color looks perfect on you. Your hair is also very pretty." },
+            { "speaker": "María", "spanish": "Qué amable. Me alegra que te guste.", "english": "How kind. I'm glad you like it." },
+            { "speaker": "Ana", "spanish": "En serio. Deberías usarlo más a menudo.", "english": "Seriously. You should wear it more often." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le dice Ana a María?",
+              "options": ["Que su vestido es feo", "Que no le gusta su vestido", "Que su vestido es bonito", "Que no se ve bien"],
+              "answer": "Que su vestido es bonito",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Cómo se siente María?",
+              "options": ["Enojada", "Triste", "Agradecida", "Confundida"],
+              "answer": "Agradecida",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'Qué bien te ves hoy'?",
+              "options": ["You look great today", "You look bad today", "You are not here today", "You are busy today"],
+              "answer": "You look great today",
+              "answerIndex": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Complido sobre una habilidad",
+          "dialog": [
+            { "speaker": "Sofía", "spanish": "¡Esta cena está deliciosa, Javier! Cocinas increíblemente bien.", "english": "This dinner is delicious, Javier! You cook incredibly well." },
+            { "speaker": "Javier", "spanish": "Gracias, me alegro que te guste. Es mi receta favorita.", "english": "Thank you, I'm glad you like it. It's my favorite recipe." },
+            { "speaker": "Sofía", "spanish": "Deberías abrir un restaurante. En serio, tienes mucho talento.", "english": "You should open a restaurant. Seriously, you have a lot of talent." },
+            { "speaker": "Javier", "spanish": "Eso sería divertido, pero solo me gusta cocinar para mis amigos.", "english": "That would be fun, but I only like to cook for my friends." },
+            { "speaker": "Sofía", "spanish": "Pues tienes mucha suerte de ser mi amigo. ¡Eres un gran chef!", "english": "Well, you are very lucky to be my friend. You are a great chef!" }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué habilidad de Javier está elogiando Sofía?",
+              "options": ["Su habilidad para cantar", "Su habilidad para cocinar", "Su habilidad para pintar", "Su habilidad para bailar"],
+              "answer": "Su habilidad para cocinar",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le sugiere Sofía a Javier?",
+              "options": ["Que deje de cocinar", "Que cocine más a menudo", "Que abra un restaurante", "Que le enseñe a cocinar"],
+              "answer": "Que abra un restaurante",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'Cocinas increíblemente bien'?",
+              "options": ["You cook badly", "You cook a lot", "You cook incredibly well", "You don't cook"],
+              "answer": "You cook incredibly well",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Complido sobre la personalidad",
+          "dialog": [
+            { "speaker": "Laura", "spanish": "Siempre me haces reír, Marcos. Eres muy gracioso.", "english": "You always make me laugh, Marcos. You are very funny." },
+            { "speaker": "Marcos", "spanish": "Gracias, Laura. Me gusta hacer reír a mis amigos.", "english": "Thank you, Laura. I like to make my friends laugh." },
+            { "speaker": "Laura", "spanish": "También eres muy inteligente. Me gusta hablar contigo.", "english": "You are also very smart. I like talking with you." },
+            { "speaker": "Marcos", "spanish": "Qué amable. Pienso que eres muy simpática.", "english": "How kind. I think you are very nice." },
+            { "speaker": "Laura", "spanish": "¡Gracias! De verdad me alegras el día.", "english": "Thank you! You really make my day." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué personalidad de Marcos está elogiando Laura?",
+              "options": ["Que es aburrido", "Que es serio", "Que es gracioso e inteligente", "Que es malo"],
+              "answer": "Que es gracioso e inteligente",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'Me haces reír'?",
+              "options": ["You make me sad", "You make me laugh", "You make me angry", "You make me hungry"],
+              "answer": "You make me laugh",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le responde Marcos a Laura?",
+              "options": ["Le dice que no es gracioso", "Le dice que es simpática", "Le dice que es aburrida", "Le dice que no le gusta hablar"],
+              "answer": "Le dice que es simpática",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Complido en el trabajo",
+          "dialog": [
+            { "speaker": "Jefe", "spanish": "Juan, quiero felicitarte por el trabajo. Haces un gran trabajo.", "english": "Juan, I want to congratulate you on your work. You do a great job." },
+            { "speaker": "Juan", "spanish": "Gracias, jefe. Es un placer trabajar aquí.", "english": "Thank you, boss. It's a pleasure to work here." },
+            { "speaker": "Jefe", "spanish": "Eres muy trabajador y creativo. El proyecto es un éxito gracias a ti.", "english": "You are very hard-working and creative. The project is a success thanks to you." },
+            { "speaker": "Juan", "spanish": "Gracias. Mis compañeros me ayudaron mucho también.", "english": "Thank you. My colleagues helped me a lot too." },
+            { "speaker": "Jefe", "spanish": "Sí, pero tú eres un gran líder. Enhorabuena.", "english": "Yes, but you are a great leader. Congratulations." }
+          ],
+          "questions": [
+            {
+              "question": "¿Por qué el jefe felicita a Juan?",
+              "options": ["Porque es simpático", "Porque es puntual", "Por su gran trabajo", "Porque es gracioso"],
+              "answer": "Por su gran trabajo",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué dice el jefe sobre Juan?",
+              "options": ["Que es perezoso", "Que es un gran líder", "Que es un mal compañero", "Que es desorganizado"],
+              "answer": "Que es un gran líder",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Haces un gran trabajo'?",
+              "options": ["You don't work", "You do a great job", "You work a lot", "You are lazy"],
+              "answer": "You do a great job",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Intercambiando cumplidos",
+          "dialog": [
+            { "speaker": "Luis", "spanish": "¡Qué bonita tu casa, Sandra! Está muy bien decorada.", "english": "Your house is so pretty, Sandra! It's very well decorated." },
+            { "speaker": "Sandra", "spanish": "Gracias, Luis. Me gusta que te guste. Tu camisa es muy bonita también.", "english": "Thank you, Luis. I'm glad you like it. Your shirt is very pretty too." },
+            { "speaker": "Luis", "spanish": "Qué amable. Me la regaló mi hermana.", "english": "How kind. My sister gave it to me as a gift." },
+            { "speaker": "Sandra", "spanish": "Ella tiene buen gusto. Pienso que eres muy inteligente.", "english": "She has good taste. I think you are very smart." },
+            { "speaker": "Luis", "spanish": "¡Gracias! Tú eres la más inteligente que conozco.", "english": "Thank you! You are the smartest person I know." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué cumplido le da Luis a Sandra?",
+              "options": ["Sobre su comida", "Sobre su casa", "Sobre su coche", "Sobre su trabajo"],
+              "answer": "Sobre su casa",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le responde Sandra a Luis?",
+              "options": ["Le dice que su casa no es bonita", "Le dice que su camisa es bonita", "Le dice que su hermana es inteligente", "Le dice que no le gusta"],
+              "answer": "Le dice que su camisa es bonita",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Tu camisa es muy bonita también'?",
+              "options": ["I like your shirt", "Your shirt is very pretty too", "Your shirt is not pretty", "Your shirt is old"],
+              "answer": "Your shirt is very pretty too",
+              "answerIndex": 1
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "El Nuevo Vestido",
+          "sentences": [
+            {
+              "spanish": "Hoy me puse un vestido nuevo. Me gusta mucho porque el color es vibrante.",
+              "english": "Today I put on a new dress. I like it a lot because the color is vibrant."
+            },
+            {
+              "spanish": "Mi amiga, Carolina, me vio y me dijo, '¡Qué bien te ves! Tu vestido es hermoso'.",
+              "english": "My friend, Carolina, saw me and said, 'You look great! Your dress is beautiful'."
+            },
+            {
+              "spanish": "Yo le respondí, 'Gracias, qué amable'. Su cumplido me hizo sonreír todo el día.",
+              "english": "I responded to her, 'Thank you, how kind'. Her compliment made me smile all day."
+            },
+            {
+              "spanish": "Después, un colega en el trabajo me dijo, 'Me gusta tu estilo. Eres muy creativa'.",
+              "english": "Afterwards, a colleague at work said to me, 'I like your style. You are very creative'."
+            },
+            {
+              "spanish": "Me siento muy feliz hoy. Los cumplidos me hacen sentir muy bien.",
+              "english": "I feel very happy today. Compliments make me feel very good."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "El Concurso de Cocina",
+          "sentences": [
+            {
+              "spanish": "Participé en un concurso de cocina. Hice mi plato favorito: paella.",
+              "english": "I participated in a cooking contest. I made my favorite dish: paella."
+            },
+            {
+              "spanish": "El jurado probó mi paella y me dijo, 'Cocinas delicioso. Tienes un gran talento'.",
+              "english": "The jury tried my paella and said to me, 'You cook deliciously. You have a great talent'."
+            },
+            {
+              "spanish": "Yo me puse muy nervioso, pero sus palabras me hicieron sentir contento.",
+              "english": "I got very nervous, but their words made me feel happy."
+            },
+            {
+              "spanish": "Aunque no gané el concurso, me sentí como un ganador. La gente me felicitó.",
+              "english": "Even though I didn't win the contest, I felt like a winner. People congratulated me."
+            },
+            {
+              "spanish": "Mis amigos me dijeron, 'En serio, la paella fue la mejor. Eres el mejor chef'.",
+              "english": "My friends said to me, 'Seriously, the paella was the best. You are the best chef'."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "La Presentación en el Trabajo",
+          "sentences": [
+            {
+              "spanish": "Trabajé muy duro en una presentación para mi jefe. Fui muy trabajador.",
+              "english": "I worked very hard on a presentation for my boss. I was very hard-working."
+            },
+            {
+              "spanish": "Después de la presentación, mi jefe me dijo, 'Haces un gran trabajo. Eres muy inteligente'.",
+              "english": "After the presentation, my boss said to me, 'You do a great job. You are very smart'."
+            },
+            {
+              "spanish": "Yo me sentí muy feliz y orgulloso. También me dijo que soy muy creativo.",
+              "english": "I felt very happy and proud. He also told me that I am very creative."
+            },
+            {
+              "spanish": "Mis colegas me dijeron, 'Nos encantó tu presentación. Eres muy simpático también'.",
+              "english": "My colleagues said to me, 'We loved your presentation. You are very nice too'."
+            },
+            {
+              "spanish": "Fue un día increíble. El trabajo duro y la amabilidad son muy importantes.",
+              "english": "It was an incredible day. Hard work and kindness are very important."
+            }
+          ]
+        }
+      ]
+    }
+}

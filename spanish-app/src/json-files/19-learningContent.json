@@ -1,0 +1,275 @@
+{
+    "19": {
+      "words": [
+        { "spanish": "¿Qué...?", "english": "What...?" },
+        { "spanish": "¿Cómo...?", "english": "How...?" },
+        { "spanish": "¿Cuándo...?", "english": "When...?" },
+        {"spanish": "¿Dónde...?", "english": "Where...?" },
+        { "spanish": "¿Por qué...?", "english": "Why...?" },
+        { "spanish": "¿Quién...?", "english": "Who...?" },
+        { "spanish": "¿A qué te dedicas?", "english": "What do you do for a living?" },
+        { "spanish": "Cuéntame sobre...", "english": "Tell me about..." },
+        { "spanish": "¿Qué opinas de...?", "english": "What's your opinion on...?" },
+        { "spanish": "¿Qué te ha parecido...?", "english": "What did you think of...?" },
+        { "spanish": "¿Qué te gusta hacer en tu tiempo libre?", "english": "What do you like to do in your free time?" },
+        { "spanish": "¿Cuál es tu película favorita?", "english": "What is your favorite movie?" },
+        { "spanish": "¿Cuál es tu mejor recuerdo de la infancia?", "english": "What is your best childhood memory?" },
+        { "spanish": "¿Qué harías si...?", "english": "What would you do if...?" },
+        { "spanish": "¿Has viajado a...?", "english": "Have you traveled to...?" },
+        { "spanish": "¿Cuál es el mejor viaje que has hecho?", "english": "What is the best trip you have taken?" },
+        { "spanish": "¿Qué has aprendido este año?", "english": "What have you learned this year?" },
+        { "spanish": "interesante", "english": "interesting" },
+        { "spanish": "¡Qué bien!", "english": "How great!" },
+        { "spanish": "¿En serio?", "english": "Really?" },
+        { "spanish": "No me digas", "english": "No way!, You don't say!" },
+        { "spanish": "¿Y después?", "english": "And then?" },
+        { "spanish": "Me gustaría saber más", "english": "I would like to know more" },
+        { "spanish": "Cuéntame más", "english": "Tell me more" },
+        { "spanish": "conversar", "english": "to converse" },
+        { "spanish": "compartir", "english": "to share" },
+        { "spanish": "El pasatiempo", "english": "The hobby" },
+        { "spanish": "La experiencia", "english": "The experience" },
+        { "spanish": "La historia", "english": "The story" },
+        { "spanish": "La opinión", "english": "The opinion" },
+        { "spanish": "El futuro", "english": "The future" },
+        { "spanish": "El pasado", "english": "The past" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Conociendo a alguien nuevo",
+          "dialog": [
+            { "speaker": "Elena", "spanish": "Hola, soy Elena. ¿Qué te gusta hacer en tu tiempo libre?", "english": "Hello, I'm Elena. What do you like to do in your free time?" },
+            { "speaker": "Pablo", "spanish": "Hola, soy Pablo. Me gusta mucho leer y escuchar música. ¿Y a ti?", "english": "Hello, I'm Pablo. I really like to read and listen to music. And you?" },
+            { "speaker": "Elena", "spanish": "A mí me gusta pintar. Cuéntame sobre tu música favorita.", "english": "I like to paint. Tell me about your favorite music." },
+            { "speaker": "Pablo", "spanish": "Me gusta la música rock de los 80s. ¿En serio te gusta pintar?", "english": "I like rock music from the 80s. Do you really like to paint?" },
+            { "speaker": "Elena", "spanish": "Sí, es mi pasatiempo favorito. Es muy interesante.", "english": "Yes, it's my favorite hobby. It's very interesting." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le pregunta Elena a Pablo?",
+              "options": ["Su nombre", "Sus planes para el fin de semana", "Sus pasatiempos", "Su trabajo"],
+              "answer": "Sus pasatiempos",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'Cuéntame sobre tu música favorita'?",
+              "options": ["Sing me your favorite music", "Tell me about your favorite music", "What is your favorite music?", "I don't like your music"],
+              "answer": "Tell me about your favorite music",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le responde Pablo sobre su música favorita?",
+              "options": ["Le gusta la música pop", "No le gusta la música", "Le gusta la música rock", "Le gusta la música clásica"],
+              "answer": "Le gusta la música rock",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Hablando de viajes",
+          "dialog": [
+            { "speaker": "Carlos", "spanish": "¡Qué bueno verte! ¿Cuál es el mejor viaje que has hecho?", "english": "It's good to see you! What is the best trip you have taken?" },
+            { "speaker": "Ana", "spanish": "El mejor viaje que he hecho fue a Colombia. ¡Fue increíble!", "english": "The best trip I have taken was to Colombia. It was incredible!" },
+            { "speaker": "Carlos", "spanish": "¿En serio? ¿Cómo fue la experiencia?", "english": "Really? How was the experience?" },
+            { "speaker": "Ana", "spanish": "La comida era deliciosa y la gente muy amable. ¿Y tú, has viajado mucho?", "english": "The food was delicious and the people were very kind. And you, have you traveled much?" },
+            { "speaker": "Carlos", "spanish": "Sí, he viajado a México. Me gustaría saber más sobre Colombia.", "english": "Yes, I have traveled to Mexico. I would like to know more about Colombia." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le pregunta Carlos a Ana?",
+              "options": ["Sobre su trabajo", "Sobre el mejor viaje que ha hecho", "Sobre su comida favorita", "Sobre su familia"],
+              "answer": "Sobre el mejor viaje que ha hecho",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa '¿Cómo fue la experiencia?'?",
+              "options": ["How much did it cost?", "How was the experience?", "When was the experience?", "Why was the experience?"],
+              "answer": "How was the experience?",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le gustó a Ana de su viaje a Colombia?",
+              "options": ["La música y el baile", "La historia y la cultura", "La comida y la gente", "Los museos y los parques"],
+              "answer": "La comida y la gente",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Opiniones sobre la tecnología",
+          "dialog": [
+            { "speaker": "María", "spanish": "He estado pensando en la tecnología. ¿Qué opinas de las redes sociales?", "english": "I've been thinking about technology. What's your opinion on social media?" },
+            { "speaker": "José", "spanish": "Creo que son buenas para conectar con personas, pero también son adictivas.", "english": "I think they are good for connecting with people, but they are also addictive." },
+            { "speaker": "María", "spanish": "Estoy de acuerdo. ¿Por qué crees que son adictivas?", "english": "I agree. Why do you think they are addictive?" },
+            { "speaker": "José", "spanish": "Porque siempre queremos ver qué están haciendo los demás. ¡Qué interesante!", "english": "Because we always want to see what others are doing. How interesting!" },
+            { "speaker": "María", "spanish": "Sí, me gustaría saber más sobre ese tema. Vamos a hablarlo más.", "english": "Yes, I would like to know more about that topic. Let's talk about it more." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le pregunta María a José?",
+              "options": ["Sobre su trabajo", "Sobre el deporte", "Sobre su opinión de las redes sociales", "Sobre su familia"],
+              "answer": "Sobre su opinión de las redes sociales",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa '¿Por qué crees que son adictivas?'?",
+              "options": ["Why do you think they are popular?", "Why do you think they are addictive?", "Why do you think they are good?", "Why do you think they are bad?"],
+              "answer": "Why do you think they are addictive?",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cómo cree José que las redes sociales son buenas?",
+              "options": ["Para ganar dinero", "Para conocer gente nueva", "Para conectar con personas", "Para viajar"],
+              "answer": "Para conectar con personas",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Hablando de metas",
+          "dialog": [
+            { "speaker": "Diego", "spanish": "Hola. ¿Qué quieres lograr en el futuro?", "english": "Hello. What do you want to achieve in the future?" },
+            { "speaker": "Valeria", "spanish": "Quiero ser una artista. Me gustaría viajar y pintar.", "english": "I want to be an artist. I would like to travel and paint." },
+            { "speaker": "Diego", "spanish": "¡Qué bien! ¿Cómo piensas lograrlo?", "english": "How great! How do you plan to achieve it?" },
+            { "speaker": "Valeria", "spanish": "Quiero ir a la universidad para estudiar arte. ¿Y tú, qué quieres hacer?", "english": "I want to go to university to study art. And you, what do you want to do?" },
+            { "speaker": "Diego", "spanish": "Yo quiero trabajar en marketing. Me gustaría saber más sobre tu plan.", "english": "I want to work in marketing. I would like to know more about your plan." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le pregunta Diego a Valeria?",
+              "options": ["Sobre su pasado", "Sobre sus metas futuras", "Sobre su trabajo", "Sobre su familia"],
+              "answer": "Sobre sus metas futuras",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa '¿Cómo piensas lograrlo?'?",
+              "options": ["How do you plan to achieve it?", "When will you achieve it?", "Where will you achieve it?", "Why will you achieve it?"],
+              "answer": "How do you plan to achieve it?",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué quiere hacer Valeria para lograr sus metas?",
+              "options": ["Trabajar en marketing", "Viajar y pintar", "Ser artista", "Estudiar arte en la universidad"],
+              "answer": "Estudiar arte en la universidad",
+              "answerIndex": 3
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Preguntando sobre el pasado",
+          "dialog": [
+            { "speaker": "Mario", "spanish": "He estado pensando en mi pasado. ¿Cuál es un recuerdo de tu infancia que te hace feliz?", "english": "I've been thinking about my past. What is a memory from your childhood that makes you happy?" },
+            { "speaker": "Camila", "spanish": "El recuerdo de jugar con mi abuela en el jardín. Ella era muy graciosa.", "english": "The memory of playing with my grandmother in the garden. She was very funny." },
+            { "speaker": "Mario", "spanish": "¡Qué bien! Me gustaría saber más de ella.", "english": "How great! I would like to know more about her." },
+            { "speaker": "Camila", "spanish": "Ella me enseñó a cocinar. ¿Y tú, qué recuerdo tienes?", "english": "She taught me how to cook. And you, what memory do you have?" },
+            { "speaker": "Mario", "spanish": "El recuerdo de mi perro. Él me hacía reír mucho.", "english": "The memory of my dog. He made me laugh a lot." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le pregunta Mario a Camila?",
+              "options": ["Un recuerdo de su infancia", "Un recuerdo de su trabajo", "Un recuerdo de sus amigos", "Un recuerdo de su perro"],
+              "answer": "Un recuerdo de su infancia",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué significa 'Me gustaría saber más de ella'?",
+              "options": ["I would like to meet her", "I would like to know more about her", "I don't like her", "I want to talk to her"],
+              "answer": "I would like to know more about her",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le hacía feliz a Mario?",
+              "options": ["Su abuela", "Su perro", "Jugar en el jardín", "Cocinar"],
+              "answer": "Su perro",
+              "answerIndex": 1
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "El Nuevo Compañero de Trabajo",
+          "sentences": [
+            {
+              "spanish": "Hoy llegó un nuevo compañero al trabajo. Su nombre es Leo. Quería conocerlo.",
+              "english": "Today a new colleague arrived at work. His name is Leo. I wanted to get to know him."
+            },
+            {
+              "spanish": "Le pregunté, '¿Qué te gusta hacer en tu tiempo libre?'. Él me respondió que le gusta hacer senderismo.",
+              "english": "I asked him, 'What do you like to do in your free time?'. He responded that he likes to go hiking."
+            },
+            {
+              "spanish": "Le dije, '¡Qué interesante! ¿Cuál es la mejor ruta que has hecho?'. Su respuesta fue muy larga y detallada.",
+              "english": "I said to him, 'How interesting! What is the best trail you have done?'. His answer was very long and detailed."
+            },
+            {
+              "spanish": "Me gustaría saber más de su vida, así que le pregunté por su pasado. Fue una buena conversación.",
+              "english": "I would like to know more about his life, so I asked him about his past. It was a good conversation."
+            },
+            {
+              "spanish": "Ahora tengo un nuevo amigo. La clave para conocer a alguien es hacerle buenas preguntas.",
+              "english": "Now I have a new friend. The key to getting to know someone is asking them good questions."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Una Cita Interesante",
+          "sentences": [
+            {
+              "spanish": "Fui a una cita con una chica llamada Ana. Yo no quería que fuera aburrida.",
+              "english": "I went on a date with a girl named Ana. I didn't want it to be boring."
+            },
+            {
+              "spanish": "Le pregunté, '¿Qué te gustaría hacer en el futuro?'. Ella me contó sobre sus sueños.",
+              "english": "I asked her, 'What would you like to do in the future?'. She told me about her dreams."
+            },
+            {
+              "spanish": "Yo le pregunté, '¿Cómo te sientes sobre...?'. Ella compartió sus opiniones conmigo.",
+              "english": "I asked her, 'How do you feel about...?'. She shared her opinions with me."
+            },
+            {
+              "spanish": "La conversación fluyó toda la noche. Ana dijo que le gustó mucho que la escuchara.",
+              "english": "The conversation flowed all night. Ana said that she really liked that I listened to her."
+            },
+            {
+              "spanish": "Pienso que las buenas preguntas son más importantes que hablar de uno mismo.",
+              "english": "I think that good questions are more important than talking about oneself."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "La Reunión Familiar",
+          "sentences": [
+            {
+              "spanish": "Estaba en una reunión familiar. Vi a mi primo, quien no había visto en años.",
+              "english": "I was at a family reunion. I saw my cousin, whom I hadn't seen in years."
+            },
+            {
+              "spanish": "Le pregunté, '¿Qué has aprendido este año?'. Él me contó sobre su nuevo trabajo.",
+              "english": "I asked him, 'What have you learned this year?'. He told me about his new job."
+            },
+            {
+              "spanish": "Después, le pregunté, '¿Qué opinas de la situación actual?'. Tuvimos una conversación muy profunda.",
+              "english": "Afterwards, I asked him, 'What's your opinion on the current situation?'. We had a very deep conversation."
+            },
+            {
+              "spanish": "Yo sentí que nos conectamos de nuevo. Las preguntas me ayudaron a entenderlo mejor.",
+              "english": "I felt that we reconnected. The questions helped me understand him better."
+            },
+            {
+              "spanish": "La próxima vez que lo vea, voy a preguntar más. Es la mejor manera de mantener la conexión.",
+              "english": "The next time I see him, I'm going to ask more questions. It's the best way to maintain the connection."
+            }
+          ]
+        }
+      ]
+    }
+}

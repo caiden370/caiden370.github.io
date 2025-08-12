@@ -11,6 +11,10 @@ import { useState } from 'react';
 import './App.css';
 
 
+export function computeLevel(exp) {
+    return Math.round(exp / 100) + 1;
+}
+
 
 function ProgressBar({ progress }) {
     return (
@@ -54,10 +58,6 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
     
     const computeProgress = (exp) => {
         return exp % 100;
-    } 
-
-    const computeLevel = (exp) => {
-        return Math.round(exp / 100) + 1;
     }
 
     return (

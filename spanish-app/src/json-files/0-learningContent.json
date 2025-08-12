@@ -1,11 +1,10 @@
-
 {"0":
   {
     "words": [
         { "spanish": "Hola", "english": "Hello" },
         { "spanish": "Buenos días", "english": "Good morning" },
         { "spanish": "Buenas tardes", "english": "Good afternoon" },
-        { "spanish": "Buenas noches", "english": "Good evening / Good night" },
+        { "spanish": "Buenas noches", "english": "Good night" },
         { "spanish": "¿Cómo estás?", "english": "How are you?" },
         { "spanish": "¿Qué tal?", "english": "What's up?" },
         { "spanish": "¿Cómo te va?", "english": "How's it going?" },
@@ -265,8 +264,8 @@
             "english": "Suddenly, he saw an old friend, Juan, sitting on a bench."
           },
           {
-            "spanish": "—¡Juan! ¡Tanto tiempo! ¿Qué tal?",
-            "english": "—Juan! Long time no see! What's up?"
+            "spanish": "¡Juan! ¡Tanto tiempo! ¿Qué tal?",
+            "english": "Juan! Long time no see! What's up?"
           },
           {
             "spanish": "exclamó Pedro, sorprendido.",
@@ -277,20 +276,20 @@
             "english": "Juan looked up and a big smile appeared on his face."
           },
           {
-            "spanish": "—¡Pedro! ¡Qué gusto verte! He estado bien, ¿y tú? ¿Cómo te va?",
-            "english": "—Pedro! So nice to see you! I've been good, and you? How's it going?"
+            "spanish": "¡Pedro! ¡Qué gusto verte! He estado bien, ¿y tú? ¿Cómo te va?",
+            "english": "Pedro! So nice to see you! I've been good, and you? How's it going?"
           },
           {
-            "spanish": "—Muy bien, gracias. ¿Qué haces por aquí?",
-            "english": "—Very well, thanks. What are you doing around here?"
+            "spanish": "Muy bien, gracias. ¿Qué haces por aquí?",
+            "english": "Very well, thanks. What are you doing around here?"
           },
           {
             "spanish": "preguntó Pedro, sentándose a su lado.",
             "english": "Pedro asked, sitting next to him."
           },
           {
-            "spanish": "—Nada especial, solo disfrutando del sol.",
-            "english": "—Nothing special, just enjoying the sun."
+            "spanish": "Nada especial, solo disfrutando del sol.",
+            "english": "Nothing special, just enjoying the sun."
           },
           {
             "spanish": "dijo Juan.",
@@ -305,12 +304,12 @@
             "english": "When the sun began to set, they decided to say goodbye."
           },
           {
-            "spanish": "—Bueno, Juan, me tengo que ir. Fue un placer verte.",
-            "english": "—Well, Juan, I have to go. It was a pleasure to see you."
+            "spanish": "Bueno, Juan, me tengo que ir. Fue un placer verte.",
+            "english": "Well, Juan, I have to go. It was a pleasure to see you."
           },
           {
-            "spanish": "—Igualmente, Pedro. Cuídate mucho. Nos vemos pronto.",
-            "english": "—Likewise, Pedro. Take care. See you soon."
+            "spanish": "Igualmente, Pedro. Cuídate mucho. Nos vemos pronto.",
+            "english": "Likewise, Pedro. Take care. See you soon."
           },
           {
             "spanish": "Se despidieron con un abrazo, prometiendo no dejar pasar tanto tiempo la próxima vez.",
@@ -343,12 +342,12 @@
             "english": "Ana asked, yawning."
           },
           {
-            "spanish": "—¡Hola, Ana! Dormí muy bien, gracias. ¿Y tú?",
-            "english": "—Hello, Ana! I slept very well, thanks. And you?"
+            "spanish": "¡Hola, Ana! Dormí muy bien, gracias. ¿Y tú?",
+            "english": "Hello, Ana! I slept very well, thanks. And you?"
           },
           {
-            "spanish": "—Yo también. Hoy tengo un día ocupado.",
-            "english": "—Me too. I have a busy day today."
+            "spanish": "Yo también. Hoy tengo un día ocupado.",
+            "english": "Me too. I have a busy day today."
           },
           {
             "spanish": "Después de desayunar, ambos se prepararon para salir.",
@@ -359,16 +358,16 @@
             "english": "Luis headed to his job and Ana to the university."
           },
           {
-            "spanish": "—Bueno, Luis, me voy. Que tengas un buen día.",
-            "english": "—Well, Luis, I'm leaving. Have a good day."
+            "spanish": "Bueno, Luis, me voy. Que tengas un buen día.",
+            "english": "Well, Luis, I'm leaving. Have a good day."
           },
           {
             "spanish": "dijo Ana, tomando su mochila.",
             "english": "Ana said, grabbing her backpack."
           },
           {
-            "spanish": "—Igualmente, Ana. Cuídate mucho. Nos vemos esta noche.",
-            "english": "—Likewise, Ana. Take care. See you tonight."
+            "spanish": "Igualmente, Ana. Cuídate mucho. Nos vemos esta noche.",
+            "english": "Likewise, Ana. Take care. See you tonight."
           },
           {
             "spanish": "Ana salió del apartamento, lista para enfrentar el día, con una sonrisa en el rostro.",
@@ -377,6 +376,5 @@
         ]
       }
     ]
-  }    
-           
+  }
 }

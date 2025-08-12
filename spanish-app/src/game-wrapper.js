@@ -7,9 +7,14 @@ import AudioReview from "./games/audio-review";
 import WordSearch from "./games/word-search"
 import SentencePractice from "./games/sentence";
 import Story from "./games/story";
+import { localProgressString, checkLocalProgress, updateLocalProgress } from "./game-menu";
 
 export default function GameWrapper({gameId, chapterIndex, setSection, updatePoints}) {
-    
+
+    function updatePointsAndStorage(coins, exp) {
+        updateLocalProgress(chapterIndex, gameId, coins);
+        updatePoints(coins, exp);
+    }
     
     function gameSelection(gameId, chapterIndex) {
         const game1 = '1';
@@ -20,17 +25,17 @@ export default function GameWrapper({gameId, chapterIndex, setSection, updatePoi
         const game6 = '6'      
         switch (gameId) {
             case game1:
-                return (<MixedReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints}/>);
+                return (<MixedReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}/>);
             case game2:
-                return (<AudioReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints} />);
+                return (<AudioReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage} />);
             case game3:
-                return (<Conversations chapterIndex={chapterIndex} audioOnly={false} setSection={setSection} updatePoints={updatePoints}></Conversations>)
+                return (<Conversations chapterIndex={chapterIndex} audioOnly={false} setSection={setSection} updatePoints={updatePointsAndStorage}></Conversations>)
             case game4:
-                return (<WordSearch chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints}></WordSearch>)
+                return (<WordSearch chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}></WordSearch>)
             case game5: 
-                return (<SentencePractice chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints}></SentencePractice>)
+                return (<SentencePractice chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}></SentencePractice>)
             case game6:
-                return (<Story chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePoints}></Story>)
+                return (<Story chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}></Story>)
             
         }
     }

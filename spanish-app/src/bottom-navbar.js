@@ -23,9 +23,9 @@ export default function BottomNavbar({setSelection}) {
 
 
   return (
-    <Box sx={{ width: "100%"}}>
+    <Box sx={{ width: "100%", borderTop: 'solid 0.5px rgb(99, 99, 99)'}}>
       <BottomNavigation
-        sx={{backgroundColor: '#dfe4ea'}}
+        sx={{backgroundColor: 'rgb(255, 255, 255)'}}
         showLabels
         value={value}
         onChange={(event, newValue) => {

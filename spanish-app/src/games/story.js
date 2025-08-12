@@ -1,15 +1,16 @@
 
 import { useEffect, useState } from "react";
 import { MultipleChoice } from "./helper-game-objects";
-import learningContent from '../json-files/learningContent.json';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { ProgressBar } from './ui-objects';
 import { GameCompletionComponent } from "./helper-conversation-game-objects";
+import { loadChapterContent } from '../utils/contentCache';
 
 
 
 export default function Story({chapterIndex, setSection, updatePoints}) {
+    
     const [numCorrect, setNumCorrect] = useState(0);
     const [numCompleted, setNumCompleted] = useState(0);
     const [totalQuestions, setTotalQuestions] = useState(15);
@@ -26,22 +27,35 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
 
 
     useEffect(() => {
-        const stories = learningContent[chapterIndex.toString()]?.stories;
-        if (stories) {
-            const storyI = Math.floor(Math.random()*stories.length);
-            setStoryIndex(storyI);
-            setJsonContent(stories);
-            const content = generateNextQuestionContent(stories[storyI], 0);
-            const component = buildNextQuestionComponent(content);
-            setQuestionComponent(component);
-            setAnswered(false);
-            setPrev(0);
-            setFinished(false);
-            setTotalQuestions(stories[storyI].sentences.length);
-            setNumCompleted(0);
-            setNumCorrect(0);
-            setUpdated(false);
+        async function getContent() {
+            try {
+                const contentObj = await loadChapterContent(chapterIndex);
+                const stories = contentObj?.stories;
+                if (stories) {
+                    const storyI = Math.floor(Math.random()*stories.length);
+                    setStoryIndex(storyI);
+                    setJsonContent(stories);
+                    const content = generateNextQuestionContent(stories[storyI], 0);
+                    const component = buildNextQuestionComponent(content);
+                    setQuestionComponent(component);
+                    setAnswered(false);
+                    setPrev(0);
+                    setFinished(false);
+                    setTotalQuestions(stories[storyI].sentences.length);
+                    setNumCompleted(0);
+                    setNumCorrect(0);
+                    setUpdated(false);
+                } else {
+                    setQuestionComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
+                    setJsonContent(null);
+                }
+            } catch (err) {
+                console.error('Failed to load learning content for chapter', chapterIndex, err);
+                setQuestionComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
+                setJsonContent(null);
+            }
         }
+        getContent();
     }, [chapterIndex]);
 
 
@@ -103,7 +117,7 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
     function continueButton() {
         return (
             <div className='mixed-review-continue'>
-                <Button disabled={!answered} variant='contained' color='success' onClick={handleContinue}>
+                <Button disabled={!answered} className='app-button primary' variant='contained' onClick={handleContinue}>
                     <Typography>Continue</Typography>
                 </Button>
             </div>
@@ -185,12 +199,12 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
             <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
             <div className='finished-row'>
                 <div className='mixed-review-continue'>
-                    <Button variant='contained' color='info' onClick={handleQuit}>
+                    <Button className='app-button info' variant='contained' onClick={handleQuit}>
                         <Typography>Quit</Typography>
                     </Button>
                 </div>
                 <div className='mixed-review-continue'>
-                <Button variant='contained' color='success' onClick={handleRetry}>
+                <Button className='app-button success' variant='contained' onClick={handleRetry}>
                     <Typography>Play Again</Typography>
                 </Button>
                 </div>

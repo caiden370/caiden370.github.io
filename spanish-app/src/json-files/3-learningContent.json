@@ -1,0 +1,300 @@
+{
+    "3": {
+      "words": [
+        { "spanish": "La familia", "english": "The family" },
+        { "spanish": "El padre", "english": "The father" },
+        { "spanish": "La madre", "english": "The mother" },
+        { "spanish": "El hermano", "english": "The brother" },
+        { "spanish": "La hermana", "english": "The sister" },
+        { "spanish": "El abuelo", "english": "The grandfather" },
+        { "spanish": "La abuela", "english": "The grandmother" },
+        { "spanish": "El hijo", "english": "The son" },
+        { "spanish": "La hija", "english": "The daughter" },
+        { "spanish": "El primo", "english": "The male cousin" },
+        { "spanish": "La prima", "english": "The female cousin" },
+        { "spanish": "Alto", "english": "Tall" },
+        { "spanish": "Bajo", "english": "Short" },
+        { "spanish": "Inteligente", "english": "Intelligent" },
+        { "spanish": "Trabajador", "english": "Hardworking" },
+        { "spanish": "Simpático", "english": "Friendly" },
+        { "spanish": "Divertido", "english": "Funny" },
+        { "spanish": "Serio", "english": "Serious" },
+        { "spanish": "Ocupado", "english": "Busy" },
+        { "spanish": "Tranquilo", "english": "Calm" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Mi familia",
+          "dialog": [
+            { "speaker": "Elena", "spanish": "¿Tienes una familia grande, Juan?", "english": "Do you have a big family, Juan?" },
+            { "speaker": "Juan", "spanish": "No, mi familia es pequeña. Tengo un hermano y una hermana.", "english": "No, my family is small. I have one brother and one sister." },
+            { "speaker": "Elena", "spanish": "¡Qué bien! Yo tengo tres hermanos.", "english": "How nice! I have three brothers." },
+            { "speaker": "Juan", "spanish": "¿Son mayores que tú?", "english": "Are they older than you?" },
+            { "speaker": "Elena", "spanish": "Sí, son mayores. Y tú, ¿cómo es tu hermano?", "english": "Yes, they are older. And you, what is your brother like?" },
+            { "speaker": "Juan", "spanish": "Mi hermano es muy trabajador y serio.", "english": "My brother is very hardworking and serious." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cuántos hermanos tiene Juan?",
+              "options": ["Uno", "Dos", "Tres", "Ninguno"],
+              "answer": "Uno",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Cómo es el hermano de Juan?",
+              "options": ["Gracioso y alto", "Perezoso y bajo", "Trabajador y serio", "Simpático y divertido"],
+              "answer": "Trabajador y serio",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'familia pequeña'?",
+              "options": ["Big family", "Small family", "Funny family", "Serious family"],
+              "answer": "Small family",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Describiendo personas",
+          "dialog": [
+            { "speaker": "Sofía", "spanish": "¿Cómo es tu abuela, Miguel?", "english": "What is your grandmother like, Miguel?" },
+            { "speaker": "Miguel", "spanish": "Mi abuela es muy simpática y tranquila. También es baja.", "english": "My grandmother is very friendly and calm. She is also short." },
+            { "speaker": "Sofía", "spanish": "Suena muy amable. ¿Y tu abuelo?", "english": "She sounds very kind. And your grandfather?" },
+            { "speaker": "Miguel", "spanish": "Mi abuelo es alto y un poco serio, pero es muy inteligente.", "english": "My grandfather is tall and a little serious, but he is very intelligent." },
+            { "speaker": "Sofía", "spanish": "Qué bien. Mis abuelos también son muy simpáticos.", "english": "How nice. My grandparents are also very friendly." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué adjetivo usa Miguel para su abuela?",
+              "options": ["Alta", "Inteligente", "Seria", "Simpática"],
+              "answer": "Simpática",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Cómo es el abuelo de Miguel?",
+              "options": ["Bajo y tranquilo", "Alto y simpático", "Alto y serio", "Divertido y bajo"],
+              "answer": "Alto y serio",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'tranquila'?",
+              "options": ["Calm", "Funny", "Hardworking", "Tall"],
+              "answer": "Calm",
+              "answerIndex": 0
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Qué hacen en la familia",
+          "dialog": [
+            { "speaker": "Sara", "spanish": "¿Qué hace tu padre, Mario?", "english": "What does your father do, Mario?" },
+            { "speaker": "Mario", "spanish": "Mi padre es profesor en la universidad. Trabaja mucho.", "english": "My father is a professor at the university. He works a lot." },
+            { "speaker": "Sara", "spanish": "¡Qué interesante! ¿Y tu madre?", "english": "How interesting! And your mother?" },
+            { "speaker": "Mario", "spanish": "Mi madre es artista. Ella pinta cuadros muy bonitos.", "english": "My mother is an artist. She paints very beautiful paintings." },
+            { "speaker": "Sara", "spanish": "Eso es genial. Mis padres trabajan en la misma oficina.", "english": "That's great. My parents work in the same office." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué es el padre de Mario?",
+              "options": ["Doctor", "Artista", "Profesor", "Músico"],
+              "answer": "Profesor",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué hace la madre de Mario?",
+              "options": ["Pinta cuadros", "Enseña español", "Cocina mucho", "Escribe libros"],
+              "answer": "Pinta cuadros",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué significa 'trabaja mucho'?",
+              "options": ["Works little", "Works a lot", "Doesn't work", "Works at home"],
+              "answer": "Works a lot",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Mi mejor amiga",
+          "dialog": [
+            { "speaker": "Paula", "spanish": "¿Cómo es tu mejor amiga, David?", "english": "What is your best friend like, David?" },
+            { "speaker": "David", "spanish": "Mi mejor amiga se llama Ana. Es muy simpática y divertida.", "english": "My best friend's name is Ana. She is very friendly and funny." },
+            { "speaker": "Paula", "spanish": "Suena como una buena amiga. ¿Qué hace ella?", "english": "She sounds like a good friend. What does she do?" },
+            { "speaker": "David", "spanish": "Ella es estudiante y también trabaja en un café los fines de semana.", "english": "She is a student and also works in a cafe on weekends." },
+            { "speaker": "Paula", "spanish": "Wow, está muy ocupada. Yo también tengo una amiga muy trabajadora.", "english": "Wow, she is very busy. I also have a very hardworking friend." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cómo se llama la mejor amiga de David?",
+              "options": ["Paula", "Sofía", "Ana", "Elena"],
+              "answer": "Ana",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué adjetivo usa David para describirla?",
+              "options": ["Seria y ocupada", "Simpática y divertida", "Tranquila y callada", "Alta y baja"],
+              "answer": "Simpática y divertida",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué hace Ana los fines de semana?",
+              "options": ["Estudia", "Va al cine", "Trabaja en un café", "Pinta cuadros"],
+              "answer": "Trabaja en un café",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Comparando la familia",
+          "dialog": [
+            { "speaker": "Carmen", "spanish": "Mi hermano es más alto que mi padre.", "english": "My brother is taller than my father." },
+            { "speaker": "Pedro", "spanish": "¿En serio? Mi padre es más alto que mi hermano.", "english": "Really? My father is taller than my brother." },
+            { "speaker": "Carmen", "spanish": "Mi madre es la más inteligente de la familia.", "english": "My mother is the most intelligent in the family." },
+            { "speaker": "Pedro", "spanish": "Mi abuela es la más divertida. Siempre cuenta chistes.", "english": "My grandmother is the funniest. She always tells jokes." },
+            { "speaker": "Carmen", "spanish": "Qué gracioso. Mi abuelo es el más serio.", "english": "How funny. My grandfather is the most serious." }
+          ],
+          "questions": [
+            {
+              "question": "¿Quién es más alto que el padre de Carmen?",
+              "options": ["Su hermano", "Su madre", "Su abuelo", "Pedro"],
+              "answer": "Su hermano",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué persona es la más inteligente en la familia de Carmen?",
+              "options": ["Su padre", "Su madre", "Su hermano", "Ella"],
+              "answer": "Su madre",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cómo es el abuelo de Carmen?",
+              "options": ["El más divertido", "El más serio", "El más inteligente", "El más trabajador"],
+              "answer": "El más serio",
+              "answerIndex": 1
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "Un Día en Familia",
+          "sentences": [
+            {
+              "spanish": "Hoy es el cumpleaños de mi abuelo, Carlos.",
+              "english": "Today is my grandfather, Carlos', birthday."
+            },
+            {
+              "spanish": "Toda la familia está en mi casa para celebrar.",
+              "english": "The whole family is at my house to celebrate."
+            },
+            {
+              "spanish": "Mi abuelo es un hombre alto y muy simpático.",
+              "english": "My grandfather is a tall and very friendly man."
+            },
+            {
+              "spanish": "Mi padre, Antonio, es un cocinero excelente.",
+              "english": "My father, Antonio, is an excellent cook."
+            },
+            {
+              "spanish": "Mi madre, Laura, es muy divertida y siempre ríe.",
+              "english": "My mother, Laura, is very funny and always laughs."
+            },
+            {
+              "spanish": "Tengo una hermana, Sofía, que es estudiante y muy inteligente.",
+              "english": "I have a sister, Sofía, who is a student and very intelligent."
+            },
+            {
+              "spanish": "Mi hermano, Mateo, es un poco serio pero también muy trabajador.",
+              "english": "My brother, Mateo, is a little serious but also very hardworking."
+            },
+            {
+              "spanish": "Todos estamos muy felices de estar juntos.",
+              "english": "We are all very happy to be together."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Mi Abuela y sus Historias",
+          "sentences": [
+            {
+              "spanish": "Mi abuela, Carmen, es una persona muy tranquila.",
+              "english": "My grandmother, Carmen, is a very calm person."
+            },
+            {
+              "spanish": "Le gusta sentarse en el jardín y leer libros.",
+              "english": "She likes to sit in the garden and read books."
+            },
+            {
+              "spanish": "Ella es baja y tiene el pelo blanco.",
+              "english": "She is short and has white hair."
+            },
+            {
+              "spanish": "Cuando éramos pequeños, siempre nos contaba historias fantásticas.",
+              "english": "When we were little, she always told us fantastic stories."
+            },
+            {
+              "spanish": "Mi prima, Lucía, y yo siempre escuchábamos con atención.",
+              "english": "My cousin, Lucía, and I always listened carefully."
+            },
+            {
+              "spanish": "A veces, su voz se volvía misteriosa y nos asustaba un poco.",
+              "english": "Sometimes, her voice would become mysterious and scare us a little."
+            },
+            {
+              "spanish": "Pero al final de cada historia, siempre reíamos.",
+              "english": "But at the end of each story, we always laughed."
+            },
+            {
+              "spanish": "Mi abuela es una de las personas más especiales de mi vida.",
+              "english": "My grandmother is one of the most special people in my life."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Mi Mejor Amigo",
+          "sentences": [
+            {
+              "spanish": "Tengo un mejor amigo que se llama Leo.",
+              "english": "I have a best friend named Leo."
+            },
+            {
+              "spanish": "Leo es alto y atlético. Juega al fútbol y corre mucho.",
+              "english": "Leo is tall and athletic. He plays soccer and runs a lot."
+            },
+            {
+              "spanish": "Es muy divertido y siempre me hace reír.",
+              "english": "He is very funny and always makes me laugh."
+            },
+            {
+              "spanish": "A veces es un poco ocupado con el trabajo.",
+              "english": "Sometimes he is a little busy with work."
+            },
+            {
+              "spanish": "Pero siempre encuentra tiempo para mí.",
+              "english": "But he always finds time for me."
+            },
+            {
+              "spanish": "Hablamos de todo, de películas, de música, de la vida.",
+              "english": "We talk about everything, movies, music, life."
+            },
+            {
+              "spanish": "Él es como un hermano para mí.",
+              "english": "He is like a brother to me."
+            },
+            {
+              "spanish": "Es una de las personas más leales que conozco.",
+              "english": "He is one of the most loyal people I know."
+            }
+          ]
+        }
+      ]
+    }
+  }

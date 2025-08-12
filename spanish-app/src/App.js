@@ -7,6 +7,7 @@ import ProfilePage from './profile-page';
 import TopHeader from './top-header';
 import GameMenu from './game-menu';
 import GameWrapper from './game-wrapper';
+import { computeLevel } from './profile-page';
 
 
 function App() {
@@ -77,7 +78,7 @@ function App() {
   return (
     <div className="App">
       <div className='top-header-outer-container'>
-      <TopHeader coins={coins}></TopHeader>
+      <TopHeader coins={coins} level={computeLevel(experience)}></TopHeader>
       </div>
       
       <div className='page-container'>

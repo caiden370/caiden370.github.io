@@ -1,0 +1,272 @@
+{
+    "13": {
+      "words": [
+        { "spanish": "Comprar", "english": "To buy" },
+        { "spanish": "Pagar", "english": "To pay" },
+        { "spanish": "El dinero", "english": "The money" },
+        { "spanish": "La tienda", "english": "The store" },
+        { "spanish": "El supermercado", "english": "The supermarket" },
+        { "spanish": "El mercado", "english": "The market" },
+        { "spanish": "Ir de compras", "english": "To go shopping" },
+        { "spanish": "Yo voy de compras", "english": "I go shopping" },
+        { "spanish": "Necesitar", "english": "To need" },
+        { "spanish": "Necesito comprar", "english": "I need to buy" },
+        { "spanish": "El precio", "english": "The price" },
+        { "spanish": "¿Cuánto cuesta?", "english": "How much does it cost?" },
+        { "spanish": "Caro(a)", "english": "Expensive" },
+        { "spanish": "Barato(a)", "english": "Cheap" },
+        { "spanish": "La oferta", "english": "The sale (offer)" },
+        { "spanish": "La tarjeta de crédito", "english": "The credit card" },
+        { "spanish": "El efectivo", "english": "The cash" },
+        { "spanish": "El recibo", "english": "The receipt" },
+        { "spanish": "Yo pago", "english": "I pay" },
+        { "spanish": "Yo pagué", "english": "I paid" },
+        { "spanish": "Yo voy a pagar", "english": "I am going to pay" },
+        { "spanish": "Yo compro", "english": "I buy" },
+        { "spanish": "Yo compré", "english": "I bought" },
+        { "spanish": "Yo voy a comprar", "english": "I am going to buy" },
+        { "spanish": "Ahorrar", "english": "To save (money)" },
+        { "spanish": "La lista de compras", "english": "The shopping list" },
+        { "spanish": "La caja", "english": "The checkout" },
+        { "spanish": "El cliente", "english": "The customer" },
+        { "spanish": "El(la) vendedor(a)", "english": "The seller" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "En la tienda",
+          "dialog": [
+            { "speaker": "Cliente", "spanish": "Disculpe, ¿cuánto cuesta este vestido?", "english": "Excuse me, how much does this dress cost?" },
+            { "speaker": "Vendedora", "spanish": "Cuesta cincuenta dólares. Es un poco caro, pero es muy bonito.", "english": "It costs fifty dollars. It's a little expensive, but it's very pretty." },
+            { "speaker": "Cliente", "spanish": "Es verdad. ¿Tiene una oferta?", "english": "It's true. Do you have a sale?" },
+            { "speaker": "Vendedora", "spanish": "Sí, lo tenemos en oferta por cuarenta dólares.", "english": "Yes, we have it on sale for forty dollars." },
+            { "speaker": "Cliente", "spanish": "¡Perfecto! Lo voy a comprar.", "english": "Perfect! I am going to buy it." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué está comprando el cliente?",
+              "options": ["Una camisa", "Un vestido", "Unos zapatos", "Una falda"],
+              "answer": "Un vestido",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cuánto cuesta el vestido con la oferta?",
+              "options": ["Cincuenta dólares", "Cuarenta dólares", "Veinte dólares", "Treinta dólares"],
+              "answer": "Cuarenta dólares",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Lo voy a comprar'?",
+              "options": ["I bought it", "I am going to buy it", "I want to buy it", "I need to buy it"],
+              "answer": "I am going to buy it",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "En el supermercado",
+          "dialog": [
+            { "speaker": "Laura", "spanish": "Necesito ir al supermercado. Mi refrigerador está vacío.", "english": "I need to go to the supermarket. My refrigerator is empty." },
+            { "speaker": "Carlos", "spanish": "Yo también. Necesito comprar leche y pan.", "english": "Me too. I need to buy milk and bread." },
+            { "speaker": "Laura", "spanish": "Yo compré frutas y verduras ayer, así que hoy solo necesito carne.", "english": "I bought fruits and vegetables yesterday, so today I only need meat." },
+            { "speaker": "Carlos", "spanish": "Vamos juntos. Yo pago con tarjeta de crédito, ¿y tú?", "english": "Let's go together. I'll pay with a credit card, and you?" },
+            { "speaker": "Laura", "spanish": "Yo siempre pago con efectivo.", "english": "I always pay with cash." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué compró Laura ayer?",
+              "options": ["Leche y pan", "Carne", "Frutas y verduras", "Nada"],
+              "answer": "Frutas y verduras",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué necesita comprar Carlos?",
+              "options": ["Leche y pan", "Frutas y verduras", "Carne", "Un refrigerador"],
+              "answer": "Leche y pan",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Cómo paga Laura?",
+              "options": ["Con tarjeta de crédito", "Con efectivo", "No paga", "Paga con la tarjeta de Carlos"],
+              "answer": "Con efectivo",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Dinero y precios",
+          "dialog": [
+            { "speaker": "Marcos", "spanish": "Necesito ahorrar dinero para comprar una bicicleta nueva.", "english": "I need to save money to buy a new bike." },
+            { "speaker": "Silvia", "spanish": "¡Qué buena idea! Yo compré una bicicleta el mes pasado.", "english": "What a good idea! I bought a bicycle last month." },
+            { "speaker": "Marcos", "spanish": "¿Fue muy cara?", "english": "Was it very expensive?" },
+            { "speaker": "Silvia", "spanish": "No, no fue cara. La compré en oferta. Costó solo cien dólares.", "english": "No, it wasn't expensive. I bought it on sale. It cost only one hundred dollars." },
+            { "speaker": "Marcos", "spanish": "¡Qué suerte! Voy a buscar una oferta.", "english": "How lucky! I'm going to look for a sale." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué quiere comprar Marcos?",
+              "options": ["Una bicicleta nueva", "Un coche", "Un regalo", "Unos zapatos"],
+              "answer": "Una bicicleta nueva",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Cómo compró Silvia su bicicleta?",
+              "options": ["La compró muy cara", "La compró en oferta", "La compró de segunda mano", "No compró una bicicleta"],
+              "answer": "La compró en oferta",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Fue muy cara'?",
+              "options": ["It was very cheap", "It was very pretty", "It was very fast", "It was very expensive"],
+              "answer": "It was very expensive",
+              "answerIndex": 3
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Lista de compras",
+          "dialog": [
+            { "speaker": "Julia", "spanish": "Tengo que ir a la tienda a comprar ropa para el trabajo.", "english": "I have to go to the store to buy clothes for work." },
+            { "speaker": "David", "spanish": "Yo también. Necesito un pantalón nuevo y una camisa.", "english": "Me too. I need new pants and a shirt." },
+            { "speaker": "Julia", "spanish": "Yo hice mi lista de compras. Voy a comprar un vestido y un abrigo.", "english": "I made my shopping list. I am going to buy a dress and a coat." },
+            { "speaker": "David", "spanish": "¿Vas a pagar con tarjeta?", "english": "Are you going to pay with a card?" },
+            { "speaker": "Julia", "spanish": "Sí, voy a pagar con la tarjeta de crédito.", "english": "Yes, I am going to pay with the credit card." }
+          ],
+          "questions": [
+            {
+              "question": "¿Por qué va Julia a la tienda?",
+              "options": ["Para comprar comida", "Para comprar ropa", "Para comprar un regalo", "Para comprar un coche"],
+              "answer": "Para comprar ropa",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué compró David?",
+              "options": ["Un pantalón y una camisa", "Un vestido y un abrigo", "Nada", "No se menciona"],
+              "answer": "No se menciona",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Cómo va a pagar Julia?",
+              "options": ["Con efectivo", "Con una tarjeta de crédito", "Con un cheque", "Con el dinero de David"],
+              "answer": "Con una tarjeta de crédito",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Hablando del precio",
+          "dialog": [
+            { "speaker": "María", "spanish": "Mira qué bonitos zapatos. ¿Cuánto costaron?", "english": "Look at these pretty shoes. How much did they cost?" },
+            { "speaker": "Pablo", "spanish": "Costaron ochenta dólares. No fueron baratos, pero los necesitaba.", "english": "They cost eighty dollars. They weren't cheap, but I needed them." },
+            { "speaker": "María", "spanish": "Entiendo. ¿Pagaste con tarjeta?", "english": "I understand. Did you pay with a card?" },
+            { "speaker": "Pablo", "spanish": "Sí, pagué con tarjeta de crédito. La tienda me dio el recibo.", "english": "Yes, I paid with a credit card. The store gave me the receipt." },
+            { "speaker": "María", "spanish": "Te quedaron muy bien. Valió la pena el precio.", "english": "They look great on you. They were worth the price." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cuánto costaron los zapatos?",
+              "options": ["Diez dólares", "Treinta dólares", "Cincuenta dólares", "Ochenta dólares"],
+              "answer": "Ochenta dólares",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Cómo pagó Pablo por los zapatos?",
+              "options": ["Con efectivo", "Con una tarjeta de crédito", "No pagó", "Con un cheque"],
+              "answer": "Con una tarjeta de crédito",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Te quedaron muy bien'?",
+              "options": ["They were too small", "They were a good price", "They look great on you", "They were a good color"],
+              "answer": "They look great on you",
+              "answerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "Un Día de Compras",
+          "sentences": [
+            {
+              "spanish": "El sábado pasado, mi amiga Ana y yo fuimos de compras. Fuimos a una tienda de ropa.",
+              "english": "Last Saturday, my friend Ana and I went shopping. We went to a clothing store."
+            },
+            {
+              "spanish": "Yo necesitaba un pantalón y Ana quería un vestido. La tienda tenía una oferta.",
+              "english": "I needed a pair of pants and Ana wanted a dress. The store had a sale."
+            },
+            {
+              "spanish": "Encontré un pantalón muy bonito y Ana encontró un vestido. Ambos no fueron caros.",
+              "english": "I found a very nice pair of pants and Ana found a dress. Both were not expensive."
+            },
+            {
+              "spanish": "Fuimos a la caja para pagar. Yo pagué con mi tarjeta de crédito y Ana pagó con efectivo.",
+              "english": "We went to the checkout to pay. I paid with my credit card and Ana paid with cash."
+            },
+            {
+              "spanish": "Después, fuimos a una cafetería. Fue un día de compras divertido.",
+              "english": "Afterwards, we went to a cafe. It was a fun shopping day."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Ahorrando Dinero",
+          "sentences": [
+            {
+              "spanish": "Quiero comprar un nuevo televisor. Pero los televisores son muy caros.",
+              "english": "I want to buy a new television. But televisions are very expensive."
+            },
+            {
+              "spanish": "Necesito ahorrar dinero. Por eso, no voy de compras cada semana.",
+              "english": "I need to save money. Because of this, I don't go shopping every week."
+            },
+            {
+              "spanish": "El mes pasado, no compré nada de ropa. Pagué todas mis facturas con efectivo.",
+              "english": "Last month, I didn't buy any clothes. I paid all my bills with cash."
+            },
+            {
+              "spanish": "Voy a comprar el televisor cuando tenga suficiente dinero.",
+              "english": "I am going to buy the television when I have enough money."
+            },
+            {
+              "spanish": "Espero encontrar una oferta. Eso me ayudaría mucho.",
+              "english": "I hope to find a sale. That would help me a lot."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "El Mercado del Pueblo",
+          "sentences": [
+            {
+              "spanish": "Todos los domingos voy al mercado del pueblo con mi abuela. Ella ama el mercado.",
+              "english": "Every Sunday I go to the town market with my grandmother. She loves the market."
+            },
+            {
+              "spanish": "En el mercado, hay muchas tiendas pequeñas y los precios son baratos.",
+              "english": "In the market, there are many small stores and the prices are cheap."
+            },
+            {
+              "spanish": "La semana pasada, mi abuela compró frutas, verduras y pescado. Le costó poco dinero.",
+              "english": "Last week, my grandmother bought fruits, vegetables, and fish. It cost her little money."
+            },
+            {
+              "spanish": "Mi abuela siempre paga con efectivo. Ella dice que el efectivo es más simple.",
+              "english": "My grandmother always pays with cash. She says that cash is simpler."
+            },
+            {
+              "spanish": "Yo le ayudé a llevar las bolsas a casa. Fue un día muy agradable.",
+              "english": "I helped her carry the bags home. It was a very pleasant day."
+            }
+          ]
+        }
+      ]
+    }
+}

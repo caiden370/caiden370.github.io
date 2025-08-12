@@ -1,0 +1,271 @@
+{
+    "16": {
+      "words": [
+        { "spanish": "Estar", "english": "To be (temporary state)" },
+        { "spanish": "Yo estoy", "english": "I am" },
+        { "spanish": "Tú estás", "english": "You are" },
+        { "spanish": "Sentirse", "english": "To feel" },
+        { "spanish": "Yo me siento", "english": "I feel" },
+        { "spanish": "Tú te sientes", "english": "You feel" },
+        { "spanish": "¿Cómo estás?", "english": "How are you?" },
+        { "spanish": "¿Cómo te sientes?", "english": "How do you feel?" },
+        { "spanish": "Contendo(a)", "english": "Happy" },
+        { "spanish": "Triste", "english": "Sad" },
+        { "spanish": "Enojado(a)", "english": "Angry" },
+        { "spanish": "Cansado(a)", "english": "Tired" },
+        { "spanish": "Nervioso(a)", "english": "Nervous" },
+        { "spanish": "Emocionado(a)", "english": "Excited" },
+        { "spanish": "Aburrido(a)", "english": "Bored" },
+        { "spanish": "Preocupado(a)", "english": "Worried" },
+        { "spanish": "Asustado(a)", "english": "Scared" },
+        { "spanish": "Confundido(a)", "english": "Confused" },
+        { "spanish": "Calmado(a)", "english": "Calm" },
+        { "spanish": "Frustrado(a)", "english": "Frustrated" },
+        { "spanish": "Sorprendido(a)", "english": "Surprised" },
+        { "spanish": "El estrés", "english": "The stress" },
+        { "spanish": "El miedo", "english": "The fear" },
+        { "spanish": "El sentimiento", "english": "The feeling" },
+        { "spanish": "La emoción", "english": "The emotion" },
+        { "spanish": "Porque", "english": "Because" },
+        { "spanish": "Hoy", "english": "Today" },
+        { "spanish": "Por la mañana", "english": "In the morning" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Preguntando por el bienestar",
+          "dialog": [
+            { "speaker": "María", "spanish": "Hola, Pedro. ¿Cómo estás hoy?", "english": "Hello, Pedro. How are you today?" },
+            { "speaker": "Pedro", "spanish": "Hola, María. Estoy muy cansado. Trabajé mucho anoche.", "english": "Hello, María. I am very tired. I worked a lot last night." },
+            { "speaker": "María", "spanish": "Oh, lo siento. Yo estoy un poco triste porque mi perro está enfermo.", "english": "Oh, I'm sorry. I am a little sad because my dog is sick." },
+            { "speaker": "Pedro", "spanish": "Espero que se sienta mejor pronto.", "english": "I hope he feels better soon." },
+            { "speaker": "María", "spanish": "Gracias. Tú necesitas descansar.", "english": "Thank you. You need to rest." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cómo se siente Pedro?",
+              "options": ["Está contento", "Está enojado", "Está cansado", "Está triste"],
+              "answer": "Está cansado",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Por qué está triste María?",
+              "options": ["Su perro está enfermo", "Ella está cansada", "Trabajó mucho", "Pedro está triste"],
+              "answer": "Su perro está enfermo",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué le recomienda María a Pedro?",
+              "options": ["Que trabaje más", "Que descanse", "Que vea a un médico", "Que esté triste"],
+              "answer": "Que descanse",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Una mala situación",
+          "dialog": [
+            { "speaker": "Javier", "spanish": "¿Qué te pasa? Te veo muy enojado.", "english": "What's wrong? I see you look very angry." },
+            { "speaker": "Ana", "spanish": "Estoy enojada porque mi coche no funciona. ¡Es frustrante!", "english": "I'm angry because my car isn't working. It's frustrating!" },
+            { "speaker": "Javier", "spanish": "Oh no. Entiendo por qué te sientes así. Es muy estresante.", "english": "Oh no. I understand why you feel that way. It's very stressful." },
+            { "speaker": "Ana", "spanish": "Sí. Yo tengo que ir al trabajo y no sé qué hacer.", "english": "Yes. I have to go to work and I don't know what to do." },
+            { "speaker": "Javier", "spanish": "Cálmate. Yo puedo llevarte. No te preocupes.", "english": "Calm down. I can take you. Don't worry." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cómo se siente Ana?",
+              "options": ["Enojada y frustrada", "Feliz y tranquila", "Emocionada", "Asustada"],
+              "answer": "Enojada y frustrada",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Cuál es el problema de Ana?",
+              "options": ["No tiene trabajo", "Está cansada", "Su coche no funciona", "No tiene dinero"],
+              "answer": "Su coche no funciona",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué le ofrece Javier a Ana?",
+              "options": ["Comprarle un coche", "Llevarla a un restaurante", "Llevarla al trabajo", "Arreglar su coche"],
+              "answer": "Llevarla al trabajo",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Antes de un evento",
+          "dialog": [
+            { "speaker": "Daniel", "spanish": "Estoy muy nervioso por el examen de mañana.", "english": "I am very nervous about the exam tomorrow." },
+            { "speaker": "Laura", "spanish": "No te preocupes. Tú estudiaste mucho, ¿verdad?", "english": "Don't worry. You studied a lot, right?" },
+            { "speaker": "Daniel", "spanish": "Sí, estudié. Pero es un examen muy importante. Me siento asustado.", "english": "Yes, I studied. But it's a very important exam. I feel scared." },
+            { "speaker": "Laura", "spanish": "Piensa en el resultado. Tienes que estar emocionado, no asustado.", "english": "Think about the result. You have to be excited, not scared." },
+            { "speaker": "Daniel", "spanish": "Tienes razón. Estoy un poco más calmado ahora.", "english": "You're right. I am a little calmer now." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cómo se siente Daniel por el examen?",
+              "options": ["Calmado", "Feliz", "Nervioso y asustado", "Emocionado"],
+              "answer": "Nervioso y asustado",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué le dice Laura a Daniel?",
+              "options": ["Que no estudie", "Que se preocupe", "Que esté emocionado", "Que el examen es fácil"],
+              "answer": "Que esté emocionado",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'estudiar mucho'?",
+              "options": ["To study a little", "To study a lot", "To not study", "To pass the exam"],
+              "answer": "To study a lot",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Una sorpresa",
+          "dialog": [
+            { "speaker": "Julia", "spanish": "¿Viste mi fiesta de cumpleaños? Te vi muy sorprendida.", "english": "Did you see my birthday party? I saw you were very surprised." },
+            { "speaker": "Carlos", "spanish": "¡Claro! No sabía nada de la fiesta. Estuve muy sorprendido.", "english": "Of course! I didn't know anything about the party. I was very surprised." },
+            { "speaker": "Julia", "spanish": "¿Y cómo te sentiste después?", "english": "And how did you feel afterwards?" },
+            { "speaker": "Carlos", "spanish": "Me sentí muy contento. Me emocionó mucho ver a todos mis amigos.", "english": "I felt very happy. It really excited me to see all my friends." },
+            { "speaker": "Julia", "spanish": "Qué bueno. Me alegra que te haya gustado la fiesta.", "english": "How nice. I'm glad you liked the party." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cómo se sintió Carlos al ver la fiesta?",
+              "options": ["Triste", "Enojado", "Sorprendido", "Calmado"],
+              "answer": "Sorprendido",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué le emocionó a Carlos?",
+              "options": ["La comida", "La música", "La fiesta", "Ver a todos sus amigos"],
+              "answer": "Ver a todos sus amigos",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Qué significa 'No sabía nada de la fiesta'?",
+              "options": ["I knew about the party", "I didn't know about the party", "I liked the party", "I was at the party"],
+              "answer": "I didn't know about the party",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Preguntando a un amigo",
+          "dialog": [
+            { "speaker": "Marta", "spanish": "Te veo pensativo. ¿Qué pasa? ¿Te sientes aburrido?", "english": "I see you're thoughtful. What's wrong? Do you feel bored?" },
+            { "speaker": "Felipe", "spanish": "No, no estoy aburrido. Estoy un poco confundido con mi tarea de matemáticas.", "english": "No, I'm not bored. I'm a little confused with my math homework." },
+            { "speaker": "Marta", "spanish": "Oh, ya veo. ¿Necesitas ayuda? Yo soy buena en matemáticas.", "english": "Oh, I see. Do you need help? I am good at math." },
+            { "speaker": "Felipe", "spanish": "Sí, por favor. Me siento un poco frustrado con el problema.", "english": "Yes, please. I feel a little frustrated with the problem." },
+            { "speaker": "Marta", "spanish": "Claro. Vamos a ver. No te preocupes, lo solucionamos juntos.", "english": "Of course. Let's see. Don't worry, we'll solve it together." }
+          ],
+          "questions": [
+            {
+              "question": "¿Por qué se siente confundido Felipe?",
+              "options": ["Por la tarea de matemáticas", "Porque está aburrido", "Porque tiene miedo", "Porque está frustrado"],
+              "answer": "Por la tarea de matemáticas",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué le ofrece Marta a Felipe?",
+              "options": ["Comida", "Ayuda con la tarea", "Un juego", "Una película"],
+              "answer": "Ayuda con la tarea",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cómo se siente Felipe con el problema?",
+              "options": ["Confundido y frustrado", "Feliz y contento", "Triste y cansado", "Enojado y aburrido"],
+              "answer": "Confundido y frustrado",
+              "answerIndex": 0
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "El Concierto",
+          "sentences": [
+            {
+              "spanish": "Hoy me siento muy emocionado. Voy a ir a un concierto con mis amigos.",
+              "english": "Today I feel very excited. I am going to a concert with my friends."
+            },
+            {
+              "spanish": "Por la mañana, me sentí un poco nervioso. Tenía miedo de llegar tarde.",
+              "english": "In the morning, I felt a little nervous. I was scared of being late."
+            },
+            {
+              "spanish": "Pero mis amigos y yo llegamos a tiempo. Estábamos muy contentos de estar allí.",
+              "english": "But my friends and I arrived on time. We were very happy to be there."
+            },
+            {
+              "spanish": "La música fue increíble. Cantamos y bailamos. No estuvimos aburridos ni un segundo.",
+              "english": "The music was incredible. We sang and danced. We weren't bored for a second."
+            },
+            {
+              "spanish": "Al final, yo me sentí muy feliz y un poco cansado. Fue una noche perfecta.",
+              "english": "In the end, I felt very happy and a little tired. It was a perfect night."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Un Día Difícil",
+          "sentences": [
+            {
+              "spanish": "Mi día de hoy fue muy difícil. Me levanté y me sentí muy cansado.",
+              "english": "My day today was very difficult. I woke up and felt very tired."
+            },
+            {
+              "spanish": "Mi coche no funcionó, y tuve que tomar el autobús. Me sentí un poco frustrado.",
+              "english": "My car didn't work, and I had to take the bus. I felt a little frustrated."
+            },
+            {
+              "spanish": "Después, mi jefe estaba enojado conmigo. Me sentí triste por eso.",
+              "english": "Afterwards, my boss was angry with me. I felt sad about that."
+            },
+            {
+              "spanish": "Por la noche, regresé a casa y mi perro me recibió con alegría. Me hizo sentir mejor.",
+              "english": "At night, I came home and my dog greeted me with joy. He made me feel better."
+            },
+            {
+              "spanish": "Ahora estoy en mi sofá y me siento más calmado. Mañana será un mejor día.",
+              "english": "Now I am on my sofa and I feel calmer. Tomorrow will be a better day."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Una Sorpresa de Cumpleaños",
+          "sentences": [
+            {
+              "spanish": "Hoy es mi cumpleaños. Yo me sentí un poco preocupada porque mis amigos estaban muy silenciosos.",
+              "english": "Today is my birthday. I felt a little worried because my friends were very quiet."
+            },
+            {
+              "spanish": "Cuando llegué a casa, abrí la puerta y gritaron: '¡Sorpresa!'.",
+              "english": "When I arrived home, I opened the door and they shouted, 'Surprise!'."
+            },
+            {
+              "spanish": "Yo me quedé sorprendida. No podía creerlo. ¡Ellos organizaron una fiesta para mí!",
+              "english": "I was shocked. I couldn't believe it. They organized a party for me!"
+            },
+            {
+              "spanish": "Después, me sentí tan feliz. Estaba muy emocionada de ver a todos mis amigos allí.",
+              "english": "Afterwards, I felt so happy. I was very excited to see all my friends there."
+            },
+            {
+              "spanish": "Mis amigos y yo bailamos y comimos pastel. Fue una noche inolvidable.",
+              "english": "My friends and I danced and ate cake. It was an unforgettable night."
+            }
+          ]
+        }
+      ]
+    }
+}

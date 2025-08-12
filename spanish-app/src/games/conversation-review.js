@@ -1,10 +1,10 @@
-import learningContent from '../json-files/learningContent.json';
 import { ProgressBar } from './ui-objects';
 import { useState, useEffect, use } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { AudioExactTextResponse } from './helper-game-objects';
 import { ConversationMultiChoice } from './helper-conversation-game-objects';
+import { loadChapterContent } from '../utils/contentCache';
 
 
 export default function Conversations({chapterIndex, audioOnly, setSection, updatePoints}) {
@@ -20,18 +20,31 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
     const [updated, setUpdated] = useState(false);
 
     useEffect(() => {
-        const conversations = learningContent[chapterIndex.toString()]?.conversations;
-        if (conversations) {
-            setJsonContent(conversations);
-            const content = generateNextQuestionContent(conversations);
-            const component = buildNextQuestionComponent(content);
-            setQuestionComponent(component);
-            setScoreBarComponent(scoreBar(0));
-            setNumCorrect(0);
-            setAnswered(false);
-            setFinished(false);
-            setUpdated(false);
+        async function getContent() {
+            try {
+                const contentObj = await loadChapterContent(chapterIndex);
+                const conversations = contentObj?.conversations;
+                if (conversations) {
+                    setJsonContent(conversations);
+                    const content = generateNextQuestionContent(conversations);
+                    const component = buildNextQuestionComponent(content);
+                    setQuestionComponent(component);
+                    setScoreBarComponent(scoreBar(0));
+                    setNumCorrect(0);
+                    setAnswered(false);
+                    setFinished(false);
+                    setUpdated(false);
+                } else {
+                    setQuestionComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
+                    setJsonContent(null);
+                }
+            } catch (err) {
+                console.error('Failed to load learning content for chapter', chapterIndex, err);
+                setQuestionComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
+                setJsonContent(null);
+            }
         }
+        getContent();
     }, [chapterIndex]);
 
 
@@ -109,7 +122,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
     function retryButton() {
         return (
             <div className='mixed-review-continue'>
-                <Button variant='contained' color='success' onClick={handleRetry}>
+                <Button className='app-button success' variant='contained' onClick={handleRetry}>
                     <Typography>Play Again</Typography>
                 </Button>
             </div>
@@ -123,7 +136,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
     function quitButton() {
         return (
             <div className='mixed-review-continue'>
-                <Button variant='contained' color='info' onClick={handleQuit}>
+                <Button className='app-button info' variant='contained' onClick={handleQuit}>
                     <Typography>Quit</Typography>
                 </Button>
             </div>

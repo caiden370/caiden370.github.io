@@ -1,0 +1,273 @@
+{
+    "14": {
+      "words": [
+        { "spanish": "Nosotros(as)", "english": "We" },
+        { "spanish": "Ellos(as)", "english": "They (masculine/feminine)" },
+        { "spanish": "Ustedes", "english": "You all (formal/informal)" },
+        { "spanish": "Hablar", "english": "To speak" },
+        { "spanish": "Nosotros hablamos", "english": "We speak" },
+        { "spanish": "Ellos hablan", "english": "They speak" },
+        { "spanish": "Comer", "english": "To eat" },
+        { "spanish": "Nosotras comemos", "english": "We (f) eat" },
+        { "spanish": "Ellas comen", "english": "They (f) eat" },
+        { "spanish": "Vivir", "english": "To live" },
+        { "spanish": "Nosotros vivimos", "english": "We live" },
+        { "spanish": "Ustedes viven", "english": "You all live" },
+        { "spanish": "Ser", "english": "To be" },
+        { "spanish": "Nosotros somos", "english": "We are" },
+        { "spanish": "Ellos son", "english": "They are" },
+        { "spanish": "Ir", "english": "To go" },
+        { "spanish": "Nosotros vamos", "english": "We go" },
+        { "spanish": "Ellas van", "english": "They (f) go" },
+        { "spanish": "Tener", "english": "To have" },
+        { "spanish": "Nosotros tenemos", "english": "We have" },
+        { "spanish": "Ustedes tienen", "english": "You all have" },
+        { "spanish": "Trabajar", "english": "To work" },
+        { "spanish": "Nosotros trabajamos", "english": "We work" },
+        { "spanish": "Ellos trabajan", "english": "They work" },
+        { "spanish": "Escribir", "english": "To write" },
+        { "spanish": "Nosotras escribimos", "english": "We (f) write" },
+        { "spanish": "Ellas escriben", "english": "They (f) write" },
+        { "spanish": "Juntos(as)", "english": "Together" },
+        { "spanish": "En la escuela", "english": "At school" },
+        { "spanish": "En la casa", "english": "At home" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Planes juntos",
+          "dialog": [
+            { "speaker": "Ana", "spanish": "Hola, chicos. ¿Qué hacemos esta noche?", "english": "Hi guys. What are we doing tonight?" },
+            { "speaker": "Luis", "spanish": "Nosotros comemos pizza y vemos una película.", "english": "We are eating pizza and watching a movie." },
+            { "speaker": "Marta", "spanish": "¡Qué bien! Yo quiero ver una película. ¿Y dónde comemos?", "english": "How nice! I want to watch a movie. And where are we eating?" },
+            { "speaker": "Luis", "spanish": "Nosotros comemos en mi casa. Tenemos una tele muy grande.", "english": "We are eating at my house. We have a very big TV." },
+            { "speaker": "Ana", "spanish": "¡Perfecto! Nos vemos en tu casa a las siete.", "english": "Perfect! We'll see you at your house at seven." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué van a hacer ellos juntos?",
+              "options": ["Cenar y bailar", "Cenar y ver una película", "Estudiar y leer", "Ir de compras"],
+              "answer": "Cenar y ver una película",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Dónde van a comer?",
+              "options": ["En un restaurante", "En la casa de Marta", "En la casa de Luis", "En la casa de Ana"],
+              "answer": "En la casa de Luis",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué tienen en la casa de Luis?",
+              "options": ["Una tele muy grande", "Mucha pizza", "Una cocina pequeña", "Un coche nuevo"],
+              "answer": "Una tele muy grande",
+              "answerIndex": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Hablando de otras personas",
+          "dialog": [
+            { "speaker": "Pedro", "spanish": "Hola, Sofía. ¿Dónde están los niños?", "english": "Hello, Sofía. Where are the children?" },
+            { "speaker": "Sofía", "spanish": "Ellos juegan en el parque con sus amigos.", "english": "They are playing in the park with their friends." },
+            { "speaker": "Pedro", "spanish": "¿Y los abuelos? ¿Qué hacen?", "english": "And the grandparents? What are they doing?" },
+            { "speaker": "Sofía", "spanish": "Ellos están en la casa. Leen el periódico y beben café.", "english": "They are at home. They are reading the newspaper and drinking coffee." },
+            { "speaker": "Pedro", "spanish": "Qué bueno. Nosotros vamos al supermercado ahora.", "english": "How nice. We are going to the supermarket now." }
+          ],
+          "questions": [
+            {
+              "question": "¿Dónde están los niños?",
+              "options": ["En la casa", "En el supermercado", "En el parque", "Con los abuelos"],
+              "answer": "En el parque",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué hacen los abuelos en la casa?",
+              "options": ["Juegan", "Hablan por teléfono", "Leen y beben café", "Ven televisión"],
+              "answer": "Leen y beben café",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿A dónde van Pedro y Sofía?",
+              "options": ["Al parque", "Al supermercado", "A la casa de los abuelos", "A una tienda"],
+              "answer": "Al supermercado",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Un guía turístico",
+          "dialog": [
+            { "speaker": "Guía", "spanish": "Buenos días a todos. Bienvenidos a la ciudad de Barcelona.", "english": "Good morning everyone. Welcome to the city of Barcelona." },
+            { "speaker": "Guía", "spanish": "Ustedes van a ver muchos lugares hermosos. ¿Todos tienen sus cámaras?", "english": "You all are going to see many beautiful places. Do you all have your cameras?" },
+            { "speaker": "Turista 1", "spanish": "Sí, las tenemos.", "english": "Yes, we have them." },
+            { "speaker": "Guía", "spanish": "Perfecto. Hoy, nosotros caminamos por el centro y comemos la comida local.", "english": "Perfect. Today, we are walking through the center and eating local food." },
+            { "speaker": "Turista 2", "spanish": "¡Qué bien! Estamos listos.", "english": "How great! We are ready." }
+          ],
+          "questions": [
+            {
+              "question": "¿A dónde van a ir todos?",
+              "options": ["A Madrid", "A Barcelona", "A una tienda", "A la playa"],
+              "answer": "A Barcelona",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué van a hacer hoy el guía y los turistas?",
+              "options": ["Nadan en la playa", "Caminan y comen comida local", "Compran regalos", "Ven una película"],
+              "answer": "Caminan y comen comida local",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué pregunta el guía a los turistas?",
+              "options": ["¿Tienen sus billetes?", "¿Tienen sus cámaras?", "¿Dónde viven?", "¿A qué hora se van?"],
+              "answer": "¿Tienen sus cámaras?",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Hijos y padres",
+          "dialog": [
+            { "speaker": "Madre", "spanish": "¿Qué hacen los chicos? Están muy silenciosos.", "english": "What are the boys doing? They are very quiet." },
+            { "speaker": "Padre", "spanish": "Ellos estudian para el examen. Tienen un examen mañana.", "english": "They are studying for the exam. They have an exam tomorrow." },
+            { "speaker": "Madre", "spanish": "¡Qué bien! Nosotros vamos a ver una película. Tienen que estudiar.", "english": "How nice! We are going to watch a movie. They have to study." },
+            { "speaker": "Padre", "spanish": "Sí. Después, nosotros vamos a preparar la cena.", "english": "Yes. Afterwards, we are going to prepare dinner." },
+            { "speaker": "Madre", "spanish": "Bueno. A ver si los chicos terminan pronto.", "english": "Good. Let's see if the boys finish soon." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué hacen los chicos?",
+              "options": ["Ven una película", "Estudian para un examen", "Juegan en el parque", "Cenan"],
+              "answer": "Estudian para un examen",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué van a hacer los padres?",
+              "options": ["Estudiar", "Ver una película y preparar la cena", "Ir al cine", "Ir a la escuela"],
+              "answer": "Ver una película y preparar la cena",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Ellos estudian para el examen'?",
+              "options": ["They are playing a game", "They are eating", "They are studying for the exam", "They are watching TV"],
+              "answer": "They are studying for the exam",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Una fiesta",
+          "dialog": [
+            { "speaker": "Camila", "spanish": "Hay una fiesta en la casa de Marcos y Elena. ¿Vamos?", "english": "There is a party at Marcos and Elena's house. Should we go?" },
+            { "speaker": "Diego", "spanish": "¡Sí! ¿Qué llevan ellos?", "english": "Yes! What are they bringing?" },
+            { "speaker": "Camila", "spanish": "Ellos llevan postres y bebidas. Nosotros llevamos el plato principal.", "english": "They are bringing desserts and drinks. We are bringing the main dish." },
+            { "speaker": "Diego", "spanish": "Perfecto. ¿Ustedes tienen todo para el plato?", "english": "Perfect. Do you all have everything for the dish?" },
+            { "speaker": "Camila", "spanish": "Sí, nosotros tenemos todo. Nos vemos allí.", "english": "Yes, we have everything. See you there." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué llevan Marcos y Elena a la fiesta?",
+              "options": ["Postres y bebidas", "El plato principal", "Nada", "Un regalo"],
+              "answer": "Postres y bebidas",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué llevan Camila y Diego?",
+              "options": ["Postres y bebidas", "El plato principal", "Entradas", "Un regalo"],
+              "answer": "El plato principal",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Nosotros tenemos todo'?",
+              "options": ["We have a good time", "We have everything", "We are ready", "We are going"],
+              "answer": "We have everything",
+              "answerIndex": 1
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "Un Viaje con Amigos",
+          "sentences": [
+            {
+              "spanish": "Mis amigos y yo tenemos un viaje. Nosotros viajamos a la playa.",
+              "english": "My friends and I have a trip. We are traveling to the beach."
+            },
+            {
+              "spanish": "Nosotros vamos en un coche grande. Todos nosotros tenemos nuestras maletas listas.",
+              "english": "We are going in a big car. All of us have our suitcases ready."
+            },
+            {
+              "spanish": "En la playa, nosotros comemos pescado y nadamos en el mar.",
+              "english": "At the beach, we are eating fish and swimming in the sea."
+            },
+            {
+              "spanish": "Mis amigos y yo somos muy buenos amigos. Nosotros siempre viajamos juntos.",
+              "english": "My friends and I are very good friends. We always travel together."
+            },
+            {
+              "spanish": "Nosotros vivimos experiencias increíbles. Este viaje va a ser muy divertido.",
+              "english": "We live incredible experiences. This trip is going to be a lot of fun."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Los Estudiantes Nuevos",
+          "sentences": [
+            {
+              "spanish": "Los estudiantes nuevos en la escuela son de Colombia. Ellos hablan español e inglés.",
+              "english": "The new students in the school are from Colombia. They speak Spanish and English."
+            },
+            {
+              "spanish": "Ellos tienen clase de matemáticas por la mañana. Ellos escriben mucho en sus cuadernos.",
+              "english": "They have math class in the morning. They write a lot in their notebooks."
+            },
+            {
+              "spanish": "Por la tarde, ellos viven cerca de la escuela, así que caminan a casa.",
+              "english": "In the afternoon, they live close to the school, so they walk home."
+            },
+            {
+              "spanish": "En la clase, la maestra les dice, 'Ustedes son estudiantes excelentes'.",
+              "english": "In class, the teacher tells them, 'You all are excellent students'."
+            },
+            {
+              "spanish": "Ellos son muy inteligentes. Nosotros aprendemos mucho de ellos.",
+              "english": "They are very intelligent. We are learning a lot from them."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "La Familia Gómez",
+          "sentences": [
+            {
+              "spanish": "La familia Gómez vive en una casa grande. El padre, la madre y los hijos.",
+              "english": "The Gómez family lives in a big house. The father, the mother, and the children."
+            },
+            {
+              "spanish": "Nosotros comemos juntos todos los días. Siempre comemos en la cocina.",
+              "english": "We eat together every day. We always eat in the kitchen."
+            },
+            {
+              "spanish": "El padre y la madre trabajan en la ciudad. Ellos van al trabajo en coche.",
+              "english": "The father and mother work in the city. They go to work by car."
+            },
+            {
+              "spanish": "Los hijos estudian en la escuela. Ellos tienen que estudiar mucho para sus clases.",
+              "english": "The children study at school. They have to study a lot for their classes."
+            },
+            {
+              "spanish": "Nosotros somos una familia feliz. Hacemos muchas cosas juntos.",
+              "english": "We are a happy family. We do many things together."
+            }
+          ]
+        }
+      ]
+    }
+}

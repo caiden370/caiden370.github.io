@@ -1,4 +1,3 @@
-import learningContent from '../json-files/learningContent.json';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { generateRandomIndicesDupless } from './ui-objects';
@@ -8,7 +7,7 @@ import { ProgressBar } from './ui-objects';
 import SpeechButton, { playCorrectSound, playIncorrectSound } from '../speech';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
 import Mascot from '../mascot';
-
+import { loadChapterContent } from '../utils/contentCache';
 
 
 //******************************************************************************** */
@@ -16,6 +15,7 @@ import Mascot from '../mascot';
 //******************************************************************************** */
 
 export default function SentencePractice ({chapterIndex, setSection, updatePoints}) {
+    
     const [numCompleted, setNumCompleted] = useState(0);
     const [numCorrect, setNumCorrect] = useState(0);
     const totalQuestions = 10;
@@ -27,17 +27,30 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
     const [updated, setUpdated] = useState(false);
 
     useEffect(() => {
-        const conversations = learningContent[chapterIndex.toString()]?.conversations;
-        if (conversations) {
-            setJsonContent(conversations);
-            const content = generateNextQuestionContent(conversations);
-            const component = buildNextQuestionComponent(content);
-            setQuestionComponent(component);
-            setAnswered(false);
-            setFinished(false);
-            setCurResult(false);
-            setUpdated(false);
+        async function getContent() {
+            try {
+                const contentObj = await loadChapterContent(chapterIndex);
+                const conversations = contentObj?.conversations;
+                if (conversations) {
+                    setJsonContent(conversations);
+                    const content = generateNextQuestionContent(conversations);
+                    const component = buildNextQuestionComponent(content);
+                    setQuestionComponent(component);
+                    setAnswered(false);
+                    setFinished(false);
+                    setCurResult(false);
+                    setUpdated(false);
+                } else {
+                    setQuestionComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
+                    setJsonContent(null);
+                }
+            } catch (err) {
+                console.error('Failed to load learning content for chapter', chapterIndex, err);
+                setQuestionComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
+                setJsonContent(null);
+            }
         }
+        getContent();
     }, [chapterIndex]);
 
 
@@ -107,7 +120,7 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
     function continueButton() {
         return (
             <div className="sentence-continue-button-container">
-            <Button variant='contained' color='primary' sx={{width:'auto'}} onClick={handleContinue}>
+            <Button className='app-button primary' variant='contained' sx={{width:'auto'}} onClick={handleContinue}>
                 <Typography>Continue</Typography>
             </Button>
             </div>
@@ -329,7 +342,7 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
 
         </div>
         {!answered && (<div className="sentence-continue-button-container">
-            <Button variant='contained' color='success' onClick={handleCheckButton}>
+            <Button className='app-button primary' variant='contained' color='success' onClick={handleCheckButton}>
                 <Typography>Check</Typography>
             </Button>
         </div>)}

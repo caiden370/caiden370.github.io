@@ -1,0 +1,282 @@
+{
+    "17": {
+      "words": [
+        { "spanish": "Me gusta", "english": "I like (it)" },
+        { "spanish": "Me gustan", "english": "I like (them)" },
+        { "spanish": "Te gusta", "english": "You like (it)" },
+        { "spanish": "Te gustan", "english": "You like (them)" },
+        { "spanish": "¿Qué te gusta?", "english": "What do you like?" },
+        { "spanish": "¿Qué te gustan?", "english": "What do you like? (plural)" },
+        { "spanish": "Preferir", "english": "To prefer" },
+        { "spanish": "Yo prefiero", "english": "I prefer" },
+        { "spanish": "Tú prefieres", "english": "You prefer" },
+        { "spanish": "Él/Ella prefiere", "english": "He/She prefers" },
+        { "spanish": "¿Qué prefieres?", "english": "What do you prefer?" },
+        { "spanish": "Querer", "english": "To want" },
+        { "spanish": "Yo quiero", "english": "I want" },
+        { "spanish": "Tú quieres", "english": "You want" },
+        { "spanish": "¿Qué quieres?", "english": "What do you want?" },
+        { "spanish": "Pensar", "english": "To think" },
+        { "spanish": "Yo pienso", "english": "I think" },
+        { "spanish": "Tú piensas", "english": "You think" },
+        { "spanish": "¿Qué piensas de...?", "english": "What do you think about...?" },
+        { "spanish": "Creer", "english": "To believe" },
+        { "spanish": "Yo creo que", "english": "I believe that" },
+        { "spanish": "En mi opinión", "english": "In my opinion" },
+        { "spanish": "Más que", "english": "More than" },
+        { "spanish": "Por supuesto", "english": "Of course" },
+        { "spanish": "Tal vez", "english": "Maybe" },
+        { "spanish": "La película", "english": "The movie" },
+        { "spanish": "El restaurante", "english": "The restaurant" },
+        { "spanish": "La comida", "english": "The food" },
+        { "spanish": "El libro", "english": "The book" },
+        { "spanish": "La música", "english": "The music" },
+        { "spanish": "El deporte", "english": "The sport" },
+        { "spanish": "Divertido(a)", "english": "Fun" },
+        { "spanish": "Aburrido(a)", "english": "Boring" },
+        { "spanish": "Fácil", "english": "Easy" },
+        { "spanish": "Difícil", "english": "Difficult" },
+        { "spanish": "El plan", "english": "The plan" },
+        { "spanish": "La idea", "english": "The idea" },
+        { "spanish": "Claro que sí", "english": "Of course (certainly)" },
+        { "spanish": "No, no me gusta", "english": "No, I don't like it" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Planes para el fin de semana",
+          "dialog": [
+            { "speaker": "Sofía", "spanish": "¿Qué te gusta hacer el fin de semana?", "english": "What do you like to do on the weekend?" },
+            { "speaker": "Marco", "spanish": "Me gusta mucho ver películas. Prefiero ver una película que leer un libro.", "english": "I really like to watch movies. I prefer watching a movie to reading a book." },
+            { "speaker": "Sofía", "spanish": "A mí me gusta leer más que ver películas. Pienso que los libros son más interesantes.", "english": "I like to read more than watch movies. I think books are more interesting." },
+            { "speaker": "Marco", "spanish": "Bueno, tal vez podemos hacer las dos cosas. Podemos leer y después ver una película.", "english": "Well, maybe we can do both things. We can read and then watch a movie." },
+            { "speaker": "Sofía", "spanish": "¡Me parece una buena idea!", "english": "That sounds like a good idea to me!" }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué prefiere hacer Marco?",
+              "options": ["Leer libros", "Ver películas", "Hacer deporte", "Ir de compras"],
+              "answer": "Ver películas",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué piensa Sofía sobre los libros?",
+              "options": ["Son aburridos", "Son interesantes", "No le gustan", "No los lee"],
+              "answer": "Son interesantes",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Yo prefiero ver una película'?",
+              "options": ["I like movies", "I don't like movies", "I prefer to watch a movie", "I want a movie"],
+              "answer": "I prefer to watch a movie",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Escogiendo un restaurante",
+          "dialog": [
+            { "speaker": "Elena", "spanish": "Tengo hambre. ¿Qué quieres comer?", "english": "I'm hungry. What do you want to eat?" },
+            { "speaker": "David", "spanish": "Yo quiero pizza. Me gusta la pizza más que la pasta.", "english": "I want pizza. I like pizza more than pasta." },
+            { "speaker": "Elena", "spanish": "Yo no quiero pizza. Prefiero ir a un restaurante de comida mexicana.", "english": "I don't want pizza. I prefer to go to a Mexican food restaurant." },
+            { "speaker": "David", "spanish": "Hmm. Está bien. Yo también quiero comida mexicana, pero la pizza es mi favorita.", "english": "Hmm. Okay. I also want Mexican food, but pizza is my favorite." },
+            { "speaker": "Elena", "spanish": "¡Perfecto! Vamos al restaurante mexicano de la esquina.", "english": "Perfect! Let's go to the Mexican restaurant on the corner." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué quiere comer David?",
+              "options": ["Pizza", "Pasta", "Comida mexicana", "Una ensalada"],
+              "answer": "Pizza",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué prefiere Elena?",
+              "options": ["Comida mexicana", "Pizza", "Pasta", "Comida italiana"],
+              "answer": "Comida mexicana",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué significa 'Yo quiero pizza'?",
+              "options": ["I like pizza", "I need pizza", "I have pizza", "I want pizza"],
+              "answer": "I want pizza",
+              "answerIndex": 3
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Opiniones sobre la música",
+          "dialog": [
+            { "speaker": "Carlos", "spanish": "¿Qué piensas de la música rock?", "english": "What do you think about rock music?" },
+            { "speaker": "Ana", "spanish": "Yo creo que es muy ruidosa. Prefiero la música clásica.", "english": "I believe it's very loud. I prefer classical music." },
+            { "speaker": "Carlos", "spanish": "En mi opinión, la música rock es la mejor. Me gusta el ritmo rápido.", "english": "In my opinion, rock music is the best. I like the fast rhythm." },
+            { "speaker": "Ana", "spanish": "Bueno, tal vez depende del momento. Yo escucho rock a veces.", "english": "Well, maybe it depends on the moment. I listen to rock sometimes." },
+            { "speaker": "Carlos", "spanish": "¡Qué bien! A mí también me gusta la música clásica.", "english": "How nice! I also like classical music." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué prefiere Ana?",
+              "options": ["Música rock", "Música clásica", "Música pop", "Música lenta"],
+              "answer": "Música clásica",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué piensa Carlos sobre la música rock?",
+              "options": ["Que es ruidosa", "Que es aburrida", "Que es la mejor", "Que es triste"],
+              "answer": "Que es la mejor",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'En mi opinión'?",
+              "options": ["In my dream", "In my opinion", "In my house", "In my book"],
+              "answer": "In my opinion",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Planes para el futuro",
+          "dialog": [
+            { "speaker": "María", "spanish": "¿Qué quieres hacer después de la universidad?", "english": "What do you want to do after university?" },
+            { "speaker": "Pablo", "spanish": "Quiero viajar por el mundo. Prefiero viajar que trabajar en una oficina.", "english": "I want to travel the world. I prefer to travel than to work in an office." },
+            { "speaker": "María", "spanish": "Yo no quiero viajar. Yo quiero un trabajo estable. Creo que es más importante.", "english": "I don't want to travel. I want a stable job. I believe it's more important." },
+            { "speaker": "Pablo", "spanish": "Entiendo tu opinión, pero yo pienso que las experiencias son más valiosas que el dinero.", "english": "I understand your opinion, but I think experiences are more valuable than money." },
+            { "speaker": "María", "spanish": "Tal vez tienes razón. Pero yo prefiero estar segura.", "english": "Maybe you're right. But I prefer to be secure." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué quiere hacer Pablo después de la universidad?",
+              "options": ["Trabajar en una oficina", "Viajar por el mundo", "Estudiar más", "Comprar una casa"],
+              "answer": "Viajar por el mundo",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué prefiere María?",
+              "options": ["Viajar", "Un trabajo estable", "Las experiencias", "Un coche nuevo"],
+              "answer": "Un trabajo estable",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Creo que es más importante'?",
+              "options": ["I believe it's less important", "I believe it's more important", "I believe it's difficult", "I believe it's easy"],
+              "answer": "I believe it's more important",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Comprando ropa",
+          "dialog": [
+            { "speaker": "Carmen", "spanish": "Me gusta esta camisa, pero quiero una que sea más barata.", "english": "I like this shirt, but I want one that is cheaper." },
+            { "speaker": "Lucía", "spanish": "Yo también. Creo que la ropa es muy cara en esta tienda.", "english": "Me too. I think the clothes are very expensive in this store." },
+            { "speaker": "Carmen", "spanish": "Sí. Yo prefiero comprar en la otra tienda. Los precios son mejores allí.", "english": "Yes. I prefer to shop at the other store. The prices are better there." },
+            { "speaker": "Lucía", "spanish": "¡Qué buena idea! Vamos allá. No quiero gastar mucho dinero.", "english": "What a good idea! Let's go there. I don't want to spend a lot of money." },
+            { "speaker": "Carmen", "spanish": "Me parece bien. A mí me gusta ahorrar.", "english": "That sounds good to me. I like to save money." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué quiere Carmen?",
+              "options": ["Una camisa más cara", "Una camisa más barata", "Una camisa más grande", "Unos pantalones"],
+              "answer": "Una camisa más barata",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Por qué prefieren la otra tienda?",
+              "options": ["Porque es más grande", "Porque los precios son mejores", "Porque la ropa es más bonita", "Porque la comida es mejor"],
+              "answer": "Porque los precios son mejores",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'No quiero gastar mucho dinero'?",
+              "options": ["I want to spend a lot of money", "I don't want to spend a lot of money", "I want to save money", "I don't have money"],
+              "answer": "I don't want to spend a lot of money",
+              "answerIndex": 1
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "Mi Comida Favorita",
+          "sentences": [
+            {
+              "spanish": "En mi opinión, la comida mexicana es la mejor. Me gustan los tacos más que cualquier otra cosa.",
+              "english": "In my opinion, Mexican food is the best. I like tacos more than anything else."
+            },
+            {
+              "spanish": "Cuando voy a un restaurante, siempre prefiero pedir tacos al pastor. Me encantan.",
+              "english": "When I go to a restaurant, I always prefer to order tacos al pastor. I love them."
+            },
+            {
+              "spanish": "También me gustan las quesadillas, pero no las quiero tanto como los tacos.",
+              "english": "I also like quesadillas, but I don't want them as much as tacos."
+            },
+            {
+              "spanish": "Yo creo que la comida es más rica cuando la comes con amigos.",
+              "english": "I believe that food is more delicious when you eat it with friends."
+            },
+            {
+              "spanish": "Por eso, me gusta invitar a mis amigos a comer tacos conmigo.",
+              "english": "For that reason, I like to invite my friends to eat tacos with me."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Un Fin de Semana Ideal",
+          "sentences": [
+            {
+              "spanish": "Para mí, el fin de semana ideal es estar en casa. Yo prefiero descansar.",
+              "english": "For me, the ideal weekend is to be at home. I prefer to rest."
+            },
+            {
+              "spanish": "Me gusta dormir hasta tarde. No quiero levantarme temprano los sábados.",
+              "english": "I like to sleep in late. I don't want to get up early on Saturdays."
+            },
+            {
+              "spanish": "Pienso que es importante relajarse. Por eso, me gusta leer un libro y escuchar música.",
+              "english": "I think it's important to relax. Because of that, I like to read a book and listen to music."
+            },
+            {
+              "spanish": "A veces, mis amigos quieren ir de fiesta, pero yo prefiero quedarme en casa. Soy feliz así.",
+              "english": "Sometimes, my friends want to go partying, but I prefer to stay home. I am happy that way."
+            },
+            {
+              "spanish": "El domingo, quiero cocinar algo delicioso. Me gusta mucho cocinar.",
+              "english": "On Sunday, I want to cook something delicious. I really like to cook."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Las Opiniones de Juan",
+          "sentences": [
+            {
+              "spanish": "Mi amigo Juan tiene muchas opiniones. Él piensa que el fútbol es el mejor deporte.",
+              "english": "My friend Juan has many opinions. He thinks that soccer is the best sport."
+            },
+            {
+              "spanish": "Él prefiere ver un partido de fútbol que cualquier otra cosa en la televisión.",
+              "english": "He prefers to watch a soccer game than anything else on television."
+            },
+            {
+              "spanish": "Yo no creo que el fútbol sea el mejor. Me gusta el baloncesto más que el fútbol.",
+              "english": "I don't believe soccer is the best. I like basketball more than soccer."
+            },
+            {
+              "spanish": "Juan quiere ser un jugador de fútbol profesional. Pienso que es un gran sueño.",
+              "english": "Juan wants to be a professional soccer player. I think it's a great dream."
+            },
+            {
+              "spanish": "Yo prefiero jugar baloncesto, pero respeto lo que él quiere y piensa.",
+              "english": "I prefer to play basketball, but I respect what he wants and thinks."
+            }
+          ]
+        }
+      ]
+    }
+}

@@ -1,0 +1,1394 @@
+
+{"0":
+  {
+    "words": [
+        { "spanish": "Hola", "english": "Hello" },
+        { "spanish": "Buenos días", "english": "Good morning" },
+        { "spanish": "Buenas tardes", "english": "Good afternoon" },
+        { "spanish": "Buenas noches", "english": "Good evening / Good night" },
+        { "spanish": "¿Cómo estás?", "english": "How are you?" },
+        { "spanish": "¿Qué tal?", "english": "What's up?" },
+        { "spanish": "¿Cómo te va?", "english": "How's it going?" },
+        { "spanish": "¿Qué haces?", "english": "What are you doing?" },
+        { "spanish": "Mucho gusto", "english": "Nice to meet you" },
+        { "spanish": "Igualmente", "english": "Likewise" },
+        { "spanish": "¿Qué onda?", "english": "What's up?" },
+        { "spanish": "¿Qué pasa?", "english": "What's happening?" },
+        { "spanish": "¡Tanto tiempo!", "english": "Long time no see!" },
+        { "spanish": "¡Qué gusto verte!", "english": "So nice to see you!" },
+        { "spanish": "Hasta luego", "english": "See you later" },
+        { "spanish": "Hasta pronto", "english": "See you soon" },
+        { "spanish": "Nos vemos", "english": "See you" },
+        { "spanish": "Adiós", "english": "Goodbye" },
+        { "spanish": "Cuídate", "english": "Take care" },
+        { "spanish": "Que tengas un buen día", "english": "Have a good day" }
+      ],
+
+  "conversations": [
+      {
+        "id": 1,
+        "topic": "Meeting Someone New",
+        "dialog": [
+          { "speaker": "Carlos", "spanish": "Hola, ¿cómo te llamas?", "english": "Hi, what's your name?" },
+          { "speaker": "Sofía", "spanish": "Hola, me llamo Sofía. ¿Y tú?", "english": "Hi, my name is Sofía. And you?" },
+          { "speaker": "Carlos", "spanish": "Me llamo Carlos. Mucho gusto.", "english": "My name is Carlos. Nice to meet you." },
+          { "speaker": "Sofía", "spanish": "Igualmente, Carlos. ¿De dónde eres?", "english": "Likewise, Carlos. Where are you from?" },
+          { "speaker": "Carlos", "spanish": "Soy de México, ¿y tú?", "english": "I'm from Mexico, and you?" },
+          { "speaker": "Sofía", "spanish": "Soy de Colombia, pero vivo aquí.", "english": "I'm from Colombia, but I live here." }
+        ],
+        "questions": [
+          {
+            "question": "¿De dónde es Sofía?",
+            "options": ["De México", "De España", "De Colombia", "De Perú"],
+            "answer": "De Colombia",
+            "answerIndex":2
+          },
+          {
+            "question": "¿Qué significa 'Mucho gusto'?",
+            "options": ["Goodbye", "Nice to meet you", "Thank you", "How are you?"],
+            "answer": "Nice to meet you",
+            "answerIndex":1
+          },
+          {
+            "question": "¿Qué pregunta hace Carlos al principio?",
+            "options": ["¿Cómo estás?", "¿Dónde vives?", "¿Cómo te llamas?", "¿Qué haces?"],
+            "answer": "¿Cómo te llamas?",
+            "answerIndex":2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Casual Conversation",
+        "dialog": [
+          { "speaker": "Lucía", "spanish": "¡Hola! ¿Qué tal tu día?", "english": "Hey! How’s your day going?" },
+          { "speaker": "Mateo", "spanish": "Bien, gracias. Estuve en clase toda la mañana.", "english": "Good, thanks. I was in class all morning." },
+          { "speaker": "Lucía", "spanish": "¿Qué estudias?", "english": "What are you studying?" },
+          { "speaker": "Mateo", "spanish": "Estudio biología. ¿Y tú?", "english": "I'm studying biology. And you?" },
+          { "speaker": "Lucía", "spanish": "Yo estudio informática. ¿Qué haces esta tarde?", "english": "I'm studying computer science. What are you doing this afternoon?" },
+          { "speaker": "Mateo", "spanish": "Nada especial, tal vez vea una película.", "english": "Nothing special, maybe I'll watch a movie." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué estudia Mateo?",
+            "options": ["Informática", "Medicina", "Biología", "Física"],
+            "answer": "Biología",
+            "answerIndex":2
+          },
+          {
+            "question": "¿Qué hará Mateo por la tarde?",
+            "options": ["Estudiar", "Ver una película", "Trabajar", "Ir al gimnasio"],
+            "answer": "Ver una película",
+            "answerIndex":1
+          },
+          {
+            "question": "¿Qué estudia Lucía?",
+            "options": ["Arte", "Informática", "Historia", "Matemáticas"],
+            "answer": "Informática",
+            "answerIndex":1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Running into a Friend",
+        "dialog": [
+          { "speaker": "Andrea", "spanish": "¡Tanto tiempo! ¿Cómo has estado?", "english": "Long time no see! How have you been?" },
+          { "speaker": "Luis", "spanish": "¡Qué gusto verte! He estado bien, ocupado con el trabajo.", "english": "So nice to see you! I've been good, just busy with work." },
+          { "speaker": "Andrea", "spanish": "Sí, te entiendo. Yo también he estado muy ocupada.", "english": "Yeah, I get it. I've been very busy too." },
+          { "speaker": "Luis", "spanish": "¿Te gustaría tomar un café esta semana y ponernos al día?", "english": "Would you like to grab a coffee this week and catch up?" },
+          { "speaker": "Andrea", "spanish": "Claro, me encantaría. ¿El viernes está bien?", "english": "Sure, I’d love that. Is Friday okay?" },
+          { "speaker": "Luis", "spanish": "Perfecto. Te escribo más tarde.", "english": "Perfect. I'll text you later." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué ha estado ocupado Luis?",
+            "options": ["Por la universidad", "Por el trabajo", "Por su familia", "Por vacaciones"],
+            "answer": "Por el trabajo",
+            "answerIndex":1
+          },
+          {
+            "question": "¿Qué propone Luis?",
+            "options": ["Ir al cine", "Tomar un café", "Ir de compras", "Ir a cenar"],
+            "answer": "Tomar un café",
+            "answerIndex":1
+          },
+          {
+            "question": "¿Qué día propone Andrea?",
+            "options": ["Miércoles", "Viernes", "Lunes", "Sábado"],
+            "answer": "Viernes",
+            "answerIndex":1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Polite Goodbye",
+        "dialog": [
+          { "speaker": "Isabel", "spanish": "Bueno, ya me tengo que ir.", "english": "Well, I have to go now." },
+          { "speaker": "Tomás", "spanish": "Está bien, fue un placer hablar contigo.", "english": "Alright, it was a pleasure talking to you." },
+          { "speaker": "Isabel", "spanish": "Igualmente. Que tengas un buen día.", "english": "Likewise. Have a good day." },
+          { "speaker": "Tomás", "spanish": "Cuídate mucho. Nos vemos pronto.", "english": "Take care. See you soon." },
+          { "speaker": "Isabel", "spanish": "Hasta luego.", "english": "See you later." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué Isabel se despide?",
+            "options": ["Tiene que trabajar", "Tiene que irse", "Está cansada", "Tiene hambre"],
+            "answer": "Tiene que irse",
+            "answerIndex":1
+          },
+          {
+            "question": "¿Qué dice Tomás al final?",
+            "options": ["Hasta mañana", "Nos vemos pronto", "Adiós", "Buenos días"],
+            "answer": "Nos vemos pronto",
+            "answerIndex":1
+          },
+          {
+            "question": "¿Qué significa 'Cuídate'?",
+            "options": ["Come well", "See you", "Take care", "Wait for me"],
+            "answer": "Take care",
+            "answerIndex":2
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "topic": "Morning Greeting",
+        "dialog": [
+          { "speaker": "Emma", "spanish": "¡Buenos días! ¿Dormiste bien?", "english": "Good morning! Did you sleep well?" },
+          { "speaker": "Nico", "spanish": "Sí, gracias. ¿Y tú?", "english": "Yes, thank you. And you?" },
+          { "speaker": "Emma", "spanish": "Más o menos. Hacía mucho calor anoche.", "english": "So-so. It was really hot last night." },
+          { "speaker": "Nico", "spanish": "Sí, el clima ha estado raro últimamente.", "english": "Yeah, the weather's been strange lately." },
+          { "speaker": "Emma", "spanish": "Bueno, ¡que tengas un buen día!", "english": "Well, have a great day!" },
+          { "speaker": "Nico", "spanish": "Gracias, igualmente.", "english": "Thanks, you too." }
+        ],
+        "questions": [
+          {
+            "question": "¿Cómo durmió Emma?",
+            "options": ["Muy bien", "Mal", "Más o menos", "No durmió"],
+            "answer": "Más o menos",
+            "answerIndex":2
+          },
+          {
+            "question": "¿Qué problema menciona Emma?",
+            "options": ["Mucho trabajo", "Mucho frío", "Mucho calor", "Mucho ruido"],
+            "answer": "Mucho calor",
+            "answerIndex":2
+          },
+          {
+            "question": "¿Qué dice Nico al final?",
+            "options": ["Hasta luego", "Gracias, igualmente", "Buenas tardes", "Lo siento"],
+            "answer": "Gracias, igualmente",
+            "answerIndex":1
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "Un Nuevo Comienzo",
+        "sentences": [
+          {
+            "spanish": "Sofía llegó a Madrid por primera vez.",
+            "english": "Sofía arrived in Madrid for the first time."
+          },
+          {
+            "spanish": "Estaba un poco nerviosa, pero emocionada.",
+            "english": "She was a little nervous, but excited."
+          },
+          {
+            "spanish": "Al entrar en el hostal, una mujer sonriente la saludó.",
+            "english": "Upon entering the hostel, a smiling woman greeted her."
+          },
+          {
+            "spanish": "—¡Hola! Buenos días. ¿En qué puedo ayudarte?",
+            "english": "—Hello! Good morning. How can I help you?"
+          },
+          {
+            "spanish": "dijo la mujer.",
+            "english": "said the woman."
+          },
+          {
+            "spanish": "Sofía respondió con una sonrisa.",
+            "english": "Sofía responded with a smile."
+          },
+          {
+            "spanish": "—Buenos días. Me llamo Sofía y tengo una reserva.",
+            "english": "—Good morning. My name is Sofía and I have a reservation."
+          },
+          {
+            "spanish": "La mujer, que se llamaba Elena, revisó su lista.",
+            "english": "The woman, whose name was Elena, checked her list."
+          },
+          {
+            "spanish": "—Ah, sí, Sofía. Mucho gusto. Bienvenida a Madrid.",
+            "english": "—Ah, yes, Sofía. Nice to meet you. Welcome to Madrid."
+          },
+          {
+            "spanish": "—Igualmente, Elena. Gracias.",
+            "english": "—Likewise, Elena. Thank you."
+          },
+          {
+            "spanish": "Después de hacer el registro, Sofía preguntó:",
+            "english": "After checking in, Sofía asked:"
+          },
+          {
+            "spanish": "—¿Qué tal está el día hoy?",
+            "english": "—How's the day today?"
+          },
+          {
+            "spanish": "Elena le dijo que era un día perfecto para explorar la ciudad.",
+            "english": "Elena told her it was a perfect day to explore the city."
+          },
+          {
+            "spanish": "Sofía se sintió aliviada y feliz de haber llegado.",
+            "english": "Sofía felt relieved and happy to have arrived."
+          },
+          {
+            "spanish": "Decidió salir inmediatamente a conocer su nuevo entorno.",
+            "english": "She decided to go out immediately to get to know her new surroundings."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Un Encuentro Inesperado",
+        "sentences": [
+          {
+            "spanish": "Pedro caminaba por el parque, disfrutando de la tarde.",
+            "english": "Pedro was walking through the park, enjoying the afternoon."
+          },
+          {
+            "spanish": "De repente, vio a un viejo amigo, Juan, sentado en un banco.",
+            "english": "Suddenly, he saw an old friend, Juan, sitting on a bench."
+          },
+          {
+            "spanish": "—¡Juan! ¡Tanto tiempo! ¿Qué tal?",
+            "english": "—Juan! Long time no see! What's up?"
+          },
+          {
+            "spanish": "exclamó Pedro, sorprendido.",
+            "english": "exclaimed Pedro, surprised."
+          },
+          {
+            "spanish": "Juan levantó la vista y una gran sonrisa apareció en su rostro.",
+            "english": "Juan looked up and a big smile appeared on his face."
+          },
+          {
+            "spanish": "—¡Pedro! ¡Qué gusto verte! He estado bien, ¿y tú? ¿Cómo te va?",
+            "english": "—Pedro! So nice to see you! I've been good, and you? How's it going?"
+          },
+          {
+            "spanish": "—Muy bien, gracias. ¿Qué haces por aquí?",
+            "english": "—Very well, thanks. What are you doing around here?"
+          },
+          {
+            "spanish": "preguntó Pedro, sentándose a su lado.",
+            "english": "Pedro asked, sitting next to him."
+          },
+          {
+            "spanish": "—Nada especial, solo disfrutando del sol.",
+            "english": "—Nothing special, just enjoying the sun."
+          },
+          {
+            "spanish": "dijo Juan.",
+            "english": "said Juan."
+          },
+          {
+            "spanish": "Estuvieron charlando un rato, poniéndose al día sobre sus vidas.",
+            "english": "They chatted for a while, catching up on their lives."
+          },
+          {
+            "spanish": "Cuando el sol empezó a bajar, decidieron despedirse.",
+            "english": "When the sun began to set, they decided to say goodbye."
+          },
+          {
+            "spanish": "—Bueno, Juan, me tengo que ir. Fue un placer verte.",
+            "english": "—Well, Juan, I have to go. It was a pleasure to see you."
+          },
+          {
+            "spanish": "—Igualmente, Pedro. Cuídate mucho. Nos vemos pronto.",
+            "english": "—Likewise, Pedro. Take care. See you soon."
+          },
+          {
+            "spanish": "Se despidieron con un abrazo, prometiendo no dejar pasar tanto tiempo la próxima vez.",
+            "english": "They said goodbye with a hug, promising not to let so much time pass next time."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "La Rutina Matutina de Ana",
+        "sentences": [
+          {
+            "spanish": "Ana se despertó con el sonido de su alarma.",
+            "english": "Ana woke up to the sound of her alarm."
+          },
+          {
+            "spanish": "Abrió los ojos y dijo en voz baja: —¡Buenos días, mundo!",
+            "english": "She opened her eyes and said softly: —Good morning, world!"
+          },
+          {
+            "spanish": "Se levantó y fue a la cocina, donde su hermano, Luis, ya estaba preparando café.",
+            "english": "She got up and went to the kitchen, where her brother, Luis, was already making coffee."
+          },
+          {
+            "spanish": "—Buenos días, Luis. ¿Qué tal dormiste?",
+            "english": "—Good morning, Luis. How did you sleep?"
+          },
+          {
+            "spanish": "preguntó Ana, bostezando.",
+            "english": "Ana asked, yawning."
+          },
+          {
+            "spanish": "—¡Hola, Ana! Dormí muy bien, gracias. ¿Y tú?",
+            "english": "—Hello, Ana! I slept very well, thanks. And you?"
+          },
+          {
+            "spanish": "—Yo también. Hoy tengo un día ocupado.",
+            "english": "—Me too. I have a busy day today."
+          },
+          {
+            "spanish": "Después de desayunar, ambos se prepararon para salir.",
+            "english": "After breakfast, both got ready to leave."
+          },
+          {
+            "spanish": "Luis se dirigió a su trabajo y Ana a la universidad.",
+            "english": "Luis headed to his job and Ana to the university."
+          },
+          {
+            "spanish": "—Bueno, Luis, me voy. Que tengas un buen día.",
+            "english": "—Well, Luis, I'm leaving. Have a good day."
+          },
+          {
+            "spanish": "dijo Ana, tomando su mochila.",
+            "english": "Ana said, grabbing her backpack."
+          },
+          {
+            "spanish": "—Igualmente, Ana. Cuídate mucho. Nos vemos esta noche.",
+            "english": "—Likewise, Ana. Take care. See you tonight."
+          },
+          {
+            "spanish": "Ana salió del apartamento, lista para enfrentar el día, con una sonrisa en el rostro.",
+            "english": "Ana left the apartment, ready to face the day, with a smile on her face."
+          }
+        ]
+      }
+    ]
+  },
+  "1":
+  {
+    "words": [
+      { "spanish": "¿Qué hora es?", "english": "What time is it?" },
+      { "spanish": "Es la una.", "english": "It's one o'clock." },
+      { "spanish": "Son las dos.", "english": "It's two o'clock." },
+      { "spanish": "Son las tres y media.", "english": "It's half past three." },
+      { "spanish": "Son las cuatro menos cuarto.", "english": "It's a quarter to four." },
+      { "spanish": "Disculpa", "english": "Excuse me" },
+      { "spanish": "¿Me puedes ayudar?", "english": "Can you help me?" },
+      { "spanish": "Necesito ayuda.", "english": "I need help." },
+      { "spanish": "¿Dónde está...?", "english": "Where is...?" },
+      { "spanish": "¿Cómo llego a...?", "english": "How do I get to...?" },
+      { "spanish": "A la derecha", "english": "To the right" },
+      { "spanish": "A la izquierda", "english": "To the left" },
+      { "spanish": "Todo recto", "english": "Straight ahead" },
+      { "spanish": "Cerca de", "english": "Near" },
+      { "spanish": "Lejos de", "english": "Far from" },
+      { "spanish": "Aquí", "english": "Here" },
+      { "spanish": "Allí", "english": "There" },
+      { "spanish": "Gracias", "english": "Thank you" },
+      { "spanish": "De nada", "english": "You're welcome" },
+      { "spanish": "Por favor", "english": "Please" },
+      { "spanish": "¿Cuánto cuesta?", "english": "How much does it cost?" },
+      { "spanish": "Lo siento", "english": "I'm sorry" },
+      { "spanish": "No entiendo.", "english": "I don't understand." },
+      { "spanish": "¿Puedes repetir?", "english": "Can you repeat?" }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Asking for the Time",
+        "dialog": [
+          { "speaker": "Elena", "spanish": "Disculpa, ¿qué hora es?", "english": "Excuse me, what time is it?" },
+          { "speaker": "Pablo", "spanish": "Son las tres y cuarto.", "english": "It's a quarter past three." },
+          { "speaker": "Elena", "spanish": "¡Gracias! Tengo que irme. Llego tarde a mi clase.", "english": "Thank you! I have to go. I'm late for my class." },
+          { "speaker": "Pablo", "spanish": "De nada. Que te vaya bien.", "english": "You're welcome. Have a good one." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué pregunta Elena?",
+            "options": ["¿Cómo estás?", "¿Qué tal?", "¿Qué hora es?", "¿Dónde está?"],
+            "answer": "¿Qué hora es?",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué hora es según Pablo?",
+            "options": ["La una y media", "Las tres y cuarto", "Las dos en punto", "Las cuatro menos cuarto"],
+            "answer": "Las tres y cuarto",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Por qué tiene que irse Elena?",
+            "options": ["Está cansada", "Llega tarde", "No tiene tiempo", "No quiere hablar"],
+            "answer": "Llega tarde",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Asking for Directions",
+        "dialog": [
+          { "speaker": "María", "spanish": "Disculpa, ¿cómo llego a la estación de tren?", "english": "Excuse me, how do I get to the train station?" },
+          { "speaker": "Señor", "spanish": "Vaya todo recto por esta calle, luego gire a la izquierda en el semáforo.", "english": "Go straight ahead on this street, then turn left at the traffic light." },
+          { "speaker": "María", "spanish": "¿Está muy lejos?", "english": "Is it very far?" },
+          { "speaker": "Señor", "spanish": "No, está cerca, a unos cinco minutos a pie.", "english": "No, it's near, about five minutes on foot." },
+          { "speaker": "María", "spanish": "Muchas gracias por tu ayuda.", "english": "Thank you very much for your help." },
+          { "speaker": "Señor", "spanish": "De nada.", "english": "You're welcome." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué busca María?",
+            "options": ["La farmacia", "La estación de tren", "El supermercado", "El parque"],
+            "answer": "La estación de tren",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿En qué dirección debe girar María en el semáforo?",
+            "options": ["A la derecha", "A la izquierda", "Todo recto", "Hacia atrás"],
+            "answer": "A la izquierda",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Está la estación lejos o cerca?",
+            "options": ["Lejos", "Muy lejos", "Cerca", "Demasiado cerca"],
+            "answer": "Cerca",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Needing Help in a Store",
+        "dialog": [
+          { "speaker": "Cliente", "spanish": "Disculpa, necesito ayuda.", "english": "Excuse me, I need help." },
+          { "speaker": "Dependiente", "spanish": "Claro, ¿en qué puedo ayudarte?", "english": "Of course, how can I help you?" },
+          { "speaker": "Cliente", "spanish": "¿Dónde están los cuadernos?", "english": "Where are the notebooks?" },
+          { "speaker": "Dependiente", "spanish": "Están en el pasillo de la derecha, al fondo.", "english": "They are in the aisle on the right, at the back." },
+          { "speaker": "Cliente", "spanish": "Ah, ya veo. ¿Y cuánto cuestan estos bolígrafos?", "english": "Ah, I see. And how much do these pens cost?" },
+          { "speaker": "Dependiente", "spanish": "Cuestan dos euros cada uno.", "english": "They cost two euros each." },
+          { "speaker": "Cliente", "spanish": "Perfecto, gracias.", "english": "Perfect, thank you." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué necesita el cliente?",
+            "options": ["Dinero", "Un libro", "Ayuda", "Un café"],
+            "answer": "Ayuda",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Dónde están los cuadernos?",
+            "options": ["En el pasillo de la izquierda", "En el pasillo de la derecha", "Cerca de la entrada", "No hay cuadernos"],
+            "answer": "En el pasillo de la derecha",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Cuánto cuestan los bolígrafos?",
+            "options": ["Un euro", "Dos euros", "Tres euros", "Cinco euros"],
+            "answer": "Dos euros",
+            "answerIndex": 1
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "Un Día en la Ciudad",
+        "sentences": [
+          {
+            "spanish": "Carlos se despertó temprano en su primer día en la ciudad.",
+            "english": "Carlos woke up early on his first day in the city."
+          },
+          {
+            "spanish": "Miró su reloj: —¡Son las siete en punto!",
+            "english": "He looked at his watch: —It's seven o'clock!"
+          },
+          {
+            "spanish": "Necesitaba encontrar un café para desayunar.",
+            "english": "He needed to find a cafe for breakfast."
+          },
+          {
+            "spanish": "Salió del hotel y vio a una mujer en la calle.",
+            "english": "He left the hotel and saw a woman on the street."
+          },
+          {
+            "spanish": "—Disculpa, ¿dónde hay un buen café por aquí?",
+            "english": "—Excuse me, where is there a good cafe around here?"
+          },
+          {
+            "spanish": "preguntó Carlos.",
+            "english": "Carlos asked."
+          },
+          {
+            "spanish": "La mujer sonrió y dijo: —Vaya todo recto dos cuadras, luego a la izquierda.",
+            "english": "The woman smiled and said: —Go straight ahead two blocks, then turn left."
+          },
+          {
+            "spanish": "Carlos asintió: —Gracias, muy amable.",
+            "english": "Carlos nodded: —Thank you, very kind."
+          },
+          {
+            "spanish": "Llegó al café y pidió un desayuno.",
+            "english": "He arrived at the cafe and ordered breakfast."
+          },
+          {
+            "spanish": "Más tarde, Carlos decidió ir al museo de arte.",
+            "english": "Later, Carlos decided to go to the art museum."
+          },
+          {
+            "spanish": "No estaba seguro de cómo llegar, así que preguntó a otro transeúnte.",
+            "english": "He wasn't sure how to get there, so he asked another passerby."
+          },
+          {
+            "spanish": "—Disculpa, ¿cómo llego al museo de arte?",
+            "english": "—Excuse me, how do I get to the art museum?"
+          },
+          {
+            "spanish": "El hombre le dio indicaciones detalladas, incluyendo un giro a la derecha en la plaza.",
+            "english": "The man gave him detailed directions, including a right turn at the square."
+          },
+          {
+            "spanish": "Carlos agradeció la ayuda y se dirigió a su próxima aventura.",
+            "english": "Carlos thanked him for the help and headed to his next adventure."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Perdido en el Mercado",
+        "sentences": [
+          {
+            "spanish": "Sofía estaba explorando un mercado local muy grande.",
+            "english": "Sofía was exploring a very large local market."
+          },
+          {
+            "spanish": "Se dio cuenta de que estaba un poco perdida.",
+            "english": "She realized she was a little lost."
+          },
+          {
+            "spanish": "Vio a un vendedor amable y se acercó.",
+            "english": "She saw a kind vendor and approached him."
+          },
+          {
+            "spanish": "—Disculpa, ¿me puedes ayudar?",
+            "english": "—Excuse me, can you help me?"
+          },
+          {
+            "spanish": "preguntó Sofía.",
+            "english": "Sofía asked."
+          },
+          {
+            "spanish": "El vendedor respondió: —Claro, ¿qué necesitas?",
+            "english": "The vendor replied: —Of course, what do you need?"
+          },
+          {
+            "spanish": "—¿Dónde está la salida más cercana?",
+            "english": "—Where is the nearest exit?"
+          },
+          {
+            "spanish": "El hombre señaló: —Ves aquel puesto de frutas, ve todo recto.",
+            "english": "The man pointed: —You see that fruit stand, go straight ahead."
+          },
+          {
+            "spanish": "—Luego, cuando llegues a la esquina, gira a la derecha.",
+            "english": "—Then, when you reach the corner, turn right."
+          },
+          {
+            "spanish": "Sofía lo siguió con la vista.",
+            "english": "Sofía followed his gaze."
+          },
+          {
+            "spanish": "—Está cerca de allí, detrás de la panadería.",
+            "english": "—It's near there, behind the bakery."
+          },
+          {
+            "spanish": "dijo el vendedor.",
+            "english": "said the vendor."
+          },
+          {
+            "spanish": "—¡Muchas gracias por tu ayuda!",
+            "english": "—Thank you very much for your help!"
+          },
+          {
+            "spanish": "exclamó Sofía, aliviada.",
+            "english": "exclaimed Sofía, relieved."
+          },
+          {
+            "spanish": "—De nada. ¡Que tengas un buen día!",
+            "english": "—You're welcome. Have a good day!"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Comprando Recuerdos",
+        "sentences": [
+          {
+            "spanish": "Marcos entró en una tienda de regalos buscando un recuerdo.",
+            "english": "Marcos entered a gift shop looking for a souvenir."
+          },
+          {
+            "spanish": "Vio una pequeña figura de cerámica y le gustó mucho.",
+            "english": "He saw a small ceramic figure and liked it a lot."
+          },
+          {
+            "spanish": "Se acercó a la dependienta y preguntó:",
+            "english": "He approached the shop assistant and asked:"
+          },
+          {
+            "spanish": "—Disculpa, ¿cuánto cuesta esta figura?",
+            "english": "—Excuse me, how much does this figure cost?"
+          },
+          {
+            "spanish": "La dependienta respondió: —Cuesta diez euros.",
+            "english": "The shop assistant replied: —It costs ten euros."
+          },
+          {
+            "spanish": "Marcos asintió. —Está bien. ¿Y dónde están las postales?",
+            "english": "Marcos nodded. —Okay. And where are the postcards?"
+          },
+          {
+            "spanish": "—Las postales están en el estante de la izquierda, cerca de la ventana.",
+            "english": "—The postcards are on the shelf to the left, near the window."
+          },
+          {
+            "spanish": "Marcos fue hacia allí y encontró una bonita postal.",
+            "english": "Marcos went over there and found a nice postcard."
+          },
+          {
+            "spanish": "Volvió con la dependienta y dijo: —Voy a llevar esto y la figura.",
+            "english": "He returned to the shop assistant and said: —I'll take this and the figure."
+          },
+          {
+            "spanish": "Pagó y la dependienta le entregó sus compras.",
+            "english": "He paid and the shop assistant handed him his purchases."
+          },
+          {
+            "spanish": "—Gracias por tu ayuda.",
+            "english": "—Thanks for your help."
+          },
+          {
+            "spanish": "dijo Marcos con una sonrisa.",
+            "english": "said Marcos with a smile."
+          },
+          {
+            "spanish": "—De nada. ¡Que tengas un buen día!",
+            "english": "—You're welcome. Have a good day!"
+          },
+          {
+            "spanish": "Marcos salió de la tienda, contento con sus nuevos recuerdos.",
+            "english": "Marcos left the shop, happy with his new souvenirs."
+          }
+        ]
+      }
+    ]
+  },
+  "2":
+  {
+    "words": [
+      {
+        "spanish": "Yo hablo",
+        "english": "I speak"
+      },
+      {
+        "spanish": "Tú hablas",
+        "english": "You speak"
+      },
+      {
+        "spanish": "Él habla",
+        "english": "He speaks"
+      },
+      {
+        "spanish": "Nosotros hablamos",
+        "english": "We speak"
+      },
+      {
+        "spanish": "Ellos hablan",
+        "english": "They speak"
+      },
+      {
+        "spanish": "Yo comí",
+        "english": "I ate"
+      },
+      {
+        "spanish": "Tú comiste",
+        "english": "You ate"
+      },
+      {
+        "spanish": "Ella comió",
+        "english": "She ate"
+      },
+      {
+        "spanish": "Nosotros comimos",
+        "english": "We ate"
+      },
+      {
+        "spanish": "Ellas comieron",
+        "english": "They ate"
+      },
+      {
+        "spanish": "Yo viviré",
+        "english": "I will live"
+      },
+      {
+        "spanish": "Tú vivirás",
+        "english": "You will live"
+      },
+      {
+        "spanish": "Usted vivirá",
+        "english": "You will live"
+      },
+      {
+        "spanish": "Nosotros viviremos",
+        "english": "We will live"
+      },
+      {
+        "spanish": "Ustedes vivirán",
+        "english": "You all will live"
+      },
+      {
+        "spanish": "Ser",
+        "english": "To be permanent"
+      },
+      {
+        "spanish": "Estar",
+        "english": "To be temporary"
+      },
+      {
+        "spanish": "Hacer",
+        "english": "To do or make"
+      },
+      {
+        "spanish": "Poder",
+        "english": "To be able to"
+      },
+      {
+        "spanish": "Querer",
+        "english": "To want"
+      },
+      {
+        "spanish": "Pensar",
+        "english": "To think"
+      },
+      {
+        "spanish": "Necesitar",
+        "english": "To need"
+      },
+      {
+        "spanish": "Tener",
+        "english": "To have"
+      },
+      {
+        "spanish": "Ir",
+        "english": "To go"
+      },
+      {
+        "spanish": "Ver",
+        "english": "To see"
+      },
+      {
+        "spanish": "Saber",
+        "english": "To know facts"
+      },
+      {
+        "spanish": "Conocer",
+        "english": "To know people or places"
+      },
+      {
+        "spanish": "Decir",
+        "english": "To say or tell"
+      },
+      {
+        "spanish": "Dar",
+        "english": "To give"
+      },
+      {
+        "spanish": "Poner",
+        "english": "To put or place"
+      },
+      {
+        "spanish": "Saber",
+        "english": "To know"
+      },
+      {
+        "spanish": "Comer",
+        "english": "To eat"
+      }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Daily Routine Present Tense",
+        "dialog": [
+          {
+            "speaker": "Ana",
+            "spanish": "¿Qué haces hoy, Marcos?",
+            "english": "What are you doing today, Marcos?"
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "Hoy trabajo en la mañana y por la tarde estudio español. Siempre practico.",
+            "english": "Today I work in the morning and in the afternoon I study Spanish. I always practice."
+          },
+          {
+            "speaker": "Ana",
+            "spanish": "¡Qué bien! Yo corro en el parque y luego leo un libro.",
+            "english": "How nice! I run in the park and then read a book."
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "¿Corres todos los días?",
+            "english": "Do you run every day?"
+          },
+          {
+            "speaker": "Ana",
+            "spanish": "Casi todos los días. Y tú, ¿cocinas por la noche?",
+            "english": "Almost every day. And you, do you cook at night?"
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "A veces. Hoy quiero pedir comida. ¿Cenas en casa?",
+            "english": "Sometimes. Today I want to order food. Do you eat dinner at home?"
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué hace Marcos por la tarde?",
+            "options": [
+              "Trabaja",
+              "Corre",
+              "Estudia español",
+              "Lee un libro"
+            ],
+            "answer": "Estudia español",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué hace Ana normalmente?",
+            "options": [
+              "Cocina",
+              "Corre y lee",
+              "Trabaja",
+              "Estudia"
+            ],
+            "answer": "Corre y lee",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué quiere hacer Marcos por la noche?",
+            "options": [
+              "Cocinar",
+              "Pedir comida",
+              "Leer",
+              "Correr"
+            ],
+            "answer": "Pedir comida",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Weekend Recap Past Tense",
+        "dialog": [
+          {
+            "speaker": "Luis",
+            "spanish": "¿Qué hiciste el fin de semana, Sara?",
+            "english": "What did you do this weekend, Sara?"
+          },
+          {
+            "speaker": "Sara",
+            "spanish": "Fui al cine con mis amigos el sábado. Vimos una película muy buena.",
+            "english": "I went to the cinema with my friends on Saturday. We saw a very good movie."
+          },
+          {
+            "speaker": "Luis",
+            "spanish": "¡Qué divertido! Yo visité a mi familia. Comimos mucha comida rica.",
+            "english": "How fun! I visited my family. We ate a lot of delicious food."
+          },
+          {
+            "speaker": "Sara",
+            "spanish": "¿Estuviste en casa todo el domingo?",
+            "english": "Were you home all day Sunday?"
+          },
+          {
+            "speaker": "Luis",
+            "spanish": "No, por la tarde salí a caminar por el parque. Hizo mucho sol.",
+            "english": "No, in the afternoon I went for a walk in the park. It was very sunny."
+          },
+          {
+            "speaker": "Sara",
+            "spanish": "Sounds great. Yo escribí un poco y dormí mucho.",
+            "english": "Sounds great. I wrote a bit and slept a lot."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿A dónde fue Sara el sábado?",
+            "options": [
+              "Al parque",
+              "Al cine",
+              "A su casa",
+              "A la casa de su familia"
+            ],
+            "answer": "Al cine",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué hizo Luis el domingo por la tarde?",
+            "options": [
+              "Comió con su familia",
+              "Vio una película",
+              "Salió a caminar",
+              "Durmió"
+            ],
+            "answer": "Salió a caminar",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Cómo fue la película que vio Sara?",
+            "options": [
+              "Mala",
+              "Aburrida",
+              "Muy buena",
+              "Larga"
+            ],
+            "answer": "Muy buena",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Future Plans Future Tense",
+        "dialog": [
+          {
+            "speaker": "Julia",
+            "spanish": "¿Qué harás el próximo mes, Pedro?",
+            "english": "What will you do next month, Pedro?"
+          },
+          {
+            "speaker": "Pedro",
+            "spanish": "Viajaré a España. Visitaré Madrid y Barcelona.",
+            "english": "I will travel to Spain. I will visit Madrid and Barcelona."
+          },
+          {
+            "speaker": "Julia",
+            "spanish": "¡Qué emocionante! ¿Con quién irás?",
+            "english": "How exciting! Who will you go with?"
+          },
+          {
+            "speaker": "Pedro",
+            "spanish": "Iré con mi hermana. Ella vivirá allí por un año.",
+            "english": "I will go with my sister. She will live there for a year."
+          },
+          {
+            "speaker": "Julia",
+            "spanish": "Genial. Yo empezaré un nuevo curso de fotografía.",
+            "english": "Great. I will start a new photography course."
+          },
+          {
+            "speaker": "Pedro",
+            "spanish": "¿Aprenderás mucho?",
+            "english": "Will you learn a lot?"
+          },
+          {
+            "speaker": "Julia",
+            "spanish": "Sí, espero que sí. Quiero tomar fotos increíbles.",
+            "english": "Yes, I hope so. I want to take amazing photos."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿A dónde viajará Pedro el próximo mes?",
+            "options": [
+              "A Italia",
+              "A Francia",
+              "A España",
+              "A Portugal"
+            ],
+            "answer": "A España",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué hará la hermana de Pedro en España?",
+            "options": [
+              "Estudiará",
+              "Trabajará",
+              "Vivirá allí",
+              "Vacacionará"
+            ],
+            "answer": "Vivirá allí",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué empezará Julia?",
+            "options": [
+              "Un nuevo trabajo",
+              "Un viaje",
+              "Un curso de fotografía",
+              "Un libro"
+            ],
+            "answer": "Un curso de fotografía",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Making a Reservation",
+        "dialog": [
+          {
+            "speaker": "Cliente",
+            "spanish": "Quiero hacer una reservación para el sábado.",
+            "english": "I want to make a reservation for Saturday."
+          },
+          {
+            "speaker": "Anfitrión",
+            "spanish": "¿Para cuántas personas y a qué hora?",
+            "english": "For how many people and at what time?"
+          },
+          {
+            "speaker": "Cliente",
+            "spanish": "Somos cuatro personas. A las ocho de la noche, por favor.",
+            "english": "We are four people. At eight o'clock at night, please."
+          },
+          {
+            "speaker": "Anfitrión",
+            "spanish": "Perfecto, tenemos una mesa disponible. ¿A nombre de quién?",
+            "english": "Perfect, we have a table available. Under what name?"
+          },
+          {
+            "speaker": "Cliente",
+            "spanish": "A nombre de 'López'. Gracias.",
+            "english": "Under the name 'López'. Thank you."
+          },
+          {
+            "speaker": "Anfitrión",
+            "spanish": "Confirmado, Sr. López. Nos vemos el sábado.",
+            "english": "Confirmed, Mr. López. We'll see you on Saturday."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Cuántas personas van a cenar?",
+            "options": [
+              "Dos",
+              "Tres",
+              "Cuatro",
+              "Cinco"
+            ],
+            "answer": "Cuatro",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿A qué hora es la reservación?",
+            "options": [
+              "A las siete",
+              "A las ocho",
+              "A las nueve",
+              "A las diez"
+            ],
+            "answer": "A las ocho",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué día es la reservación?",
+            "options": [
+              "Domingo",
+              "Viernes",
+              "Sábado",
+              "Lunes"
+            ],
+            "answer": "Sábado",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "topic": "A Trip to the Beach",
+        "dialog": [
+          {
+            "speaker": "Elena",
+            "spanish": "La semana pasada, mi familia y yo fuimos a la playa.",
+            "english": "Last week, my family and I went to the beach."
+          },
+          {
+            "speaker": "Carlos",
+            "spanish": "¿Qué hicieron allí?",
+            "english": "What did you do there?"
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "Nadamos en el mar y tomamos el sol. También comimos mucho pescado fresco.",
+            "english": "We swam in the sea and sunbathed. We also ate a lot of fresh fish."
+          },
+          {
+            "speaker": "Carlos",
+            "spanish": "Qué divertido. Yo visité un museo de arte.",
+            "english": "How fun. I visited an art museum."
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "El próximo mes, mis amigos y yo iremos a las montañas.",
+            "english": "Next month, my friends and I will go to the mountains."
+          },
+          {
+            "speaker": "Carlos",
+            "spanish": "¡Qué bien! Yo quiero ir a la playa otra vez.",
+            "english": "How nice! I want to go to the beach again."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿A dónde fue Elena la semana pasada?",
+            "options": [
+              "A la playa",
+              "Al museo",
+              "A las montañas",
+              "Al cine"
+            ],
+            "answer": "A la playa",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué hizo Carlos la semana pasada?",
+            "options": [
+              "Nadaba",
+              "Visitó un museo",
+              "Comió pescado",
+              "Tomó el sol"
+            ],
+            "answer": "Visitó un museo",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué hará Elena el próximo mes?",
+            "options": [
+              "Irá a la playa",
+              "Irá a las montañas",
+              "Irá al cine",
+              "Irá a un museo"
+            ],
+            "answer": "Irá a las montañas",
+            "answerIndex": 1
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "Un Día Ocupado",
+        "sentences": [
+          {
+            "spanish": "Cada mañana, Laura se levanta a las siete y media.",
+            "english": "Every morning, Laura gets up at half past seven."
+          },
+          {
+            "spanish": "Primero, prepara café y come un desayuno ligero.",
+            "english": "First, she prepares coffee and eats a light breakfast."
+          },
+          {
+            "spanish": "Luego, revisa sus correos electrónicos antes de salir de casa.",
+            "english": "Then, she checks her emails before leaving home."
+          },
+          {
+            "spanish": "Por la tarde, Laura trabaja en su oficina.",
+            "english": "In the afternoon, Laura works in her office."
+          },
+          {
+            "spanish": "Ella escribe informes y habla con sus colegas.",
+            "english": "She writes reports and talks with her colleagues."
+          },
+          {
+            "spanish": "A las seis, regresa a casa.",
+            "english": "At six, she returns home."
+          },
+          {
+            "spanish": "Normalmente, cena y ve un poco de televisión.",
+            "english": "Normally, she has dinner and watches a little television."
+          },
+          {
+            "spanish": "Antes de dormir, siempre lee un capítulo de su libro.",
+            "english": "Before sleeping, she always reads a chapter of her book."
+          },
+          {
+            "spanish": "Así es un día normal para Laura.",
+            "english": "This is a normal day for Laura."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "El Viaje de Verano",
+        "sentences": [
+          {
+            "spanish": "El verano pasado, mi familia y yo viajamos a la costa.",
+            "english": "Last summer, my family and I traveled to the coast."
+          },
+          {
+            "spanish": "Nos alojamos en una casa pequeña cerca del mar.",
+            "english": "We stayed in a small house near the sea."
+          },
+          {
+            "spanish": "Todos los días, nadamos en el océano y jugamos en la arena.",
+            "english": "Every day, we swam in the ocean and played in the sand."
+          },
+          {
+            "spanish": "Por las tardes, mi hermano y yo exploramos el pueblo.",
+            "english": "In the afternoons, my brother and I explored the town."
+          },
+          {
+            "spanish": "Comimos mucho pescado fresco y tomamos helado.",
+            "english": "We ate a lot of fresh fish and had ice cream."
+          },
+          {
+            "spanish": "Un día, fuimos de excursión a una montaña.",
+            "english": "One day, we went on a hike to a mountain."
+          },
+          {
+            "spanish": "Vimos unas vistas increíbles desde la cima.",
+            "english": "We saw incredible views from the top."
+          },
+          {
+            "spanish": "Por la noche, la luna brilló sobre el agua.",
+            "english": "At night, the moon shone over the water."
+          },
+          {
+            "spanish": "Todos disfrutamos mucho de ese viaje.",
+            "english": "Everyone enjoyed that trip very much."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Planes para el Futuro",
+        "sentences": [
+          {
+            "spanish": "El próximo año, yo estudiaré en la universidad.",
+            "english": "Next year, I will study at the university."
+          },
+          {
+            "spanish": "Aprenderé sobre historia y literatura.",
+            "english": "I will learn about history and literature."
+          },
+          {
+            "spanish": "Mis amigos y yo viviremos en un apartamento cerca del campus.",
+            "english": "My friends and I will live in an apartment near campus."
+          },
+          {
+            "spanish": "Cocinaré mucho y haremos fiestas pequeñas.",
+            "english": "I will cook a lot and we will have small parties."
+          },
+          {
+            "spanish": "Después de graduarme, viajaré por el mundo.",
+            "english": "After graduating, I will travel the world."
+          },
+          {
+            "spanish": "Visitaré muchos países y conoceré gente nueva.",
+            "english": "I will visit many countries and meet new people."
+          },
+          {
+            "spanish": "Espero que mi futuro sea emocionante y lleno de aventuras.",
+            "english": "I hope my future will be exciting and full of adventures."
+          },
+          {
+            "spanish": "Siempre tendré ganas de aprender y explorar.",
+            "english": "I will always want to learn and explore."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "La Visita al Mercado",
+        "sentences": [
+          {
+            "spanish": "Esta mañana, mi abuela y yo fuimos al mercado.",
+            "english": "This morning, my grandmother and I went to the market."
+          },
+          {
+            "spanish": "Ella quería comprar frutas y verduras frescas.",
+            "english": "She wanted to buy fresh fruits and vegetables."
+          },
+          {
+            "spanish": "Compramos manzanas, plátanos y tomates.",
+            "english": "We bought apples, bananas, and tomatoes."
+          },
+          {
+            "spanish": "También probamos un poco de queso local. ¡Era muy delicioso!",
+            "english": "We also tried some local cheese. It was very delicious!"
+          },
+          {
+            "spanish": "Mi abuela siempre sabe dónde encontrar las mejores cosas.",
+            "english": "My grandmother always knows where to find the best things."
+          },
+          {
+            "spanish": "Después, fuimos a una panadería y compramos pan caliente.",
+            "english": "Afterwards, we went to a bakery and bought hot bread."
+          },
+          {
+            "spanish": "Regresamos a casa contentos y con la bolsa llena.",
+            "english": "We returned home happy and with a full bag."
+          },
+          {
+            "spanish": "La tarde la pasamos cocinando juntos.",
+            "english": "We spent the afternoon cooking together."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Un Sueño Futuro",
+        "sentences": [
+          {
+            "spanish": "De mayor, yo seré un arquitecto.",
+            "english": "When I'm older, I will be an architect."
+          },
+          {
+            "spanish": "Diseñaré edificios altos y casas bonitas.",
+            "english": "I will design tall buildings and beautiful houses."
+          },
+          {
+            "spanish": "Mi amigo Pedro será un médico.",
+            "english": "My friend Pedro will be a doctor."
+          },
+          {
+            "spanish": "Él ayudará a muchas personas en el hospital.",
+            "english": "He will help many people in the hospital."
+          },
+          {
+            "spanish": "Nosotros haremos el mundo un lugar mejor.",
+            "english": "We will make the world a better place."
+          },
+          {
+            "spanish": "Mi hermana quiere ser una maestra de escuela.",
+            "english": "My sister wants to be a school teacher."
+          },
+          {
+            "spanish": "Ella enseñará a los niños a leer y escribir.",
+            "english": "She will teach children to read and write."
+          },
+          {
+            "spanish": "Nuestros padres estarán orgullosos de nosotros.",
+            "english": "Our parents will be proud of us."
+          }
+        ]
+      }
+    ]
+  }              
+}

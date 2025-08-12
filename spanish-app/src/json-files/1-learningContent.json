@@ -1,0 +1,319 @@
+{"1":
+{
+  "words": [
+    { "spanish": "¿Qué hora es?", "english": "What time is it?" },
+    { "spanish": "Es la una.", "english": "It's one o'clock." },
+    { "spanish": "Son las dos.", "english": "It's two o'clock." },
+    { "spanish": "Son las tres y media.", "english": "It's half past three." },
+    { "spanish": "Son las cuatro menos cuarto.", "english": "It's a quarter to four." },
+    { "spanish": "Disculpa", "english": "Excuse me" },
+    { "spanish": "¿Me puedes ayudar?", "english": "Can you help me?" },
+    { "spanish": "Necesito ayuda.", "english": "I need help." },
+    { "spanish": "¿Dónde está...?", "english": "Where is...?" },
+    { "spanish": "¿Cómo llego a...?", "english": "How do I get to...?" },
+    { "spanish": "A la derecha", "english": "To the right" },
+    { "spanish": "A la izquierda", "english": "To the left" },
+    { "spanish": "Todo recto", "english": "Straight ahead" },
+    { "spanish": "Cerca de", "english": "Near" },
+    { "spanish": "Lejos de", "english": "Far from" },
+    { "spanish": "Aquí", "english": "Here" },
+    { "spanish": "Allí", "english": "There" },
+    { "spanish": "Gracias", "english": "Thank you" },
+    { "spanish": "De nada", "english": "You're welcome" },
+    { "spanish": "Por favor", "english": "Please" },
+    { "spanish": "¿Cuánto cuesta?", "english": "How much does it cost?" },
+    { "spanish": "Lo siento", "english": "I'm sorry" },
+    { "spanish": "No entiendo.", "english": "I don't understand." },
+    { "spanish": "¿Puedes repetir?", "english": "Can you repeat?" }
+  ],
+  "conversations": [
+    {
+      "id": 1,
+      "topic": "Asking for the Time",
+      "dialog": [
+        { "speaker": "Elena", "spanish": "Disculpa, ¿qué hora es?", "english": "Excuse me, what time is it?" },
+        { "speaker": "Pablo", "spanish": "Son las tres y cuarto.", "english": "It's a quarter past three." },
+        { "speaker": "Elena", "spanish": "¡Gracias! Tengo que irme. Llego tarde a mi clase.", "english": "Thank you! I have to go. I'm late for my class." },
+        { "speaker": "Pablo", "spanish": "De nada. Que te vaya bien.", "english": "You're welcome. Have a good one." }
+      ],
+      "questions": [
+        {
+          "question": "¿Qué pregunta Elena?",
+          "options": ["¿Cómo estás?", "¿Qué tal?", "¿Qué hora es?", "¿Dónde está?"],
+          "answer": "¿Qué hora es?",
+          "answerIndex": 2
+        },
+        {
+          "question": "¿Qué hora es según Pablo?",
+          "options": ["La una y media", "Las tres y cuarto", "Las dos en punto", "Las cuatro menos cuarto"],
+          "answer": "Las tres y cuarto",
+          "answerIndex": 1
+        },
+        {
+          "question": "¿Por qué tiene que irse Elena?",
+          "options": ["Está cansada", "Llega tarde", "No tiene tiempo", "No quiere hablar"],
+          "answer": "Llega tarde",
+          "answerIndex": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "Asking for Directions",
+      "dialog": [
+        { "speaker": "María", "spanish": "Disculpa, ¿cómo llego a la estación de tren?", "english": "Excuse me, how do I get to the train station?" },
+        { "speaker": "Señor", "spanish": "Vaya todo recto por esta calle, luego gire a la izquierda en el semáforo.", "english": "Go straight ahead on this street, then turn left at the traffic light." },
+        { "speaker": "María", "spanish": "¿Está muy lejos?", "english": "Is it very far?" },
+        { "speaker": "Señor", "spanish": "No, está cerca, a unos cinco minutos a pie.", "english": "No, it's near, about five minutes on foot." },
+        { "speaker": "María", "spanish": "Muchas gracias por tu ayuda.", "english": "Thank you very much for your help." },
+        { "speaker": "Señor", "spanish": "De nada.", "english": "You're welcome." }
+      ],
+      "questions": [
+        {
+          "question": "¿Qué busca María?",
+          "options": ["La farmacia", "La estación de tren", "El supermercado", "El parque"],
+          "answer": "La estación de tren",
+          "answerIndex": 1
+        },
+        {
+          "question": "¿En qué dirección debe girar María en el semáforo?",
+          "options": ["A la derecha", "A la izquierda", "Todo recto", "Hacia atrás"],
+          "answer": "A la izquierda",
+          "answerIndex": 1
+        },
+        {
+          "question": "¿Está la estación lejos o cerca?",
+          "options": ["Lejos", "Muy lejos", "Cerca", "Demasiado cerca"],
+          "answer": "Cerca",
+          "answerIndex": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "Needing Help in a Store",
+      "dialog": [
+        { "speaker": "Cliente", "spanish": "Disculpa, necesito ayuda.", "english": "Excuse me, I need help." },
+        { "speaker": "Dependiente", "spanish": "Claro, ¿en qué puedo ayudarte?", "english": "Of course, how can I help you?" },
+        { "speaker": "Cliente", "spanish": "¿Dónde están los cuadernos?", "english": "Where are the notebooks?" },
+        { "speaker": "Dependiente", "spanish": "Están en el pasillo de la derecha, al fondo.", "english": "They are in the aisle on the right, at the back." },
+        { "speaker": "Cliente", "spanish": "Ah, ya veo. ¿Y cuánto cuestan estos bolígrafos?", "english": "Ah, I see. And how much do these pens cost?" },
+        { "speaker": "Dependiente", "spanish": "Cuestan dos euros cada uno.", "english": "They cost two euros each." },
+        { "speaker": "Cliente", "spanish": "Perfecto, gracias.", "english": "Perfect, thank you." }
+      ],
+      "questions": [
+        {
+          "question": "¿Qué necesita el cliente?",
+          "options": ["Dinero", "Un libro", "Ayuda", "Un café"],
+          "answer": "Ayuda",
+          "answerIndex": 2
+        },
+        {
+          "question": "¿Dónde están los cuadernos?",
+          "options": ["En el pasillo de la izquierda", "En el pasillo de la derecha", "Cerca de la entrada", "No hay cuadernos"],
+          "answer": "En el pasillo de la derecha",
+          "answerIndex": 1
+        },
+        {
+          "question": "¿Cuánto cuestan los bolígrafos?",
+          "options": ["Un euro", "Dos euros", "Tres euros", "Cinco euros"],
+          "answer": "Dos euros",
+          "answerIndex": 1
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": 1,
+      "title": "Un Día en la Ciudad",
+      "sentences": [
+        {
+          "spanish": "Carlos se despertó temprano en su primer día en la ciudad.",
+          "english": "Carlos woke up early on his first day in the city."
+        },
+        {
+          "spanish": "Miró su reloj: —¡Son las siete en punto!",
+          "english": "He looked at his watch: —It's seven o'clock!"
+        },
+        {
+          "spanish": "Necesitaba encontrar un café para desayunar.",
+          "english": "He needed to find a cafe for breakfast."
+        },
+        {
+          "spanish": "Salió del hotel y vio a una mujer en la calle.",
+          "english": "He left the hotel and saw a woman on the street."
+        },
+        {
+          "spanish": "—Disculpa, ¿dónde hay un buen café por aquí?",
+          "english": "—Excuse me, where is there a good cafe around here?"
+        },
+        {
+          "spanish": "preguntó Carlos.",
+          "english": "Carlos asked."
+        },
+        {
+          "spanish": "La mujer sonrió y dijo: —Vaya todo recto dos cuadras, luego a la izquierda.",
+          "english": "The woman smiled and said: —Go straight ahead two blocks, then turn left."
+        },
+        {
+          "spanish": "Carlos asintió: —Gracias, muy amable.",
+          "english": "Carlos nodded: —Thank you, very kind."
+        },
+        {
+          "spanish": "Llegó al café y pidió un desayuno.",
+          "english": "He arrived at the cafe and ordered breakfast."
+        },
+        {
+          "spanish": "Más tarde, Carlos decidió ir al museo de arte.",
+          "english": "Later, Carlos decided to go to the art museum."
+        },
+        {
+          "spanish": "No estaba seguro de cómo llegar, así que preguntó a otro transeúnte.",
+          "english": "He wasn't sure how to get there, so he asked another passerby."
+        },
+        {
+          "spanish": "—Disculpa, ¿cómo llego al museo de arte?",
+          "english": "—Excuse me, how do I get to the art museum?"
+        },
+        {
+          "spanish": "El hombre le dio indicaciones detalladas, incluyendo un giro a la derecha en la plaza.",
+          "english": "The man gave him detailed directions, including a right turn at the square."
+        },
+        {
+          "spanish": "Carlos agradeció la ayuda y se dirigió a su próxima aventura.",
+          "english": "Carlos thanked him for the help and headed to his next adventure."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Perdido en el Mercado",
+      "sentences": [
+        {
+          "spanish": "Sofía estaba explorando un mercado local muy grande.",
+          "english": "Sofía was exploring a very large local market."
+        },
+        {
+          "spanish": "Se dio cuenta de que estaba un poco perdida.",
+          "english": "She realized she was a little lost."
+        },
+        {
+          "spanish": "Vio a un vendedor amable y se acercó.",
+          "english": "She saw a kind vendor and approached him."
+        },
+        {
+          "spanish": "—Disculpa, ¿me puedes ayudar?",
+          "english": "—Excuse me, can you help me?"
+        },
+        {
+          "spanish": "preguntó Sofía.",
+          "english": "Sofía asked."
+        },
+        {
+          "spanish": "El vendedor respondió: —Claro, ¿qué necesitas?",
+          "english": "The vendor replied: —Of course, what do you need?"
+        },
+        {
+          "spanish": "—¿Dónde está la salida más cercana?",
+          "english": "—Where is the nearest exit?"
+        },
+        {
+          "spanish": "El hombre señaló: —Ves aquel puesto de frutas, ve todo recto.",
+          "english": "The man pointed: —You see that fruit stand, go straight ahead."
+        },
+        {
+          "spanish": "—Luego, cuando llegues a la esquina, gira a la derecha.",
+          "english": "—Then, when you reach the corner, turn right."
+        },
+        {
+          "spanish": "Sofía lo siguió con la vista.",
+          "english": "Sofía followed his gaze."
+        },
+        {
+          "spanish": "—Está cerca de allí, detrás de la panadería.",
+          "english": "—It's near there, behind the bakery."
+        },
+        {
+          "spanish": "dijo el vendedor.",
+          "english": "said the vendor."
+        },
+        {
+          "spanish": "—¡Muchas gracias por tu ayuda!",
+          "english": "—Thank you very much for your help!"
+        },
+        {
+          "spanish": "exclamó Sofía, aliviada.",
+          "english": "exclaimed Sofía, relieved."
+        },
+        {
+          "spanish": "—De nada. ¡Que tengas un buen día!",
+          "english": "—You're welcome. Have a good day!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Comprando Recuerdos",
+      "sentences": [
+        {
+          "spanish": "Marcos entró en una tienda de regalos buscando un recuerdo.",
+          "english": "Marcos entered a gift shop looking for a souvenir."
+        },
+        {
+          "spanish": "Vio una pequeña figura de cerámica y le gustó mucho.",
+          "english": "He saw a small ceramic figure and liked it a lot."
+        },
+        {
+          "spanish": "Se acercó a la dependienta y preguntó:",
+          "english": "He approached the shop assistant and asked:"
+        },
+        {
+          "spanish": "—Disculpa, ¿cuánto cuesta esta figura?",
+          "english": "—Excuse me, how much does this figure cost?"
+        },
+        {
+          "spanish": "La dependienta respondió: —Cuesta diez euros.",
+          "english": "The shop assistant replied: —It costs ten euros."
+        },
+        {
+          "spanish": "Marcos asintió. —Está bien. ¿Y dónde están las postales?",
+          "english": "Marcos nodded. —Okay. And where are the postcards?"
+        },
+        {
+          "spanish": "—Las postales están en el estante de la izquierda, cerca de la ventana.",
+          "english": "—The postcards are on the shelf to the left, near the window."
+        },
+        {
+          "spanish": "Marcos fue hacia allí y encontró una bonita postal.",
+          "english": "Marcos went over there and found a nice postcard."
+        },
+        {
+          "spanish": "Volvió con la dependienta y dijo: —Voy a llevar esto y la figura.",
+          "english": "He returned to the shop assistant and said: —I'll take this and the figure."
+        },
+        {
+          "spanish": "Pagó y la dependienta le entregó sus compras.",
+          "english": "He paid and the shop assistant handed him his purchases."
+        },
+        {
+          "spanish": "—Gracias por tu ayuda.",
+          "english": "—Thanks for your help."
+        },
+        {
+          "spanish": "dijo Marcos con una sonrisa.",
+          "english": "said Marcos with a smile."
+        },
+        {
+          "spanish": "—De nada. ¡Que tengas un buen día!",
+          "english": "—You're welcome. Have a good day!"
+        },
+        {
+          "spanish": "Marcos salió de la tienda, contento con sus nuevos recuerdos.",
+          "english": "Marcos left the shop, happy with his new souvenirs."
+        }
+      ]
+    }
+  ]
+}
+}

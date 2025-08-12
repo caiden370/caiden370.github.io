@@ -215,7 +215,7 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
     function submitButton() {
       return (
         <div className='mixed-review-continue'>
-        <Button disabled={answered} variant='contained' color='success' onClick={handleSubmit}>
+        <Button className='app-button primary' variant='contained' color='success' onClick={handleSubmit}>
             <Typography>Check</Typography>
         </Button>
         </div>
@@ -411,7 +411,7 @@ function handleSubmit() {
 function submitButton() {
   return (
     <div className='mixed-review-continue'>
-    <Button disabled={answered} variant='contained' color='success' onClick={handleSubmit}>
+    <Button disabled={answered} variant='contained' className='app-button primary' onClick={handleSubmit}>
         <Typography>Check</Typography>
     </Button>
     </div>
@@ -522,7 +522,7 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
   function submitButton() {
     return (
       <div className='mixed-review-continue'>
-      <Button disabled={answered} variant='contained' color='success' onClick={handleSubmit}>
+      <Button disabled={answered} variant='contained' className='app-button primary' onClick={handleSubmit}>
           <Typography>Check</Typography>
       </Button>
       </div>

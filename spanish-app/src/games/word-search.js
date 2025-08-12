@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import { useState, useEffect, use } from "react";
 import "../App.css"
-import learningContent from '../json-files/learningContent.json';
 import {Button} from "@mui/material";
 import { playCorrectSound, playIncorrectSound } from "../speech";
+import { loadChapterContent } from '../utils/contentCache';
 
 
 
@@ -53,7 +53,7 @@ export function LetterBox({r, c, letter, letterIndex, wordIndex, handleClick, in
     }
     
     return (
-        <div key={Date.now()} className={`wordsearch-letter-button ${styleClass}`} onClick={handleButtonClick}>
+        <div className={`wordsearch-letter-button ${styleClass}`} onClick={handleButtonClick} role="button" aria-label={`Letter ${letter}`}>
             {letter}
         </div>
     )
@@ -249,20 +249,20 @@ export function LetterGrid({words, Height, Width, onFinished, maxMisses}) {
         const { letterArray, wordIndexArray, statesArray, wordsList } = gridData;
         
         return (
-            <>
+            <div className='ws-card'>
             <div className='ws-score-container'>
                 <div className='ws-score-found'>Found: {wordsFound}</div>
                 <div className='ws-score-misses'>Lives: {maxMisses - misClicks}</div>
                 
             </div>
-            <div className='ws-letter-grid-container'>
+            <div className='ws-letter-grid-container' role='grid' aria-label='Word search grid'>
             {letterArray.map((row, r) => {
                 return (
-                    <div key={r} className='ws-letter-grid-row'>
+                    <div key={r} className='ws-letter-grid-row' role='row'>
                     {
                         row.map((letter, c)=> {
                             return (
-                                <div key={`${r}-${c}`} className='ws-letter-grid-letter'>
+                                <div key={`${r}-${c}`} className='ws-letter-grid-letter' role='gridcell'>
                                     <LetterBox 
                                         r={r}
                                         c={c}
@@ -280,19 +280,19 @@ export function LetterGrid({words, Height, Width, onFinished, maxMisses}) {
                 )
             })}
             </div>
-            <div key={Date.now()} className='ws-wordslist-container'>
+            <div className='ws-wordslist-container'>
                 <div className="ws-wordslist-grid">
             
                 {wordsList.map((word, i)=>{
                     return (
-                        <div key={i + '-' + Date.now()} className={`ws-wordslist-word ${completedWordsTracker[i] <= 0? 'complete':'incomplete'}`}>
+                        <div key={`${i}-${word}`} className={`ws-wordslist-word ${completedWordsTracker[i] <= 0? 'complete':'incomplete'}`}>
                             <Typography>{word}</Typography>
                         </div>
                     );
                 })}
                 </div>
             </div>
-            </>
+            </div>
         )
     }
 
@@ -357,6 +357,7 @@ export function GameCompletionWordSearchComponent({ numFound, numMisses, maxMiss
 // ************************************************************************************
 
 export default function WordSearch({chapterIndex, setSection, updatePoints}) {
+    
     const [jsonContent, setJsonContent] = useState(null);
     const [wordSearchComponent, setWordSearchComponent] = useState(null);
     const Height = 11;
@@ -370,16 +371,29 @@ export default function WordSearch({chapterIndex, setSection, updatePoints}) {
     
 
     useEffect(() => {
-        const words = learningContent[chapterIndex.toString()]?.words;
-        if (words) {
-            setJsonContent(words);   
-            let component = renderWordSearchComponent(processWords(words));
-            setWordSearchComponent(component);
-            setFinished(false);
-            setMisses(0);
-            setFound(0);
-            setUpdated(false);
+        async function getContent() {
+            try {
+                const contentObj = await loadChapterContent(chapterIndex);
+                const words = contentObj?.words;
+                if (words) {
+                    setJsonContent(words);   
+                    let component = renderWordSearchComponent(processWords(words));
+                    setWordSearchComponent(component);
+                    setFinished(false);
+                    setMisses(0);
+                    setFound(0);
+                    setUpdated(false);
+                } else {
+                    setWordSearchComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
+                    setJsonContent(null);
+                }
+            } catch (err) {
+                console.error('Failed to load learning content for chapter', chapterIndex, err);
+                setWordSearchComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
+                setJsonContent(null);
+            }
         }
+        getContent();
     }, [chapterIndex]);
 
     function shuffleArray(array) {
@@ -462,12 +476,12 @@ export default function WordSearch({chapterIndex, setSection, updatePoints}) {
                 </GameCompletionWordSearchComponent>
                 <div className='finished-row'>
                     <div className='mixed-review-continue'>
-                        <Button variant='contained' color='info' onClick={handleQuit}>
+                        <Button className='app-button info' variant='contained' onClick={handleQuit}>
                             <Typography>Quit</Typography>
                         </Button>
                     </div>
                     <div className='mixed-review-continue'>
-                    <Button variant='contained' color='success' onClick={handleRetry}>
+                    <Button className='app-button success' variant='contained' onClick={handleRetry}>
                         <Typography>Play Again</Typography>
                     </Button>
                     </div>

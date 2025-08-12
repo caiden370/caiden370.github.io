@@ -13,8 +13,8 @@
     },
     {
       "number": 3,
-      "title": "Numbers & Dates",
-      "description": "Learn how to count, use numbers in real-life scenarios, and talk about the days, months, and the calendar.",
+      "title": "Conjugating Verbs",
+      "description": "Learn how to conjugate and verbs for past, present, and future tenses.",
       "color":"#ff6b81"
       
     },
@@ -26,8 +26,8 @@
     },
     {
       "number": 5,
-      "title": "Food & Drink",
-      "description": "Order at a restaurant, express your preferences, and learn common foods and drinks.",
+      "title": "Activities",
+      "description": "",
       "color":"#ff6348"
     },
     {
@@ -44,8 +44,8 @@
     },
     {
       "number": 8,
-      "title": "School",
-      "description": "Gain vocabulary for the classroom, school supplies, and how to talk about learning and subjects.",
+      "title": "Food & Drink",
+      "description": "Order at a restaurant, express your preferences, and learn common foods and drinks.",
       "color": "#70a1ff"
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "number": 10,
-      "title": "Places",
+      "title": "Verb Tenses",
       "description": "Describe and ask for directions to places like the bank, post office, market, or park.",
       "color": "#2ed573"
     },
@@ -86,19 +86,19 @@
     },
     {
       "number": 15,
-      "title": "Latin Cognates",
+      "title": "We & They",
       "description": "Learn rules for converting many english words into spanish.",
       "color":"#ff6b81"
     },
     {
       "number": 16,
-      "title": "Work & Tech",
+      "title": "Introducing Yourself",
       "description": "Talk about jobs, digital tools, email, and how Spanish is used in professional environments.",
       "color":"#ffa502"
     },
     {
       "number": 17,
-      "title": "Telling Stories",
+      "title": "Feelings and Emotions",
       "description": "Learn how to use the past tense to share memories, past actions, and life experiences.",
       "color":"#ff6348"
     },
@@ -110,7 +110,7 @@
     },
     {
       "number": 19,
-      "title": "Grammar Power-Up",
+      "title": "Compliments",
       "description": "Dive deeper into verbs, sentence structure, prepositions, and useful grammar tips to boost fluency.",
       "color":"#7bed9f"
     },

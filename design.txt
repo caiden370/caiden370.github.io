@@ -45,23 +45,18 @@ https://flatuicolors.com/palette/cn
 
 
 TODO:
-- WordSearch:
-    - Make a finished Page (should be a modal that goes over)
-    - Instead of mistakes left or somthing 
-    - 
 
-
-
-
-- Make other games
-- Fill with content
-- Make progress connected
+- Add X in each game to return to correct section
+- Save progress for each game
+- Make more mascots
 - Add money and a Store
-- 
+
 
 
 Games:
 - AI education (spanish app)
+- Noun Page: CrossWord type game
+- Verb Conjugation Practice
 - 
 
 

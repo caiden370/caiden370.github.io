@@ -285,16 +285,39 @@
 
 .top-header-container {
   display: flex;
-  background-color: #2f3542;
+  background-color: #ffffff;
   width: 100%;
   justify-content: right;
+  align-items: center;
   padding: 4px;
+  border-bottom: solid 0.5px rgb(118, 118, 118);
+}
+
+.header-level-container {
+  background-color: #007aff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.coin-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }
 
 
 .coin-icon-container {
   display: flex;
   justify-content: center;
+  margin-right: 2px;
 
 }
 
@@ -369,29 +392,21 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100%;
   height: 100%;
-  padding-top: 20px;
   background-color: #f1d0c8;
+  padding-top: 20px;
 }
 
 .game-menu-item-container {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-.game-menu-item {
   box-sizing: border-box;
-  padding: 10px;
-  width: 90%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   background-color: #f0712284;
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-weight: bold;
@@ -400,6 +415,14 @@
   border-bottom: solid 8px rgb(223, 87, 13);
   border-radius: 15px;
   box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -4px -4px 12px rgba(255,255,255,0.4);
+}
+
+.game-menu-item-text {
+
+}
+
+.game-menu-item-progress-container{
+
 }
 
 /* Helper Game Objects */
@@ -814,13 +837,13 @@
 /* CONVERSATION COMPLETION SCREEN */
 
 .game-completion-container{
-  height: 80%;
   width: 100%;
-  background-color: white;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}  
+  align-items: center;
+} 
 
 .completion-message {
   font-size: 50;
@@ -847,11 +870,12 @@
   display: flex;
   flex-direction: row;
   width:80%;
-  padding: 5px;
+  padding: 7px;
   justify-content: center;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 1px 1px 1px 1px;
+  border-radius: 15px;
+  border-bottom: solid 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,1);
+
 }
 
 
@@ -885,13 +909,15 @@
 }
 
 .completion-stat-correct {
-  color: #16ae55;
+  color: #059441;
   background-color: #d1f0de;
+  /* border-color: rgb(11, 76, 7); */
 }
 
 .completion-stat-incorrect {
-  color: #ff4757;
+  color: #e1404e;
   background-color: #fcdce1;
+  /* border-color: rgb(99, 14, 14); */
 }
 
 .finished-row {
@@ -908,38 +934,62 @@
 /* WORD SEARCH */
 
 .wordsearch-container {
-  background: linear-gradient(to bottom, #fa5230, rgb(247, 151, 124), #ffffff);
-  height: 90vh;
+  background: linear-gradient(to bottom, #7a87f7, rgb(126, 176, 251), #c3ceff);
+  min-height: 90vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .ws-grid-container {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card wrapper for the word search area to match quiz card style */
+.ws-card {
+  box-sizing: border-box;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 700px;
+  background-color: white;
+  margin-bottom: 80px;
+  margin-top: 24px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(105, 37, 0, 0.35);
 }
 
 .ws-letter-grid-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-items: center;
+  align-items: center;
+  padding: 8px 0;
 }
 
 .ws-letter-grid-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items:center;
-  
+  align-items: center;
 }
 
 .ws-letter-grid-letter {
-  width: 37px;
-  height: 37px;
-  border: solid 1px;
-
+  width: 33px;
+  height: 33px;
+  border: none;
+  margin: 1px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.18);
 }
-
 
 .wordsearch-letter-button{
   height: 100%;
@@ -949,24 +999,28 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 20;
+  font-size: 14px;
+  user-select: none;
 }
 
-
 .wordsearch-letter-button.base {
-  background-color: white;
+  background-color: #ffffff;
+  color: #2f3542;
 }
 
 .wordsearch-letter-button.check {
-  background-color: yellow;
+  background-color: #ffe08a;
+  color: #2f3542;
 }
 
 .wordsearch-letter-button.correct {
   background-color: #16ae55;
+  color: #ffffff;
 }
 
 .wordsearch-letter-button.disabled {
-  background-color: #cccccc;
+  background-color: #e0e0e0;
+  color: #7a7a7a;
 }
 
 /* Word List Grid Styles */
@@ -977,29 +1031,33 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 14px;
 }
 
 .ws-wordslist-grid {
-  width: 97%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: 6px;
   justify-content: center;
 }
 
 .ws-wordslist-word {
-  background-color: #d9e5ee;
-  padding: 3px 8px;
-  border-radius: 10px;
-  overflow: hidden;
+  background-color: #f0f5ff;
+  padding: 6px 10px;
+  border-radius: 12px;
   text-align: center;
   white-space: nowrap;
   min-width: fit-content;
+  color: #2f3542;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  border-bottom: 3px solid #a9bfff;
 }
 
 .ws-wordslist-word.complete {
   background-color: #16ae55;
+  color: white;
+  border-bottom-color: #0e7c3b;
 }
 
 /* Nice Score Container Styles */
@@ -1009,9 +1067,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 10px;
-  padding-top: 10px;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding-top: 4px;
 }
 
 .ws-score-found {
@@ -1019,12 +1077,12 @@
   justify-content: center;
   align-items: center;
   padding: 8px 12px;
-  border-radius: 15px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #16ae55, #20c464);
   color: white;
   font-weight: bold;
-  width: 100px;
-  box-shadow: 0 4px 8px rgba(22, 174, 85, 0.3);
+  min-width: 112px;
+  box-shadow: 0 4px 8px rgba(22, 174, 85, 0.25);
 }
 
 .ws-score-misses {
@@ -1032,12 +1090,12 @@
   justify-content: center;
   align-items: center;
   padding: 8px 12px;
-  border-radius: 15px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #ffd700, #ffed4e);
   color: #8b6914;
   font-weight: bold;
-  width: 100px;
-  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  min-width: 112px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.25);
 }
 
 .sentence-jumble-container {
@@ -1120,3 +1178,59 @@
   flex-direction: row;
   align-items: center;
 }
+
+/* Mobile responsiveness for word search */
+@media (max-width: 420px) {
+  .ws-card { padding: 10px; }
+  .ws-letter-grid-letter { width: 32px; height: 32px; margin: 2px; border-radius: 6px; }
+  .wordsearch-letter-button { font-size: 16px; }
+  .ws-score-container { gap: 12px; }
+  .ws-score-found, .ws-score-misses { min-width: 96px; padding: 6px 8px; }
+  .ws-wordslist-grid { gap: 4px; }
+  .ws-wordslist-word { padding: 4px 8px; border-radius: 10px; }
+}
+
+@media (max-width: 360px) {
+  .ws-letter-grid-letter { width: 28px; height: 28px; margin: 2px; border-radius: 5px; }
+  .wordsearch-letter-button { font-size: 14px; }
+  .ws-score-found, .ws-score-misses { min-width: 88px; padding: 5px 8px; }
+}
+
+@media (max-height: 700px) and (max-width: 420px) {
+  /* For short phones, tighten spacing further */
+  .ws-letter-grid-container { padding: 4px 0; }
+  .ws-wordslist-container { margin-top: 10px; }
+}
+
+/* Unified App Button Styles */
+.app-button {
+  text-transform: none !important;
+  font-weight: 700 !important;
+  border-radius: 14px !important;
+  padding: 8px 18px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+  border-bottom: 4px solid transparent !important;
+}
+
+.app-button.primary {
+  background-color: #007aff !important;
+  color: #ffffff !important;
+  border-bottom-color: #004ea8 !important;
+}
+.app-button.primary:hover { background-color: #0369e0 !important; }
+
+.app-button.success {
+  background-color: #16ae55 !important;
+  color: #ffffff !important;
+  border-bottom-color: #0e7c3b !important;
+}
+.app-button.success:hover { background-color: #139a4c !important; }
+
+.app-button.info {
+  background-color: #70a1ff !important;
+  color: #ffffff !important;
+  border-bottom-color: #2c61d9 !important;
+}
+.app-button.info:hover { background-color: #5e92ff !important; }
+
+.app-button:disabled { filter: grayscale(20%); opacity: 0.7; }

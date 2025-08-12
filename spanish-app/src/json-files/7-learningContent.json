@@ -1,0 +1,297 @@
+{
+    "7": {
+      "words": [
+        { "spanish": "El menú", "english": "The menu" },
+        { "spanish": "La comida", "english": "The food" },
+        { "spanish": "La bebida", "english": "The drink" },
+        { "spanish": "Quiero pedir", "english": "I want to order" },
+        { "spanish": "Me gustaría", "english": "I would like" },
+        { "spanish": "El mesero", "english": "The waiter" },
+        { "spanish": "La mesera", "english": "The waitress" },
+        { "spanish": "La mesa", "english": "The table" },
+        { "spanish": "El plato", "english": "The dish" },
+        { "spanish": "El agua", "english": "The water" },
+        { "spanish": "El jugo", "english": "The juice" },
+        { "spanish": "El café", "english": "The coffee" },
+        { "spanish": "La leche", "english": "The milk" },
+        { "spanish": "El pan", "english": "The bread" },
+        { "spanish": "El arroz", "english": "The rice" },
+        { "spanish": "El pollo", "english": "The chicken" },
+        { "spanish": "La carne", "english": "The meat" },
+        { "spanish": "El pescado", "english": "The fish" },
+        { "spanish": "La ensalada", "english": "The salad" },
+        { "spanish": "Las verduras", "english": "The vegetables" },
+        { "spanish": "El postre", "english": "The dessert" },
+        { "spanish": "El helado", "english": "The ice cream" },
+        { "spanish": "La cuenta", "english": "The bill" },
+        { "spanish": "¿Puedo tener...?", "english": "Can I have...?" },
+        { "spanish": "¿Qué me recomiendas?", "english": "What do you recommend?" },
+        { "spanish": "Pagar", "english": "To pay" },
+        { "spanish": "Comer", "english": "To eat" },
+        { "spanish": "Beber", "english": "To drink" },
+        { "spanish": "Reservar", "english": "To reserve" },
+        { "spanish": "Delicioso", "english": "Delicious" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "En un restaurante",
+          "dialog": [
+            { "speaker": "Mesero", "spanish": "¡Hola! ¿Tienen una reserva?", "english": "Hello! Do you have a reservation?" },
+            { "speaker": "Cliente", "spanish": "Hola. No, no tenemos. ¿Hay una mesa para dos?", "english": "Hello. No, we don't. Is there a table for two?" },
+            { "speaker": "Mesero", "spanish": "Sí, por aquí, por favor. Aquí está el menú.", "english": "Yes, this way, please. Here is the menu." },
+            { "speaker": "Cliente", "spanish": "Gracias. Me gustaría un vaso de agua, por favor.", "english": "Thank you. I would like a glass of water, please." },
+            { "speaker": "Mesero", "spanish": "Claro. Vuelvo en un momento para tomar su orden.", "english": "Of course. I'll be back in a moment to take your order." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué pide el cliente primero?",
+              "options": ["Una mesa para dos", "La cuenta", "Un vaso de agua", "El menú"],
+              "answer": "Un vaso de agua",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué significa 'Tienen una reserva'?",
+              "options": ["You have a reservation", "You have a menu", "You have a table", "You have a drink"],
+              "answer": "You have a reservation",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué le da el mesero al cliente?",
+              "options": ["Agua", "Una mesa", "La cuenta", "El menú"],
+              "answer": "El menú",
+              "answerIndex": 3
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Pidiendo comida",
+          "dialog": [
+            { "speaker": "Mesera", "spanish": "¿Qué van a pedir?", "english": "What are you going to order?" },
+            { "speaker": "Cliente A", "spanish": "Yo quiero el pollo con arroz, por favor.", "english": "I want the chicken with rice, please." },
+            { "speaker": "Cliente B", "spanish": "Yo quiero el pescado. ¿Y qué me recomiendas para beber?", "english": "I want the fish. And what do you recommend for a drink?" },
+            { "speaker": "Mesera", "spanish": "Recomiendo el jugo de naranja. Es delicioso.", "english": "I recommend the orange juice. It's delicious." },
+            { "speaker": "Cliente B", "spanish": "Perfecto, me gustaría el jugo de naranja, gracias.", "english": "Perfect, I would like the orange juice, thank you." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué quiere pedir el Cliente A?",
+              "options": ["El pescado", "El pollo con arroz", "La ensalada", "El jugo de naranja"],
+              "answer": "El pollo con arroz",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le recomienda la mesera al Cliente B?",
+              "options": ["El vino", "El agua", "El café", "El jugo de naranja"],
+              "answer": "El jugo de naranja",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Qué significa '¿Qué me recomiendas?'?",
+              "options": ["What do you have?", "What is the price?", "What do you recommend?", "What is this?"],
+              "answer": "What do you recommend?",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "La cuenta",
+          "dialog": [
+            { "speaker": "Cliente", "spanish": "¡Mesero! La cuenta, por favor.", "english": "Waiter! The bill, please." },
+            { "speaker": "Mesero", "spanish": "Claro, aquí la tiene. Son veinte dólares.", "english": "Of course, here you go. It's twenty dollars." },
+            { "speaker": "Cliente", "spanish": "Gracias. ¿Puedo pagar con tarjeta de crédito?", "english": "Thank you. Can I pay with a credit card?" },
+            { "speaker": "Mesero", "spanish": "Sí, sin problema. ¿Todo estuvo bien?", "english": "Yes, no problem. Was everything good?" },
+            { "speaker": "Cliente", "spanish": "Sí, todo estuvo delicioso, gracias.", "english": "Yes, everything was delicious, thank you." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué pide el cliente?",
+              "options": ["El menú", "La cuenta", "El agua", "El mesero"],
+              "answer": "La cuenta",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cómo quiere pagar el cliente?",
+              "options": ["En efectivo", "Con tarjeta de crédito", "Con el móvil", "No quiere pagar"],
+              "answer": "Con tarjeta de crédito",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'todo estuvo delicioso'?",
+              "options": ["Everything was bad", "Everything was expensive", "Everything was slow", "Everything was delicious"],
+              "answer": "Everything was delicious",
+              "answerIndex": 3
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Hablando de comida",
+          "dialog": [
+            { "speaker": "Carla", "spanish": "Esta ensalada es muy buena.", "english": "This salad is very good." },
+            { "speaker": "Leo", "spanish": "Sí, a mí me gusta. Mi pollo con verduras también es muy bueno.", "english": "Yes, I like it. My chicken with vegetables is also very good." },
+            { "speaker": "Carla", "spanish": "¿Y el postre? ¿Qué vas a pedir de postre?", "english": "And dessert? What are you going to order for dessert?" },
+            { "speaker": "Leo", "spanish": "No lo sé. Me gusta el helado de chocolate.", "english": "I don't know. I like the chocolate ice cream." },
+            { "speaker": "Carla", "spanish": "Yo creo que no voy a pedir postre. Estoy llena.", "english": "I don't think I'm going to order dessert. I am full." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué está comiendo Leo?",
+              "options": ["Ensalada", "Pollo con verduras", "Helado", "Pescado"],
+              "answer": "Pollo con verduras",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué postre le gusta a Leo?",
+              "options": ["El pan", "El helado de chocolate", "El café", "La ensalada"],
+              "answer": "El helado de chocolate",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Estoy llena'?",
+              "options": ["I am hungry", "I am tired", "I am happy", "I am full"],
+              "answer": "I am full",
+              "answerIndex": 3
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Bebidas y comida",
+          "dialog": [
+            { "speaker": "Sofía", "spanish": "¿Qué bebes, Miguel?", "english": "What are you drinking, Miguel?" },
+            { "speaker": "Miguel", "spanish": "Bebo agua. ¿Quieres un poco de pan?", "english": "I'm drinking water. Do you want some bread?" },
+            { "speaker": "Sofía", "spanish": "Sí, gracias. ¿Te gusta el jugo de manzana?", "english": "Yes, thank you. Do you like apple juice?" },
+            { "speaker": "Miguel", "spanish": "Sí, me gusta, pero hoy prefiero agua. El pescado es muy salado.", "english": "Yes, I like it, but today I prefer water. The fish is very salty." },
+            { "speaker": "Sofía", "spanish": "Entiendo. Yo prefiero la leche para el desayuno.", "english": "I understand. I prefer milk for breakfast." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué bebe Miguel?",
+              "options": ["Jugo de manzana", "Café", "Agua", "Leche"],
+              "answer": "Agua",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué le ofrece Miguel a Sofía?",
+              "options": ["Pan", "Pescado", "Agua", "Leche"],
+              "answer": "Pan",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué significa 'El pescado es muy salado'?",
+              "options": ["The fish is sweet", "The fish is spicy", "The fish is salty", "The fish is delicious"],
+              "answer": "The fish is salty",
+              "answerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "Una Noche en el Restaurante",
+          "sentences": [
+            {
+              "spanish": "Fui a cenar en un restaurante nuevo. Me senté en una mesa para uno.",
+              "english": "I went to dinner at a new restaurant. I sat at a table for one."
+            },
+            {
+              "spanish": "El mesero me dio el menú y me preguntó qué quería beber.",
+              "english": "The waiter gave me the menu and asked what I wanted to drink."
+            },
+            {
+              "spanish": "Pedí un vaso de agua y luego miré el menú.",
+              "english": "I asked for a glass of water and then I looked at the menu."
+            },
+            {
+              "spanish": "Para la comida, pedí el pescado con verduras. Era delicioso.",
+              "english": "For the food, I ordered the fish with vegetables. It was delicious."
+            },
+            {
+              "spanish": "Después, comí un postre de helado. Fue muy dulce.",
+              "english": "Afterwards, I ate an ice cream dessert. It was very sweet."
+            },
+            {
+              "spanish": "Cuando terminé, pedí la cuenta. El mesero me la trajo rápido.",
+              "english": "When I finished, I asked for the bill. The waiter brought it to me quickly."
+            },
+            {
+              "spanish": "Pagué y me fui, muy feliz con la comida.",
+              "english": "I paid and left, very happy with the food."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Mi Comida Favorita",
+          "sentences": [
+            {
+              "spanish": "Mi comida favorita es el pollo. Me gusta comer pollo frito o asado.",
+              "english": "My favorite food is chicken. I like to eat fried or roasted chicken."
+            },
+            {
+              "spanish": "Para el plato principal, siempre pido pollo con arroz.",
+              "english": "For the main dish, I always order chicken with rice."
+            },
+            {
+              "spanish": "También me gusta mucho la ensalada. Las verduras son buenas para la salud.",
+              "english": "I also really like salad. Vegetables are good for your health."
+            },
+            {
+              "spanish": "Para beber, me gusta el jugo de manzana, pero a veces pido agua.",
+              "english": "To drink, I like apple juice, but sometimes I order water."
+            },
+            {
+              "spanish": "El postre que más me gusta es el helado de fresa.",
+              "english": "The dessert that I like the most is strawberry ice cream."
+            },
+            {
+              "spanish": "Cuando salgo a un restaurante, siempre pido estas cosas.",
+              "english": "When I go out to a restaurant, I always order these things."
+            },
+            {
+              "spanish": "Es mi comida favorita y me hace muy feliz.",
+              "english": "It is my favorite food and it makes me very happy."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Un Desayuno Familiar",
+          "sentences": [
+            {
+              "spanish": "Hoy, mi familia y yo desayunamos juntos en casa.",
+              "english": "Today, my family and I had breakfast together at home."
+            },
+            {
+              "spanish": "Mi padre cocinó pan con huevos para todos.",
+              "english": "My father cooked bread with eggs for everyone."
+            },
+            {
+              "spanish": "Mi madre preparó café y yo serví el jugo de naranja.",
+              "english": "My mother prepared coffee and I served the orange juice."
+            },
+            {
+              "spanish": "Mi hermana bebió un vaso de leche. A ella no le gusta el café.",
+              "english": "My sister drank a glass of milk. She doesn't like coffee."
+            },
+            {
+              "spanish": "La comida era muy simple, pero estaba deliciosa.",
+              "english": "The food was very simple, but it was delicious."
+            },
+            {
+              "spanish": "Hablamos y reímos mucho. Fue un desayuno muy bonito.",
+              "english": "We talked and laughed a lot. It was a very nice breakfast."
+            },
+            {
+              "spanish": "Me gusta comer con mi familia. Es un buen momento del día.",
+              "english": "I like to eat with my family. It's a good time of day."
+            }
+          ]
+        }
+      ]
+    }
+}

@@ -1,0 +1,312 @@
+{
+    "9": {
+      "words": [
+        { "spanish": "Hoy", "english": "Today" },
+        { "spanish": "Ayer", "english": "Yesterday" },
+        { "spanish": "Mañana", "english": "Tomorrow" },
+        { "spanish": "La semana pasada", "english": "Last week" },
+        { "spanish": "El año pasado", "english": "Last year" },
+        { "spanish": "El fin de semana que viene", "english": "Next weekend" },
+        { "spanish": "La próxima semana", "english": "Next week" },
+        { "spanish": "El mes pasado", "english": "Last month" },
+        { "spanish": "En el futuro", "english": "In the future" },
+        { "spanish": "Antes", "english": "Before" },
+        { "spanish": "Después", "english": "After" },
+        { "spanish": "Yo hablo", "english": "I speak (present)" },
+        { "spanish": "Yo hablé", "english": "I spoke (past)" },
+        { "spanish": "Yo voy a hablar", "english": "I am going to speak (future)" },
+        { "spanish": "Tú comes", "english": "You eat (present)" },
+        { "spanish": "Tú comiste", "english": "You ate (past)" },
+        { "spanish": "Tú vas a comer", "english": "You are going to eat (future)" },
+        { "spanish": "Él vive", "english": "He lives (present)" },
+        { "spanish": "Él vivió", "english": "He lived (past)" },
+        { "spanish": "Él va a vivir", "english": "He is going to live (future)" },
+        { "spanish": "Yo fui", "english": "I went (past)" },
+        { "spanish": "Yo voy", "english": "I go (present)" },
+        { "spanish": "Yo voy a ir", "english": "I am going to go (future)" },
+        { "spanish": "Yo soy", "english": "I am (present)" },
+        { "spanish": "Yo fui (ser)", "english": "I was (past)" },
+        { "spanish": "Yo voy a ser", "english": "I am going to be (future)" },
+        { "spanish": "Yo estoy", "english": "I am (present)" },
+        { "spanish": "Yo estuve", "english": "I was (past)" },
+        { "spanish": "Yo voy a estar", "english": "I am going to be (future)" },
+        { "spanish": "Yo trabajo", "english": "I work (present)" },
+        { "spanish": "Yo trabajé", "english": "I worked (past)" },
+        { "spanish": "Yo voy a trabajar", "english": "I am going to work (future)" },
+        { "spanish": "Yo estudio", "english": "I study (present)" },
+        { "spanish": "Yo estudié", "english": "I studied (past)" },
+        { "spanish": "Yo voy a estudiar", "english": "I am going to study (future)" },
+        { "spanish": "Yo hago", "english": "I do/make (present)" },
+        { "spanish": "Yo hice", "english": "I did/made (past)" },
+        { "spanish": "Yo voy a hacer", "english": "I am going to do/make (future)" },
+        { "spanish": "¿Qué hiciste?", "english": "What did you do?" },
+        { "spanish": "¿Qué vas a hacer?", "english": "What are you going to do?" },
+        { "spanish": "La tarea", "english": "The homework" },
+        { "spanish": "La película", "english": "The movie" },
+        { "spanish": "El libro", "english": "The book" },
+        { "spanish": "La música", "english": "The music" },
+        { "spanish": "Un viaje", "english": "A trip" },
+        { "spanish": "Divertido", "english": "Fun" },
+        { "spanish": "Cansado/a", "english": "Tired" },
+        { "spanish": "Feliz", "english": "Happy" },
+        { "spanish": "Ocupado/a", "english": "Busy" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Planes de la semana",
+          "dialog": [
+            { "speaker": "Sofía", "spanish": "Hola, ¿cómo estás? Ayer hablé con tu hermana.", "english": "Hello, how are you? Yesterday I spoke with your sister." },
+            { "speaker": "Pablo", "spanish": "Estoy bien. ¿Qué tal? Yo no la vi ayer.", "english": "I'm good. How's it going? I didn't see her yesterday." },
+            { "speaker": "Sofía", "spanish": "Ella dijo que hoy va a comer con su amiga.", "english": "She said that today she is going to eat with her friend." },
+            { "speaker": "Pablo", "spanish": "Sí, es verdad. Mañana, yo y ella vamos a ir al cine.", "english": "Yes, it's true. Tomorrow, she and I are going to go to the cinema." },
+            { "speaker": "Sofía", "spanish": "¡Qué divertido! Yo también voy a ir mañana, pero con mi familia.", "english": "How fun! I'm also going tomorrow, but with my family." }
+          ],
+          "questions": [
+            {
+              "question": "¿Con quién habló Sofía ayer?",
+              "options": ["Con Pablo", "Con su hermana", "Con su amiga", "Con su familia"],
+              "answer": "Con su hermana",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué va a hacer la hermana de Pablo hoy?",
+              "options": ["Ir al cine", "Hablar con Sofía", "Comer con su amiga", "Ir a su casa"],
+              "answer": "Comer con su amiga",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué van a hacer Pablo y su hermana mañana?",
+              "options": ["Ir al cine", "Hablar con Sofía", "Comer juntos", "Trabajar"],
+              "answer": "Ir al cine",
+              "answerIndex": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Pasado, presente y futuro",
+          "dialog": [
+            { "speaker": "Mario", "spanish": "¿Qué hiciste el fin de semana pasado?", "english": "What did you do last weekend?" },
+            { "speaker": "Ana", "spanish": "Yo fui a la playa y comí mucho pescado.", "english": "I went to the beach and ate a lot of fish." },
+            { "speaker": "Mario", "spanish": "¡Qué bien! Yo estoy en el trabajo ahora.", "english": "How nice! I am at work now." },
+            { "speaker": "Ana", "spanish": "Yo también estoy trabajando. ¿Y qué vas a hacer mañana?", "english": "I am also working. And what are you going to do tomorrow?" },
+            { "speaker": "Mario", "spanish": "Mañana no trabajo. Yo voy a ir a un restaurante con mi familia.", "english": "Tomorrow I don't work. I am going to go to a restaurant with my family." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué hizo Ana el fin de semana pasado?",
+              "options": ["Trabajó", "Fue a un restaurante", "Fue a la playa", "Comió con su familia"],
+              "answer": "Fue a la playa",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué está haciendo Mario ahora?",
+              "options": ["Va a la playa", "Come pescado", "Está en el trabajo", "Va a un restaurante"],
+              "answer": "Está en el trabajo",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué va a hacer Mario mañana?",
+              "options": ["Ir a la playa", "Comer pescado", "Ir a un restaurante", "Trabajar"],
+              "answer": "Ir a un restaurante",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Hablando de un viaje",
+          "dialog": [
+            { "speaker": "David", "spanish": "¿Fuiste a España el año pasado?", "english": "Did you go to Spain last year?" },
+            { "speaker": "Laura", "spanish": "Sí, fui con mi familia. La comida fue deliciosa.", "english": "Yes, I went with my family. The food was delicious." },
+            { "speaker": "David", "spanish": "¡Qué divertido! Yo voy a ir a Italia el año que viene.", "english": "How fun! I am going to go to Italy next year." },
+            { "speaker": "Laura", "spanish": "Qué bien. Nosotros vamos a vivir en una ciudad diferente en el futuro.", "english": "How nice. We are going to live in a different city in the future." },
+            { "speaker": "David", "spanish": "¿A dónde van a vivir?", "english": "Where are you going to live?" }
+          ],
+          "questions": [
+            {
+              "question": "¿A dónde fue Laura el año pasado?",
+              "options": ["A Italia", "A España", "A la playa", "A su casa"],
+              "answer": "A España",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿A dónde va a ir David el año que viene?",
+              "options": ["A España", "A Italia", "A la ciudad", "A la playa"],
+              "answer": "A Italia",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'La comida fue deliciosa'?",
+              "options": ["The food is delicious", "The food was delicious", "The food is not good", "The food is expensive"],
+              "answer": "The food was delicious",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "El estado de ánimo",
+          "dialog": [
+            { "speaker": "Javier", "spanish": "¿Por qué estás tan feliz?", "english": "Why are you so happy?" },
+            { "speaker": "Clara", "spanish": "Porque estuve de vacaciones la semana pasada.", "english": "Because I was on vacation last week." },
+            { "speaker": "Javier", "spanish": "¡Qué suerte! Yo estoy muy cansado hoy.", "english": "How lucky! I am very tired today." },
+            { "speaker": "Clara", "spanish": "No te preocupes. Mañana vas a estar bien. Yo soy feliz.", "english": "Don't worry. Tomorrow you are going to be fine. I am happy." },
+            { "speaker": "Javier", "spanish": "Gracias. Mañana voy a ser feliz.", "english": "Thank you. Tomorrow I am going to be happy." }
+          ],
+          "questions": [
+            {
+              "question": "¿Por qué Clara está feliz?",
+              "options": ["Está de vacaciones", "Estuvo de vacaciones la semana pasada", "Mañana va a estar bien", "Ella es feliz"],
+              "answer": "Estuvo de vacaciones la semana pasada",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cómo se siente Javier hoy?",
+              "options": ["Feliz", "Triste", "Enojado", "Cansado"],
+              "answer": "Cansado",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Qué significa 'Yo voy a ser feliz'?",
+              "options": ["I am happy", "I was happy", "I will be happy", "I want to be happy"],
+              "answer": "I will be happy",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Haciendo un plan",
+          "dialog": [
+            { "speaker": "Marta", "spanish": "¿Qué hiciste anoche?", "english": "What did you do last night?" },
+            { "speaker": "Luis", "spanish": "Comí una pizza en casa y vi una película.", "english": "I ate a pizza at home and watched a movie." },
+            { "speaker": "Marta", "spanish": "Yo comí en un restaurante. ¿Qué vas a hacer hoy?", "english": "I ate in a restaurant. What are you going to do today?" },
+            { "speaker": "Luis", "spanish": "Hoy no voy a hacer mucho. Voy a estudiar.", "english": "Today I am not going to do much. I am going to study." },
+            { "speaker": "Marta", "spanish": "Yo voy a estudiar contigo. ¡Juntos!", "english": "I am going to study with you. Together!" }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué comió Luis anoche?",
+              "options": ["En un restaurante", "Una pizza en casa", "No comió", "Un sándwich"],
+              "answer": "Una pizza en casa",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Dónde comió Marta anoche?",
+              "options": ["En su casa", "En un restaurante", "En la casa de Luis", "En la oficina"],
+              "answer": "En un restaurante",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué van a hacer Luis y Marta hoy?",
+              "options": ["Comer pizza", "Ir al cine", "Estudiar", "Ver una película"],
+              "answer": "Estudiar",
+              "answerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "Mi Día: Ayer, Hoy y Mañana",
+          "sentences": [
+            {
+              "spanish": "Ayer fue un día muy ocupado. Yo trabajé todo el día.",
+              "english": "Yesterday was a very busy day. I worked all day."
+            },
+            {
+              "spanish": "También hablé con mi amigo y fui a la tienda para comprar comida.",
+              "english": "I also spoke with my friend and went to the store to buy food."
+            },
+            {
+              "spanish": "Hoy es diferente. Yo estoy en mi casa y no trabajo.",
+              "english": "Today is different. I am in my house and I am not working."
+            },
+            {
+              "spanish": "Leo un libro y como un sándwich.",
+              "english": "I am reading a book and eating a sandwich."
+            },
+            {
+              "spanish": "Estoy muy relajado y feliz.",
+              "english": "I am very relaxed and happy."
+            },
+            {
+              "spanish": "Mañana voy a ir al gimnasio para hacer ejercicio.",
+              "english": "Tomorrow I am going to go to the gym to exercise."
+            },
+            {
+              "spanish": "También voy a ver una película con mi familia. Va a ser muy divertido.",
+              "english": "I am also going to watch a movie with my family. It is going to be very fun."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Un Viaje",
+          "sentences": [
+            {
+              "spanish": "La semana pasada, yo viajé a México con mi amigo. El viaje fue fantástico.",
+              "english": "Last week, I traveled to Mexico with my friend. The trip was fantastic."
+            },
+            {
+              "spanish": "Nosotros comimos mucha comida deliciosa y nadamos en el mar.",
+              "english": "We ate a lot of delicious food and swam in the sea."
+            },
+            {
+              "spanish": "Mi amigo habló con muchas personas y yo tomé muchas fotos.",
+              "english": "My friend spoke with many people and I took many photos."
+            },
+            {
+              "spanish": "Ahora, él y yo estamos en casa. Estamos cansados, pero muy contentos.",
+              "english": "Now, he and I are at home. We are tired, but very happy."
+            },
+            {
+              "spanish": "El próximo año, nosotros vamos a ir a Perú. Vamos a ir a las montañas.",
+              "english": "Next year, we are going to go to Peru. We are going to go to the mountains."
+            },
+            {
+              "spanish": "Va a ser una aventura nueva. No puedo esperar.",
+              "english": "It is going to be a new adventure. I can't wait."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "La Fiesta",
+          "sentences": [
+            {
+              "spanish": "Ayer por la noche, yo fui a una fiesta con mis amigos.",
+              "english": "Yesterday night, I went to a party with my friends."
+            },
+            {
+              "spanish": "Bailamos y cantamos mucho. La música fue muy buena.",
+              "english": "We danced and sang a lot. The music was very good."
+            },
+            {
+              "spanish": "Yo comí pizza y bebí refrescos con mis amigos. La fiesta fue muy divertida.",
+              "english": "I ate pizza and drank sodas with my friends. The party was very fun."
+            },
+            {
+              "spanish": "Hoy, yo estoy muy cansado. Tengo mucho sueño.",
+              "english": "Today, I am very tired. I am very sleepy."
+            },
+            {
+              "spanish": "Mi amigo también está cansado. Él durmió solo cinco horas.",
+              "english": "My friend is also tired. He slept only five hours."
+            },
+            {
+              "spanish": "Ahora, voy a descansar en mi cama por un rato.",
+              "english": "Now, I am going to rest in my bed for a while."
+            },
+            {
+              "spanish": "Mañana, voy a ir al trabajo y no voy a ir a fiestas.",
+              "english": "Tomorrow, I am going to go to work and I am not going to go to parties."
+            }
+          ]
+        }
+      ]
+    }
+}

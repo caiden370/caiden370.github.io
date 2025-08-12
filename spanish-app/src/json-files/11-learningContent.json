@@ -1,0 +1,284 @@
+{
+    "11": {
+      "words": [
+        { "spanish": "El viaje", "english": "The trip" },
+        { "spanish": "Viajar", "english": "To travel" },
+        { "spanish": "¿A dónde vas?", "english": "Where are you going?" },
+        { "spanish": "Yo voy a...", "english": "I am going to..." },
+        { "spanish": "El billete", "english": "The ticket" },
+        { "spanish": "El pasaporte", "english": "The passport" },
+        { "spanish": "La maleta", "english": "The suitcase" },
+        { "spanish": "Hacer la maleta", "english": "To pack a suitcase" },
+        { "spanish": "El avión", "english": "The airplane" },
+        { "spanish": "El tren", "english": "The train" },
+        { "spanish": "El coche", "english": "The car" },
+        { "spanish": "El aeropuerto", "english": "The airport" },
+        { "spanish": "La estación", "english": "The station" },
+        { "spanish": "El hotel", "english": "The hotel" },
+        { "spanish": "La playa", "english": "The beach" },
+        { "spanish": "La ciudad", "english": "The city" },
+        { "spanish": "La montaña", "english": "The mountain" },
+        { "spanish": "Quiero reservar", "english": "I want to reserve" },
+        { "spanish": "Comprar", "english": "To buy" },
+        { "spanish": "Yo compro", "english": "I buy (present)" },
+        { "spanish": "Yo compré", "english": "I bought (past)" },
+        { "spanish": "Yo voy a comprar", "english": "I am going to buy (future)" },
+        { "spanish": "Visitar", "english": "To visit" },
+        { "spanish": "Yo visito", "english": "I visit (present)" },
+        { "spanish": "Yo visité", "english": "I visited (past)" },
+        { "spanish": "Yo voy a visitar", "english": "I am going to visit (future)" },
+        { "spanish": "Caro(a)", "english": "Expensive" },
+        { "spanish": "Barato(a)", "english": "Cheap" },
+        { "spanish": "Divertido(a)", "english": "Fun" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Planes de viaje",
+          "dialog": [
+            { "speaker": "Sofía", "spanish": "¿A dónde vas de viaje, Luis?", "english": "Where are you going on your trip, Luis?" },
+            { "speaker": "Luis", "spanish": "Voy a visitar la ciudad de Madrid. El vuelo es mañana.", "english": "I am going to visit the city of Madrid. The flight is tomorrow." },
+            { "speaker": "Sofía", "spanish": "¡Qué bien! Yo viajé a Madrid el año pasado. Fue muy divertido.", "english": "How nice! I traveled to Madrid last year. It was a lot of fun." },
+            { "speaker": "Luis", "spanish": "¿Y tú, tienes planes de viaje?", "english": "And you, do you have any travel plans?" },
+            { "speaker": "Sofía", "spanish": "Sí. Voy a la playa el mes que viene.", "english": "Yes. I am going to the beach next month." }
+          ],
+          "questions": [
+            {
+              "question": "¿A dónde va Luis de viaje?",
+              "options": ["A Madrid", "A la playa", "A una montaña", "A su casa"],
+              "answer": "A Madrid",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Cuándo viajó Sofía a Madrid?",
+              "options": ["El mes pasado", "El año pasado", "El mes que viene", "Mañana"],
+              "answer": "El año pasado",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'El vuelo es mañana'?",
+              "options": ["The flight is tomorrow", "The flight was yesterday", "The flight is today", "The flight is in a week"],
+              "answer": "The flight is tomorrow",
+              "answerIndex": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "En el aeropuerto",
+          "dialog": [
+            { "speaker": "Empleado", "spanish": "Hola. ¿Me puede dar su pasaporte y su billete?", "english": "Hello. Can you give me your passport and your ticket?" },
+            { "speaker": "Viajero", "spanish": "Sí, aquí están. Yo compré el billete por internet.", "english": "Yes, here they are. I bought the ticket online." },
+            { "speaker": "Empleado", "spanish": "Perfecto. ¿Usted hizo la maleta?", "english": "Perfect. Did you pack the suitcase?" },
+            { "speaker": "Viajero", "spanish": "Sí, yo hice la maleta esta mañana. Es muy grande.", "english": "Yes, I packed the suitcase this morning. It's very big." },
+            { "speaker": "Empleado", "spanish": "Muy bien. El avión sale en dos horas.", "english": "Very good. The airplane leaves in two hours." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le pide el empleado al viajero?",
+              "options": ["La maleta y el billete", "La maleta y el pasaporte", "El pasaporte y el billete", "Dinero y el pasaporte"],
+              "answer": "El pasaporte y el billete",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Cómo compró el billete el viajero?",
+              "options": ["En el aeropuerto", "Por internet", "En la estación", "Por teléfono"],
+              "answer": "Por internet",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'El avión sale en dos horas'?",
+              "options": ["The airplane left two hours ago", "The airplane leaves in two hours", "The airplane arrived two hours ago", "The airplane is delayed"],
+              "answer": "The airplane leaves in two hours",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "En el hotel",
+          "dialog": [
+            { "speaker": "Recepcionista", "spanish": "Buenos días. ¿Usted tiene una reserva?", "english": "Good morning. Do you have a reservation?" },
+            { "speaker": "Cliente", "spanish": "Sí. Yo reservé una habitación para tres noches.", "english": "Yes. I reserved a room for three nights." },
+            { "speaker": "Recepcionista", "spanish": "Perfecto. Aquí están las llaves. Su habitación es la 305.", "english": "Perfect. Here are the keys. Your room is 305." },
+            { "speaker": "Cliente", "spanish": "Gracias. ¿A qué hora cierra el restaurante del hotel?", "english": "Thank you. What time does the hotel restaurant close?" },
+            { "speaker": "Recepcionista", "spanish": "Cierra a las diez de la noche. ¡Disfrute su visita!", "english": "It closes at ten at night. Enjoy your visit!" }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué significa 'Usted tiene una reserva'?",
+              "options": ["You have a table", "You have a reservation", "You have a ticket", "You have a bag"],
+              "answer": "You have a reservation",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cuántas noches reservó el cliente?",
+              "options": ["Una noche", "Dos noches", "Tres noches", "Cuatro noches"],
+              "answer": "Tres noches",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué hora cierra el restaurante?",
+              "options": ["A las nueve", "A las diez", "A las once", "A las doce"],
+              "answer": "A las diez",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Preparando la maleta",
+          "dialog": [
+            { "speaker": "Elena", "spanish": "¿Ya hiciste la maleta, Mario?", "english": "Did you already pack the suitcase, Mario?" },
+            { "speaker": "Mario", "spanish": "No, todavía no. Voy a empezar a hacerla ahora.", "english": "No, not yet. I am going to start packing it now." },
+            { "speaker": "Elena", "spanish": "¿Y qué vas a comprar para el viaje?", "english": "And what are you going to buy for the trip?" },
+            { "speaker": "Mario", "spanish": "Voy a comprar un traje de baño nuevo. También voy a comprar un libro.", "english": "I am going to buy a new swimsuit. I am also going to buy a book." },
+            { "speaker": "Elena", "spanish": "Necesitas tu pasaporte. No olvides el pasaporte.", "english": "You need your passport. Don't forget the passport." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué va a hacer Mario ahora?",
+              "options": ["Va a viajar", "Va a comprar un libro", "Va a hacer la maleta", "Va a la playa"],
+              "answer": "Va a hacer la maleta",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué va a comprar Mario para el viaje?",
+              "options": ["Un abrigo y un libro", "Un traje de baño y un libro", "Un pasaporte nuevo", "Unos billetes"],
+              "answer": "Un traje de baño y un libro",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le dice Elena a Mario que no olvide?",
+              "options": ["Su maleta", "Su traje de baño", "Su libro", "Su pasaporte"],
+              "answer": "Su pasaporte",
+              "answerIndex": 3
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Hablando de un viaje pasado",
+          "dialog": [
+            { "speaker": "Laura", "spanish": "¿Cómo estuvo tu viaje a la playa?", "english": "How was your trip to the beach?" },
+            { "speaker": "David", "spanish": "Fue fantástico. La playa es muy bonita y el agua es cálida.", "english": "It was fantastic. The beach is very beautiful and the water is warm." },
+            { "speaker": "Laura", "spanish": "¿Compraste algo?", "english": "Did you buy anything?" },
+            { "speaker": "David", "spanish": "Sí, compré muchas cosas baratas. También comimos mucho pescado.", "english": "Yes, I bought many cheap things. We also ate a lot of fish." },
+            { "speaker": "Laura", "spanish": "¡Qué bien! Yo visité una ciudad y fue muy caro.", "english": "How nice! I visited a city and it was very expensive." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cómo fue el viaje de David?",
+              "options": ["Fue aburrido", "Fue malo", "Fue fantástico", "Fue caro"],
+              "answer": "Fue fantástico",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué compró David?",
+              "options": ["Cosas baratas", "Cosas caras", "Pescado", "Nada"],
+              "answer": "Cosas baratas",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué significa 'fue muy caro'?",
+              "options": ["It was very cheap", "It was very fun", "It was very big", "It was very expensive"],
+              "answer": "It was very expensive",
+              "answerIndex": 3
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "Mi Próximo Viaje",
+          "sentences": [
+            {
+              "spanish": "El próximo mes, yo voy a viajar a España. Voy a visitar la ciudad de Barcelona.",
+              "english": "Next month, I am going to travel to Spain. I am going to visit the city of Barcelona."
+            },
+            {
+              "spanish": "Ya compré el billete de avión y reservé un hotel cerca de la playa.",
+              "english": "I already bought the airplane ticket and reserved a hotel near the beach."
+            },
+            {
+              "spanish": "Ahora, voy a hacer la maleta. Voy a llevar ropa para el calor y para la playa.",
+              "english": "Now, I am going to pack the suitcase. I am going to bring clothes for the heat and for the beach."
+            },
+            {
+              "spanish": "También voy a comprar un nuevo libro para leer en el avión.",
+              "english": "I am also going to buy a new book to read on the airplane."
+            },
+            {
+              "spanish": "Estoy muy emocionado por el viaje. Va a ser muy divertido.",
+              "english": "I am very excited for the trip. It is going to be a lot of fun."
+            },
+            {
+              "spanish": "No puedo esperar para ver Barcelona y comer la comida local.",
+              "english": "I can't wait to see Barcelona and eat the local food."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Un Viaje a la Montaña",
+          "sentences": [
+            {
+              "spanish": "El verano pasado, mi familia y yo fuimos de viaje a la montaña.",
+              "english": "Last summer, my family and I went on a trip to the mountain."
+            },
+            {
+              "spanish": "Viajamos en coche. El viaje fue largo, pero muy bonito.",
+              "english": "We traveled by car. The trip was long, but very beautiful."
+            },
+            {
+              "spanish": "Cuando llegamos, reservamos un hotel pequeño y fuimos a caminar.",
+              "english": "When we arrived, we reserved a small hotel and went for a walk."
+            },
+            {
+              "spanish": "El aire era fresco y las vistas eran increíbles. Nosotros visitamos un pueblo viejo.",
+              "english": "The air was fresh and the views were incredible. We visited an old town."
+            },
+            {
+              "spanish": "Comimos en restaurantes pequeños y compramos regalos para la familia.",
+              "english": "We ate in small restaurants and bought gifts for the family."
+            },
+            {
+              "spanish": "El viaje fue muy divertido y relajante. Queremos volver el próximo año.",
+              "english": "The trip was very fun and relaxing. We want to return next year."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Un Día en el Aeropuerto",
+          "sentences": [
+            {
+              "spanish": "Mi vuelo salió a las ocho de la mañana. Yo llegué al aeropuerto a las seis.",
+              "english": "My flight left at eight in the morning. I arrived at the airport at six."
+            },
+            {
+              "spanish": "Tenía mi pasaporte y mi billete en la mano. La maleta era un poco pesada.",
+              "english": "I had my passport and my ticket in my hand. The suitcase was a bit heavy."
+            },
+            {
+              "spanish": "El empleado del aeropuerto me ayudó. Él me dio las instrucciones para el vuelo.",
+              "english": "The airport employee helped me. He gave me the instructions for the flight."
+            },
+            {
+              "spanish": "Antes de mi vuelo, yo fui a un café y compré un café y un sándwich.",
+              "english": "Before my flight, I went to a cafe and bought a coffee and a sandwich."
+            },
+            {
+              "spanish": "El viaje fue largo, pero la comida en el avión fue buena.",
+              "english": "The trip was long, but the food on the airplane was good."
+            },
+            {
+              "spanish": "Cuando llegué, estaba muy cansado, pero feliz de estar en mi destino.",
+              "english": "When I arrived, I was very tired, but happy to be at my destination."
+            }
+          ]
+        }
+      ]
+    }
+}

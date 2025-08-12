@@ -1,0 +1,304 @@
+{
+    "12": {
+      "words": [
+        { "spanish": "El cuerpo", "english": "The body" },
+        { "spanish": "La salud", "english": "The health" },
+        { "spanish": "Estar enfermo(a)", "english": "To be sick" },
+        { "spanish": "Me duele...", "english": "My... hurts" },
+        { "spanish": "La cabeza", "english": "The head" },
+        { "spanish": "El estómago", "english": "The stomach" },
+        { "spanish": "El brazo", "english": "The arm" },
+        { "spanish": "La pierna", "english": "The leg" },
+        { "spanish": "La mano", "english": "The hand" },
+        { "spanish": "El pie", "english": "The foot" },
+        { "spanish": "La espalda", "english": "The back" },
+        { "spanish": "El cuello", "english": "The neck" },
+        { "spanish": "La garganta", "english": "The throat" },
+        { "spanish": "Los ojos", "english": "The eyes" },
+        { "spanish": "Los oídos", "english": "The ears" },
+        { "spanish": "Los dientes", "english": "The teeth" },
+        { "spanish": "El dolor", "english": "The pain" },
+        { "spanish": "La gripe", "english": "The flu" },
+        { "spanish": "La fiebre", "english": "The fever" },
+        { "spanish": "El resfriado", "english": "The cold" },
+        { "spanish": "La tos", "english": "The cough" },
+        { "spanish": "El dolor de garganta", "english": "The sore throat" },
+        { "spanish": "La alergia", "english": "The allergy" },
+        { "spanish": "El síntoma", "english": "The symptom" },
+        { "spanish": "El médico", "english": "The doctor" },
+        { "spanish": "La enfermera", "english": "The nurse" },
+        { "spanish": "El hospital", "english": "The hospital" },
+        { "spanish": "La farmacia", "english": "The pharmacy" },
+        { "spanish": "La medicina", "english": "The medicine" },
+        { "spanish": "La receta", "english": "The prescription" },
+        { "spanish": "La cita", "english": "The appointment" },
+        { "spanish": "El consultorio", "english": "The doctor's office" },
+        { "spanish": "Sentirse", "english": "To feel" },
+        { "spanish": "Yo me siento", "english": "I feel (present)" },
+        { "spanish": "Yo me sentí", "english": "I felt (past)" },
+        { "spanish": "Estoy bien", "english": "I am well" },
+        { "spanish": "Estoy mal", "english": "I am unwell" },
+        { "spanish": "Tener dolor de cabeza", "english": "To have a headache" },
+        { "spanish": "Yo voy a descansar", "english": "I am going to rest" },
+        { "spanish": "Toser", "english": "To cough" },
+        { "spanish": "Estornudar", "english": "To sneeze" },
+        { "spanish": "Tomar", "english": "To take (medicine), to drink" },
+        { "spanish": "Comer sano", "english": "To eat healthy" },
+        { "spanish": "Hacer ejercicio", "english": "To exercise" },
+        { "spanish": "Cuidar(se)", "english": "To take care of oneself" },
+        { "spanish": "Descansar", "english": "To rest" },
+        { "spanish": "Cansado(a)", "english": "Tired" },
+        { "spanish": "Débil", "english": "Weak" },
+        { "spanish": "Sano(a)", "english": "Healthy" }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Preguntando cómo te sientes",
+          "dialog": [
+            { "speaker": "Elena", "spanish": "Hola, Pedro. ¿Cómo te sientes hoy?", "english": "Hello, Pedro. How do you feel today?" },
+            { "speaker": "Pedro", "spanish": "Estoy un poco mal. Me duele la cabeza y tengo fiebre.", "english": "I'm a little unwell. My head hurts and I have a fever." },
+            { "speaker": "Elena", "spanish": "Lo siento mucho. ¿Fuiste al médico?", "english": "I'm so sorry. Did you go to the doctor?" },
+            { "speaker": "Pedro", "spanish": "Sí, fui ayer. Él me dio medicina. Tengo que tomarla.", "english": "Yes, I went yesterday. He gave me medicine. I have to take it." },
+            { "speaker": "Elena", "spanish": "Espero que te sientas mejor pronto.", "english": "I hope you feel better soon." }
+          ],
+          "questions": [
+            {
+              "question": "¿Cómo se siente Pedro?",
+              "options": ["Está bien", "Está contento", "Está mal", "No tiene fiebre"],
+              "answer": "Está mal",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué le duele a Pedro?",
+              "options": ["El brazo", "El estómago", "El pie", "La cabeza"],
+              "answer": "La cabeza",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Qué tiene que tomar Pedro?",
+              "options": ["Comida sana", "Un café", "Medicina", "Un refresco"],
+              "answer": "Medicina",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "En la consulta del médico",
+          "dialog": [
+            { "speaker": "Médico", "spanish": "Buenos días. ¿Qué le duele?", "english": "Good morning. What hurts?" },
+            { "speaker": "Paciente", "spanish": "Doctor, me duele el estómago. Me sentí mal anoche.", "english": "Doctor, my stomach hurts. I felt sick last night." },
+            { "speaker": "Médico", "spanish": "Ya veo. También veo que tiene un poco de fiebre.", "english": "I see. I also see that you have a little fever." },
+            { "speaker": "Paciente", "spanish": "Sí, y me siento muy cansado.", "english": "Yes, and I feel very tired." },
+            { "speaker": "Médico", "spanish": "Tiene que descansar y tomar esta medicina. Vaya a la farmacia.", "english": "You have to rest and take this medicine. Go to the pharmacy." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le duele al paciente?",
+              "options": ["La pierna", "La mano", "El estómago", "El brazo"],
+              "answer": "El estómago",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Cuándo se sintió mal el paciente?",
+              "options": ["Esta mañana", "Anoche", "El lunes", "El fin de semana"],
+              "answer": "Anoche",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué tiene que hacer el paciente?",
+              "options": ["Ir a trabajar", "Hacer ejercicio", "Descansar y tomar medicina", "Ir al hospital"],
+              "answer": "Descansar y tomar medicina",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "En la farmacia",
+          "dialog": [
+            { "speaker": "Farmacéutico", "spanish": "Buenas tardes. ¿Cómo puedo ayudarle?", "english": "Good afternoon. How can I help you?" },
+            { "speaker": "Cliente", "spanish": "Quiero algo para el dolor de cabeza, por favor.", "english": "I want something for a headache, please." },
+            { "speaker": "Farmacéutico", "spanish": "Claro. ¿Usted tiene otros síntomas?", "english": "Of course. Do you have other symptoms?" },
+            { "speaker": "Cliente", "spanish": "Sí. Estoy un poco débil y me duele la garganta.", "english": "Yes. I am a little weak and my throat hurts." },
+            { "speaker": "Farmacéutico", "spanish": "Aquí está esta medicina. Tómela cada ocho horas.", "english": "Here is this medicine. Take it every eight hours." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué quiere el cliente?",
+              "options": ["Algo para el dolor de cabeza", "Algo para el estómago", "Algo para la fiebre", "Algo para el brazo"],
+              "answer": "Algo para el dolor de cabeza",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué otros síntomas tiene el cliente?",
+              "options": ["Le duele el pie", "Se siente débil y le duele la garganta", "Tiene fiebre", "Está cansado"],
+              "answer": "Se siente débil y le duele la garganta",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cada cuánto tiempo debe tomar la medicina?",
+              "options": ["Cada día", "Cada semana", "Cada ocho horas", "Cada dos horas"],
+              "answer": "Cada ocho horas",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Hablando de hábitos saludables",
+          "dialog": [
+            { "speaker": "Juan", "spanish": "Me siento muy bien hoy. Hice ejercicio esta mañana.", "english": "I feel very well today. I exercised this morning." },
+            { "speaker": "Julia", "spanish": "¡Qué bueno! Yo no hice ejercicio hoy, pero comí sano.", "english": "How good! I didn't exercise today, but I ate healthy." },
+            { "speaker": "Juan", "spanish": "Hacer ejercicio y comer sano es muy importante para la salud.", "english": "Exercising and eating healthy is very important for health." },
+            { "speaker": "Julia", "spanish": "Tienes razón. ¿Qué comiste hoy?", "english": "You are right. What did you eat today?" },
+            { "speaker": "Juan", "spanish": "Comí una ensalada y pescado. Fue muy delicioso.", "english": "I ate a salad and fish. It was very delicious." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué hizo Juan esta mañana?",
+              "options": ["Comió sano", "Hizo ejercicio", "Fue al médico", "Durmió"],
+              "answer": "Hizo ejercicio",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué es importante para la salud, según Juan?",
+              "options": ["Comer mucho", "Hacer ejercicio y comer sano", "No hacer nada", "Dormir todo el día"],
+              "answer": "Hacer ejercicio y comer sano",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'Comí una ensalada'?",
+              "options": ["I ate a salad", "I made a salad", "I bought a salad", "I am eating a salad"],
+              "answer": "I ate a salad",
+              "answerIndex": 0
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "topic": "Una lesión",
+          "dialog": [
+            { "speaker": "Carlos", "spanish": "¿Qué te pasó en la pierna?", "english": "What happened to your leg?" },
+            { "speaker": "Marta", "spanish": "Me caí y me duele la pierna mucho.", "english": "I fell and my leg hurts a lot." },
+            { "speaker": "Carlos", "spanish": "¡Ay, qué mal! ¿Necesitas ir al hospital?", "english": "Oh no, that's bad! Do you need to go to the hospital?" },
+            { "speaker": "Marta", "spanish": "No lo sé. La semana pasada también me caí y me dolió el brazo.", "english": "I don't know. Last week I also fell and my arm hurt." },
+            { "speaker": "Carlos", "spanish": "Parece que necesitas tener más cuidado.", "english": "It seems like you need to be more careful." }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le duele a Marta ahora?",
+              "options": ["El brazo", "El pie", "La cabeza", "La pierna"],
+              "answer": "La pierna",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Qué le pasó a Marta la semana pasada?",
+              "options": ["Se cayó y se dolió el brazo", "Fue al hospital", "Se cayó y se dolió la pierna", "Se sintió cansada"],
+              "answer": "Se cayó y se dolió el brazo",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué significa 'Necesitas tener más cuidado'?",
+              "options": ["You need to go to the doctor", "You need to rest", "You need to be more careful", "You need to go to the hospital"],
+              "answer": "You need to be more careful",
+              "answerIndex": 2
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "Una Visita al Médico",
+          "sentences": [
+            {
+              "spanish": "Hoy me levanté y me sentí muy mal. Tenía dolor de cabeza y todo el cuerpo me dolía.",
+              "english": "Today I woke up and felt very unwell. I had a headache and my whole body hurt."
+            },
+            {
+              "spanish": "Mi esposa me dijo, 'Tienes que ir al médico'. Fui al hospital.",
+              "english": "My wife told me, 'You have to go to the doctor'. I went to the hospital."
+            },
+            {
+              "spanish": "El médico me hizo unas preguntas. '¿Desde cuándo se siente así?' me preguntó.",
+              "english": "The doctor asked me some questions. 'Since when have you been feeling this way?' he asked me."
+            },
+            {
+              "spanish": "Yo le dije que me sentí mal desde la mañana. Él me diagnosticó la gripe.",
+              "english": "I told him that I felt sick since the morning. He diagnosed me with the flu."
+            },
+            {
+              "spanish": "Él me dio una receta para la medicina. Ahora tengo que ir a la farmacia.",
+              "english": "He gave me a prescription for medicine. Now I have to go to the pharmacy."
+            },
+            {
+              "spanish": "Espero que la medicina me ayude a sentirme mejor pronto.",
+              "english": "I hope the medicine helps me feel better soon."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "El Accidente",
+          "sentences": [
+            {
+              "spanish": "Estaba en el parque con mis amigos. Jugábamos al fútbol y la pasábamos bien.",
+              "english": "I was at the park with my friends. We were playing soccer and having a good time."
+            },
+            {
+              "spanish": "Corrí muy rápido y me caí. Caí en mi brazo y me dolió mucho.",
+              "english": "I ran very fast and I fell. I fell on my arm and it hurt a lot."
+            },
+            {
+              "spanish": "Mis amigos me ayudaron a levantarme. Mi brazo estaba hinchado.",
+              "english": "My friends helped me get up. My arm was swollen."
+            },
+            {
+              "spanish": "Fui al hospital. El médico me dijo que no era nada grave.",
+              "english": "I went to the hospital. The doctor told me it was nothing serious."
+            },
+            {
+              "spanish": "Ahora tengo un yeso en el brazo. No me duele tanto como antes.",
+              "english": "Now I have a cast on my arm. It doesn't hurt as much as before."
+            },
+            {
+              "spanish": "Tengo que tener cuidado en el futuro cuando juego al fútbol.",
+              "english": "I have to be careful in the future when I play soccer."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "La Importancia de la Salud",
+          "sentences": [
+            {
+              "spanish": "La salud es muy importante. Es necesario cuidar nuestro cuerpo.",
+              "english": "Health is very important. It is necessary to take care of our body."
+            },
+            {
+              "spanish": "Yo siempre hago ejercicio y como comida sana. No me siento enfermo casi nunca.",
+              "english": "I always exercise and eat healthy food. I almost never feel sick."
+            },
+            {
+              "spanish": "Mi hermano, en cambio, no hace ejercicio y come mucha comida chatarra.",
+              "english": "My brother, on the other hand, does not exercise and eats a lot of junk food."
+            },
+            {
+              "spanish": "Él siempre se siente cansado y tiene dolor de estómago a menudo.",
+              "english": "He always feels tired and often has a stomach ache."
+            },
+            {
+              "spanish": "La semana pasada, mi hermano fue al médico porque estaba muy débil.",
+              "english": "Last week, my brother went to the doctor because he was very weak."
+            },
+            {
+              "spanish": "El médico le dijo que tiene que cambiar sus hábitos. La salud es un tesoro.",
+              "english": "The doctor told him that he has to change his habits. Health is a treasure."
+            }
+          ]
+        }
+      ]
+    }
+}
