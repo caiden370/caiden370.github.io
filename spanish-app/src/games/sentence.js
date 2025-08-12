@@ -8,6 +8,7 @@ import SpeechButton, { playCorrectSound, playIncorrectSound } from '../speech';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
 import Mascot from '../mascot';
 import { loadChapterContent } from '../utils/contentCache';
+import { LeaveButton } from './ui-objects';
 
 
 //******************************************************************************** */
@@ -181,12 +182,13 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
 
         return (
             <div className='mixed-review-container'>
-            <div className='mixed-review-quiz-card'>
-            {/* {scoreBarComponent} */}
-            {scoreBar()}
-            {questionComponent}
-            {answered && continueButton()}
-            </div>
+                <LeaveButton setSection={setSection}></LeaveButton>
+                <div className='mixed-review-quiz-card'>
+                {/* {scoreBarComponent} */}
+                {scoreBar()}
+                {questionComponent}
+                {answered && continueButton()}
+                </div>
             </div>
         )
     }
@@ -312,11 +314,12 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
     return (
         <>
         <div className='sentence-jumble-container'>
-            <div className='sentence-translation'>
-                <Typography align='center' sx={{fontWeight:'bold'}}>
-                    {translation}
-                </Typography>
-
+            <div className="mr-text-response-question">
+            <Mascot speaking></Mascot>
+            <div className='mr-text-response-question-text'>
+                <SpeechButton text={translation} inSpanish={false}></SpeechButton>
+                <Typography align="left" sx={{fontWeight:'bold'}}>{translation}</Typography>
+            </div>
             </div>
             
             <div className='jumbled-selected-sentence-container'> {

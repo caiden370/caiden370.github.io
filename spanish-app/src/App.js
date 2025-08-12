@@ -42,7 +42,7 @@ function App() {
         setPageContent(<div/>);
         break;    
       case profile:
-        setPageContent(<ProfilePage globalName={globalName} setGlobalName={setGlobalName} experience={experience}/>);
+        setPageContent(<ProfilePage globalName={globalName} setGlobalName={setGlobalName} setSelection={setNavSelection} experience={experience}/>);
         break;   
       case gamePage:
         setPageContent(<GameMenu chapterIndex={chapterIndex} setGameId={setGameId} setSection={setNavSelection}></GameMenu>); 
@@ -84,9 +84,9 @@ function App() {
       <div className='page-container'>
         {pageContent}
       </div>
-      <div className='navbar-container'>
+      {navSelection != game && (<div className='navbar-container'>
       <BottomNavbar setSelection={setNavSelection}/>
-      </div>
+      </div>)}
       
     </div>
   );

@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { AudioExactTextResponse } from './helper-game-objects';
 import { ConversationMultiChoice } from './helper-conversation-game-objects';
 import { loadChapterContent } from '../utils/contentCache';
+import { LeaveButton } from './ui-objects';
 
 
 export default function Conversations({chapterIndex, audioOnly, setSection, updatePoints}) {
@@ -151,6 +152,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
 
     return (
         <div className='mixed-review-container'>
+            <LeaveButton setSection={setSection}></LeaveButton>
             <div className='mixed-review-quiz-card'>
             {scoreBarComponent}
             {questionComponent}

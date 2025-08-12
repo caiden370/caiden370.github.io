@@ -50,7 +50,7 @@ TODO:
 - Save progress for each game
 - Make more mascots
 - Add money and a Store
-
+- Different color mascots, more mascots, mascot animations, pack opening mascots, record what mascots you own
 
 
 Games:
@@ -62,3 +62,11 @@ Games:
 
 Bugs:
 Words search word collisions don't register
+
+
+Extra:
+- Add google adds
+- add a donation button
+- Add notifications
+- Add widgit?
+

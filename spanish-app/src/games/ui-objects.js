@@ -3,6 +3,7 @@ import * as React from 'react';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 export function ProgressBar({ progress }) {
@@ -89,4 +90,22 @@ export function ProgressBar({ progress }) {
 export function processText(text) {
   const punctuationAndSpaceRegex = /[¿¡.,;:!?]/g;
   return text.replace(/\([^)]*\)/g, '').replace(punctuationAndSpaceRegex, '')
+}
+
+
+export function LeaveButton({setSection}) {
+  function onClick() {
+    setSection('MenuGame');
+  }
+  
+
+  return (
+    <div className='leave-button-row'>
+      <IconButton onClick={onClick}>
+        <CloseIcon></CloseIcon>
+      </IconButton>
+
+    </div>
+  )
+
 }

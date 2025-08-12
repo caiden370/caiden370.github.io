@@ -4,6 +4,7 @@ import "../App.css"
 import {Button} from "@mui/material";
 import { playCorrectSound, playIncorrectSound } from "../speech";
 import { loadChapterContent } from '../utils/contentCache';
+import { LeaveButton } from './ui-objects';
 
 
 
@@ -491,6 +492,7 @@ export default function WordSearch({chapterIndex, setSection, updatePoints}) {
     } else {
         return (
             <div className='wordsearch-container'>
+                <LeaveButton setSection={setSection}></LeaveButton>
                 <div className='ws-grid-container'>{wordSearchComponent && wordSearchComponent}</div>
             </div>
         )

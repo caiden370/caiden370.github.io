@@ -16,7 +16,7 @@ import { playCorrectSound, playIncorrectSound } from "../speech";
 
 //******************************************************************************** */
  
-export function MultipleChoice({ setResult, question, options, answerIndex, onAnswered, questionInSpanish, noLetters}) {
+export function MultipleChoice({ setResult, question, options, answerIndex, onAnswered, questionInSpanish, noLetters, message}) {
   const [correctIndex, setCorrectIndex] = useState(null);
   const [incorrectIndex, setIncorrectIndex] = useState(null);
   const [answered, setAnswered] = useState(false);
@@ -101,10 +101,7 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
         <Typography align="left" sx={{fontWeight:'bold'}}>{question}</Typography>
         </div>
       </div>
-      
-      
-
-
+      {message && (<div className='multiple-choice-message'>{message} </div>)}
       <Box sx={{flexGrow: 1, width: '100%', justifyContent: 'center', display: 'flex',  height: '40%', color: 'primary' }}>
         <Grid  sx={{width: '100%'}}container spacing={0}>
       <div className="multiple-choice-options">

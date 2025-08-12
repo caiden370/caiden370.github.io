@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { ProgressBar } from './ui-objects';
 import { GameCompletionComponent } from "./helper-conversation-game-objects";
 import { loadChapterContent } from '../utils/contentCache';
+import { LeaveButton } from './ui-objects';
 
 
 
@@ -23,6 +24,8 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
     const [finished, setFinished] = useState(false);
     const [storyIndex, setStoryIndex] = useState(0);
     const [updated, setUpdated] = useState(false);
+    const numTypes = 2
+    const [questionType, setQuestionType] = useState(Math.floor(Math.random()*numTypes));
 
 
 
@@ -35,7 +38,9 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
                     const storyI = Math.floor(Math.random()*stories.length);
                     setStoryIndex(storyI);
                     setJsonContent(stories);
-                    const content = generateNextQuestionContent(stories[storyI], 0);
+                    const qtype = Math.floor(Math.random() * numTypes);
+                    setQuestionType(qtype);
+                    const content = generateNextQuestionContent(stories[storyI], 0, qtype);
                     const component = buildNextQuestionComponent(content);
                     setQuestionComponent(component);
                     setAnswered(false);
@@ -60,13 +65,21 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
 
 
 
-    function generateNextQuestionContent(conversations, i) {
-        return generateStoryTranslationContent(conversations, i);
+    function generateNextQuestionContent(conversations, i, questionType) {
+        if (questionType == 0) {
+            setTotalQuestions(conversations.sentences.length - 1);
+            return generateStoryNextContent(conversations, i);
+        } else if (questionType == 1) {
+            return generateStoryTranslationContent(conversations, i);
+        }
+    
     }
 
     function buildNextQuestionComponent(content) {
         if (content.type == 'story-translation') {
             return buildStoryTranslationComponent(content);
+        } else if (content.type == 'story-next') {
+            return buildStoryNextComponent(content);
         }
 
 
@@ -76,7 +89,7 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
         const nextSentence = story.sentences[i];
         let rand = Math.floor(Math.random() * story.sentences.length);
         let attempt = 0
-        while(rand == prev && attempt < 10) {
+        while(rand == i && attempt < 10) {
             rand = Math.floor(Math.random() * story.sentences.length);
             attempt +=1;
         }
@@ -105,7 +118,7 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
             setFinished(true);
             return; 
         }
-        const content = generateNextQuestionContent(jsonContent[storyIndex], numCompleted + 1);
+        const content = generateNextQuestionContent(jsonContent[storyIndex], numCompleted + 1, questionType);
         const component = buildNextQuestionComponent(content);
         setQuestionComponent(component);
         setAnswered(false);
@@ -160,9 +173,66 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
                 answerIndex={answerIndex}
                 onAnswered={() => {setAnswered(true)}}
                 questionInSpanish={true}
-                noLetters={true}>
+                noLetters={true}
+                message={"Choose the correct translation"}>
             </MultipleChoice>
         )
+    }
+
+    function generateStoryNextContent(story, i) {
+        const curSentence = story.sentences[i];
+        const nextSentence = story.sentences[i + 1]
+        let rand = Math.floor(Math.random() * story.sentences.length);
+        let attempt = 0
+        while((rand == i + 1 || rand == i) && attempt < 10) {
+            rand = Math.floor(Math.random() * story.sentences.length);
+            attempt +=1;
+        }
+        
+        const randSentence = story.sentences[rand];
+
+        return {
+            'type':'story-next',
+            'sentence': curSentence.spanish,
+            'translation' : curSentence.english,
+            'rsentence': randSentence.spanish,
+            'rtranslation': randSentence.english,
+            'answer':nextSentence.spanish,
+            'answer-translation':nextSentence.english
+        }
+
+    }
+
+    function buildStoryNextComponent(content) {
+        const answerIndex = Math.floor(Math.random() * 2);
+
+        function randomizeOptions() {
+            let r1 = answerIndex;
+            let r2 = 1 - r1;
+            const randomOptions = ['ha', 'ha'];
+            randomOptions[r1] = content.answer;
+            randomOptions[r2] = content.rsentence;
+            return randomOptions
+        }
+
+        const options = randomizeOptions();
+
+
+
+        return (
+            <MultipleChoice
+                key={Date.now()}
+                setResult={setCurrResult}
+                question={content.sentence}
+                options={options}
+                answerIndex={answerIndex}
+                onAnswered={() => {setAnswered(true)}}
+                questionInSpanish={true}
+                noLetters={true}
+                message={"What comes next?"}>
+            </MultipleChoice>
+        )
+
     }
 
 
@@ -174,7 +244,9 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
     function handleRetry() {
         const storyI = Math.floor(Math.random()*jsonContent.length);
         setStoryIndex(storyI);
-        const content = generateNextQuestionContent(jsonContent[storyI], 0);
+        const qtype = Math.floor(Math.random() * numTypes);
+        setQuestionType(qtype);
+        const content = generateNextQuestionContent(jsonContent[storyI], 0, qtype);
         const component = buildNextQuestionComponent(content);
         setQuestionComponent(component);
         setAnswered(false);
@@ -214,6 +286,7 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
         return (
 
             <div className='mixed-review-container'>
+                <LeaveButton setSection={setSection}></LeaveButton>
                 <div className='mixed-review-quiz-card'>
                 {scoreBar()}
                 {questionComponent}

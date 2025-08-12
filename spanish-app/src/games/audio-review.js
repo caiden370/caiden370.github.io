@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { AudioExactTextResponse } from './helper-game-objects';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
 import { loadChapterContent } from '../utils/contentCache';
+import { LeaveButton } from './ui-objects';
 
 
 export default function AudioReview({chapterIndex, setSection, updatePoints }) {
@@ -27,10 +28,10 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
         async function getContent() {
             try {
                 const contentObj = await loadChapterContent(chapterIndex);
-                const words = contentObj?.words;
-                if (words) {
-                    setJsonContent(words);
-                    const content = generateNextQuestionContent(words);
+                const json = contentObj;
+                if (json) {
+                    setJsonContent(json);
+                    const content = generateNextQuestionContent(json);
                     const component = buildNextQuestionComponent(content);
                     setQuestionComponent(component);
                     setUpdated(false);
@@ -57,10 +58,10 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
     
 
 
-    function generateNextQuestionContent(wordsArray) {
+    function generateNextQuestionContent(json) {
         let r = Math.floor(Math.random()*1);
         if (r == 0) {
-            return generateAudioExactResponseContent(wordsArray);
+            return generateAudioExactResponseContent(json);
         }
 
     }
@@ -72,11 +73,35 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
 
     }
 
-    function generateAudioExactResponseContent(wordsArray) {
+    // Currently only words (change r to fix)
+    function generateAudioExactResponseContent(json) {
+        let r = Math.floor(Math.random()*6) + 10;
+        let wordsArray = null;
+        let phrase = '';
+
+
+        if (r == 0) {
+            const conversations = json.conversations;
+            let index = Math.floor(Math.random()*conversations.length);
+            wordsArray = conversations[index].dialog;
+        } else if (r == 1) {
+            let index = Math.floor(Math.random()*json.stories.length);
+            const story = json.stories[index];
+            wordsArray = story.sentences;
+        } else {
+            wordsArray = json.words;
+        }
+
         let index = Math.floor(Math.random()*wordsArray.length);
+        phrase = wordsArray[index]['spanish'];
+
+
+
+        
+
         return {
             'type':'exact-response',
-            'phrase':wordsArray[index]['spanish']
+            'phrase': phrase
         }
     }
 
@@ -172,6 +197,7 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
 
         return (
             <div className='mixed-review-container'>
+                <LeaveButton setSection={setSection}></LeaveButton>
                 <div className='mixed-review-quiz-card'>
                 {scoreBar()}
                 {questionComponent}

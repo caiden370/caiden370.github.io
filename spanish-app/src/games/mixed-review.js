@@ -13,6 +13,7 @@ import Box from '@mui/material/Box';
 import { ProgressBar } from './ui-objects';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
 import { loadChapterContent } from '../utils/contentCache';
+import { LeaveButton } from './ui-objects';
 
 export default function MixedReview({ chapterIndex, setSection, updatePoints }) {
     
@@ -317,6 +318,7 @@ export default function MixedReview({ chapterIndex, setSection, updatePoints }) 
     
         return (
             <div className='mixed-review-container'>
+                <LeaveButton setSection={setSection}></LeaveButton>
                 <div className='mixed-review-quiz-card'>
                 {scoreBar()}
                 {questionComponent}
