@@ -4,6 +4,7 @@ import './App.css';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import PersonIcon from '@mui/icons-material/Person';
+import { Settings } from '@mui/icons-material';
 
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
@@ -18,6 +19,7 @@ export default function BottomNavbar({setSelection}) {
   const chapters = 'Chapters';
   const store = 'Store';
   const profile = 'Profile';  
+  const settings = 'Settings'
 
 
 
@@ -25,14 +27,15 @@ export default function BottomNavbar({setSelection}) {
   return (
     <Box sx={{ width: "100%", borderTop: 'solid 0.5px rgb(99, 99, 99)'}}>
       <BottomNavigation
-        sx={{backgroundColor: 'rgb(255, 255, 255)'}}
+        sx={{backgroundColor: 'rgb(255, 255, 255)', paddingBottom: '20px'}}
         showLabels
         value={value}
         onChange={(event, newValue) => {
             const dictionary = {
                 "0": chapters,
                 "1": store,
-                "2": profile
+                "2": profile,
+                "3": settings 
             };
             const valueName = dictionary[newValue]
             setValue(newValue);
@@ -44,6 +47,7 @@ export default function BottomNavbar({setSelection}) {
         <BottomNavigationAction label={chapters} icon={<SportsEsportsIcon/>} />
         <BottomNavigationAction label={store} icon={<ShoppingBagIcon/>} />
         <BottomNavigationAction label={profile} icon={<PersonIcon/>} />
+        <BottomNavigationAction label={settings} icon={<Settings/>} />
       </BottomNavigation>
     </Box>
   );

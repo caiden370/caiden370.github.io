@@ -20,9 +20,7 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
     const [answered, setAnswered] = useState(false);
     const [prev, setPrev] = useState(0);
     const [updated, setUpdated] = useState(false);
-
-
-
+    const [questionKey, setQuestionKey] = useState(0);
 
     useEffect(() => {
         async function getContent() {
@@ -35,6 +33,7 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
                     const component = buildNextQuestionComponent(content);
                     setQuestionComponent(component);
                     setUpdated(false);
+                    setQuestionKey(0);
                 } else {
                     setQuestionComponent(<div style={{ padding: 16 }}>Content not available for this chapter yet.</div>);
                     setJsonContent(null);
@@ -48,29 +47,28 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
         getContent();
     }, [chapterIndex]);
 
-
     useEffect(() => {
-        if (currResult) {
+        if (currResult && answered) {
             setNumCorrect(numCorrect + 1);
         }
-    }, [answered]);
+    }, [answered, currResult]);
 
-    
-
+    // Debug logging
+    useEffect(() => {
+        console.log('AudioReview state update:', { answered, currResult, numCompleted });
+    }, [answered, currResult, numCompleted]);
 
     function generateNextQuestionContent(json) {
         let r = Math.floor(Math.random()*1);
         if (r == 0) {
             return generateAudioExactResponseContent(json);
         }
-
     }
 
     function buildNextQuestionComponent(content) {
         if (content.type == 'exact-response') {
             return buildAudioExactResponseComponent(content);
         }
-
     }
 
     // Currently only words (change r to fix)
@@ -78,7 +76,6 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
         let r = Math.floor(Math.random()*6) + 10;
         let wordsArray = null;
         let phrase = '';
-
 
         if (r == 0) {
             const conversations = json.conversations;
@@ -95,10 +92,6 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
         let index = Math.floor(Math.random()*wordsArray.length);
         phrase = wordsArray[index]['spanish'];
 
-
-
-        
-
         return {
             'type':'exact-response',
             'phrase': phrase
@@ -108,15 +101,21 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
     function buildAudioExactResponseComponent(content) {
         return (
             <AudioExactTextResponse
-            question={content.phrase}
-            answer={content.phrase}
-            onAnswered={()=>setAnswered(true)} 
-            setResult={setCurrentResult} 
-            questionInSpanish={true}
-            >
-            </AudioExactTextResponse>
+                key={`question-${questionKey}-${numCompleted}-${Date.now()}`}
+                question={content.phrase}
+                answer={content.phrase}
+                onAnswered={handleAnswered} 
+                setResult={setCurrentResult} 
+                questionInSpanish={true}
+            />
         )
     }
+
+    // Separate function to handle answered state
+    const handleAnswered = () => {
+        console.log('Answer submitted, setting answered to true');
+        setAnswered(true);
+    };
 
     function scoreBar() {
         return (
@@ -124,30 +123,46 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
                 <ProgressBar progress={(numCompleted*100 / totalQuestions) % 100}></ProgressBar>
             </div>
         )
-
     }
 
-
-
-
     const handleContinue = () => {
+        console.log('Continue clicked, current state:', { numCompleted, totalQuestions, answered });
+        
+        // Check if we should finish
         if (numCompleted >= totalQuestions - 1) {
             setFinished(true);
+            return;
         }
-        const content = generateNextQuestionContent(jsonContent);
-        const component = buildNextQuestionComponent(content);
-        setQuestionComponent(component);
+
+        // Reset states first
         setAnswered(false);
         setCurrentResult(null);
-        setPrev(prev + 1);
-        setNumCompleted(numCompleted + 1)
+        
+        // Update counters
+        const newCompleted = numCompleted + 1;
+        const newPrev = prev + 1;
+        setNumCompleted(newCompleted);
+        setPrev(newPrev);
+        
+        // Generate new question with slight delay to ensure state reset
+        setTimeout(() => {
+            const content = generateNextQuestionContent(jsonContent);
+            const component = buildNextQuestionComponent(content);
+            setQuestionComponent(component);
+            setQuestionKey(prevKey => prevKey + 1);
+        }, 100);
     };
 
-
     function continueButton() {
+        console.log('Rendering continue button, answered:', answered);
         return (
             <div className='mixed-review-continue'>
-                <Button disabled={!answered} className='app-button primary' variant='contained' onClick={handleContinue}>
+                <Button 
+                    disabled={!answered} 
+                    className='app-button success' 
+                    variant='contained' 
+                    onClick={handleContinue}
+                >
                     <Typography>Continue</Typography>
                 </Button>
             </div>
@@ -155,56 +170,60 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
     }
 
     function handleRetry() {
-        const content = generateNextQuestionContent(jsonContent);
-        const component = buildNextQuestionComponent(content);
-        setQuestionComponent(component);
+        setQuestionComponent(null);
         setFinished(false);
         setNumCompleted(0);
         setNumCorrect(0);
         setPrev(0);
         setCurrentResult(null);
         setUpdated(false);
+        setAnswered(false);
+        setQuestionKey(0);
+        
+        // Regenerate first question
+        setTimeout(() => {
+            const content = generateNextQuestionContent(jsonContent);
+            const component = buildNextQuestionComponent(content);
+            setQuestionComponent(component);
+        }, 100);
     }
 
     function handleQuit() {
         setSection('MenuGame');
     }
 
-
     if (finished) {
-
         if (!updated) {
             setUpdated(true);
             updatePoints(numCorrect, numCorrect);
         }
-        return  (<div className="conversation-component-outer-container">
-        <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
-        <div className='finished-row'>
-            <div className='mixed-review-continue'>
-                <Button className='app-button info' variant='contained' onClick={handleQuit}>
-                    <Typography>Quit</Typography>
-                </Button>
+        return (
+            <div className="conversation-component-outer-container">
+                <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
+                <div className='finished-row'>
+                    <div className='mixed-review-continue'>
+                        <Button className='app-button info' variant='contained' onClick={handleQuit}>
+                            <Typography>Quit</Typography>
+                        </Button>
+                    </div>
+                    <div className='mixed-review-continue'>
+                        <Button className='app-button success' variant='contained' onClick={handleRetry}>
+                            <Typography>Play Again</Typography>
+                        </Button>
+                    </div>
+                </div>
             </div>
-            <div className='mixed-review-continue'>
-            <Button className='app-button success' variant='contained' onClick={handleRetry}>
-                <Typography>Play Again</Typography>
-            </Button>
-            </div>
-        </div>
-    </div>)
-
+        )
     } else {
-
         return (
             <div className='mixed-review-container'>
                 <LeaveButton setSection={setSection}></LeaveButton>
                 <div className='mixed-review-quiz-card'>
-                {scoreBar()}
-                {questionComponent}
-                {answered && continueButton()}
+                    {scoreBar()}
+                    {questionComponent}
+                    {answered && continueButton()}
                 </div>
             </div>
         );
     }
-
 }

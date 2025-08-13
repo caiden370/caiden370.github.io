@@ -145,7 +145,6 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
     }
 
     if(finished && !updated) {
-        alert('updating');
         updatePoints(numCorrect, numCorrect);
         setUpdated(true);
     }

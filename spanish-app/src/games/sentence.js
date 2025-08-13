@@ -301,7 +301,7 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
             className={`mr-text-response-modal ${statusClass}`}
           >
             <div className='sentence-validation-top-row'>
-            <Typography sx={{fontWeight:'bold', fontFamily:'Segoe Print, Comic Sans MS, cursive'}}>{correct ? "Correct!" : "Incorrect"} </Typography>
+            <Typography sx={{fontWeight:'bold'}}>{correct ? "Correct!" : "Incorrect"} </Typography>
             <SpeechButton sx={{}} text={sentence} inSpanish={true} ></SpeechButton>
             </div>
             <Typography>{sentence}</Typography>

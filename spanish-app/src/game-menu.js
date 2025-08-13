@@ -87,10 +87,10 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
             <Box sx={{ marginTop: '10px',width: '100%', justifyContent: 'center', display: 'flex', color: 'primary'}}>
             <Grid sx={{width: '90%'}}container spacing={0}>
                 <Grid sx={gridStyle} size={6}>
-                <Item color={'#70a1ff'} itemGameId={'1'} text={"Mixed Review"}></Item>
+                <Item color={'#70a1ff'} itemGameId={'1'} text={"Learn"}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
-                <Item color={'#70a1ff'} itemGameId={'2'} text={"Audio Review"}></Item>
+                <Item color={'#70a1ff'} itemGameId={'2'} text={"Listen"}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
                 <Item color={'#70a1ff'} itemGameId={'3'} text={'Conversations'}></Item>
@@ -99,7 +99,7 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
                 <Item color={'#70a1ff'} itemGameId={'4'} text={'Word Search'}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
-                <Item color={'#70a1ff'} itemGameId={'5'} text={'Sentences'}></Item>
+                <Item color={'#70a1ff'} itemGameId={'5'} text={'Jumbled'}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
                 <Item color={'#70a1ff'} itemGameId={'6'} text={'Story'}></Item>

@@ -84,7 +84,7 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
         key="mr-text-response-modal"
         className={`mr-text-response-modal ${statusClass}`}
       >
-        <Typography sx={{fontWeight:'bold', fontFamily:'Segoe Print, Comic Sans MS, cursive'}}>{currResult ? "Correct!" : "Incorrect"}</Typography>
+        <Typography sx={{fontWeight:'bold'}}>{currResult ? "Correct!" : "Incorrect"}</Typography>
         <Typography>{answer}</Typography>
       </div>
       </div>
@@ -202,7 +202,7 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
             key="mr-text-response-modal"
             className={`mr-text-response-modal ${statusClass}`}
           >
-            <Typography sx={{fontWeight:'bold', fontFamily:'Segoe Print, Comic Sans MS, cursive'}}>{isCorrect ? "Correct!" : "Incorrect"}</Typography>
+            <Typography sx={{fontWeight:'bold'}}>{isCorrect ? "Correct!" : "Incorrect"}</Typography>
             <Typography>{answer}</Typography>
           </div>
           </div>
@@ -425,7 +425,7 @@ function validationModal() {
       key="mr-text-response-modal"
       className={`mr-text-response-modal ${statusClass}`}
     >
-      <Typography sx={{fontWeight:'bold', fontFamily:'Segoe Print, Comic Sans MS, cursive'}}>{isCorrect ? "Correct!" : "Incorrect"}</Typography>
+      <Typography sx={{fontWeight:'bold'}}>{isCorrect ? "Correct!" : "Incorrect"}</Typography>
       <Typography>{answer}</Typography>
     </div>
     </div>
@@ -509,7 +509,7 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
           key="mr-text-response-modal"
           className={`mr-text-response-modal ${statusClass}`}
         >
-          <Typography sx={{fontWeight:'bold', fontFamily:'Segoe Print, Comic Sans MS, cursive'}}>{isCorrect ? "Correct!" : "Incorrect"}</Typography>
+          <Typography sx={{fontWeight:'bold'}}>{isCorrect ? "Correct!" : "Incorrect"}</Typography>
           <Typography>{answer}</Typography>
         </div>
         </div>

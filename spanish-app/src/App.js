@@ -8,6 +8,7 @@ import TopHeader from './top-header';
 import GameMenu from './game-menu';
 import GameWrapper from './game-wrapper';
 import { computeLevel } from './profile-page';
+import SettingsPage from './settings-page';
 
 
 function App() {
@@ -15,12 +16,12 @@ function App() {
   const chapters = "Chapters";
   const store = "Store";
   const profile = "Profile";
-  const gamePage = "MenuGame"
-  const game = "game"
+  const gamePage = "MenuGame";
+  const game = "game";
+  const settings = 'Settings';
 
   const [navSelection, setNavSelection] = useState(chapters);
   const [pageContent, setPageContent] = useState(<ChaptersPage/>);
-  const [globalName, setGlobalName] = useState('Caiden Kiani');
   const [chapterIndex, setChapterIndex] = useState(0);
   const [gameId, setGameId] = useState('1');
 
@@ -29,6 +30,13 @@ function App() {
     return Number(localStorage.getItem(key)) | 0;
   }
 
+  function getNameFromStorage() {
+    return localStorage.getItem('player-name') || 'Newbie';
+  }
+
+  function setNameInStorage(name) {
+    localStorage.setItem('player-name', name);
+  }
 
   const [coins, setCoins] = useState(safeGetItem('coins'));
   const [experience, setExperience] = useState(safeGetItem('experience'));
@@ -42,14 +50,18 @@ function App() {
         setPageContent(<div/>);
         break;    
       case profile:
-        setPageContent(<ProfilePage globalName={globalName} setGlobalName={setGlobalName} setSelection={setNavSelection} experience={experience}/>);
+        setPageContent(<ProfilePage globalName={getNameFromStorage()} setGlobalName={setNameInStorage} setSelection={setNavSelection} experience={experience}/>);
         break;   
+      case settings:
+        setPageContent(<SettingsPage></SettingsPage>);
+        break;
       case gamePage:
         setPageContent(<GameMenu chapterIndex={chapterIndex} setGameId={setGameId} setSection={setNavSelection}></GameMenu>); 
         break;    
       case game:
         setPageContent(<GameWrapper gameId={gameId} chapterIndex={chapterIndex} setSection={setNavSelection} updatePoints={updatePoints}></GameWrapper>);
         break;
+      
     }    
   }
   

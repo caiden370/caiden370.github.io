@@ -1,3 +1,23 @@
+/* Simple Global Font Size Control */
+:root {
+  --base-font-size: 18px; /* Change this value to scale everything */
+}
+
+/* Set global font size */
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-size: var(--base-font-size);
+}
+
+/* Override Material-UI Typography when no variant/level is specified */
+.MuiTypography-root:not([class*="MuiTypography-h"]):not([class*="MuiTypography-body"]):not([class*="MuiTypography-caption"]):not([class*="MuiTypography-overline"]):not([class*="MuiTypography-subtitle"]) {
+  font-size: var(--base-font-size) !important;
+}
+
+
 .App {
   text-align: center;
     width: 100vw;
@@ -306,7 +326,7 @@
   border-bottom: solid 0.5px rgb(118, 118, 118);
 }
 
-.header-level-container {
+/* .header-level-container {
   background-color: #007aff;
   display: flex;
   flex-direction: column;
@@ -317,7 +337,27 @@
   border-radius: 100%;
   width: 30px;
   height: 30px;
+} */
+
+.header-level-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* border: 3px solid #ffffff; */
+  border-radius: 100%;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
+
+
 
 .coin-container {
   width: 100%;
@@ -365,6 +405,10 @@
 .profile-avatar-container {
   width: 100%;
   background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-name-container {
@@ -386,18 +430,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .profile-exp-bar {
 
-}
-
-.profile-level-outline {
-  border-radius: 100px;
-  background-color: #70a1ff;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 3px;
 }
 
 /* GAME MENU */
@@ -595,7 +632,7 @@
 
 .mr-text-response-modal.correct {
   color: #16ae55;
-  height: 100px;
+  height: 120px;
   background-color: #b5eec7;
   text-align: left;
   padding: 10px;
@@ -605,7 +642,7 @@
 .mr-text-response-modal.incorrect {
   width: 100%;
   padding: 10px;
-  height: 100px;
+  height: 120px;
   color: #ff4757;
   background-color: #fbb3be; /* light yellowish paper feel */
   text-align: left;
@@ -1152,7 +1189,6 @@
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: 80px;
   align-items: start;
   width: 100%;
   margin-top: 20px;
@@ -1233,3 +1269,78 @@
 .app-button.info:hover { background-color: #5e92ff !important; }
 
 .app-button:disabled { filter: grayscale(20%); opacity: 0.7; }
+
+
+/* SETTINGS PAGE */
+
+.settings-page-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  gap: 4px;
+}
+
+.settings-button-container {
+  box-sizing: border-box;
+  border: solid 5px #ef8d03;
+  background-color: #f1db92;
+  padding: 10px;
+  border-radius: 15px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+.settings-button-container:hover {
+  background-color: #f5f5f5;
+  border-color: #d0d0d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.settings-button-container:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.settings-button-container svg {
+  color: #ef8d03;
+}
+
+
+/* Loading and disabled states */
+.settings-button-container.disabled {
+opacity: 0.6;
+cursor: not-allowed;
+pointer-events: none;
+}
+
+.settings-button-container.loading {
+opacity: 0.8;
+cursor: wait;
+}
+
+/* Focus states for accessibility */
+.settings-button-container:focus {
+outline: 2px solid #e54646;
+outline-offset: 2px;
+}
+
+.settings-button-container:focus:not(:focus-visible) {
+outline: none;
+}
+
+.settings-button-label {
+
+}

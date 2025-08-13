@@ -1,5 +1,7 @@
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import { IconButton } from '@mui/material';
+import SettingsIcon from '@mui/icons-material/Settings';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import { IconButton} from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import * as Tone from 'tone';
 
@@ -88,67 +90,128 @@ export function playIncorrectSound() {
   }, 500);
 }
 
-export default function SpeechButton({ text, inSpanish, big, small }) {
+export default function SpeechButton({ text, inSpanish, big, small}) {
   const synthRef = useRef(window.speechSynthesis);
   const [voicesLoaded, setVoicesLoaded] = useState(false);
 
+  // localStorage helper function with error handling
+  const loadFromStorage = (key, defaultValue = '') => {
+    try {
+      return localStorage.getItem(key) || defaultValue;
+    } catch (error) {
+      console.warn('localStorage not available:', error);
+      return defaultValue;
+    }
+  };
+
+  function getSelectedVoice(voices) {
+    // Get saved voice preference from localStorage
+    const targetVoiceName = inSpanish ? 
+      loadFromStorage('selectedSpanishVoice') : 
+      loadFromStorage('selectedEnglishVoice');
+    
+    if (targetVoiceName) {
+      const selectedVoice = voices.find(v => v.name === targetVoiceName);
+      if (selectedVoice) {
+        console.log('Using saved voice:', selectedVoice.name, selectedVoice.lang);
+        return selectedVoice;
+      }
+    }
+    
+    // Fallback to automatic selection
+    return getPreferredVoice(voices);
+  }
+
   function getPreferredVoice(voices) {
     if (inSpanish) {
-      // Prioritize natural-sounding Spanish voices
-      return (
-        voices.find(v => v.lang === 'es-MX' && v.name.toLowerCase().includes('google')) ||
-        voices.find(v => v.lang === 'es-US' && v.name.toLowerCase().includes('google')) ||
-        voices.find(v => v.lang.startsWith('es') && v.name.toLowerCase().includes('google')) ||
-        voices.find(v => v.lang.startsWith('es')) ||
-        voices[0]
-      );
+      const spanishVoices = voices.filter(v => v.lang.startsWith('es'));
+      
+      if (spanishVoices.length === 0) {
+        return voices[0];
+      }
+      
+      // Score-based selection for Spanish voices
+      function scoreVoice(voice) {
+        let score = 0;
+        const nameLower = voice.name.toLowerCase();
+        
+        if (nameLower.includes('neural') || nameLower.includes('premium')) score += 100;
+        if (nameLower.includes('google')) score += 50;
+        if (nameLower.includes('microsoft')) score += 40;
+        if (nameLower.includes('apple')) score += 30;
+        
+        if (nameLower.includes('female') || nameLower.includes('mujer') || 
+            nameLower.includes('maria') || nameLower.includes('sofia') || 
+            nameLower.includes('paloma') || nameLower.includes('isabela')) {
+          score += 20;
+        }
+        
+        if (voice.lang === 'es-MX') score += 15;
+        else if (voice.lang === 'es-US') score += 12;
+        else if (voice.lang === 'es-ES') score += 10;
+        else if (voice.lang.startsWith('es-')) score += 5;
+        
+        if (voice.localService) score += 25;
+        if (voice.default) score += 15;
+        
+        return score;
+      }
+      
+      spanishVoices.sort((a, b) => scoreVoice(b) - scoreVoice(a));
+      console.log('Using auto-selected Spanish voice:', spanishVoices[0]?.name, spanishVoices[0]?.lang);
+      return spanishVoices[0];
+      
     } else {
-      // Prioritize natural-sounding English voices
-      return (
-        voices.find(v => v.lang === 'en-US' && v.name.toLowerCase().includes('google')) ||
-        voices.find(v => v.lang.startsWith('en') && v.name.toLowerCase().includes('google')) ||
-        voices.find(v => v.lang.startsWith('en')) ||
-        voices[0]
+      // English voice selection
+      const englishVoices = voices.filter(v => v.lang.startsWith('en'));
+      
+      if (englishVoices.length === 0) {
+        return voices[0];
+      }
+      
+      const selectedVoice = (
+        englishVoices.find(v => v.name.toLowerCase().includes('neural')) ||
+        englishVoices.find(v => v.name.toLowerCase().includes('premium')) ||
+        englishVoices.find(v => v.lang === 'en-US' && v.name.toLowerCase().includes('google')) ||
+        englishVoices.find(v => v.localService && v.lang === 'en-US') ||
+        englishVoices.find(v => v.lang === 'en-US') ||
+        englishVoices[0]
       );
+      
+      console.log('Using auto-selected English voice:', selectedVoice?.name, selectedVoice?.lang);
+      return selectedVoice;
     }
   }
 
   async function performSpeak() {
-    // Ensure audio context is started (important for both Tone.js and speech synthesis)
     if (Tone.context.state !== 'running') {
       await Tone.start();
     }
 
-    // Cancel any ongoing speech first
     synthRef.current.cancel();
     
-    // Add a small delay to ensure cancellation is complete
     setTimeout(() => {
       const voices = synthRef.current.getVoices();
       
-      // Check if we have voices available
       if (voices.length === 0) {
         console.warn('No voices available for speech synthesis');
         return;
       }
 
-      // Check if text is available
       if (!text || text.trim() === '') {
         console.warn('No text provided for speech synthesis');
         return;
       }
 
-      const preferredVoice = getPreferredVoice(voices);
-      console.log('Using voice:', preferredVoice?.name, preferredVoice?.lang);
+      const preferredVoice = getSelectedVoice(voices);
 
       const msg = new SpeechSynthesisUtterance(text.trim());
       msg.voice = preferredVoice;
       msg.lang = preferredVoice?.lang || (inSpanish ? 'es-US' : 'en-US');
       msg.pitch = 1;
-      msg.rate = 0.9; // Slightly slower for better clarity
+      msg.rate = inSpanish ? 0.85 : 0.9; // Slightly slower for Spanish
       msg.volume = 1;
 
-      // Add comprehensive error handling
       msg.onerror = (event) => {
         console.error('Speech synthesis error:', event.error, event);
         // Try to resume the speech synthesis if it gets interrupted
@@ -186,7 +249,7 @@ export default function SpeechButton({ text, inSpanish, big, small }) {
         pending: synthRef.current.pending,
         paused: synthRef.current.paused
       });
-    }, 150); // Slightly longer delay for better reliability
+    }, 150);
   }
 
   useEffect(() => {
