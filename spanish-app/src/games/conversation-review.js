@@ -144,6 +144,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
         );
     }
 
+
     if(finished && !updated) {
         updatePoints(numCorrect, numCorrect);
         setUpdated(true);
@@ -151,7 +152,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
 
     return (
         <div className='mixed-review-container'>
-            <LeaveButton setSection={setSection}></LeaveButton>
+            <LeaveButton setSection={setSection} updatePoints={() => updatePoints(numCorrect, numCorrect)}></LeaveButton>
             <div className='mixed-review-quiz-card'>
             {scoreBarComponent}
             {questionComponent}

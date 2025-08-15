@@ -93,9 +93,10 @@ export function processText(text) {
 }
 
 
-export function LeaveButton({setSection}) {
+export function LeaveButton({setSection, updatePoints}) {
   function onClick() {
     setSection('MenuGame');
+    updatePoints();
   }
   
 

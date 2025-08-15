@@ -60,7 +60,7 @@ export default function MixedReview({ chapterIndex, setSection, updatePoints }) 
 
 
     useEffect(() => {
-        if (currResult) {
+        if (currResult && answered) {
             setNumCorrect(numCorrect + 1);
         }
     }, [answered]);
@@ -318,7 +318,7 @@ export default function MixedReview({ chapterIndex, setSection, updatePoints }) 
     
         return (
             <div className='mixed-review-container'>
-                <LeaveButton setSection={setSection}></LeaveButton>
+                <LeaveButton setSection={setSection} updatePoints={() => updatePoints(numCorrect, numCorrect)}></LeaveButton>
                 <div className='mixed-review-quiz-card'>
                 {scoreBar()}
                 {questionComponent}

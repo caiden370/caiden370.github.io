@@ -10,10 +10,12 @@ import { TextField, Box } from '@mui/material';
 import { useState } from 'react';
 import './App.css';
 import Mascot from './mascot';
+import { MascotSelector } from './mascot-selection';
+import { getSelectedMascot } from './utils/mascotStorage';
 
 
 export function computeLevel(exp) {
-    return Math.round(exp / 100) + 1;
+    return Math.floor(exp / 100) + 1;
 }
 
 export function getLevelColor(level) {
@@ -113,6 +115,7 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const [inputName, setInputName] = useState(globalName);
+    const [mascotId, setMascotId] = useState(getSelectedMascot());
     const handleSubmit = (e) => {
         e.preventDefault();
         setGlobalName(inputName);
@@ -139,7 +142,7 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
         <div className="profile-container">
             <div className="profile-row-1">
                 <div className='profile-avatar-container'>
-                    <Mascot></Mascot>
+                    <Mascot id={mascotId}></Mascot>
                 </div>
             </div>
                 
@@ -189,6 +192,10 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
                     <div className='header-level-container' sx={{backgroundColor: getLevelColor(computeLevel(experience))}}><Typography sx={{color: '#ffffff'}}>{computeLevel(experience)}</Typography></div>
                     <ProgressBar className='profile-exp-bar' progress={computeProgress(experience)}></ProgressBar>
                 </div>
+            </div>
+            <div className='profile-row-4'>
+                <MascotSelector onSelection={(id) => {setMascotId(id)}}/>
+
             </div>
             
         </div>

@@ -217,7 +217,7 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
     } else {
         return (
             <div className='mixed-review-container'>
-                <LeaveButton setSection={setSection}></LeaveButton>
+                <LeaveButton setSection={setSection} updatePoints={() => updatePoints(numCorrect, numCorrect)}></LeaveButton>
                 <div className='mixed-review-quiz-card'>
                     {scoreBar()}
                     {questionComponent}

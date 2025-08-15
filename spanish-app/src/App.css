@@ -1,6 +1,9 @@
 /* Simple Global Font Size Control */
 :root {
   --base-font-size: 18px; /* Change this value to scale everything */
+  --theme-light-blue: rgb(190, 218, 255);
+  --theme-medium-blue: rgb(69, 136, 224);
+  --theme-dark-blue: rgb(7, 46, 97);
 }
 
 /* Set global font size */
@@ -20,11 +23,12 @@ body {
 
 .App {
   text-align: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--theme-light-blue);
+  display: flex;
+  flex-direction: column;
+
   }
 
 .page-container {
@@ -50,7 +54,7 @@ body {
   justify-content: center;
 
   width: auto;
-  top: 35px;
+  top: 43px;
   left: 0;
   z-index: 5;
 }
@@ -66,11 +70,11 @@ body {
 
 /* MASCOT */
 .mascot-container {
-  height: 120px;
-  width: 90px;
+  height: 100px;
+  width: 100px;
   
-  min-height: 120px;
-  min-width: 90px;
+  min-height: 100px;
+  min-width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,8 +294,8 @@ body {
   overflow-y: auto;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 20px;
-  background-color: #c2f3d6;
+  padding-top: 30px;
+  background-color: var(--theme-light-blue);
 
 }
 
@@ -385,6 +389,7 @@ body {
 .profile-container {
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
 }
 
 .profile-row-1 {
@@ -404,7 +409,6 @@ body {
 
 .profile-avatar-container {
   width: 100%;
-  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -444,7 +448,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #f1d0c8;
+  background-color: var(--theme-light-blue);
   padding-top: 20px;
 }
 
@@ -452,7 +456,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background-color: #f0712284;
+  background-color: var(--theme-medium-blue);
   padding-top: 5px;
   padding-bottom: 5px;
   display: flex;
@@ -462,7 +466,7 @@ body {
   font-weight: bold;
   font-size: medium;
   color: white;
-  border-bottom: solid 8px rgb(223, 87, 13);
+  border-bottom: solid 8px var(--theme-dark-blue);
   border-radius: 15px;
   box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -4px -4px 12px rgba(255,255,255,0.4);
 }
@@ -489,8 +493,8 @@ body {
 .multiple-choice-message {
   margin-top: 10px;
   padding: 3px;
-  background-color: #afc8ff;
-  border: solid 2px #6772d5;
+  background-color: var(--theme-light-blue);
+  border: solid 2px var(--theme-dark-blue);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(105, 37, 0, 0.5);
 }
@@ -537,7 +541,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #7a87f7, rgb(126, 176, 251), #c3ceff)
+  background: linear-gradient(to bottom, var(--theme-light-blue), var(--theme-medium-blue),var(--theme-dark-blue) )
 }
 
 .mixed-review-score-container {
@@ -561,7 +565,7 @@ body {
   background-color: white;
   box-shadow: #2f3542;
   margin-bottom: 40px;
-  margin-top: 40px;
+  margin-top: 45px;
   margin-left: 12px;
   margin-right:12px;
   border-radius: 10px;
@@ -1342,5 +1346,36 @@ outline: none;
 }
 
 .settings-button-label {
+
+}
+
+
+.mascot-profile-selection-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mascot-button {
+  height: 50px;
+  width: 50px;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mascot-button.selected {
+  background-color: #d1d7df;
 
 }

@@ -30,12 +30,14 @@ export function checkLocalProgress(chapterIndex, gameId) {
     return Number(localStorage.getItem(localProgressString(chapterIndex, gameId)) || 0);
 }
 
+
 export function updateLocalProgress(chapterIndex, gameId, points) {
+    const safePoints = Number(points || 0);
     const prevPoints = checkLocalProgress(chapterIndex, gameId);
-    if (prevPoints < ScoreGoal && prevPoints + points >= ScoreGoal) {
+    if (prevPoints < ScoreGoal && prevPoints + safePoints >= ScoreGoal) {
         incrementStarFill(chapterIndex);
     }
-    localStorage.setItem(localProgressString(chapterIndex, gameId), prevPoints + points);
+    localStorage.setItem(localProgressString(chapterIndex, gameId), prevPoints + safePoints);
 }
 
 
@@ -59,7 +61,7 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
                 </div>
                 <div className='game-menu-item-progress-container'>
                     <Typography>{progress} / {ScoreGoal}</Typography>
-                    {progress >= ScoreGoal? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : (<StarBorderIcon sx={{color: 'grey'}}/>)}
+                    {progress >= ScoreGoal? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : (<StarBorderIcon sx={{color: 'white'}}/>)}
                 </div>
             </div>
         );

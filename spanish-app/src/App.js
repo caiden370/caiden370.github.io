@@ -9,10 +9,11 @@ import GameMenu from './game-menu';
 import GameWrapper from './game-wrapper';
 import { computeLevel } from './profile-page';
 import SettingsPage from './settings-page';
+import AnimatedScoreIncrease from './animations/coin-animation';
+import { initMascotStorage } from './utils/mascotStorage';
 
 
 function App() {
-
   const chapters = "Chapters";
   const store = "Store";
   const profile = "Profile";
@@ -24,6 +25,7 @@ function App() {
   const [pageContent, setPageContent] = useState(<ChaptersPage/>);
   const [chapterIndex, setChapterIndex] = useState(0);
   const [gameId, setGameId] = useState('1');
+  initMascotStorage();
 
   // STATS TRACKING
   function safeGetItem(key) {
@@ -37,6 +39,8 @@ function App() {
   function setNameInStorage(name) {
     localStorage.setItem('player-name', name);
   }
+
+
 
   const [coins, setCoins] = useState(safeGetItem('coins'));
   const [experience, setExperience] = useState(safeGetItem('experience'));
@@ -78,9 +82,13 @@ function App() {
 
 
   function updatePoints(coinsInc, expInc) {
-    setCoins(Number(localStorage.getItem('coins')) + coinsInc);
-    setExperience(Number(localStorage.getItem('experience')) + expInc);
+    const coins = Number(localStorage.getItem('coins')) || 0;
+    const exp = Number(localStorage.getItem('experience')) || 0;
+  
+    setCoins(coins + (Number(coinsInc) || 0));
+    setExperience(exp + (Number(expInc) || 0));
   }
+  
 
 
 

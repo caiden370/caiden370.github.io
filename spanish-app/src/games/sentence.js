@@ -57,7 +57,7 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
 
 
     useEffect(() => {
-        if (currResult) {
+        if (currResult && answered) {
             setNumCorrect(numCorrect + 1);
         }
     }, [answered])
@@ -121,7 +121,7 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
     function continueButton() {
         return (
             <div className="sentence-continue-button-container">
-            <Button className='app-button primary' variant='contained' sx={{width:'auto'}} onClick={handleContinue}>
+            <Button className='app-button success' variant='contained' sx={{width:'auto'}} onClick={handleContinue}>
                 <Typography>Continue</Typography>
             </Button>
             </div>
@@ -167,12 +167,12 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
         <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
         <div className='finished-row'>
             <div className='mixed-review-continue'>
-                <Button variant='contained' color='info' onClick={handleQuit}>
+                <Button className='app-button info' onClick={handleQuit}>
                     <Typography>Quit</Typography>
                 </Button>
             </div>
             <div className='mixed-review-continue'>
-            <Button variant='contained' color='success' onClick={handleRetry}>
+            <Button className='app-button success' onClick={handleRetry}>
                 <Typography>Play Again</Typography>
             </Button>
             </div>
@@ -182,7 +182,7 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
 
         return (
             <div className='mixed-review-container'>
-                <LeaveButton setSection={setSection}></LeaveButton>
+                <LeaveButton setSection={setSection} updatePoints={() => updatePoints(numCorrect, numCorrect)}></LeaveButton>
                 <div className='mixed-review-quiz-card'>
                 {/* {scoreBarComponent} */}
                 {scoreBar()}

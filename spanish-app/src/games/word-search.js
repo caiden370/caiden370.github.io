@@ -492,7 +492,7 @@ export default function WordSearch({chapterIndex, setSection, updatePoints}) {
     } else {
         return (
             <div className='wordsearch-container'>
-                <LeaveButton setSection={setSection}></LeaveButton>
+                <LeaveButton setSection={setSection} updatePoints={() => {}}></LeaveButton>
                 <div className='ws-grid-container'>{wordSearchComponent && wordSearchComponent}</div>
             </div>
         )

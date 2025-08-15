@@ -205,7 +205,7 @@ export default function SpeechButton({ text, inSpanish, big, small}) {
 
       const preferredVoice = getSelectedVoice(voices);
 
-      const msg = new SpeechSynthesisUtterance(text.trim());
+      const msg = new SpeechSynthesisUtterance(text.replace(/\([^)]*\)/g, '').trim());
       msg.voice = preferredVoice;
       msg.lang = preferredVoice?.lang || (inSpanish ? 'es-US' : 'en-US');
       msg.pitch = 1;
