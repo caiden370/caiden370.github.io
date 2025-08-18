@@ -42,7 +42,7 @@ export function updateLocalProgress(chapterIndex, gameId, points) {
 
 
 export default function GameMenu({setGameId, setSection, chapterIndex}) {
-    const [mascotMouth, setMascotMouth] = useState(false);
+    
 
 
     const game = 'game'
@@ -82,9 +82,9 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
     return (
         <div className="game-menu-container">
             <div className='chapters-container-top-header'>
-                <div onClick={() => {setMascotMouth(!mascotMouth)}}>
-                <Mascot speaking={mascotMouth}></Mascot>
-                </div>
+                
+                <Mascot clickable={true}></Mascot>
+                
             </div>
             <Box sx={{ marginTop: '10px',width: '100%', justifyContent: 'center', display: 'flex', color: 'primary'}}>
             <Grid sx={{width: '90%'}}container spacing={0}>

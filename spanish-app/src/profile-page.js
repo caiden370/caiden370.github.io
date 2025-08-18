@@ -142,7 +142,7 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
         <div className="profile-container">
             <div className="profile-row-1">
                 <div className='profile-avatar-container'>
-                    <Mascot id={mascotId}></Mascot>
+                    <Mascot id={mascotId} clickable={true}></Mascot>
                 </div>
             </div>
                 

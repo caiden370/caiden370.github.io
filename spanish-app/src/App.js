@@ -11,6 +11,27 @@ import { computeLevel } from './profile-page';
 import SettingsPage from './settings-page';
 import AnimatedScoreIncrease from './animations/coin-animation';
 import { initMascotStorage } from './utils/mascotStorage';
+import Store from './store';
+
+// STATS TRACKING
+export function checkNaN(val) {
+  return isNaN(val) ? 0 : val; // use global isNaN for broader check
+}
+
+export function safeGetItem(key) {
+  const raw = localStorage.getItem(key);
+  const num = Number(raw);
+  return checkNaN(num);
+}
+
+
+export function getNameFromStorage() {
+  return localStorage.getItem('player-name') || 'Newbie';
+}
+
+export function setNameInStorage(name) {
+  localStorage.setItem('player-name', name);
+}
 
 
 function App() {
@@ -27,18 +48,7 @@ function App() {
   const [gameId, setGameId] = useState('1');
   initMascotStorage();
 
-  // STATS TRACKING
-  function safeGetItem(key) {
-    return Number(localStorage.getItem(key)) | 0;
-  }
 
-  function getNameFromStorage() {
-    return localStorage.getItem('player-name') || 'Newbie';
-  }
-
-  function setNameInStorage(name) {
-    localStorage.setItem('player-name', name);
-  }
 
 
 
@@ -51,7 +61,7 @@ function App() {
         setPageContent(<ChaptersPage setChapterIndex={setChapterIndex} setSection={setNavSelection}/>);
         break;
       case store:
-        setPageContent(<div/>);
+        setPageContent(<Store/>);
         break;    
       case profile:
         setPageContent(<ProfilePage globalName={getNameFromStorage()} setGlobalName={setNameInStorage} setSelection={setNavSelection} experience={experience}/>);

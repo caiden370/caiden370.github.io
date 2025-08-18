@@ -8,7 +8,7 @@ import { getStarFill } from "./game-menu";
 
 export default function ChaptersPage({setSection, setChapterIndex}) {
 
-    const [mascotMouth, setMascotMouth] = useState(false);
+    
     const fills = Array(chapterCovers.length);
     for (let i = 0; i < chapterCovers.length; i++) {
         fills[i] = getStarFill(i);
@@ -17,9 +17,7 @@ export default function ChaptersPage({setSection, setChapterIndex}) {
     return (
         <div className="chapters-container">
             <div className='chapters-container-top-header'>
-                <div onClick={() => {setMascotMouth(!mascotMouth)}}>
-                <Mascot speaking={mascotMouth}></Mascot>
-                </div>
+                <Mascot clickable={true}></Mascot>
                 
             </div>
             

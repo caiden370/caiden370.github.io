@@ -315,7 +315,7 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
         <>
         <div className='sentence-jumble-container'>
             <div className="mr-text-response-question">
-            <Mascot speaking></Mascot>
+            <Mascot clickable></Mascot>
             <div className='mr-text-response-question-text'>
                 <SpeechButton text={translation} inSpanish={false}></SpeechButton>
                 <Typography align="left" sx={{fontWeight:'bold'}}>{translation}</Typography>

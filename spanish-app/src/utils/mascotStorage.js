@@ -191,7 +191,7 @@ export function initMascotStorage() {
     // Check and initialize availableMascots
     const available = getAvailableMascots();
     if (available.length === 0) { // If it's empty, means it wasn't set or was invalid
-        setAvailableMascots([]); // Explicitly set to an empty array
+        setAvailableMascots([0, 1, 2, 3, 4]); // Explicitly set to an empty array
         console.log("Initialized availableMascots to []");
     }
 

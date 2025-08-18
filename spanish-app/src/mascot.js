@@ -32,7 +32,7 @@ export default function Mascot({id = -10}) {
 
     return (
         <div className="mascot-container">
-            <SelectedMascot />
+            <SelectedMascot/>
         </div>
     );
 }
@@ -42,7 +42,7 @@ export default function Mascot({id = -10}) {
 // ************************** OPTIONS ******************************* //
 
 // Bear Component
-export function Bear(props) {
+export function Bear(clickable=false) {
   return (
     <CustomizableMascot
       animalType="bear"
@@ -50,13 +50,13 @@ export function Bear(props) {
       earColor="#8B4513"
       noseColor="#000000"
       accentColor="#FF69B4"
-      {...props}
+      clickable={clickable}
     />
   );
 }
 
 // Cat Component
-export function Cat(props) {
+export function Cat(clickable=false) {
   return (
     <CustomizableMascot
       animalType="cat"
@@ -64,13 +64,13 @@ export function Cat(props) {
       earColor="#FF6347"
       noseColor="#000000"
       accentColor="#FF69B4"
-      {...props}
+      clickable={clickable}
     />
   );
 }
 
 // Dog Component
-export function Dog(props) {
+export function Dog(clickable=false) {
   return (
     <CustomizableMascot
       animalType="dog"
@@ -78,13 +78,14 @@ export function Dog(props) {
       earColor="#8B4513"
       noseColor="#000000"
       accentColor="#FF69B4"
-      {...props}
+      clickable={clickable}
+      
     />
   );
 }
 
 // Bird Component
-export function Bird(props) {
+export function Bird(clickable=false) {
   return (
     <CustomizableMascot
       animalType="bird"
@@ -92,13 +93,13 @@ export function Bird(props) {
       earColor="transparent"
       noseColor="#FF4500"
       accentColor="#1E90FF"
-      {...props}
+      clickable={clickable}
     />
   );
 }
 
 // Pig Component
-export function Pig(props) {
+export function Pig(clickable=false) {
   return (
     <CustomizableMascot
       animalType="pig"
@@ -106,13 +107,13 @@ export function Pig(props) {
       earColor="#FF69B4"
       noseColor="#FF69B4"
       accentColor="#FF1493"
-      {...props}
+      clickable={clickable}
     />
   );
 }
 
 // Horse Component
-export function Horse(props) {
+export function Horse(clickable) {
   return (
     <CustomizableMascot
       animalType="horse"
@@ -120,13 +121,13 @@ export function Horse(props) {
       earColor="#8B4513"
       noseColor="#000000"
       accentColor="#FFD700"
-      {...props}
+      clickable={clickable}
     />
   );
 }
 
 // Giraffe Component
-export function Giraffe(props) {
+export function Giraffe(clickable=false) {
   return (
     <CustomizableMascot
       animalType="giraffe"
@@ -134,7 +135,7 @@ export function Giraffe(props) {
       earColor="#D2B48C"
       noseColor="#8B4513"
       accentColor="#FFD700"
-      {...props}
+      clickable={clickable}
     />
   );
 }

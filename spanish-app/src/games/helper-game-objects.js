@@ -95,7 +95,7 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
     <div className="multiple-choice-container">
 
       <div className="mr-text-response-question">
-        <Mascot speaking></Mascot>
+        <Mascot clickable></Mascot>
         <div className='mr-text-response-question-text'>
         <SpeechButton text={question} inSpanish={questionInSpanish}></SpeechButton>
         <Typography align="left" sx={{fontWeight:'bold'}}>{question}</Typography>
@@ -264,7 +264,7 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
     return (
         <div className="mr-text-response-container">
             <div className="mr-text-response-question">
-              <Mascot></Mascot>
+            <Mascot clickable></Mascot>
               <div className="mr-text-response-question-text">
                 <SpeechButton inSpanish={questionInSpanish} text={question}></SpeechButton>
                 <Typography align="left" sx={{fontWeight: 'bold'}} >{question}</Typography>
@@ -436,7 +436,7 @@ function validationModal() {
     <>
     <div className='mr-fillblank-container'>
       <div className='mr-text-response-question'>
-        <Mascot></Mascot>
+      <Mascot clickable></Mascot>
         <div className="mr-text-response-question-text">
           {renderLine()}
 
@@ -571,7 +571,7 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
   return (
       <div className="mr-text-response-container">
           <div className="mr-text-response-question">
-          <Mascot></Mascot>
+          <Mascot clickable></Mascot>
           <SpeechButton inSpanish={questionInSpanish} text={question} big={true}></SpeechButton>
           </div>
           {textField()}

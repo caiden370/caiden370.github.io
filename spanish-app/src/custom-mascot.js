@@ -14,7 +14,7 @@ export default function CustomizableMascot({
   pupilColor = "black",
   noseColor = "#000000", // Black nose
   accentColor = "#FF69B4", // For special features (bird beak, pig snout, etc.)
-  
+  clickable = false,
   // Size and positioning
   size = 160,
 }) {
@@ -22,6 +22,11 @@ export default function CustomizableMascot({
   const [blinkProgress, setBlinkProgress] = useState(0);
   const blinkTimeoutRef = useRef(null);
   const blinkIntervalRef = useRef(null);
+
+  let svgStyle = {};
+  if (!clickable) {
+    svgStyle['pointerEvents'] = 'none';
+  }
 
   const viewSize = size;
   const centerX = viewSize / 2;
@@ -90,11 +95,24 @@ export default function CustomizableMascot({
 
   // Define mouth paths
   const getMouthPaths = () => {
-    const mouthWidth = viewSize * 0.125; // 20/160
+    const mouthWidth = viewSize * 0.125; // total width
+    const rx = mouthWidth / 2 + 2;       // horizontal radius
+    const ry = rx / 1.5;                 // vertical radius (shorter for ellipse look)
+  
     const closedPath = `M${centerX - mouthWidth/2} ${mouthY} Q${centerX} ${mouthY + 6} ${centerX + mouthWidth/2} ${mouthY}`;
-    const openPath = `M${centerX - mouthWidth/2 - 2} ${mouthY + 3} Q${centerX} ${mouthY + 13} ${centerX + mouthWidth/2 + 2} ${mouthY + 3}`;
+  
+    const startX = centerX - rx;
+    const startY = mouthY;
+    const endX = centerX + rx;
+    const endY = mouthY;
+  
+    // Arc command for a lower semi-ellipse
+    const openPath = `M${startX} ${startY} A${rx} ${ry} 0 0 0 ${endX} ${endY} L${endX} ${startY} L${startX} ${startY} Z`;
+  
     return { closedPath, openPath };
   };
+  
+  
 
   const { closedPath, openPath } = getMouthPaths();
 
@@ -350,7 +368,7 @@ export default function CustomizableMascot({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         onClick={handleClickMascot}
-        style={{ cursor: 'pointer' }}
+        style={svgStyle}
       >
         {/* Main Body / Head */}
         <circle cx={centerX} cy={centerY} r={headRadius} fill={bodyColor} />
@@ -390,12 +408,13 @@ export default function CustomizableMascot({
         {/* Mouth */}
         <path
           d={isMouthOpen ? openPath : closedPath}
-          fill="none"
-          stroke="black"
+          fill={isMouthOpen ? "black" : "none"}
+          stroke={isMouthOpen ? "none" : "black"}
           strokeWidth="2"
           strokeLinecap="round"
           className="transition-all duration-300 ease-in-out"
         />
+
 
         {/* Special Features */}
         {renderSpecialFeatures()}
