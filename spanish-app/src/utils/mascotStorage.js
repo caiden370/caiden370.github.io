@@ -67,13 +67,9 @@ export function getOwnedMascots() {
  * @returns {number[]} The updated list of owned mascot IDs.
  */
 export function addOwnedMascot(mascotId) {
-    if (typeof mascotId !== 'number') {
-        console.error("Invalid mascotId. Must be a number.");
-        return getOwnedMascots();
-    }
     const ownedMascots = getOwnedMascots();
-    if (!ownedMascots.includes(mascotId)) {
-        ownedMascots.push(mascotId);
+    if (!ownedMascots.includes(Number(mascotId))) {
+        ownedMascots.push(Number(mascotId));
         saveMascotListToLocalStorage(OWNED_MASCOTS_KEY, ownedMascots);
     }
     return ownedMascots;
@@ -185,14 +181,12 @@ export function initMascotStorage() {
     if (owned.length === 0) { // If it's empty, means it wasn't set or was invalid
         setOwnedMascots([0]);
         setSelectedMascot(0);
-        console.log("Initialized ownedMascots to [0]");
     }
 
     // Check and initialize availableMascots
     const available = getAvailableMascots();
     if (available.length === 0) { // If it's empty, means it wasn't set or was invalid
         setAvailableMascots([0, 1, 2, 3, 4]); // Explicitly set to an empty array
-        console.log("Initialized availableMascots to []");
     }
 
     

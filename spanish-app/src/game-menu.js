@@ -10,6 +10,7 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import { Icon, Typography } from '@mui/material';
 import { useState } from 'react';
+import { safeGetItem } from './App';
 
 const ScoreGoal = 50;
 
@@ -27,7 +28,7 @@ export function localProgressString(chapterIndex, gameId) {
 }
 
 export function checkLocalProgress(chapterIndex, gameId) {
-    return Number(localStorage.getItem(localProgressString(chapterIndex, gameId)) || 0);
+    return safeGetItem(localProgressString(chapterIndex, gameId));
 }
 
 

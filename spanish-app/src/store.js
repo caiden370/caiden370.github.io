@@ -1,27 +1,19 @@
 import { Typography } from "@mui/material";
 import { safeGetItem } from "./App"
-import Mascot from "./mascot";
+import Mascot, { getSortedMascotIdsByPrice } from "./mascot";
 import { SvgIcon } from '@mui/material';
 import { ReactComponent as CoinsSvg } from './svgs/coins.svg';  
-import { getAvailableMascots, addOwnedMascot } from "./utils/mascotStorage";
+import { getAvailableMascots, addOwnedMascot, getOwnedMascots } from "./utils/mascotStorage";
 import { useState } from "react";
 import {Button} from "@mui/material";
 import { mascotComponents } from "./mascot"
 
 
-export function updateStoredCoins(amount) {
-    const storedCoins = safeGetItem('coins');
-    
-    if (storedCoins - amount < 0) {
-        return false;
-    } else {
-        localStorage.setItem('coins', storedCoins - amount);
-        return true;
-    }
-}
 
 
-export default function Store() {
+
+
+export default function Store({setGlobalCoins}) {
 
     const [localCoins, setLocalCoins] = useState(safeGetItem('coins'));
     const [openStatusModal, setOpenStatusModal] = useState(false);
@@ -29,8 +21,30 @@ export default function Store() {
     const [purchaseResult, setPurchaseResult] = useState(false);
     const [curPrice, setCurPrice] = useState(100);
     const [curId, setCurId] = useState(0);
-    const [mascotList, setMascotList] = useState(getAvailableMascots())
-    console.log(mascotList);
+    const [mascotList, setMascotList] = useState(getStoreMascots());
+
+    function getStoreMascots() {
+        const owned = new Set(getOwnedMascots());
+        const ids = getSortedMascotIdsByPrice();
+        const avail = Array(ids.length);
+        for (let i = 0; i < ids.length; i++) {
+            if (!owned.has(ids[i])) {
+                avail[i] = ids[i];
+            }
+        }
+        return avail; 
+    }
+
+    function updateStoredCoins(amount) {
+        const storedCoins = safeGetItem('coins');
+        if (storedCoins - amount < 0) {
+            return false;
+        } else {
+            localStorage.setItem('coins', storedCoins - amount);
+            setGlobalCoins(safeGetItem('coins'));
+            return true;
+        }
+    }
 
 
     function handleStoreClick(price, id) {
@@ -38,12 +52,16 @@ export default function Store() {
         setCurPrice(price);
         setOpenRequestModal(true);
     }
+
+
+      
+      
     
 
     function StoreItem(id, price) {
         return (
             <div className='store-mascot-button' onClick={() => handleStoreClick(price, id)}>
-                {mascotComponents[id]()}
+                {mascotComponents[id][0]()}
                 <div className="store-mascot-price">
                     <Typography align="center">{price}</Typography>
                 </div>
@@ -70,16 +88,16 @@ export default function Store() {
     }
 
     function handlePurchase() {
-        console.log(curPrice);
         const result = updateStoredCoins(curPrice);
         if (result) {
             addOwnedMascot(curId);
+            setMascotList(getStoreMascots());
         }
         setPurchaseResult(result);
         setOpenStatusModal(true);
         setTimeout(() => {
           setOpenStatusModal(false);
-        }, 10000);
+        }, 5000);
         setOpenRequestModal(false);
     }
 
@@ -119,7 +137,7 @@ export default function Store() {
 
                 
                 <div className='store-request-mascot'>
-                    {mascotComponents[curId]()}
+                    {mascotComponents[curId][0]()}
                 </div>
                 <div className="store-request-coin-container">            
                     <div className="coin-icon-container"><SvgIcon ><CoinsSvg sx={{color:'#ffd500'}}/></SvgIcon></div>
@@ -138,20 +156,20 @@ export default function Store() {
     return (
         <div className='store-container'>
             <div className='store-header'>
-                <Typography align="center" sx={{fontSize: 25}}>Store</Typography>
                 <Mascot clickable={true}/>
+                <Typography align="center" sx={{fontSize: 25}}>Store</Typography>
             </div>
             <div className='store-selection'>
             {
-                mascotList.map(
+                mascotList.length > 0? (mascotList.map(
                     (id) => {
                         return (
                             <>
-                                {StoreItem(id, 100)}
+                                {StoreItem(id, mascotComponents[id][1])}
                             </>
                         )
                     }
-                )
+                )) : ("There are no items in the store")
             }
 
             </div>

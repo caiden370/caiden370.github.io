@@ -53,11 +53,6 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
         }
     }, [answered, currResult]);
 
-    // Debug logging
-    useEffect(() => {
-        console.log('AudioReview state update:', { answered, currResult, numCompleted });
-    }, [answered, currResult, numCompleted]);
-
     function generateNextQuestionContent(json) {
         let r = Math.floor(Math.random()*1);
         if (r == 0) {
@@ -113,7 +108,6 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
 
     // Separate function to handle answered state
     const handleAnswered = () => {
-        console.log('Answer submitted, setting answered to true');
         setAnswered(true);
     };
 
@@ -126,8 +120,6 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
     }
 
     const handleContinue = () => {
-        console.log('Continue clicked, current state:', { numCompleted, totalQuestions, answered });
-        
         // Check if we should finish
         if (numCompleted >= totalQuestions - 1) {
             setFinished(true);
@@ -154,7 +146,6 @@ export default function AudioReview({chapterIndex, setSection, updatePoints }) {
     };
 
     function continueButton() {
-        console.log('Rendering continue button, answered:', answered);
         return (
             <div className='mixed-review-continue'>
                 <Button 

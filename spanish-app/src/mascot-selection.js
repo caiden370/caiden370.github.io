@@ -39,7 +39,7 @@ export function MascotSelector({onSelection}) {
                             className={`mascot-button ${id == selectedId? "selected" : "notselected"}`} 
                             onClick={() => handleMascotButtonClick(id)}
                             >
-                                {mascotComponents[id]()}
+                                {mascotComponents[id][0]()}
                             </button>
                         )
 

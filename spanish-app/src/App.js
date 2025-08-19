@@ -61,7 +61,7 @@ function App() {
         setPageContent(<ChaptersPage setChapterIndex={setChapterIndex} setSection={setNavSelection}/>);
         break;
       case store:
-        setPageContent(<Store/>);
+        setPageContent(<Store setGlobalCoins={setCoins}/>);
         break;    
       case profile:
         setPageContent(<ProfilePage globalName={getNameFromStorage()} setGlobalName={setNameInStorage} setSelection={setNavSelection} experience={experience}/>);

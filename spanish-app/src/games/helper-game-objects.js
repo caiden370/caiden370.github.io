@@ -184,6 +184,7 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
                 setResult(false);
                 setIsCorrect(false);
                 playIncorrectSound();
+                
                 return;
             }
 

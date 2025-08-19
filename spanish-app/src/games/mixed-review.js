@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 import { ProgressBar } from './ui-objects';
 import { GameCompletionComponent } from './helper-conversation-game-objects';
 import { loadChapterContent } from '../utils/contentCache';
-import { LeaveButton } from './ui-objects';
+import { LeaveButton, withTimeout } from './ui-objects';
 
 export default function MixedReview({ chapterIndex, setSection, updatePoints }) {
     
@@ -195,11 +195,12 @@ export default function MixedReview({ chapterIndex, setSection, updatePoints }) 
       }
       
     function generateFillBlankContent(wordsArray) {
+        
         let randIndex = generateRandomIndices(wordsArray, 1)[0];
         let phrase = wordsArray[randIndex]['spanish'];
         let phraseList = splitIntoWords(phrase);
-        let tries = 1
-        while(phraseList.length < 3 || tries > 0) {
+        let tries = 10
+        while(phraseList.length < 3 && tries > 0) {
             randIndex = generateRandomIndices(wordsArray, 1)[0];
             phrase = wordsArray[randIndex]['spanish'];
             phraseList = splitIntoWords(phrase);
@@ -242,13 +243,16 @@ export default function MixedReview({ chapterIndex, setSection, updatePoints }) 
         if (numCompleted >= totalQuestions - 1) {
             setFinished(true);
         }
-        const content = generateNextQuestionContent(jsonContent);
-        const component = buildNextQuestionComponent(content);
-        setQuestionComponent(component);
         setAnswered(false);
         setCurrentResult(null);
         setPrev(prev + 1);
         setNumCompleted(numCompleted + 1);
+        setTimeout(() => {
+            const content = generateNextQuestionContent(jsonContent);
+            const component = buildNextQuestionComponent(content);
+            setQuestionComponent(component);
+        }, 100);
+
     };
 
     // General content

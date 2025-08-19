@@ -36,7 +36,7 @@ export default function CustomizableMascot({
   // Animal-specific features configuration
   const animalFeatures = {
     bear: {
-      ears: { type: 'round', size: 0.15, position: { x: 0.7, y: 0.3 } },
+      ears: { type: 'round', size: 0.13, position: { x: 0.8, y: 0.23 } },
       nose: { type: 'oval', size: { w: 0.09, h: 0.06 } },
       eyeOffset: 0.1875, // 30/160
       mouthY: 0.7,
@@ -242,15 +242,15 @@ export default function CustomizableMascot({
         return (
           <>
             <ellipse cx={centerX} cy={noseY} rx={noseW} ry={noseH} fill={noseColor} />
-            <circle cx={centerX - noseW/3} cy={noseY} r={2} fill="black" />
-            <circle cx={centerX + noseW/3} cy={noseY} r={2} fill="black" />
+            {/* <circle cx={centerX - noseW/3} cy={noseY} r={2} fill="black" />
+            <circle cx={centerX + noseW/3} cy={noseY} r={2} fill="black" /> */}
           </>
         );
       
       case 'triangle':
         return (
           <polygon
-            points={`${centerX},${noseY - noseH} ${centerX - noseW},${noseY + noseH/2} ${centerX + noseW},${noseY + noseH/2}`}
+            points={`${centerX},${noseY + noseH} ${centerX - noseW},${noseY - noseH/2} ${centerX + noseW},${noseY - noseH/2}`}
             fill={noseColor}
           />
         );
@@ -280,8 +280,8 @@ export default function CustomizableMascot({
         return (
           <>
             <ellipse cx={centerX} cy={noseY} rx={noseW} ry={noseH} fill={noseColor} />
-            <ellipse cx={centerX - noseW/3} cy={noseY - noseH/4} rx={3} ry={2} fill="black" />
-            <ellipse cx={centerX + noseW/3} cy={noseY - noseH/4} rx={3} ry={2} fill="black" />
+            {/* <ellipse cx={centerX - noseW/3} cy={noseY - noseH/4} rx={3} ry={2} fill="black" />
+            <ellipse cx={centerX + noseW/3} cy={noseY - noseH/4} rx={3} ry={2} fill="black" /> */}
           </>
         );
       

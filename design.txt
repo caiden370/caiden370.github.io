@@ -23,7 +23,9 @@ Word arrangement
 Phone Call Game: speech recognition + conversations (english + spanish)
 Connections/Jumble: You have a grid of 16 words or so and you need to create the 3-4 sentences (you know how many words), display the translations at the end.
 Candy crush style game: word tiles move around and disappear whenever you find them (maybe like a timer to see how many sentencees you can get), select them in order and check if it is a sentence in the sentence bank
-
+Word: many many words, just multiple choice learning the meaning
+Copy Paste
+Voice Recognition Game
 
 
 
@@ -48,12 +50,7 @@ https://flatuicolors.com/palette/cn
 
 
 TODO:
-
-- Add X in each game to return to correct section
-- Save progress for each game
-- Make more mascots
-- Add money and a Store
-- Different color mascots, more mascots, mascot animations, pack opening mascots, record what mascots you own
+-  mascot animations, pack opening mascots
 
 
 

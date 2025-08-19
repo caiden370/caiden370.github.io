@@ -110,3 +110,14 @@ export function LeaveButton({setSection, updatePoints}) {
   )
 
 }
+
+
+export function withTimeout(promise, ms = 10000) {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error("Timeout loading content")), ms);
+    promise.then(
+      (res) => { clearTimeout(timer); resolve(res); },
+      (err) => { clearTimeout(timer); reject(err); }
+    );
+  });
+}

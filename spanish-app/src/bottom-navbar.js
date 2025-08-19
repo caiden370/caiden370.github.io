@@ -5,6 +5,7 @@ import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import PersonIcon from '@mui/icons-material/Person';
 import { Settings } from '@mui/icons-material';
+import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
@@ -12,6 +13,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+
 
 export default function BottomNavbar({setSelection}) {
   const [value, setValue] = React.useState(0);
@@ -25,9 +27,9 @@ export default function BottomNavbar({setSelection}) {
 
 
   return (
-    <Box sx={{ width: "100%", borderTop: 'solid 0.5px rgb(99, 99, 99)'}}>
+    <Box sx={{ width: "100%"}}>
       <BottomNavigation
-        sx={{backgroundColor: 'rgb(255, 255, 255)', paddingBottom: '20px'}}
+        sx={{paddingBottom: '20px', backgroundColor: 'rgb(254, 254, 254)'}}
         showLabels
         value={value}
         onChange={(event, newValue) => {
@@ -44,7 +46,7 @@ export default function BottomNavbar({setSelection}) {
         }}
         classes="navbar-button-box"
       >
-        <BottomNavigationAction label={chapters} icon={<SportsEsportsIcon/>} />
+        <BottomNavigationAction label={chapters} icon={<HomeFilledIcon/>} />
         <BottomNavigationAction label={store} icon={<ShoppingBagIcon/>} />
         <BottomNavigationAction label={profile} icon={<PersonIcon/>} />
         <BottomNavigationAction label={settings} icon={<Settings/>} />
