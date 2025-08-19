@@ -67,14 +67,14 @@ export function VoiceSettingsButton() {
     // Prefer female voices (often clearer)
     if (nameLower.includes('female') || nameLower.includes('mujer') || 
         nameLower.includes('maria') || nameLower.includes('sofia') || 
-        nameLower.includes('paloma') || nameLower.includes('isabela')) {
+        nameLower.includes('paulina') || nameLower.includes('Paulina')) {
       score += 20;
     }
     
     // Regional preferences
-    if (voice.lang === 'es-MX') score += 15;
+    if (voice.lang === 'es-ES') score += 15;
     else if (voice.lang === 'es-US') score += 12;
-    else if (voice.lang === 'es-ES') score += 10;
+    else if (voice.lang === 'es-MS') score += 10;
     else if (voice.lang.startsWith('es-')) score += 5;
     
     // Quality indicators

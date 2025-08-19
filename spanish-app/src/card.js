@@ -48,7 +48,7 @@ export default function ChapterCard({number, onFavorite, favorite, content, titl
                 </div>
 
                 <div className='simple-card-content'>
-                    <Typography level="title" sx={{textAlign: 'left', overflow: 'hidden', fontWeight: 550}}>{title}</Typography>
+                    <Typography level="title" sx={{textAlign: 'left', overflow: 'hidden', fontWeight: 550, color:'black'}}>{title}</Typography>
                     <div className='simple-card-stars-container'>
                     {
 

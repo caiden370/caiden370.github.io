@@ -245,11 +245,14 @@ body {
 /* PROFILE */
 
 .profile-container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   padding-top: 10px;
+  padding-bottom: 20px;
   box-sizing: border-box;
   justify-content: center;
+  max-height: 95vh;
   
 }
 
@@ -276,6 +279,8 @@ body {
   overflow-y: hidden;
   box-sizing: border-box;
   width: 100%;
+  height: fit-content;
+  padding-bottom: 10px;
 }
 
 .profile-row-4 {
@@ -287,6 +292,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  padding-bottom: 40px;
 }
 
 .profile-avatar-container {
@@ -425,7 +431,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, var(--theme-light-blue), var(--theme-medium-blue),var(--theme-dark-blue) )
+  background: linear-gradient(to bottom, var(--theme-light-blue), var(--theme-medium-blue) )
 }
 
 .mixed-review-score-container {
@@ -598,17 +604,15 @@ body {
 
 .conversation-topic{
   min-height: 40px;
+  padding-top: 5px;
   width: 100%;
   background-color: #007aff;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom-width: 1px;
-  border: solid;
-  border-top-width: 0px;
-  border-left-width: 0px;
-  border-right-width: 0px;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.08);
 }
 
 .conversation-dialog-container{
@@ -882,7 +886,7 @@ body {
 /* WORD SEARCH */
 
 .wordsearch-container {
-  background: linear-gradient(to bottom, #7a87f7, rgb(126, 176, 251), #c3ceff);
+  background: linear-gradient(to bottom, var(--theme-light-blue), var(--theme-medium-blue));
   height: 100%;
   width: 100%;
   display: flex;
@@ -1257,6 +1261,7 @@ outline: none;
   justify-content: center;
 }
 
+
 .mascot-profile-selection-container {
   box-sizing: border-box;
   display: flex;
@@ -1265,6 +1270,9 @@ outline: none;
   gap: 4px;
   justify-content: center;
   align-items: center;
+  overflow-y: scoll;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .mascot-button {
@@ -1288,6 +1296,7 @@ outline: none;
 
 /* STORE */
 .store-container {
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1330,8 +1339,8 @@ outline: none;
 
 
 .store-mascot-button {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   /* border: solid 1px black; */
   background-color: var(--theme-light-blue);
   border-radius: 5px;
