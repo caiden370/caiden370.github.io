@@ -15,7 +15,7 @@ import { GameCompletionComponent } from './helper-conversation-game-objects';
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton, withTimeout } from './ui-objects';
 
-export default function MixedReview({ chapterIndex, setSection, updatePoints }) {
+export default function MixedReview({ chapterIndex, setSection, updatePoints, learning=false }) {
     
     const [jsonContent, setJsonContent] = useState(null);
     const [currResult, setCurrentResult] = useState(null);
@@ -69,7 +69,7 @@ export default function MixedReview({ chapterIndex, setSection, updatePoints }) 
 
     function generateNextQuestionContent(wordsArray) {
         let r = Math.floor(Math.random()*3);
-        if (r === 0) {
+        if (r === 0 || learning) {
             r = Math.floor(Math.random()*2);
             return generateMultipleChoiceContent(wordsArray, 4, r > 0);
         } else if (r === 1) {

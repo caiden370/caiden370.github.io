@@ -1,124 +1,112 @@
 [
-    {
-      "number": 1,
-      "title": "Greetings",
-      "description": "Start with the basics—learn how to say hello, goodbye, introduce yourself, and ask someone how they're doing.",
-      "color": "#eccc68"
-    },
-    {
-      "number": 2,
-      "title": "Everyday Essentials",
-      "description": "Master key expressions and questions used in daily life—like asking for the time, help, or directions.",
-      "color":"#ff7f50"
-    },
-    {
-      "number": 3,
-      "title": "Conjugating Verbs",
-      "description": "Learn how to conjugate and verbs for past, present, and future tenses.",
-      "color":"#ff6b81"
-      
-    },
-    {
-      "number": 4,
-      "title": "People & Family",
-      "description": "Talk about yourself and the people in your life—learn vocabulary for family members and professions.",
-      "color":"#ffa502"
-    },
-    {
-      "number": 5,
-      "title": "Activities",
-      "description": "",
-      "color":"#ff6348"
-    },
-    {
-      "number": 6,
-      "title": "Around the House",
-      "description": "Learn the names of rooms, furniture, and household objects, plus verbs for everyday routines.",
-      "color":"#ff4757"
-    },
-    {
-      "number": 7,
-      "title": "Describing Things",
-      "description": "Use colors, sizes, and adjectives to describe objects, people, and places clearly and naturally.",
-      "color":"#7bed9f"
-    },
-    {
-      "number": 8,
-      "title": "Food & Drink",
-      "description": "Order at a restaurant, express your preferences, and learn common foods and drinks.",
-      "color": "#70a1ff"
-    },
-    {
-      "number": 9,
-      "title": "The Weather",
-      "description": "Talk about the weather, seasons, and climate with confidence in everyday conversation.",
-      "color":"#5352ed"
-    },
-    {
-      "number": 10,
-      "title": "Verb Tenses",
-      "description": "Describe and ask for directions to places like the bank, post office, market, or park.",
-      "color": "#2ed573"
-    },
-    {
-      "number": 11,
-      "title": "Hobbies",
-      "description": "Share how you spend your leisure time—discuss sports, music, art, and weekend plans.",
-      "color":"#1e90ff"
-    },
-    {
-      "number": 12,
-      "title": "Travel",
-      "description": "Get around by learning how to talk about public transport, booking trips, and navigating airports or stations.",
-      "color":"#3742fa"
-    },
-    {
-      "number": 13,
-      "title": "Health & The Body",
-      "description": "Explain how you feel, name body parts, visit the doctor, and talk about health routines.",
-      "color": "#eccc68"
-    },
-    {
-      "number": 14,
-      "title": "Shopping & Money",
-      "description": "Practice shopping for clothes, groceries, and souvenirs—and using currency and prices.",
-      "color":"#ff7f50"
-    },
-    {
-      "number": 15,
-      "title": "We & They",
-      "description": "Learn rules for converting many english words into spanish.",
-      "color":"#ff6b81"
-    },
-    {
-      "number": 16,
-      "title": "Introducing Yourself",
-      "description": "Talk about jobs, digital tools, email, and how Spanish is used in professional environments.",
-      "color":"#ffa502"
-    },
-    {
-      "number": 17,
-      "title": "Feelings and Emotions",
-      "description": "Learn how to use the past tense to share memories, past actions, and life experiences.",
-      "color":"#ff6348"
-    },
-    {
-      "number": 18,
-      "title": "Giving Opinions",
-      "description": "Practice expressing your likes, dislikes, preferences, and personal opinions respectfully.",
-      "color":"#ff4757"
-    },
-    {
-      "number": 19,
-      "title": "Compliments",
-      "description": "Dive deeper into verbs, sentence structure, prepositions, and useful grammar tips to boost fluency.",
-      "color":"#7bed9f"
-    },
-    {
-      "number": 20,
-      "title": "Conversations",
-      "description": "Put it all together—have mini conversations, answer questions, and role-play everyday interactions.",
-      "color": "#70a1ff"
-    }
-  ]
-  
+  {
+    "number": 1,
+    "title": "Greetings",
+    "color": "#c0392b"
+  },
+  {
+    "number": 2,
+    "title": "Everyday Essentials",
+    "color": "#d35400"
+  },
+  {
+    "number": 3,
+    "title": "Conjugating Verbs",
+    "color": "#e67e22"
+  },
+  {
+    "number": 4,
+    "title": "People & Family",
+    "color": "#f39c12"
+  },
+  {
+    "number": 5,
+    "title": "Activities",
+    "color": "#f1c40f"
+  },
+  {
+    "number": 6,
+    "title": "Around the House",
+    "color": "#27ae60"
+  },
+  {
+    "number": 7,
+    "title": "Describing Things",
+    "color": "#16a085"
+  },
+  {
+    "number": 8,
+    "title": "Food & Drink",
+    "color": "#1abc9c"
+  },
+  {
+    "number": 9,
+    "title": "The Weather",
+    "color": "#3498db"
+  },
+  {
+    "number": 10,
+    "title": "Verb Tenses",
+    "color": "#2980b9"
+  },
+  {
+    "number": 11,
+    "title": "Hobbies",
+    "color": "#34495e"
+  },
+  {
+    "number": 12,
+    "title": "Travel",
+    "color": "#2c3e50"
+  },
+  {
+    "number": 13,
+    "title": "Health & The Body",
+    "color": "#8e44ad"
+  },
+  {
+    "number": 14,
+    "title": "Shopping & Money",
+    "color": "#9b59b6"
+  },
+  {
+    "number": 15,
+    "title": "We & They",
+    "color": "#9b59b6"
+  },
+  {
+    "number": 16,
+    "title": "Introducing Yourself",
+    "color": "#9b59b6"
+  },
+  {
+    "number": 17,
+    "title": "Feelings and Emotions",
+    "color": "#8e44ad"
+  },
+  {
+    "number": 18,
+    "title": "Giving Opinions",
+    "color": "#8e44ad"
+  },
+  {
+    "number": 19,
+    "title": "Compliments",
+    "color": "#8e44ad"
+  },
+  {
+    "number": 20,
+    "title": "Conversations",
+    "color": "#8e44ad"
+  },
+  {
+    "number": 21,
+    "title": "Medicine",
+    "color": "#8e44ad"
+  },
+  {
+    "number": 22,
+    "title": "Pregnancy",
+    "color": "#8e44ad"
+  }
+]

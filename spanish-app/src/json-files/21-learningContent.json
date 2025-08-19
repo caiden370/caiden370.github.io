@@ -1,0 +1,626 @@
+{
+    "21": {
+      "words": [
+        {
+          "spanish": "embarazo",
+          "english": "pregnancy"
+        },
+        {
+          "spanish": "mamá",
+          "english": "mom"
+        },
+        {
+          "spanish": "papá",
+          "english": "dad"
+        },
+        {
+          "spanish": "bebé",
+          "english": "baby"
+        },
+        {
+          "spanish": "feto",
+          "english": "fetus"
+        },
+        {
+          "spanish": "vientre",
+          "english": "womb (or belly)"
+        },
+        {
+          "spanish": "náuseas matutinas",
+          "english": "morning sickness"
+        },
+        {
+          "spanish": "antojo",
+          "english": "craving"
+        },
+        {
+          "spanish": "ecografía",
+          "english": "ultrasound"
+        },
+        {
+          "spanish": "sentir los movimientos",
+          "english": "to feel the movements"
+        },
+        {
+          "spanish": "contracciones",
+          "english": "contractions"
+        },
+        {
+          "spanish": "parto",
+          "english": "childbirth"
+        },
+        {
+          "spanish": "nacer",
+          "english": "to be born"
+        },
+        {
+          "spanish": "lactancia",
+          "english": "breastfeeding"
+        },
+        {
+          "spanish": "biberón",
+          "english": "bottle"
+        },
+        {
+          "spanish": "pañal",
+          "english": "diaper"
+        },
+        {
+          "spanish": "cuna",
+          "english": "crib"
+        },
+        {
+          "spanish": "cochecito",
+          "english": "stroller (or baby carriage)"
+        },
+        {
+          "spanish": "chupete",
+          "english": "pacifier"
+        },
+        {
+          "spanish": "llanto",
+          "english": "crying"
+        },
+        {
+          "spanish": "vacuna",
+          "english": "vaccine"
+        },
+        {
+          "spanish": "pediatra",
+          "english": "pediatrician"
+        },
+        {
+          "spanish": "ginecólogo(a)",
+          "english": "gynecologist"
+        },
+        {
+          "spanish": "estar embarazada",
+          "english": "to be pregnant"
+        },
+        {
+          "spanish": "primer trimestre",
+          "english": "first trimester"
+        },
+        {
+          "spanish": "segundo trimestre",
+          "english": "second trimester"
+        },
+        {
+          "spanish": "tercer trimestre",
+          "english": "third trimester"
+        },
+        {
+          "spanish": "fecha de parto",
+          "english": "due date"
+        },
+        {
+          "spanish": "sala de partos",
+          "english": "delivery room"
+        },
+        {
+          "spanish": "pesar",
+          "english": "to weigh"
+        },
+        {
+          "spanish": "medir",
+          "english": "to measure"
+        },
+        {
+          "spanish": "peso",
+          "english": "weight"
+        },
+        {
+          "spanish": "altura",
+          "english": "height"
+        },
+        {
+          "spanish": "cordón umbilical",
+          "english": "umbilical cord"
+        },
+        {
+          "spanish": "silla de coche para bebés",
+          "english": "baby car seat"
+        },
+        {
+          "spanish": "guardería",
+          "english": "nursery (daycare)"
+        },
+        {
+          "spanish": "cólicos",
+          "english": "colic"
+        },
+        {
+          "spanish": "dientes",
+          "english": "teeth"
+        },
+        {
+          "spanish": "papilla",
+          "english": "baby food (puree)"
+        },
+        {
+          "spanish": "cambiar el pañal",
+          "english": "to change the diaper"
+        },
+        {
+          "spanish": "dormir",
+          "english": "to sleep"
+        },
+        {
+          "spanish": "despertarse",
+          "english": "to wake up"
+        },
+        {
+          "spanish": "juguetes",
+          "english": "toys"
+        },
+        {
+          "spanish": "recién nacido",
+          "english": "newborn"
+        },
+        {
+          "spanish": "cesárea",
+          "english": "C-section"
+        },
+        {
+          "spanish": "dar el pecho",
+          "english": "to breastfeed"
+        },
+        {
+          "spanish": "eructar",
+          "english": "to burp"
+        },
+        {
+          "spanish": "manta de bebé",
+          "english": "baby blanket"
+        },
+        {
+          "spanish": "ropa de bebé",
+          "english": "baby clothes"
+        }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Durante el embarazo",
+          "dialog": [
+            {
+              "speaker": "Patient",
+              "spanish": "Doctora, ¿todo va bien con mi embarazo?",
+              "english": "Doctor, is everything going well with my pregnancy?"
+            },
+            {
+              "speaker": "Doctora",
+              "spanish": "Sí, todo se ve perfecto. El bebé está creciendo muy bien.",
+              "english": "Yes, everything looks perfect. The baby is growing very well."
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Ya puedo sentir sus movimientos. Es increíble.",
+              "english": "I can already feel its movements. It's incredible."
+            },
+            {
+              "speaker": "Doctora",
+              "spanish": "Eso es una buena señal. Es muy activo.",
+              "english": "That's a good sign. It's very active."
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "¿Cuándo es mi próxima ecografía?",
+              "english": "When is my next ultrasound?"
+            },
+            {
+              "speaker": "Doctora",
+              "spanish": "La próxima cita será en cuatro semanas.",
+              "english": "The next appointment will be in four weeks."
+            }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le pregunta la paciente a la doctora?",
+              "options": [
+                "Si el parto será pronto",
+                "Si puede viajar",
+                "Si el embarazo va bien",
+                "Si el bebé es niño o niña"
+              ],
+              "answer": "Si el embarazo va bien",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué puede sentir la paciente?",
+              "options": [
+                "Dolor de espalda",
+                "Movimientos del bebé",
+                "Contracciones",
+                "Náuseas"
+              ],
+              "answer": "Movimientos del bebé",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'ecografía'?",
+              "options": [
+                "An appointment",
+                "An ultrasound",
+                "A contraction",
+                "A test"
+              ],
+              "answer": "An ultrasound",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "El bebé recién nacido",
+          "dialog": [
+            {
+              "speaker": "Padre",
+              "spanish": "Hola, doctor. Nuestro bebé no para de llorar.",
+              "english": "Hello, doctor. Our baby won't stop crying."
+            },
+            {
+              "speaker": "Pediatra",
+              "spanish": "Es normal, los bebés lloran para comunicarse. ¿Cuándo le dieron de comer la última vez?",
+              "english": "It's normal, babies cry to communicate. When did you feed him last?"
+            },
+            {
+              "speaker": "Madre",
+              "spanish": "Hace una hora. Le dimos leche de fórmula en el biberón.",
+              "english": "An hour ago. We gave him formula milk in the bottle."
+            },
+            {
+              "speaker": "Pediatra",
+              "spanish": "Puede ser el pañal. Vamos a revisarlo.",
+              "english": "It might be the diaper. Let's check it."
+            },
+            {
+              "speaker": "Madre",
+              "spanish": "Gracias, estamos un poco nerviosos.",
+              "english": "Thank you, we're a little nervous."
+            },
+            {
+              "speaker": "Pediatra",
+              "spanish": "Es natural. Tranquilos, todo está bien con el bebé.",
+              "english": "It's natural. Don't worry, everything is fine with the baby."
+            }
+          ],
+          "questions": [
+            {
+              "question": "¿Por qué llora el bebé?",
+              "options": [
+                "Está enfermo",
+                "Se siente solo",
+                "Para comunicarse",
+                "Tiene dolor"
+              ],
+              "answer": "Para comunicarse",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué usaron los padres para alimentar al bebé?",
+              "options": [
+                "Leche materna",
+                "Un biberón",
+                "Una cuchara",
+                "Un vaso"
+              ],
+              "answer": "Un biberón",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'pañal'?",
+              "options": [
+                "Bottle",
+                "Pacifier",
+                "Crib",
+                "Diaper"
+              ],
+              "answer": "Diaper",
+              "answerIndex": 3
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Visita al Pediatra",
+          "dialog": [
+            {
+              "speaker": "Pediatra",
+              "spanish": "Hola, Sra. López. ¿Cómo está el bebé hoy?",
+              "english": "Hello, Mrs. Lopez. How is the baby today?"
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Está bien, doctor. Solo queremos asegurarnos de que todo va bien con su desarrollo.",
+              "english": "He's fine, doctor. We just want to make sure everything is going well with his development."
+            },
+            {
+              "speaker": "Pediatra",
+              "spanish": "Perfecto. Vamos a pesar y medir al bebé.",
+              "english": "Perfect. Let's weigh and measure the baby."
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Ha estado comiendo muy bien últimamente.",
+              "english": "He's been eating very well lately."
+            },
+            {
+              "speaker": "Pediatra",
+              "spanish": "Sí, su peso es excelente. ¿Alguna preocupación sobre su sueño o alimentación?",
+              "english": "Yes, his weight is excellent. Any concerns about his sleep or feeding?"
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "A veces le dan cólicos, pero el chupete lo calma.",
+              "english": "Sometimes he gets colic, but the pacifier calms him."
+            }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué van a hacer con el bebé?",
+              "options": [
+                "Jugar",
+                "Dormir",
+                "Pesar y medir",
+                "Darle un baño"
+              ],
+              "answer": "Pesar y medir",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Qué calma al bebé cuando tiene cólicos?",
+              "options": [
+                "La medicina",
+                "El chupete",
+                "El biberón",
+                "Un juguete"
+              ],
+              "answer": "El chupete",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué significa 'peso'?",
+              "options": [
+                "Height",
+                "Age",
+                "Weight",
+                "Sleep"
+              ],
+              "answer": "Weight",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "topic": "Primeros meses del bebé",
+          "dialog": [
+            {
+              "speaker": "Madre",
+              "spanish": "Doctor, mi bebé tiene tres meses y ya sonríe mucho.",
+              "english": "Doctor, my baby is three months old and smiles a lot already."
+            },
+            {
+              "speaker": "Pediatra",
+              "spanish": "Es un gran avance. ¿Ya sostiene la cabeza?",
+              "english": "That's a great milestone. Does he hold his head up yet?"
+            },
+            {
+              "speaker": "Padre",
+              "spanish": "Sí, y le encantan sus juguetes. Empezamos a pensar en la guardería.",
+              "english": "Yes, and he loves his toys. We're starting to think about daycare."
+            },
+            {
+              "speaker": "Pediatra",
+              "spanish": "Es una buena idea. Recuerden la importancia de las vacunas en esta etapa.",
+              "english": "That's a good idea. Remember the importance of vaccines at this stage."
+            },
+            {
+              "speaker": "Madre",
+              "spanish": "Lo tenemos en mente. ¿Cuándo debemos empezar con la papilla?",
+              "english": "We're keeping that in mind. When should we start with baby food?"
+            },
+            {
+              "speaker": "Pediatra",
+              "spanish": "Normalmente, a los seis meses. Hablaremos de eso en la próxima consulta.",
+              "english": "Normally, at six months. We'll talk about that at the next consultation."
+            }
+          ],
+          "questions": [
+            {
+              "question": "¿Cuántos meses tiene el bebé?",
+              "options": [
+                "Dos",
+                "Tres",
+                "Cuatro",
+                "Cinco"
+              ],
+              "answer": "Tres",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué les recuerda el pediatra a los padres?",
+              "options": [
+                "La alimentación",
+                "Las vacunas",
+                "El sueño",
+                "El juego"
+              ],
+              "answer": "Las vacunas",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Cuándo deben empezar con la papilla?",
+              "options": [
+                "A los tres meses",
+                "A los cuatro meses",
+                "A los cinco meses",
+                "A los seis meses"
+              ],
+              "answer": "A los seis meses",
+              "answerIndex": 3
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "La Gran Noticia",
+          "sentences": [
+            {
+              "spanish": "Sofía y su esposo, Mateo, esperaban con nervios los resultados de la prueba.",
+              "english": "Sofía and her husband, Mateo, were nervously waiting for the test results."
+            },
+            {
+              "spanish": "Cuando Sofía vio el resultado positivo, no pudo contener las lágrimas.",
+              "english": "When Sofía saw the positive result, she couldn't hold back the tears."
+            },
+            {
+              "spanish": "—¡Mateo, vamos a tener un bebé!",
+              "english": "—Mateo, we're going to have a baby!"
+            },
+            {
+              "spanish": "Mateo la abrazó con fuerza. Estaban llenos de alegría.",
+              "english": "Mateo hugged her tightly. They were filled with joy."
+            },
+            {
+              "spanish": "A partir de ese día, Sofía empezó a sentir los primeros síntomas del embarazo.",
+              "english": "From that day on, Sofía began to feel the first symptoms of pregnancy."
+            },
+            {
+              "spanish": "Tenía náuseas matutinas y un antojo de helado de fresa.",
+              "english": "She had morning sickness and a craving for strawberry ice cream."
+            },
+            {
+              "spanish": "Compraron un libro sobre cómo cuidar a su futuro bebé y no podían esperar para empezar el viaje.",
+              "english": "They bought a book about how to care for their future baby and couldn't wait to start the journey."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "El Día del Nacimiento",
+          "sentences": [
+            {
+              "spanish": "Las primeras contracciones de Ana empezaron a las dos de la mañana.",
+              "english": "Ana's first contractions started at two in the morning."
+            },
+            {
+              "spanish": "Su esposo, Pablo, la llevó al hospital inmediatamente.",
+              "english": "Her husband, Pablo, took her to the hospital immediately."
+            },
+            {
+              "spanish": "Después de varias horas, una enfermera les dijo que el parto ya estaba cerca.",
+              "english": "After several hours, a nurse told them that childbirth was now close."
+            },
+            {
+              "spanish": "Finalmente, un llanto llenó la habitación. Había nacido su bebé.",
+              "english": "Finally, a cry filled the room. Their baby had been born."
+            },
+            {
+              "spanish": "Ana estaba cansada, pero su felicidad era inmensa.",
+              "english": "Ana was tired, but her happiness was immense."
+            },
+            {
+              "spanish": "Pablo no podía dejar de mirar a su pequeña hija, con una sonrisa de oreja a oreja.",
+              "english": "Pablo couldn't stop looking at his little daughter, with a smile from ear to ear."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "La Noche Sin Dormir",
+          "sentences": [
+            {
+              "spanish": "Laura y Carlos tenían un recién nacido, Daniel.",
+              "english": "Laura and Carlos had a newborn, Daniel."
+            },
+            {
+              "spanish": "La primera semana en casa fue un desafío, especialmente las noches.",
+              "english": "The first week at home was a challenge, especially the nights."
+            },
+            {
+              "spanish": "Daniel lloraba mucho y no parecía querer dormir en su cuna.",
+              "english": "Daniel cried a lot and didn't seem to want to sleep in his crib."
+            },
+            {
+              "spanish": "Laura intentó darle el biberón y cambiarle el pañal, pero el llanto continuaba.",
+              "english": "Laura tried to give him the bottle and change his diaper, but the crying continued."
+            },
+            {
+              "spanish": "Carlos sugirió que tal vez tenía cólicos. Recordaron la consulta con el pediatra.",
+              "english": "Carlos suggested that maybe he had colic. They remembered the pediatrician's consultation."
+            },
+            {
+              "spanish": "Después de mecerlo y cantarle por un rato, Daniel finalmente se durmió.",
+              "english": "After rocking and singing to him for a while, Daniel finally fell asleep."
+            },
+            {
+              "spanish": "Laura y Carlos se miraron, agotados pero felices. Ser padres era una aventura.",
+              "english": "Laura and Carlos looked at each other, exhausted but happy. Being parents was an adventure."
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "La Primera Ecografía",
+          "sentences": [
+            {
+              "spanish": "María y David estaban en la sala de espera de la clínica de ginecología.",
+              "english": "Maria and David were in the waiting room of the gynecology clinic."
+            },
+            {
+              "spanish": "Era su primera ecografía y ambos estaban muy emocionados.",
+              "english": "It was their first ultrasound and both were very excited."
+            },
+            {
+              "spanish": "El doctor los llamó y los guió a la sala de examen.",
+              "english": "The doctor called them and guided them to the examination room."
+            },
+            {
+              "spanish": "En la pantalla, pudieron ver una pequeña forma.",
+              "english": "On the screen, they could see a tiny shape."
+            },
+            {
+              "spanish": "—Ahí está su feto. Todo se ve muy bien en este primer trimestre.",
+              "english": "—There's your fetus. Everything looks very good in this first trimester."
+            },
+            {
+              "spanish": "dijo el doctor con una sonrisa.",
+              "english": "said the doctor with a smile."
+            },
+            {
+              "spanish": "María no pudo evitar las lágrimas de alegría al ver a su futuro bebé.",
+              "english": "Maria couldn't help but cry tears of joy seeing her future baby."
+            },
+            {
+              "spanish": "David tomó su mano, sintiendo la misma emoción. Este era el comienzo de algo maravilloso.",
+              "english": "David took her hand, feeling the same emotion. This was the beginning of something wonderful."
+            }
+          ]
+        }
+      ]
+    }
+  }

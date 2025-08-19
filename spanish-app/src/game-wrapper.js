@@ -25,13 +25,13 @@ export default function GameWrapper({gameId, chapterIndex, setSection, updatePoi
         const game6 = '6'      
         switch (gameId) {
             case game1:
-                return (<MixedReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}/>);
+                return (<MixedReview learning={true} chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}/>);
             case game2:
                 return (<AudioReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage} />);
             case game3:
                 return (<Conversations chapterIndex={chapterIndex} audioOnly={false} setSection={setSection} updatePoints={updatePointsAndStorage}></Conversations>)
             case game4:
-                return (<WordSearch chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}></WordSearch>)
+                return (<MixedReview learning={false} chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}/>)
             case game5: 
                 return (<SentencePractice chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}></SentencePractice>)
             case game6:

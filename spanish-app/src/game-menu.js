@@ -12,7 +12,7 @@ import { Icon, Typography } from '@mui/material';
 import { useState } from 'react';
 import { safeGetItem } from './App';
 
-const ScoreGoal = 50;
+const ScoreGoal = [50, 50, 20, 50, 50, 50];
 
 export function getStarFill(chapterIndex) {
     return Number(localStorage.getItem(`ch${chapterIndex}-starfill`) || 0);
@@ -61,8 +61,8 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
                     {text}
                 </div>
                 <div className='game-menu-item-progress-container'>
-                    <Typography>{progress} / {ScoreGoal}</Typography>
-                    {progress >= ScoreGoal? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : (<StarBorderIcon sx={{color: 'white'}}/>)}
+                    <Typography>{progress} / {ScoreGoal[itemGameId-1]}</Typography>
+                    {progress >= ScoreGoal[itemGameId-1]? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : (<StarBorderIcon sx={{color: 'white'}}/>)}
                 </div>
             </div>
         );
@@ -99,7 +99,7 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
                 <Item color={'#70a1ff'} itemGameId={'3'} text={'Conversations'}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
-                <Item color={'#70a1ff'} itemGameId={'4'} text={'Word Search'}></Item>
+                <Item color={'#70a1ff'} itemGameId={'4'} text={'Mixed Review'}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
                 <Item color={'#70a1ff'} itemGameId={'5'} text={'Jumbled'}></Item>

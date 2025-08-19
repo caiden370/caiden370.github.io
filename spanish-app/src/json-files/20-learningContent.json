@@ -1,0 +1,514 @@
+{
+    "20": {
+      "words": [
+        {
+          "spanish": "Paciente",
+          "english": "Patient"
+        },
+        {
+          "spanish": "Doctora",
+          "english": "Doctor (f)"
+        },
+        {
+          "spanish": "Doctor",
+          "english": "Doctor (m)"
+        },
+        {
+          "spanish": "¿Qué te duele?",
+          "english": "What hurts?"
+        },
+        {
+          "spanish": "Tengo dolor de...",
+          "english": "I have pain in..."
+        },
+        {
+          "spanish": "Me duele...",
+          "english": "My... hurts"
+        },
+        {
+          "spanish": "La cabeza",
+          "english": "The head"
+        },
+        {
+          "spanish": "El estómago",
+          "english": "The stomach"
+        },
+        {
+          "spanish": "La garganta",
+          "english": "The throat"
+        },
+        {
+          "spanish": "El pecho",
+          "english": "The chest"
+        },
+        {
+          "spanish": "La espalda",
+          "english": "The back"
+        },
+        {
+          "spanish": "Estoy mareado",
+          "english": "I feel dizzy"
+        },
+        {
+          "spanish": "Tengo fiebre",
+          "english": "I have a fever"
+        },
+        {
+          "spanish": "Necesito una cita",
+          "english": "I need an appointment"
+        },
+        {
+          "spanish": "¿Cuándo empezó?",
+          "english": "When did it start?"
+        },
+        {
+          "spanish": "Tome esta medicina",
+          "english": "Take this medicine"
+        },
+        {
+          "spanish": "Tres veces al día",
+          "english": "Three times a day"
+        },
+        {
+          "spanish": "Descansa mucho",
+          "english": "Rest a lot"
+        },
+        {
+          "spanish": "Recupérate pronto",
+          "english": "Get well soon"
+        },
+        {
+          "spanish": "Síntomas",
+          "english": "Symptoms"
+        },
+        {
+          "spanish": "Presión arterial",
+          "english": "Blood pressure"
+        },
+        {
+          "spanish": "La receta",
+          "english": "The prescription"
+        },
+        {
+          "spanish": "La farmacia",
+          "english": "The pharmacy"
+        },
+        {
+          "spanish": "El tratamiento",
+          "english": "The treatment"
+        },
+        {
+          "spanish": "Sentirse mejor",
+          "english": "To feel better"
+        },
+        {
+          "spanish": "Estar enfermo",
+          "english": "To be sick (masculine)"
+        },
+        {
+          "spanish": "Estar enferma",
+          "english": "To be sick (feminine)"
+        },
+        {
+          "spanish": "Los analgésicos",
+          "english": "Painkillers"
+        },
+        {
+          "spanish": "La inyección",
+          "english": "The injection"
+        },
+        {
+          "spanish": "El jarabe",
+          "english": "The syrup"
+        },
+        {
+          "spanish": "Toser",
+          "english": "To cough"
+        },
+        {
+          "spanish": "Estornudar",
+          "english": "To sneeze"
+        },
+        {
+          "spanish": "El examen médico",
+          "english": "The medical exam"
+        },
+        {
+          "spanish": "La consulta",
+          "english": "The consultation"
+        },
+        {
+          "spanish": "La clínica",
+          "english": "The clinic"
+        },
+        {
+          "spanish": "La pastilla",
+          "english": "The pill"
+        },
+        {
+          "spanish": "La vitamina",
+          "english": "The vitamin"
+        },
+        {
+          "spanish": "La herida",
+          "english": "The wound"
+        },
+        {
+          "spanish": "El hueso roto",
+          "english": "The broken bone"
+        },
+        {
+          "spanish": "El dolor",
+          "english": "The pain"
+        },
+        {
+          "spanish": "La alergia",
+          "english": "The allergy"
+        },
+        {
+          "spanish": "El seguro médico",
+          "english": "Health insurance"
+        }
+      ],
+      "conversations": [
+        {
+          "id": 1,
+          "topic": "Symptoms",
+          "dialog": [
+            {
+              "speaker": "Doctor",
+              "spanish": "Buenos días. ¿Qué te trae por aquí?",
+              "english": "Good morning. What brings you here?"
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Buenos días. Me duele la cabeza y tengo un poco de fiebre.",
+              "english": "Good morning. My head hurts and I have a bit of a fever."
+            },
+            {
+              "speaker": "Doctor",
+              "spanish": "¿Desde cuándo te sientes así?",
+              "english": "Since when have you been feeling this way?"
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Empecé a sentirme mal ayer por la noche.",
+              "english": "I started feeling bad last night."
+            },
+            {
+              "speaker": "Doctor",
+              "spanish": "Entiendo. ¿Tienes otros síntomas?",
+              "english": "I see. Do you have any other symptoms?"
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Estoy un poco mareado y tengo escalofríos.",
+              "english": "I'm a little dizzy and have chills."
+            }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué le duele al paciente?",
+              "options": [
+                "La espalda",
+                "La garganta",
+                "La cabeza",
+                "El estómago"
+              ],
+              "answer": "La cabeza",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Cuándo empezaron los síntomas del paciente?",
+              "options": [
+                "Esta mañana",
+                "Ayer por la noche",
+                "Hace tres días",
+                "Hace una semana"
+              ],
+              "answer": "Ayer por la noche",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué otro síntoma tiene el paciente?",
+              "options": [
+                "Falta de aire",
+                "Escalofríos",
+                "Tos",
+                "Estornudos"
+              ],
+              "answer": "Escalofríos",
+              "answerIndex": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topic": "Injury",
+          "dialog": [
+            {
+              "speaker": "Doctor",
+              "spanish": "¿Qué pasó?",
+              "english": "What happened?"
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Me caí y me torcí el tobillo.",
+              "english": "I fell and twisted my ankle."
+            },
+            {
+              "speaker": "Doctor",
+              "spanish": "¿Te duele mucho?",
+              "english": "Does it hurt a lot?"
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Sí, me duele bastante cuando camino.",
+              "english": "Yes, it hurts quite a bit when I walk."
+            },
+            {
+              "speaker": "Doctor",
+              "spanish": "Vamos a revisarlo. Por favor, siéntate en la camilla.",
+              "english": "Let's check it. Please sit on the table."
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Claro, gracias.",
+              "english": "Of course, thank you."
+            }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué se torció el paciente?",
+              "options": [
+                "La rodilla",
+                "La muñeca",
+                "El codo",
+                "El tobillo"
+              ],
+              "answer": "El tobillo",
+              "answerIndex": 3
+            },
+            {
+              "question": "¿Qué hace el doctor?",
+              "options": [
+                "Le da una inyección",
+                "Le da una pastilla",
+                "Va a revisarlo",
+                "Le hace preguntas"
+              ],
+              "answer": "Va a revisarlo",
+              "answerIndex": 2
+            },
+            {
+              "question": "¿Dónde le pide el doctor que se siente?",
+              "options": [
+                "En la silla",
+                "En el sofá",
+                "En la camilla",
+                "En la cama"
+              ],
+              "answer": "En la camilla",
+              "answerIndex": 2
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "topic": "Follow-up",
+          "dialog": [
+            {
+              "speaker": "Doctor",
+              "spanish": "Después del examen, creo que tienes un resfriado común.",
+              "english": "After the exam, I believe you have a common cold."
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Oh, ¿y qué debo hacer?",
+              "english": "Oh, and what should I do?"
+            },
+            {
+              "speaker": "Doctor",
+              "spanish": "Tome esta medicina tres veces al día con las comidas y descanse mucho.",
+              "english": "Take this medicine three times a day with meals and rest a lot."
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "¿Por cuántos días?",
+              "english": "For how many days?"
+            },
+            {
+              "speaker": "Doctor",
+              "spanish": "Por cinco días. Si no mejoras, llámame.",
+              "english": "For five days. If you don't get better, call me."
+            },
+            {
+              "speaker": "Patient",
+              "spanish": "Gracias, doctor. Me siento mejor con su ayuda.",
+              "english": "Thank you, doctor. I feel better with your help."
+            },
+            {
+              "speaker": "Doctor",
+              "spanish": "De nada. ¡Recupérate pronto!",
+              "english": "You're welcome. Get well soon!"
+            }
+          ],
+          "questions": [
+            {
+              "question": "¿Qué tiene el paciente?",
+              "options": [
+                "Gripe",
+                "Un resfriado común",
+                "Una infección",
+                "Dolor de cabeza"
+              ],
+              "answer": "Un resfriado común",
+              "answerIndex": 1
+            },
+            {
+              "question": "¿Qué le receta el doctor?",
+              "options": [
+                "Medicamento y descanso",
+                "Vitamina C",
+                "Un jarabe",
+                "Una inyección"
+              ],
+              "answer": "Medicamento y descanso",
+              "answerIndex": 0
+            },
+            {
+              "question": "¿Qué significa 'Recupérate pronto'?",
+              "options": [
+                "Feel better",
+                "Get well soon",
+                "Take care",
+                "See you later"
+              ],
+              "answer": "Get well soon",
+              "answerIndex": 1
+            }
+          ]
+        }
+      ],
+      "stories": [
+        {
+          "id": 1,
+          "title": "La Visita al Doctor",
+          "sentences": [
+            {
+              "spanish": "Elena no se sentía bien. Tenía dolor de cabeza y fiebre, así que decidió llamar a la clínica.",
+              "english": "Elena wasn't feeling well. She had a headache and a fever, so she decided to call the clinic."
+            },
+            {
+              "spanish": "La recepcionista le dio una cita para la tarde con el doctor González.",
+              "english": "The receptionist gave her an appointment for the afternoon with Doctor González."
+            },
+            {
+              "spanish": "Al llegar, la enfermera le preguntó cuáles eran sus síntomas.",
+              "english": "Upon arriving, the nurse asked her what her symptoms were."
+            },
+            {
+              "spanish": "Elena explicó que le dolía la garganta y se sentía muy cansada.",
+              "english": "Elena explained that her throat hurt and she felt very tired."
+            },
+            {
+              "spanish": "Cuando el doctor la vio, le preguntó: —¿Qué te duele, Elena?",
+              "english": "When the doctor saw her, he asked: —What hurts, Elena?"
+            },
+            {
+              "spanish": "Ella respondió: —Tengo dolor de garganta y me duele el cuerpo, doctor.",
+              "english": "She replied: —I have a sore throat and my body aches, doctor."
+            },
+            {
+              "spanish": "Después de un examen rápido, el doctor dijo: —Parece que tienes una gripe leve.",
+              "english": "After a quick exam, the doctor said: —It seems you have a mild flu."
+            },
+            {
+              "spanish": "Le dio una receta para medicina y le aconsejó: —Toma esta medicina dos veces al día y descansa mucho.",
+              "english": "He gave her a prescription for medicine and advised her: —Take this medicine twice a day and rest a lot."
+            },
+            {
+              "spanish": "Elena se sintió aliviada. —Gracias, doctor, por su ayuda. —De nada, Elena. ¡Recupérate pronto!",
+              "english": "Elena felt relieved. —Thank you, doctor, for your help. —You're welcome, Elena. Get well soon!"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Una Lesión Deportiva",
+          "sentences": [
+            {
+              "spanish": "Luis estaba jugando fútbol cuando se cayó.",
+              "english": "Luis was playing soccer when he fell."
+            },
+            {
+              "spanish": "Sintió un dolor agudo en su pierna y supo que algo estaba mal.",
+              "english": "He felt a sharp pain in his leg and knew something was wrong."
+            },
+            {
+              "spanish": "Su amigo lo ayudó a llegar a la clínica de deportes.",
+              "english": "His friend helped him get to the sports clinic."
+            },
+            {
+              "spanish": "El doctor le hizo un examen médico y le preguntó: —¿Dónde está el dolor?",
+              "english": "The doctor gave him a medical exam and asked: —Where is the pain?"
+            },
+            {
+              "spanish": "Luis señaló su tobillo y dijo: —Me duele mucho aquí.",
+              "english": "Luis pointed to his ankle and said: —It hurts a lot here."
+            },
+            {
+              "spanish": "El doctor le tomó una radiografía y encontró que tenía un hueso roto.",
+              "english": "The doctor took an X-ray and found that he had a broken bone."
+            },
+            {
+              "spanish": "Le dio una inyección para el dolor y le explicó el tratamiento.",
+              "english": "He gave him an injection for the pain and explained the treatment."
+            },
+            {
+              "spanish": "Luis se sintió triste, pero agradecido por la ayuda.",
+              "english": "Luis felt sad, but grateful for the help."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "En la Farmacia",
+          "sentences": [
+            {
+              "spanish": "Ana salió del consultorio con una receta para el jarabe.",
+              "english": "Ana left the doctor's office with a prescription for syrup."
+            },
+            {
+              "spanish": "Fue directamente a la farmacia.",
+              "english": "She went directly to the pharmacy."
+            },
+            {
+              "spanish": "Le entregó la receta a la farmacéutica.",
+              "english": "She handed the prescription to the pharmacist."
+            },
+            {
+              "spanish": "La farmacéutica la preparó y le explicó las instrucciones.",
+              "english": "The pharmacist prepared it and explained the instructions."
+            },
+            {
+              "spanish": "Ana preguntó: —¿Necesito analgésicos también?",
+              "english": "Ana asked: —Do I need painkillers too?"
+            },
+            {
+              "spanish": "La farmacéutica respondió: —La receta no los incluye, pero puedes comprarlos sin problema.",
+              "english": "The pharmacist replied: —The prescription doesn't include them, but you can buy them without a problem."
+            },
+            {
+              "spanish": "Ana compró el jarabe y los analgésicos.",
+              "english": "Ana bought the syrup and the painkillers."
+            },
+            {
+              "spanish": "Se sintió más tranquila sabiendo que ya tenía la medicina para empezar a sentirse mejor.",
+              "english": "She felt calmer knowing she now had the medicine to start feeling better."
+            }
+          ]
+        }
+      ]
+    }
+  }
