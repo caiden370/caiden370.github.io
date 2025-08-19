@@ -10,6 +10,8 @@ export const mascotComponents = {
   '5': [Horse, 50],
   '6': [Giraffe, 60],
   '7': [Wolf, 80],
+  '8': [Penguin, 120],
+  '9': [Goat, 80],
 
   // Bear Options
   '100': [PolarBear, 60],
@@ -55,6 +57,22 @@ export const mascotComponents = {
   '700': [ReticulatedGiraffe, 80],
   '701': [MasaiGiraffe, 120],
   '702': [SunsetGiraffe, 150],
+
+  //Penguin Options
+  '800': [BluePenguin, 110],
+  '801': [GrayPenguin, 70],
+  '802': [PurplePenguin, 120],
+  '803': [EmperorPenguin, 150],
+  '804': [KingPenguin, 200],
+
+  //Goat Options
+  '900': [BrownGoat, 90],
+  '901': [GoldenGoat, 110],
+  '902': [TheGoat, 150],
+  '903': [EnvironmentalGoat, 200]
+
+
+
 };
 
 export function getSortedMascotIdsByPrice() {
@@ -652,5 +670,155 @@ export function OceanDog(clickable=false) {
     />
   );
 }
+
+// **************Penguins*************** //
+
+export function Penguin(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="penguin"
+      bodyColor="rgb(0, 0, 0)"
+      earColor="rgb(126, 120, 120)"
+      noseColor="rgb(255, 213, 63)"
+      accentColor="#00CED1"
+      clickable={clickable}
+    />
+  );
+}
+
+export function BluePenguin(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="penguin"
+      bodyColor="rgb(18, 0, 120)"
+      earColor="rgb(126, 120, 120)"
+      noseColor="rgb(255, 213, 63)"
+      accentColor="#00CED1"
+      clickable={clickable}
+    />
+  );
+}
+
+export function GrayPenguin(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="penguin"
+      bodyColor="rgb(43, 41, 54)"
+      earColor="rgb(126, 120, 120)"
+      noseColor="rgb(255, 213, 63)"
+      accentColor="#00CED1"
+      clickable={clickable}
+    />
+  );
+}
+
+export function PurplePenguin(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="penguin"
+      bodyColor="rgb(25, 17, 69)"
+      earColor="rgb(126, 120, 120)"
+      noseColor="rgb(255, 213, 63)"
+      accentColor="#00CED1"
+      clickable={clickable}
+    />
+  );
+}
+
+export function EmperorPenguin(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="penguin"
+      bodyColor="rgb(56, 2, 70)"
+      earColor="rgb(126, 120, 120)"
+      noseColor="rgb(150, 18, 18)"
+      accentColor="#00CED1"
+      clickable={clickable}
+    />
+  );
+}
+
+export function KingPenguin(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="penguin"
+      bodyColor="rgb(18, 65, 6)"
+      earColor="rgb(126, 120, 120)"
+      noseColor="rgb(181, 24, 160)"
+      accentColor="#00CED1"
+      clickable={clickable}
+    />
+  );
+}
+
+// GOATS //
+
+export function Goat(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="goat"
+      bodyColor="rgb(215, 221, 236)"
+      earColor="rgb(97, 95, 51)"
+      noseColor="rgb(228, 151, 196)"
+      accentColor="rgb(100, 100, 100)"
+      clickable={clickable}
+    />
+  );
+}
+
+export function BrownGoat(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="goat"
+      bodyColor="rgb(170, 133, 127)"
+      earColor="rgb(72, 71, 66)"
+      noseColor="rgb(228, 151, 196)"
+      accentColor="rgb(100, 100, 100)"
+      clickable={clickable}
+    />
+  );
+}
+
+
+export function GoldenGoat(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="goat"
+      bodyColor="rgb(238, 204, 48)"
+      earColor="rgb(255, 140, 0)"
+      noseColor="rgb(236, 176, 34)"
+      accentColor="rgb(100, 100, 100)"
+      clickable={clickable}
+    />
+  );
+}
+
+
+export function TheGoat(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="goat"
+      bodyColor="rgb(125, 140, 230)"
+      earColor="rgb(255, 149, 0)"
+      noseColor="rgb(23, 207, 253)"
+      accentColor="rgb(100, 100, 100)"
+      clickable={clickable}
+    />
+  );
+}
+
+export function EnvironmentalGoat(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="goat"
+      bodyColor="rgb(120, 249, 150)"
+      earColor="rgb(144, 61, 185)"
+      noseColor="rgb(239, 187, 14)"
+      accentColor="rgb(100, 100, 100)"
+      clickable={clickable}
+    />
+  );
+}
+
 
 

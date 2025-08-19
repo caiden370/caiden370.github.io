@@ -82,6 +82,19 @@ export default function CustomizableMascot({
       mouthY: 0.7,
       horns: true,
     },
+    penguin: {
+      ears: { type: 'none', size: 0.2, position: { x: 0.68, y: 0.05 } },
+      nose: { type: 'large_oval', size: { w: 0.1, h: 0.07 } },
+      eyeOffset: 0.19,
+      mouthY: 0.72,
+    },
+    goat: {
+      ears: { type: 'pointed', size: 0.13, position: { x: 0.4, y: 0.25 } },
+      nose: { type: 'triangle', size: { w: 0.05, h: 0.04 } },
+      eyeOffset: 0.16,
+      mouthY: 0.72,
+      beard: true
+    }
   };
 
   const features = animalFeatures[animalType] || animalFeatures.bear;
@@ -353,6 +366,22 @@ export default function CustomizableMascot({
           <circle cx={centerX - 23.5} cy={centerY - headRadius - 5} r={3} fill={earColor} />
           <circle cx={centerX + 23.5} cy={centerY - headRadius - 5} r={3} fill={earColor} />
         </g>
+      );
+    }
+
+    if (features.beard) {
+      elements.push(
+        <path
+          key="beard"
+          // Original: Y values were relative to (centerY - headRadius)
+          // New: Y values are relative to (centerY + headRadius) and inverted
+          d={`M${centerX - 20} ${centerY + headRadius - 10} 
+              Q${centerX - 30} ${centerY + headRadius + 10} ${centerX - 15} ${centerY + headRadius - 20} 
+              Q${centerX - 5} ${centerY + headRadius + 5} ${centerX} ${centerY + headRadius - 10} 
+              Q${centerX + 5} ${centerY + headRadius + 5} ${centerX + 15} ${centerY + headRadius - 20} 
+              Q${centerX + 30} ${centerY + headRadius + 10} ${centerX + 20} ${centerY + headRadius - 10}`}
+          fill={earColor} // Or a dedicated beardColor if you have one
+        />
       );
     }
 
