@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/language_games_web/static/css/main.e4d416d1.css",
-    "main.js": "/language_games_web/static/js/main.ad67431b.js",
+    "main.js": "/language_games_web/static/js/main.68034cc5.js",
     "static/js/808.e6ae8fd5.chunk.js": "/language_games_web/static/js/808.e6ae8fd5.chunk.js",
     "static/js/663.f9bcc3cf.chunk.js": "/language_games_web/static/js/663.f9bcc3cf.chunk.js",
     "static/js/701.c7c23233.chunk.js": "/language_games_web/static/js/701.c7c23233.chunk.js",
@@ -29,11 +29,11 @@
     "static/media/coins.svg": "/language_games_web/static/media/coins.7a20b2c25d7aa2ccdf82c794988d0fef.svg",
     "index.html": "/language_games_web/index.html",
     "main.e4d416d1.css.map": "/language_games_web/static/css/main.e4d416d1.css.map",
-    "main.ad67431b.js.map": "/language_games_web/static/js/main.ad67431b.js.map",
+    "main.68034cc5.js.map": "/language_games_web/static/js/main.68034cc5.js.map",
     "453.e2a10aa0.chunk.js.map": "/language_games_web/static/js/453.e2a10aa0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e4d416d1.css",
-    "static/js/main.ad67431b.js"
+    "static/js/main.68034cc5.js"
   ]
 }
