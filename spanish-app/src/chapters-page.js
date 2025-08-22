@@ -3,7 +3,7 @@ import chapterCovers from "./json-files/chapterCovers.json"
 import './App.css';
 import Mascot from "./mascot";
 import { useState } from "react";
-import { getStarFill } from "./game-menu";
+import { getStarFill, getStarFillCompute } from "./game-menu";
 import { safeGetItem } from "./App";
 import { Typography } from "@mui/material";
 
@@ -57,7 +57,7 @@ export default function ChaptersPage({setSection, setChapterIndex}) {
     
     const fills = Array(chapterCovers.length);
     for (let i = 0; i < chapterCovers.length; i++) {
-        fills[i] = getStarFill(i);
+        fills[i] = getStarFillCompute(i);
     }
     
     return (

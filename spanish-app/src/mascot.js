@@ -14,24 +14,27 @@ export const mascotComponents = {
   '9': [Goat, 80],
 
   // Bear Options
-  '100': [PolarBear, 60],
+  '100': [PolarBear, 90],
   '101': [BlackBear, 70],
-  '102': [PandaBear, 100],
-  '103': [IceBear, 150],
+  '102': [PandaBear, 200],
+  '103': [IceBear, 220],
+  '104': [PurpleBear, 270],
 
   // Cat Options
   '200': [SiameseCat, 80],
   '201': [BlackCat, 60],
   '202': [GrayCat, 70],
-  '203': [CalicoCat, 90],
-  '204': [RainbowCat, 200],
+  '203': [CalicoCat, 130],
+  '204': [RainbowCat, 220],
+  '205': [MagicalCat, 270],
 
   // Dog Options
   '300': [Dalmatian, 80],
   '301': [GermanShepherd, 90],
-  '302': [Husky, 100],
-  '303': [Corgi, 110],
-  '304': [OceanDog, 150],
+  '302': [Husky, 130],
+  '303': [Corgi, 120],
+  '304': [OceanDog, 160],
+  '305': [EnvironmentalDog, 230],
 
   // Bird Options
   '400': [Cardinal, 120],
@@ -45,18 +48,19 @@ export const mascotComponents = {
   '500': [HampshirePig, 80],
   '501': [SpottedPig, 80],
   '502': [MintPig, 150],
+  '503': [MagicalPig, 280],
 
   // Horse Options
   '600': [WhiteHorse, 80],
   '601': [BlackHorse, 80],
   '602': [PalominoHorse, 100],
-  '603': [PintoHorse, 100],
-  '604': [GalaxyHorse, 200],
+  '603': [PintoHorse, 120],
+  '604': [GalaxyHorse, 220],
 
   // Giraffe Options
   '700': [ReticulatedGiraffe, 80],
   '701': [MasaiGiraffe, 120],
-  '702': [SunsetGiraffe, 150],
+  '702': [SunsetGiraffe, 180],
 
   //Penguin Options
   '800': [BluePenguin, 110],
@@ -64,12 +68,14 @@ export const mascotComponents = {
   '802': [PurplePenguin, 120],
   '803': [EmperorPenguin, 150],
   '804': [KingPenguin, 200],
+  '805': [MagicalPenguin, 240],
 
   //Goat Options
   '900': [BrownGoat, 90],
   '901': [GoldenGoat, 110],
   '902': [TheGoat, 150],
-  '903': [EnvironmentalGoat, 200]
+  '903': [EnvironmentalGoat, 230],
+  '904': [DepreciatedGoat, 180]
 
 
 
@@ -167,6 +173,23 @@ export function PandaBear(clickable=false) {
   );
 }
 
+// Panda Bear
+export function PurpleBear(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="bear"
+      bodyColor="rgb(222, 138, 255)"
+      earColor="rgb(87, 212, 253)"
+      noseColor="rgb(70, 2, 102)"
+      accentColor="rgb(100, 100, 100)"
+      clickable={clickable}
+    />
+  );
+}
+
+
+
+
 // ============= CATS =============
 
 // Orange Tabby Cat
@@ -234,6 +257,19 @@ export function CalicoCat(clickable=false) {
       earColor="#FF6347"
       noseColor="#FFB6C1"
       accentColor="#8B4513"
+      clickable={clickable}
+    />
+  );
+}
+
+export function MagicalCat(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="cat"
+      bodyColor="rgb(248, 129, 38)"
+      earColor="rgb(144, 61, 185)"
+      noseColor="rgb(239, 100, 14)"
+      accentColor="rgb(100, 100, 100)"
       clickable={clickable}
     />
   );
@@ -320,6 +356,19 @@ export function Corgi(clickable=false) {
       earColor="#8B4513"
       noseColor="#000000"
       accentColor="#FF6347"
+      clickable={clickable}
+    />
+  );
+}
+
+export function EnvironmentalDog(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="dog"
+      bodyColor="rgb(6, 67, 32)"
+      earColor="rgb(243, 216, 84)"
+      noseColor="rgb(247, 155, 209)"
+      accentColor="rgb(100, 100, 100)"
       clickable={clickable}
     />
   );
@@ -450,6 +499,19 @@ export function SpottedPig(clickable=false) {
       earColor="#8B4513"
       noseColor="#FFB6C1"
       accentColor="#2F2F2F"
+      clickable={clickable}
+    />
+  );
+}
+
+export function MagicalPig(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="pig"
+      bodyColor="rgb(234, 114, 158)"
+      earColor="rgb(153, 10, 62)"
+      noseColor="rgb(41, 2, 2)"
+      accentColor="#00CED1"
       clickable={clickable}
     />
   );
@@ -751,6 +813,19 @@ export function KingPenguin(clickable=false) {
   );
 }
 
+export function MagicalPenguin(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="penguin"
+      bodyColor="rgb(226, 129, 250)"
+      earColor="rgb(126, 120, 120)"
+      noseColor="rgb(255, 0, 0)"
+      accentColor="#00CED1"
+      clickable={clickable}
+    />
+  );
+}
+
 // GOATS //
 
 export function Goat(clickable=false) {
@@ -819,6 +894,21 @@ export function EnvironmentalGoat(clickable=false) {
     />
   );
 }
+
+export function DepreciatedGoat(clickable=false) {
+  return (
+    <CustomizableMascot
+      animalType="dog"
+      bodyColor="rgb(248, 205, 77)"
+      earColor="rgb(248, 205, 77)"
+      noseColor="rgb(0, 0, 0)"
+      accentColor="rgb(100, 100, 100)"
+      clickable={clickable}
+    />
+  );
+}
+
+
 
 
 

@@ -12,10 +12,18 @@ import { Icon, Typography } from '@mui/material';
 import { useState } from 'react';
 import { safeGetItem } from './App';
 
-const ScoreGoal = [50, 50, 20, 50, 50, 50];
+export const ScoreGoal = [50, 50, 20, 50, 50, 50];
 
 export function getStarFill(chapterIndex) {
     return Number(localStorage.getItem(`ch${chapterIndex}-starfill`) || 0);
+}
+
+export function getStarFillCompute(chapterIndex) {
+    let val = 0
+    for (let i = 0; i < 6; i++) {
+        val += checkLocalProgress(chapterIndex, i+1) >= ScoreGoal[i]? 1 : 0;
+    }
+    return val;
 }
 
 export function incrementStarFill(chapterIndex) {
@@ -35,7 +43,7 @@ export function checkLocalProgress(chapterIndex, gameId) {
 export function updateLocalProgress(chapterIndex, gameId, points) {
     const safePoints = Number(points || 0);
     const prevPoints = checkLocalProgress(chapterIndex, gameId);
-    if (prevPoints < ScoreGoal && prevPoints + safePoints >= ScoreGoal) {
+    if (prevPoints < ScoreGoal[gameId - 1] && prevPoints + safePoints >= ScoreGoal) {
         incrementStarFill(chapterIndex);
     }
     localStorage.setItem(localProgressString(chapterIndex, gameId), prevPoints + safePoints);
