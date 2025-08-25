@@ -59,7 +59,7 @@ export function VoiceSettingsButton() {
     const nameLower = voice.name.toLowerCase();
     
     // Prefer neural/premium voices
-    if (nameLower.includes('neural') || nameLower.includes('premium')) score += 100;
+    if (nameLower.includes('enhanced') || nameLower.includes('premium')) score += 100;
     if (nameLower.includes('google')) score += 50;
     if (nameLower.includes('microsoft')) score += 40;
     if (nameLower.includes('apple')) score += 30;
@@ -92,6 +92,8 @@ export function VoiceSettingsButton() {
     if (nameLower.includes('google')) score += 50;
     if (nameLower.includes('microsoft')) score += 40;
     if (nameLower.includes('apple')) score += 30;
+    if (nameLower.includes('samantha')) score += 50;
+    if (nameLower.includes('samantha')) score += 50;
     
     if (voice.lang === 'en-US') score += 15;
     else if (voice.lang === 'en-GB') score += 10;

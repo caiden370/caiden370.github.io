@@ -31,7 +31,7 @@ export function ConversationBlock({topic, messageList, audioOnly, numMessages}) 
                 key={key}
                 className={`conversation-message-row ${side}`}
             >
-                <div className={`conversation-message-bubble conversation-message-${side}`}>
+                <div className={`conversation-message-bubble conversation-message-${side} conversation-message-big`}>
                     <div className="conversation-message-header">
                         <span className={`conversation-message-speaker ${side}`}>{speaker}</span>
                         <span className={`conversation-message-icons ${side}`}>
@@ -49,6 +49,25 @@ export function ConversationBlock({topic, messageList, audioOnly, numMessages}) 
         );
     }
 
+    function messageAudioOnly(text, translation, speaker, side, key) {
+      return (
+        <div
+            key={key}
+            className={`conversation-message-row ${side}`}
+        >
+            <div className={`conversation-message-bubble conversation-message-${side}`}>
+                <div className="conversation-message-header">
+                    <span className={`conversation-message-speaker ${side}`}>{speaker}</span>
+                </div>
+                <span className="conversation-message-text">
+                <SpeechButton inSpanish={true} text={text} />
+                </span>
+            </div>
+        </div>
+    );
+
+    }
+
     function createMessageList() {
         const constrainedNumMessages = Math.min(messageList.length, numMessages);
         let currentMessageList = Array(constrainedNumMessages);
@@ -60,7 +79,10 @@ export function ConversationBlock({topic, messageList, audioOnly, numMessages}) 
 
     function renderConversation() {
         let sideIndicator = true;
-        let side = 'left';       
+        let side = 'left'; 
+        function messageFunc() {
+          return audioOnly? messageAudioOnly : message;
+        }      
         return (
             <>
             {createMessageList().map((messageContent, i)=>{
@@ -68,7 +90,7 @@ export function ConversationBlock({topic, messageList, audioOnly, numMessages}) 
                 sideIndicator = !sideIndicator;
                 return(
                     <>
-                    {message(messageContent.spanish, messageContent.english, messageContent.speaker, side, i)}
+                    {messageFunc()(messageContent.spanish, messageContent.english, messageContent.speaker, side, i)}
                     </>
                 )
             })}
@@ -318,9 +340,7 @@ export function ConversationMultiChoice({topic, dialog, questions, audioOnly, on
         onAnswered(0);
         setFinished(false);
         setNumCorrect(0);
-        setCurrQuestionIndex(0);
-
-
+        setCurrQuestionIndex(0)
     }, [dialog]
     )
 

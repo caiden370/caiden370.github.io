@@ -29,7 +29,7 @@ export default function GameWrapper({gameId, chapterIndex, setSection, updatePoi
             case game2:
                 return (<AudioReview chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage} />);
             case game3:
-                return (<Conversations chapterIndex={chapterIndex} audioOnly={false} setSection={setSection} updatePoints={updatePointsAndStorage}></Conversations>)
+                return (<Conversations chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}></Conversations>)
             case game4:
                 return (<MixedReview learning={false} chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}/>)
             case game5: 

@@ -8,7 +8,7 @@ import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton } from './ui-objects';
 
 
-export default function Conversations({chapterIndex, audioOnly, setSection, updatePoints}) {
+export default function Conversations({chapterIndex, setSection, updatePoints}) {
     const [numCorrect, setNumCorrect] = useState(0);
     const [currResult, setCurrentResult] = useState(null);
     const [questionComponent, setQuestionComponent] = useState(null);
@@ -101,7 +101,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
             topic={content.topic}
             dialog={content.dialog}
             questions={content.questions}
-            audioOnly={audioOnly}
+            audioOnly={Math.random() < 0.4}
             onAnswered={handleOnAnswer}
             setResult={setCurrentResult}
             setOuterFinished={setFinished}
@@ -153,7 +153,7 @@ export default function Conversations({chapterIndex, audioOnly, setSection, upda
     return (
         <div className='mixed-review-container'>
             <LeaveButton setSection={setSection} updatePoints={() => updatePoints(numCorrect, numCorrect)}></LeaveButton>
-            <div className='mixed-review-quiz-card'>
+            <div className='conversation-card'>
             {scoreBarComponent}
             {questionComponent}
             <div className='finished-row'>

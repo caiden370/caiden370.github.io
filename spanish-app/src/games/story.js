@@ -179,6 +179,7 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
                 onAnswered={() => {setAnswered(true)}}
                 questionInSpanish={true}
                 noLetters={true}
+                audioOnly={Math.random() < 0.3}
                 message={"Choose the correct translation"}>
             </MultipleChoice>
         )
@@ -212,6 +213,7 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
                 onAnswered={() => {setAnswered(true)}}
                 questionInSpanish={true}
                 noLetters={true}
+                audioOnly={Math.random() < 0.5}
                 message={"What comes next?"}>
             </MultipleChoice>
         )

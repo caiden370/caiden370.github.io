@@ -16,13 +16,15 @@ import { playCorrectSound, playIncorrectSound } from "../speech";
 
 //******************************************************************************** */
  
-export function MultipleChoice({ setResult, question, options, answerIndex, onAnswered, questionInSpanish, noLetters, message}) {
+export function MultipleChoice({ setResult, question, options, answerIndex, onAnswered, questionInSpanish, noLetters, message, audioOnly=false}) {
   const [correctIndex, setCorrectIndex] = useState(null);
   const [incorrectIndex, setIncorrectIndex] = useState(null);
   const [answered, setAnswered] = useState(false);
   const [currResult, setCurrResult] = useState(null);
 
-  useEffect(()=>{setAnswered(false)},[question])
+  useEffect(()=>{
+    setAnswered(false);
+  },[question])
 
   const handleSubmit = (index) => {
     if (answered) return; // prevent double clicks
@@ -38,6 +40,7 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
       playIncorrectSound();
     }
     setAnswered(true);
+    
   };
 
   const selectColor = (index) => {
@@ -74,6 +77,25 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
     )
   }
 
+  function questionFeature(question, questionInSpanish) {
+    if (!audioOnly) {
+      return (
+        <div className='mr-text-response-question-text'>
+        <SpeechButton text={question} inSpanish={questionInSpanish}></SpeechButton>
+        <Typography align="left" sx={{fontWeight:'bold'}}>{question}</Typography>
+      </div>
+      );
+
+    } else {
+      return (
+        <SpeechButton inSpanish={questionInSpanish} text={question} big={true}></SpeechButton>
+      );
+
+
+    }
+
+  }
+
 
   function validationModal(answer) {
     const statusClass = currResult ? "correct" : "incorrect";
@@ -96,10 +118,7 @@ export function MultipleChoice({ setResult, question, options, answerIndex, onAn
 
       <div className="mr-text-response-question">
         <Mascot clickable></Mascot>
-        <div className='mr-text-response-question-text'>
-        <SpeechButton text={question} inSpanish={questionInSpanish}></SpeechButton>
-        <Typography align="left" sx={{fontWeight:'bold'}}>{question}</Typography>
-        </div>
+        {questionFeature(question, questionInSpanish)}
       </div>
       {message && (<div className='multiple-choice-message'>{message} </div>)}
       <Box sx={{flexGrow: 1, width: '100%', justifyContent: 'center', display: 'flex',  height: '40%', color: 'primary' }}>
