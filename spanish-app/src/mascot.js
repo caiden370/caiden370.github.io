@@ -46,9 +46,9 @@ export const mascotComponents = {
 
   // Pig Options
   '500': [HampshirePig, 80],
-  '501': [SpottedPig, 80],
-  '502': [MintPig, 150],
-  '503': [MagicalPig, 280],
+  '501': [SpottedPig, 120],
+  '502': [MintPig, 280],
+  '503': [MagicalPig, 220],
 
   // Horse Options
   '600': [WhiteHorse, 80],
@@ -898,10 +898,10 @@ export function EnvironmentalGoat(clickable=false) {
 export function DepreciatedGoat(clickable=false) {
   return (
     <CustomizableMascot
-      animalType="dog"
-      bodyColor="rgb(248, 205, 77)"
-      earColor="rgb(248, 205, 77)"
-      noseColor="rgb(0, 0, 0)"
+      animalType="goat"
+      bodyColor="rgb(11, 44, 94)"
+      earColor="rgb(0, 252, 252)"
+      noseColor="rgb(0, 252, 252)"
       accentColor="rgb(100, 100, 100)"
       clickable={clickable}
     />

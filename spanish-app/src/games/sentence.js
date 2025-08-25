@@ -9,6 +9,7 @@ import { GameCompletionComponent } from './helper-conversation-game-objects';
 import Mascot from '../mascot';
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton } from './ui-objects';
+import { AudioExactTextResponse } from './helper-game-objects';
 
 
 //******************************************************************************** */
@@ -31,10 +32,10 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
         async function getContent() {
             try {
                 const contentObj = await loadChapterContent(chapterIndex);
-                const conversations = contentObj?.conversations;
-                if (conversations) {
-                    setJsonContent(conversations);
-                    const content = generateNextQuestionContent(conversations);
+                const data = contentObj;
+                if (data) {
+                    setJsonContent(data);
+                    const content = generateNextQuestionContent(data);
                     const component = buildNextQuestionComponent(content);
                     setQuestionComponent(component);
                     setAnswered(false);
@@ -64,30 +65,34 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
 
 
 
-    function generateNextQuestionContent(conversations) {
-        return generateSentenceJumbleContent(conversations);
+    function generateNextQuestionContent(data) {
+        return generateSentenceJumbleContent(data);
     }
 
     function buildNextQuestionComponent(content) {
         if (content.type == 'sentence-jumble') {
             return buildSentenceJumbleComponent(content);
+        } else if (content.type == 'sentence-audio') {
+            return buildSentenceAudioComponent(content);
         }
 
 
     }
 
-    function generateSentenceJumbleContent(conversations) {
-        const randI = Math.floor((Math.random()*conversations.length));
-        const randConvo = conversations[randI].dialog;
-        const randSentenceI = Math.floor(Math.random() * randConvo.length)
-        const randSentence = randConvo[randSentenceI]
+    function generateSentenceJumbleContent(data) {
 
+        let r =  Math.floor((Math.random()*2)); 
+        const sentences = r == 0? data.stories : data.conversations;
+        const randI = Math.floor((Math.random()*sentences.length));
+        const randConvo = sentences[randI][r == 0? 'sentences' : 'dialog'];
+        const randSentenceI = Math.floor(Math.random() * randConvo.length);
+        const randSentence = randConvo[randSentenceI]
+        r =  Math.floor((Math.random()*2));       
         return {
-            'type':'sentence-jumble',
+            'type': r == 0? 'sentence-jumble' : 'sentence-audio',
             'sentence': randSentence.spanish,
             'translation' : randSentence.english,
         }
-
     }
 
     function buildSentenceJumbleComponent(content) {
@@ -102,6 +107,19 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
 
         )
 
+    }
+
+    function buildSentenceAudioComponent(content) {
+        return (
+            <AudioExactTextResponse
+            question={content.sentence}
+            answer={content.sentence}
+            onAnswered={() => {setAnswered(true)}}
+            setResult={setCurResult}
+            questionInSpanish={true}
+            >
+            </AudioExactTextResponse>
+        )
     }
 
     function handleContinue() {
@@ -351,7 +369,7 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
         </div>)}
         </>
     )    
-
-    
-
 }
+
+
+

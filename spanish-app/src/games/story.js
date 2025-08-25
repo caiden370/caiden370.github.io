@@ -7,6 +7,7 @@ import { ProgressBar } from './ui-objects';
 import { GameCompletionComponent } from "./helper-conversation-game-objects";
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton } from './ui-objects';
+import { optionsFromArguments } from "tone";
 
 
 
@@ -87,23 +88,43 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
 
     function generateStoryTranslationContent(story, i) {
         const nextSentence = story.sentences[i];
-        let rand = Math.floor(Math.random() * story.sentences.length);
-        let attempt = 0
-        while(rand == i && attempt < 10) {
-            rand = Math.floor(Math.random() * story.sentences.length);
-            attempt +=1;
+        const {options, answerIndex} = generateOptions(i, story.sentences, 3);
+        const translatedOptions = Array(options.length);
+        for (let i = 0; i < options.length; i++) {
+            translatedOptions[i] = options[i].english;
         }
-        
-        const randSentence = story.sentences[rand];
+        console.log(options);
+        console.log(answerIndex);
 
         return {
             'type':'story-translation',
             'sentence': nextSentence.spanish,
-            'translation' : nextSentence.english,
-            'rsentence': randSentence.spanish,
-            'rtranslation': randSentence.english
+            'options':translatedOptions,
+            'answerIndex':answerIndex
         }
 
+    }
+
+
+    function generateOptions(index, sentences, numOptions) {
+        
+        const options = Array(numOptions - 1);
+        const validIndices = Array();
+        for (let i = 0; i < sentences.length; i++) {
+            if (i != index) {
+                validIndices.push(i);
+            }
+            
+        }
+        let r = Math.floor(Math.random()*validIndices.length);
+        for (let i = 0; i < numOptions-1; i++) {
+            options[i] = sentences[validIndices.splice(r, 1)[0]];
+            r = Math.floor(Math.random()*validIndices.length);
+        }
+
+        const answerIndex = Math.floor(Math.random()*numOptions);
+        options.splice(answerIndex, 0, sentences[index]);  
+        return {options, answerIndex}
     }
 
     useEffect(() => {
@@ -148,29 +169,13 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
     }
 
     function buildStoryTranslationComponent(content) {
-
-        const answerIndex = Math.floor(Math.random() * 2);
-
-        function randomizeOptions() {
-            let r1 = answerIndex;
-            let r2 = 1 - r1;
-            const randomOptions = ['ha', 'ha'];
-            randomOptions[r1] = content.translation;
-            randomOptions[r2] = content.rtranslation;
-            return randomOptions
-        }
-
-        const options = randomizeOptions();
-
-
-
         return (
             <MultipleChoice
                 key={Date.now()}
                 setResult={setCurrResult}
                 question={content.sentence}
-                options={options}
-                answerIndex={answerIndex}
+                options={content.options}
+                answerIndex={Number(content.answerIndex)}
                 onAnswered={() => {setAnswered(true)}}
                 questionInSpanish={true}
                 noLetters={true}
@@ -181,51 +186,29 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
 
     function generateStoryNextContent(story, i) {
         const curSentence = story.sentences[i];
-        const nextSentence = story.sentences[i + 1]
-        let rand = Math.floor(Math.random() * story.sentences.length);
-        let attempt = 0
-        while((rand == i + 1 || rand == i) && attempt < 10) {
-            rand = Math.floor(Math.random() * story.sentences.length);
-            attempt +=1;
+        const {options, answerIndex} = generateOptions(i+1, story.sentences, 3);
+        const nextOptions = Array(options.length);
+        for (let i = 0; i< options.length; i++) {
+            nextOptions[i] = options[i].spanish;
         }
-        
-        const randSentence = story.sentences[rand];
 
         return {
             'type':'story-next',
             'sentence': curSentence.spanish,
-            'translation' : curSentence.english,
-            'rsentence': randSentence.spanish,
-            'rtranslation': randSentence.english,
-            'answer':nextSentence.spanish,
-            'answer-translation':nextSentence.english
+            'options':nextOptions,
+            'answerIndex':answerIndex
         }
 
     }
 
     function buildStoryNextComponent(content) {
-        const answerIndex = Math.floor(Math.random() * 2);
-
-        function randomizeOptions() {
-            let r1 = answerIndex;
-            let r2 = 1 - r1;
-            const randomOptions = ['ha', 'ha'];
-            randomOptions[r1] = content.answer;
-            randomOptions[r2] = content.rsentence;
-            return randomOptions
-        }
-
-        const options = randomizeOptions();
-
-
-
         return (
             <MultipleChoice
                 key={Date.now()}
                 setResult={setCurrResult}
                 question={content.sentence}
-                options={options}
-                answerIndex={answerIndex}
+                options={content.options}
+                answerIndex={content.answerIndex}
                 onAnswered={() => {setAnswered(true)}}
                 questionInSpanish={true}
                 noLetters={true}

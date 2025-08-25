@@ -38,9 +38,10 @@
         "dialog": [
           { "speaker": "Sofía", "spanish": "¿En qué trabajas, Juan?", "english": "What do you work as, Juan?" },
           { "speaker": "Juan", "spanish": "Yo trabajo en un restaurante. Soy mesero.", "english": "I work in a restaurant. I am a waiter." },
-          { "speaker": "Sofía", "spanish": "¿Y tu hermano, en qué trabaja?", "english": "And your brother, what does he work as?" },
-          { "speaker": "Juan", "spanish": "Él es estudiante. Trabaja en una tienda por la tarde.", "english": "He is a student. He works in a store in the afternoon." },
-          { "speaker": "Sofía", "spanish": "Ah, yo también soy estudiante.", "english": "Oh, I am also a student." }
+          { "speaker": "Sofía", "spanish": "¡Qué bien! Y tu hermano, ¿en qué trabaja?", "english": "How nice! And your brother, what does he work as?" },
+          { "speaker": "Juan", "spanish": "Él es estudiante en la universidad. Por la tarde, él trabaja en una tienda.", "english": "He is a student at the university. In the afternoon, he works in a store." },
+          { "speaker": "Sofía", "spanish": "Ah, yo también soy estudiante. Voy a la misma universidad.", "english": "Oh, I am also a student. I go to the same university." },
+          { "speaker": "Juan", "spanish": "Qué coincidencia! ¿Y qué estudias?", "english": "What a coincidence! And what do you study?" }
         ],
         "questions": [
           {
@@ -68,10 +69,11 @@
         "topic": "Preguntando por un amigo",
         "dialog": [
           { "speaker": "Pedro", "spanish": "¿Dónde vive tu amigo David?", "english": "Where does your friend David live?" },
-          { "speaker": "Laura", "spanish": "Él vive en la ciudad, en un apartamento pequeño.", "english": "He lives in the city, in a small apartment." },
-          { "speaker": "Pedro", "spanish": "¿Y tú, dónde vives?", "english": "And you, where do you live?" },
-          { "speaker": "Laura", "spanish": "Yo vivo en las afueras, en una casa grande.", "english": "I live in the suburbs, in a big house." },
-          { "speaker": "Pedro", "spanish": "Yo vivo en la misma calle que David.", "english": "I live on the same street as David." }
+          { "speaker": "Laura", "spanish": "Él vive en la ciudad, en un apartamento pequeño. Está cerca de la biblioteca.", "english": "He lives in the city, in a small apartment. It's close to the library." },
+          { "speaker": "Pedro", "spanish": "¿Y tú, dónde vives? ¿Vives en un apartamento también?", "english": "And you, where do you live? Do you live in an apartment too?" },
+          { "speaker": "Laura", "spanish": "No, yo vivo en las afueras, en una casa grande con mi familia.", "english": "No, I live in the suburbs, in a big house with my family." },
+          { "speaker": "Pedro", "spanish": "Yo vivo en la misma calle que David. Mi casa está al lado de su apartamento.", "english": "I live on the same street as David. My house is next to his apartment." },
+          { "speaker": "Laura", "spanish": "¡Eso es muy conveniente! Pueden ir al trabajo juntos.", "english": "That's very convenient! You can go to work together." }
         ],
         "questions": [
           {
@@ -98,11 +100,12 @@
         "id": 3,
         "topic": "Hablando de posesiones",
         "dialog": [
-          { "speaker": "Marcos", "spanish": "Tengo un perro grande y dos gatos pequeños.", "english": "I have one big dog and two small cats." },
-          { "speaker": "Elena", "spanish": "¡Qué bien! ¿Y tú tienes mascotas?", "english": "How nice! And do you have pets?" },
-          { "speaker": "Marcos", "spanish": "No, no tengo mascotas. Pero mi hermana tiene un pájaro.", "english": "No, I don't have pets. But my sister has a bird." },
-          { "speaker": "Elena", "spanish": "Mi hermano también tiene un pájaro. Es de color verde.", "english": "My brother also has a bird. It is green." },
-          { "speaker": "Marcos", "spanish": "Qué divertido. Mi hermana y su pájaro son felices.", "english": "How fun. My sister and her bird are happy." }
+          { "speaker": "Marcos", "spanish": "Tengo un perro grande y dos gatos pequeños. Mis mascotas comen mucho.", "english": "I have one big dog and two small cats. My pets eat a lot." },
+          { "speaker": "Elena", "spanish": "¡Qué bien! ¿Y tú tienes mascotas, Marcos?", "english": "How nice! And do you have pets, Marcos?" },
+          { "speaker": "Marcos", "spanish": "No, yo no tengo mascotas. Pero mi hermana tiene un pájaro. Él es muy ruidoso.", "english": "No, I don't have pets. But my sister has a bird. He is very loud." },
+          { "speaker": "Elena", "spanish": "Mi hermano también tiene un pájaro. Es de color verde y él siempre canta. Es muy simpático.", "english": "My brother also has a bird. It is green and he always sings. He is very nice." },
+          { "speaker": "Marcos", "spanish": "Qué divertido! Mi hermana y su pájaro son felices en su casa.", "english": "How fun! My sister and her bird are happy in their house." },
+          { "speaker": "Elena", "spanish": "Tengo que irme. Mi gato me espera para comer.", "english": "I have to go. My cat is waiting for me to eat." }
         ],
         "questions": [
           {
@@ -129,11 +132,12 @@
         "id": 4,
         "topic": "Usando ser y estar",
         "dialog": [
-          { "speaker": "Daniel", "spanish": "¡Hola, Ana! ¿Cómo estás?", "english": "Hello, Ana! How are you?" },
-          { "speaker": "Ana", "spanish": "Hola, Daniel. Estoy muy bien, gracias. ¿Y tú?", "english": "Hello, Daniel. I am very well, thank you. And you?" },
-          { "speaker": "Daniel", "spanish": "Yo estoy cansado. La clase de hoy es difícil.", "english": "I am tired. Today's class is difficult." },
-          { "speaker": "Ana", "spanish": "Sí, es una clase difícil. Yo soy una estudiante.", "english": "Yes, it is a difficult class. I am a student." },
-          { "speaker": "Daniel", "spanish": "Yo también soy estudiante.", "english": "I am a student too." }
+          { "speaker": "Daniel", "spanish": "¡Hola, Ana! ¿Cómo estás? ¿Estás en la universidad?", "english": "Hello, Ana! How are you? Are you at the university?" },
+          { "speaker": "Ana", "spanish": "Hola, Daniel. Estoy muy bien, gracias. Y tú, ¿cómo estás? Sí, yo estoy en la universidad ahora.", "english": "Hello, Daniel. I am very well, thank you. And you, how are you? Yes, I am at the university now." },
+          { "speaker": "Daniel", "spanish": "Yo estoy cansado porque la clase de hoy es muy difícil para mí.", "english": "I am tired because today's class is very difficult for me." },
+          { "speaker": "Ana", "spanish": "Sí, es una clase difícil. La profesora es muy inteligente. Yo soy una estudiante de español.", "english": "Yes, it is a difficult class. The teacher is very intelligent. I am a Spanish student." },
+          { "speaker": "Daniel", "spanish": "Yo también soy estudiante de español. Somos de la misma clase.", "english": "I am a Spanish student too. We are in the same class." },
+          { "speaker": "Ana", "spanish": "¡Qué bien! Mañana, la clase es más fácil.", "english": "How nice! Tomorrow, the class is easier." }
         ],
         "questions": [
           {
@@ -160,11 +164,12 @@
         "id": 5,
         "topic": "Hablando de planes",
         "dialog": [
-          { "speaker": "Fernando", "spanish": "¿A dónde vas, Lucía?", "english": "Where are you going, Lucía?" },
-          { "speaker": "Lucía", "spanish": "Yo voy al gimnasio para hacer ejercicio.", "english": "I am going to the gym to exercise." },
-          { "speaker": "Fernando", "spanish": "¿A dónde va tu amiga?", "english": "Where is your friend going?" },
-          { "speaker": "Lucía", "spanish": "Ella va a la biblioteca a estudiar. Ella estudia mucho.", "english": "She is going to the library to study. She studies a lot." },
-          { "speaker": "Fernando", "spanish": "Yo voy al trabajo ahora. ¡Adiós!", "english": "I am going to work now. Goodbye!" }
+          { "speaker": "Fernando", "spanish": "¿A dónde vas, Lucía? ¿Vas al gimnasio?", "english": "Where are you going, Lucía? Are you going to the gym?" },
+          { "speaker": "Lucía", "spanish": "Sí, yo voy al gimnasio para hacer ejercicio. Yo voy todos los días.", "english": "Yes, I am going to the gym to exercise. I go every day." },
+          { "speaker": "Fernando", "spanish": "¿A dónde va tu amiga ahora?", "english": "Where is your friend going now?" },
+          { "speaker": "Lucía", "spanish": "Ella va a la biblioteca a estudiar para su clase. Ella estudia mucho porque tiene un examen.", "english": "She is going to the library to study for her class. She studies a lot because she has an exam." },
+          { "speaker": "Fernando", "spanish": "Yo voy al trabajo ahora. Mi trabajo está muy lejos de aquí. ¡Adiós!", "english": "I am going to work now. My job is very far from here. Goodbye!" },
+          { "speaker": "Lucía", "spanish": "Adiós, Fernando. ¡Diviértete en tu trabajo!", "english": "Goodbye, Fernando. Have fun at your job!" }
         ],
         "questions": [
           {
@@ -191,103 +196,95 @@
     "stories": [
       {
         "id": 1,
-        "title": "Mi Día",
+        "title": "Mi Día Ocupado",
         "sentences": [
           {
-            "spanish": "Yo soy un estudiante y vivo en un apartamento pequeño.",
-            "english": "I am a student and I live in a small apartment."
+            "spanish": "Soy un estudiante y vivo en un apartamento pequeño. Mi apartamento está cerca de la universidad.",
+            "english": "I'm a student and I live in a small apartment. My apartment is close to the university."
           },
           {
-            "spanish": "Por la mañana, yo voy a la universidad. Mi clase empieza a las nueve.",
-            "english": "In the morning, I go to the university. My class starts at nine."
+            "spanish": "Por la mañana, yo voy a la universidad en autobús. Mi clase de español es a las nueve. Es una clase muy interesante.",
+            "english": "In the morning, I go to the university by bus. My Spanish class is at nine. It is a very interesting class."
           },
           {
-            "spanish": "En la universidad, yo hablo con mis amigos y yo estudio mucho.",
-            "english": "At the university, I speak with my friends and I study a lot."
+            "spanish": "En la universidad, hablo con mis amigos y estudio mucho. Después, yo como el almuerzo a la una. Hoy yo como una hamburguesa con papas fritas.",
+            "english": "At the university, I talk with my friends and I study a lot. After, I eat lunch at one. Today I am eating a hamburger with fries."
           },
           {
-            "spanish": "Yo como el almuerzo a la una. Hoy yo como una ensalada.",
-            "english": "I eat lunch at one. Today I am eating a salad."
+            "spanish": "Yo estoy cansado porque tengo un examen importante mañana. El examen es difícil, pero yo estoy preparado.",
+            "english": "I am tired because I have an important exam tomorrow. The exam is difficult, but I am prepared."
           },
           {
-            "spanish": "Tengo un examen mañana, por eso yo estoy cansado.",
-            "english": "I have an exam tomorrow, that's why I am tired."
+            "spanish": "Por la tarde, yo voy a mi trabajo. Yo soy mesero en un restaurante italiano.",
+            "english": "In the afternoon, I go to my job. I am a waiter at an Italian restaurant."
           },
           {
-            "spanish": "Yo trabajo en una tienda por la tarde, de cinco a siete.",
-            "english": "I work in a store in the afternoon, from five to seven."
-          },
-          {
-            "spanish": "Yo estoy muy ocupado, pero soy feliz.",
-            "english": "I am very busy, but I am happy."
+            "spanish": "Trabajo hasta las siete. Después de mi trabajo, estoy muy cansado, pero soy feliz con mi vida.",
+            "english": "I work until seven. After my job, I'm very tired, but I am happy with my life."
           }
         ]
       },
       {
         "id": 2,
-        "title": "Un Nuevo Amigo",
+        "title": "La Vida de Mario",
         "sentences": [
           {
-            "spanish": "Mi nuevo amigo se llama Mario. Él es de México.",
-            "english": "My new friend is named Mario. He is from Mexico."
+            "spanish": "Mi amigo se llama Mario. Él es de México y él vive en mi calle en una casa grande.",
+            "english": "My friend is named Mario. He is from Mexico and he lives on my street in a big house."
           },
           {
-            "spanish": "Él vive en una casa grande en mi calle.",
-            "english": "He lives in a big house on my street."
+            "spanish": "Él tiene un perro grande y un gato pequeño. Él está feliz porque sus mascotas son divertidas.",
+            "english": "He has a big dog and a small cat. He is happy because his pets are fun."
           },
           {
-            "spanish": "Él tiene un perro y un gato, y ellos son muy bonitos.",
-            "english": "He has a dog and a cat, and they are very pretty."
+            "spanish": "Mario trabaja en una oficina en el centro de la ciudad. Él es muy ocupado, pero él es un buen trabajador.",
+            "english": "Mario works in an office in the city center. He is very busy, but he is a good worker."
           },
           {
-            "spanish": "Mario trabaja en una oficina. Él trabaja mucho.",
-            "english": "Mario works in an office. He works a lot."
+            "spanish": "Él come pizza los sábados con sus amigos. Él también va al parque y habla con ellos por las tardes.",
+            "english": "He eats pizza on Saturdays with his friends. He also goes to the park and talks with them in the afternoons."
           },
           {
-            "spanish": "Por las tardes, él va al parque y habla con sus amigos.",
-            "english": "In the afternoons, he goes to the park and speaks with his friends."
+            "spanish": "A Mario le gusta ir a la biblioteca. Él va a la biblioteca con su hermana que es una estudiante.",
+            "english": "Mario likes to go to the library. He goes to the library with his sister who is a student."
           },
           {
-            "spanish": "A él le gusta mucho comer pizza. Él come pizza los viernes.",
-            "english": "He really likes to eat pizza. He eats pizza on Fridays."
+            "spanish": "Ella es muy inteligente y ella está en la clase de español. Él es una persona muy simpática.",
+            "english": "She is very intelligent and she is in the Spanish class. He is a very nice person."
           },
           {
-            "spanish": "Él es muy simpático y siempre está feliz.",
-            "english": "He is very nice and is always happy."
+            "spanish": "Mario tiene muchos amigos porque siempre ayuda a las personas.",
+            "english": "Mario has many friends because he always helps people."
           }
         ]
       },
       {
         "id": 3,
-        "title": "Preguntas para ti",
+        "title": "Tu Vida",
         "sentences": [
           {
-            "spanish": "¿Qué comes para el desayuno?",
-            "english": "What do you eat for breakfast?"
+            "spanish": "Tú eres una persona ocupada. Vives en una casa pequeña con tu familia y trabajas en una oficina en la ciudad.",
+            "english": "You are a busy person. You live in a small house with your family and work in an office in the city."
           },
           {
-            "spanish": "Tú trabajas en la universidad, ¿verdad?",
-            "english": "You work at the university, right?"
+            "spanish": "Tú tienes un perro. Él es un perro grande. Siempre que llegas a casa, él está muy feliz de verte y juega contigo.",
+            "english": "You have a dog. He is a big dog. Whenever you get home, he is very happy to see you and plays with you."
           },
           {
-            "spanish": "Tú vives en un apartamento con tu familia.",
-            "english": "You live in an apartment with your family."
+            "spanish": "Tú comes arroz para el desayuno a veces. Los fines de semana, tú vas al cine con tus amigos. Te gusta mucho ver películas de comedia.",
+            "english": "You eat rice for breakfast sometimes. On weekends, you go to the movies with your friends. You really like to watch comedy movies."
           },
           {
-            "spanish": "¿Cuántos libros tienes? ¿Tú tienes muchos libros?",
-            "english": "How many books do you have? Do you have many books?"
+            "spanish": "Tú hablas con tus amigos en el parque. Tú eres una persona simpática. Tus amigos te aprecian porque tú eres divertido.",
+            "english": "You talk with your friends in the park. You are a nice person. Your friends appreciate you because you are fun."
           },
           {
-            "spanish": "Tú vas al cine los fines de semana. Te gusta ver películas.",
-            "english": "You go to the cinema on weekends. You like to watch movies."
+            "spanish": "Tú tienes un hermano que vive en la ciudad, pero él visita a menudo. Él es una persona muy divertida y tú hablas con él todos los días.",
+            "english": "You have a brother who lives in the city, but he visits often. He is a very fun person and you talk with him every day."
           },
           {
-            "spanish": "¿Cómo estás hoy? Tú estás feliz, ¿no?",
-            "english": "How are you today? You are happy, right?"
-          },
-          {
-            "spanish": "Tú eres una persona muy interesante.",
-            "english": "You are a very interesting person."
+            "spanish": "Tú vas al gimnasio en las mañanas. Tú eres muy activo, pero tú estás cansado al final del día. No importa, porque tú eres feliz.",
+            "english": "You go to the gym in the mornings. You are very active, but you are tired at the end of the day. It doesn't matter, because you are happy."
           }
         ]
       }

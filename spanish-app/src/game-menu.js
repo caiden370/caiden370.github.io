@@ -110,7 +110,7 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
                 <Item color={'#70a1ff'} itemGameId={'4'} text={'Mixed Review'}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
-                <Item color={'#70a1ff'} itemGameId={'5'} text={'Jumbled'}></Item>
+                <Item color={'#70a1ff'} itemGameId={'5'} text={'Sentences'}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
                 <Item color={'#70a1ff'} itemGameId={'6'} text={'Story'}></Item>
