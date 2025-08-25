@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/language_games_web/static/css/main.e4d416d1.css",
-    "main.js": "/language_games_web/static/js/main.68034cc5.js",
+    "main.css": "/language_games_web/static/css/main.b2af4d81.css",
+    "main.js": "/language_games_web/static/js/main.68515b0d.js",
     "static/js/808.e6ae8fd5.chunk.js": "/language_games_web/static/js/808.e6ae8fd5.chunk.js",
     "static/js/663.f9bcc3cf.chunk.js": "/language_games_web/static/js/663.f9bcc3cf.chunk.js",
     "static/js/701.c7c23233.chunk.js": "/language_games_web/static/js/701.c7c23233.chunk.js",
@@ -14,7 +14,7 @@
     "static/js/444.02e38de8.chunk.js": "/language_games_web/static/js/444.02e38de8.chunk.js",
     "static/js/13.86d7dfce.chunk.js": "/language_games_web/static/js/13.86d7dfce.chunk.js",
     "static/js/534.14231364.chunk.js": "/language_games_web/static/js/534.14231364.chunk.js",
-    "static/js/998.5c65394e.chunk.js": "/language_games_web/static/js/998.5c65394e.chunk.js",
+    "static/js/998.0f3cfb93.chunk.js": "/language_games_web/static/js/998.0f3cfb93.chunk.js",
     "static/js/478.b43e7d8f.chunk.js": "/language_games_web/static/js/478.b43e7d8f.chunk.js",
     "static/js/725.9218fe34.chunk.js": "/language_games_web/static/js/725.9218fe34.chunk.js",
     "static/js/629.2a106c7a.chunk.js": "/language_games_web/static/js/629.2a106c7a.chunk.js",
@@ -28,12 +28,12 @@
     "static/media/cat.jpg": "/language_games_web/static/media/cat.b73e64eee29ade86f6af.jpg",
     "static/media/coins.svg": "/language_games_web/static/media/coins.7a20b2c25d7aa2ccdf82c794988d0fef.svg",
     "index.html": "/language_games_web/index.html",
-    "main.e4d416d1.css.map": "/language_games_web/static/css/main.e4d416d1.css.map",
-    "main.68034cc5.js.map": "/language_games_web/static/js/main.68034cc5.js.map",
+    "main.b2af4d81.css.map": "/language_games_web/static/css/main.b2af4d81.css.map",
+    "main.68515b0d.js.map": "/language_games_web/static/js/main.68515b0d.js.map",
     "453.e2a10aa0.chunk.js.map": "/language_games_web/static/js/453.e2a10aa0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4d416d1.css",
-    "static/js/main.68034cc5.js"
+    "static/css/main.b2af4d81.css",
+    "static/js/main.68515b0d.js"
   ]
 }
