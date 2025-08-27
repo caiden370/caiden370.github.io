@@ -503,6 +503,9 @@ body {
 
 .mr-text-response-textfield {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-left: 15px;
   margin-right: 15px;
@@ -1411,4 +1414,78 @@ outline: none;
   flex-direction: row;
   justify-content: center; 
   align-items: center;
+}
+
+
+/* SPEAK GAME */
+.speak-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.speak-question {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%; 
+}
+
+.speak-message {
+
+
+  padding: 4px 8px;
+  border: solid 1px var(--theme-medium-blue);
+  background-color: var(--theme-light-blue);
+  border-radius: 15px;
+}
+
+.speak-word-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.speak-word-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  border: solid 2px var(--theme-medium-blue);
+  border-radius: 16px;
+}
+
+.speak-correct {
+  background-color: #5bf39a;
+  border-color: #059441;
+}
+
+.speak-incorrect {
+
+}
+
+.speak-mic-row {
+  
+
+}
+
+.speak-response {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-wrap: wrap;
+  padding: 4px;
+  border: solid 5px var(--theme-medium-blue);
+  border-radius: 15px;
+  min-height: 50px;
+  width: 100%;
+
 }

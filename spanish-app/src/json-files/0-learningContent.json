@@ -11,7 +11,6 @@
         { "spanish": "¿Qué haces?", "english": "What are you doing?" },
         { "spanish": "Mucho gusto", "english": "Nice to meet you" },
         { "spanish": "Igualmente", "english": "Likewise" },
-        { "spanish": "¿Qué onda?", "english": "What's up?" },
         { "spanish": "¿Qué pasa?", "english": "What's happening?" },
         { "spanish": "¡Tanto tiempo!", "english": "Long time no see!" },
         { "spanish": "¡Qué gusto verte!", "english": "So nice to see you!" },
@@ -375,6 +374,100 @@
           }
         ]
       }
-    ]
+    ],
+    "speaking": {
+      "questions": [
+        {
+          "q": "¿Cómo estás hoy?",
+          "translation": "How are you today?",
+          "keywords": [
+            "estoy",
+            "muy",
+            "bien"
+          ]
+        },
+        {
+          "q": "¿Qué tal tu día?",
+          "translation": "How's your day going?",
+          "keywords": [
+            "mi",
+            "día",
+            "fantástico"
+          ]
+        },
+        {
+          "q": "¿Qué haces hoy?",
+          "translation": "What are you doing today?",
+          "keywords": [
+            "hoy",
+            "voy",
+            "a"
+          ]
+        },
+        {
+          "q": "¿Qué dices por la mañana?",
+          "translation": "What do you say in the morning?",
+          "keywords": [
+            "digo",
+            "buenos",
+            "días"
+          ]
+        },
+        {
+          "q": "¿Cómo respondes a '¡Mucho gusto!'?",
+          "translation": "How do you respond to 'Nice to meet you!'?",
+          "keywords": [
+            "también",
+            "gusto",
+            "conocer"
+          ]
+        },
+        {
+          "q": "¿Qué has hecho últimamente?",
+          "translation": "What have you been doing lately?",
+          "keywords": [
+            "he",
+            "estado",
+            "ocupado"
+          ]
+        },
+        {
+          "q": "¿Qué le dices a un amigo al irte?",
+          "translation": "What do you say to a friend when you leave?",
+          "keywords": [
+            "hasta",
+            "luego",
+            "amigo"
+          ]
+        },
+        {
+          "q": "¿Cómo te va la vida?",
+          "translation": "How's life going for you?",
+          "keywords": [
+            "me",
+            "va",
+            "bien"
+          ]
+        },
+        {
+          "q": "¿Qué pregunta le harías a alguien que acabas de conocer?",
+          "translation": "What question would you ask someone you just met?",
+          "keywords": [
+            "te",
+            "llamas",
+            "yo"
+          ]
+        },
+        {
+          "q": "¿Cómo saludas a tus padres?",
+          "translation": "How do you greet your parents?",
+          "keywords": [
+            "saludo",
+            "con",
+            "beso"
+          ]
+        }
+      ]
+    }
   }
 }

@@ -247,6 +247,8 @@ export function TextResponse({question, answer, onAnswered, setResult, questionI
             <div key='mrTextResponse' className="mr-text-response-textfield">
             <TextField
                 fullWidth
+                multiline // This prop enables multi-line input and text wrapping
+                maxRows={4}
                 variant="outlined"
                 sx={{
                   "& .MuiOutlinedInput-root": {
@@ -554,6 +556,8 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
           <div key='mrTextResponse' className="mr-text-response-textfield">
           <TextField
               fullWidth
+              multiline // This prop enables multi-line input and text wrapping
+              maxRows={4}
               variant="outlined"
               sx={{
                 "& .MuiOutlinedInput-root": {

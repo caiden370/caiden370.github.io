@@ -72,3 +72,19 @@ Extra:
 - Add widgit?
 - Speech recognition
 
+
+
+Battle Game Idea:
+
+Instead of seleccting you get 4 random spell cards and they get replaced whenver you select one
+
+Before the game starts you can select from 10-15 abilities which can do different things:
+damage, heal, block, double-the-next, more accurate attacks, less accurate attacks, speed attacks, combinations, special stuff
+
+You get 4 questions asked each round:
+- maybe just from words or from the different games
+
+
+Verse a random mascot: (you have hp like in pokemon): get coins/exp for winning
+
+

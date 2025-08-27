@@ -396,8 +396,9 @@ export function ConversationMultiChoice({topic, dialog, questions, audioOnly, on
                 </Button>
             </div>
         )
-
     }
+
+    
     if (finished) {
         return <div className="conversation-component-outer-container">
             <GameCompletionComponent numCorrect={numCorrect} totalQuestions={questions.length}></GameCompletionComponent>
