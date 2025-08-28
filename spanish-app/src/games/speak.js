@@ -13,6 +13,7 @@ import { SpanishMicButton } from './ui-objects';
 import { BasicPopover } from './ui-objects';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { processText } from './ui-objects';
+import { Height } from '@mui/icons-material';
 
 
 
@@ -403,6 +404,7 @@ export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
         setUserText('');
         setIsCorrect(false);
         setShowModal(false);
+        setShowSubmit(false);
     }, [sentence])
 
 
@@ -443,8 +445,8 @@ export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
     function handleSubmit() {
         onAnswered();
         setAnswered(true);
-        checkResponse(userText);
-        const result = setResult(isCorrect);
+        const result = checkResponse(userText);
+        setResult(isCorrect);
         setShowModal(true);
         if (result) {
             setResult(true);

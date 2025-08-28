@@ -12,7 +12,7 @@ import { Icon, Typography } from '@mui/material';
 import { useState } from 'react';
 import { safeGetItem } from './App';
 
-export const ScoreGoal = [50, 50, 20, 50, 50, 50];
+export const ScoreGoal = [50, 50, 20, 50, 50, 50, 50, 50];
 
 export function getStarFill(chapterIndex) {
     return Number(localStorage.getItem(`ch${chapterIndex}-starfill`) || 0);
@@ -117,6 +117,9 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
                 <Item color={'#70a1ff'} itemGameId={'7'} text={'Speaking'}></Item>
+                </Grid>
+                <Grid sx={gridStyle} size={6}>
+                <Item color={'#70a1ff'} itemGameId={'8'} text={'Spell Battle'}></Item>
                 </Grid>
             </Grid>
             </Box>

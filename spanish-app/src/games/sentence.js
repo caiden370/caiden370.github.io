@@ -10,6 +10,7 @@ import Mascot from '../mascot';
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton } from './ui-objects';
 import { AudioExactTextResponse } from './helper-game-objects';
+import { processText } from './ui-objects';
 
 
 //******************************************************************************** */
@@ -81,7 +82,8 @@ export default function SentencePractice ({chapterIndex, setSection, updatePoint
 
     function generateSentenceJumbleContent(data) {
 
-        let r =  Math.floor((Math.random()*2)); 
+        // let r =  Math.floor((Math.random()*2)); 
+        let r = 1;
         const sentences = r == 0? data.stories : data.conversations;
         const randI = Math.floor((Math.random()*sentences.length));
         const randConvo = sentences[randI][r == 0? 'sentences' : 'dialog'];
@@ -236,13 +238,13 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
 
 
     function checkSentence() {
-        const punctuationAndSpaceRegex = /[¿¡.,;:!?]/g;
-        const correctSentence = sentence.replace(punctuationAndSpaceRegex, '').split(" "); 
+        // const punctuationAndSpaceRegex = /[¿¡.,;:!?]/g;
+        const correctSentence = processText(sentence).split(" "); 
         if (correctSentence.length != selectedSentence.length) {
             return false;
         }
         for (let i = 0; i < correctSentence.length; i++) {
-            if (selectedSentence[i] !== correctSentence[i]) {
+            if (selectedSentence[i] != correctSentence[i]) {
                 return false
             }
         }
@@ -251,8 +253,7 @@ export function SentenceJumble({sentence, translation, onAnswered, setResult}) {
     
     
     function processSentence(sentence) {
-        const punctuationAndSpaceRegex = /[¿¡.,;:!?]/g;
-        const words = sentence.replace(punctuationAndSpaceRegex, '').split(" ");
+        const words = processText(sentence).split(" ");
         const randIndices = generateRandomIndicesDupless(words, words.length);
         const randomizedWords = Array(words.length);
         for (let i = 0; i < words.length; i++) {

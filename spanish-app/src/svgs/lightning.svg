@@ -1,0 +1,12 @@
+<svg width="200" height="300" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .lightning-bolt {
+        fill: #8A2BE2; /* A vibrant purple color */
+        filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.8)) drop-shadow(0 0 20px rgba(138, 43, 226, 0.4));
+      }
+    </style>
+    <polygon
+      class="lightning-bolt"
+      points="100,0 80,120 120,120 100,180 140,180 90,300 110,180 60,180 80,120 120,120"
+    />
+</svg>

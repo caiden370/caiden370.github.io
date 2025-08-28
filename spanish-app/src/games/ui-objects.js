@@ -91,7 +91,7 @@ export function ProgressBar({ progress }) {
 
 export function processText(text) {
   const punctuationAndSpaceRegex = /[¿¡.,;:!?]/g;
-  return text.replace(/\([^)]*\)/g, '').replace(punctuationAndSpaceRegex, '').trim();
+  return text.replace(/\([^)]*\)/g, '').replace(punctuationAndSpaceRegex, '').trim().toLowerCase();
 }
 
 
