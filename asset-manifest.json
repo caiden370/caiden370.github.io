@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/language_games_web/static/css/main.b4ea364b.css",
-    "main.js": "/language_games_web/static/js/main.ff70700a.js",
+    "main.css": "/language_games_web/static/css/main.8ef8b4b4.css",
+    "main.js": "/language_games_web/static/js/main.a8bf4044.js",
     "static/js/808.93041f0e.chunk.js": "/language_games_web/static/js/808.93041f0e.chunk.js",
     "static/js/663.f9bcc3cf.chunk.js": "/language_games_web/static/js/663.f9bcc3cf.chunk.js",
     "static/js/701.c7c23233.chunk.js": "/language_games_web/static/js/701.c7c23233.chunk.js",
@@ -28,12 +28,13 @@
     "static/media/cat.jpg": "/language_games_web/static/media/cat.b73e64eee29ade86f6af.jpg",
     "static/media/coins.svg": "/language_games_web/static/media/coins.7a20b2c25d7aa2ccdf82c794988d0fef.svg",
     "index.html": "/language_games_web/index.html",
-    "main.b4ea364b.css.map": "/language_games_web/static/css/main.b4ea364b.css.map",
-    "main.ff70700a.js.map": "/language_games_web/static/js/main.ff70700a.js.map",
+    "static/media/lightning.svg": "/language_games_web/static/media/lightning.50419b026439934c870157339c6a275d.svg",
+    "main.8ef8b4b4.css.map": "/language_games_web/static/css/main.8ef8b4b4.css.map",
+    "main.a8bf4044.js.map": "/language_games_web/static/js/main.a8bf4044.js.map",
     "453.e2a10aa0.chunk.js.map": "/language_games_web/static/js/453.e2a10aa0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4ea364b.css",
-    "static/js/main.ff70700a.js"
+    "static/css/main.8ef8b4b4.css",
+    "static/js/main.a8bf4044.js"
   ]
 }
