@@ -46,10 +46,10 @@ export default function BottomNavbar({setSelection}) {
         }}
         classes="navbar-button-box"
       >
-        <BottomNavigationAction label={chapters} icon={<HomeFilledIcon/>} />
-        <BottomNavigationAction label={store} icon={<ShoppingBagIcon/>} />
-        <BottomNavigationAction label={profile} icon={<PersonIcon/>} />
-        <BottomNavigationAction label={settings} icon={<Settings/>} />
+        <BottomNavigationAction  icon={<HomeFilledIcon sx={{fontSize: 40}}/>} />
+        <BottomNavigationAction icon={<ShoppingBagIcon sx={{fontSize: 40}}/>} />
+        <BottomNavigationAction  icon={<PersonIcon sx={{fontSize: 40}}/>} />
+        <BottomNavigationAction  icon={<Settings sx={{fontSize: 40}}/>} />
       </BottomNavigation>
     </Box>
   );

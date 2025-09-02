@@ -18,11 +18,11 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function ChapterCard({number, onFavorite, favorite, content, title, color, setSection, setIndex, i, fill}) {
     const GameMenu = 'MenuGame'
-    const numGames = 6;
+    const numGames = 8;
     const numStars = fill === null? 0 : fill;
 
     const stars = Array(numGames)
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < numGames; i++) {
         if (i < numStars) {
             stars[i] = true;
         } else {
