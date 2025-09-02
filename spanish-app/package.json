@@ -2,7 +2,7 @@
   "name": "spanish-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://caiden370.github.io/language_games_web",
+  "homepage": "https://caiden370.github.io",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
