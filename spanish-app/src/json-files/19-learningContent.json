@@ -270,6 +270,214 @@
             }
           ]
         }
-      ]
-    }
+      ],
+      
+        "speaking": {
+          "title": "Teniendo Conversaciones",
+          "description": "Preguntas y respuestas para iniciar y mantener conversaciones interesantes.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Qué te gusta hacer en tu tiempo libre?",
+                "english": "What do you like to do in your free time?"
+              },
+              "answer": {
+                "spanish": "Me gusta viajar y aprender cosas nuevas.",
+                "english": "I like to travel and learn new things."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuál es tu película favorita?",
+                "english": "What is your favorite movie?"
+              },
+              "answer": {
+                "spanish": "Mi película favorita es 'El Padrino'. ¿Y la tuya?",
+                "english": "My favorite movie is 'The Godfather'. And yours?"
+              }
+            },
+            {
+              "question": {
+                "spanish": "Cuéntame sobre tu trabajo.",
+                "english": "Tell me about your job."
+              },
+              "answer": {
+                "spanish": "Trabajo como ingeniero de software. Es un trabajo interesante.",
+                "english": "I work as a software engineer. It's an interesting job."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué opinas del cambio climático?",
+                "english": "What's your opinion on climate change?"
+              },
+              "answer": {
+                "spanish": "Creo que es un problema muy serio y debemos hacer algo.",
+                "english": "I believe it's a very serious problem and we should do something."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Has viajado a algún otro país?",
+                "english": "Have you traveled to any other country?"
+              },
+              "answer": {
+                "spanish": "Sí, he viajado a Francia y España.",
+                "english": "Yes, I have traveled to France and Spain."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuál es el mejor viaje que has hecho?",
+                "english": "What is the best trip you have taken?"
+              },
+              "answer": {
+                "spanish": "El mejor viaje fue a Japón. La comida era increíble.",
+                "english": "The best trip was to Japan. The food was incredible."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué has aprendido este año?",
+                "english": "What have you learned this year?"
+              },
+              "answer": {
+                "spanish": "He aprendido a ser más paciente y organizado.",
+                "english": "I have learned to be more patient and organized."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quién es tu héroe o heroína de la vida real?",
+                "english": "Who is your real-life hero or heroine?"
+              },
+              "answer": {
+                "spanish": "Mi madre es mi heroína. Ella es muy trabajadora.",
+                "english": "My mother is my heroine. She is very hard-working."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué harías si ganaras la lotería?",
+                "english": "What would you do if you won the lottery?"
+              },
+              "answer": {
+                "spanish": "Viajaría por todo el mundo y donaría dinero a la caridad.",
+                "english": "I would travel around the world and donate money to charity."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde te gustaría vivir en el futuro?",
+                "english": "Where would you like to live in the future?"
+              },
+              "answer": {
+                "spanish": "Me gustaría vivir en un lugar con clima cálido.",
+                "english": "I would like to live in a place with a warm climate."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es tu casa?",
+                "english": "What is your house like?"
+              },
+              "answer": {
+                "spanish": "Mi casa es pequeña pero acogedora. Me gusta mucho.",
+                "english": "My house is small but cozy. I like it a lot."
+              }
+            },
+            {
+              "question": {
+                "spanish": "Cuéntame una historia interesante.",
+                "english": "Tell me an interesting story."
+              },
+              "answer": {
+                "spanish": "Una vez, vi una película muy graciosa que me hizo reír por días.",
+                "english": "Once, I saw a very funny movie that made me laugh for days."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué has comido hoy?",
+                "english": "What have you eaten today?"
+              },
+              "answer": {
+                "spanish": "Hoy he comido un sándwich y una manzana.",
+                "english": "Today I have eaten a sandwich and an apple."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Por qué estudias español?",
+                "english": "Why do you study Spanish?"
+              },
+              "answer": {
+                "spanish": "Estudio español para poder viajar más fácil.",
+                "english": "I study Spanish so I can travel more easily."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te ha parecido la clase de hoy?",
+                "english": "What did you think of today's class?"
+              },
+              "answer": {
+                "spanish": "La clase de hoy me ha parecido muy útil.",
+                "english": "Today's class seemed very useful to me."
+              }
+            },
+            {
+              "question": {
+                "spanish": "Cuéntame más sobre tu familia.",
+                "english": "Tell me more about your family."
+              },
+              "answer": {
+                "spanish": "Mi familia es grande. Tengo dos hermanos y una hermana.",
+                "english": "My family is big. I have two brothers and one sister."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué canción te gusta más?",
+                "english": "What song do you like the most?"
+              },
+              "answer": {
+                "spanish": "Me gusta la canción 'Havana' de Camila Cabello.",
+                "english": "I like the song 'Havana' by Camila Cabello."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te gustaría hacer este fin de semana?",
+                "english": "What would you like to do this weekend?"
+              },
+              "answer": {
+                "spanish": "Me gustaría ir al parque a leer un libro.",
+                "english": "I would like to go to the park to read a book."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo te sientes sobre tu pasado?",
+                "english": "How do you feel about your past?"
+              },
+              "answer": {
+                "spanish": "Me siento bien con mi pasado. Me hizo quien soy hoy.",
+                "english": "I feel good about my past. It made me who I am today."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuál es tu mejor recuerdo de la infancia?",
+                "english": "What is your best childhood memory?"
+              },
+              "answer": {
+                "spanish": "Mi mejor recuerdo es ir a la playa con mis abuelos.",
+                "english": "My best memory is going to the beach with my grandparents."
+              }
+            }
+          ]
+        }
+      }
+    
 }

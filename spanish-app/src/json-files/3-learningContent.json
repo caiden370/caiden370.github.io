@@ -296,5 +296,213 @@
           ]
         }
       ]
-    }
+    },
+    
+      "speaking": {
+        "title": "La Familia y Amigos",
+        "description": "Preguntas y respuestas sobre la familia, amigos y descripciones personales.",
+        "questions_and_answers": [
+          {
+            "question": {
+              "spanish": "¿Cuántos hermanos tienes?",
+              "english": "How many siblings do you have?"
+            },
+            "answer": {
+              "spanish": "Yo tengo dos hermanos y una hermana.",
+              "english": "I have two brothers and one sister."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cómo es tu padre?",
+              "english": "What is your father like?"
+            },
+            "answer": {
+              "spanish": "Mi padre es alto y muy simpático.",
+              "english": "My father is tall and very friendly."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Es tu madre trabajadora?",
+              "english": "Is your mother hardworking?"
+            },
+            "answer": {
+              "spanish": "Sí, mi madre es muy trabajadora.",
+              "english": "Yes, my mother is very hardworking."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cómo es tu abuelo?",
+              "english": "What is your grandfather like?"
+            },
+            "answer": {
+              "spanish": "Mi abuelo es un poco serio, pero es muy inteligente.",
+              "english": "My grandfather is a little serious, but he is very intelligent."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué hace tu hermano?",
+              "english": "What does your brother do?"
+            },
+            "answer": {
+              "spanish": "Él es estudiante en la universidad.",
+              "english": "He is a student at the university."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Dónde trabaja tu madre?",
+              "english": "Where does your mother work?"
+            },
+            "answer": {
+              "spanish": "Ella trabaja en una oficina.",
+              "english": "She works in an office."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Tienes primos?",
+              "english": "Do you have cousins?"
+            },
+            "answer": {
+              "spanish": "Sí, tengo una prima y un primo.",
+              "english": "Yes, I have one female cousin and one male cousin."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Es tu hermana divertida?",
+              "english": "Is your sister funny?"
+            },
+            "answer": {
+              "spanish": "Sí, ella es muy divertida y siempre ríe.",
+              "english": "Yes, she is very funny and always laughs."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cómo son tus abuelos?",
+              "english": "What are your grandparents like?"
+            },
+            "answer": {
+              "spanish": "Mis abuelos son muy simpáticos y tranquilos.",
+              "english": "My grandparents are very friendly and calm."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué hace tu mejor amigo?",
+              "english": "What does your best friend do?"
+            },
+            "answer": {
+              "spanish": "Mi mejor amigo trabaja en un café.",
+              "english": "My best friend works in a cafe."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Tu abuela es alta o baja?",
+              "english": "Is your grandmother tall or short?"
+            },
+            "answer": {
+              "spanish": "Mi abuela es baja.",
+              "english": "My grandmother is short."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Quién es la persona más divertida de tu familia?",
+              "english": "Who is the funniest person in your family?"
+            },
+            "answer": {
+              "spanish": "Mi abuela es la más divertida.",
+              "english": "My grandmother is the funniest."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Trabajas con tu familia?",
+              "english": "Do you work with your family?"
+            },
+            "answer": {
+              "spanish": "Sí, mis padres y yo trabajamos en la misma oficina.",
+              "english": "Yes, my parents and I work in the same office."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Eres una persona seria?",
+              "english": "Are you a serious person?"
+            },
+            "answer": {
+              "spanish": "No, yo no soy muy serio.",
+              "english": "No, I am not very serious."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Es tu primo un poco serio?",
+              "english": "Is your male cousin a little serious?"
+            },
+            "answer": {
+              "spanish": "Sí, él es un poco serio a veces.",
+              "english": "Yes, he is a little serious sometimes."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cómo se llama tu madre?",
+              "english": "What is your mother's name?"
+            },
+            "answer": {
+              "spanish": "Mi madre se llama Laura.",
+              "english": "My mother's name is Laura."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Tu padre es más alto que tu hermano?",
+              "english": "Is your father taller than your brother?"
+            },
+            "answer": {
+              "spanish": "No, mi hermano es más alto que mi padre.",
+              "english": "No, my brother is taller than my father."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué te gusta hacer con tu familia?",
+              "english": "What do you like to do with your family?"
+            },
+            "answer": {
+              "spanish": "Nos gusta ir de vacaciones y comer juntos.",
+              "english": "We like to go on vacation and eat together."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Tu abuela es tranquila?",
+              "english": "Is your grandmother calm?"
+            },
+            "answer": {
+              "spanish": "Sí, ella es muy tranquila y le gusta leer.",
+              "english": "Yes, she is very calm and likes to read."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cuál es la persona más inteligente en tu familia?",
+              "english": "Who is the most intelligent person in your family?"
+            },
+            "answer": {
+              "spanish": "Mi madre es la más inteligente de la familia.",
+              "english": "My mother is the most intelligent in the family."
+            }
+          }
+        ]
+      }
+    
   }

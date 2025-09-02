@@ -268,6 +268,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Nosotros y Ellos",
+          "description": "Preguntas y respuestas para practicar los pronombres 'nosotros', 'ellos/ellas' y 'ustedes' en diferentes contextos.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Qué hacen ustedes en la escuela?",
+                "english": "What do you all do at school?"
+              },
+              "answer": {
+                "spanish": "Nosotros estudiamos y escribimos mucho.",
+                "english": "We study and write a lot."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde viven tus padres?",
+                "english": "Where do your parents live?"
+              },
+              "answer": {
+                "spanish": "Ellos viven en una casa grande en la ciudad.",
+                "english": "They live in a big house in the city."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué comen ustedes juntos?",
+                "english": "What do you all eat together?"
+              },
+              "answer": {
+                "spanish": "Nosotros comemos pizza los viernes.",
+                "english": "We eat pizza on Fridays."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿A dónde van tus hermanos y tú?",
+                "english": "Where are your siblings and you going?"
+              },
+              "answer": {
+                "spanish": "Nosotros vamos al cine.",
+                "english": "We are going to the cinema."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hablan ellos?",
+                "english": "What are they talking about?"
+              },
+              "answer": {
+                "spanish": "Ellos hablan de la nueva película.",
+                "english": "They are talking about the new movie."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quiénes son los estudiantes en tu clase?",
+                "english": "Who are the students in your class?"
+              },
+              "answer": {
+                "spanish": "Ellos son muy inteligentes y amables.",
+                "english": "They are very intelligent and kind."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Nosotros trabajamos mañana?",
+                "english": "Are we working tomorrow?"
+              },
+              "answer": {
+                "spanish": "Sí, nosotros trabajamos mañana hasta las cinco.",
+                "english": "Yes, we are working tomorrow until five."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tienen ustedes una maleta grande?",
+                "english": "Do you all have a big suitcase?"
+              },
+              "answer": {
+                "spanish": "Sí, nosotros tenemos una maleta grande para el viaje.",
+                "english": "Yes, we have a big suitcase for the trip."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hacen ellos en el parque?",
+                "english": "What are they doing in the park?"
+              },
+              "answer": {
+                "spanish": "Ellos juegan al fútbol y corren.",
+                "english": "They are playing soccer and running."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Ustedes son amigos?",
+                "english": "Are you all friends?"
+              },
+              "answer": {
+                "spanish": "Sí, nosotros somos muy buenos amigos.",
+                "english": "Yes, we are very good friends."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Nosotros comemos sano?",
+                "english": "Are we eating healthy?"
+              },
+              "answer": {
+                "spanish": "Sí, comemos muchas frutas y verduras.",
+                "english": "Yes, we eat a lot of fruits and vegetables."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿A dónde van tus amigos y tú esta noche?",
+                "english": "Where are your friends and you going tonight?"
+              },
+              "answer": {
+                "spanish": "Nosotros vamos a una fiesta.",
+                "english": "We are going to a party."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Ellos tienen coche?",
+                "english": "Do they have a car?"
+              },
+              "answer": {
+                "spanish": "Sí, ellos tienen un coche nuevo.",
+                "english": "Yes, they have a new car."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué escriben ustedes?",
+                "english": "What are you all writing?"
+              },
+              "answer": {
+                "spanish": "Nosotros escribimos una carta a la familia.",
+                "english": "We are writing a letter to the family."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Las chicas van a la playa?",
+                "english": "Are the girls going to the beach?"
+              },
+              "answer": {
+                "spanish": "Sí, ellas van a la playa con sus amigos.",
+                "english": "Yes, they are going to the beach with their friends."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Son ellos de México?",
+                "english": "Are they from Mexico?"
+              },
+              "answer": {
+                "spanish": "No, ellos son de España.",
+                "english": "No, they are from Spain."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué música escuchan ellos?",
+                "english": "What music are they listening to?"
+              },
+              "answer": {
+                "spanish": "Ellos escuchan música rock.",
+                "english": "They are listening to rock music."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué idioma hablan en Colombia?",
+                "english": "What language do they speak in Colombia?"
+              },
+              "answer": {
+                "spanish": "Ellos hablan español.",
+                "english": "They speak Spanish."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Nosotros cocinamos la cena?",
+                "english": "Are we cooking dinner?"
+              },
+              "answer": {
+                "spanish": "Sí, nosotros cocinamos la cena juntos.",
+                "english": "Yes, we are cooking dinner together."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde trabajan ellos?",
+                "english": "Where do they work?"
+              },
+              "answer": {
+                "spanish": "Ellos trabajan en un restaurante italiano.",
+                "english": "They work in an Italian restaurant."
+              }
+            }
+          ]
+        }
+      
     }
 }

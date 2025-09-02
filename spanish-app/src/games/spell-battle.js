@@ -19,11 +19,19 @@ import { ReactComponent as LightningSvg } from '../svgs/lightning.svg';
 import BoltIcon from '@mui/icons-material/Bolt'; 
 import { MultipleChoice, TextResponse, FillInTheBlank } from './helper-game-objects';
 import '../App.css';
+import { MoodBad } from '@mui/icons-material';
+import { EmojiEvents } from '@mui/icons-material';
+import {Paper} from '@mui/material';
+import {Box} from '@mui/material';
+import { Icon } from '@mui/material';
+import GenericCard from './spell-battle-card';
+import { AbilityAnimation } from './spell-battle-card';
 
 export function SpellBattle({chapterIndex, setSection, updatePoints}) {
-    const [playerHP, setPlayerHP] = useState(100);
-    const [enemyHP, setEnemyHP] = useState(100);
     const totalHealth = 100;
+    const [playerHP, setPlayerHP] = useState(totalHealth);
+    const [enemyHP, setEnemyHP] = useState(totalHealth);
+    
     const [playerCards, setPlayerCards] = useState(Array());
     const [displayQuestions, setDisplayQuestions] = useState(false);
     const [quizScore, setQuizScore] = useState(0);
@@ -33,10 +41,17 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
     const [selectedIndex, setSelectedIndex] = useState();
     const numCards = 4;
     const [bolts, setBolts] = useState(0);
+    const [enemyAnimation, setEnemyAnimation] = useState(<div></div>);
+    const [playerAnimation, setPlayerAnimation] = useState(<div></div>);
+    const [gameOver, setGameOver] = useState(false);
+    const [numCorrect, setNumCorrect] = useState(0);
+    const bonus = 10;
+    
 
 
-    const [playerMove, setPlayerMove] = useState({});
-    const [enemyMove, setEnemyMove] = useState({});
+    const [playerCard, setPlayerCard] = useState({});
+    const [enemyCard, setEnemyCard] = useState({})
+    
 
     useEffect(() => {
         if (selectionCompleted && !roundCompleted) {
@@ -47,24 +62,29 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
     const abilities = [
             {name: 'fire', cost: 3, move:{damage: 30}},
             {name: 'shield', cost: 1 ,move:{block: 1}},
-            {name: 'heal', cost: 2, move:{heal: 30}},
+            {name: 'heal', cost: 2, move:{heal: 10}},
             {name: 'zap', cost: 4, move:{damage: 40}},
-            {name: 'restore', cost: 4, move:{heal: 50}},
+            {name: 'restore', cost: 4, move:{heal: 30}},
             {name: 'poison', cost: 2, move:{damage: 20}},
             {name: 'strike', cost: 1, move:{damage: 10}},
             {name: 'stab', cost: 3, move:{damage: 30}},      
     ]
 
+
     useEffect(
         () => {
-            setPlayerHP(100);
-            setEnemyHP(100);
-            setEnemyMove({})
-            setPlayerMove({})
+            setPlayerHP(totalHealth);
+            setEnemyHP(totalHealth);
+            setEnemyCard({});
+            setPlayerCard({});
             resetCards();
             setSelectedIndex(0);
             setBolts(0);
             setRoundCompleted(true);
+            setPlayerAnimation(<div></div>)
+            setEnemyAnimation(<div></div>)
+            setGameOver(false);
+            setNumCorrect(0);
         }, [chapterIndex]
 
     )
@@ -72,25 +92,44 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
 
     function resolveRound() {
         const enemyCard = getRandomCard();
-        console.log(enemyCard);
-        console.log(playerMove);
+        const playerMove = playerCard.move? playerCard.move : {};
 
+        
+        setPlayerAnimation(<AbilityAnimation ability={playerCard}></AbilityAnimation>)
+        setEnemyAnimation(<AbilityAnimation ability={enemyCard}></AbilityAnimation>)
+
+        let playerHealth = playerHP;
+        let enemyHealth = enemyHP;
 
         if (playerMove['damage'] && !enemyCard.move['block']) {
-            setEnemyHP(enemyHP - Number(playerMove['damage']));
+            enemyHealth -= Number(playerMove['damage']);
 
         } else if (playerMove['heal']) {
-            setPlayerHP(playerHP + Number(playerMove['heal']));
+            playerHealth += Number(playerMove['heal']);
         }
         
         
         if (enemyCard.move['damage'] && !playerMove['block']) {
-            setPlayerHP(playerHP - Number(enemyCard.move['damage']));
+            playerHealth -= Number(enemyCard.move['damage']);
         
         } else if (enemyCard.move['heal']) {
-            setEnemyHP(enemyHP + Number(enemyCard.move['heal']))
+            enemyHealth += Number(enemyCard.move['heal'])
+        }
+
+        console.log(enemyHealth);
+        console.log(playerHealth);
+        if (enemyHealth <= 0) {
+            setGameOver(true);
+            setNumCorrect(prev => prev + bonus);
+        } else if (playerHealth <= 0) {
+            setGameOver(true);
+            
         }
         
+
+
+        setEnemyHP(enemyHealth);
+        setPlayerHP(playerHealth);
         setRoundCompleted(true);
 
     }
@@ -131,10 +170,16 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
             setQuizScore(score);
             setDisplayQuestions(false);
             setBolts(prev => prev + score);
+            setNumCorrect(prev => prev + score);
+        }
+
+        function handleLeave(blank) {
+            return;
+
         }
     
         return (
-            <BattleQuiz2 chapterIndex={chapterIndex} setSection={setSection} onFinished={onFinished} updatePoints={updatePoints} ></BattleQuiz2>
+            <BattleQuiz2 chapterIndex={chapterIndex} setSection={handleLeave} onFinished={onFinished} updatePoints={onFinished} ></BattleQuiz2>
         )
     }
     
@@ -164,7 +209,11 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
                     }}
                 />
 
-                <span>{health}</span>
+                <div className="bubble-text-box">
+                    <div className="bubble-text">
+                    {health}
+                    </div>
+                </div>
             </>
 
         )
@@ -176,7 +225,7 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
         function handleClick() {
             
             if (!roundCompleted) {
-                setPlayerMove({})
+                setPlayerCard({name: 'skip', cost: 3, move:{skip: ''}})
                 setSelectedIndex(-1);
                 setSelectionCompleted(true);
             }
@@ -192,23 +241,25 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
     }
     
     
-    function GenericCard({i, ability, backcolor, color}) {
+    function GenericCardWrapper({i, ability}) {
     
         function handleClick() {
             if (bolts < Number(ability.cost)) {
                 return
             }
             setBolts(bolts - Number(ability.cost));
-            setPlayerMove(ability.move);
+            setPlayerCard(ability);
             setSelectedIndex(i);
             setSelectionCompleted(true);
         }
     
         return (
-            <div className={`sg-spell-card${bolts >= Number(ability.cost)? '' : '-disabled' }`} sx={{backgroundColor: bolts >= ability.cost? 'orange' : 'gray', pointerEvents: selectionCompleted? 'none' : null}} onClick={handleClick}>
-                <Typography align='center' sx={{color: color}}>{ability.name}</Typography>
-                <div className='sg-energy'><BoltIcon sx={{color:"rgb(123, 0, 253)"}}/><Typography align='center' sx={{color: color}}>{ability.cost}</Typography></div>
-            </div>
+            <GenericCard 
+            ability={ability} 
+            isActive={bolts >= Number(ability.cost)} 
+            isDisabled={bolts < Number(ability.cost)} 
+            onClick={handleClick}             
+            />
         )
     }
 
@@ -222,14 +273,16 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
             addRandomCardToPlayerCards(selectedIndex);
             setSelectedIndex(-1);
             setSelectionCompleted(false);
-            setEnemyMove({})
-            setPlayerMove({})
+            setEnemyCard({})
+            setPlayerCard({})
+            setEnemyAnimation(<div></div>);
+            setPlayerAnimation(<div></div>);
         }
 
         return (
             <div className="sentence-continue-button-container" >
-            <Button className='app-button success' variant='contained' sx={{width:'auto', marginTop: '20px'}} onClick={handleClick}>
-                <Typography>Next Round</Typography>
+            <Button className='app-button' variant='contained' sx={{backgroundColor: 'rgb(213, 158, 251)' ,marginTop: '40px', height: 'fit-content'}} onClick={handleClick}>
+                <BoltIcon sx={{color:"rgb(123, 0, 253)", fontSize: '40px'}}/>
             </Button>
             </div>
         )
@@ -237,9 +290,15 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
     }
 
 
+    function modifiedUpdatePoints() {
+        updatePoints(numCorrect);
+    }
+
+
 
     return (
         <div className='mixed-review-container'>
+            <LeaveButton setSection={setSection} updatePoints={modifiedUpdatePoints}/>
 
         
         <div className='spell-game-container'>
@@ -251,34 +310,43 @@ export function SpellBattle({chapterIndex, setSection, updatePoints}) {
 
             </div>
             <div className='sg-animation-zone'>
+                {enemyAnimation}
+                {playerAnimation}
             </div>
 
 
             <div className='sg-player-side'>
                 <div className="sg-player-mascot-row">
                     <div className="sg-mascot">{playerMascot()}player</div>
-                    <div className="sg-health-bar">{healthBar(playerHP, totalHealth)}</div> 
+                    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '50%', gap: '10px'}}>
+                    <div className="sg-health-bar" style={{width: '100%'}}>{healthBar(playerHP, totalHealth)}</div>
+                    <div className='sg-energy'><BoltIcon sx={{color:"rgb(123, 0, 253)"}}/><Typography align='left'>{bolts}</Typography></div> 
+                    </div>
+
                 </div>
                 
-                <div className='sg-energy'><BoltIcon sx={{color:"rgb(123, 0, 253)"}}/><Typography align='left'>{bolts}</Typography></div>
-                {skipCard()}
+                
+                
 
                 {roundCompleted && nextRoundButton()}
                 {!roundCompleted && (
-
+                <>
+                {skipCard()}
                 <div className="sg-card-selection">
                     {playerCards.map((ability, i)=> {
                         return (
                             <>
-                            <GenericCard i={i} ability={ability} backcolor={'blue'} color={'white'}/>
+                            <GenericCardWrapper i={i} ability={ability}/>
                             </>
                         )
                     })}
-                </div>)}
+                </div></>)}
             </div>
             {displayQuestions && quiz()}
             {displayHelpModal && helpModal()}
+            
         </div>
+        {gameOver && <GameOverScreen playerHP={playerHP} enemyHP={enemyHP} numCorrect={numCorrect} setSection={setSection} />}
         </div>
     )
 }
@@ -481,13 +549,18 @@ export function BattleQuiz ({chapterIndex, setSection, onFinished}) {
 
 
 
+
     return (
+        <>
+            <div className='sg-quiz-background'></div>
             <div className='sg-quiz-modal'>
             {/* {scoreBarComponent} */}
             {scoreBar()}
             {questionComponent}
             {answered && continueButton()}
             </div>
+            </>
+            
     )
     
 
@@ -514,8 +587,6 @@ export default function BattleQuiz2({ chapterIndex, setSection, updatePoints, le
     const [numCorrect, setNumCorrect] = useState(0);
     const [numCompleted, setNumCompleted] = useState(0)
     const totalQuestions = 4;
-    const importAll = (r) => r.keys().map(r);
-    const images = importAll(require.context('../static/avatars', false, /\.(png|jpe?g|svg)$/));
     const [finished, setFinished] = useState(false);
     const [updated, setUpdated] = useState(false)
 
@@ -557,7 +628,7 @@ export default function BattleQuiz2({ chapterIndex, setSection, updatePoints, le
 
 
     function generateNextQuestionContent(wordsArray) {
-        let r = Math.floor(Math.random()*3);
+        let r = Math.floor(Math.random()*2);
         if (r === 0 || learning) {
             r = Math.floor(Math.random()*2);
             return generateMultipleChoiceContent(wordsArray, 4, r > 0);
@@ -567,7 +638,7 @@ export default function BattleQuiz2({ chapterIndex, setSection, updatePoints, le
         } else if (r === 2) {
             return generateFillBlankContent(wordsArray);
         }
-        return null;
+        return generateMultipleChoiceContent(wordsArray, 4, true);
     }
 
     function buildNextQuestionComponent(content) {
@@ -696,7 +767,7 @@ export default function BattleQuiz2({ chapterIndex, setSection, updatePoints, le
             tries -= 1;
         }
 
-        if (tries == 0) {
+        if (tries <= 0) {
             return generateTextResponseContent(wordsArray, true);
         }
 
@@ -732,7 +803,6 @@ export default function BattleQuiz2({ chapterIndex, setSection, updatePoints, le
         if (numCompleted >= totalQuestions - 1) {
             setFinished(true);
             onFinished(numCorrect);
-            updatePoints(numCorrect, numCorrect);
         }
         setAnswered(false);
         setCurrentResult(null);
@@ -768,13 +838,96 @@ export default function BattleQuiz2({ chapterIndex, setSection, updatePoints, le
     }
     
     return (
+        <>
+        <div className='sg-quiz-background'></div>
         <div className='sg-quiz-modal'>
             <LeaveButton setSection={setSection} updatePoints={() => updatePoints(numCorrect, numCorrect)}></LeaveButton>
             {scoreBar()}
             {questionComponent}
             {answered && continueButton()}
             </div>
-
+            </>
+        
     );
     
 }
+
+
+
+// **************************** Game Over Page **********************************
+// **************************** Game Over Page **********************************
+
+/**
+ * A component to display the game over screen.
+ * It shows whether the player won or lost, the final score, and a button to quit.
+ * @param {object} props - The component props.
+ * @param {number} props.playerHP - The player's final health points.
+ * @param {number} props.enemyHP - The enemy's final health points.
+ * @param {number} props.numCorrect - The total number of correct answers.
+ * @param {function} props.setSection - Function to change the current game section.
+ */
+export function GameOverScreen({ playerHP, enemyHP, numCorrect, setSection }) {
+    const playerWon = playerHP > 0 && enemyHP <= 0;
+    
+    const title = playerWon ? "Victory!" : "Defeat";
+    const message = playerWon ? "A brilliant display of power! You have vanquished your foe." : "You fought bravely, but the enemy was too strong this time.";
+    const icon = playerWon ? <EmojiEvents sx={{ fontSize: 80, color: 'gold' }} /> : <MoodBad sx={{ fontSize: 80, color: '#9e9e9e' }} />;
+    const titleColor = playerWon ? 'gold' : '#c0c0c0';
+    const borderColor = playerWon ? 'gold' : '#424242';
+
+    return (
+        <div className="sg-game-over-backdrop">
+            <Paper 
+                elevation={10} 
+                sx={{
+                    padding: '40px',
+                    borderRadius: '20px',
+                    textAlign: 'center',
+                    backgroundColor: '#1e222a',
+                    color: 'white',
+                    border: `4px solid ${borderColor}`,
+                    minWidth: '350px',
+                    maxWidth: '90vw',
+                    boxShadow: `0 0 25px ${borderColor}`,
+                    animation: 'scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                }}
+            >
+                <Box mb={2}>
+                    {icon}
+                </Box>
+                <Typography variant="h2" component="h1" gutterBottom sx={{ color: titleColor, fontWeight: 'bold', textTransform: 'uppercase', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                    {title}
+                </Typography>
+                <Typography variant="h6" gutterBottom sx={{color: '#e0e0e0'}}>
+                    {message}
+                </Typography>
+                <Typography variant="h4" gutterBottom sx={{ marginY: '24px' }}>
+                    Total Correct: <span style={{ color: '#61dafb', fontWeight: 'bold' }}>{numCorrect}</span>
+                </Typography>
+                <Button 
+                    variant="contained"
+                    size="large"
+                    onClick={() => setSection('MenuGame')}
+                    sx={{
+                        marginTop: '20px',
+                        padding: '10px 30px',
+                        fontSize: '1.2rem',
+                        fontWeight: 'bold',
+                        backgroundColor: '#61dafb',
+                        color: '#1e222a',
+                        borderRadius: '50px',
+                        transition: 'transform 0.2s ease-in-out, background-color 0.2s',
+                        '&:hover': {
+                            backgroundColor: '#7fe2ff',
+                            transform: 'scale(1.05)'
+                        }
+                    }}
+                >
+                    Quit
+                </Button>
+            </Paper>
+        </div>
+    );
+}
+
+

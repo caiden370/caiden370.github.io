@@ -279,6 +279,213 @@
             }
           ]
         }
-      ]
+      ],
+        "speaking": {
+          "title": "Viajes",
+          "description": "Preguntas y respuestas para practicar conversaciones sobre viajes.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Te gusta viajar?",
+                "english": "Do you like to travel?"
+              },
+              "answer": {
+                "spanish": "Sí, me encanta viajar. Es mi pasatiempo favorito.",
+                "english": "Yes, I love to travel. It's my favorite hobby."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿A dónde vas de viaje?",
+                "english": "Where are you going on your trip?"
+              },
+              "answer": {
+                "spanish": "Voy a visitar una ciudad grande.",
+                "english": "I am going to visit a big city."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo viajas?",
+                "english": "How do you travel?"
+              },
+              "answer": {
+                "spanish": "Yo viajo en avión, pero a veces en tren.",
+                "english": "I travel by airplane, but sometimes by train."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Ya compraste el billete?",
+                "english": "Did you already buy the ticket?"
+              },
+              "answer": {
+                "spanish": "Sí, ya compré el billete.",
+                "english": "Yes, I already bought the ticket."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Hiciste la maleta?",
+                "english": "Did you pack the suitcase?"
+              },
+              "answer": {
+                "spanish": "No, todavía no he hecho la maleta.",
+                "english": "No, I haven't packed the suitcase yet."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué vas a visitar en la ciudad?",
+                "english": "What are you going to visit in the city?"
+              },
+              "answer": {
+                "spanish": "Voy a visitar museos y restaurantes.",
+                "english": "I am going to visit museums and restaurants."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué compraste en tu último viaje?",
+                "english": "What did you buy on your last trip?"
+              },
+              "answer": {
+                "spanish": "Compré regalos para mi familia.",
+                "english": "I bought gifts for my family."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te vas a quedar en un hotel?",
+                "english": "Are you going to stay in a hotel?"
+              },
+              "answer": {
+                "spanish": "Sí, voy a reservar un hotel para cinco noches.",
+                "english": "Yes, I am going to reserve a hotel for five nights."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué necesitas para viajar?",
+                "english": "What do you need to travel?"
+              },
+              "answer": {
+                "spanish": "Necesito mi pasaporte, mi billete y mi maleta.",
+                "english": "I need my passport, my ticket, and my suitcase."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo fue tu viaje?",
+                "english": "How was your trip?"
+              },
+              "answer": {
+                "spanish": "El viaje fue largo, pero muy divertido.",
+                "english": "The trip was long, but very fun."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde está la estación de tren?",
+                "english": "Where is the train station?"
+              },
+              "answer": {
+                "spanish": "La estación está cerca del hotel.",
+                "english": "The station is near the hotel."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Viajaste en coche el año pasado?",
+                "english": "Did you travel by car last year?"
+              },
+              "answer": {
+                "spanish": "Sí, viajé en coche a la montaña el año pasado.",
+                "english": "Yes, I traveled by car to the mountain last year."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Es caro el billete de avión?",
+                "english": "Is the airplane ticket expensive?"
+              },
+              "answer": {
+                "spanish": "No, es barato. Es un buen precio.",
+                "english": "No, it's cheap. It's a good price."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Vas a visitar la playa?",
+                "english": "Are you going to visit the beach?"
+              },
+              "answer": {
+                "spanish": "Sí, voy a visitar una playa muy bonita.",
+                "english": "Yes, I am going to visit a very beautiful beach."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde vas a ir de viaje en el futuro?",
+                "english": "Where are you going to go on a trip in the future?"
+              },
+              "answer": {
+                "spanish": "En el futuro, voy a ir a un país diferente.",
+                "english": "In the future, I am going to go to a different country."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hiciste en tu viaje a la montaña?",
+                "english": "What did you do on your trip to the mountain?"
+              },
+              "answer": {
+                "spanish": "Caminé mucho y visité un pueblo pequeño.",
+                "english": "I walked a lot and visited a small town."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué compraste que fue caro?",
+                "english": "What did you buy that was expensive?"
+              },
+              "answer": {
+                "spanish": "Compré una camisa muy cara.",
+                "english": "I bought a very expensive shirt."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo vas a ir al aeropuerto?",
+                "english": "How are you going to go to the airport?"
+              },
+              "answer": {
+                "spanish": "Voy a ir al aeropuerto en coche.",
+                "english": "I am going to go to the airport by car."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué tipo de viaje te gusta más?",
+                "english": "What type of trip do you like more?"
+              },
+              "answer": {
+                "spanish": "Me gustan los viajes a la playa, son relajantes.",
+                "english": "I like trips to the beach, they are relaxing."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Ya tienes tu pasaporte?",
+                "english": "Do you already have your passport?"
+              },
+              "answer": {
+                "spanish": "Sí, ya tengo mi pasaporte listo.",
+                "english": "Yes, I already have my passport ready."
+              }
+            }
+          ]
+        }
+      
     }
 }

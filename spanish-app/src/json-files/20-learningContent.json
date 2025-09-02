@@ -509,6 +509,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Medicina",
+          "description": "Preguntas y respuestas para describir síntomas, pedir ayuda médica y entender tratamientos.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Qué te duele?",
+                "english": "What hurts?"
+              },
+              "answer": {
+                "spanish": "Me duele la garganta y la cabeza.",
+                "english": "My throat and head hurt."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tienes fiebre?",
+                "english": "Do you have a fever?"
+              },
+              "answer": {
+                "spanish": "Sí, tengo fiebre. Me siento muy mal.",
+                "english": "Yes, I have a fever. I feel very bad."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo te sientes?",
+                "english": "How do you feel?"
+              },
+              "answer": {
+                "spanish": "Estoy un poco mareado y cansado.",
+                "english": "I'm a little dizzy and tired."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'Estoy enfermo'?",
+                "english": "What does 'Estoy enfermo' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'I am sick'.",
+                "english": "It means 'I am sick'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Necesitas una cita con el doctor?",
+                "english": "Do you need an appointment with the doctor?"
+              },
+              "answer": {
+                "spanish": "Sí, necesito una cita lo antes posible.",
+                "english": "Yes, I need an appointment as soon as possible."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Para qué son los analgésicos?",
+                "english": "What are painkillers for?"
+              },
+              "answer": {
+                "spanish": "Los analgésicos son para el dolor.",
+                "english": "Painkillers are for pain."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde puedes comprar medicina?",
+                "english": "Where can you buy medicine?"
+              },
+              "answer": {
+                "spanish": "Puedes comprar medicina en la farmacia.",
+                "english": "You can buy medicine at the pharmacy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te receta el doctor?",
+                "english": "What does the doctor prescribe you?"
+              },
+              "answer": {
+                "spanish": "El doctor me receta una pastilla para el dolor.",
+                "english": "The doctor prescribes me a pill for the pain."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuándo debes tomar la medicina?",
+                "english": "When should you take the medicine?"
+              },
+              "answer": {
+                "spanish": "Debo tomar la medicina tres veces al día.",
+                "english": "I should take the medicine three times a day."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'Recupérate pronto'?",
+                "english": "What does 'Recupérate pronto' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'Get well soon'.",
+                "english": "It means 'Get well soon'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te duele la espalda?",
+                "english": "Does your back hurt?"
+              },
+              "answer": {
+                "spanish": "Sí, tengo dolor de espalda después de trabajar.",
+                "english": "Yes, I have back pain after working."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo te sientes después de tomar la medicina?",
+                "english": "How do you feel after taking the medicine?"
+              },
+              "answer": {
+                "spanish": "Me siento un poco mejor ahora.",
+                "english": "I feel a little better now."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué haces cuando te sientes mal?",
+                "english": "What do you do when you feel bad?"
+              },
+              "answer": {
+                "spanish": "Cuando me siento mal, descanso mucho.",
+                "english": "When I feel bad, I rest a lot."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Por qué es importante descansar?",
+                "english": "Why is it important to rest?"
+              },
+              "answer": {
+                "spanish": "Es importante para que el cuerpo se recupere.",
+                "english": "It's important so the body can recover."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Has tenido un examen médico reciente?",
+                "english": "Have you had a recent medical exam?"
+              },
+              "answer": {
+                "spanish": "Sí, tuve un examen médico el mes pasado.",
+                "english": "Yes, I had a medical exam last month."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es una consulta?",
+                "english": "What is a consultation?"
+              },
+              "answer": {
+                "spanish": "Es una reunión con el doctor para hablar de tu salud.",
+                "english": "It's a meeting with the doctor to talk about your health."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'Tengo dolor de estómago'?",
+                "english": "What does 'Tengo dolor de estómago' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'I have a stomachache'.",
+                "english": "It means 'I have a stomachache'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te duele si te caes?",
+                "english": "What hurts if you fall?"
+              },
+              "answer": {
+                "spanish": "Si me caigo, me puede doler una pierna o el brazo.",
+                "english": "If I fall, my leg or arm might hurt."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tienes algún síntoma de gripe?",
+                "english": "Do you have any flu symptoms?"
+              },
+              "answer": {
+                "spanish": "Sí, tengo tos y dolor de garganta.",
+                "english": "Yes, I have a cough and a sore throat."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Para qué se usa una inyección?",
+                "english": "What is an injection used for?"
+              },
+              "answer": {
+                "spanish": "Se usa una inyección para dar medicina rápido.",
+                "english": "An injection is used to give medicine quickly."
+              }
+            }
+          ]
+        }
+      
     }
   }

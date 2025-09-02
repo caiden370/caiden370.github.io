@@ -293,6 +293,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Descripción de Cosas",
+          "description": "Preguntas y respuestas para practicar la descripción de objetos, personas y lugares con adjetivos.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿De qué color es tu carro?",
+                "english": "What color is your car?"
+              },
+              "answer": {
+                "spanish": "Mi carro es azul y viejo.",
+                "english": "My car is blue and old."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es la casa de tu amigo?",
+                "english": "What is your friend's house like?"
+              },
+              "answer": {
+                "spanish": "Su casa es grande y bonita.",
+                "english": "His house is big and pretty."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿De qué color es la camiseta que tienes puesta?",
+                "english": "What color is the t-shirt you are wearing?"
+              },
+              "answer": {
+                "spanish": "Mi camiseta es roja y corta.",
+                "english": "My t-shirt is red and short."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es tu dormitorio?",
+                "english": "What is your bedroom like?"
+              },
+              "answer": {
+                "spanish": "Mi dormitorio es pequeño y limpio.",
+                "english": "My bedroom is small and clean."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿De qué color son tus ojos?",
+                "english": "What color are your eyes?"
+              },
+              "answer": {
+                "spanish": "Mis ojos son marrones.",
+                "english": "My eyes are brown."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tienes el pelo largo o corto?",
+                "english": "Do you have long or short hair?"
+              },
+              "answer": {
+                "spanish": "Yo tengo el pelo corto y negro.",
+                "english": "I have short and black hair."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿La clase de español es fácil o difícil?",
+                "english": "Is the Spanish class easy or difficult?"
+              },
+              "answer": {
+                "spanish": "La clase es difícil, pero es interesante.",
+                "english": "The class is difficult, but it is interesting."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es la silla de tu escritorio?",
+                "english": "What is your desk chair like?"
+              },
+              "answer": {
+                "spanish": "Mi silla es gris y vieja.",
+                "english": "My chair is gray and old."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es tu mascota?",
+                "english": "What is your pet like?"
+              },
+              "answer": {
+                "spanish": "Mi perro es grande y negro. Es muy feliz.",
+                "english": "My dog is big and black. He is very happy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿De qué color es el sofá en tu sala?",
+                "english": "What color is the sofa in your living room?"
+              },
+              "answer": {
+                "spanish": "El sofá es rojo y grande.",
+                "english": "The sofa is red and big."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es el lago en el parque?",
+                "english": "What is the lake in the park like?"
+              },
+              "answer": {
+                "spanish": "El lago es azul y muy bonito.",
+                "english": "The lake is blue and very pretty."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tu amigo es alto o bajo?",
+                "english": "Is your friend tall or short?"
+              },
+              "answer": {
+                "spanish": "Mi amigo es alto y simpático.",
+                "english": "My friend is tall and friendly."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es la puerta de tu casa?",
+                "english": "What is the door of your house like?"
+              },
+              "answer": {
+                "spanish": "La puerta es grande y verde.",
+                "english": "The door is big and green."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tu ciudad es limpia o sucia?",
+                "english": "Is your city clean or dirty?"
+              },
+              "answer": {
+                "spanish": "Mi ciudad es limpia y tranquila.",
+                "english": "My city is clean and quiet."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué color es tu libro favorito?",
+                "english": "What color is your favorite book?"
+              },
+              "answer": {
+                "spanish": "Mi libro favorito es el gris.",
+                "english": "My favorite book is the gray one."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿La silla es nueva o vieja?",
+                "english": "Is the chair new or old?"
+              },
+              "answer": {
+                "spanish": "La silla es muy vieja, pero es cómoda.",
+                "english": "The chair is very old, but it is comfortable."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es tu prima?",
+                "english": "What is your female cousin like?"
+              },
+              "answer": {
+                "spanish": "Mi prima es baja y muy divertida.",
+                "english": "My female cousin is short and very funny."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tu trabajo es fácil o difícil?",
+                "english": "Is your job easy or difficult?"
+              },
+              "answer": {
+                "spanish": "Mi trabajo es difícil, pero soy feliz.",
+                "english": "My job is difficult, but I am happy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tu gato es pequeño?",
+                "english": "Is your cat small?"
+              },
+              "answer": {
+                "spanish": "Sí, mi gato es muy pequeño y blanco.",
+                "english": "Yes, my cat is very small and white."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué color de pantalón te gusta?",
+                "english": "What color pants do you like?"
+              },
+              "answer": {
+                "spanish": "Me gusta el pantalón azul.",
+                "english": "I like the blue pants."
+              }
+            }
+          ]
+        }
+      
     }
   }

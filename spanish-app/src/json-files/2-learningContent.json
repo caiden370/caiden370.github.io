@@ -288,6 +288,214 @@
           }
         ]
       }
-    ]
+    ],
+
+      "speaking": {
+        "title": "Conjugación de Verbos",
+        "description": "Preguntas y respuestas para practicar la conjugación de verbos esenciales como 'ser', 'estar', 'tener', y 'trabajar' en el presente.",
+        "questions_and_answers": [
+          {
+            "question": {
+              "spanish": "¿Qué comes en el desayuno?",
+              "english": "What do you eat for breakfast?"
+            },
+            "answer": {
+              "spanish": "Yo como arroz y huevos.",
+              "english": "I eat rice and eggs."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Dónde trabaja ella?",
+              "english": "Where does she work?"
+            },
+            "answer": {
+              "spanish": "Ella trabaja en una oficina.",
+              "english": "She works in an office."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Tienes hermanos?",
+              "english": "Do you have siblings?"
+            },
+            "answer": {
+              "spanish": "Sí, yo tengo dos hermanos.",
+              "english": "Yes, I have two siblings."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué vas a hacer hoy?",
+              "english": "What are you going to do today?"
+            },
+            "answer": {
+              "spanish": "Yo voy al gimnasio.",
+              "english": "I'm going to the gym."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cómo estás?",
+              "english": "How are you?"
+            },
+            "answer": {
+              "spanish": "Yo estoy muy bien, gracias.",
+              "english": "I am very well, thank you."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Eres de México?",
+              "english": "Are you from Mexico?"
+            },
+            "answer": {
+              "spanish": "Sí, yo soy de México.",
+              "english": "Yes, I am from Mexico."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Dónde vive tu amigo?",
+              "english": "Where does your friend live?"
+            },
+            "answer": {
+              "spanish": "Él vive en un apartamento.",
+              "english": "He lives in an apartment."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Ella tiene un perro o un gato?",
+              "english": "Does she have a dog or a cat?"
+            },
+            "answer": {
+              "spanish": "Ella tiene un perro grande.",
+              "english": "She has a big dog."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿A dónde va él?",
+              "english": "Where is he going?"
+            },
+            "answer": {
+              "spanish": "Él va a la biblioteca.",
+              "english": "He is going to the library."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué le gusta hacer a ella en su tiempo libre?",
+              "english": "What does she like to do in her free time?"
+            },
+            "answer": {
+              "spanish": "Ella habla con sus amigos.",
+              "english": "She talks with her friends."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Estás cansado?",
+              "english": "Are you tired?"
+            },
+            "answer": {
+              "spanish": "Sí, estoy cansado porque trabajo mucho.",
+              "english": "Yes, I am tired because I work a lot."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Dónde vives?",
+              "english": "Where do you live?"
+            },
+            "answer": {
+              "spanish": "Yo vivo en una casa pequeña.",
+              "english": "I live in a small house."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué es tu trabajo?",
+              "english": "What is your job?"
+            },
+            "answer": {
+              "spanish": "Yo soy un estudiante.",
+              "english": "I am a student."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Él es feliz?",
+              "english": "Is he happy?"
+            },
+            "answer": {
+              "spanish": "Sí, él es muy feliz.",
+              "english": "Yes, he is very happy."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Hablas español?",
+              "english": "Do you speak Spanish?"
+            },
+            "answer": {
+              "spanish": "Sí, yo hablo español y un poco de inglés.",
+              "english": "Yes, I speak Spanish and a little bit of English."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Tiene usted un carro?",
+              "english": "Do you have a car? (formal)"
+            },
+            "answer": {
+              "spanish": "No, yo no tengo un carro.",
+              "english": "No, I don't have a car."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cuándo vas al trabajo?",
+              "english": "When do you go to work?"
+            },
+            "answer": {
+              "spanish": "Yo voy al trabajo por la mañana.",
+              "english": "I go to work in the morning."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué come ella en la cena?",
+              "english": "What does she eat for dinner?"
+            },
+            "answer": {
+              "spanish": "Ella come pizza.",
+              "english": "She eats pizza."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Él es de la misma ciudad que tú?",
+              "english": "Is he from the same city as you?"
+            },
+            "answer": {
+              "spanish": "Sí, él es de la misma ciudad.",
+              "english": "Yes, he is from the same city."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Estás en la casa?",
+              "english": "Are you at home?"
+            },
+            "answer": {
+              "spanish": "No, no estoy en la casa, estoy en la oficina.",
+              "english": "No, I am not at home, I am at the office."
+            }
+          }
+        ]
+      }
+    
   }
 }

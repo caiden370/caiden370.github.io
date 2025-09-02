@@ -314,6 +314,211 @@
         }
       ]
     }
-  ]
+  ],
+    "speaking": {
+      "questions_and_answers": [
+        {
+          "question": {
+            "spanish": "Disculpa, ¿qué hora es?",
+            "english": "Excuse me, what time is it?"
+          },
+          "answer": {
+            "spanish": "Son las diez de la mañana.",
+            "english": "It's ten in the morning."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Puedes ayudarme, por favor?",
+            "english": "Can you help me, please?"
+          },
+          "answer": {
+            "spanish": "Claro, ¿qué necesitas?",
+            "english": "Of course, what do you need?"
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Dónde está la estación de tren?",
+            "english": "Where is the train station?"
+          },
+          "answer": {
+            "spanish": "Está todo recto.",
+            "english": "It's straight ahead."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo llego al supermercado?",
+            "english": "How do I get to the supermarket?"
+          },
+          "answer": {
+            "spanish": "Gire a la derecha en la próxima calle.",
+            "english": "Turn right on the next street."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cuánto cuesta esto?",
+            "english": "How much does this cost?"
+          },
+          "answer": {
+            "spanish": "Cuesta cinco euros.",
+            "english": "It costs five euros."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Puedes repetir, por favor?",
+            "english": "Can you repeat, please?"
+          },
+          "answer": {
+            "spanish": "Sí, ¿qué no entiendes?",
+            "english": "Yes, what don't you understand?"
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Dónde está el baño?",
+            "english": "Where is the bathroom?"
+          },
+          "answer": {
+            "spanish": "Está a la izquierda, al fondo del pasillo.",
+            "english": "It's on the left, at the end of the hall."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Lo siento, no entiendo.",
+            "english": "I'm sorry, I don't understand."
+          },
+          "answer": {
+            "spanish": "No te preocupes. Lo explico otra vez.",
+            "english": "Don't worry. I'll explain it again."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Necesitas ayuda con las bolsas?",
+            "english": "Do you need help with the bags?"
+          },
+          "answer": {
+            "spanish": "Sí, gracias, por favor.",
+            "english": "Yes, thank you, please."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Es esto cerca de aquí?",
+            "english": "Is this near here?"
+          },
+          "answer": {
+            "spanish": "Sí, está muy cerca, a dos minutos.",
+            "english": "Yes, it's very near, two minutes away."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Perdón, estoy buscando la calle de la Plata.",
+            "english": "Excuse me, I'm looking for Silver Street."
+          },
+          "answer": {
+            "spanish": "Gira a la izquierda, está en la esquina.",
+            "english": "Turn left, it's on the corner."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cuánto tiempo se tarda en llegar?",
+            "english": "How long does it take to get there?"
+          },
+          "answer": {
+            "spanish": "Se tarda unos quince minutos a pie.",
+            "english": "It takes about fifteen minutes on foot."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Disculpa, ¿sabes dónde hay un banco?",
+            "english": "Excuse me, do you know where there is a bank?"
+          },
+          "answer": {
+            "spanish": "Hay uno cerca, todo recto.",
+            "english": "There's one nearby, straight ahead."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Por favor, ¿me puedes dar un vaso de agua?",
+            "english": "Please, can you give me a glass of water?"
+          },
+          "answer": {
+            "spanish": "Sí, aquí tienes.",
+            "english": "Yes, here you go."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Dónde está la parada de autobús?",
+            "english": "Where is the bus stop?"
+          },
+          "answer": {
+            "spanish": "Está allí, al lado del parque.",
+            "english": "It's there, next to the park."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Me puedes indicar en el mapa?",
+            "english": "Can you show me on the map?"
+          },
+          "answer": {
+            "spanish": "Claro, aquí estamos.",
+            "english": "Of course, we are here."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué significa esta palabra?",
+            "english": "What does this word mean?"
+          },
+          "answer": {
+            "spanish": "Significa 'ayuda'.",
+            "english": "It means 'help'."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Aceptas tarjeta de crédito?",
+            "english": "Do you accept credit cards?"
+          },
+          "answer": {
+            "spanish": "Sí, aceptamos.",
+            "english": "Yes, we accept them."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Hay un cajero automático cerca?",
+            "english": "Is there an ATM nearby?"
+          },
+          "answer": {
+            "spanish": "Sí, hay uno en la calle principal.",
+            "english": "Yes, there is one on the main street."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Gracias por todo.",
+            "english": "Thanks for everything."
+          },
+          "answer": {
+            "spanish": "De nada, que tengas un buen día.",
+            "english": "You're welcome, have a good day."
+          }
+        }
+      ]
+    }
+  }
 }
-}
+

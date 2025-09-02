@@ -266,6 +266,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Sentimientos y Emociones",
+          "description": "Preguntas y respuestas para hablar sobre el estado de ánimo y las emociones.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Cómo te sientes hoy?",
+                "english": "How do you feel today?"
+              },
+              "answer": {
+                "spanish": "Hoy me siento muy contento.",
+                "english": "Today I feel very happy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Por qué estás triste?",
+                "english": "Why are you sad?"
+              },
+              "answer": {
+                "spanish": "Estoy triste porque el día está lloviendo.",
+                "english": "I am sad because it's raining today."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Estás cansado?",
+                "english": "Are you tired?"
+              },
+              "answer": {
+                "spanish": "Sí, estoy muy cansado después de trabajar.",
+                "english": "Yes, I am very tired after working."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te hace sentir feliz?",
+                "english": "What makes you feel happy?"
+              },
+              "answer": {
+                "spanish": "Mis amigos me hacen sentir muy feliz.",
+                "english": "My friends make me feel very happy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Estás nervioso por la prueba?",
+                "english": "Are you nervous about the test?"
+              },
+              "answer": {
+                "spanish": "Sí, estoy muy nervioso por la prueba de mañana.",
+                "english": "Yes, I am very nervous about the test tomorrow."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te sientes enojado?",
+                "english": "Do you feel angry?"
+              },
+              "answer": {
+                "spanish": "No, no me siento enojado. Me siento calmado.",
+                "english": "No, I don't feel angry. I feel calm."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'estoy aburrido'?",
+                "english": "What does 'estoy aburrido' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'I am bored'.",
+                "english": "It means 'I am bored'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Por qué estás preocupado?",
+                "english": "Why are you worried?"
+              },
+              "answer": {
+                "spanish": "Estoy preocupado por mi examen.",
+                "english": "I am worried about my exam."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te asusta?",
+                "english": "What scares you?"
+              },
+              "answer": {
+                "spanish": "Me asusta hablar en público.",
+                "english": "Speaking in public scares me."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te frustra?",
+                "english": "What frustrates you?"
+              },
+              "answer": {
+                "spanish": "Me frustra el tráfico en la mañana.",
+                "english": "The traffic in the morning frustrates me."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo te sientes después de hacer ejercicio?",
+                "english": "How do you feel after exercising?"
+              },
+              "answer": {
+                "spanish": "Me siento cansado, pero muy contento.",
+                "english": "I feel tired, but very happy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Estuviste emocionado por la fiesta?",
+                "english": "Were you excited for the party?"
+              },
+              "answer": {
+                "spanish": "Sí, estuve muy emocionado de ir.",
+                "english": "Yes, I was very excited to go."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿El miedo es un sentimiento malo?",
+                "english": "Is fear a bad feeling?"
+              },
+              "answer": {
+                "spanish": "El miedo puede ser bueno, pero no siempre.",
+                "english": "Fear can be good, but not always."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te confunde?",
+                "english": "What confuses you?"
+              },
+              "answer": {
+                "spanish": "Me confunden las matemáticas.",
+                "english": "Math confuses me."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te sientes estresado en el trabajo?",
+                "english": "Do you feel stressed at work?"
+              },
+              "answer": {
+                "spanish": "Sí, a veces me siento estresado.",
+                "english": "Yes, sometimes I feel stressed."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo te sientes cuando ves a un amigo?",
+                "english": "How do you feel when you see a friend?"
+              },
+              "answer": {
+                "spanish": "Me siento feliz y emocionado.",
+                "english": "I feel happy and excited."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te sorprendió la noticia?",
+                "english": "Did the news surprise you?"
+              },
+              "answer": {
+                "spanish": "Sí, la noticia me sorprendió mucho.",
+                "english": "Yes, the news surprised me a lot."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te sientes calmado ahora?",
+                "english": "Do you feel calm now?"
+              },
+              "answer": {
+                "spanish": "Sí, me siento muy calmado en mi casa.",
+                "english": "Yes, I feel very calm in my house."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te pone triste?",
+                "english": "What makes you sad?"
+              },
+              "answer": {
+                "spanish": "Me pone triste ver la película.",
+                "english": "Watching the movie makes me sad."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es la emoción?",
+                "english": "What is emotion?"
+              },
+              "answer": {
+                "spanish": "La emoción es lo que sentimos por dentro.",
+                "english": "Emotion is what we feel inside."
+              }
+            }
+          ]
+        }
+      
     }
 }

@@ -307,6 +307,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Tiempos Verbales",
+          "description": "Preguntas y respuestas para practicar el uso del pasado, presente y futuro.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Qué hiciste ayer?",
+                "english": "What did you do yesterday?"
+              },
+              "answer": {
+                "spanish": "Ayer hablé con mi amigo y fui al cine.",
+                "english": "Yesterday I spoke with my friend and went to the cinema."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué vas a hacer mañana?",
+                "english": "What are you going to do tomorrow?"
+              },
+              "answer": {
+                "spanish": "Mañana voy a estudiar para un examen.",
+                "english": "Tomorrow I am going to study for a test."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué comes hoy?",
+                "english": "What are you eating today?"
+              },
+              "answer": {
+                "spanish": "Hoy como pizza para la cena.",
+                "english": "Today I am eating pizza for dinner."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde viviste el año pasado?",
+                "english": "Where did you live last year?"
+              },
+              "answer": {
+                "spanish": "El año pasado viví en una casa grande.",
+                "english": "Last year I lived in a big house."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hiciste la semana pasada?",
+                "english": "What did you do last week?"
+              },
+              "answer": {
+                "spanish": "La semana pasada hice mi tarea y vi una película.",
+                "english": "Last week I did my homework and watched a movie."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde vas a estar el próximo mes?",
+                "english": "Where are you going to be next month?"
+              },
+              "answer": {
+                "spanish": "El próximo mes voy a estar de vacaciones.",
+                "english": "Next month I am going to be on vacation."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué vas a hacer el fin de semana que viene?",
+                "english": "What are you going to do next weekend?"
+              },
+              "answer": {
+                "spanish": "Voy a ir a un viaje con mi familia.",
+                "english": "I am going to go on a trip with my family."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Estudias mucho hoy?",
+                "english": "Are you studying a lot today?"
+              },
+              "answer": {
+                "spanish": "Sí, yo estudio mucho hoy.",
+                "english": "Yes, I am studying a lot today."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Fuiste a una fiesta anoche?",
+                "english": "Did you go to a party last night?"
+              },
+              "answer": {
+                "spanish": "Sí, fui a una fiesta muy divertida.",
+                "english": "Yes, I went to a very fun party."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué vas a ser en el futuro?",
+                "english": "What are you going to be in the future?"
+              },
+              "answer": {
+                "spanish": "En el futuro voy a ser un médico.",
+                "english": "In the future I am going to be a doctor."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Trabajas hoy?",
+                "english": "Are you working today?"
+              },
+              "answer": {
+                "spanish": "Sí, yo trabajo hoy.",
+                "english": "Yes, I am working today."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Estuviste cansado ayer?",
+                "english": "Were you tired yesterday?"
+              },
+              "answer": {
+                "spanish": "Sí, estuve muy cansado ayer.",
+                "english": "Yes, I was very tired yesterday."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué música escuchaste el mes pasado?",
+                "english": "What music did you listen to last month?"
+              },
+              "answer": {
+                "spanish": "Escuché música pop el mes pasado.",
+                "english": "I listened to pop music last month."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Vas a vivir en la misma ciudad?",
+                "english": "Are you going to live in the same city?"
+              },
+              "answer": {
+                "spanish": "No, voy a vivir en una ciudad diferente.",
+                "english": "No, I am going to live in a different city."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Haces ejercicio todos los días?",
+                "english": "Do you exercise every day?"
+              },
+              "answer": {
+                "spanish": "Sí, yo hago ejercicio todos los días.",
+                "english": "Yes, I exercise every day."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Fue divertido tu viaje?",
+                "english": "Was your trip fun?"
+              },
+              "answer": {
+                "spanish": "Sí, mi viaje fue muy divertido.",
+                "english": "Yes, my trip was very fun."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Vas a viajar la próxima semana?",
+                "english": "Are you going to travel next week?"
+              },
+              "answer": {
+                "spanish": "No, no voy a viajar la próxima semana.",
+                "english": "No, I am not going to travel next week."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo eres hoy?",
+                "english": "How are you today?"
+              },
+              "answer": {
+                "spanish": "Hoy soy muy feliz.",
+                "english": "Today I am very happy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta hablar español?",
+                "english": "Do you like to speak Spanish?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta hablar español. Hablo con mis amigos.",
+                "english": "Yes, I like to speak Spanish. I speak with my friends."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde vas a trabajar en el futuro?",
+                "english": "Where are you going to work in the future?"
+              },
+              "answer": {
+                "spanish": "Voy a trabajar en la oficina de mi padre.",
+                "english": "I am going to work in my father's office."
+              }
+            }
+          ]
+        }
+      
     }
 }

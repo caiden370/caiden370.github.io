@@ -375,99 +375,199 @@
         ]
       }
     ],
-    "speaking": {
-      "questions": [
-        {
-          "q": "¿Cómo estás hoy?",
-          "translation": "How are you today?",
-          "keywords": [
-            "estoy",
-            "muy",
-            "bien"
-          ]
-        },
-        {
-          "q": "¿Qué tal tu día?",
-          "translation": "How's your day going?",
-          "keywords": [
-            "mi",
-            "día",
-            "fantástico"
-          ]
-        },
-        {
-          "q": "¿Qué haces hoy?",
-          "translation": "What are you doing today?",
-          "keywords": [
-            "hoy",
-            "voy",
-            "a"
-          ]
-        },
-        {
-          "q": "¿Qué dices por la mañana?",
-          "translation": "What do you say in the morning?",
-          "keywords": [
-            "digo",
-            "buenos",
-            "días"
-          ]
-        },
-        {
-          "q": "¿Cómo respondes a '¡Mucho gusto!'?",
-          "translation": "How do you respond to 'Nice to meet you!'?",
-          "keywords": [
-            "también",
-            "gusto",
-            "conocer"
-          ]
-        },
-        {
-          "q": "¿Qué has hecho últimamente?",
-          "translation": "What have you been doing lately?",
-          "keywords": [
-            "he",
-            "estado",
-            "ocupado"
-          ]
-        },
-        {
-          "q": "¿Qué le dices a un amigo al irte?",
-          "translation": "What do you say to a friend when you leave?",
-          "keywords": [
-            "hasta",
-            "luego",
-            "amigo"
-          ]
-        },
-        {
-          "q": "¿Cómo te va la vida?",
-          "translation": "How's life going for you?",
-          "keywords": [
-            "me",
-            "va",
-            "bien"
-          ]
-        },
-        {
-          "q": "¿Qué pregunta le harías a alguien que acabas de conocer?",
-          "translation": "What question would you ask someone you just met?",
-          "keywords": [
-            "te",
-            "llamas",
-            "yo"
-          ]
-        },
-        {
-          "q": "¿Cómo saludas a tus padres?",
-          "translation": "How do you greet your parents?",
-          "keywords": [
-            "saludo",
-            "con",
-            "beso"
-          ]
-        }
-      ]
-    }
+      "speaking": {
+        "questions_and_answers": [
+          {
+            "question": {
+              "spanish": "¿Hola, cómo estás?",
+              "english": "Hello, how are you?"
+            },
+            "answer": {
+              "spanish": "Estoy muy bien, ¿y tú?",
+              "english": "I'm very well, and you?"
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué tal?",
+              "english": "What's up? / How's it going?"
+            },
+            "answer": {
+              "spanish": "Todo bien, gracias.",
+              "english": "Everything's good, thanks."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué pasa?",
+              "english": "What's happening?"
+            },
+            "answer": {
+              "spanish": "Nada, todo tranquilo.",
+              "english": "Nothing, everything's calm."
+            }
+          },
+          {
+            "question": {
+              "spanish": "Buenos días, ¿cómo está?",
+              "english": "Good morning, how are you? (formal)"
+            },
+            "answer": {
+              "spanish": "Estoy bien, ¿y usted?",
+              "english": "I'm well, and you? (formal)"
+            }
+          },
+          {
+            "question": {
+              "spanish": "Buenas tardes, ¿cómo le va?",
+              "english": "Good afternoon, how is it going? (formal)"
+            },
+            "answer": {
+              "spanish": "Me va muy bien, gracias.",
+              "english": "It's going very well for me, thanks."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cómo te llamas?",
+              "english": "What is your name?"
+            },
+            "answer": {
+              "spanish": "Me llamo Alejandro.",
+              "english": "My name is Alejandro."
+            }
+          },
+          {
+            "question": {
+              "spanish": "Mucho gusto.",
+              "english": "Nice to meet you."
+            },
+            "answer": {
+              "spanish": "Igualmente.",
+              "english": "Likewise."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿De dónde eres?",
+              "english": "Where are you from?"
+            },
+            "answer": {
+              "spanish": "Soy de España, de Madrid.",
+              "english": "I am from Spain, from Madrid."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Dónde vives?",
+              "english": "Where do you live?"
+            },
+            "answer": {
+              "spanish": "Vivo en Barcelona.",
+              "english": "I live in Barcelona."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cuál es tu profesión?",
+              "english": "What is your profession?"
+            },
+            "answer": {
+              "spanish": "Soy un diseñador gráfico.",
+              "english": "I am a graphic designer."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿A qué te dedicas?",
+              "english": "What do you do for a living?"
+            },
+            "answer": {
+              "spanish": "Trabajo en una oficina.",
+              "english": "I work in an office."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Estudias o trabajas?",
+              "english": "Do you study or work?"
+            },
+            "answer": {
+              "spanish": "Estudio en la universidad.",
+              "english": "I study at the university."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Qué te gusta hacer?",
+              "english": "What do you like to do?"
+            },
+            "answer": {
+              "spanish": "Me gusta pintar.",
+              "english": "I like to paint."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cómo se dice 'hello' en español?",
+              "english": "How do you say 'hello' in Spanish?"
+            },
+            "answer": {
+              "spanish": "Se dice 'hola'.",
+              "english": "You say 'hola'."
+            }
+          },
+          {
+            "question": {
+              "spanish": "Hasta luego.",
+              "english": "See you later."
+            },
+            "answer": {
+              "spanish": "Adiós.",
+              "english": "Goodbye."
+            }
+          },
+          {
+            "question": {
+              "spanish": "Nos vemos.",
+              "english": "See you around."
+            },
+            "answer": {
+              "spanish": "Claro, nos vemos pronto.",
+              "english": "Sure, see you soon."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Hablas inglés?",
+              "english": "Do you speak English?"
+            },
+            "answer": {
+              "spanish": "Sí, hablo un poco.",
+              "english": "Yes, I speak a little."
+            }
+          },
+          {
+            "question": {
+              "spanish": "Perdón, ¿cómo se dice 'thank you'?",
+              "english": "Excuse me, how do you say 'thank you'?"
+            },
+            "answer": {
+              "spanish": "Se dice 'gracias'.",
+              "english": "You say 'gracias'."
+            }
+          },
+          {
+            "question": {
+              "spanish": "¿Cómo te va?",
+              "english": "How's it going?"
+            },
+            "answer": {
+              "spanish": "Me va bien, ¿y a ti?",
+              "english": "It's going well for me, and for you?"
+            }
+          }
+        ]
+      }
   }
 }

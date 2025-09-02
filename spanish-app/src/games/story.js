@@ -93,8 +93,8 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
         for (let i = 0; i < options.length; i++) {
             translatedOptions[i] = options[i].english;
         }
-        console.log(options);
-        console.log(answerIndex);
+        
+        
 
         return {
             'type':'story-translation',

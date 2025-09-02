@@ -277,6 +277,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Dando y Recibiendo Cumplidos",
+          "description": "Preguntas y respuestas para elogiar a otros y responder de manera amable.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Qué piensas de mi vestido?",
+                "english": "What do you think of my dress?"
+              },
+              "answer": {
+                "spanish": "Pienso que es muy bonito. ¡Te ves genial!",
+                "english": "I think it's very pretty. You look great!"
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo le respondes a alguien que te dice 'eres muy simpático'?",
+                "english": "How do you respond to someone who tells you 'you are very nice'?"
+              },
+              "answer": {
+                "spanish": "Le digo, 'Muchas gracias, tú también'.",
+                "english": "I say, 'Thank you very much, you too'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué le dices a alguien que cocina delicioso?",
+                "english": "What do you say to someone who cooks deliciously?"
+              },
+              "answer": {
+                "spanish": "Le digo, 'Cocinas increíblemente bien'.",
+                "english": "I say, 'You cook incredibly well'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo respondes a un cumplido sobre tu trabajo?",
+                "english": "How do you respond to a compliment about your work?"
+              },
+              "answer": {
+                "spanish": "Digo 'Gracias, lo aprecio mucho'.",
+                "english": "I say 'Thank you, I appreciate it a lot'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué dices para elogiar el talento de alguien?",
+                "english": "What do you say to praise someone's talent?"
+              },
+              "answer": {
+                "spanish": "Digo 'Eres muy talentoso(a)'.",
+                "english": "I say 'You are very talented'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta mi peinado?",
+                "english": "Do you like my hairstyle?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta mucho tu cabello. Se ve muy bien.",
+                "english": "Yes, I really like your hair. It looks very good."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo le dices a alguien que es divertido?",
+                "english": "How do you tell someone they are funny?"
+              },
+              "answer": {
+                "spanish": "Le digo, 'Eres muy gracioso(a). Me haces reír'.",
+                "english": "I say, 'You are very funny. You make me laugh'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'qué amable'?",
+                "english": "What does 'qué amable' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'How kind'.",
+                "english": "It means 'How kind'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta cómo me visto?",
+                "english": "Do you like how I dress?"
+              },
+              "answer": {
+                "spanish": "Sí, me encanta cómo te vistes. Tienes buen gusto.",
+                "english": "Yes, I love how you dress. You have good taste."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué le dices a alguien que hace un gran trabajo?",
+                "english": "What do you say to someone who does a great job?"
+              },
+              "answer": {
+                "spanish": "Le digo, 'Haces un gran trabajo. Eres muy trabajador(a)'.",
+                "english": "I say, 'You do a great job. You are very hard-working'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo te sientes cuando te dan un cumplido?",
+                "english": "How do you feel when they give you a compliment?"
+              },
+              "answer": {
+                "spanish": "Me siento feliz y un poco orgulloso.",
+                "english": "I feel happy and a little proud."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué le dices a una persona inteligente?",
+                "english": "What do you say to a smart person?"
+              },
+              "answer": {
+                "spanish": "Le digo, 'Eres muy inteligente. Me sorprendes'.",
+                "english": "I say, 'You are very smart. You surprise me'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo dices que alguien es una buena persona?",
+                "english": "How do you say someone is a good person?"
+              },
+              "answer": {
+                "spanish": "Digo, 'Qué buena persona eres. Eres muy amable'.",
+                "english": "I say, 'What a good person you are. You are very kind'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'tu sonrisa es hermosa'?",
+                "english": "What does 'tu sonrisa es hermosa' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'your smile is beautiful'.",
+                "english": "It means 'your smile is beautiful'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué le dices a alguien que canta bien?",
+                "english": "What do you say to someone who sings well?"
+              },
+              "answer": {
+                "spanish": "Le digo, 'Cantas muy bien. Tienes una voz maravillosa'.",
+                "english": "I say, 'You sing very well. You have a wonderful voice'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Es importante dar cumplidos?",
+                "english": "Is it important to give compliments?"
+              },
+              "answer": {
+                "spanish": "Sí, es importante porque hace felices a las personas.",
+                "english": "Yes, it's important because it makes people happy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo le respondes a 'gracias'?",
+                "english": "How do you respond to 'gracias'?"
+              },
+              "answer": {
+                "spanish": "Normalmente digo 'de nada' o 'es un placer'.",
+                "english": "I normally say 'you're welcome' or 'it's a pleasure'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué le dices a un amigo que está triste?",
+                "english": "What do you say to a friend who is sad?"
+              },
+              "answer": {
+                "spanish": "Le digo 'Eres una persona increíble, no estés triste'.",
+                "english": "I say, 'You are an incredible person, don't be sad'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo dices que alguien es guapo o guapa?",
+                "english": "How do you say someone is handsome or pretty?"
+              },
+              "answer": {
+                "spanish": "Digo 'Eres muy guapo(a)' o 'Eres muy hermoso(a)'.",
+                "english": "I say 'You are very handsome/pretty' or 'You are very beautiful'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'no es para tanto'?",
+                "english": "What does 'no es para tanto' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'It's not a big deal' o 'It's nothing'.",
+                "english": "It means 'It's not a big deal' or 'It's nothing'."
+              }
+            }
+          ]
+        }
+      
     }
 }

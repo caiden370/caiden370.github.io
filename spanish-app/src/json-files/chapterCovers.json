@@ -76,7 +76,7 @@
   },
   {
     "number": 16,
-    "title": "Introducing Yourself",
+    "title": "Introductions",
     "color": "#9b59b6"
   },
   {
@@ -108,5 +108,15 @@
     "number": 22,
     "title": "Pregnancy",
     "color": "#8e44ad"
+  },
+  {
+    "number": 23,
+    "title": "To be, Was, and Am",
+    "color": "rgb(0, 0, 0)"
+  },
+  {
+    "number": 24,
+    "title": "School",
+    "color": "rgb(0, 0, 0)"
   }
 ]

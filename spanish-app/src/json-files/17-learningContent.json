@@ -277,6 +277,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Dando Opiniones",
+          "description": "Preguntas y respuestas para expresar gustos, preferencias y creencias en español.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Te gusta la comida china?",
+                "english": "Do you like Chinese food?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta mucho.",
+                "english": "Yes, I like it a lot."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué piensas de este libro?",
+                "english": "What do you think of this book?"
+              },
+              "answer": {
+                "spanish": "Pienso que es muy interesante.",
+                "english": "I think it's very interesting."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué prefieres, café o té?",
+                "english": "What do you prefer, coffee or tea?"
+              },
+              "answer": {
+                "spanish": "Yo prefiero el café, por favor.",
+                "english": "I prefer coffee, please."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué quieres para cenar?",
+                "english": "What do you want for dinner?"
+              },
+              "answer": {
+                "spanish": "Quiero una ensalada y pollo.",
+                "english": "I want a salad and chicken."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gustan los deportes?",
+                "english": "Do you like sports?"
+              },
+              "answer": {
+                "spanish": "Sí, me gustan mucho los deportes.",
+                "english": "Yes, I really like sports."
+              }
+            },
+            {
+              "question": {
+                "spanish": "En tu opinión, ¿cuál es la mejor película?",
+                "english": "In your opinion, what is the best movie?"
+              },
+              "answer": {
+                "spanish": "En mi opinión, la mejor película es 'Star Wars'.",
+                "english": "In my opinion, the best movie is 'Star Wars'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Crees que es fácil aprender español?",
+                "english": "Do you believe it's easy to learn Spanish?"
+              },
+              "answer": {
+                "spanish": "Yo creo que es un poco difícil.",
+                "english": "I believe it's a little difficult."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Prefieres el verano o el invierno?",
+                "english": "Do you prefer summer or winter?"
+              },
+              "answer": {
+                "spanish": "Prefiero el verano, es más divertido.",
+                "english": "I prefer summer, it's more fun."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te gustan de esta ciudad?",
+                "english": "What do you like about this city?"
+              },
+              "answer": {
+                "spanish": "Me gustan los parques y los restaurantes.",
+                "english": "I like the parks and the restaurants."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué piensas de la nueva música?",
+                "english": "What do you think about the new music?"
+              },
+              "answer": {
+                "spanish": "Pienso que es muy moderna y diferente.",
+                "english": "I think it's very modern and different."
+              }
+            },
+            {
+              "question": {
+                "spanish": "En mi opinión, el restaurante es muy caro. ¿Qué piensas tú?",
+                "english": "In my opinion, the restaurant is very expensive. What do you think?"
+              },
+              "answer": {
+                "spanish": "Yo creo que sí. Es un poco caro.",
+                "english": "I believe so. It's a little expensive."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quieres ir al cine o al teatro?",
+                "english": "Do you want to go to the cinema or the theater?"
+              },
+              "answer": {
+                "spanish": "Yo quiero ir al cine.",
+                "english": "I want to go to the cinema."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta la ropa que compré?",
+                "english": "Do you like the clothes I bought?"
+              },
+              "answer": {
+                "spanish": "Claro que sí, me gustan mucho.",
+                "english": "Of course, I like them a lot."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué prefieres, la ciudad o el campo?",
+                "english": "What do you prefer, the city or the countryside?"
+              },
+              "answer": {
+                "spanish": "Prefiero la ciudad, hay más cosas que hacer.",
+                "english": "I prefer the city, there are more things to do."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quieres más agua?",
+                "english": "Do you want more water?"
+              },
+              "answer": {
+                "spanish": "Sí, quiero más, por favor.",
+                "english": "Yes, I want more, please."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te parecen las vacaciones?",
+                "english": "What do you think about the vacation?"
+              },
+              "answer": {
+                "spanish": "Creo que son muy divertidas.",
+                "english": "I believe they are very fun."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta el plan?",
+                "english": "Do you like the plan?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta mucho el plan.",
+                "english": "Yes, I really like the plan."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué quieres de regalo?",
+                "english": "What do you want as a gift?"
+              },
+              "answer": {
+                "spanish": "Quiero un libro y una tarjeta.",
+                "english": "I want a book and a card."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué prefieres para el desayuno?",
+                "english": "What do you prefer for breakfast?"
+              },
+              "answer": {
+                "spanish": "Prefiero comer huevos y pan.",
+                "english": "I prefer to eat eggs and bread."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Crees que la idea es buena?",
+                "english": "Do you believe the idea is good?"
+              },
+              "answer": {
+                "spanish": "Sí, yo creo que la idea es muy buena.",
+                "english": "Yes, I believe the idea is very good."
+              }
+            }
+          ]
+        }
+      
     }
 }

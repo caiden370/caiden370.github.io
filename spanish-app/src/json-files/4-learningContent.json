@@ -308,6 +308,215 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Actividades Diarias",
+          "description": "Preguntas y respuestas sobre las actividades de la rutina diaria, incluyendo la mañana, tarde y noche.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿A qué hora te levantas?",
+                "english": "What time do you get up?"
+              },
+              "answer": {
+                "spanish": "Yo me levanto a las siete de la mañana.",
+                "english": "I get up at seven in the morning."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué comes en el desayuno?",
+                "english": "What do you eat for breakfast?"
+              },
+              "answer": {
+                "spanish": "Yo como pan y café.",
+                "english": "I eat bread and coffee."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te duchas por la mañana o por la noche?",
+                "english": "Do you shower in the morning or at night?"
+              },
+              "answer": {
+                "spanish": "Yo me ducho por la mañana.",
+                "english": "I shower in the morning."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Trabajas o estudias?",
+                "english": "Do you work or study?"
+              },
+              "answer": {
+                "spanish": "Yo trabajo en una oficina.",
+                "english": "I work in an office."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿A qué hora comes el almuerzo?",
+                "english": "What time do you eat lunch?"
+              },
+              "answer": {
+                "spanish": "Yo como el almuerzo a la una de la tarde.",
+                "english": "I eat lunch at one in the afternoon."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Ves la tele por la noche?",
+                "english": "Do you watch TV at night?"
+              },
+              "answer": {
+                "spanish": "Sí, a veces veo la tele por la noche.",
+                "english": "Yes, sometimes I watch TV at night."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hace tu amigo por la tarde?",
+                "english": "What does your friend do in the afternoon?"
+              },
+              "answer": {
+                "spanish": "Él hace ejercicio en el gimnasio.",
+                "english": "He exercises at the gym."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hace ella en su tiempo libre?",
+                "english": "What does she do in her free time?"
+              },
+              "answer": {
+                "spanish": "Ella lee libros.",
+                "english": "She reads books."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cocinas la cena?",
+                "english": "Do you cook dinner?"
+              },
+              "answer": {
+                "spanish": "Sí, yo cocino la cena todos los días.",
+                "english": "Yes, I cook dinner every day."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿A qué hora te acuestas?",
+                "english": "What time do you go to bed?"
+              },
+              "answer": {
+                "spanish": "Yo me acuesto a las diez de la noche.",
+                "english": "I go to bed at ten at night."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hacen ellos los fines de semana?",
+                "english": "What do they do on weekends?"
+              },
+              "answer": {
+                "spanish": "Ellos van al parque.",
+                "english": "They go to the park."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tu hermano se levanta tarde o temprano?",
+                "english": "Does your brother get up late or early?"
+              },
+              "answer": {
+                "spanish": "Él se levanta tarde los fines de semana.",
+                "english": "He gets up late on weekends."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Escuchas música?",
+                "english": "Do you listen to music?"
+              },
+              "answer": {
+                "spanish": "Sí, a veces escucho música por la noche.",
+                "english": "Yes, sometimes I listen to music at night."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hacen ustedes después del trabajo?",
+                "english": "What do you all do after work?"
+              },
+              "answer": {
+                "spanish": "Nosotros vamos a casa.",
+                "english": "We go home."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿A qué hora cenas?",
+                "english": "What time do you have dinner?"
+              },
+              "answer": {
+                "spanish": "Yo ceno a las siete de la noche.",
+                "english": "I have dinner at seven at night."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tu amigo hace ejercicio?",
+                "english": "Does your friend exercise?"
+              },
+              "answer": {
+                "spanish": "Sí, él hace ejercicio por la mañana.",
+                "english": "Yes, he exercises in the morning."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Duermes mucho?",
+                "english": "Do you sleep a lot?"
+              },
+              "answer": {
+                "spanish": "Sí, yo duermo ocho horas al día.",
+                "english": "Yes, I sleep eight hours a day."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hacen tú y tu hermana los sábados?",
+                "english": "What do you and your sister do on Saturdays?"
+              },
+              "answer": {
+                "spanish": "Nosotras desayunamos en un café.",
+                "english": "We have breakfast at a cafe."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Es tu día muy ocupado?",
+                "english": "Is your day very busy?"
+              },
+              "answer": {
+                "spanish": "Sí, mi día es muy ocupado.",
+                "english": "Yes, my day is very busy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué ves en la tele?",
+                "english": "What do you watch on TV?"
+              },
+              "answer": {
+                "spanish": "Yo veo películas por la noche.",
+                "english": "I watch movies at night."
+              }
+            }
+          ]
+        }
+      
+    
     }
   }

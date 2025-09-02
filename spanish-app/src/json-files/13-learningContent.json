@@ -267,6 +267,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "De Compras y Dinero",
+          "description": "Preguntas y respuestas para practicar conversaciones sobre compras, precios y dinero.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Qué necesitas comprar hoy?",
+                "english": "What do you need to buy today?"
+              },
+              "answer": {
+                "spanish": "Necesito comprar comida para la cena.",
+                "english": "I need to buy food for dinner."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde vas de compras?",
+                "english": "Where do you go shopping?"
+              },
+              "answer": {
+                "spanish": "Yo voy al supermercado y al mercado.",
+                "english": "I go to the supermarket and the market."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuánto cuesta esta camisa?",
+                "english": "How much does this shirt cost?"
+              },
+              "answer": {
+                "spanish": "Cuesta veinte dólares.",
+                "english": "It costs twenty dollars."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo vas a pagar?",
+                "english": "How are you going to pay?"
+              },
+              "answer": {
+                "spanish": "Voy a pagar con tarjeta de crédito.",
+                "english": "I am going to pay with a credit card."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué compraste el sábado pasado?",
+                "english": "What did you buy last Saturday?"
+              },
+              "answer": {
+                "spanish": "Compré unos zapatos nuevos.",
+                "english": "I bought some new shoes."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Es caro el precio?",
+                "english": "Is the price expensive?"
+              },
+              "answer": {
+                "spanish": "No, no es caro. Es un buen precio.",
+                "english": "No, it's not expensive. It's a good price."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Prefieres pagar con efectivo o con tarjeta?",
+                "english": "Do you prefer to pay with cash or with a card?"
+              },
+              "answer": {
+                "spanish": "Prefiero pagar con efectivo.",
+                "english": "I prefer to pay with cash."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Necesitas ahorrar dinero?",
+                "english": "Do you need to save money?"
+              },
+              "answer": {
+                "spanish": "Sí, necesito ahorrar para un viaje.",
+                "english": "Yes, I need to save for a trip."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Hay una oferta en la tienda?",
+                "english": "Is there a sale at the store?"
+              },
+              "answer": {
+                "spanish": "Sí, hay una oferta en todos los pantalones.",
+                "english": "Yes, there is a sale on all pants."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué compraste en el mercado?",
+                "english": "What did you buy at the market?"
+              },
+              "answer": {
+                "spanish": "Compré frutas y verduras frescas.",
+                "english": "I bought fresh fruits and vegetables."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿El recibo es importante?",
+                "english": "Is the receipt important?"
+              },
+              "answer": {
+                "spanish": "Sí, el recibo es importante por si acaso.",
+                "english": "Yes, the receipt is important just in case."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quién es el vendedor?",
+                "english": "Who is the seller?"
+              },
+              "answer": {
+                "spanish": "El vendedor es la persona que trabaja en la tienda.",
+                "english": "The seller is the person who works in the store."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta ir de compras?",
+                "english": "Do you like to go shopping?"
+              },
+              "answer": {
+                "spanish": "No, no me gusta ir de compras. Me aburro.",
+                "english": "No, I don't like to go shopping. I get bored."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde está la caja?",
+                "english": "Where is the checkout?"
+              },
+              "answer": {
+                "spanish": "La caja está al final de la tienda.",
+                "english": "The checkout is at the end of the store."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué vas a comprar en la tienda de ropa?",
+                "english": "What are you going to buy at the clothing store?"
+              },
+              "answer": {
+                "spanish": "Voy a comprar un vestido y un abrigo.",
+                "english": "I am going to buy a dress and a coat."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué pagaste el mes pasado?",
+                "english": "What did you pay for last month?"
+              },
+              "answer": {
+                "spanish": "Pagué por la comida y la ropa.",
+                "english": "I paid for food and clothes."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tú tienes una lista de compras?",
+                "english": "Do you have a shopping list?"
+              },
+              "answer": {
+                "spanish": "Sí, siempre hago una lista de compras.",
+                "english": "Yes, I always make a shopping list."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Es esta tienda cara o barata?",
+                "english": "Is this store expensive or cheap?"
+              },
+              "answer": {
+                "spanish": "Esta tienda es un poco cara.",
+                "english": "This store is a little expensive."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué necesita el cliente?",
+                "english": "What does the customer need?"
+              },
+              "answer": {
+                "spanish": "El cliente necesita ayuda para encontrar un producto.",
+                "english": "The customer needs help to find a product."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Vas a ahorrar dinero para algo?",
+                "english": "Are you going to save money for something?"
+              },
+              "answer": {
+                "spanish": "Sí, voy a ahorrar para comprar una computadora nueva.",
+                "english": "Yes, I am going to save to buy a new computer."
+              }
+            }
+          ]
+        }
+      
     }
 }

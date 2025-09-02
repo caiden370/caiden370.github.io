@@ -281,6 +281,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Pasatiempos",
+          "description": "Preguntas y respuestas para practicar conversaciones sobre hobbies y actividades en diferentes tiempos verbales.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Cuál es tu pasatiempo favorito?",
+                "english": "What is your favorite hobby?"
+              },
+              "answer": {
+                "spanish": "Mi pasatiempo favorito es jugar al fútbol.",
+                "english": "My favorite hobby is playing soccer."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te gusta hacer en tu tiempo libre?",
+                "english": "What do you like to do in your free time?"
+              },
+              "answer": {
+                "spanish": "Me gusta leer libros y escuchar música.",
+                "english": "I like to read books and listen to music."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hiciste el fin de semana pasado?",
+                "english": "What did you do last weekend?"
+              },
+              "answer": {
+                "spanish": "El fin de semana pasado jugué al tenis y vi una película.",
+                "english": "Last weekend I played tennis and watched a movie."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué vas a hacer mañana?",
+                "english": "What are you going to do tomorrow?"
+              },
+              "answer": {
+                "spanish": "Mañana voy a pintar un cuadro.",
+                "english": "Tomorrow I am going to paint a painting."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta bailar?",
+                "english": "Do you like to dance?"
+              },
+              "answer": {
+                "spanish": "Sí, me encanta bailar. Ayer bailé mucho.",
+                "english": "Yes, I love to dance. Yesterday I danced a lot."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué cocinas para la cena hoy?",
+                "english": "What are you cooking for dinner today?"
+              },
+              "answer": {
+                "spanish": "Hoy voy a cocinar pasta y ensalada.",
+                "english": "Today I am going to cook pasta and salad."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué leíste el mes pasado?",
+                "english": "What did you read last month?"
+              },
+              "answer": {
+                "spanish": "El mes pasado leí un libro de aventuras.",
+                "english": "Last month I read an adventure book."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gustaría viajar?",
+                "english": "Would you like to travel?"
+              },
+              "answer": {
+                "spanish": "Sí, me gustaría viajar a Europa.",
+                "english": "Yes, I would like to travel to Europe."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué deporte juegas?",
+                "english": "What sport do you play?"
+              },
+              "answer": {
+                "spanish": "Yo juego al baloncesto con mis amigos.",
+                "english": "I play basketball with my friends."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuándo fue la última vez que pintaste?",
+                "english": "When was the last time you painted?"
+              },
+              "answer": {
+                "spanish": "Pinté un cuadro la semana pasada.",
+                "english": "I painted a painting last week."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Vas a leer un libro este verano?",
+                "english": "Are you going to read a book this summer?"
+              },
+              "answer": {
+                "spanish": "Sí, voy a leer muchos libros este verano.",
+                "english": "Yes, I am going to read many books this summer."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Con quién cocinas?",
+                "english": "Who do you cook with?"
+              },
+              "answer": {
+                "spanish": "Yo cocino con mi madre los domingos.",
+                "english": "I cook with my mother on Sundays."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué película viste ayer?",
+                "english": "What movie did you watch yesterday?"
+              },
+              "answer": {
+                "spanish": "Ayer vi una película de comedia.",
+                "english": "Yesterday I watched a comedy movie."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué vas a viajar el próximo año?",
+                "english": "What are you going to travel next year?"
+              },
+              "answer": {
+                "spanish": "Voy a viajar a Perú el próximo año.",
+                "english": "I am going to travel to Peru next year."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Juegas a los videojuegos?",
+                "english": "Do you play video games?"
+              },
+              "answer": {
+                "spanish": "No, no me gusta jugar a los videojuegos.",
+                "english": "No, I don't like to play video games."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuál es tu libro favorito?",
+                "english": "What is your favorite book?"
+              },
+              "answer": {
+                "spanish": "Mi libro favorito es 'Cien Años de Soledad'.",
+                "english": "My favorite book is 'One Hundred Years of Solitude'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué música te gusta?",
+                "english": "What music do you like?"
+              },
+              "answer": {
+                "spanish": "Me gusta la música pop y el rock.",
+                "english": "I like pop music and rock."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hiciste cuando eras niño?",
+                "english": "What did you do when you were a child?"
+              },
+              "answer": {
+                "spanish": "Cuando era niño, jugué mucho en el parque.",
+                "english": "When I was a child, I played a lot in the park."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué pasatiempo te gustaría aprender?",
+                "english": "What hobby would you like to learn?"
+              },
+              "answer": {
+                "spanish": "Me gustaría aprender a pintar con acuarelas.",
+                "english": "I would like to learn to paint with watercolors."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta ir al cine?",
+                "english": "Do you like to go to the cinema?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta mucho ir al cine. Es mi pasatiempo favorito.",
+                "english": "Yes, I really like going to the cinema. It is my favorite hobby."
+              }
+            }
+          ]
+        }
+      
     }
 }

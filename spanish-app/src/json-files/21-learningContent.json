@@ -621,6 +621,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Hablando de Embarazo",
+          "description": "Preguntas y respuestas para conversar sobre el embarazo y los primeros años de un bebé.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Qué significa 'estar embarazada'?",
+                "english": "What does 'estar embarazada' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'to be pregnant'.",
+                "english": "It means 'to be pregnant'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es una ecografía?",
+                "english": "What is an ultrasound?"
+              },
+              "answer": {
+                "spanish": "Es un examen para ver al bebé en el vientre.",
+                "english": "It's an exam to see the baby in the womb."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué son las náuseas matutinas?",
+                "english": "What is morning sickness?"
+              },
+              "answer": {
+                "spanish": "Son los síntomas de malestar que tienen las mujeres embarazadas.",
+                "english": "They are symptoms of discomfort that pregnant women have."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es un antojo?",
+                "english": "What is a craving?"
+              },
+              "answer": {
+                "spanish": "Es cuando una persona quiere comer algo en particular, como chocolate.",
+                "english": "It's when a person wants to eat something in particular, like chocolate."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué se siente al tener contracciones?",
+                "english": "What does it feel like to have contractions?"
+              },
+              "answer": {
+                "spanish": "Las contracciones son dolores fuertes que ocurren antes del parto.",
+                "english": "Contractions are strong pains that happen before childbirth."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quién es un pediatra?",
+                "english": "Who is a pediatrician?"
+              },
+              "answer": {
+                "spanish": "Es un doctor que cuida a los niños.",
+                "english": "It's a doctor who takes care of children."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Para qué se usan los pañales?",
+                "english": "What are diapers used for?"
+              },
+              "answer": {
+                "spanish": "Se usan para los bebés cuando van al baño.",
+                "english": "They are used for babies when they go to the bathroom."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'nacer'?",
+                "english": "What does 'nacer' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'to be born'.",
+                "english": "It means 'to be born'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo se alimenta a un bebé con un biberón?",
+                "english": "How do you feed a baby with a bottle?"
+              },
+              "answer": {
+                "spanish": "Se llena el biberón con leche o fórmula y se le da al bebé.",
+                "english": "You fill the bottle with milk or formula and give it to the baby."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es la cuna?",
+                "english": "What is the crib?"
+              },
+              "answer": {
+                "spanish": "La cuna es la cama del bebé.",
+                "english": "The crib is the baby's bed."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué son las vacunas para bebés?",
+                "english": "What are baby vaccines?"
+              },
+              "answer": {
+                "spanish": "Son inyecciones para proteger a los bebés de enfermedades.",
+                "english": "They are injections to protect babies from illnesses."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo se llama el doctor de mujeres embarazadas?",
+                "english": "What is the name of the doctor for pregnant women?"
+              },
+              "answer": {
+                "spanish": "Se llama ginecólogo o ginecóloga.",
+                "english": "It is called a gynecologist."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Por qué lloran los bebés?",
+                "english": "Why do babies cry?"
+              },
+              "answer": {
+                "spanish": "Lloran para comunicarse o porque tienen hambre.",
+                "english": "They cry to communicate or because they are hungry."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuándo se puede sentir el movimiento del feto?",
+                "english": "When can you feel the fetus's movement?"
+              },
+              "answer": {
+                "spanish": "Generalmente, en el segundo o tercer trimestre.",
+                "english": "Generally, in the second or third trimester."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es la fecha de parto?",
+                "english": "What is the due date?"
+              },
+              "answer": {
+                "spanish": "Es la fecha en que el bebé va a nacer.",
+                "english": "It's the date the baby will be born."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'lactancia'?",
+                "english": "What does 'lactancia' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'breastfeeding'.",
+                "english": "It means 'breastfeeding'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es un recién nacido?",
+                "english": "What is a newborn?"
+              },
+              "answer": {
+                "spanish": "Es un bebé que acaba de nacer.",
+                "english": "It's a baby who has just been born."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hacen los padres con el llanto del bebé?",
+                "english": "What do parents do with the baby's crying?"
+              },
+              "answer": {
+                "spanish": "Lo calman, le dan de comer, o cambian el pañal.",
+                "english": "They calm him, feed him, or change his diaper."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuál es la diferencia entre un bebé y un feto?",
+                "english": "What is the difference between a baby and a fetus?"
+              },
+              "answer": {
+                "spanish": "Un feto está en el vientre y un bebé ya ha nacido.",
+                "english": "A fetus is in the womb and a baby has already been born."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es la papilla?",
+                "english": "What is baby food?"
+              },
+              "answer": {
+                "spanish": "Es comida suave para bebés pequeños.",
+                "english": "It's soft food for small babies."
+              }
+            }
+          ]
+        }
+      
     }
   }

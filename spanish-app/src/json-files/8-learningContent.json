@@ -277,6 +277,213 @@
             }
           ]
         }
-      ]
-    }
+      ],
+        "speaking": {
+          "title": "El Tiempo",
+          "description": "Preguntas y respuestas para conversar sobre el clima, las estaciones y los pronósticos.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Qué tiempo hace hoy?",
+                "english": "What's the weather like today?"
+              },
+              "answer": {
+                "spanish": "Hoy hace sol y hace calor.",
+                "english": "Today it's sunny and hot."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta la lluvia?",
+                "english": "Do you like the rain?"
+              },
+              "answer": {
+                "spanish": "No, no me gusta la lluvia. Prefiero el sol.",
+                "english": "No, I don't like the rain. I prefer the sun."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuál es tu estación favorita?",
+                "english": "What is your favorite season?"
+              },
+              "answer": {
+                "spanish": "Mi estación favorita es el verano.",
+                "english": "My favorite season is summer."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué tiempo hace en el invierno?",
+                "english": "What's the weather like in the winter?"
+              },
+              "answer": {
+                "spanish": "En el invierno hace mucho frío y a veces nieva.",
+                "english": "In the winter it's very cold and sometimes it snows."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Está lloviendo ahora?",
+                "english": "Is it raining now?"
+              },
+              "answer": {
+                "spanish": "No, ahora no está lloviendo, hace sol.",
+                "english": "No, it's not raining now, it's sunny."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué dice el pronóstico para mañana?",
+                "english": "What does the forecast say for tomorrow?"
+              },
+              "answer": {
+                "spanish": "El pronóstico dice que va a hacer mucho viento.",
+                "english": "The forecast says it's going to be very windy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Necesitas un paraguas?",
+                "english": "Do you need an umbrella?"
+              },
+              "answer": {
+                "spanish": "Sí, necesito un paraguas porque va a llover.",
+                "english": "Yes, I need an umbrella because it's going to rain."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta cuando nieva?",
+                "english": "Do you like it when it snows?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta cuando nieva, es muy bonito.",
+                "english": "Yes, I like it when it snows, it's very pretty."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es el clima en tu ciudad?",
+                "english": "What is the climate like in your city?"
+              },
+              "answer": {
+                "spanish": "El clima es caluroso en el verano y frío en el invierno.",
+                "english": "The climate is hot in the summer and cold in the winter."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Hay nubes en el cielo?",
+                "english": "Are there clouds in the sky?"
+              },
+              "answer": {
+                "spanish": "Sí, hay muchas nubes. Está nublado.",
+                "english": "Yes, there are a lot of clouds. It's cloudy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Hace calor en la primavera?",
+                "english": "Is it hot in the spring?"
+              },
+              "answer": {
+                "spanish": "Sí, en la primavera hace calor a veces.",
+                "english": "Yes, in the spring it's hot sometimes."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gustan las tormentas?",
+                "english": "Do you like storms?"
+              },
+              "answer": {
+                "spanish": "No, no me gustan las tormentas con truenos.",
+                "english": "No, I don't like storms with thunder."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué haces cuando hace buen tiempo?",
+                "english": "What do you do when the weather is good?"
+              },
+              "answer": {
+                "spanish": "Voy al parque cuando hace buen tiempo.",
+                "english": "I go to the park when the weather is good."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿El tiempo es húmedo o seco?",
+                "english": "Is the weather humid or dry?"
+              },
+              "answer": {
+                "spanish": "El tiempo es muy seco en esta estación.",
+                "english": "The weather is very dry in this season."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué estación es ahora?",
+                "english": "What season is it now?"
+              },
+              "answer": {
+                "spanish": "Ahora es otoño. Las hojas son muy bonitas.",
+                "english": "It's autumn now. The leaves are very pretty."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿El viento es fuerte?",
+                "english": "Is the wind strong?"
+              },
+              "answer": {
+                "spanish": "Sí, el viento es muy fuerte. Hace mucho viento.",
+                "english": "Yes, the wind is very strong. It's very windy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Va a subir o a bajar la temperatura?",
+                "english": "Is the temperature going to rise or drop?"
+              },
+              "answer": {
+                "spanish": "La temperatura va a subir en la tarde.",
+                "english": "The temperature is going to rise in the afternoon."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Has visto el relámpago?",
+                "english": "Have you seen the lightning?"
+              },
+              "answer": {
+                "spanish": "Sí, vi un relámpago muy grande anoche.",
+                "english": "Yes, I saw a very big lightning flash last night."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Prefieres el frío o el calor?",
+                "english": "Do you prefer the cold or the heat?"
+              },
+              "answer": {
+                "spanish": "Yo prefiero el calor del verano.",
+                "english": "I prefer the heat of the summer."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué haces cuando hace mal tiempo?",
+                "english": "What do you do when the weather is bad?"
+              },
+              "answer": {
+                "spanish": "Me quedo en casa y veo una película.",
+                "english": "I stay at home and watch a movie."
+              }
+            }
+          ]
+        }
+      }
+    
 }

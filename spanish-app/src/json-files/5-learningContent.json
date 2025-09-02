@@ -303,6 +303,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "En la Casa",
+          "description": "Preguntas y respuestas sobre las partes de la casa, los muebles y las tareas del hogar.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Vives en una casa o en un apartamento?",
+                "english": "Do you live in a house or an apartment?"
+              },
+              "answer": {
+                "spanish": "Yo vivo en un apartamento pequeño.",
+                "english": "I live in a small apartment."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hay en tu dormitorio?",
+                "english": "What is in your bedroom?"
+              },
+              "answer": {
+                "spanish": "Hay una cama, un escritorio y una lámpara.",
+                "english": "There is a bed, a desk, and a lamp."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hay en la sala?",
+                "english": "What is in the living room?"
+              },
+              "answer": {
+                "spanish": "Hay un sofá y un cuadro en la pared.",
+                "english": "There is a sofa and a painting on the wall."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quién hace la cama?",
+                "english": "Who makes the bed?"
+              },
+              "answer": {
+                "spanish": "Yo hago la cama todos los días.",
+                "english": "I make the bed every day."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Barres el suelo o pasas la aspiradora?",
+                "english": "Do you sweep the floor or vacuum?"
+              },
+              "answer": {
+                "spanish": "Yo paso la aspiradora en el suelo.",
+                "english": "I vacuum the floor."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tienes un jardín?",
+                "english": "Do you have a garden?"
+              },
+              "answer": {
+                "spanish": "Sí, mi casa tiene un jardín grande.",
+                "english": "Yes, my house has a big garden."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Hay un balcón en tu casa?",
+                "english": "Is there a balcony in your house?"
+              },
+              "answer": {
+                "spanish": "Sí, hay un balcón pequeño en mi apartamento.",
+                "english": "Yes, there is a small balcony in my apartment."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde lavas la ropa?",
+                "english": "Where do you wash the clothes?"
+              },
+              "answer": {
+                "spanish": "Yo lavo la ropa en la lavadora en el baño.",
+                "english": "I wash the clothes in the washing machine in the bathroom."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tu cocina tiene un lavaplatos?",
+                "english": "Does your kitchen have a dishwasher?"
+              },
+              "answer": {
+                "spanish": "Sí, la cocina tiene un lavaplatos.",
+                "english": "Yes, the kitchen has a dishwasher."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué haces en el balcón?",
+                "english": "What do you do on the balcony?"
+              },
+              "answer": {
+                "spanish": "Yo descanso y leo un libro en el balcón.",
+                "english": "I rest and read a book on the balcony."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde estudias en la casa?",
+                "english": "Where do you study in the house?"
+              },
+              "answer": {
+                "spanish": "Yo estudio en el escritorio en mi dormitorio.",
+                "english": "I study at the desk in my bedroom."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hay en tu comedor?",
+                "english": "What is in your dining room?"
+              },
+              "answer": {
+                "spanish": "Hay una mesa y cuatro sillas.",
+                "english": "There is a table and four chairs."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quién barre el suelo?",
+                "english": "Who sweeps the floor?"
+              },
+              "answer": {
+                "spanish": "Mi hermano barre el suelo del pasillo.",
+                "english": "My brother sweeps the hallway floor."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Abres la ventana por la noche?",
+                "english": "Do you open the window at night?"
+              },
+              "answer": {
+                "spanish": "Sí, abro la ventana para que entre aire fresco.",
+                "english": "Yes, I open the window so that fresh air can come in."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué haces en el jardín?",
+                "english": "What do you do in the garden?"
+              },
+              "answer": {
+                "spanish": "Yo riego las plantas en el jardín.",
+                "english": "I water the plants in the garden."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde está el espejo?",
+                "english": "Where is the mirror?"
+              },
+              "answer": {
+                "spanish": "El espejo está en el baño.",
+                "english": "The mirror is in the bathroom."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hace tu padre en la casa?",
+                "english": "What does your father do in the house?"
+              },
+              "answer": {
+                "spanish": "Mi padre descansa en el sofá.",
+                "english": "My father rests on the sofa."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tu casa es grande o pequeña?",
+                "english": "Is your house big or small?"
+              },
+              "answer": {
+                "spanish": "Mi casa es grande, pero el jardín es pequeño.",
+                "english": "My house is big, but the garden is small."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cuántos cuartos tiene tu casa?",
+                "english": "How many rooms does your house have?"
+              },
+              "answer": {
+                "spanish": "Mi casa tiene cinco cuartos.",
+                "english": "My house has five rooms."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hay en el suelo de tu sala?",
+                "english": "What is on the floor of your living room?"
+              },
+              "answer": {
+                "spanish": "Hay una alfombra grande en el suelo.",
+                "english": "There is a big rug on the floor."
+              }
+            }
+          ]
+        }
+      
     }
   }

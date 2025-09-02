@@ -292,6 +292,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "Comida y Bebida",
+          "description": "Preguntas y respuestas para practicar la conversación sobre alimentos, bebidas y restaurantes.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Cuál es tu comida favorita?",
+                "english": "What is your favorite food?"
+              },
+              "answer": {
+                "spanish": "Mi comida favorita es el pollo con arroz.",
+                "english": "My favorite food is chicken with rice."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué bebes por la mañana?",
+                "english": "What do you drink in the morning?"
+              },
+              "answer": {
+                "spanish": "Yo bebo café con leche.",
+                "english": "I drink coffee with milk."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te gustaría pedir?",
+                "english": "What would you like to order?"
+              },
+              "answer": {
+                "spanish": "Me gustaría pedir la ensalada, por favor.",
+                "english": "I would like to order the salad, please."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta el pescado?",
+                "english": "Do you like fish?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta el pescado, pero a veces es salado.",
+                "english": "Yes, I like fish, but sometimes it's salty."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué postre recomiendas?",
+                "english": "What dessert do you recommend?"
+              },
+              "answer": {
+                "spanish": "Recomiendo el helado de chocolate, es delicioso.",
+                "english": "I recommend the chocolate ice cream, it's delicious."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quieres agua o jugo?",
+                "english": "Do you want water or juice?"
+              },
+              "answer": {
+                "spanish": "Quiero agua, gracias.",
+                "english": "I want water, thank you."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde comes la cena?",
+                "english": "Where do you eat dinner?"
+              },
+              "answer": {
+                "spanish": "Yo ceno en casa con mi familia.",
+                "english": "I have dinner at home with my family."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quién es el mesero?",
+                "english": "Who is the waiter?"
+              },
+              "answer": {
+                "spanish": "El mesero es el hombre que está en la mesa grande.",
+                "english": "The waiter is the man at the big table."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué cocinas para la cena?",
+                "english": "What do you cook for dinner?"
+              },
+              "answer": {
+                "spanish": "Yo cocino pollo con verduras.",
+                "english": "I cook chicken with vegetables."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Necesitas el menú?",
+                "english": "Do you need the menu?"
+              },
+              "answer": {
+                "spanish": "No, gracias, ya tengo el menú.",
+                "english": "No, thank you, I already have the menu."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Puedes traerme la cuenta?",
+                "english": "Can you bring me the bill?"
+              },
+              "answer": {
+                "spanish": "Claro, aquí está la cuenta.",
+                "english": "Of course, here is the bill."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué plato te gusta?",
+                "english": "What dish do you like?"
+              },
+              "answer": {
+                "spanish": "Me gusta el plato de carne.",
+                "english": "I like the meat dish."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Comes ensalada con la comida?",
+                "english": "Do you eat salad with your meal?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta la ensalada con las verduras.",
+                "english": "Yes, I like salad with the vegetables."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Reservaste una mesa?",
+                "english": "Did you reserve a table?"
+              },
+              "answer": {
+                "spanish": "No, no reservé una mesa.",
+                "english": "No, I didn't reserve a table."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué bebida prefieres?",
+                "english": "What drink do you prefer?"
+              },
+              "answer": {
+                "spanish": "Yo prefiero el jugo de naranja.",
+                "english": "I prefer orange juice."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿La comida está deliciosa?",
+                "english": "Is the food delicious?"
+              },
+              "answer": {
+                "spanish": "Sí, la comida está muy deliciosa.",
+                "english": "Yes, the food is very delicious."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta el pan con la comida?",
+                "english": "Do you like bread with your meal?"
+              },
+              "answer": {
+                "spanish": "Sí, el pan de este restaurante es muy bueno.",
+                "english": "Yes, the bread from this restaurant is very good."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué vas a comer de postre?",
+                "english": "What are you going to eat for dessert?"
+              },
+              "answer": {
+                "spanish": "Voy a comer el helado de fresa.",
+                "english": "I am going to eat the strawberry ice cream."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Necesitas una mesa para cuántas personas?",
+                "english": "You need a table for how many people?"
+              },
+              "answer": {
+                "spanish": "Una mesa para cuatro personas, por favor.",
+                "english": "A table for four people, please."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quieres ir a un restaurante?",
+                "english": "Do you want to go to a restaurant?"
+              },
+              "answer": {
+                "spanish": "Sí, vamos a un restaurante nuevo.",
+                "english": "Yes, let's go to a new restaurant."
+              }
+            }
+          ]
+        }
+      
     }
 }

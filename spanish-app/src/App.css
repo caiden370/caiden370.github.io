@@ -1542,12 +1542,13 @@ outline: none;
 }
 
 .sg-animation-zone {
-  min-height: 30%;
-  max-height: 30%;
+  min-height: 25%;
+  max-height: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 
 }
 
@@ -1585,7 +1586,7 @@ outline: none;
   border: solid 3px;
   border-radius: 20px;
   padding: 2px 8px;
-  background-color: rgb(255, 174, 0);
+  color: white;
 }
 
 .sg-spell-card-disabled {
@@ -1621,6 +1622,17 @@ outline: none;
   overflow: scroll;
 }
 
+.sg-quiz-background {
+  position: absolute;
+  top: 0;
+  opacity: 0.8;
+  height: 100%;
+  width: 100%;
+  z-index: 98;
+  background-color: rgb(118, 118, 118);
+
+}
+
 .sg-energy {
   display: flex;
   flex-direction: row;
@@ -1628,7 +1640,13 @@ outline: none;
   align-items: center;
   height: 20px;
   width: 20px;
-  padding: 2px;
+  padding: 6px 20px;
+  
+  border: solid #7b1b05 2px;
+  border-bottom-width: 5px;
+  border-radius: 100%;
+  background-color: #ef8a53;
+  color: white;
 
 }
 
@@ -1636,4 +1654,92 @@ outline: none;
   height: 100%;
   width: 100%;
 
+}
+
+@keyframes fade-in-and-out {
+  0% {
+    opacity: 1; /* Starts fully transparent */
+  }
+  50% {
+    opacity: 0.5; /* Fades in to 50% opacity */
+  }
+  100% {
+    opacity: 1; /* Fades back out to fully transparent */
+  }
+}
+
+.sg-ability-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in-and-out 4s ease-in-out infinite alternate both;
+  border-radius: 10px;
+}
+
+.sg-ability {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  
+
+}
+
+
+/* CSS for the GameOverScreen component */
+.sg-game-over-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+      transform: scale(0.7);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+
+.bubble-text-box {
+  border-radius: 15px; /* Rounded corners for the box */
+  display: inline-block; /* Makes the box fit the content */
+}
+
+.bubble-text {
+  /* --- The Bubble Font Style --- */
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+  font-weight: 10000;
+  font-size: 24px; /* Adjust size as needed */
+  
+  /* --- The Color and Outline --- */
+  color: white; /* This is the "inside" color */
+  -webkit-text-stroke-width: 1px; /* Width of the black outline */
+  -webkit-text-stroke-color: black; /* Color of the outline */
 }

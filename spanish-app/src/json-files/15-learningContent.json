@@ -283,6 +283,217 @@
             }
           ]
         }
-      ]
+      ],
+
+        "speaking": {
+          "title": "Presentándome",
+          "description": "Preguntas y respuestas para practicar conversaciones sobre quién eres, tus intereses, y tu vida diaria.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Quién eres tú?",
+                "english": "Who are you?"
+              },
+              "answer": {
+                "spanish": "Yo soy un estudiante.",
+                "english": "I am a student."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo estás hoy?",
+                "english": "How are you today?"
+              },
+              "answer": {
+                "spanish": "Yo estoy bien, gracias. ¿Y tú?",
+                "english": "I am well, thank you. And you?"
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿De dónde eres?",
+                "english": "Where are you from?"
+              },
+              "answer": {
+                "spanish": "Yo soy de la ciudad de Nueva York.",
+                "english": "I am from New York City."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te gusta hacer?",
+                "english": "What do you like to do?"
+              },
+              "answer": {
+                "spanish": "Me gusta mucho leer libros.",
+                "english": "I really like to read books."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué tienes?",
+                "english": "What do you have?"
+              },
+              "answer": {
+                "spanish": "Tengo un perro y un gato.",
+                "english": "I have a dog and a cat."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿A qué te dedicas?",
+                "english": "What do you do for a living?"
+              },
+              "answer": {
+                "spanish": "Yo soy un músico.",
+                "english": "I am a musician."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde vives?",
+                "english": "Where do you live?"
+              },
+              "answer": {
+                "spanish": "Yo vivo en una casa cerca de la playa.",
+                "english": "I live in a house near the beach."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué estudias?",
+                "english": "What do you study?"
+              },
+              "answer": {
+                "spanish": "Estudio español en la universidad.",
+                "english": "I study Spanish at the university."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te encanta?",
+                "english": "What do you love?"
+              },
+              "answer": {
+                "spanish": "Me encanta el chocolate.",
+                "english": "I love chocolate."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Quién es tu mejor amigo?",
+                "english": "Who is your best friend?"
+              },
+              "answer": {
+                "spanish": "Mi mejor amigo es un chico que se llama Juan.",
+                "english": "My best friend is a boy named Juan."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde está tu trabajo?",
+                "english": "Where is your job?"
+              },
+              "answer": {
+                "spanish": "Mi trabajo está en el centro de la ciudad.",
+                "english": "My job is in the city center."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo eres tú?",
+                "english": "What are you like? (personality)"
+              },
+              "answer": {
+                "spanish": "Yo soy una persona creativa y responsable.",
+                "english": "I am a creative and responsible person."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te gusta la música?",
+                "english": "Do you like music?"
+              },
+              "answer": {
+                "spanish": "Sí, me gusta mucho la música. Yo canto.",
+                "english": "Yes, I really like music. I sing."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué deporte te gusta jugar?",
+                "english": "What sport do you like to play?"
+              },
+              "answer": {
+                "spanish": "Me gusta jugar al tenis.",
+                "english": "I like to play tennis."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo es tu familia?",
+                "english": "What is your family like?"
+              },
+              "answer": {
+                "spanish": "Mi familia es muy grande y unida.",
+                "english": "My family is very big and close-knit."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué cocinas?",
+                "english": "What do you cook?"
+              },
+              "answer": {
+                "spanish": "Yo cocino comida italiana. Me encanta.",
+                "english": "I cook Italian food. I love it."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tú viajas mucho?",
+                "english": "Do you travel a lot?"
+              },
+              "answer": {
+                "spanish": "Sí, viajo mucho por mi trabajo.",
+                "english": "Yes, I travel a lot for my job."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Eres organizado?",
+                "english": "Are you organized?"
+              },
+              "answer": {
+                "spanish": "Sí, soy muy organizado.",
+                "english": "Yes, I am very organized."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué pasatiempo tienes?",
+                "english": "What hobby do you have?"
+              },
+              "answer": {
+                "spanish": "Mi pasatiempo es pintar.",
+                "english": "My hobby is painting."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te gusta dibujar?",
+                "english": "What do you like to draw?"
+              },
+              "answer": {
+                "spanish": "Me gusta dibujar la naturaleza.",
+                "english": "I like to draw nature."
+              }
+            }
+          ]
+        }
+      
+      
+ 
+      
     }
 }

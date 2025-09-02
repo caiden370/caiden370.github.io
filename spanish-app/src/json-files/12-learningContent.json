@@ -299,6 +299,214 @@
             }
           ]
         }
-      ]
+      ],
+      
+        "speaking": {
+          "title": "La Salud y el Cuerpo",
+          "description": "Preguntas y respuestas para hablar sobre la salud, síntomas y el cuerpo humano.",
+          "questions_and_answers": [
+            {
+              "question": {
+                "spanish": "¿Cómo te sientes hoy?",
+                "english": "How do you feel today?"
+              },
+              "answer": {
+                "spanish": "Me siento un poco cansado.",
+                "english": "I feel a little tired."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te duele?",
+                "english": "What hurts?"
+              },
+              "answer": {
+                "spanish": "Me duele la cabeza y el pie.",
+                "english": "My head and my foot hurt."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Por qué estás en la farmacia?",
+                "english": "Why are you at the pharmacy?"
+              },
+              "answer": {
+                "spanish": "Necesito comprar medicina para mi dolor de garganta.",
+                "english": "I need to buy medicine for my sore throat."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué síntomas tienes?",
+                "english": "What symptoms do you have?"
+              },
+              "answer": {
+                "spanish": "Tengo tos y un poco de fiebre.",
+                "english": "I have a cough and a little fever."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Fuiste al médico?",
+                "english": "Did you go to the doctor?"
+              },
+              "answer": {
+                "spanish": "Sí, fui al médico ayer. Me dio una receta.",
+                "english": "Yes, I went to the doctor yesterday. He gave me a prescription."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Cómo cuidas tu salud?",
+                "english": "How do you take care of your health?"
+              },
+              "answer": {
+                "spanish": "Yo como sano y hago ejercicio.",
+                "english": "I eat healthy and I exercise."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué parte del cuerpo te duele?",
+                "english": "What part of the body hurts?"
+              },
+              "answer": {
+                "spanish": "Me duele la espalda después de trabajar.",
+                "english": "My back hurts after working."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué significa 'estoy enfermo'?",
+                "english": "What does 'estoy enfermo' mean?"
+              },
+              "answer": {
+                "spanish": "Significa 'I am sick'.",
+                "english": "It means 'I am sick'."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te sientes débil?",
+                "english": "Do you feel weak?"
+              },
+              "answer": {
+                "spanish": "Sí, me siento muy débil. No tengo energía.",
+                "english": "Yes, I feel very weak. I don't have energy."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Tienes dolor de cabeza a menudo?",
+                "english": "Do you have headaches often?"
+              },
+              "answer": {
+                "spanish": "No, no tengo dolor de cabeza a menudo.",
+                "english": "No, I don't have headaches often."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Dónde trabaja un médico?",
+                "english": "Where does a doctor work?"
+              },
+              "answer": {
+                "spanish": "Un médico trabaja en el hospital o en un consultorio.",
+                "english": "A doctor works in the hospital or in an office."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Necesitas una cita con el médico?",
+                "english": "Do you need a doctor's appointment?"
+              },
+              "answer": {
+                "spanish": "Sí, necesito una cita para la próxima semana.",
+                "english": "Yes, I need an appointment for next week."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te duele más, el brazo o la pierna?",
+                "english": "What hurts more, your arm or your leg?"
+              },
+              "answer": {
+                "spanish": "La pierna me duele más que el brazo.",
+                "english": "My leg hurts more than my arm."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es la gripe?",
+                "english": "What is the flu?"
+              },
+              "answer": {
+                "spanish": "La gripe es una enfermedad con fiebre y dolor de cuerpo.",
+                "english": "The flu is an illness with a fever and body aches."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Te sientes mejor hoy?",
+                "english": "Do you feel better today?"
+              },
+              "answer": {
+                "spanish": "Sí, me siento mucho mejor que ayer.",
+                "english": "Yes, I feel much better than yesterday."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué hiciste para sentirte mejor?",
+                "english": "What did you do to feel better?"
+              },
+              "answer": {
+                "spanish": "Descansé mucho y tomé medicina.",
+                "english": "I rested a lot and took medicine."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué pasa si tienes una alergia?",
+                "english": "What happens if you have an allergy?"
+              },
+              "answer": {
+                "spanish": "Si tengo una alergia, estornudo y me duelen los ojos.",
+                "english": "If I have an allergy, I sneeze and my eyes hurt."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es una receta?",
+                "english": "What is a prescription?"
+              },
+              "answer": {
+                "spanish": "Una receta es un papel del médico para la medicina.",
+                "english": "A prescription is a paper from the doctor for medicine."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué es un resfriado?",
+                "english": "What is a cold?"
+              },
+              "answer": {
+                "spanish": "Un resfriado es una enfermedad común con tos y estornudos.",
+                "english": "A cold is a common illness with a cough and sneezing."
+              }
+            },
+            {
+              "question": {
+                "spanish": "¿Qué te dolió la semana pasada?",
+                "english": "What hurt last week?"
+              },
+              "answer": {
+                "spanish": "La semana pasada me dolieron los oídos y el cuello.",
+                "english": "Last week my ears and neck hurt."
+              }
+            }
+          ]
+        }
+      
     }
 }

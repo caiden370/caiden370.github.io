@@ -82,7 +82,7 @@ export default function SpeakingPractice ({chapterIndex, setSection, updatePoint
     }
 
     function buildNextQuestionComponent(content) {
-        if (content.type == 'speak-about') {
+        if (content.type == 'speak-answer') {
             return buildSpeakingComponent(content);
         } else if (content.type == 'speak-translate') {
             return buildSpeakingTranslateComponent(content);
@@ -90,15 +90,15 @@ export default function SpeakingPractice ({chapterIndex, setSection, updatePoint
     }
 
     function generateSpeakingContent(data) {
-        const questions = data['speaking'].questions;
+        const questions = data['speaking'].questions_and_answers;
         const randIndex = Math.floor(Math.random() * questions.length);
-        const randKeywords = getRandSubset(questions[randIndex].keywords, numKeywords);
         
         return {
-            'type':'speak-about',
-            'question':questions[randIndex].q,
-            'translation':questions[randIndex].translation,
-            'keywords': randKeywords,
+            'type':'speak-answer',
+            'question':questions[randIndex].question.spanish,
+            'answer':questions[randIndex].answer.spanish,
+            'question_translation':questions[randIndex].question.english,
+            'answer_translation':questions[randIndex].answer.english,
         }
     }
 
@@ -131,14 +131,15 @@ export default function SpeakingPractice ({chapterIndex, setSection, updatePoint
 
     function buildSpeakingComponent(content) {
         return (
-            <SpeakAbout 
+            <SpeakAnswer
             key={Date.now()}
             question={content.question} 
+            answer={content.answer}
+            qtranslation={content.question_translation}
+            atranslation={content.answer_translation}
             setResult={setCurResult}
-            translation={content.translation}
-            keywords={content.keywords} 
             onAnswered={() => {setAnswered(true)}}>
-            </SpeakAbout>
+            </SpeakAnswer>
         )
 
     }
@@ -391,6 +392,150 @@ export function SpeakAbout({setResult, onAnswered, question, translation, keywor
 }
 
 
+// ****************************** SpeakAnswer ******************************
+export function SpeakAnswer({setResult, onAnswered, question, answer, qtranslation, atranslation}) {
+    const [userText, setUserText] = useState('');
+    const [answered, setAnswered] = useState(false);
+    const [showSubmit, setShowSubmit] = useState(false);
+    const [isCorrect, setIsCorrect] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [showHint, setShowHint] = useState(false);
+
+    useEffect(() => {
+        setAnswered(false);
+        setUserText('');
+        setIsCorrect(false);
+        setShowModal(false);
+        setShowSubmit(false);
+        setShowHint(false);
+    }, [question])
+
+
+
+    function checkResponse(response, correctAnswer) {
+        const allowedMistakes = Math.floor(correctAnswer.length / 10) + 2;
+        const processedResp = processText(response);
+        const processedAnswer = processText(correctAnswer);
+
+        if (processedAnswer.length != processedAnswer.length) {
+            setIsCorrect(false);
+            return false;
+        }
+
+        let mistakes = 0;
+        for (let i = 0; i < processedResp.length; i++) {
+            if (processedResp[i] != processedAnswer[i] && mistakes < allowedMistakes) {
+                mistakes += 1;
+                setIsCorrect(false);
+                return false;
+            }
+        }
+        setIsCorrect(true);        
+        return true;
+    }
+
+
+
+
+    function handleMicCallback({
+        transcript,
+        confidence,
+        success,
+        error,
+      }) {
+        setUserText(transcript);
+        setShowSubmit(true);
+    }
+
+
+    function handleSubmit() {
+        onAnswered();
+        setAnswered(true);
+        const result = checkResponse(userText, answer);
+        setResult(isCorrect);
+        setShowModal(true);
+        if (result) {
+            setResult(true);
+            playCorrectSound();
+        } else {
+            setResult(false);
+            playIncorrectSound();
+        }
+        setShowSubmit(false);
+    }
+
+
+    function submitButton() {
+        return (
+            <div className="sentence-continue-button-container">
+            <Button className='app-button success' variant='contained' sx={{width:'auto'}} onClick={handleSubmit}>
+                <Typography>Check</Typography>
+            </Button>
+            </div>
+        )
+
+    }
+    
+    function validationModal() {
+        const statusClass = isCorrect ? "correct" : "incorrect";
+        return (
+        <div className="mr-text-response-modal-container">
+          <div
+            key="mr-text-response-modal"
+            className={`mr-text-response-modal ${statusClass}`}
+          >
+            <div className='sentence-validation-top-row'>
+            <Typography sx={{fontWeight:'bold'}}>{isCorrect ? "Correct!" : "Incorrect"} </Typography>
+            <SpeechButton sx={{}} text={answer} inSpanish={true} ></SpeechButton>
+            </div>
+            <Typography>{answer}</Typography>
+          </div>
+          </div>
+        );
+      }
+
+    function hintButton() {
+
+
+        function handleHint() {
+            setShowHint(true);
+        }
+        
+        return (
+            <div className='speak-hint-button'>
+            <Button className='app-button primary' variant='contained' onClick={handleHint}>
+                <Typography>Hint</Typography>
+            </Button>
+            </div>
+        )
+    }
+    
+    
+    
+    
+    return (
+        <div className='speak-container'>
+            <Mascot clickable></Mascot>
+            <div className='speak-question'>
+            <SpeechButton text={question} inSpanish={false}></SpeechButton>
+            {<Typography align='left' sx={{fontWeight: 'bold'}}>{question}</Typography>}
+            </div>
+            <div className='speak-message'>Answer the question in Spanish</div>
+            <div className='speak-hint'>{showHint? (<Typography>{atranslation}</Typography>) : hintButton()}</div>
+            <div className='speak-response'>
+               <Typography>{userText}</Typography> 
+            </div>
+            <div className='speak-mic-row'>
+            <SpanishMicButton callback={handleMicCallback}/>
+            </div>
+            {showSubmit && submitButton()}
+            {showModal && validationModal()}
+        </div>
+    )
+
+}
+
+
 // ****************************** SpeakTranslate ******************************
 export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
     const [userText, setUserText] = useState('');
@@ -410,6 +555,8 @@ export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
 
 
     function checkResponse(text) {
+        const allowedMistakes = Math.floor(sentence.length / 10) + 2;
+
         const processedResp = processText(text);
         const processedAnswer = processText(sentence);
 
@@ -418,8 +565,10 @@ export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
             return false;
         }
 
+        let mistakes = 0;
         for (let i = 0; i < processedResp.length; i++) {
-            if (processedResp[i] != processedAnswer[i]) {
+            if (processedResp[i] != processedAnswer[i] && mistakes < allowedMistakes) {
+                mistakes += 1;
                 setIsCorrect(false);
                 return false;
             }
@@ -511,7 +660,3 @@ export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
     )
 
 }
-
-
-
-// ****************************** SpeakRepeat ******************************
