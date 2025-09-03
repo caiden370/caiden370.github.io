@@ -395,7 +395,7 @@ export default function CustomizableMascot({
         height={viewSize}
         viewBox={`0 0 ${viewSize} ${viewSize}`}
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="https://www.w3.org/2000/svg"
         onClick={handleClickMascot}
         style={svgStyle}
       >
