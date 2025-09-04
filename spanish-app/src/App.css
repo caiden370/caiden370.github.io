@@ -80,10 +80,12 @@ body {
   min-width: 250px;
   overflow: hidden;
   border-radius: 12px;
+  box-shadow: 
+  0 1px 3px rgba(0, 0, 0, 0.12),
+  0 5px 15px rgba(0, 0, 0, 0.08);
   /* background: linear-gradient(to right, #8e7ee7, rgb(168, 192, 229), #8e7ee7); */
-  box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -4px -4px 12px rgba(255,255,255,0.4);
-  background-color: white;
-  border-bottom: solid 8px rgb(186, 186, 186);
+  /* box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -4px -4px 12px rgba(255,255,255,0.4); */
+  /* border-bottom: solid 8px rgb(186, 186, 186); */
 }
 
 .favorite-button-container {
@@ -101,8 +103,7 @@ body {
   /* transition: background-color 0.2s ease; */
   border: 0px;
   overflow: hidden;
-  background-color: white;
-
+  background-color: inherit;
 }
 
 .simple-card-number {
@@ -127,7 +128,7 @@ body {
   margin-left: 5px;
   padding-right: 60px;
   height: 100%;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .simple-card-stars-container {
@@ -145,7 +146,8 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 30px;
-  background-color: var(--theme-light-blue);
+  /* background-color: var(--theme-light-blue); */
+  background-color: white;
   justify-content: center;
   align-items: center;
 

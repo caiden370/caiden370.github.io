@@ -2,121 +2,145 @@
   {
     "number": 1,
     "title": "Greetings",
-    "color": "#c0392b"
+    "color": "#c0392b",
+    "icon": "GreetingsIcon"
   },
   {
     "number": 2,
     "title": "Everyday Essentials",
-    "color": "#d35400"
+    "color": "#d35400",
+    "icon": "EverydayEssentialsIcon"
   },
   {
     "number": 3,
     "title": "Conjugating Verbs",
-    "color": "#e67e22"
+    "color": "#e67e22",
+    "icon": "ConjugatingVerbsIcon"
   },
   {
     "number": 4,
     "title": "People & Family",
-    "color": "#f39c12"
+    "color": "#f39c12",
+    "icon": "PeopleFamilyIcon"
   },
   {
     "number": 5,
     "title": "Activities",
-    "color": "#f1c40f"
+    "color": "#f1c40f",
+    "icon": "ActivitiesIcon"
   },
   {
     "number": 6,
     "title": "Around the House",
-    "color": "#27ae60"
+    "color": "#27ae60",
+    "icon": "AroundTheHouseIcon"
   },
   {
     "number": 7,
     "title": "Describing Things",
-    "color": "#16a085"
+    "color": "#16a085",
+    "icon": "DescribingThingsIcon"
   },
   {
     "number": 8,
     "title": "Food & Drink",
-    "color": "#1abc9c"
+    "color": "#1abc9c",
+    "icon": "FoodDrinkIcon"
   },
   {
     "number": 9,
     "title": "The Weather",
-    "color": "#3498db"
+    "color": "#3498db",
+    "icon": "WeatherIcon"
   },
   {
     "number": 10,
     "title": "Verb Tenses",
-    "color": "#2980b9"
+    "color": "#2980b9",
+    "icon": "VerbTensesIcon"
   },
   {
     "number": 11,
     "title": "Hobbies",
-    "color": "#34495e"
+    "color": "#34495e",
+    "icon": "HobbiesIcon"
   },
   {
     "number": 12,
     "title": "Travel",
-    "color": "#2c3e50"
+    "color": "#2c3e50",
+    "icon": "TravelIcon"
   },
   {
     "number": 13,
     "title": "Health & The Body",
-    "color": "#8e44ad"
+    "color": "#8e44ad",
+    "icon": "HealthBodyIcon"
   },
   {
     "number": 14,
     "title": "Shopping & Money",
-    "color": "#9b59b6"
+    "color": "#9b59b6",
+    "icon": "ShoppingMoneyIcon"
   },
   {
     "number": 15,
     "title": "We & They",
-    "color": "#9b59b6"
+    "color": "#9b59b6",
+    "icon": "WeTheyIcon"
   },
   {
     "number": 16,
     "title": "Introductions",
-    "color": "#9b59b6"
+    "color": "#9b59b6",
+    "icon": "IntroductionsIcon"
   },
   {
     "number": 17,
     "title": "Feelings and Emotions",
-    "color": "#8e44ad"
+    "color": "#8e44ad",
+    "icon": "FeelingsEmotionsIcon"
   },
   {
     "number": 18,
     "title": "Giving Opinions",
-    "color": "#8e44ad"
+    "color": "#8e44ad",
+    "icon": "GivingOpinionsIcon"
   },
   {
     "number": 19,
     "title": "Compliments",
-    "color": "#8e44ad"
+    "color": "#8e44ad",
+    "icon": "ComplimentsIcon"
   },
   {
     "number": 20,
     "title": "Conversations",
-    "color": "#8e44ad"
+    "color": "#8e44ad",
+    "icon": "ConversationsIcon"
   },
   {
     "number": 21,
     "title": "Medicine",
-    "color": "#8e44ad"
+    "color": "#8e44ad",
+    "icon": "MedicineIcon"
   },
   {
     "number": 22,
     "title": "Pregnancy",
-    "color": "#8e44ad"
+    "color": "#8e44ad",
+    "icon": "PregnancyIcon"
   },
   {
     "number": 23,
     "title": "To be, Was, and Am",
-    "color": "rgb(0, 0, 0)"
+    "color": "rgb(0, 0, 0)",
+    "icon": "TenseIcon"
   },
   {
     "number": 24,
     "title": "School",
-    "color": "rgb(0, 0, 0)"
+    "color": "rgb(0, 0, 0)",
+    "icon": "SchoolIcon"
   }
 ]

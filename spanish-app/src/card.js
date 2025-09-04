@@ -12,11 +12,13 @@ import { Icon } from '@mui/material';
 import {IconButton} from '@mui/material';
 import StarsIcon from '@mui/icons-material/Stars';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { Opacity, Padding } from '@mui/icons-material';
+import { topicIcons } from './chapters-page';
 
 
 
 
-export default function ChapterCard({number, onFavorite, favorite, content, title, color, setSection, setIndex, i, fill}) {
+export default function ChapterCard({number, onFavorite, favorite, iconName, content, title, color, setSection, setIndex, i, fill}) {
     const GameMenu = 'MenuGame'
     const numGames = 8;
     const numStars = fill === null? 0 : fill;
@@ -36,26 +38,36 @@ export default function ChapterCard({number, onFavorite, favorite, content, titl
     const handleClick = (e) => {
         setSection(GameMenu);
         setIndex(i);
-    }
 
+    }
+    const gradientStyle = (color) => {
+        return {
+            backgroundImage: `linear-gradient(to right, ${color}, white)`,
+            color: 'white',
+        };
+      };
+
+
+    const IconComponent = topicIcons[iconName];
 
 
     return (
-        <div className='simple-card-container'>
+        <div className='simple-card-container' style={gradientStyle(color)}>
             <button className='simple-card-button' onClick={handleClick}>
-                <div className='simple-card-number' style={{backgroundColor: color}}>
-                <Typography level='h1' color='white'>{number}</Typography>
+                <div className='simple-card-number' style={{background: color}}>
+                {/* <Typography level='h1' color='white'>{number}</Typography> */}
+                {IconComponent && <IconComponent sx={{ fontSize: 40, color: 'white' }} />}
                 </div>
 
                 <div className='simple-card-content'>
-                    <Typography level="title" sx={{textAlign: 'left', overflow: 'hidden', fontWeight: 550, color:'black'}}>{title}</Typography>
+                    <Typography level="title" sx={{textAlign: 'left', overflow: 'hidden', fontWeight: 550, color: 'white'}}>{title}</Typography>
                     <div className='simple-card-stars-container'>
                     {
 
                         stars.map((val) => {
                             return (
                                 <Icon>
-                                    {val? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : (<StarBorderIcon sx={{color: 'grey'}}/>)}
+                                    {val? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : null}
                                 </Icon>
                             )
                         })
