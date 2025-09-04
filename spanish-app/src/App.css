@@ -32,7 +32,7 @@ body {
   }
 
 .page-container {
-  padding-top: 32px;
+  /* padding-top: 32px; */
   height: 100%;
 }
 /* BOTTOM NAVBAR */
@@ -79,13 +79,13 @@ body {
   max-width: 500px;
   min-width: 250px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 
   0 1px 3px rgba(0, 0, 0, 0.12),
   0 5px 15px rgba(0, 0, 0, 0.08);
   /* background: linear-gradient(to right, #8e7ee7, rgb(168, 192, 229), #8e7ee7); */
   /* box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -4px -4px 12px rgba(255,255,255,0.4); */
-  /* border-bottom: solid 8px rgb(186, 186, 186); */
+  
 }
 
 .favorite-button-container {
@@ -145,12 +145,32 @@ body {
   overflow-y: auto;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 30px;
-  /* background-color: var(--theme-light-blue); */
-  background-color: white;
+  padding-top: 64px;
+  background-color: var(--theme-light-blue);
   justify-content: center;
   align-items: center;
 
+}
+
+.chapters-grid {
+  /* Swapped flex for grid */
+  display: grid; 
+  /* Defines two columns of equal width */
+  grid-template-columns: 1fr 1fr; 
+  /* Maintains the gap between cards */
+  gap: 20px; 
+  width: 100%;
+  /* The rest of your styles are still valid */
+  overflow-y: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 64px;
+  padding-bottom: 80px;
+  background-color: var(--theme-light-blue);
+  
+  /* Center the grid items within the container */
+  justify-content: center;
+  align-items: center;
 }
 
 .chapters-container-top-header {
@@ -250,7 +270,7 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+  padding-top: 44px;
   padding-bottom: 20px;
   box-sizing: border-box;
   justify-content: center;
@@ -341,7 +361,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--theme-light-blue);
-  padding-top: 30px;
+  padding-top: 64px;
 }
 
 .game-menu-item-container {
@@ -457,7 +477,7 @@ body {
   background-color: white;
   box-shadow: #2f3542;
   margin-bottom: 40px;
-  margin-top: 45px;
+  margin-top: 80px;
   margin-left: 12px;
   margin-right:12px;
   border-radius: 10px;
@@ -590,7 +610,7 @@ body {
   background-color: white;
   box-shadow: #2f3542;
   margin-bottom: 40px;
-  margin-top: 45px;
+  margin-top: 80px;
   margin-left: 12px;
   margin-right:12px;
   border-radius: 10px;
@@ -1206,6 +1226,7 @@ body {
   height: 100%;
   width: 100%;
   padding: 20px;
+  padding-top: 54px;
   gap: 4px;
 }
 
@@ -1327,7 +1348,7 @@ outline: none;
   height: 90vh;
   width: 100%;
   box-sizing: border-box;
-  padding-top: 20px;
+  padding-top: 54px;
   padding-bottom: 60px;
   padding-left: 10px;
   padding-right: 10px;
@@ -1504,6 +1525,7 @@ outline: none;
   width: 100%;
   margin-top: 5vh;
   padding: 10px;
+  padding-top: 44px;
 }
 
 .sg-enemy-side {

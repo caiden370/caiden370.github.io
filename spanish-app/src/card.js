@@ -42,8 +42,9 @@ export default function ChapterCard({number, onFavorite, favorite, iconName, con
     }
     const gradientStyle = (color) => {
         return {
-            backgroundImage: `linear-gradient(to right, ${color}, white)`,
+            backgroundColor: color,
             color: 'white',
+            borderBottom: '8px solid rgba(0, 0, 0, 0.2)',
         };
       };
 
@@ -78,7 +79,7 @@ export default function ChapterCard({number, onFavorite, favorite, iconName, con
                 </div>
             </button>
             <div className='favorite-button-container'>
-                    <IconButton sx={{zIndex:100}} onClick={() => onFavorite(i)} disabled={favorite}><StarsIcon sx={{color: favorite? 'rgb(255, 183, 0)':'rgb(172, 172, 172)'}}/></IconButton>
+                    <IconButton sx={{zIndex:100}} onClick={() => onFavorite(i)} disabled={favorite}><StarsIcon sx={{color: favorite? 'rgb(255, 183, 0)':'rgb(255, 255, 255)'}}/></IconButton>
                 </div>
 
         </div>

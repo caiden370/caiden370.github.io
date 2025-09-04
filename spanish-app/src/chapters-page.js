@@ -61,26 +61,26 @@ export const topicIcons = {
 export default function ChaptersPage({setSection, setChapterIndex}) {
 
     const gradientColors = [
-        "rgb(255, 67, 67)", // Bright Red
-        "rgb(255, 69, 23)", // Slightly Darker Red-Orange
-        "rgb(249, 117, 56)", // Orange-Red
-        "rgb(246, 155, 77)", // Vibrant Orange
-        "rgb(230, 161, 76)", // Dark Orange-Yellow
-        "rgb(255, 165, 0)", // Bright Orange
-        "rgb(255, 195, 0)", // Golden Yellow
-        "rgb(186, 212, 35)", // Bright Lime Green
-        "rgb(154, 205, 50)", // Yellow-Green
-        "rgb(107, 142, 35)", // Olive Green
-        "rgb(34, 139, 34)", // Forest Green
-        "rgb(0, 191, 255)", // Deep Sky Blue (Brighter)
-        "rgb(30, 144, 255)", // Dodger Blue
-        "rgb(0, 0, 205)", // Medium Blue
-        "rgb(65, 105, 225)", // Royal Blue
-        "rgb(106, 90, 205)", // Slate Blue
-        "rgb(138, 43, 226)", // Blue Violet
-        "rgb(148, 0, 211)", // Dark Violet
-        "rgb(153, 50, 204)", // Dark Orchid
-        "rgb(186, 85, 211)", // Medium Orchid (Slightly Brighter Purple)
+        "rgb(247, 112, 112)", // Sample Darker Pastel Red
+        "rgb(247, 120, 112)", // Darker Pastel Red-Orange
+        "rgb(247, 137, 112)", // Darker Pastel Orange-Red
+        "rgb(247, 153, 112)", // Darker Pastel Orange
+        "rgb(247, 163, 112)", // Darker Pastel Dark Orange-Yellow
+        "rgb(247, 172, 112)", // Darker Pastel Bright Orange
+        "rgb(247, 184, 112)", // Darker Pastel Golden Yellow
+        "rgb(212, 247, 112)", // Darker Pastel Lime Green
+        "rgb(187, 247, 112)", // Darker Pastel Yellow-Green
+        "rgb(139, 212, 112)", // Darker Pastel Olive Green
+        "rgb(112, 212, 112)", // Darker Pastel Forest Green
+        "rgb(112, 212, 247)", // Darker Pastel Deep Sky Blue
+        "rgb(112, 169, 247)", // Darker Pastel Dodger Blue
+        "rgb(112, 112, 247)", // Darker Pastel Medium Blue
+        "rgb(112, 112, 247)", // Darker Pastel Royal Blue
+        "rgb(120, 112, 247)", // Darker Pastel Slate Blue
+        "rgb(137, 112, 247)", // Darker Pastel Blue Violet
+        "rgb(153, 112, 247)", // Darker Pastel Dark Violet
+        "rgb(163, 112, 247)", // Darker Pastel Dark Orchid
+        "rgb(172, 112, 247)", // Darker Pastel Medium Orchid
     ];
 
     const [favChapter, setFavChaptor] = useState(chapterCovers[getFavoriteChapter()]);
@@ -119,10 +119,11 @@ export default function ChaptersPage({setSection, setChapterIndex}) {
             <Typography align="left" sx={{fontSize: 22, width:"100%"}}>Favorite</Typography>
             <ChapterCard key={'favorite-chapter'} favorite={true} iconName={favChapter.icon} onFavorite={handleFavoriteUpdate} number={favChapter.number} content={favChapter.description} title={favChapter.title} color={getColor(favIndex)} setSection={setSection} setIndex={setChapterIndex} i={favIndex} fill={fills[favIndex]}/>
             <Typography align="left" sx={{fontSize: 22, width:"100%"}}>Chapters</Typography>
+            
             {chapterCovers.map((chapter, i) => (
                 <ChapterCard key={i*100} favorite={i === favIndex } iconName={chapter.icon} onFavorite={handleFavoriteUpdate} number={chapter.number} content={chapter.description} title={chapter.title} color={getColor(i)} setSection={setSection} setIndex={setChapterIndex} i={i} fill={fills[i]}/>
             ))}
-            <div className='chapters-padding'/>
+            
         </div>
         
     );
