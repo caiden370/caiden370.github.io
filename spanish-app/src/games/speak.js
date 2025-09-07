@@ -517,7 +517,7 @@ export function SpeakAnswer({setResult, onAnswered, question, answer, qtranslati
         <div className='speak-container'>
             <Mascot clickable></Mascot>
             <div className='speak-question'>
-            <SpeechButton text={question} inSpanish={false}></SpeechButton>
+            <SpeechButton text={question} inSpanish={true}></SpeechButton>
             {<Typography align='left' sx={{fontWeight: 'bold'}}>{question}</Typography>}
             </div>
             <div className='speak-message'>Answer the question in Spanish</div>
