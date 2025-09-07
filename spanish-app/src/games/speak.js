@@ -413,7 +413,7 @@ export function SpeakAnswer({setResult, onAnswered, question, answer, qtranslati
 
 
     function checkResponse(response, correctAnswer) {
-        const allowedMistakes = Math.floor(correctAnswer.length / 10) + 2;
+        const allowedMistakes = Math.floor(correctAnswer.length / 6) + 2;
         const processedResp = processText(response);
         const processedAnswer = processText(correctAnswer);
 
