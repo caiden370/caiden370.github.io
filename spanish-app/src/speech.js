@@ -315,3 +315,132 @@ export default function SpeechButton({ text, inSpanish, big, small}) {
     </div>
   );
 }
+
+
+
+// utils/speech.js
+
+// Helper: safe localStorage getter
+const loadFromStorage = (key, defaultValue = '') => {
+  try {
+    return localStorage.getItem(key) || defaultValue;
+  } catch (error) {
+    console.warn('localStorage not available:', error);
+    return defaultValue;
+  }
+};
+
+// Generalized "preferred voice" selector
+const getSelectedVoice = (voices, inSpanish) => {
+  const targetVoiceName = inSpanish
+    ? loadFromStorage('selectedSpanishVoice')
+    : loadFromStorage('selectedEnglishVoice');
+
+  // If user already saved a voice
+  if (targetVoiceName) {
+    const selected = voices.find((v) => v.name === targetVoiceName);
+    if (selected) {
+      console.log('Using saved voice:', selected.name, selected.lang);
+      return selected;
+    }
+  }
+
+  // Fallback: auto-pick best voice
+  if (inSpanish) {
+    const spanishVoices = voices.filter((v) => v.lang.startsWith('es'));
+    if (spanishVoices.length === 0) return voices[0];
+
+    function scoreVoice(voice) {
+      let score = 0;
+      const nameLower = voice.name.toLowerCase();
+
+      if (nameLower.includes('neural') || nameLower.includes('premium')) score += 100;
+      if (nameLower.includes('google')) score += 50;
+      if (nameLower.includes('microsoft')) score += 40;
+      if (nameLower.includes('apple')) score += 30;
+
+      if (
+        nameLower.includes('female') ||
+        nameLower.includes('mujer') ||
+        nameLower.includes('maria') ||
+        nameLower.includes('sofia') ||
+        nameLower.includes('paloma') ||
+        nameLower.includes('isabela')
+      ) {
+        score += 20;
+      }
+
+      if (voice.lang === 'es-MX') score += 15;
+      else if (voice.lang === 'es-US') score += 12;
+      else if (voice.lang === 'es-ES') score += 10;
+      else if (voice.lang.startsWith('es-')) score += 5;
+
+      if (voice.localService) score += 25;
+      if (voice.default) score += 15;
+
+      return score;
+    }
+
+    spanishVoices.sort((a, b) => scoreVoice(b) - scoreVoice(a));
+    console.log('Auto-selected Spanish voice:', spanishVoices[0]?.name, spanishVoices[0]?.lang);
+    return spanishVoices[0];
+  } else {
+    const englishVoices = voices.filter((v) => v.lang.startsWith('en'));
+    if (englishVoices.length === 0) return voices[0];
+
+    const selected =
+      englishVoices.find((v) => v.name.toLowerCase().includes('neural')) ||
+      englishVoices.find((v) => v.name.toLowerCase().includes('premium')) ||
+      englishVoices.find((v) => v.lang === 'en-US' && v.name.toLowerCase().includes('google')) ||
+      englishVoices.find((v) => v.localService && v.lang === 'en-US') ||
+      englishVoices.find((v) => v.lang === 'en-US') ||
+      englishVoices[0];
+
+    console.log('Auto-selected English voice:', selected?.name, selected?.lang);
+    return selected;
+  }
+};
+
+// 🔊 Speak Spanish
+export const speakSpanish = (text) => {
+  if (!text) return;
+  const voices = window.speechSynthesis.getVoices();
+  if (!voices.length) {
+    console.warn('No voices available for speech synthesis');
+    return;
+  }
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  const voice = getSelectedVoice(voices, true);
+  if (voice) {
+    utterance.voice = voice;
+    utterance.lang = voice.lang;
+  } else {
+    utterance.lang = 'es-US'; // fallback
+  }
+  utterance.rate = 0.85; // slower for Spanish
+  console.log('speaking spanish');
+  window.speechSynthesis.speak(utterance);
+};
+
+// 🔊 Speak English
+export const speakEnglish = (text) => {
+  if (!text) return;
+  const voices = window.speechSynthesis.getVoices();
+  if (!voices.length) {
+    console.warn('No voices available for speech synthesis');
+    return;
+  }
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  const voice = getSelectedVoice(voices, false);
+  if (voice) {
+    utterance.voice = voice;
+    utterance.lang = voice.lang;
+  } else {
+    utterance.lang = 'en-US'; // fallback
+  }
+  utterance.rate = 0.9;
+  console.log('speaking english');
+  window.speechSynthesis.speak(utterance);
+};

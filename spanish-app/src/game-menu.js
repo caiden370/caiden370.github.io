@@ -11,6 +11,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { Icon, Typography } from '@mui/material';
 import { useState } from 'react';
 import { safeGetItem } from './App';
+import { speakSpanish, speakEnglish } from './speech.js'
 
 export const ScoreGoal = [50, 50, 20, 50, 50, 50, 50, 50];
 

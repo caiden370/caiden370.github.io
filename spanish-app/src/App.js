@@ -13,6 +13,9 @@ import AnimatedScoreIncrease from './animations/coin-animation';
 import { initMascotStorage } from './utils/mascotStorage';
 import Store from './store';
 
+
+
+
 // STATS TRACKING
 export function checkNaN(val) {
   return isNaN(val) ? 0 : val; // use global isNaN for broader check
