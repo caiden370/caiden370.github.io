@@ -318,6 +318,9 @@ export default function SpeechButton({ text, inSpanish, big, small}) {
 
 
 
+
+
+
 // utils/speech.js
 
 // Helper: safe localStorage getter
@@ -331,21 +334,17 @@ const loadFromStorage = (key, defaultValue = '') => {
 };
 
 // Generalized "preferred voice" selector
-const getSelectedVoice = (voices, inSpanish) => {
+export const getSelectedVoice = (voices, inSpanish) => {
   const targetVoiceName = inSpanish
     ? loadFromStorage('selectedSpanishVoice')
     : loadFromStorage('selectedEnglishVoice');
 
-  // If user already saved a voice
   if (targetVoiceName) {
     const selected = voices.find((v) => v.name === targetVoiceName);
-    if (selected) {
-      console.log('Using saved voice:', selected.name, selected.lang);
-      return selected;
-    }
+    if (selected) return selected;
   }
 
-  // Fallback: auto-pick best voice
+  // --- Auto-selection logic ---
   if (inSpanish) {
     const spanishVoices = voices.filter((v) => v.lang.startsWith('es'));
     if (spanishVoices.length === 0) return voices[0];
@@ -353,12 +352,10 @@ const getSelectedVoice = (voices, inSpanish) => {
     function scoreVoice(voice) {
       let score = 0;
       const nameLower = voice.name.toLowerCase();
-
       if (nameLower.includes('neural') || nameLower.includes('premium')) score += 100;
       if (nameLower.includes('google')) score += 50;
       if (nameLower.includes('microsoft')) score += 40;
       if (nameLower.includes('apple')) score += 30;
-
       if (
         nameLower.includes('female') ||
         nameLower.includes('mujer') ||
@@ -366,81 +363,104 @@ const getSelectedVoice = (voices, inSpanish) => {
         nameLower.includes('sofia') ||
         nameLower.includes('paloma') ||
         nameLower.includes('isabela')
-      ) {
-        score += 20;
-      }
-
+      ) score += 20;
       if (voice.lang === 'es-MX') score += 15;
       else if (voice.lang === 'es-US') score += 12;
       else if (voice.lang === 'es-ES') score += 10;
       else if (voice.lang.startsWith('es-')) score += 5;
-
       if (voice.localService) score += 25;
       if (voice.default) score += 15;
-
       return score;
     }
 
     spanishVoices.sort((a, b) => scoreVoice(b) - scoreVoice(a));
-    console.log('Auto-selected Spanish voice:', spanishVoices[0]?.name, spanishVoices[0]?.lang);
     return spanishVoices[0];
   } else {
     const englishVoices = voices.filter((v) => v.lang.startsWith('en'));
     if (englishVoices.length === 0) return voices[0];
-
-    const selected =
+    return (
       englishVoices.find((v) => v.name.toLowerCase().includes('neural')) ||
       englishVoices.find((v) => v.name.toLowerCase().includes('premium')) ||
       englishVoices.find((v) => v.lang === 'en-US' && v.name.toLowerCase().includes('google')) ||
       englishVoices.find((v) => v.localService && v.lang === 'en-US') ||
       englishVoices.find((v) => v.lang === 'en-US') ||
-      englishVoices[0];
-
-    console.log('Auto-selected English voice:', selected?.name, selected?.lang);
-    return selected;
+      englishVoices[0]
+    );
   }
 };
 
-// 🔊 Speak Spanish
-export const speakSpanish = (text) => {
-  if (!text) return;
-  const voices = window.speechSynthesis.getVoices();
-  if (!voices.length) {
-    console.warn('No voices available for speech synthesis');
-    return;
-  }
 
-  const utterance = new SpeechSynthesisUtterance(text);
-  const voice = getSelectedVoice(voices, true);
-  if (voice) {
-    utterance.voice = voice;
-    utterance.lang = voice.lang;
-  } else {
-    utterance.lang = 'es-US'; // fallback
-  }
-  utterance.rate = 0.85; // slower for Spanish
-  console.log('speaking spanish');
-  window.speechSynthesis.speak(utterance);
-};
 
-// 🔊 Speak English
-export const speakEnglish = (text) => {
-  if (!text) return;
-  const voices = window.speechSynthesis.getVoices();
-  if (!voices.length) {
-    console.warn('No voices available for speech synthesis');
-    return;
-  }
+function speakText(text, { lang = "en-US", rate = 1.0, voiceSelector } = {}) {
+  return new Promise((resolve, reject) => {
+    if (!text) return resolve();
 
-  const utterance = new SpeechSynthesisUtterance(text);
-  const voice = getSelectedVoice(voices, false);
-  if (voice) {
-    utterance.voice = voice;
-    utterance.lang = voice.lang;
-  } else {
-    utterance.lang = 'en-US'; // fallback
-  }
-  utterance.rate = 0.9;
-  console.log('speaking english');
-  window.speechSynthesis.speak(utterance);
-};
+    const synth = window.speechSynthesis;
+    // const synth = window.speechSynthesis;
+    if (synth.speaking || synth.pending) {
+      synth.cancel(); // cancel queued speech first
+    }
+    // synth.speak(utterance);
+
+
+    // Cancel anything queued/playing first
+    if (synth.speaking || synth.pending) {
+      console.warn("⏹ Canceling previous speech before starting new one");
+      synth.cancel();
+    }
+
+    // Ensure voices are loaded (Chrome bug workaround)
+    const voices = synth.getVoices();
+    if (!voices.length) {
+      setTimeout(() => resolve(speakText(text, { lang, rate, voiceSelector })), 250);
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    // Pick voice
+    let selected = null;
+    if (typeof voiceSelector === "function") {
+      selected = voiceSelector(voices);
+    } else {
+      selected = voices.find(v => v.lang.startsWith(lang)) || null;
+    }
+
+    if (selected) {
+      utterance.voice = selected;
+      utterance.lang = selected.lang;
+    } else {
+      utterance.lang = lang;
+    }
+
+    utterance.rate = rate;
+
+    // Resolve only if natural end
+    utterance.onend = (event) => {
+      if (event.error === "interrupted") {
+        console.warn("⚠ Speech was interrupted, rejecting");
+        reject(new Error("Speech interrupted"));
+        
+      } else {
+        console.log("✔ Finished speaking:", text);
+        resolve();
+      }
+    };
+
+    // Handle explicit errors
+    utterance.onerror = (event) => {
+      console.error("❌ Speech synthesis error:", event.error, event);
+      reject(new Error(event.error || "Speech synthesis failed"));
+    };
+
+    console.log("▶ Speaking:", text, `[${utterance.lang}]`);
+    synth.speak(utterance);
+  });
+}
+
+export const speakEnglish = (text) => speakText(text, { lang: "en-US", rate: 0.9 });
+export const speakSpanish = (text) => speakText(text, { lang: "es-ES", rate: 0.85 });
+
+
+// ⏱ Helper for pauses
+export const delay = (ms) => new Promise((res) => setTimeout(res, ms));

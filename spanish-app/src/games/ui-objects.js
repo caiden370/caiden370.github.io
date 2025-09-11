@@ -4,6 +4,7 @@ import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { getSelectedVoice } from "../speech";
 
 import { useState, useEffect, useRef } from 'react';
 
@@ -359,3 +360,97 @@ export function SpanishMicButton ({
 };
 
 
+
+
+
+// CAR MODE QUESTION SPEAK
+
+export function askUserQuestionMic(
+  questionText,
+  { questionInSpanish = false, responseInSpanish = false } = {}
+) {
+  return new Promise((resolve, reject) => {
+    // Cancel any ongoing speech
+    window.speechSynthesis.cancel();
+
+    const voices = window.speechSynthesis.getVoices();
+    const questionVoice = getSelectedVoice(voices, questionInSpanish);
+
+    const utterance = new SpeechSynthesisUtterance(questionText);
+    if (questionVoice) {
+      utterance.voice = questionVoice;
+      utterance.lang = questionVoice.lang;
+    } else {
+      utterance.lang = questionInSpanish ? "es-ES" : "en-US";
+    }
+
+    utterance.onend = () => {
+      console.log("✅ Finished speaking, now listening...");
+
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      if (!SpeechRecognition) {
+        console.error("SpeechRecognition not supported.");
+        return resolve({
+          transcript: "",
+          success: false,
+          error: "not_supported",
+        });
+      }
+
+      const recognition = new SpeechRecognition();
+
+      const responseVoice = getSelectedVoice(voices, responseInSpanish);
+      recognition.lang =
+        responseVoice?.lang || (responseInSpanish ? "es-ES" : "en-US");
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        const confidence = event.results[0][0].confidence;
+        console.log("🎤 User said:", transcript);
+
+        recognition.stop(); // stop after one response
+        resolve({
+          transcript: transcript.trim(),
+          confidence,
+          success: true,
+        });
+      };
+
+      recognition.onerror = (event) => {
+        console.error("Speech recognition error:", event.error);
+
+        
+        recognition.stop();
+        resolve({
+          transcript: "",
+          confidence: 0,
+          success: false,
+          error: event.error,
+        });
+      };
+
+      recognition.onend = () => {
+        console.log("Recognition ended.");
+      };
+
+      recognition.start();
+    };
+
+    utterance.onerror = (err) => {
+      console.error("Speech synthesis error:", err.error);
+      resolve({
+        transcript: "",
+        success: false,
+        error: "speech_failed",
+      });
+    };
+
+    // Start speaking
+    window.speechSynthesis.speak(utterance);
+  });
+}

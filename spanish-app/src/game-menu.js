@@ -11,7 +11,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { Icon, Typography } from '@mui/material';
 import { useState } from 'react';
 import { safeGetItem } from './App';
-import { speakSpanish, speakEnglish } from './speech.js'
+
 
 export const ScoreGoal = [50, 50, 20, 50, 50, 50, 50, 50];
 
@@ -120,7 +120,7 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
                 <Item color={'#70a1ff'} itemGameId={'7'} text={'Speaking'}></Item>
                 </Grid>
                 <Grid sx={gridStyle} size={6}>
-                <Item color={'#70a1ff'} itemGameId={'8'} text={'Spell Battle'}></Item>
+                <Item color={'#70a1ff'} itemGameId={'9'} text={'Driving Mode'}></Item>
                 </Grid>
             </Grid>
             </Box>

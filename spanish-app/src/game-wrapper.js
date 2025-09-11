@@ -10,6 +10,7 @@ import Story from "./games/story";
 import { localProgressString, checkLocalProgress, updateLocalProgress } from "./game-menu";
 import SpeakingPractice from "./games/speak";
 import { SpellBattle } from "./games/spell-battle";
+import CarGame from "./games/car-game";
 
 export default function GameWrapper({gameId, chapterIndex, setSection, updatePoints}) {
 
@@ -26,7 +27,8 @@ export default function GameWrapper({gameId, chapterIndex, setSection, updatePoi
         const game5 = '5';
         const game6 = '6';
         const game7 = '7';
-        const game8 = '8';    
+        const game8 = '8';  
+        const game9 = '9'  
         switch (gameId) {
             case game1:
                 return (<MixedReview learning={true} chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}/>);
@@ -44,6 +46,9 @@ export default function GameWrapper({gameId, chapterIndex, setSection, updatePoi
                 return (<SpeakingPractice chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}/>)
             case game8:
                 return (<SpellBattle chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}/>)
+            case game9: 
+                return (<CarGame chapterIndex={chapterIndex} setSection={setSection} updatePoints={updatePointsAndStorage}></CarGame>)
+
             
         }
     }
