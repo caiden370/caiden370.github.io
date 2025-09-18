@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { ProgressBar } from './ui-objects';
 import SpeechButton, { playCorrectSound, playIncorrectSound } from '../speech';
-import { GameCompletionComponent } from './helper-conversation-game-objects';
+import { GameCompletionComponent } from './completion';
 import Mascot from '../mascot';
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton } from './ui-objects';

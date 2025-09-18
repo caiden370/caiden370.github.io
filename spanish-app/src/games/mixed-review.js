@@ -11,7 +11,7 @@ import { Typography } from '@mui/material';
 import LinearProgress from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
 import { ProgressBar } from './ui-objects';
-import { GameCompletionComponent } from './helper-conversation-game-objects';
+import { GameCompletionComponent } from './completion';
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton, withTimeout } from './ui-objects';
 

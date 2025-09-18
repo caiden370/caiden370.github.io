@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { AudioExactTextResponse } from './helper-game-objects';
-import { GameCompletionComponent } from './helper-conversation-game-objects';
+import { GameCompletionComponent } from './completion';
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton } from './ui-objects';
 

@@ -91,7 +91,7 @@ export function getSortedMascotIdsByPrice() {
   return mascotsWithPrices.map(mascot => Number(mascot.id));
 }
 
-export default function Mascot({id = -10}) {
+export default function Mascot({id = -10, size='100px'}) {
     // Get the corresponding component from our mapping
     let mascotId = id
     if (id == -10) {
@@ -105,7 +105,7 @@ export default function Mascot({id = -10}) {
     }
 
     return (
-        <div className="mascot-container">
+        <div className="mascot-container" style={{height: size, width: size}}>
             <SelectedMascot/>
         </div>
     );

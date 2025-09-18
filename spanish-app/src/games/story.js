@@ -4,10 +4,11 @@ import { MultipleChoice } from "./helper-game-objects";
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { ProgressBar } from './ui-objects';
-import { GameCompletionComponent } from "./helper-conversation-game-objects";
+import { GameCompletionComponent } from "./completion";
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton } from './ui-objects';
 import { optionsFromArguments } from "tone";
+
 
 
 

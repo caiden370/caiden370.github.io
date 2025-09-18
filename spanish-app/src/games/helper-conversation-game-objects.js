@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import TranslateIcon from '@mui/icons-material/Translate';
 import { BasicPopover } from "./ui-objects";
 import { MultipleChoice } from "./helper-game-objects";
+import Mascot from "../mascot";
+import { GameCompletionComponent } from "./completion";
 
 
 
@@ -110,139 +112,6 @@ export function ConversationBlock({topic, messageList, audioOnly, numMessages}) 
 
 
 }
-
-//******************************************************************************** */
-//GameCompletionComponent
-//******************************************************************************** */
-export function GameCompletionComponent({ numCorrect, totalQuestions }) {
-  const fractionCorrect = numCorrect / totalQuestions;
-  const percentage = Math.round(fractionCorrect * 100);
-
-  // Animated display percentage
-  const [displayPercentage, setDisplayPercentage] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const duration = 1000; // animation time in ms
-    const stepTime = 16; // ~60fps
-    const increment = percentage / (duration / stepTime);
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= percentage) {
-        setDisplayPercentage(percentage);
-        clearInterval(timer);
-      } else {
-        setDisplayPercentage(Math.round(start));
-      }
-    }, stepTime);
-
-    return () => clearInterval(timer);
-  }, [percentage]);
-
-  const getMessage = () => {
-    if (fractionCorrect === 1) return "Perfecto!";
-    if (fractionCorrect >= 0.9) return "Almost Perfect!";
-    if (fractionCorrect >= 0.7) return "Great Job!";
-    if (fractionCorrect >= 0.5) return "Good!";
-    if (fractionCorrect >= 0.3) return "Good Effort!";
-    if (fractionCorrect >= 0.1) return "Nice Try!";
-    return "Better Luck Next Time!";
-  };
-
-  return (
-    <div className="game-completion-container">
-      {/* Message */}
-      <h1 className="completion-message">{getMessage()}</h1>
-
-      {/* Score */}
-      <div className="completion-score" style={{ position: "relative" }}>
-        {/* Background circle */}
-        <CircularProgress
-          variant="determinate"
-          value={100}
-          size={120}
-          thickness={6}
-          sx={{
-            color: "#d1f0de",
-            position: "absolute",
-          }}
-        />
-
-        {/* Progress circle */}
-        <CircularProgress
-          variant="determinate"
-          value={displayPercentage}
-          size={120}
-          thickness={6}
-          sx={{
-            color: "#16ae55",
-            filter: "drop-shadow(0 0 6px rgba(22, 174, 85, 0.6))",
-            transition: "all 0.2s ease-out",
-            "& .MuiCircularProgress-circle": {
-              strokeLinecap: "round",
-            },
-          }}
-        />
-
-        {/* Percentage text */}
-        <Typography
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-            color: "#16ae55",
-            animation: "popIn 0.4s ease-out",
-            "@keyframes popIn": {
-              "0%": {
-                transform: "translate(-50%, -50%) scale(0.6)",
-                opacity: 0,
-              },
-              "80%": {
-                transform: "translate(-50%, -50%) scale(1.1)",
-                opacity: 1,
-              },
-              "100%": {
-                transform: "translate(-50%, -50%) scale(1)",
-                opacity: 1,
-              },
-            },
-          }}
-        >
-          {displayPercentage}%
-        </Typography>
-      </div>
-
-      {/* Stats */}
-      <div className="completion-stats-container">
-        <div className="completion-stat-row completion-stat-total">
-          <span className="completion-stat-label">Total Questions:</span>
-          <span className="completion-stat-value">{totalQuestions}</span>
-        </div>
-
-        <div className="completion-stat-row completion-stat-correct">
-          <span className="completion-stat-label">Correct:</span>
-          <span className="completion-stat-value">{numCorrect}</span>
-        </div>
-
-        <div className="completion-stat-row completion-stat-incorrect">
-          <span className="completion-stat-label">Incorrect:</span>
-          <span className="completion-stat-value">
-            {totalQuestions - numCorrect}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
-  
-
-
 
 //******************************************************************************** */
 //MultipleChoiceModal

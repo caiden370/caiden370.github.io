@@ -16,7 +16,7 @@ export default function TopHeader({coins, level}) {
             <div className="header-level-container" sx={{backgroundColor: getLevelColor(level), Height:'30px', Width:'30px', fontFamily: '"Inter", sans-serif'}}>{level}</div>
             <div className="coin-container">            
                 <div className="coin-icon-container">{CoinIcon}</div>
-                <div className='coin-amount-container'><Typography level='h3' sx={{color:"rgb(28, 72, 4)", fontWeight:'bold', fontFamily: '"Inter", sans-serif'}}>{coins}</Typography></div>
+                <div className='coin-amount-container'><Typography level='h3' sx={{color:"rgb(5, 69, 39)", fontWeight:'bold', fontFamily: '"Inter", sans-serif'}}>{coins}</Typography></div>
             </div>
 
         </div>

@@ -272,7 +272,7 @@ import {
   export function currencyIcon() {
     return <Money 
     size={30} 
-    color="#4CAF50" 
+    color="rgb(7, 86, 49)" 
     weight={ICON_CONFIG.weight}
     className={ICON_CONFIG.className}
   />
