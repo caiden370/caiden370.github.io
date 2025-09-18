@@ -120,6 +120,7 @@ function App() {
       {navSelection != game && (<div className='navbar-container'>
       <BottomNavbar setSelection={setNavSelection}/>
       </div>)}
+      <div className='app-background'></div>
       
     </div>
   );

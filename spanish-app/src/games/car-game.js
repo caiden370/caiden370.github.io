@@ -18,45 +18,98 @@ import { processText } from './ui-objects';
 import { Height } from '@mui/icons-material';
 
 export const startPhrases = [
-    'Hola'
-]
-
+    'Hola',
+    'Hola, ¿cómo estás?',
+    'Hola, bienvenido.',
+    'Hola, empecemos.'
+];
 
 export const positiveFeedbackPhrases = [
-    'Bueno!'
-]
-
+    '¡Correcto!',
+    '¡Muy bien!',
+    '¡Excelente!',
+    '¡Exacto!',
+    'Así es.',
+    'Buen trabajo.'
+];
 
 export const negativeFeedbackPhrases = [
-    'Mal'
-]
-
+    'No, esa no es la respuesta.',
+    'Incorrecto.',
+    'No es correcto.',
+    'No, estás equivocado.',
+    'Intenta de nuevo.'
+];
 
 export const repeatPhrases = [
-    'Try again I didnt quite hear you'
-]
+    '¿Puedes repetirlo?',
+    'No te escuché bien. ¿Puedes decirlo otra vez?',
+    'Por favor repite lo que dijiste.'
+];
 
 export const continuePhrase = [
-    'Should I continue'
-]
+    '¿Quieres continuar?',
+    '¿Listo para seguir?',
+    '¿Continuamos?'
+];
 
 export const finishedPhrases = [
-    'We are done',
-    'Nice job',
-]
+    'Hemos terminado.',
+    'Ya terminamos.',
+    'Hemos llegado al final. Buen trabajo.',
+    'Buen trabajo, hemos terminado por hoy.'
+];
 
 export const verbalCommands = [
-    'repeat',
-    'continue',
-    'skip'
-]
+    'repetir',
+    'continuar',
+    'saltar'
+];
+
+// Functions to get a random phrase from each list
+
+export const getRandomStartPhrase = () => {
+  const randomIndex = Math.floor(Math.random() * startPhrases.length);
+  return startPhrases[randomIndex];
+};
+
+export const getRandomPositiveFeedback = () => {
+  const randomIndex = Math.floor(Math.random() * positiveFeedbackPhrases.length);
+  return positiveFeedbackPhrases[randomIndex];
+};
+
+export const getRandomNegativeFeedback = () => {
+  const randomIndex = Math.floor(Math.random() * negativeFeedbackPhrases.length);
+  return negativeFeedbackPhrases[randomIndex];
+};
+
+export const getRandomRepeatPhrase = () => {
+  const randomIndex = Math.floor(Math.random() * repeatPhrases.length);
+  return repeatPhrases[randomIndex];
+};
+
+export const getRandomContinuePhrase = () => {
+  const randomIndex = Math.floor(Math.random() * continuePhrase.length);
+  return continuePhrase[randomIndex];
+};
+
+export const getRandomFinishedPhrase = () => {
+  const randomIndex = Math.floor(Math.random() * finishedPhrases.length);
+  return finishedPhrases[randomIndex];
+};
+
+export const getRandomVerbalCommand = () => {
+  const randomIndex = Math.floor(Math.random() * verbalCommands.length);
+  return verbalCommands[randomIndex];
+};
+
 
 
 
 export default function CarGame({chapterIndex, setSection, updatePoints}) {
     const [numCompleted, setNumCompleted] = useState(0);
     const [numCorrect, setNumCorrect] = useState(0);
-    const totalQuestions = 10;
+    const totalQuestions = 100;
     const [currResult, setCurResult] = useState(null);
     const [questionComponent, setQuestionComponent] = useState(null);
     const [jsonContent, setJsonContent] = useState(null);
@@ -98,14 +151,18 @@ export default function CarGame({chapterIndex, setSection, updatePoints}) {
         if (currResult && answered) {
             updatePoints(1, 1);
             setNumCorrect(prev => prev + 1);
-            handleContinue();
         }
+
+        if (answered) {
+            setTimeout(() => {handleContinue(true)}, 400);
+        }
+
     }, [answered])
 
 
 
     function generateNextQuestionContent(data) {
-        let r = Math.floor(Math.random()*1); 
+        let r = Math.floor(Math.random()*2); 
         if (r == 0) {
             return generateSpeakingTranslateContent(data);
 
@@ -146,22 +203,6 @@ export default function CarGame({chapterIndex, setSection, updatePoints}) {
     }
 
 
-
-    function getRandSubset(list, n) {
-        const indices = Array(list.length);
-        const result = Array(n);
-        for (let i = 0; i < list.length; i++) {
-            indices[i] = i;
-            
-        }
-
-        for (let i = 0; i < n; i++) {
-            result[i] = list[indices.splice(Math.floor(Math.random*indices.length), 1)];
-        }
-
-        return result;
-    }
-
     function buildSpeakingComponent(content) {
         return (
             <CarSpeakAnswer
@@ -191,7 +232,15 @@ export default function CarGame({chapterIndex, setSection, updatePoints}) {
     }
 
 
-    function handleContinue() {
+    function handleContinue(auto) {
+        if (!answered && auto) {
+            return;
+        }
+
+        if (auto) {
+            delay(200);
+        }
+        
         if (numCompleted >= totalQuestions - 1) {
             setFinished(true);
         }
@@ -208,7 +257,7 @@ export default function CarGame({chapterIndex, setSection, updatePoints}) {
     function continueButton() {
         return (
             <div className="sentence-continue-button-container">
-            <Button className='app-button success' variant='contained' sx={{width:'auto'}} onClick={handleContinue}>
+            <Button className='app-button success' variant='contained' sx={{width:'auto'}} onClick={() => {handleContinue(false)}}>
                 <Typography>Continue</Typography>
             </Button>
             </div>
@@ -243,13 +292,6 @@ export default function CarGame({chapterIndex, setSection, updatePoints}) {
 
 
     if (finished) {
-
-        if (!updated) {
-            updatePoints(numCorrect, numCorrect);
-            setUpdated(true);
-        }
-
-
         return <div className="conversation-component-outer-container">
         <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
         <div className='finished-row'>
@@ -274,7 +316,7 @@ export default function CarGame({chapterIndex, setSection, updatePoints}) {
                 {/* {scoreBarComponent} */}
                 {scoreBar()}
                 {questionComponent}
-                {answered && continueButton()}
+                {continueButton()}
                 </div>
             </div>
         )
@@ -296,6 +338,8 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
     const [isCorrect, setIsCorrect] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [showHint, setShowHint] = useState(false);
+    const Instructions = 'please translate the answer into Spanish'
+
 
     useEffect(() => {
         setAnswered(false);
@@ -304,7 +348,43 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
         setShowModal(false);
         setShowSubmit(false);
         setShowHint(false);
+        conversationFlow()
     }, [question])
+
+
+    async function conversationFlow() {
+        await delay(500);
+
+        await speakSpanish(question);
+        await delay(500);
+
+      
+        await speakEnglish(Instructions);
+        await delay(1000);
+
+
+      
+        // Ask a question & wait for user reply
+        const response = await askUserQuestionMic(atranslation, {
+          questionInSpanish: false,
+          responseInSpanish: true
+        });
+        await delay(200);
+
+      
+        if (response.success) {
+            await speakSpanish(`Dijiste: ${response.transcript}`);
+            await delay(200);
+            setUserText(response.transcript);
+            const result = handleSubmit(response.transcript);
+            await speakSpanish(`${result? getRandomPositiveFeedback() : getRandomNegativeFeedback()}. ${answer}`)
+        } else {
+            await speakSpanish(`No te escuché. ${answer}`);
+            await delay(200);
+            handleSubmit('None');
+            await delay(200);
+        }
+      }
 
 
 
@@ -313,7 +393,7 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
         const processedResp = processText(response);
         const processedAnswer = processText(correctAnswer);
 
-        if (processedAnswer.length != processedAnswer.length) {
+        if (processedAnswer.length != processedResp.length) {
             setIsCorrect(false);
             return false;
         }
@@ -332,18 +412,6 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
 
 
 
-
-    function handleMicCallback({
-        transcript,
-        confidence,
-        success,
-        error,
-      }) {
-        setUserText(transcript);
-        setShowSubmit(true);
-    }
-
-
     function handleSubmit() {
         onAnswered();
         setAnswered(true);
@@ -358,19 +426,9 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
             playIncorrectSound();
         }
         setShowSubmit(false);
+        return result
     }
 
-
-    function submitButton() {
-        return (
-            <div className="sentence-continue-button-container">
-            <Button className='app-button success' variant='contained' sx={{width:'auto'}} onClick={handleSubmit}>
-                <Typography>Check</Typography>
-            </Button>
-            </div>
-        )
-
-    }
     
     function validationModal() {
         const statusClass = isCorrect ? "correct" : "incorrect";
@@ -389,42 +447,24 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
           </div>
         );
       }
-
-    function hintButton() {
-
-
-        function handleHint() {
-            setShowHint(true);
-        }
         
-        return (
-            <div className='speak-hint-button'>
-            <Button className='app-button primary' variant='contained' onClick={handleHint}>
-                <Typography>Hint</Typography>
-            </Button>
-            </div>
-        )
-    }
-    
-    
-    
     
     return (
         <div className='speak-container'>
             <Mascot clickable></Mascot>
-            <div className='speak-question'>
-            <SpeechButton text={question} inSpanish={true}></SpeechButton>
-            {<Typography align='left' sx={{fontWeight: 'bold'}}>{question}</Typography>}
+            <div className='car-speak-question'>
+            {/* <SpeechButton text={question} inSpanish={true}></SpeechButton> */}
+            {<Typography align='center' sx={{fontWeight: 'bold'}}>{question}</Typography>}
             </div>
             <div className='speak-message'>Answer the question in Spanish</div>
-            <div className='speak-hint'>{showHint? (<Typography>{atranslation}</Typography>) : hintButton()}</div>
+            <div className='speak-hint'><Typography>{atranslation}</Typography></div>
             <div className='speak-response'>
                <Typography>{userText}</Typography> 
             </div>
             <div className='speak-mic-row'>
-            <SpanishMicButton callback={handleMicCallback}/>
+            {/* <SpanishMicButton callback={handleMicCallback}/> */}
             </div>
-            {showSubmit && submitButton()}
+            {/* {showSubmit && submitButton()} */}
             {showModal && validationModal()}
         </div>
     )
@@ -473,14 +513,17 @@ export function CarSpeakTranslate({setResult, onAnswered, sentence, translation}
 
       
         if (response.success) {
-          await speakSpanish(`Tu Dijiste: ${response.transcript}`);
+          await speakSpanish(`Dijiste: ${response.transcript}`);
           await delay(200);
           setUserText(response.transcript);
-          handleSubmit(response.transcript);
+          const result = handleSubmit(response.transcript);
+          await speakSpanish(`${result? getRandomPositiveFeedback() : getRandomNegativeFeedback()}. ${sentence}`)
+          await delay(200);
         } else {
-          await speakEnglish("Sorry, I didn’t catch that.");
+            await speakSpanish(`No te escuché. ${sentence}`);
           await delay(200);
           handleSubmit('None');
+          await delay(200);
         }
       }
     
@@ -492,7 +535,7 @@ export function CarSpeakTranslate({setResult, onAnswered, sentence, translation}
         const processedResp = processText(text);
         const processedAnswer = processText(sentence);
 
-        if (processedAnswer.length != processedAnswer.length) {
+        if (processedAnswer.length != processedResp.length) {
             setIsCorrect(false);
             return false;
         }
@@ -537,6 +580,7 @@ export function CarSpeakTranslate({setResult, onAnswered, sentence, translation}
             playIncorrectSound();
         }
         setShowSubmit(false);
+        return result;
     }
 
 
@@ -575,9 +619,9 @@ export function CarSpeakTranslate({setResult, onAnswered, sentence, translation}
     return (
         <div className='speak-container'>
             <Mascot clickable></Mascot>
-            <div className='speak-question'>
-            <SpeechButton text={translation} inSpanish={false}></SpeechButton>
-            {<Typography align='left' sx={{fontWeight: 'bold'}}>{translation}</Typography>}
+            <div className='car-speak-question'>
+            {/* <SpeechButton text={translation} inSpanish={false}></SpeechButton> */}
+            {<Typography align='center' sx={{fontWeight: 'bold'}}>{translation}</Typography>}
             </div>
             <div className='speak-message'>Translate</div>
             <div className='speak-response'>
@@ -586,7 +630,7 @@ export function CarSpeakTranslate({setResult, onAnswered, sentence, translation}
             <div className='speak-mic-row'>
             {/* <SpanishMicButton callback={handleMicCallback}/> */}
             </div>
-            {showSubmit && submitButton()}
+            {/* {showSubmit && submitButton()} */}
             {showModal && validationModal()}
         </div>
     )

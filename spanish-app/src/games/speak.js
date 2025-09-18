@@ -417,7 +417,7 @@ export function SpeakAnswer({setResult, onAnswered, question, answer, qtranslati
         const processedResp = processText(response);
         const processedAnswer = processText(correctAnswer);
 
-        if (processedAnswer.length != processedAnswer.length) {
+        if (processedAnswer.length != processedResp.length) {
             setIsCorrect(false);
             return false;
         }
@@ -560,7 +560,7 @@ export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
         const processedResp = processText(text);
         const processedAnswer = processText(sentence);
 
-        if (processedAnswer.length != processedAnswer.length) {
+        if (processedAnswer.length != processedResp.length) {
             setIsCorrect(false);
             return false;
         }

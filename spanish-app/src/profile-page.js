@@ -19,7 +19,7 @@ export function computeLevel(exp) {
 }
 
 export function getLevelColor(level) {
-    const value = level * 200;
+    const value = level * 2;
     const hue = (value * 137.5) % 360;
     const saturation = 70; // %
     const lightness = 40;  // %
@@ -148,7 +148,7 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
                 
             <div className="profile-row-2">
                 <div className='profile-name-container'>
-                        <Typography level='h4'>{inputName}</Typography>
+                        <Typography level='h4' sx={{fontFamily: '"Inter", sans-serif'}}>{inputName}</Typography>
                 </div>
                 <div>
                     <IconButton aria-label="edit" onClick={handleOpen}>
@@ -189,7 +189,7 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
         
             <div className='profile-row-3'>
                 <div className='profile-exp-bar-container'>
-                    <div className='header-level-container' sx={{backgroundColor: getLevelColor(computeLevel(experience))}}><Typography sx={{color: '#ffffff'}}>{computeLevel(experience)}</Typography></div>
+                    <div className='header-level-container' sx={{backgroundColor: getLevelColor(computeLevel(experience))}}><Typography sx={{color: '#ffffff', fontFamily: '"Inter", sans-serif'}}>{computeLevel(experience)}</Typography></div>
                     <ProgressBar className='profile-exp-bar' progress={computeProgress(experience)}></ProgressBar>
                 </div>
             </div>

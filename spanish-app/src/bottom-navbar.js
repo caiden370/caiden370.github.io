@@ -14,6 +14,13 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
+import { 
+  UserCircle,
+  Storefront,
+  Gear,
+  House,
+} from 'phosphor-react';
+
 
 export default function BottomNavbar({setSelection}) {
   const [value, setValue] = React.useState(0);
@@ -23,22 +30,32 @@ export default function BottomNavbar({setSelection}) {
   const profile = 'Profile';  
   const settings = 'Settings'
 
+  const Home = <House size={40} color={"rgb(0, 174, 255)"} weight={"duotone"} className={"drop-shadow-sm"} ></House>
+  const Store = <Storefront size={40} color={"rgb(255, 0, 0)"} weight={"duotone"} className={"drop-shadow-sm"} ></Storefront>
+  const Profile = <UserCircle size={40} color={"rgb(226, 123, 13)"} weight={"duotone"} className={"drop-shadow-sm"} ></UserCircle>
+  const Settings =<Gear size={40} color={"rgb(117, 100, 100)"} weight={"duotone"} className={"drop-shadow-sm"} ></Gear>
+
+  const SelectedHome = <House size={50} color={"rgb(0, 174, 255)"} weight={"duotone"} className={"drop-shadow-sm"} ></House>
+  const SelectedStore = <Storefront size={50} color={"rgb(255, 0, 0)"} weight={"duotone"} className={"drop-shadow-sm"} ></Storefront>
+  const SelectedProfile = <UserCircle size={50} color={"rgb(226, 123, 13)"} weight={"duotone"} className={"drop-shadow-sm"} ></UserCircle>
+  const SelectedSettings =<Gear size={50} color={"rgb(117, 100, 100)"} weight={"duotone"} className={"drop-shadow-sm"} ></Gear>
 
 
 
+  const dictionary = {
+    "0": chapters,
+    "1": store,
+    "2": profile,
+    "3": settings 
+};
   return (
     <Box sx={{ width: "100%"}}>
       <BottomNavigation
-        sx={{paddingBottom: '20px', backgroundColor: 'rgb(254, 254, 254)'}}
+        sx={{paddingBottom: '20px', backgroundColor:'inherit'}}
         showLabels
         value={value}
         onChange={(event, newValue) => {
-            const dictionary = {
-                "0": chapters,
-                "1": store,
-                "2": profile,
-                "3": settings 
-            };
+
             const valueName = dictionary[newValue]
             setValue(newValue);
             setSelection(valueName);
@@ -46,10 +63,10 @@ export default function BottomNavbar({setSelection}) {
         }}
         classes="navbar-button-box"
       >
-        <BottomNavigationAction  icon={<HomeFilledIcon sx={{fontSize: 40}}/>} />
-        <BottomNavigationAction icon={<ShoppingBagIcon sx={{fontSize: 40}}/>} />
-        <BottomNavigationAction  icon={<PersonIcon sx={{fontSize: 40}}/>} />
-        <BottomNavigationAction  icon={<Settings sx={{fontSize: 40}}/>} />
+        <BottomNavigationAction  icon={dictionary[value] === chapters? SelectedHome : Home} />
+        <BottomNavigationAction icon={dictionary[value] === store? SelectedStore : Store} />
+        <BottomNavigationAction  icon={dictionary[value] === profile? SelectedProfile : Profile} />
+        <BottomNavigationAction  icon={dictionary[value] === settings? SelectedSettings : Settings} />
       </BottomNavigation>
     </Box>
   );

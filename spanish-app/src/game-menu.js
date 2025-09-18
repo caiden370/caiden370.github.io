@@ -13,7 +13,7 @@ import { useState } from 'react';
 import { safeGetItem } from './App';
 
 
-export const ScoreGoal = [50, 50, 20, 50, 50, 50, 50, 50];
+export const ScoreGoal = [50, 50, 20, 50, 50, 50, 50, 50, 50];
 
 export function getStarFill(chapterIndex) {
     return Number(localStorage.getItem(`ch${chapterIndex}-starfill`) || 0);
@@ -66,11 +66,11 @@ export default function GameMenu({setGameId, setSection, chapterIndex}) {
         const progress = checkLocalProgress(chapterIndex, itemGameId);
         return (
             <div className='game-menu-item-container' onClick={() => handleClick(itemGameId)}>
-                <div className='game-menu-item-title'  sx={{backgroundColor: {color}}}>
+                <div className='game-menu-item-title'  sx={{backgroundColor: {color}, fontFamily: '"Inter", sans-serif'}}>
                     {text}
                 </div>
                 <div className='game-menu-item-progress-container'>
-                    <Typography>{progress} / {ScoreGoal[itemGameId-1]}</Typography>
+                    <Typography sx={{fontFamily: '"Inter", sans-serif'}}>{progress} / {ScoreGoal[itemGameId-1]}</Typography>
                     {progress >= ScoreGoal[itemGameId-1]? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : (<StarBorderIcon sx={{color: 'white'}}/>)}
                 </div>
             </div>

@@ -24,7 +24,8 @@ export function playCorrectSound() {
       decay: 0.15,
       sustain: 0.1,
       release: 0.3
-    }
+    },
+    volume: -20
   }).toDestination();
 
   // Add some sparkle with reverb
@@ -67,7 +68,8 @@ export function playIncorrectSound() {
       decay: 0.15,
       sustain: 0.2,
       release: 0.3
-    }
+    },
+    volume: -20
   }).toDestination();
 
   // Gentle filtering to keep it soft
@@ -391,7 +393,7 @@ export const getSelectedVoice = (voices, inSpanish) => {
 
 
 
-function speakText(text, { lang = "en-US", rate = 1.0, voiceSelector } = {}) {
+function speakText(text, { lang = "en-US", rate = 1.0, voiceSelector, inSpanish} = {}) {
   return new Promise((resolve, reject) => {
     if (!text) return resolve();
 
@@ -421,7 +423,7 @@ function speakText(text, { lang = "en-US", rate = 1.0, voiceSelector } = {}) {
     // Pick voice
     let selected = null;
     if (typeof voiceSelector === "function") {
-      selected = voiceSelector(voices);
+      selected = voiceSelector(voices, inSpanish);
     } else {
       selected = voices.find(v => v.lang.startsWith(lang)) || null;
     }
@@ -458,8 +460,8 @@ function speakText(text, { lang = "en-US", rate = 1.0, voiceSelector } = {}) {
   });
 }
 
-export const speakEnglish = (text) => speakText(text, { lang: "en-US", rate: 0.9 });
-export const speakSpanish = (text) => speakText(text, { lang: "es-ES", rate: 0.85 });
+export const speakEnglish = (text) => speakText(text, { lang: "en-US", rate: 0.9, voiceSelector: getSelectedVoice, inSpanish: false});
+export const speakSpanish = (text) => speakText(text, { lang: "es-ES", rate: 0.85, voiceSelector: getSelectedVoice, inSpanish: true });
 
 
 // ⏱ Helper for pauses

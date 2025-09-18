@@ -7,6 +7,7 @@ import { getAvailableMascots, addOwnedMascot, getOwnedMascots } from "./utils/ma
 import { useState } from "react";
 import {Button} from "@mui/material";
 import { mascotComponents } from "./mascot"
+import { currencyIcon } from "./topic-icons";
 
 
 
@@ -63,7 +64,7 @@ export default function Store({setGlobalCoins}) {
             <div className='store-mascot-button' onClick={() => handleStoreClick(price, id)}>
                 {mascotComponents[id][0]()}
                 <div className="store-mascot-price">
-                    <Typography align="center">{price}</Typography>
+                    <Typography align="center" sx={{fontFamily: '"Inter", sans-serif'}}>{price}</Typography>
                 </div>
             </div>
         )
@@ -140,8 +141,8 @@ export default function Store({setGlobalCoins}) {
                     {mascotComponents[curId][0]()}
                 </div>
                 <div className="store-request-coin-container">            
-                    <div className="coin-icon-container"><SvgIcon ><CoinsSvg sx={{color:'#ffd500'}}/></SvgIcon></div>
-                    <Typography level='h3' sx={{color:'black', fontWeight:'bold'}}>{curPrice}</Typography>
+                    <div className="coin-icon-container">{currencyIcon()}</div>
+                    <Typography sx={{color:'black', fontWeight:'bold', fontFamily: '"Inter", sans-serif'}}>{curPrice}</Typography>
                 </div>
                 {requestButton()}
                 {closeButton()}
@@ -157,8 +158,13 @@ export default function Store({setGlobalCoins}) {
         <div className='store-container'>
             <div className='store-header'>
                 <Mascot clickable={true}/>
-                <Typography align="center" sx={{fontSize: 25}}>Store</Typography>
             </div>
+
+            <div className='store-title'>
+            <Typography variant="subtitle2" align="center" sx={{color:'rgb(119, 118, 118)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Store</Typography>
+            </div>
+
+
             <div className='store-selection'>
             {
                 mascotList.length > 0? (mascotList.map(

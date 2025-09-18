@@ -13,14 +13,16 @@ import {IconButton} from '@mui/material';
 import StarsIcon from '@mui/icons-material/Stars';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Opacity, Padding } from '@mui/icons-material';
-import { topicIcons } from './chapters-page';
+import { StyledTopicIcons} from './topic-icons';
+import { darken, lighten } from '@mui/system';
+
 
 
 
 
 export default function ChapterCard({number, onFavorite, favorite, iconName, content, title, color, setSection, setIndex, i, fill}) {
     const GameMenu = 'MenuGame'
-    const numGames = 8;
+    const numGames = 9;
     const numStars = fill === null? 0 : fill;
 
     const stars = Array(numGames)
@@ -42,32 +44,31 @@ export default function ChapterCard({number, onFavorite, favorite, iconName, con
     }
     const gradientStyle = (color) => {
         return {
-            backgroundColor: color,
-            color: 'white',
-            borderBottom: '8px solid rgba(0, 0, 0, 0.2)',
+            background: `linear-gradient(300deg, ${lighten(color, 0.3)}, ${lighten(color, 0.6)})`,
+            // bottomBorder: `8px solid ${darken(color, 0.1)}`,
         };
       };
 
 
-    const IconComponent = topicIcons[iconName];
+    const IconComponent = StyledTopicIcons[iconName];
 
 
     return (
         <div className='simple-card-container' style={gradientStyle(color)}>
             <button className='simple-card-button' onClick={handleClick}>
-                <div className='simple-card-number' style={{background: color}}>
+                <div className='simple-card-number'>
                 {/* <Typography level='h1' color='white'>{number}</Typography> */}
-                {IconComponent && <IconComponent sx={{ fontSize: 40, color: 'white' }} />}
+                {IconComponent && <IconComponent sx={{ fontSize: 100, color: darken(color, 0.5)}} />}
                 </div>
 
                 <div className='simple-card-content'>
-                    <Typography level="title" sx={{textAlign: 'left', overflow: 'hidden', fontWeight: 550, color: 'white'}}>{title}</Typography>
+                    <Typography level="title" sx={{textAlign: 'left', overflow: 'hidden', fontWeight: 550, color: darken(color, 0.5), fontFamily: '"Inter", sans-serif'}}>{title}</Typography>
                     <div className='simple-card-stars-container'>
                     {
 
-                        stars.map((val) => {
+                        stars.map((val, i) => {
                             return (
-                                <Icon>
+                                <Icon key={`${i}-${Date.now()}`}>
                                     {val? (<StarIcon sx={{color: 'rgb(255, 183, 0)'}} />) : null}
                                 </Icon>
                             )
@@ -79,7 +80,7 @@ export default function ChapterCard({number, onFavorite, favorite, iconName, con
                 </div>
             </button>
             <div className='favorite-button-container'>
-                    <IconButton sx={{zIndex:100}} onClick={() => onFavorite(i)} disabled={favorite}><StarsIcon sx={{color: favorite? 'rgb(255, 183, 0)':'rgb(255, 255, 255)'}}/></IconButton>
+                    <IconButton sx={{zIndex:100}} onClick={() => onFavorite(i)} disabled={favorite}><StarsIcon sx={{color: favorite? 'rgb(255, 183, 0)':darken(color, 0.5)}}/></IconButton>
                 </div>
 
         </div>
