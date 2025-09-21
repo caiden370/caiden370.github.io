@@ -413,7 +413,7 @@ export function SpeakAnswer({setResult, onAnswered, question, answer, qtranslati
 
 
     function checkResponse(response, correctAnswer) {
-        const allowedMistakes = Math.floor(correctAnswer.length / 6) + 2;
+        const allowedMistakes = Math.floor(correctAnswer.length / 10) + 2;
         const processedResp = processText(response);
         const processedAnswer = processText(correctAnswer);
 
@@ -424,8 +424,11 @@ export function SpeakAnswer({setResult, onAnswered, question, answer, qtranslati
 
         let mistakes = 0;
         for (let i = 0; i < processedResp.length; i++) {
-            if (processedResp[i] != processedAnswer[i] && mistakes < allowedMistakes) {
+            if (processedResp[i] != processedAnswer[i]) {
                 mistakes += 1;
+            } 
+            
+            if (mistakes > allowedMistakes) {
                 setIsCorrect(false);
                 return false;
             }
@@ -554,11 +557,10 @@ export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
 
 
 
-    function checkResponse(text) {
-        const allowedMistakes = Math.floor(sentence.length / 10) + 2;
-
-        const processedResp = processText(text);
-        const processedAnswer = processText(sentence);
+    function checkResponse(response, correctAnswer) {
+        const allowedMistakes = Math.floor(correctAnswer.length / 10) + 2;
+        const processedResp = processText(response);
+        const processedAnswer = processText(correctAnswer);
 
         if (processedAnswer.length != processedResp.length) {
             setIsCorrect(false);
@@ -567,8 +569,11 @@ export function SpeakTranslate({setResult, onAnswered, sentence, translation}) {
 
         let mistakes = 0;
         for (let i = 0; i < processedResp.length; i++) {
-            if (processedResp[i] != processedAnswer[i] && mistakes < allowedMistakes) {
+            if (processedResp[i] != processedAnswer[i]) {
                 mistakes += 1;
+            } 
+            
+            if (mistakes > allowedMistakes) {
                 setIsCorrect(false);
                 return false;
             }

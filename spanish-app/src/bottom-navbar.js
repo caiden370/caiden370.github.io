@@ -21,6 +21,15 @@ import {
   House,
 } from 'phosphor-react';
 
+export function removeAdScript() {
+  const adScript = document.getElementById('ad-script');
+  if (adScript) {
+      adScript.remove(); // The .remove() method is a simple way to remove an element
+      console.log("Ad script has been removed.");
+  } else {
+      console.log("Ad script not found.");
+  }
+};
 
 export default function BottomNavbar({setSelection}) {
   const [value, setValue] = React.useState(0);
@@ -42,6 +51,8 @@ export default function BottomNavbar({setSelection}) {
 
 
 
+
+
   const dictionary = {
     "0": chapters,
     "1": store,
@@ -59,7 +70,7 @@ export default function BottomNavbar({setSelection}) {
             const valueName = dictionary[newValue]
             setValue(newValue);
             setSelection(valueName);
-
+            removeAdScript();
         }}
         classes="navbar-button-box"
       >

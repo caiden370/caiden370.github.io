@@ -152,6 +152,7 @@ export default function CarGame({chapterIndex, setSection, updatePoints}) {
             updatePoints(1, 1);
             setNumCorrect(prev => prev + 1);
         }
+        
 
         if (answered) {
             setTimeout(() => {handleContinue(true)}, 400);
@@ -378,20 +379,26 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
             setUserText(response.transcript);
             const result = handleSubmit(response.transcript);
             await speakSpanish(`${result? getRandomPositiveFeedback() : getRandomNegativeFeedback()}. ${answer}`)
+            await delay(1000);
+            onAnswered();
+            setAnswered(true);
         } else {
             await speakSpanish(`No te escuché. ${answer}`);
             await delay(200);
             handleSubmit('None');
-            await delay(200);
+            await delay(300);
+            onAnswered();
+            setAnswered(true);
         }
       }
 
 
 
-    function checkResponse(response, correctAnswer) {
-        const allowedMistakes = Math.floor(correctAnswer.length / 6) + 2;
-        const processedResp = processText(response);
-        const processedAnswer = processText(correctAnswer);
+      function checkResponse(text) {
+        const allowedMistakes = Math.floor(answer.length / 10) + 2;
+
+        const processedResp = processText(text);
+        const processedAnswer = processText(answer);
 
         if (processedAnswer.length != processedResp.length) {
             setIsCorrect(false);
@@ -400,10 +407,12 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
 
         let mistakes = 0;
         for (let i = 0; i < processedResp.length; i++) {
-            if (processedResp[i] != processedAnswer[i] && mistakes < allowedMistakes) {
+            if (processedResp[i] != processedAnswer[i]) {
                 mistakes += 1;
+            }
+            if (mistakes > allowedMistakes) {
                 setIsCorrect(false);
-                return false;
+                return false
             }
         }
         setIsCorrect(true);        
@@ -413,8 +422,6 @@ export function CarSpeakAnswer({setResult, onAnswered, question, answer, qtransl
 
 
     function handleSubmit() {
-        onAnswered();
-        setAnswered(true);
         const result = checkResponse(userText, answer);
         setResult(isCorrect);
         setShowModal(true);
@@ -513,17 +520,23 @@ export function CarSpeakTranslate({setResult, onAnswered, sentence, translation}
 
       
         if (response.success) {
-          await speakSpanish(`Dijiste: ${response.transcript}`);
-          await delay(200);
-          setUserText(response.transcript);
-          const result = handleSubmit(response.transcript);
-          await speakSpanish(`${result? getRandomPositiveFeedback() : getRandomNegativeFeedback()}. ${sentence}`)
-          await delay(200);
+            await speakSpanish(`Dijiste: ${response.transcript}`);
+            await delay(200);
+            setUserText(response.transcript);
+            const result = handleSubmit(response.transcript);
+            await speakSpanish(`${result? getRandomPositiveFeedback() : getRandomNegativeFeedback()}. ${sentence}`)
+            await delay(1000);
+            onAnswered();
+            setAnswered(true);
+
         } else {
             await speakSpanish(`No te escuché. ${sentence}`);
-          await delay(200);
-          handleSubmit('None');
-          await delay(200);
+            await delay(200);
+            handleSubmit('None');
+            await delay(200);
+            onAnswered();
+            setAnswered(true);
+            
         }
       }
     
@@ -542,10 +555,12 @@ export function CarSpeakTranslate({setResult, onAnswered, sentence, translation}
 
         let mistakes = 0;
         for (let i = 0; i < processedResp.length; i++) {
-            if (processedResp[i] != processedAnswer[i] && mistakes < allowedMistakes) {
+            if (processedResp[i] != processedAnswer[i]) {
                 mistakes += 1;
+            }
+            if (mistakes > allowedMistakes) {
                 setIsCorrect(false);
-                return false;
+                return false
             }
         }
         setIsCorrect(true);        
@@ -567,10 +582,7 @@ export function CarSpeakTranslate({setResult, onAnswered, sentence, translation}
 
 
     function handleSubmit(text) {
-        onAnswered();
-        setAnswered(true);
         const result = checkResponse(text);
-        setResult(isCorrect);
         setShowModal(true);
         if (result) {
             setResult(true);

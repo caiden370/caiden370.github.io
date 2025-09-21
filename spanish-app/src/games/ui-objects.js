@@ -99,6 +99,7 @@ export function processText(text) {
 export function LeaveButton({setSection, updatePoints}) {
   function onClick() {
     setSection('MenuGame');
+    cancelAllSpeech()
     updatePoints();
   }
   
@@ -453,4 +454,14 @@ export function askUserQuestionMic(
     // Start speaking
     window.speechSynthesis.speak(utterance);
   });
+}
+
+
+function cancelAllSpeech() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    console.log("All speech synthesis has been canceled.");
+  } else {
+    console.log("Speech synthesis is not supported in this browser.");
+  }
 }

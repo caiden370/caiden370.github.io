@@ -509,7 +509,7 @@ export function AudioExactTextResponse({question, answer, onAnswered, setResult,
           if ((processedAnswer[i]+'').toLowerCase() != (processedResp[i]+'').toLowerCase()) {
               mistakes += 1
           }
-          if (mistakes >= allowedMistakes) {
+          if (mistakes > allowedMistakes) {
               setResult(false);
               setIsCorrect(false);
               playIncorrectSound();

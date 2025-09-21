@@ -8,21 +8,25 @@ import { useState } from "react";
 import {Button} from "@mui/material";
 import { mascotComponents } from "./mascot"
 import { currencyIcon } from "./topic-icons";
-
-
-
-
-
+import { useEffect, useRef } from "react";
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import { removeAdScript } from "./bottom-navbar";
+import { Currency } from "lucide-react";
 
 export default function Store({setGlobalCoins}) {
 
-    const [localCoins, setLocalCoins] = useState(safeGetItem('coins'));
     const [openStatusModal, setOpenStatusModal] = useState(false);
     const [openRequestModal, setOpenRequestModal] = useState(false);
     const [purchaseResult, setPurchaseResult] = useState(false);
     const [curPrice, setCurPrice] = useState(100);
     const [curId, setCurId] = useState(0);
     const [mascotList, setMascotList] = useState(getStoreMascots());
+
+
+    const adUrl = 'https://otieu.com/4/9907822';
+    const addBonus = 5;
+
 
     function getStoreMascots() {
         const owned = new Set(getOwnedMascots());
@@ -47,17 +51,11 @@ export default function Store({setGlobalCoins}) {
         }
     }
 
-
     function handleStoreClick(price, id) {
         setCurId(id);
         setCurPrice(price);
         setOpenRequestModal(true);
     }
-
-
-      
-      
-    
 
     function StoreItem(id, price) {
         return (
@@ -68,8 +66,6 @@ export default function Store({setGlobalCoins}) {
                 </div>
             </div>
         )
-
-
     }
 
     function StatusModal() {
@@ -115,7 +111,6 @@ export default function Store({setGlobalCoins}) {
         );
     }
 
-
     function closeButton() {
         return (
             <div className='mixed-review-continue'>
@@ -126,17 +121,12 @@ export default function Store({setGlobalCoins}) {
         );
     }
 
-    
-
-
     function RequestModal() {
         return (
             <>
             <div className='store-request-modal-overlay'></div>
             <div className='store-request-modal-container'>
                 <div className='store-request-modal-card'>
-
-                
                 <div className='store-request-mascot'>
                     {mascotComponents[curId][0]()}
                 </div>
@@ -147,12 +137,50 @@ export default function Store({setGlobalCoins}) {
                 {requestButton()}
                 {closeButton()}
                 </div>
-
             </div>
             </>
         );
     }
 
+    function EmbeddedAdButton() {
+        const openEmbeddedAd = () => {
+            window.open(adUrl, '_blank');
+            updateStoredCoins(-1*addBonus);
+        };
+
+        return (
+            <div className="ad-button" onClick={openEmbeddedAd}>
+                <Typography variant="subtitle2" align="center" sx={{color:'rgb(0, 74, 19)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Earn {addBonus}</Typography>
+                {currencyIcon()}
+            </div>
+        )
+    }
+
+    // function PopUpAdButton() {
+    //     useEffect(() => {
+    //         if (showAd) {
+    //             const script = document.createElement('script');
+    //             script.dataset.zone = '9905949';
+    //             script.src = 'https://al5sm.com/tag.min.js';
+    //             script.async = true;
+    //             script.id = 'ad-script';
+    //             document.body.appendChild(script);
+    //             setNumAds(prev => prev + 1);
+    //         }
+    //     }, [showAd]);
+
+    //     const handleShowAd = () => {
+    //         setShowAd(true);
+    //         updateStoredCoins(-1*addBonus);
+    //     };
+
+    //     return (
+    //         <div className="ad-button" onClick={handleShowAd}>
+    //             <Typography variant="subtitle2" align="center" sx={{color:'rgb(0, 74, 19)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Earn {addBonus}</Typography>
+    //             {currencyIcon()}
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className='store-container'>
@@ -164,6 +192,7 @@ export default function Store({setGlobalCoins}) {
             <Typography variant="subtitle2" align="center" sx={{color:'rgb(119, 118, 118)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Store</Typography>
             </div>
 
+            {EmbeddedAdButton()}       
 
             <div className='store-selection'>
             {
@@ -177,19 +206,10 @@ export default function Store({setGlobalCoins}) {
                     }
                 )) : ("There are no items in the store")
             }
-
             </div>
-
 
             {openRequestModal && RequestModal()}
             {openStatusModal && StatusModal()}
-
         </div>
     )
-    
-
 }
-
-
-
-
