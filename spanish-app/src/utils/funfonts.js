@@ -112,7 +112,7 @@ export const AnimatedTypography = ({ children }) => (
     variant="h4" 
     align="center" 
     sx={{
-      color: 'rgb(16, 149, 31)',
+      color: '#35cd74',
       width: "100%", 
       fontWeight: 700, 
       fontFamily: '"Inter", sans-serif',

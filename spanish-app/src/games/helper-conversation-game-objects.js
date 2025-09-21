@@ -190,7 +190,7 @@ export function ConversationMultipleChoiceBlock({questionItem, onAnswered, setRe
 
 // Conversation Multiple Choice (audio option)
 //******************************************************************************** */
-export function ConversationMultiChoice({topic, dialog, questions, audioOnly, onAnswered, setResult, setOuterFinished}) {
+export function ConversationMultiChoice({topic, dialog, questions, audioOnly, onAnswered, setResult, onFinished}) {
     const [numVisibleMessages, setNumVisibleMessages] = useState(0);  
     const [conversationComponent, setConversationComponent] = useState(null); 
     const [progresSteps, setProgressSteps] = useState(0);
@@ -249,7 +249,7 @@ export function ConversationMultiChoice({topic, dialog, questions, audioOnly, on
         }
         if (currQuestionIndex >= questions.length) {
             setFinished(true);
-            setOuterFinished(true);
+            onFinished(numCorrect, questions.length);
         } else {
             setAnswered(false);
             setMultipleChoiceMode(true);
@@ -270,7 +270,6 @@ export function ConversationMultiChoice({topic, dialog, questions, audioOnly, on
     
     if (finished) {
         return <div className="conversation-component-outer-container">
-            <GameCompletionComponent numCorrect={numCorrect} totalQuestions={questions.length}></GameCompletionComponent>
         </div>
 
     } else {

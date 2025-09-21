@@ -1,18 +1,42 @@
 import { Typography } from "@mui/material";
 import { safeGetItem } from "./App"
 import Mascot, { getSortedMascotIdsByPrice } from "./mascot";
-import { SvgIcon } from '@mui/material';
-import { ReactComponent as CoinsSvg } from './svgs/coins.svg';  
-import { getAvailableMascots, addOwnedMascot, getOwnedMascots } from "./utils/mascotStorage";
+import { addOwnedMascot, getOwnedMascots } from "./utils/mascotStorage";
 import { useState } from "react";
 import {Button} from "@mui/material";
 import { mascotComponents } from "./mascot"
 import { currencyIcon } from "./topic-icons";
-import { useEffect, useRef } from "react";
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import { removeAdScript } from "./bottom-navbar";
-import { Currency } from "lucide-react";
+
+
+export function updateStoredCoins(amount, setGlobalCoins) {
+    const storedCoins = safeGetItem('coins');
+    if (storedCoins - amount < 0) {
+        return false;
+    } else {
+        localStorage.setItem('coins', storedCoins - amount);
+        if (setGlobalCoins) {
+            setGlobalCoins(safeGetItem('coins'));
+        }
+        
+        return true;
+    }
+}
+
+export function EmbeddedAdButton(setGlobalCoins) {
+    const adUrl = 'https://otieu.com/4/9907822';
+    const addBonus = 5;
+    const openEmbeddedAd = () => {
+        window.open(adUrl, '_blank');
+        updateStoredCoins(-1*addBonus, setGlobalCoins);
+    };
+
+    return (
+        <div className="ad-button" onClick={openEmbeddedAd}>
+            <Typography variant="subtitle2" align="center" sx={{color:'rgb(0, 74, 19)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Earn {addBonus}</Typography>
+            {currencyIcon()}
+        </div>
+    )
+}
 
 export default function Store({setGlobalCoins}) {
 
@@ -24,8 +48,7 @@ export default function Store({setGlobalCoins}) {
     const [mascotList, setMascotList] = useState(getStoreMascots());
 
 
-    const adUrl = 'https://otieu.com/4/9907822';
-    const addBonus = 5;
+
 
 
     function getStoreMascots() {
@@ -40,16 +63,7 @@ export default function Store({setGlobalCoins}) {
         return avail; 
     }
 
-    function updateStoredCoins(amount) {
-        const storedCoins = safeGetItem('coins');
-        if (storedCoins - amount < 0) {
-            return false;
-        } else {
-            localStorage.setItem('coins', storedCoins - amount);
-            setGlobalCoins(safeGetItem('coins'));
-            return true;
-        }
-    }
+
 
     function handleStoreClick(price, id) {
         setCurId(id);
@@ -85,7 +99,7 @@ export default function Store({setGlobalCoins}) {
     }
 
     function handlePurchase() {
-        const result = updateStoredCoins(curPrice);
+        const result = updateStoredCoins(curPrice, setGlobalCoins);
         if (result) {
             addOwnedMascot(curId);
             setMascotList(getStoreMascots());
@@ -142,19 +156,7 @@ export default function Store({setGlobalCoins}) {
         );
     }
 
-    function EmbeddedAdButton() {
-        const openEmbeddedAd = () => {
-            window.open(adUrl, '_blank');
-            updateStoredCoins(-1*addBonus);
-        };
 
-        return (
-            <div className="ad-button" onClick={openEmbeddedAd}>
-                <Typography variant="subtitle2" align="center" sx={{color:'rgb(0, 74, 19)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Earn {addBonus}</Typography>
-                {currencyIcon()}
-            </div>
-        )
-    }
 
     // function PopUpAdButton() {
     //     useEffect(() => {
@@ -192,7 +194,7 @@ export default function Store({setGlobalCoins}) {
             <Typography variant="subtitle2" align="center" sx={{color:'rgb(119, 118, 118)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Store</Typography>
             </div>
 
-            {EmbeddedAdButton()}       
+            {EmbeddedAdButton(setGlobalCoins)}       
 
             <div className='store-selection'>
             {

@@ -8,11 +8,12 @@ import Mascot from "../mascot";
 import { CheckCircle, XCircle, Question, Money } from "phosphor-react";
 import { AnimatedTypography, GradientTypography, BackgroundTypography, OutlinedGlowTypography, EnhancedSolidTypography } from "../utils/funfonts";
 import { Height } from "@mui/icons-material";
+import { currencyIcon } from "../topic-icons";
 
 //******************************************************************************** */
 //GameCompletionComponent
 //******************************************************************************** */
-export function GameCompletionComponent({ numCorrect, totalQuestions }) {
+export function GameCompletionComponent({ numCorrect, totalQuestions, updatePoints }) {
     const fractionCorrect = numCorrect / totalQuestions;
     const percentage = Math.round(fractionCorrect * 100);
   
@@ -52,6 +53,22 @@ export function GameCompletionComponent({ numCorrect, totalQuestions }) {
       if (fractionCorrect >= 0.1) return "Nice Try!";
       return "Better Luck Next Time!";
     };
+
+    function EmbeddedAdButton() {
+        const adUrl = 'https://otieu.com/4/9907822';
+        const addBonus = 5;
+        const openEmbeddedAd = () => {
+            window.open(adUrl, '_blank');
+            updatePoints(addBonus, 0);
+        };
+    
+        return (
+            <div className="ad-button" onClick={openEmbeddedAd}>
+                <Typography variant="subtitle2" align="center" sx={{color:'rgb(0, 74, 19)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Earn {addBonus}</Typography>
+                {currencyIcon()}
+            </div>
+        )
+    }
   
     return (
       <div className="game-completion-container">
@@ -62,7 +79,14 @@ export function GameCompletionComponent({ numCorrect, totalQuestions }) {
         <AnimatedTypography children={getMessage()}/>
         {/* Score */}
 
-        <div className="completion-score" style={{ position: "relative" }}>
+        <div className="completion-score" style={{ 
+          position: "relative", 
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center",
+          width: "120px",
+          height: "120px" 
+        }}>
           {/* Background circle */}
           <CircularProgress
             variant="determinate"
@@ -72,6 +96,8 @@ export function GameCompletionComponent({ numCorrect, totalQuestions }) {
             sx={{
               color: "#d1f0de",
               position: "absolute",
+              top: 0,
+              left: 0,
             }}
           />
   
@@ -82,9 +108,12 @@ export function GameCompletionComponent({ numCorrect, totalQuestions }) {
             size={120}
             thickness={6}
             sx={{
-              color: "#16ae55",
-              filter: "drop-shadow(0 0 6px rgba(22, 174, 85, 0.6))",
+              color: "#35cd74",
+            //   filter: "drop-shadow(0 0 6px rgba(22, 174, 85, 0.6))",
               transition: "all 0.2s ease-out",
+              position: "absolute",
+              top: 0,
+              left: 0,
               "& .MuiCircularProgress-circle": {
                 strokeLinecap: "round",
               },
@@ -94,25 +123,23 @@ export function GameCompletionComponent({ numCorrect, totalQuestions }) {
           {/* Percentage text */}
           <Typography
             sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
               fontSize: "1.5rem",
               fontWeight: "bold",
-              color: "#16ae55",
+              color: "#35cd74",
+              fontFamily: '"Inter", sans-serif',
               animation: "popIn 0.4s ease-out",
+              zIndex: 1,
               "@keyframes popIn": {
                 "0%": {
-                  transform: "translate(-50%, -50%) scale(0.6)",
+                  transform: "scale(0.6)",
                   opacity: 0,
                 },
                 "80%": {
-                  transform: "translate(-50%, -50%) scale(1.1)",
+                  transform: "scale(1.1)",
                   opacity: 1,
                 },
                 "100%": {
-                  transform: "translate(-50%, -50%) scale(1)",
+                  transform: "scale(1)",
                   opacity: 1,
                 },
               },
@@ -141,6 +168,7 @@ export function GameCompletionComponent({ numCorrect, totalQuestions }) {
             </span>
           </div>
         </div>
+        {EmbeddedAdButton()}
       </div>
     );
   }

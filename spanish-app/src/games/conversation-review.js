@@ -6,10 +6,12 @@ import { AudioExactTextResponse } from './helper-game-objects';
 import { ConversationMultiChoice } from './helper-conversation-game-objects';
 import { loadChapterContent } from '../utils/contentCache';
 import { LeaveButton } from './ui-objects';
+import { GameCompletionComponent } from './completion';
 
 
 export default function Conversations({chapterIndex, setSection, updatePoints}) {
     const [numCorrect, setNumCorrect] = useState(0);
+    const [totalQuestions, setTotalQuestions] = useState(0);
     const [currResult, setCurrentResult] = useState(null);
     const [questionComponent, setQuestionComponent] = useState(null);
     const [jsonContent, setJsonContent] = useState(null);
@@ -104,7 +106,7 @@ export default function Conversations({chapterIndex, setSection, updatePoints}) 
             audioOnly={Math.random() < 0.4}
             onAnswered={handleOnAnswer}
             setResult={setCurrentResult}
-            setOuterFinished={setFinished}
+            onFinished={onFinished}
             >
             </ConversationMultiChoice>
         )
@@ -144,25 +146,54 @@ export default function Conversations({chapterIndex, setSection, updatePoints}) 
         );
     }
 
-
-    if(finished && !updated) {
-        updatePoints(numCorrect, numCorrect);
-        setUpdated(true);
+    function onFinished(correct, total) {
+        setNumCorrect(correct);
+        setTotalQuestions(total);
+        setFinished(true);
     }
 
-    return (
-        <div className='mixed-review-container'>
-            <LeaveButton setSection={setSection} updatePoints={() => updatePoints(numCorrect, numCorrect)}></LeaveButton>
-            <div className='conversation-card'>
-            {scoreBarComponent}
-            {questionComponent}
-            <div className='finished-row'>
-            {finished && quitButton()}
-            {finished && retryButton()}
+    if (finished) {
+        if(!updated) {
+            updatePoints(numCorrect, numCorrect);
+            setUpdated(true);
+        }
+
+        return  (<div className="conversation-component-outer-container">
+        <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions} updatePoints={updatePoints}></GameCompletionComponent>
+        <div className='finished-row'>
+            <div className='mixed-review-continue'>
+                <Button className='app-button info' variant='contained' onClick={handleQuit}>
+                    <Typography>Quit</Typography>
+                </Button>
             </div>
-            
+            <div className='mixed-review-continue'>
+            <Button className='app-button success' variant='contained' onClick={handleRetry}>
+                <Typography>Play Again</Typography>
+            </Button>
             </div>
         </div>
-    );
+    </div>)
+    } else {
+        return (
+            <div className='mixed-review-container'>
+                <LeaveButton setSection={setSection} updatePoints={() => updatePoints(numCorrect, numCorrect)}></LeaveButton>
+                <div className='conversation-card'>
+                {scoreBarComponent}
+                {questionComponent}
+                <div className='finished-row'>
+                {finished && quitButton()}
+                {finished && retryButton()}
+                </div>
+                
+                </div>
+            </div>
+        );
+
+    }
+
+
+
+
+
 
 }

@@ -5,6 +5,10 @@
   --theme-medium-blue: rgb(69, 136, 224);
   --theme-dark-blue: rgb(7, 46, 97);
   --theme-background-color: white;
+  --theme-correct: #35cd74;
+  --theme-incorrect: #ff3545;
+  --theme-primary: #007aff;
+
 }
 
 /* Set global font size */
@@ -19,6 +23,7 @@ html, body {
 /* Override Material-UI Typography when no variant/level is specified */
 .MuiTypography-root:not([class*="MuiTypography-h"]):not([class*="MuiTypography-body"]):not([class*="MuiTypography-caption"]):not([class*="MuiTypography-overline"]):not([class*="MuiTypography-subtitle"]) {
   font-size: var(--base-font-size) !important;
+  font-family: "Inter", sans-serif !important;
 }
 
 
@@ -49,7 +54,7 @@ html, body {
   box-shadow: 0 -1px 2px rgba(23, 23, 23, 0.1);
   opacity: 95%;
   background-color: var(--theme-background-color);
-  z-index: 10;
+  z-index: 40;
 }
 
 .leave-button-row {
@@ -852,7 +857,8 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 80vh;
+  max-height: 75vh;
+  height: 75vh;
   padding-bottom: 10px;
 } 
 
@@ -925,13 +931,13 @@ html, body {
 }
 
 .completion-stat-correct {
-  color: #35cd74;
+  color: var(--theme-correct)
   /* background-color: #d1f0de; */
   /* border-color: rgb(11, 76, 7); */
 }
 
 .completion-stat-incorrect {
-  color: #ff3545;
+  color: var(--theme-incorrect)
   /* background-color: #fcdce1; */
   /* border-color: rgb(99, 14, 14); */
 }
@@ -1205,20 +1211,20 @@ html, body {
 }
 
 .app-button.primary {
-  background-color: #007aff !important;
+  background-color: var(--theme-primary) !important;
   color: #ffffff !important;
   border-bottom-color: #004ea8 !important;
 }
 .app-button.primary:hover { background-color: #0369e0 !important; }
 
 .app-button.success {
-  background-color: #16ae55 !important;
+  background-color: var(--theme-correct) !important;
   color: #ffffff !important;
   border-bottom-color: #0e7c3b !important;
 }
 
 .app-button.failed {
-  background-color: #d32424 !important;
+  background-color: var(--theme-incorrect) !important;
   color: #ffffff !important;
   border-bottom-color: #7c0e0e !important;
 }

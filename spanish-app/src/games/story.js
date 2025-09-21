@@ -254,7 +254,7 @@ export default function Story({chapterIndex, setSection, updatePoints}) {
             updatePoints(numCorrect, numCorrect);
         }
         return <div className="conversation-component-outer-container">
-            <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}></GameCompletionComponent>
+            <GameCompletionComponent numCorrect={numCorrect} totalQuestions={totalQuestions}  updatePoints={updatePoints}></GameCompletionComponent>
             <div className='finished-row'>
                 <div className='mixed-review-continue'>
                     <Button className='app-button info' variant='contained' onClick={handleQuit}>
