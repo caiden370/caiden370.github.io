@@ -1,81 +1,83 @@
 import { minHeight } from "@mui/system";
 import CustomizableMascot from "./custom-mascot.js";
+import React, { useState, useEffect } from 'react';
+import "./animations/animations.css"
 
 export const mascotComponents = {
   '0': [Bear, 40],
-  '1': [Cat, 50],
-  '2': [Dog, 50],
-  '3': [Bird, 50],
-  '4': [Pig, 50],
-  '5': [Horse, 50],
-  '6': [Giraffe, 60],
-  '7': [Wolf, 80],
-  '8': [Penguin, 120],
-  '9': [Goat, 80],
+  '1': [Cat, 70],
+  '2': [Dog, 70],
+  '3': [Bird, 90],
+  '4': [Pig, 350],
+  '5': [Horse, 100],
+  '6': [Giraffe, 110],
+  '7': [Wolf, 120],
+  '8': [Penguin, 150],
+  '9': [Goat, 120],
 
   // Bear Options
-  '100': [PolarBear, 90],
-  '101': [BlackBear, 70],
-  '102': [PandaBear, 200],
-  '103': [IceBear, 220],
-  '104': [PurpleBear, 270],
+  '100': [PolarBear, 300],
+  '101': [BlackBear, 120],
+  '102': [PandaBear, 500],
+  '103': [IceBear, 600],
+  '104': [PurpleBear, 750],
 
   // Cat Options
-  '200': [SiameseCat, 80],
-  '201': [BlackCat, 60],
-  '202': [GrayCat, 70],
-  '203': [CalicoCat, 130],
-  '204': [RainbowCat, 220],
-  '205': [MagicalCat, 270],
+  '200': [SiameseCat, 150],
+  '201': [BlackCat, 300],
+  '202': [GrayCat, 180],
+  '203': [CalicoCat, 450],
+  '204': [RainbowCat, 750],
+  '205': [MagicalCat, 900],
 
   // Dog Options
-  '300': [Dalmatian, 80],
-  '301': [GermanShepherd, 90],
-  '302': [Husky, 130],
-  '303': [Corgi, 120],
-  '304': [OceanDog, 160],
-  '305': [EnvironmentalDog, 230],
+  '300': [Dalmatian, 400],
+  '301': [GermanShepherd, 230],
+  '302': [Husky, 550],
+  '303': [Corgi, 450],
+  '304': [OceanDog, 760],
+  '305': [EnvironmentalDog, 850],
 
   // Bird Options
-  '400': [Cardinal, 120],
-  '401': [BlueJay, 90],
-  '402': [Robin, 60],
-  '403': [Flamingo, 80],
-  '404': [Peacock, 100],
-  '405': [FireBird, 150],
+  '400': [Cardinal, 700],
+  '401': [BlueJay, 400],
+  '402': [Robin, 150],
+  '403': [Flamingo, 500],
+  '404': [Peacock, 650],
+  '405': [FireBird, 850],
 
   // Pig Options
-  '500': [HampshirePig, 80],
-  '501': [SpottedPig, 120],
-  '502': [MintPig, 280],
-  '503': [MagicalPig, 220],
+  '500': [HampshirePig, 150],
+  '501': [SpottedPig, 350],
+  '502': [MintPig, 1000],
+  '503': [MagicalPig, 800],
 
   // Horse Options
-  '600': [WhiteHorse, 80],
-  '601': [BlackHorse, 80],
-  '602': [PalominoHorse, 100],
-  '603': [PintoHorse, 120],
-  '604': [GalaxyHorse, 220],
+  '600': [WhiteHorse, 150],
+  '601': [BlackHorse, 300],
+  '602': [PalominoHorse, 400],
+  '603': [PintoHorse, 550],
+  '604': [GalaxyHorse, 900],
 
   // Giraffe Options
-  '700': [ReticulatedGiraffe, 80],
-  '701': [MasaiGiraffe, 120],
-  '702': [SunsetGiraffe, 180],
+  '700': [ReticulatedGiraffe, 250],
+  '701': [MasaiGiraffe, 450],
+  '702': [SunsetGiraffe, 700],
 
   //Penguin Options
-  '800': [BluePenguin, 110],
-  '801': [GrayPenguin, 70],
-  '802': [PurplePenguin, 120],
-  '803': [EmperorPenguin, 150],
-  '804': [KingPenguin, 200],
-  '805': [MagicalPenguin, 240],
+  '800': [BluePenguin, 300],
+  '801': [GrayPenguin, 120],
+  '802': [PurplePenguin, 400],
+  '803': [EmperorPenguin, 550],
+  '804': [KingPenguin, 600],
+  '805': [MagicalPenguin, 850],
 
   //Goat Options
-  '900': [BrownGoat, 90],
-  '901': [GoldenGoat, 110],
-  '902': [TheGoat, 150],
-  '903': [EnvironmentalGoat, 230],
-  '904': [DepreciatedGoat, 180]
+  '900': [BrownGoat, 150],
+  '901': [GoldenGoat, 400],
+  '902': [TheGoat, 750],
+  '903': [EnvironmentalGoat, 600],
+  '904': [DepreciatedGoat, 950]
 
 
 
@@ -91,22 +93,56 @@ export function getSortedMascotIdsByPrice() {
   return mascotsWithPrices.map(mascot => Number(mascot.id));
 }
 
-export default function Mascot({id = -10, size='100px'}) {
-    // Get the corresponding component from our mapping
-    let mascotId = id
-    if (id == -10) {
+
+
+export default function Mascot({ id = -10}) {
+    const [animation, setAnimation] = useState('');
+    
+    // 1. Determine which mascot to show
+    let mascotId = id;
+    if (id === -10) {
         mascotId = Number(localStorage.getItem('selectedMascot') || 0);
     }
     
-    const SelectedMascot = mascotComponents[mascotId][0];
+    const SelectedMascot = mascotComponents[mascotId]?.[0] || mascotComponents[0][0];
 
-    if (!SelectedMascot) {
-      SelectedMascot = mascotComponents[0][0];
-    }
+    // 2. Logic to trigger a random animation every 5 seconds
+    useEffect(() => {
+        const animations = [
+          'spin', 'pulse', 'nudge', 'boing', 'confused', 
+          'bow', 'wobble', 'pop', 'jelly', 'flip', 
+          'float', 'shiver', 'victory'
+        ];
+        
+        const interval = setInterval(() => {
+            // Pick a random animation
+            const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+            
+            setAnimation(randomAnim);
+
+            // Remove the class after the animation finishes (0.8s) so it can be re-triggered
+            setTimeout(() => setAnimation(''), 800);
+            
+        }, 2000); // Happens every 5 seconds
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
-        <div className="mascot-container" style={{height: size, width: size}}>
-            <SelectedMascot/>
+        <div 
+            className="mascot-container" 
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}
+        >
+            <div 
+                className={animation ? 'animate-mascot' : ''} 
+                style={{ animationName: animation }}
+            >
+                <SelectedMascot />
+            </div>
         </div>
     );
 }
