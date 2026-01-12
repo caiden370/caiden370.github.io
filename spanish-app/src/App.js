@@ -8,11 +8,15 @@ import TopHeader from './top-header';
 import GameMenu from './game-menu';
 import GameWrapper from './game-wrapper';
 import { computeLevel } from './profile-page';
-import SettingsPage from './settings-page';
+import SettingsPage, { GlobalSettingsButton } from './settings-page';
 import AnimatedScoreIncrease from './animations/coin-animation';
 import { initMascotStorage } from './utils/mascotStorage';
 import Store from './store';
+import TopWordsPage from './top-words-page';
 
+export const TOP_WORDS_INDEX_RANGE = 10000;
+export const CHAPTERS_INDEX_RANGE = 0;
+export const MAX_VALUES_PER_RANGE = 10000;
 
 // STATS TRACKING
 export function checkNaN(val) {
@@ -37,6 +41,7 @@ export function setNameInStorage(name) {
 
 function App() {
   const chapters = "Chapters";
+  const topWords = "TopWords";
   const store = "Store";
   const profile = "Profile";
   const gamePage = "MenuGame";
@@ -61,11 +66,14 @@ function App() {
       case chapters:
         setPageContent(<ChaptersPage setChapterIndex={setChapterIndex} setSection={setNavSelection}/>);
         break;
+      case topWords:
+        setPageContent(<TopWordsPage setChapterIndex={setChapterIndex} setSection={setNavSelection} setGameId={setGameId}/>);
+        break;
       case store:
         setPageContent(<Store setGlobalCoins={setCoins}/>);
         break;    
       case profile:
-        setPageContent(<ProfilePage globalName={getNameFromStorage()} setGlobalName={setNameInStorage} setSelection={setNavSelection} experience={experience}/>);
+        setPageContent(<ProfilePage globalName={getNameFromStorage()} setGlobalName={setNameInStorage} setSelection={setNavSelection} experience={experience} setSection={setNavSelection}/>);
         break;   
       case settings:
         setPageContent(<SettingsPage></SettingsPage>);
@@ -76,7 +84,6 @@ function App() {
       case game:
         setPageContent(<GameWrapper gameId={gameId} chapterIndex={chapterIndex} setSection={setNavSelection} updatePoints={updatePoints}></GameWrapper>);
         break;
-      
     }    
   }
   
@@ -109,9 +116,8 @@ function App() {
   return (
     <div className="App">
       <div className='top-header-outer-container'>
-      <TopHeader coins={coins} level={computeLevel(experience)}></TopHeader>
+      <TopHeader coins={coins} level={computeLevel(experience)} setSection={setNavSelection}></TopHeader>
       </div>
-      
       <div className='page-container'>
         {pageContent}
       </div>

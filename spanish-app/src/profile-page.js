@@ -12,10 +12,12 @@ import './App.css';
 import Mascot from './mascot';
 import { MascotSelector } from './mascot-selection';
 import { getSelectedMascot } from './utils/mascotStorage';
+import { Gear } from 'phosphor-react';
 
+const EXP_REQUIRED_PER_LEVEL = 100
 
 export function computeLevel(exp) {
-    return Math.floor(exp / 100) + 1;
+    return Math.floor(exp / EXP_REQUIRED_PER_LEVEL) + 1;
 }
 
 export function getLevelColor(level) {
@@ -106,7 +108,7 @@ function ProgressBar({ progress }) {
     );
 }
 
-export default function ProfilePage({setGlobalName, globalName, experience}) {
+export default function ProfilePage({setGlobalName, globalName, experience, setSection}) {
 
 
     const importAll = (r) => r.keys().map(r);
@@ -135,7 +137,7 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
       };
     
     const computeProgress = (exp) => {
-        return exp % 100;
+        return exp % EXP_REQUIRED_PER_LEVEL;
     }
 
     return (
@@ -155,7 +157,6 @@ export default function ProfilePage({setGlobalName, globalName, experience}) {
                         <EditIcon />
                     </IconButton>
                 </div>
-
             </div>
                 <Modal
                     open={open}

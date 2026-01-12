@@ -8,6 +8,8 @@
   --theme-correct: #35cd74;
   --theme-incorrect: #ff3545;
   --theme-primary: #007aff;
+  --max-width-game-card: 600px;
+  --max-width-game-menu: 700px
 
 }
 
@@ -37,11 +39,12 @@ html, body {
 
   }
 
-
-
 .page-container {
   /* padding-top: 32px; */
   height: 100%;
+}
+
+.global-settings-buttom {
 }
 /* BOTTOM NAVBAR */
 
@@ -84,7 +87,7 @@ html, body {
   /* min-height: 150px; */
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: var(--max-width-game-card);
   min-width: 250px;
   overflow: hidden;
   border-radius: 12px;
@@ -376,6 +379,7 @@ html, body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100%;
   background-color: var(--theme-background-color);
@@ -386,6 +390,7 @@ html, body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+  max-width: var(--max-width-game-menu);
   background-color: var(--theme-light-blue);
   padding-top: 5px;
   padding-bottom: 5px;
@@ -468,10 +473,16 @@ html, body {
 }
 
 .mixed-review-container {
-  width: auto;
+  box-sizing: border-box;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+  padding-top: 80px;
+  padding-left: 12px;
+  padding-right:12px;
   background: linear-gradient(to bottom, var(--theme-light-blue), var(--theme-medium-blue) )
 }
 
@@ -493,12 +504,10 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-width: 500px;
+  width: 100%;
   background-color: white;
   box-shadow: #2f3542;
-  margin-bottom: 40px;
-  margin-top: 80px;
-  margin-left: 12px;
-  margin-right:12px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(105, 37, 0, 0.5);
   overflow: scroll;
@@ -625,13 +634,11 @@ html, body {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 82vh;
+  height: 100%;
+  width: 100%;
+  max-width: var(--max-width-game-card);
   background-color: white;
   box-shadow: #2f3542;
-  margin-bottom: 40px;
-  margin-top: 80px;
-  margin-left: 12px;
-  margin-right:12px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(105, 37, 0, 0.5);
   overflow-y: hidden;
@@ -1256,38 +1263,40 @@ html, body {
   gap: 4px;
 }
 
+.settings-header-container {
+  border-bottom: solid 1px black;
+  width: 100%;
+  max-width: var(--max-width-game-menu);
+}
+
 .settings-button-container {
   box-sizing: border-box;
-  border: solid 5px #ef8d03;
-  background-color: #f1db92;
+  /* border-bottom: solid 1px #ffffff; */
   padding: 10px;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   height: 50px;
   width: 100%;
+  max-width: var(--max-width-game-menu);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04); */
   cursor: pointer;
 }
 
 .settings-button-container:hover {
-  background-color: #f5f5f5;
-  border-color: #d0d0d0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
+  background-color: #cfcfcf;
 }
 
 .settings-button-container:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: #cfcfcf;
 }
 
 .settings-button-container svg {
-  color: #ef8d03;
+  color: #4f4f4f;
 }
 
 
@@ -1327,7 +1336,7 @@ outline: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 10;
 }
 
 
@@ -1847,4 +1856,25 @@ outline: none;
   align-items: center;
   z-index: 99; /* ensure it's above page content */
 
+}
+
+
+/* TOP WORDS */
+.word-ranges-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  gap: 5px;
+  max-width: var(--max-width-game-menu);
+}
+
+.word-range-card {
+  height: 100px;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3px;
 }

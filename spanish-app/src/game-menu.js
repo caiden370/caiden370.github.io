@@ -13,7 +13,7 @@ import { useState } from 'react';
 import { safeGetItem } from './App';
 
 
-export const ScoreGoal = [50, 50, 20, 50, 50, 50, 50, 50, 50];
+export const ScoreGoal = [20, 20, 20, 20, 20, 20, 20, 20, 20];
 
 export function getStarFill(chapterIndex) {
     return Number(localStorage.getItem(`ch${chapterIndex}-starfill`) || 0);

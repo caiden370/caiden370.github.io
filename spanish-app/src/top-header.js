@@ -8,8 +8,9 @@ import { currencyIcon } from "./topic-icons";
 
 import { getLevelColor } from "./profile-page";
 import { Height } from "@mui/icons-material";
+import { GlobalSettingsButton } from "./settings-page";
 
-export default function TopHeader({coins, level}) {
+export default function TopHeader({coins, level, setSection}) {
     const CoinIcon = currencyIcon();
     return (
         <div className="top-header-container">
@@ -17,6 +18,7 @@ export default function TopHeader({coins, level}) {
             <div className="coin-container">            
                 <div className="coin-icon-container">{CoinIcon}</div>
                 <div className='coin-amount-container'><Typography level='h3' sx={{color:"rgb(5, 69, 39)", fontWeight:'bold', fontFamily: '"Inter", sans-serif'}}>{coins}</Typography></div>
+                {<GlobalSettingsButton setSection={setSection}/>}
             </div>
 
         </div>

@@ -96,9 +96,9 @@ export function processText(text) {
 }
 
 
-export function LeaveButton({setSection, updatePoints}) {
+export function LeaveButton({setSection, updatePoints, section='MenuGame'}) {
   function onClick() {
-    setSection('MenuGame');
+    setSection(section);
     cancelAllSpeech()
     updatePoints();
   }
@@ -112,7 +112,6 @@ export function LeaveButton({setSection, updatePoints}) {
 
     </div>
   )
-
 }
 
 

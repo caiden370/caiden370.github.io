@@ -259,7 +259,7 @@ export default function CarGame({chapterIndex, setSection, updatePoints}) {
         return (
             <div className="sentence-continue-button-container">
             <Button className='app-button success' variant='contained' sx={{width:'auto'}} onClick={() => {handleContinue(false)}}>
-                <Typography>Continue</Typography>
+                <Typography>Skip</Typography>
             </Button>
             </div>
         )

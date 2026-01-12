@@ -1,8 +1,31 @@
+import { 
+  MAX_VALUES_PER_RANGE, 
+  CHAPTERS_INDEX_RANGE, 
+  TOP_WORDS_INDEX_RANGE } from "../App";
 export const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 const CACHE_PREFIX = 'learningContent:';
 
 // Simple in-memory cache to avoid repeated parsing within a session
 const memoryCache = new Map(); // chapterIndex -> { data, expiresAt }
+
+
+function getPathInformationBasedOnIndex(chapterIndex) {
+  const chapterRange = CHAPTERS_INDEX_RANGE + MAX_VALUES_PER_RANGE;
+  const topWordsRange = TOP_WORDS_INDEX_RANGE + MAX_VALUES_PER_RANGE;
+  console.log(typeof(chapterIndex));
+  console.log(typeof(chapterRange))
+
+  if (chapterIndex < chapterRange)
+      return ["json-files", "learningContent"];
+  else if (chapterIndex < topWordsRange)
+      return ["json-files/topWords", "topWords"];
+  else 
+      return ["", ""];
+
+}
+function getSuffix(chapterIndex) {
+
+}
 
 export async function loadChapterContent(chapterIndex) {
   const now = Date.now();
@@ -32,7 +55,8 @@ export async function loadChapterContent(chapterIndex) {
 
   // 3) Load dynamically
   try {
-    const mod = await import(`../json-files/${chapterIndex}-learningContent.json`);
+    const pathInfo = getPathInformationBasedOnIndex(chapterIndex);
+    const mod = await import(`../${pathInfo[0]}/${chapterIndex}-${pathInfo[1]}.json`);
     const learningContent = mod.default || mod;
     const data = learningContent[chapterIndex] || learningContent[String(chapterIndex)] || null;
     if (data) {

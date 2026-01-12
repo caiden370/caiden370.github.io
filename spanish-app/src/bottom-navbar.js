@@ -17,8 +17,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { 
   UserCircle,
   Storefront,
-  Gear,
   House,
+  Brain,
+  Gear
 } from 'phosphor-react';
 
 export function removeAdScript() {
@@ -35,32 +36,34 @@ export default function BottomNavbar({setSelection}) {
   const [value, setValue] = React.useState(0);
 
   const chapters = 'Chapters';
+  const topWords = 'TopWords';
   const store = 'Store';
   const profile = 'Profile';  
-  const settings = 'Settings'
-
-  const Home = <House size={40} color={"rgb(0, 174, 255)"} weight={"duotone"} className={"drop-shadow-sm"} ></House>
-  const Store = <Storefront size={40} color={"rgb(255, 0, 0)"} weight={"duotone"} className={"drop-shadow-sm"} ></Storefront>
-  const Profile = <UserCircle size={40} color={"rgb(226, 123, 13)"} weight={"duotone"} className={"drop-shadow-sm"} ></UserCircle>
-  const Settings =<Gear size={40} color={"rgb(117, 100, 100)"} weight={"duotone"} className={"drop-shadow-sm"} ></Gear>
-
-  const SelectedHome = <House size={50} color={"rgb(0, 174, 255)"} weight={"duotone"} className={"drop-shadow-sm"} ></House>
-  const SelectedStore = <Storefront size={50} color={"rgb(255, 0, 0)"} weight={"duotone"} className={"drop-shadow-sm"} ></Storefront>
-  const SelectedProfile = <UserCircle size={50} color={"rgb(226, 123, 13)"} weight={"duotone"} className={"drop-shadow-sm"} ></UserCircle>
-  const SelectedSettings =<Gear size={50} color={"rgb(117, 100, 100)"} weight={"duotone"} className={"drop-shadow-sm"} ></Gear>
+  const settings = 'Settings';
 
 
+  const Home = <House size={38} color={"rgb(0, 174, 255)"} weight={"duotone"} className={"drop-shadow-sm"} ></House>
+  const TopWords = <Brain size={38} color={"rgb(4, 114, 2)"} weight={"duotone"} className={"drop-shadow-sm"} ></Brain>
+  const Store = <Storefront size={38} color={"rgb(255, 0, 0)"} weight={"duotone"} className={"drop-shadow-sm"} ></Storefront>
+  const Profile = <UserCircle size={38} color={"rgb(226, 123, 13)"} weight={"duotone"} className={"drop-shadow-sm"} ></UserCircle>
+  
 
+  const SelectedHome = <House size={42} color={"rgb(0, 174, 255)"} weight={"duotone"} className={"drop-shadow-sm"} ></House>
+  const SelectedTopWords = <Brain size={42} color={"rgb(4, 114, 2)"} weight={"duotone"} className={"drop-shadow-sm"} ></Brain>
+  const SelectedStore = <Storefront size={42} color={"rgb(255, 0, 0)"} weight={"duotone"} className={"drop-shadow-sm"} ></Storefront>
+  const SelectedProfile = <UserCircle size={42} color={"rgb(226, 123, 13)"} weight={"duotone"} className={"drop-shadow-sm"} ></UserCircle>
+  const SelectedSettings =<Gear size={42} color={"rgb(117, 100, 100)"} weight={"duotone"} className={"drop-shadow-sm"} ></Gear>
 
 
   const dictionary = {
     "0": chapters,
-    "1": store,
-    "2": profile,
-    "3": settings 
+    "1": topWords,
+    "2": store,
+    "3": profile,
+    "4": settings,
 };
   return (
-    <Box sx={{ width: "100%"}}>
+    <Box sx={{ width: "100vw"}}>
       <BottomNavigation
         sx={{paddingBottom: '20px', backgroundColor:'inherit'}}
         showLabels
@@ -75,9 +78,10 @@ export default function BottomNavbar({setSelection}) {
         classes="navbar-button-box"
       >
         <BottomNavigationAction  icon={dictionary[value] === chapters? SelectedHome : Home} />
+        <BottomNavigationAction icon={dictionary[value] === topWords? SelectedTopWords : TopWords} />
         <BottomNavigationAction icon={dictionary[value] === store? SelectedStore : Store} />
         <BottomNavigationAction  icon={dictionary[value] === profile? SelectedProfile : Profile} />
-        <BottomNavigationAction  icon={dictionary[value] === settings? SelectedSettings : Settings} />
+        {/* <BottomNavigationAction  icon={dictionary[value] === settings? SelectedSettings : Settings} /> */}
       </BottomNavigation>
     </Box>
   );

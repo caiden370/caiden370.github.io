@@ -214,7 +214,6 @@ export function VoiceSettingsButton() {
       <Dialog 
         open={open} 
         onClose={() => setOpen(false)}
-        sx={{marginLeft: '20px', marginRight:'20px'}}
         PaperProps={{
           sx: { minHeight: '300px' }
         }}

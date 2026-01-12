@@ -15,7 +15,14 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Opacity, Padding } from '@mui/icons-material';
 import { StyledTopicIcons} from './topic-icons';
 import { darken, lighten } from '@mui/system';
+import { TOP_WORDS_INDEX_RANGE } from './App';
 
+const gradientStyle = (color) => {
+    return {
+        background: `linear-gradient(300deg, ${lighten(color, 0.3)}, ${lighten(color, 0.6)})`,
+        // bottomBorder: `8px solid ${darken(color, 0.1)}`,
+    };
+  };
 
 
 
@@ -42,12 +49,6 @@ export default function ChapterCard({number, onFavorite, favorite, iconName, con
         setIndex(i);
 
     }
-    const gradientStyle = (color) => {
-        return {
-            background: `linear-gradient(300deg, ${lighten(color, 0.3)}, ${lighten(color, 0.6)})`,
-            // bottomBorder: `8px solid ${darken(color, 0.1)}`,
-        };
-      };
 
 
     const IconComponent = StyledTopicIcons[iconName];
@@ -87,4 +88,34 @@ export default function ChapterCard({number, onFavorite, favorite, iconName, con
 
     );
 
+}
+
+
+export function WordRangeCard({i, progress, setSection, setIndex, color, setGameId}) {
+    
+    const REQUIRED_PROGRESS = 200;
+
+
+    function handleClick() {
+        setSection('MenuGame');
+        setIndex(i + TOP_WORDS_INDEX_RANGE);
+        setGameId('1');
+    }
+
+    function getTitle() {
+        return `${i*50}-${(i+1)*50 - 1}`;
+    }
+
+    function fillStar() {
+        return progress >= REQUIRED_PROGRESS;
+    }
+
+    const title = getTitle()
+
+    return (
+        <div className='word-range-card' style={{backgroundColor: gradientStyle(color)}} onClick={handleClick}>
+            <Typography level="h3" sx={{textAlign: 'left', overflow: 'hidden', fontWeight: 550, color: darken(color, 0.5), fontFamily: '"Inter", sans-serif'}}>{title}</Typography>
+            <div className='wrc-stars-container'> {fillStar() ? (<StarIcon sx={{color: 'rgb(240, 181, 32)'}} />) : null}</div>
+        </div>
+    )
 }
