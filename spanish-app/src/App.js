@@ -13,6 +13,7 @@ import AnimatedScoreIncrease from './animations/coin-animation';
 import { initMascotStorage } from './utils/mascotStorage';
 import Store from './store';
 import TopWordsPage from './top-words-page';
+import HomeScreenInstallPrompt from './HomeScreenInstallPrompt';
 
 export const TOP_WORDS_INDEX_RANGE = 10000;
 export const CHAPTERS_INDEX_RANGE = 0;
@@ -125,7 +126,7 @@ function App() {
       <BottomNavbar setSelection={setNavSelection}/>
       </div>)}
       <div className='app-background'></div>
-      
+      <HomeScreenInstallPrompt />
     </div>
   );
 }

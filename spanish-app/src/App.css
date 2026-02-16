@@ -176,7 +176,6 @@ html, body {
   overflow-y: auto;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 64px;
   padding-bottom: 80px;
   background-color: var(--theme-background-color);
   
@@ -1869,12 +1868,153 @@ outline: none;
 }
 
 .word-range-card {
-  height: 100px;
+  position: relative;
+  width: 100%;
   overflow: hidden;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.word-range-card.locked {
+  opacity: 0.6;
+}
+
+.word-range-card-button {
+  padding: 10px 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0px;
+  overflow: hidden;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.word-range-card-button:disabled {
+  cursor: default;
+}
+
+.word-range-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.word-range-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+
+.word-range-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 45px;
+}
+
+
+/* HOME SCREEN INSTALL PROMPT */
+.homescreen-prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.homescreen-prompt-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  width: 85%;
+  max-width: 360px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.homescreen-prompt-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: background-color 0.2s;
+}
+
+.homescreen-prompt-close:hover {
+  background-color: #f0f0f0;
+}
+
+.homescreen-prompt-title {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.homescreen-prompt-subtitle {
+  margin: 0 0 20px 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.homescreen-prompt-steps {
+  display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 16px;
+}
+
+.homescreen-prompt-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.homescreen-prompt-step-number {
+  width: 28px;
+  height: 28px;
+  background: var(--theme-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.homescreen-prompt-step-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.homescreen-prompt-icon {
+  color: var(--theme-primary);
+  flex-shrink: 0;
+}
+
+.homescreen-prompt-step-content strong {
+  font-weight: 600;
 }

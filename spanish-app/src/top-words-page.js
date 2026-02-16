@@ -1,8 +1,10 @@
-import ChapterCard from "./card";
+import ChapterCard, { WordRangeCard } from "./card";
 import chapterCovers from "./json-files/chapterCovers.json"
 import './App.css';
 import Mascot from "./mascot";
 import { Typography } from "@mui/material";
+import { getTopWordsProgress } from "./game-menu";
+import { TOP_WORDS_INDEX_RANGE } from "./App";
 
 
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -25,7 +27,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StarIcon from '@mui/icons-material/Star';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import WavingHandIcon from '@mui/icons-material/WavingHand';
-import { WordRangeCard } from "./card";
 
 // This constant maps a string name to the actual MUI component
 export const topicIcons = {
@@ -90,6 +91,20 @@ export default function TopWordsPage({setSection, setChapterIndex, setGameId}) {
         wordRanges[i] = i*50;
     }
     
+    const wordRangeProgresses = Array(wordRanges.length);
+    for (let i = 0; i < wordRanges.length; i++) {
+        wordRangeProgresses[i] = getTopWordsProgress(i + TOP_WORDS_INDEX_RANGE);
+    }
+
+    const isUnlockedArray = Array(wordRanges.length);
+    for (let i = 0; i < wordRanges.length; i++) {
+        if (i === 0) {
+            isUnlockedArray[i] = true;
+        } else {
+            isUnlockedArray[i] = wordRangeProgresses[i - 1] >= 50;
+        }
+    }
+    
     return (
         <div className="chapters-container">
             <div className='chapters-container-top-header'>
@@ -97,9 +112,9 @@ export default function TopWordsPage({setSection, setChapterIndex, setGameId}) {
             </div>
             <Typography variant="subtitle2" align="center" sx={{color:'rgb(119, 118, 118)', width:"100%", fontWeight: 600, fontFamily: '"Inter", sans-serif'}}>Top 1000 Spanish Words</Typography>
     
-            <div className="word-ranges-container">
+            <div className="chapters-grid">
                 {wordRanges.map((progress, i) => (
-                    <WordRangeCard key={`${i}-wrc`} i={i} progress={progress} setSection={setSection} setIndex={setChapterIndex} setGameId={setGameId} color={getColor(i)}/>
+                    <WordRangeCard key={`${i}-wrc`} i={i} progress={wordRangeProgresses[i]} setSection={setSection} setIndex={setChapterIndex} setGameId={setGameId} color={getColor(i)} isUnlocked={isUnlockedArray[i]}/>
                 ))}
             </div>
 

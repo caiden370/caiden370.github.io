@@ -91,31 +91,35 @@ export default function ChapterCard({number, onFavorite, favorite, iconName, con
 }
 
 
-export function WordRangeCard({i, progress, setSection, setIndex, color, setGameId}) {
+export function WordRangeCard({i, progress, setSection, setIndex, color, setGameId, isUnlocked}) {
     
-    const REQUIRED_PROGRESS = 200;
-
-
     function handleClick() {
-        setSection('MenuGame');
-        setIndex(i + TOP_WORDS_INDEX_RANGE);
-        setGameId('1');
+        if (isUnlocked) {
+            setSection('MenuGame');
+            setIndex(i + TOP_WORDS_INDEX_RANGE);
+            setGameId('1');
+        }
     }
 
     function getTitle() {
         return `${i*50}-${(i+1)*50 - 1}`;
     }
 
-    function fillStar() {
-        return progress >= REQUIRED_PROGRESS;
-    }
-
     const title = getTitle()
 
     return (
-        <div className='word-range-card' style={{backgroundColor: gradientStyle(color)}} onClick={handleClick}>
-            <Typography level="h3" sx={{textAlign: 'left', overflow: 'hidden', fontWeight: 550, color: darken(color, 0.5), fontFamily: '"Inter", sans-serif'}}>{title}</Typography>
-            <div className='wrc-stars-container'> {fillStar() ? (<StarIcon sx={{color: 'rgb(240, 181, 32)'}} />) : null}</div>
+        <div className={`word-range-card ${!isUnlocked ? 'locked' : ''}`} style={gradientStyle(color)}>
+            <button className='word-range-card-button' onClick={handleClick} disabled={!isUnlocked}>
+                <div className='word-range-card-content'>
+                    <span className='word-range-card-title' style={{color: isUnlocked ? darken(color, 0.5) : '#999'}}>
+                        {title}
+                    </span>
+                    {isUnlocked && <StarIcon sx={{color: 'rgb(255, 183, 0)', fontSize: 16}} />}
+                </div>
+                <div className='word-range-card-action' style={{color: isUnlocked ? darken(color, 0.4) : '#999'}}>
+                    {progress} / 50
+                </div>
+            </button>
         </div>
     )
 }

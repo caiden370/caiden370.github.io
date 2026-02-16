@@ -27,6 +27,14 @@ export function getStarFillCompute(chapterIndex) {
     return val;
 }
 
+export function getTopWordsProgress(chunkIndex) {
+    let total = 0;
+    for (let i = 0; i < 6; i++) {
+        total += checkLocalProgress(chunkIndex, i+1);
+    }
+    return total;
+}
+
 export function incrementStarFill(chapterIndex) {
     localStorage.setItem(`ch${chapterIndex}-starfill`, getStarFill(chapterIndex) + 1)
 }
