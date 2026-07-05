@@ -1,0 +1,311 @@
+{
+  "id": "independent-bank-clinic",
+  "name": "Banco y Clínica Comunitaria",
+  "kind": "interior",
+  "chapterId": "independent-life",
+  "region": "Chapter 5: Independent Life",
+  "cefrLevel": "B1",
+  "teaches": [
+    "transferencia",
+    "comprobante",
+    "cita",
+    "síntoma",
+    "seguimiento"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "g": "lightGreenFloor",
+    "r": "lightRedFloor"
+  },
+  "playerStart": {
+    "x": 15,
+    "y": 16,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "serviceCounter",
+      "x": 4,
+      "y": 4,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "atm",
+      "x": 13,
+      "y": 4
+    },
+    {
+      "type": "doctorBed",
+      "x": 21,
+      "y": 5,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "formDesk",
+      "x": 20,
+      "y": 9,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "plant",
+      "x": 16,
+      "y": 9
+    },
+    {
+      "type": "water",
+      "x": 24,
+      "y": 9
+    }
+  ],
+  "people": [
+    {
+      "personId": "javier",
+      "x": 8,
+      "y": 7,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "nameCard",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "independent-bank-transfer"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Para activar pago de alquiler debes confirmar identidad, monto mensual y concepto de transferencia."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "La transferencia no es solo \"enviar dinero\"; también genera un comprobante para auditoría."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál opción describe mejor la transferencia que pide Javier?",
+              "options": [
+                {
+                  "label": "Confirmar identidad, monto y concepto para obtener comprobante.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Javier",
+                      "text": "Correcto. Aquí está tu comprobante bancario."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "routePass",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "independent-bank-transfer"
+                    }
+                  ]
+                },
+                {
+                  "label": "Retirar efectivo sin registrar datos.",
+                  "correct": false
+                },
+                {
+                  "label": "Pedir café y cerrar la cuenta.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Trae tu tarjeta de identificación para procesar la transferencia."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "elena",
+      "x": 22,
+      "y": 11,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "apple",
+                "count": 1
+              }
+            ],
+            "completedMissions": [
+              "independent-bank-transfer"
+            ],
+            "missingMissions": [
+              "independent-health-plan"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "La clínica evalúa hábitos reales. Traer fruta y seguir hidratación demuestra prevención, no reacción tardía."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Escucha la indicación completa: hidratarse, caminar y dormir suficiente para mantener energía laboral."
+            },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha. ¿Qué plan recomienda Elena?",
+              "audioText": "Debes hidratarte durante el día, caminar treinta minutos y dormir al menos siete horas para sostener una rutina estable.",
+              "options": [
+                {
+                  "label": "Hidratarse, caminar y dormir al menos siete horas.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "removeItem",
+                      "itemId": "apple",
+                      "count": 1
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "gymPass",
+                      "count": 1
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "waterBottle",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Elena",
+                      "text": "Plan de salud registrado."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "independent-health-plan"
+                    }
+                  ]
+                },
+                {
+                  "label": "Ayunar, correr de noche y dormir cuatro horas.",
+                  "correct": false
+                },
+                {
+                  "label": "Tomar café todo el día y saltar comidas.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Necesito una manzana para completar tu expediente nutricional."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "isabel",
+      "x": 15,
+      "y": 13,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "routePass",
+                "count": 1
+              },
+              {
+                "itemId": "gymPass",
+                "count": 1
+              }
+            ],
+            "completedMissions": [
+              "independent-bank-transfer",
+              "independent-health-plan"
+            ],
+            "missingMissions": [
+              "independent-bank-clinic-complete"
+            ]
+          },
+          "actions": [
+            {
+              "type": "askChoice",
+              "prompt": "Si ya tienes comprobante bancario y plan de salud, ¿qué estado corresponde?",
+              "options": [
+                {
+                  "label": "Banco y clínica completados y listos para verificación final.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Isabel",
+                      "text": "Excelente. El bloque banco-clínica está validado."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "independent-bank-clinic-complete"
+                    }
+                  ]
+                },
+                {
+                  "label": "Falta empezar todos los trámites desde cero.",
+                  "correct": false
+                },
+                {
+                  "label": "Solo importa la conversación del parque.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Verifica comprobante bancario y plan de salud para cerrar este bloque."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 15,
+      "y": 17,
+      "targetArea": "independent-life",
+      "targetX": 24,
+      "targetY": 6,
+      "facing": "down"
+    }
+  ]
+}

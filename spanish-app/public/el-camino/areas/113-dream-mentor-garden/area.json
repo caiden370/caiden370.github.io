@@ -1,0 +1,77 @@
+{
+  "id": "dream-mentor-garden",
+  "name": "Jardín de Mentoría",
+  "kind": "interior",
+  "chapterId": "dream-future",
+  "region": "Chapter 10: Dream Future",
+  "cefrLevel": "C1",
+  "teaches": ["liderazgo humano", "mentoría", "resolución de conflicto"],
+  "legend": { "w": "insideWall", "c": "campusStone", "g": "lightGreenFloor" },
+  "playerStart": { "x": 14, "y": 15, "facing": "up" },
+  "objects": [
+    { "type": "plant", "x": 4, "y": 3, "w": 2, "h": 2 },
+    { "type": "plant", "x": 21, "y": 3, "w": 2, "h": 2 },
+    { "type": "bench", "x": 8, "y": 8, "w": 4, "h": 1 },
+    { "type": "bench", "x": 16, "y": 8, "w": 4, "h": 1 },
+    { "type": "coffeeMachine", "x": 13, "y": 4 }
+  ],
+  "people": [
+    {
+      "personId": "ana",
+      "x": 9,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "routePass", "count": 1 }, { "itemId": "textbook", "count": 1 }], "missingMissions": ["dream-mentor-dialogue"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Ana", "text": "Un líder no solo decide; crea condiciones para que otros crezcan." },
+            { "type": "showDialogue", "speaker": "Ana", "text": "Interpreta este conflicto: dos equipos compiten por recursos limitados." },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué respuesta refleja mentoría efectiva?",
+              "options": [
+                { "label": "Alinear objetivos comunes, transparentar criterios y acordar métricas compartidas.", "correct": true, "actions": [{ "type": "completeMission", "missionId": "dream-mentor-dialogue" }] },
+                { "label": "Elegir un equipo favorito sin justificar la decisión.", "correct": false },
+                { "label": "Retrasar el problema para evitar conversaciones difíciles.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Trae el pase global y el dossier de innovación para continuar." }] }
+      ]
+    },
+    {
+      "personId": "mateo",
+      "x": 18,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["dream-mentor-dialogue"], "missingMissions": ["dream-mentor-consensus"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Mateo", "text": "Cierra el proceso con una síntesis oral: visión, estrategia y cultura de aprendizaje." },
+            {
+              "type": "askSpeech",
+              "prompt": "Di en español: Construiremos una visión compartida, mediremos avances y aprenderemos de cada iteración.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": [
+                "Construiremos una visión compartida mediremos avances y aprenderemos de cada iteración",
+                "Construiremos una vision compartida mediremos avances y aprenderemos de cada iteracion"
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Mateo", "text": "Síntesis sólida. Este café simbólico abre el repaso final." },
+                { "type": "addItem", "itemId": "coffeeCup", "count": 1 },
+                { "type": "completeMission", "missionId": "dream-mentor-consensus" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Mateo", "text": "El liderazgo se demuestra en conversaciones difíciles y seguimiento real." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 16, "targetArea": "dream-future", "targetX": 23, "targetY": 16, "facing": "down" }
+  ]
+}

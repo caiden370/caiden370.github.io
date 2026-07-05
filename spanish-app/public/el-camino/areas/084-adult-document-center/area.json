@@ -1,0 +1,296 @@
+{
+  "id": "adult-document-center",
+  "name": "Centro de Verificación Documental",
+  "kind": "interior",
+  "chapterId": "adult-responsibilities",
+  "region": "Chapter 8: Adult Responsibilities",
+  "cefrLevel": "B2",
+  "teaches": [
+    "expediente",
+    "certificación",
+    "consistencia",
+    "validación"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 12,
+    "y": 10,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "passportDesk",
+      "x": 4,
+      "y": 2,
+      "w": 5,
+      "h": 1
+    },
+    {
+      "type": "serviceCounter",
+      "x": 10,
+      "y": 2,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "printer",
+      "x": 6,
+      "y": 5
+    },
+    {
+      "type": "printer",
+      "x": 17,
+      "y": 5
+    },
+    {
+      "type": "filingCabinet",
+      "x": 11,
+      "y": 5
+    },
+    {
+      "type": "queueRope",
+      "x": 8,
+      "y": 7,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 9,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Documento válido: datos consistentes entre oficina, seguro y taller."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "personId": "sofia",
+      "x": 6,
+      "y": 4,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "adult-garage-repair"
+            ],
+            "missingMissions": [
+              "docs-intake"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Recepción documental: aquí no gana quien habla más, sino quien presenta pruebas coherentes."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué requiere la recepción documental antes de certificar un expediente?",
+              "options": [
+                {
+                  "label": "Identificación, trazabilidad de trámites y orden cronológico.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "addItem",
+                      "itemId": "libraryCard",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Sofía",
+                      "text": "Bien. Te registro en la cola de validación."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "docs-intake"
+                    }
+                  ]
+                },
+                {
+                  "label": "Solo una firma sin contexto.",
+                  "correct": false
+                },
+                {
+                  "label": "La opinión informal del taller.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "La coherencia documental se construye, no se improvisa."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "isabel",
+      "x": 12,
+      "y": 5,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "docs-intake"
+            ],
+            "missingMissions": [
+              "docs-proof"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Mesa de pruebas: necesito una frase que conecte póliza activa, reparación cerrada y licencia vigente."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: Presento licencia vigente, póliza activa y cierre técnico para probar consistencia.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Presento licencia vigente póliza activa y cierre técnico para probar consistencia",
+                "Presento licencia vigente, póliza activa y cierre técnico para probar consistencia"
+              ],
+              "actions": [
+                {
+                  "type": "addItem",
+                  "itemId": "redBook",
+                  "count": 1
+                },
+                {
+                  "type": "showDialogue",
+                  "speaker": "Isabel",
+                  "text": "Perfecto. Tu evidencia quedó archivada."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "docs-proof"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Sin frase de consistencia, el expediente no avanza."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "ana",
+      "x": 18,
+      "y": 5,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "docs-intake",
+              "docs-proof",
+              "adult-cityhall-license",
+              "adult-insurance-approved",
+              "adult-garage-repair"
+            ],
+            "missingMissions": [
+              "adult-documents-verified"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Control final: voy a comparar cada oficina. Si detecto contradicción, el trámite regresa al principio."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál combinación demuestra expediente adulto completo para este capítulo?",
+              "options": [
+                {
+                  "label": "Licencia municipal, póliza aprobada, reparación validada y archivo documental sellado.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Ana",
+                      "text": "Exacto. Expediente verificado y liberado."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "nameTag",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "adult-documents-verified"
+                    }
+                  ]
+                },
+                {
+                  "label": "Solo licencia y una promesa verbal.",
+                  "correct": false
+                },
+                {
+                  "label": "Reparación parcial sin póliza ni archivo.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Con verificación completa, ya puedes entrar al centro de repaso."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "adult-repair-garage",
+      "targetX": 22,
+      "targetY": 6,
+      "facing": "left"
+    },
+    {
+      "x": 12,
+      "y": 11,
+      "targetArea": "adult-responsibilities",
+      "targetX": 15,
+      "targetY": 17,
+      "facing": "down"
+    }
+  ]
+}

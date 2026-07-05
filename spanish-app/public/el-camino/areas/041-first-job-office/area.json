@@ -1,0 +1,405 @@
+{
+  "id": "first-job-office",
+  "name": "Oficina Administrativa",
+  "kind": "interior",
+  "chapterId": "first-job",
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "paquete",
+    "verificar",
+    "adjuntar",
+    "procedimiento",
+    "prioridad"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "c": "carpetBlue",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 16,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "meetingTable",
+      "x": 10,
+      "y": 5,
+      "w": 6,
+      "h": 2
+    },
+    {
+      "type": "computerDesk",
+      "x": 4,
+      "y": 4,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "computerDesk",
+      "x": 22,
+      "y": 4,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "filingCabinet",
+      "x": 4,
+      "y": 12
+    },
+    {
+      "type": "printer",
+      "x": 22,
+      "y": 12
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 11,
+      "y": 2,
+      "w": 6,
+      "h": 1
+    },
+    {
+      "type": "itemSparkle",
+      "x": 5,
+      "y": 13,
+      "walkable": true,
+      "interactions": [
+        {
+          "when": {
+            "missingSteps": [
+              "firstjob-found-notebook"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Encuentras un cuaderno de inventario con hojas en blanco."
+            },
+            {
+              "type": "addItem",
+              "itemId": "notebook",
+              "count": 1
+            },
+            {
+              "type": "completeStep",
+              "stepId": "firstjob-found-notebook"
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "El archivador ya no tiene más cuadernos."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "personId": "elena",
+      "x": 13,
+      "y": 8,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "firstjob-office-intro"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Perfecto, llegaste a tiempo. Aquí coordinamos pedidos para clientes corporativos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Necesito un paquete de bienvenida: cuaderno, calculadora, manual de servicio y café para la reunión."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "No basta con traer objetos; debes confirmar que cada pieza fue verificada por el área correcta."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué elemento NO forma parte del paquete de bienvenida?",
+              "options": [
+                {
+                  "label": "Un cuaderno de inventario.",
+                  "correct": false
+                },
+                {
+                  "label": "Una calculadora funcional.",
+                  "correct": false
+                },
+                {
+                  "label": "Una pelota del patio.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Elena",
+                      "text": "Correcto. Empieza con el cuaderno y vuelve cuando tengas todo."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-office-intro"
+                    }
+                  ]
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-office-intro"
+            ],
+            "hasItems": [
+              {
+                "itemId": "notebook",
+                "count": 1
+              },
+              {
+                "itemId": "calculator",
+                "count": 1
+              },
+              {
+                "itemId": "textbook",
+                "count": 1
+              },
+              {
+                "itemId": "coffeeCup",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "firstjob-office-kit"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Veo el paquete completo. Antes de aceptarlo, confirma el estado del pedido en español formal."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Usa una frase completa, no palabras sueltas."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: I already prepared the welcome package for the client.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Ya preparé el paquete de bienvenida para el cliente",
+                "Ya prepare el paquete de bienvenida para el cliente"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Elena",
+                  "text": "Excelente. Entrega validada y registrada."
+                },
+                {
+                  "type": "removeItem",
+                  "itemId": "notebook",
+                  "count": 1
+                },
+                {
+                  "type": "removeItem",
+                  "itemId": "calculator",
+                  "count": 1
+                },
+                {
+                  "type": "removeItem",
+                  "itemId": "textbook",
+                  "count": 1
+                },
+                {
+                  "type": "removeItem",
+                  "itemId": "coffeeCup",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "firstjob-office-kit"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Trae cuaderno, calculadora, manual y café; después yo verifico el paquete."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "javier",
+      "x": 7,
+      "y": 8,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-office-intro"
+            ],
+            "missingMissions": [
+              "firstjob-office-etiquette"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Cuando entregues documentos, primero anuncia el contenido y luego el destino."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Decir 'esto' no sirve. Debes ser preciso."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál frase suena más profesional?",
+              "options": [
+                {
+                  "label": "Aquí está el paquete de bienvenida para el cliente de recepción.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Javier",
+                      "text": "Exacto. Precisión primero."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-office-etiquette"
+                    }
+                  ]
+                },
+                {
+                  "label": "Toma esto, luego vemos.",
+                  "correct": false
+                },
+                {
+                  "label": "No sé qué traje, pero aquí está.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Habla con precisión: contenido + destino + propósito."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "sofia",
+      "x": 19,
+      "y": 8,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-office-intro",
+              "firstjob-office-etiquette"
+            ],
+            "missingMissions": [
+              "firstjob-office-verify"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Yo reviso que los paquetes sean útiles. Un paquete útil evita preguntas en recepción."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Si falta una herramienta, el cliente pierde tiempo y confianza."
+            },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha el criterio de verificación.",
+              "audioText": "Un paquete está completo cuando contiene materiales, instrucciones y una confirmación final.",
+              "options": [
+                {
+                  "label": "Debe tener materiales, instrucciones y confirmación final.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Sofia",
+                      "text": "Perfecto. Ya entiendes el estándar de calidad."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-office-verify"
+                    }
+                  ]
+                },
+                {
+                  "label": "Solo necesita una calculadora y nada más.",
+                  "correct": false
+                },
+                {
+                  "label": "No importa el contenido si llega rápido.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Calidad es claridad, utilidad y verificación."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 14,
+      "y": 17,
+      "targetArea": "first-job",
+      "targetX": 6,
+      "targetY": 6,
+      "facing": "down"
+    }
+  ]
+}

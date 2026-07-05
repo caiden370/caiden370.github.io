@@ -1,0 +1,251 @@
+{
+  "id": "first-job-boss-final",
+  "name": "Consejo Final del Turno",
+  "kind": "interior",
+  "chapterId": "first-job",
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "síntesis",
+    "liderazgo",
+    "decisiones complejas",
+    "evaluación final"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 7,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "meetingTable",
+      "x": 7,
+      "y": 6,
+      "w": 10,
+      "h": 2
+    },
+    {
+      "type": "trophyCase",
+      "x": 18,
+      "y": 3,
+      "w": 2,
+      "h": 2
+    },
+    {
+      "type": "dreamBoard",
+      "x": 4,
+      "y": 3,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "microphone",
+      "x": 12,
+      "y": 3
+    }
+  ],
+  "people": [
+    {
+      "personId": "directora-club",
+      "x": 12,
+      "y": 8,
+      "boss": true,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "firstjob-boss-final"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Directora del Club",
+              "text": "Duelo final del primer trabajo. Aquí se combinan todas las habilidades del capítulo."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Directora del Club",
+              "text": "Si fallas una sola respuesta, vuelves al inicio del consejo."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "firstjob-boss-final",
+              "title": "Duelo Final del Primer Trabajo",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Translate: Aunque el turno estaba lleno, mantuvimos la calma, distribuimos tareas y confirmamos cada seguimiento.",
+                  "options": [
+                    {
+                      "label": "Even though the shift was busy, we stayed calm, distributed tasks, and confirmed each follow-up.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Because the shift was easy, we ignored all follow-up.",
+                      "correct": false
+                    },
+                    {
+                      "label": "The shift ended early and no tasks were assigned.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: Before answering the client, I verified the data with my team.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Antes de responder al cliente verifiqué los datos con mi equipo",
+                    "Antes de responder al cliente verifique los datos con mi equipo"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: La oficina recibe tres prioridades simultáneas: una factura duplicada, un faltante de pedido y relevo de descanso. ¿Qué orden es más sólido?",
+                  "options": [
+                    {
+                      "label": "Atender impacto al cliente, asignar cobertura interna y confirmar tiempos por escrito.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Resolver solo lo fácil y dejar lo demás para mañana.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Esperar nuevas instrucciones sin comunicar avances.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha el cierre de turno.",
+                  "audioText": "El equipo cerró el día con un resumen claro: qué se resolvió, qué sigue pendiente y quién dará seguimiento mañana.",
+                  "options": [
+                    {
+                      "label": "They closed with a clear summary of resolved items, pending items, and ownership for follow-up.",
+                      "correct": true
+                    },
+                    {
+                      "label": "They closed without summary because everything was obvious.",
+                      "correct": false
+                    },
+                    {
+                      "label": "They postponed all communication until next week.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--Necesito confianza, no excusas. --Tiene razón; hoy recibirá reporte con responsables y horario de seguimiento. ¿Qué demuestra esta respuesta?",
+                  "options": [
+                    {
+                      "label": "Responsabilidad medible y enfoque en resultados.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Evasión del problema.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Promesa vacía sin plan.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué combinación permitió completar el paquete de bienvenida de oficina?",
+                  "options": [
+                    {
+                      "label": "Cuaderno, calculadora, manual y café.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Pan, jugo, pelota y mapa.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Solo una calculadora.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: We solved both cases and confirmed follow-up before the end of the shift.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Resolvimos ambos casos y confirmamos seguimiento antes del fin del turno",
+                    "Resolvimos ambos casos y confirmamos seguimiento antes del final del turno"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Cuál frase resume mejor el objetivo de este capítulo?",
+                  "options": [
+                    {
+                      "label": "Escuchar, coordinar, verificar y comunicar con precisión profesional.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Terminar rápido sin revisar detalles.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Hablar mucho sin compromisos concretos.",
+                      "correct": false
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Directora del Club",
+                  "text": "Superaste el consejo final. Has ganado la insignia del capítulo cuatro."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "chapterFourBadge",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "firstjob-boss-final"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Directora del Club",
+              "text": "Insignia obtenida. Tu primer trabajo está dominado."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 7,
+      "targetArea": "first-job-boss-client",
+      "targetX": 22,
+      "targetY": 7,
+      "facing": "left"
+    }
+  ]
+}

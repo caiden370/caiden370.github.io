@@ -1,0 +1,111 @@
+{
+  "id": "family-boss-storytelling",
+  "name": "Jefe I: Duelo de Relatos",
+  "kind": "interior",
+  "chapterId": "family",
+  "region": "Chapter 7: Family Neighborhood",
+  "cefrLevel": "B2",
+  "teaches": ["narración", "secuencia", "matiz emocional"],
+  "legend": { "w": "insideWall", "c": "carpetBlue", "p": "woodFloor" },
+  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "objects": [
+    { "type": "podium", "x": 9, "y": 3 },
+    { "type": "familyPhoto", "x": 5, "y": 3 },
+    { "type": "familyPhoto", "x": 14, "y": 3 },
+    { "type": "microphone", "x": 10, "y": 8 }
+  ],
+  "people": [
+    {
+      "personId": "guardian-biblioteca",
+      "x": 10,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["family-boss-storytelling"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Guardiana de Relatos", "text": "Primer duelo: historias familiares con detalles incómodos y emociones mezcladas." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "family-boss-storytelling",
+              "title": "Duelo de Relatos",
+              "restartMessage": "No. El relato vuelve al inicio.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Cuando mi tío se quedó en silencio, entendí que no estaba enojado, sino avergonzado.",
+                  "options": [
+                    { "label": "When my uncle went silent, I understood he was not angry but ashamed.", "correct": true },
+                    { "label": "When my uncle laughed loudly, I knew he was joking with everyone.", "correct": false },
+                    { "label": "When my uncle left early, I knew he wanted more dessert.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: She apologized without excuses and asked how to repair the trust.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": ["Ella pidió perdón sin excusas y preguntó cómo reparar la confianza", "Ella pidio perdon sin excusas y pregunto como reparar la confianza"]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: 'Primero discutieron, luego respiraron, después cada uno contó su versión y finalmente acordaron turnarse.' ¿Qué permitió el acuerdo?",
+                  "options": [
+                    { "label": "Escuchar versiones completas antes de decidir.", "correct": true },
+                    { "label": "Hablar más fuerte para imponer una opinión.", "correct": false },
+                    { "label": "Cambiar de tema y evitar el conflicto.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha y elige la inferencia más precisa.",
+                  "audioText": "Mi hermana dijo que estaba cansada, pero siguió preparando la mesa para que nadie llegara a una casa fría.",
+                  "options": [
+                    { "label": "Estaba agotada, pero quiso cuidar el ambiente para los demás.", "correct": true },
+                    { "label": "No quería participar y abandonó la reunión.", "correct": false },
+                    { "label": "Olvidó por completo que había visita.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--No escuchaste mi parte. --Tienes razón, hablé encima. --____",
+                  "options": [
+                    { "label": "¿Te parece si vuelves a empezar y yo no interrumpo?", "correct": true },
+                    { "label": "Entonces mejor terminemos todo aquí.", "correct": false },
+                    { "label": "La historia no importa si la cena está lista.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Dónde se practicó inferencia emocional en este capítulo?",
+                  "options": [
+                    { "label": "En la Casa Azul, analizando tono y contenido.", "correct": true },
+                    { "label": "Solo en el cartel del barrio.", "correct": false },
+                    { "label": "Únicamente en la salida del jefe final.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Guardiana de Relatos", "text": "Superaste el primer duelo." },
+                { "type": "completeMission", "missionId": "family-boss-storytelling" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Guardiana de Relatos", "text": "Continúa al duelo de consejos." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 6, "targetArea": "family-review", "targetX": 18, "targetY": 6, "facing": "left" },
+    {
+      "x": 19,
+      "y": 6,
+      "targetArea": "family-boss-advice",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": { "completedMissions": ["family-boss-storytelling"] },
+      "blockedMessage": "Derrota primero al Jefe de Relatos."
+    }
+  ]
+}

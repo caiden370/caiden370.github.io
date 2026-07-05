@@ -1,0 +1,444 @@
+{
+  "id": "first-job-market-street",
+  "name": "Calle del Mercado",
+  "kind": "outdoor",
+  "chapterId": "first-job",
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "proveedor",
+    "pedido",
+    "factura",
+    "entrega",
+    "confirmar"
+  ],
+  "legend": {
+    "a": "asphalt",
+    "p": "dirtPath",
+    "g": "grass",
+    "q": "flowerGrass"
+  },
+  "playerStart": {
+    "x": 15,
+    "y": 17,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "store",
+      "x": 2,
+      "y": 2,
+      "w": 6,
+      "h": 4
+    },
+    {
+      "type": "restaurant",
+      "x": 11,
+      "y": 2,
+      "w": 8,
+      "h": 4
+    },
+    {
+      "type": "office",
+      "x": 22,
+      "y": 2,
+      "w": 6,
+      "h": 4
+    },
+    {
+      "type": "groceryShelf",
+      "x": 3,
+      "y": 8,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "menuBoard",
+      "x": 13,
+      "y": 8,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "vendingMachine",
+      "x": 24,
+      "y": 8
+    },
+    {
+      "type": "busStop",
+      "x": 14,
+      "y": 12
+    },
+    {
+      "type": "taxiStand",
+      "x": 16,
+      "y": 12
+    }
+  ],
+  "people": [
+    {
+      "personId": "carlos",
+      "x": 15,
+      "y": 10,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-started"
+            ],
+            "missingMissions": [
+              "firstjob-market-order"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Soy el proveedor principal. La oficina necesita leche, pan y una calculadora revisada."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "No acepto entregas incompletas. Primero recoge, luego confirma conmigo."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Emma maneja lácteos, Diego panadería y Lucía equipos."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Con quién debes hablar para revisar la calculadora?",
+              "options": [
+                {
+                  "label": "Con Lucía, en el puesto de equipos.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Carlos",
+                      "text": "Correcto. Sigue la cadena completa."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-market-order"
+                    }
+                  ]
+                },
+                {
+                  "label": "Con Diego, porque hornea pan.",
+                  "correct": false
+                },
+                {
+                  "label": "Con nadie; la calculadora no importa.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-market-order"
+            ],
+            "hasItems": [
+              {
+                "itemId": "milk",
+                "count": 1
+              },
+              {
+                "itemId": "bread",
+                "count": 1
+              },
+              {
+                "itemId": "calculator",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "firstjob-market-delivery"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Veo los tres elementos. Ahora verifica el estado de la entrega."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué frase confirma una entrega completa?",
+              "options": [
+                {
+                  "label": "Traigo leche y pan, y la calculadora está verificada.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Carlos",
+                      "text": "Excelente. Registro final aprobado."
+                    },
+                    {
+                      "type": "removeItem",
+                      "itemId": "milk",
+                      "count": 1
+                    },
+                    {
+                      "type": "removeItem",
+                      "itemId": "bread",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-market-delivery"
+                    }
+                  ]
+                },
+                {
+                  "label": "Traigo cosas, pero no las revisé.",
+                  "correct": false
+                },
+                {
+                  "label": "No recuerdo qué traigo.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Sin verificación no hay entrega."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "emma",
+      "x": 6,
+      "y": 10,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-market-order"
+            ],
+            "missingSteps": [
+              "firstjob-got-milk"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "Antes de darte la leche, dime para qué área la necesitas."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "En el trabajo siempre se etiqueta el destino del producto."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: The milk is for the office breakroom.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "La leche es para la sala de descanso de la oficina",
+                "La leche es para la sala de descanso"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Emma",
+                  "text": "Perfecto. Leche entregada."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "milk",
+                  "count": 1
+                },
+                {
+                  "type": "completeStep",
+                  "stepId": "firstjob-got-milk"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "Etiqueta siempre el destino del producto."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "diego",
+      "x": 15,
+      "y": 14,
+      "interactions": [
+        {
+          "when": {
+            "completedSteps": [
+              "firstjob-got-milk"
+            ],
+            "missingSteps": [
+              "firstjob-got-bread"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Pan listo, pero necesito una solicitud cortés. En atención laboral la cortesía importa."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "No pidas como orden; pide como colaboración."
+            },
+            {
+              "type": "askSpeech",
+              "prompt": "Di en español: Necesito pan para el pedido de la oficina, por favor.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": [
+                "Necesito pan para el pedido de la oficina por favor",
+                "Necesito pan para el pedido de la oficina, por favor"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Diego",
+                  "text": "Muy bien. Pan aprobado."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "bread",
+                  "count": 1
+                },
+                {
+                  "type": "completeStep",
+                  "stepId": "firstjob-got-bread"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "La cortesía también se entrena."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "lucia",
+      "x": 24,
+      "y": 10,
+      "interactions": [
+        {
+          "when": {
+            "completedSteps": [
+              "firstjob-got-milk",
+              "firstjob-got-bread"
+            ],
+            "missingSteps": [
+              "firstjob-got-calculator"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Esta calculadora no se entrega sin prueba. Debes demostrar que entiendes su uso en un pedido."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Si hay cantidades mal sumadas, el cliente recibe facturas incorrectas."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "Si un cliente pide 3 cajas hoy y 2 mañana, ¿qué total debes registrar?",
+              "options": [
+                {
+                  "label": "Cinco cajas en total.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Lucía",
+                      "text": "Exacto. Calculadora verificada."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "calculator",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeStep",
+                      "stepId": "firstjob-got-calculator"
+                    }
+                  ]
+                },
+                {
+                  "label": "Tres cajas, porque mañana no cuenta.",
+                  "correct": false
+                },
+                {
+                  "label": "Dos cajas, porque son de mañana.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Verifica números antes de confirmar una factura."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 15,
+      "y": 19,
+      "targetArea": "first-job",
+      "targetX": 23,
+      "targetY": 6,
+      "facing": "down"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "targetArea": "first-job-service-desk",
+      "targetX": 26,
+      "targetY": 9,
+      "facing": "left"
+    }
+  ]
+}

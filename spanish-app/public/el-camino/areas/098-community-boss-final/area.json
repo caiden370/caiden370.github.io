@@ -1,0 +1,115 @@
+{
+  "id": "community-boss-final",
+  "name": "Jefe III: Cámara de la Insignia Cívica",
+  "kind": "interior",
+  "chapterId": "community-leader",
+  "region": "Chapter 9: Community Leader",
+  "cefrLevel": "C1+",
+  "teaches": ["liderazgo integral", "síntesis compleja", "comunicación estratégica"],
+  "legend": { "w": "insideWall", "c": "carpetBlue", "p": "woodFloor" },
+  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "objects": [
+    { "type": "podium", "x": 10, "y": 3 },
+    { "type": "microphone", "x": 10, "y": 7 },
+    { "type": "meetingTable", "x": 7, "y": 8, "w": 6, "h": 1 },
+    { "type": "trophyCase", "x": 9, "y": 2, "w": 2, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "rectora-campus",
+      "x": 10,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["community-boss-final"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Rectora Cívica", "text": "Duelo final. Integrarás negociación, crisis, administración y debate en una sola línea de liderazgo." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "community-boss-final",
+              "title": "Duelo de la Insignia Comunitaria",
+              "restartMessage": "No. La evaluación final se reinicia desde la primera pregunta.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Un liderazgo responsable reconoce costos, comunica límites y aun así mantiene dirección colectiva.",
+                  "options": [
+                    { "label": "Responsible leadership recognizes costs, communicates limits, and still maintains collective direction.", "correct": true },
+                    { "label": "Responsible leadership hides costs to protect its image.", "correct": false },
+                    { "label": "Leadership means avoiding direction until everyone agrees on everything.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: We transformed conflict into agreements because we listened, measured results, and corrected mistakes publicly.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Transformamos el conflicto en acuerdos porque escuchamos medimos resultados y corregimos errores públicamente",
+                    "Transformamos el conflicto en acuerdos porque escuchamos, medimos resultados y corregimos errores públicamente"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Tras un mes, bajó el ruido pero subieron retrasos de entrega. El equipo no celebra ni abandona: ajusta rutas, protege comercios vulnerables y mantiene auditoría ciudadana. ¿Qué demuestra?",
+                  "options": [
+                    { "label": "Gobernanza adaptativa basada en evidencia y equidad.", "correct": true },
+                    { "label": "Triunfalismo sin revisión de efectos secundarios.", "correct": false },
+                    { "label": "Fracaso total que obliga a desmantelar toda política pública.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha y elige la mejor interpretación.",
+                  "audioText": "No buscamos unanimidad permanente; buscamos desacuerdos productivos que se puedan tramitar con reglas claras y datos compartidos.",
+                  "options": [
+                    { "label": "The goal is productive disagreement managed through clear rules and shared data.", "correct": true },
+                    { "label": "The goal is to eliminate disagreement by centralizing all decisions.", "correct": false },
+                    { "label": "The goal is to avoid data because it complicates negotiation.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--Tu plan no satisface a todos. --Cierto, pero protege derechos esenciales y mantiene mecanismos para corregir inequidades. --____",
+                  "options": [
+                    { "label": "Propongo una revisión pública mensual con indicadores accesibles para todo el barrio.", "correct": true },
+                    { "label": "Entonces dejaremos de reportar para reducir críticas.", "correct": false },
+                    { "label": "Mejor eliminamos la participación vecinal en adelante.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué secuencia refleja correctamente la ruta del capítulo antes de los jefes?",
+                  "options": [
+                    { "label": "Ayuntamiento, mercado, escenario de debate, centro de servicios y sala de revisión.", "correct": true },
+                    { "label": "Sala de revisión, jefes y luego zonas principales.", "correct": false },
+                    { "label": "Mercado, jefes, ayuntamiento y cierre administrativo al final.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Cuál principio final define mejor al líder comunitario de este capítulo?",
+                  "options": [
+                    { "label": "Convertir conflicto en cooperación verificable sin perder rigor ni humanidad.", "correct": true },
+                    { "label": "Evitar decisiones complejas para mantener aprobación inmediata.", "correct": false },
+                    { "label": "Delegar toda responsabilidad en una sola institución.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Rectora Cívica", "text": "Victoria total. Has ganado la insignia del capítulo nueve." },
+                { "type": "addItem", "itemId": "chapterNineBadge", "count": 1 },
+                { "type": "completeMission", "missionId": "community-boss-final" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Rectora Cívica", "text": "La insignia cívica ya forma parte de tu trayectoria." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 6, "targetArea": "community-boss-crisis", "targetX": 18, "targetY": 6, "facing": "left" },
+    { "x": 10, "y": 11, "targetArea": "community-leader", "targetX": 14, "targetY": 10, "facing": "down" }
+  ]
+}

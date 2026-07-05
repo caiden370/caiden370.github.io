@@ -1,0 +1,275 @@
+{
+  "id": "independent-apartment",
+  "name": "Apartamento Compartido",
+  "kind": "interior",
+  "chapterId": "independent-life",
+  "region": "Chapter 5: Independent Life",
+  "cefrLevel": "B1",
+  "teaches": [
+    "contrato",
+    "comprobante",
+    "factura",
+    "organizar",
+    "entregar"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "carpetBlue",
+    "p": "woodFloor",
+    "r": "lightRedFloor"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 16,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "bed",
+      "x": 4,
+      "y": 3,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "bed",
+      "x": 21,
+      "y": 3,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "kitchenCounter",
+      "x": 4,
+      "y": 9,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "fridge",
+      "x": 9,
+      "y": 9
+    },
+    {
+      "type": "formDesk",
+      "x": 18,
+      "y": 9,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "laundryMachine",
+      "x": 23,
+      "y": 9
+    },
+    {
+      "type": "itemSparkle",
+      "x": 19,
+      "y": 12,
+      "walkable": true,
+      "interactions": [
+        {
+          "when": {
+            "missingSteps": [
+              "independent-found-rent-form"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Encuentras un paquete de formularios de alquiler con notas pendientes."
+            },
+            {
+              "type": "addItem",
+              "itemId": "studyNotes",
+              "count": 1
+            },
+            {
+              "type": "completeStep",
+              "stepId": "independent-found-rent-form"
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Ya revisaste los formularios."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "personId": "valeria",
+      "x": 13,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "independent-apartment-plan"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "El arrendador exige un paquete completo: formularios firmados, comprobante del supermercado, comprobante bancario y plan de salud."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "No basta con decir \"ya fui\". Necesitamos pruebas concretas porque la auditoría revisa cada documento."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Empieza en supermercado para conseguir el sello, después banco y clínica para cerrar pagos y salud."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué combinación pide Valeria para validar el apartamento?",
+              "options": [
+                {
+                  "label": "Formularios, sello del supermercado, comprobante bancario y plan de salud.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "completeMission",
+                      "missionId": "independent-apartment-plan"
+                    }
+                  ]
+                },
+                {
+                  "label": "Solo una conversación en el parque.",
+                  "correct": false
+                },
+                {
+                  "label": "Dos cafés y una foto familiar.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "studyNotes",
+                "count": 1
+              },
+              {
+                "itemId": "marketStamp",
+                "count": 1
+              },
+              {
+                "itemId": "routePass",
+                "count": 1
+              },
+              {
+                "itemId": "gymPass",
+                "count": 1
+              }
+            ],
+            "completedMissions": [
+              "independent-apartment-plan",
+              "independent-grocery-complete",
+              "independent-bank-clinic-complete"
+            ],
+            "missingMissions": [
+              "independent-apartment-verified"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Veo todos los comprobantes. Ahora necesito confirmar que entiendes el proceso completo de principio a fin."
+            },
+            {
+              "type": "askText",
+              "prompt": "Write in Spanish: I already delivered all the documents and now I can confirm the apartment.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Ya entregué todos los documentos y ahora puedo confirmar el apartamento",
+                "Ya entregue todos los documentos y ahora puedo confirmar el apartamento"
+              ],
+              "actions": [
+                {
+                  "type": "removeItem",
+                  "itemId": "studyNotes",
+                  "count": 1
+                },
+                {
+                  "type": "removeItem",
+                  "itemId": "marketStamp",
+                  "count": 1
+                },
+                {
+                  "type": "removeItem",
+                  "itemId": "routePass",
+                  "count": 1
+                },
+                {
+                  "type": "removeItem",
+                  "itemId": "gymPass",
+                  "count": 1
+                },
+                {
+                  "type": "showDialogue",
+                  "speaker": "Valeria",
+                  "text": "Verificación del apartamento completada."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "independent-apartment-verified"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Trae pruebas reales de cada trámite para cerrar el apartamento."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 8,
+      "y": 13,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Cuando vivas solo, revisa fechas, montos y firmas antes de entregar papeles."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 14,
+      "y": 17,
+      "targetArea": "independent-life",
+      "targetX": 5,
+      "targetY": 6,
+      "facing": "down"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "id": "adult-boss-bureaucracy",
+  "name": "Jefe I: Cámara de Burocracia",
+  "kind": "interior",
+  "chapterId": "adult-responsibilities",
+  "region": "Chapter 8: Adult Responsibilities",
+  "cefrLevel": "B2",
+  "teaches": [
+    "lectura formal",
+    "inferencia administrativa",
+    "exactitud"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "podium",
+      "x": 10,
+      "y": 3
+    },
+    {
+      "type": "filingCabinet",
+      "x": 6,
+      "y": 3
+    },
+    {
+      "type": "filingCabinet",
+      "x": 14,
+      "y": 3
+    },
+    {
+      "type": "microphone",
+      "x": 10,
+      "y": 8
+    }
+  ],
+  "people": [
+    {
+      "personId": "mentor-horario",
+      "x": 10,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "adult-boss-bureaucracy"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Inspector de Burocracia",
+              "text": "Primer duelo: precisión administrativa total. Un error y reinicias desde la pregunta uno."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "adult-boss-bureaucracy",
+              "title": "Duelo de Burocracia",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Aunque el formulario parecía correcto, la licencia quedó en pausa porque faltaba la fecha de actualización de domicilio.",
+                  "options": [
+                    {
+                      "label": "Although the form looked correct, the license was paused because the address update date was missing.",
+                      "correct": true
+                    },
+                    {
+                      "label": "The license was approved early because the address was optional.",
+                      "correct": false
+                    },
+                    {
+                      "label": "The mechanic rejected the form due to engine noise.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: I reviewed every field twice to avoid returning to the first window.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Revisé cada campo dos veces para evitar volver a la primera ventanilla",
+                    "Revise cada campo dos veces para evitar volver a la primera ventanilla"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Una persona entrega firma, sello y licencia, pero olvida número de contacto. ¿Qué refleja mejor la decisión correcta?",
+                  "options": [
+                    {
+                      "label": "Solicitar corrección inmediata porque un dato crítico incompleto invalida el expediente.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Aprobar de todos modos para ahorrar fila.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Enviar al taller sin revisar documentación.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha la instrucción oficial.",
+                  "audioText": "Toda autorización debe incluir fecha, responsable y canal de seguimiento verificable.",
+                  "options": [
+                    {
+                      "label": "Every authorization must include date, responsible person, and verifiable follow-up channel.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Authorizations only need signature style.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Follow-up is optional if the line is long.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--Traje el formulario, pero no recuerdo mi número de contacto. --____",
+                  "options": [
+                    {
+                      "label": "Sin ese dato no puedo validar; complétalo y continuamos.",
+                      "correct": true
+                    },
+                    {
+                      "label": "No importa, lo inventamos después.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Pasa directo al jefe final.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué par de áreas entrenó más la exactitud de campos y sellos?",
+                  "options": [
+                    {
+                      "label": "Ayuntamiento y Centro Documental.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Taller y plaza exterior solamente.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Ninguna área trabajó eso.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: Bureaucracy is slow only when people skip verification steps.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "La burocracia es lenta solo cuando la gente omite pasos de verificación",
+                    "La burocracia es lenta sólo cuando la gente omite pasos de verificación"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Inspector de Burocracia",
+                  "text": "Has superado la cámara burocrática."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "adult-boss-bureaucracy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Inspector de Burocracia",
+              "text": "Continúa al duelo de negociación."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "adult-review",
+      "targetX": 22,
+      "targetY": 6,
+      "facing": "left"
+    },
+    {
+      "x": 19,
+      "y": 6,
+      "targetArea": "adult-boss-negotiation",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "adult-boss-bureaucracy"
+        ]
+      },
+      "blockedMessage": "Derrota primero al Jefe de Burocracia."
+    }
+  ]
+}

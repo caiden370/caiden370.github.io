@@ -1,0 +1,104 @@
+{
+  "id": "dream-boss-vision",
+  "name": "Sala Jefa: Visión",
+  "kind": "interior",
+  "chapterId": "dream-future",
+  "region": "Chapter 10: Dream Future",
+  "cefrLevel": "C1",
+  "teaches": ["visión", "síntesis", "decisiones estratégicas"],
+  "legend": { "w": "insideWall", "r": "lightRedFloor" },
+  "playerStart": { "x": 1, "y": 8, "facing": "right" },
+  "objects": [
+    { "type": "dreamBoard", "x": 3, "y": 2, "w": 4, "h": 1 },
+    { "type": "meetingTable", "x": 10, "y": 7, "w": 8, "h": 2 },
+    { "type": "microphone", "x": 13, "y": 4 }
+  ],
+  "people": [
+    {
+      "personId": "guardian-aula",
+      "x": 13,
+      "y": 8,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["dream-boss-vision"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Guardiana de la Visión", "text": "Primer duelo. Si fallas, reinicias desde la primera pregunta." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "dream-boss-vision",
+              "title": "Duelo de Visión",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Translate: Si una meta no tiene criterios de éxito, solo es una intención inspiradora.",
+                  "options": [
+                    { "label": "If a goal has no success criteria, it is only an inspiring intention.", "correct": true },
+                    { "label": "If a goal is inspiring, criteria are unnecessary.", "correct": false },
+                    { "label": "Success criteria only matter after failure.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: Our vision must connect measurable impact with social responsibility.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Nuestra visión debe conectar impacto medible con responsabilidad social",
+                    "Nuestra vision debe conectar impacto medible con responsabilidad social"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Un equipo quiere crecer rápido, pero su producto aún excluye a comunidades rurales. ¿Qué decisión protege la visión?",
+                  "options": [
+                    { "label": "Rediseñar acceso y medir inclusión antes de escalar.", "correct": true },
+                    { "label": "Expandir primero y corregir inequidad en un futuro indefinido.", "correct": false },
+                    { "label": "Ocultar métricas de acceso para evitar críticas.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha y elige la interpretación correcta.",
+                  "audioText": "No basta con imaginar el futuro; debemos traducirlo en indicadores semestrales y decisiones verificables.",
+                  "options": [
+                    { "label": "The future requires measurable indicators and verifiable decisions.", "correct": true },
+                    { "label": "The future should stay abstract to preserve creativity.", "correct": false },
+                    { "label": "Indicators are useful only for investors, not teams.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--Tu plan es ambicioso, pero ¿cómo evitarás deriva estratégica? --____",
+                  "options": [
+                    { "label": "Con revisiones trimestrales, supuestos explícitos y ajustes basados en evidencia.", "correct": true },
+                    { "label": "Confiando en intuición sin revisar resultados.", "correct": false },
+                    { "label": "Delegando todas las decisiones difíciles a terceros.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué recurso del capítulo habilitó la entrada al Hub Global?",
+                  "options": [
+                    { "label": "La credencial campusId obtenida en el Laboratorio de Carrera.", "correct": true },
+                    { "label": "El café del Jardín de Mentoría.", "correct": false },
+                    { "label": "El dossier de innovación sin validación previa.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Guardiana de la Visión", "text": "Visión dominada." },
+                { "type": "completeMission", "missionId": "dream-boss-vision" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Guardiana de la Visión", "text": "Siguiente sala: estrategia aplicada." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 8, "targetArea": "dream-review", "targetX": 24, "targetY": 8, "facing": "left" },
+    { "x": 27, "y": 8, "targetArea": "dream-boss-strategy", "targetX": 1, "targetY": 8, "facing": "right", "requires": { "completedMissions": ["dream-boss-vision"] }, "blockedMessage": "Derrota primero a la jefa de visión." }
+  ]
+}

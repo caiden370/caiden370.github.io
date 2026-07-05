@@ -1,20 +1,163 @@
 {
   "id": "community-leader",
-  "name": "Community Leader Plaza",
+  "name": "Plaza del Liderazgo Comunitario",
   "kind": "outdoor",
   "chapterId": "community-leader",
-  "region": "Chapter 9",
+  "region": "Chapter 9: Community Leader",
   "cefrLevel": "C1",
-  "teaches": ["persuasion", "planning", "negotiation", "community problems"],
-  "legend": { "g": "grass", "p": "dirtPath" },
-  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "teaches": ["persuasión", "negociación", "mediación", "planificación pública", "consenso"],
+  "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass", "s": "stoneFloor" },
+  "playerStart": { "x": 14, "y": 17, "facing": "up" },
   "objects": [
-    { "type": "office", "x": 2, "y": 1, "w": 5, "h": 3 },
-    { "type": "restaurant", "x": 11, "y": 1, "w": 5, "h": 3 },
-    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Community Leader will include organizing events, persuading NPCs, solving disputes, and Spanish debates." }] }] }
+    {
+      "type": "office",
+      "x": 2,
+      "y": 1,
+      "w": 6,
+      "h": 4,
+      "entrance": { "x": 5, "y": 5, "targetArea": "community-town-hall", "targetX": 10, "targetY": 10, "facing": "up" }
+    },
+    {
+      "type": "store",
+      "x": 11,
+      "y": 1,
+      "w": 6,
+      "h": 4,
+      "entrance": { "x": 14, "y": 5, "targetArea": "community-market-corridor", "targetX": 14, "targetY": 18, "facing": "up" }
+    },
+    {
+      "type": "auditorium",
+      "x": 20,
+      "y": 1,
+      "w": 6,
+      "h": 4,
+      "entrance": { "x": 23, "y": 5, "targetArea": "community-debate-stage", "targetX": 14, "targetY": 18, "facing": "up" }
+    },
+    {
+      "type": "office",
+      "x": 10,
+      "y": 14,
+      "w": 9,
+      "h": 4,
+      "entrance": { "x": 14, "y": 18, "targetArea": "community-service-center", "targetX": 10, "targetY": 10, "facing": "up" }
+    },
+    {
+      "type": "townBoard",
+      "x": 14,
+      "y": 8,
+      "interactions": [
+        {
+          "actions": [
+            { "type": "showDialogue", "text": "Agenda comunitaria: vivienda, comercio local, seguridad nocturna y red de apoyo vecinal." },
+            { "type": "showDialogue", "text": "Sin acuerdos verificables, no se abre la sala de repaso." }
+          ]
+        }
+      ]
+    },
+    { "type": "bench", "x": 9, "y": 12, "w": 2, "h": 1 },
+    { "type": "bench", "x": 18, "y": 12, "w": 2, "h": 1 }
   ],
   "people": [
-    { "personId": "ana", "x": 9, "y": 6, "message": "This path will test persuasion and complex mission chains." }
+    {
+      "personId": "lucia",
+      "x": 14,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["community-hub-orientation"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Lucía", "text": "No vienes a repetir frases; vienes a sostener una ciudad con palabras precisas." },
+            { "type": "showDialogue", "speaker": "Lucía", "text": "En el ayuntamiento negociarás prioridades, en el mercado convencerás sin imponer, en el escenario debatirás con matices y en el centro de servicios cerrarás compromisos." },
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Cuando cada zona confirme su parte, podrás entrar al repaso final y a la secuencia de jefes." },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué resume mejor la misión de este capítulo?",
+              "options": [
+                {
+                  "label": "Construir acuerdos comunitarios mediante negociación, evidencia y lenguaje claro.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Lucía", "text": "Exacto. Liderar aquí significa escuchar, sintetizar y decidir con responsabilidad pública." },
+                    { "type": "completeMission", "missionId": "community-hub-orientation" }
+                  ]
+                },
+                { "label": "Recoger objetos al azar y evitar conversaciones largas.", "correct": false },
+                { "label": "Entrar directamente al último jefe sin hablar con nadie.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Primero consolida acuerdos; después defiéndelos bajo presión." }] }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 6,
+      "y": 9,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": ["community-hall-listen", "community-market-negotiation", "community-debate-open"],
+            "missingMissions": ["community-hub-chain"]
+          },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Buen avance. Ahora necesito una síntesis transversal: instituciones, comercio y debate deben apuntar al mismo objetivo." },
+            {
+              "type": "askChoice",
+              "prompt": "Si una propuesta es técnicamente correcta pero socialmente inviable, ¿qué haría un líder comunitario competente?",
+              "options": [
+                {
+                  "label": "Reformularla con actores afectados, medir impacto y negociar implementación gradual.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Marcos", "text": "Eso es liderazgo estratégico. Ya tienes autorización para cerrar la cadena interzonal." },
+                    { "type": "addItem", "itemId": "routePass", "count": 1 },
+                    { "type": "completeMission", "missionId": "community-hub-chain" }
+                  ]
+                },
+                { "label": "Imponerla sin consulta para demostrar autoridad.", "correct": false },
+                { "label": "Posponerla indefinidamente para evitar críticas.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Sin síntesis interzonal no hay gobernanza estable." }] }
+      ]
+    },
+    {
+      "personId": "ana",
+      "x": 22,
+      "y": 10,
+      "interactions": [
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Ana", "text": "Recuerda: persuadir no es presionar; es justificar, escuchar objeciones y ajustar el plan." },
+            { "type": "showDialogue", "speaker": "Ana", "text": "Aquí cada frase puede abrir cooperación o bloquearla." }
+          ]
+        }
+      ]
+    }
   ],
-  "exits": []
+  "exits": [
+    {
+      "x": 29,
+      "y": 10,
+      "targetArea": "community-review",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "community-hub-chain",
+          "community-hall-accord",
+          "community-market-coalition",
+          "community-debate-charter",
+          "community-service-plan"
+        ]
+      },
+      "blockedMessage": "Completa primero todos los acuerdos comunitarios."
+    }
+  ]
 }

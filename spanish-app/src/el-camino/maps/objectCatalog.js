@@ -182,7 +182,14 @@ export const items = {
   coffeeCup: { id: "coffeeCup", name: "coffee", spanish: "café" },
   campusId: { id: "campusId", name: "campus ID", spanish: "identificación universitaria" },
   studyNotes: { id: "studyNotes", name: "study notes", spanish: "apuntes" },
-  chapterThreeBadge: { id: "chapterThreeBadge", name: "chapter three badge", spanish: "insignia del capítulo tres", category: "badge" }
+  chapterThreeBadge: { id: "chapterThreeBadge", name: "chapter three badge", spanish: "insignia del capítulo tres", category: "badge" },
+  chapterFourBadge: { id: "chapterFourBadge", name: "chapter four badge", spanish: "insignia del capítulo cuatro", category: "badge" },
+  chapterFiveBadge: { id: "chapterFiveBadge", name: "chapter five badge", spanish: "insignia del capítulo cinco", category: "badge" },
+  chapterSixBadge: { id: "chapterSixBadge", name: "chapter six badge", spanish: "insignia del capítulo seis", category: "badge" },
+  chapterSevenBadge: { id: "chapterSevenBadge", name: "chapter seven badge", spanish: "insignia del capítulo siete", category: "badge" },
+  chapterEightBadge: { id: "chapterEightBadge", name: "chapter eight badge", spanish: "insignia del capítulo ocho", category: "badge" },
+  chapterNineBadge: { id: "chapterNineBadge", name: "chapter nine badge", spanish: "insignia del capítulo nueve", category: "badge" },
+  chapterTenBadge: { id: "chapterTenBadge", name: "chapter ten badge", spanish: "insignia del capítulo diez", category: "badge" }
 };
 
 export function getObjectType(type) {

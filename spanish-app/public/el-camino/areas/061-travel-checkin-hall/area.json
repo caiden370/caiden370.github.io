@@ -1,0 +1,90 @@
+{
+  "id": "travel-checkin-hall",
+  "name": "Sala de Facturación",
+  "kind": "interior",
+  "chapterId": "travel",
+  "region": "Chapter 6: Travel Terminal",
+  "cefrLevel": "B1+",
+  "teaches": ["facturar equipaje", "documentos", "tarjeta de embarque", "restricciones"],
+  "legend": { "w": "insideWall", "r": "lightRedFloor" },
+  "playerStart": { "x": 14, "y": 18, "facing": "up" },
+  "objects": [
+    { "type": "queueRope", "x": 6, "y": 6, "w": 16, "h": 1 },
+    { "type": "serviceCounter", "x": 8, "y": 3, "w": 12, "h": 1 },
+    { "type": "passportDesk", "x": 4, "y": 12, "w": 4, "h": 1 },
+    { "type": "suitcase", "x": 21, "y": 11 }
+  ],
+  "people": [
+    {
+      "personId": "javier",
+      "x": 10,
+      "y": 5,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "campusId", "count": 1 }], "missingMissions": ["travel-checkin-docs"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Para facturar necesito una respuesta completa: motivo del viaje, duración y zona del hotel."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: Viajo por trabajo y me quedaré tres noches en el centro.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Viajo por trabajo y me quedaré tres noches en el centro",
+                "Viajo por trabajo y me quedare tres noches en el centro"
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Javier", "text": "Correcto. Te emito el itinerario oficial." },
+                { "type": "addItem", "itemId": "scheduleCard", "count": 1 },
+                { "type": "completeMission", "missionId": "travel-checkin-docs" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "Sin identificación válida no hay facturación." }] }
+      ]
+    },
+    {
+      "personId": "elena",
+      "x": 18,
+      "y": 5,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "scheduleCard", "count": 1 }], "missingMissions": ["travel-checkin-complete"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "La maleta pasa, pero debes conservar etiqueta y pase de ruta para evitar bloqueos posteriores."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué exige Elena para cerrar facturación?",
+              "options": [
+                {
+                  "label": "Conservar etiqueta de equipaje y pase de ruta.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Elena", "text": "Listo. Aquí tienes ambos documentos." },
+                    { "type": "addItem", "itemId": "nameTag", "count": 1 },
+                    { "type": "addItem", "itemId": "routePass", "count": 1 },
+                    { "type": "completeMission", "missionId": "travel-checkin-complete" }
+                  ]
+                },
+                { "label": "Entregar el pasaporte y seguir sin etiqueta.", "correct": false },
+                { "label": "Revisar la maleta en el hotel después del vuelo.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Primero valida la documentación con Javier." }] }
+      ]
+    }
+  ],
+  "exits": [{ "x": 14, "y": 19, "targetArea": "travel-terminal", "targetX": 5, "targetY": 6, "facing": "down" }]
+}

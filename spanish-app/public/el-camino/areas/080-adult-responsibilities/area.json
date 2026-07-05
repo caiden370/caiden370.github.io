@@ -1,21 +1,240 @@
 {
   "id": "adult-responsibilities",
-  "name": "Adult Responsibilities",
+  "name": "Cruce de Responsabilidades",
   "kind": "outdoor",
   "chapterId": "adult-responsibilities",
-  "region": "Chapter 8",
-  "cefrLevel": "B2+",
-  "teaches": ["taxes", "insurance", "repairs", "documents", "official forms"],
-  "legend": { "g": "grass", "p": "dirtPath" },
-  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "region": "Chapter 8: Adult Responsibilities",
+  "cefrLevel": "B2",
+  "teaches": [
+    "trámites",
+    "burocracia",
+    "seguimiento",
+    "verificación",
+    "priorización"
+  ],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "q": "flowerGrass",
+    "s": "campusStone"
+  },
+  "playerStart": {
+    "x": 15,
+    "y": 18,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "office", "x": 2, "y": 1, "w": 4, "h": 3 },
-    { "type": "office", "x": 7, "y": 1, "w": 4, "h": 3 },
-    { "type": "store", "x": 12, "y": 1, "w": 4, "h": 3 },
-    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Adult Responsibilities will become the bureaucracy dungeon: forms, taxes, insurance, repairs, and precise instructions." }] }] }
+    {
+      "type": "office",
+      "x": 2,
+      "y": 1,
+      "w": 7,
+      "h": 4,
+      "entrance": {
+        "x": 5,
+        "y": 5,
+        "targetArea": "adult-city-hall",
+        "targetX": 12,
+        "targetY": 10,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "office",
+      "x": 11,
+      "y": 1,
+      "w": 8,
+      "h": 4,
+      "entrance": {
+        "x": 15,
+        "y": 5,
+        "targetArea": "adult-insurance-office",
+        "targetX": 12,
+        "targetY": 10,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "store",
+      "x": 21,
+      "y": 1,
+      "w": 7,
+      "h": 4,
+      "entrance": {
+        "x": 24,
+        "y": 5,
+        "targetArea": "adult-repair-garage",
+        "targetX": 12,
+        "targetY": 10,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "office",
+      "x": 11,
+      "y": 12,
+      "w": 8,
+      "h": 4,
+      "entrance": {
+        "x": 15,
+        "y": 16,
+        "targetArea": "adult-document-center",
+        "targetX": 12,
+        "targetY": 10,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "townBoard",
+      "x": 15,
+      "y": 9,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Ciudad de trámites: completa ayuntamiento, seguro, taller y centro documental."
+            },
+            {
+              "type": "showDialogue",
+              "text": "Cuando tengas cuatro verificaciones, se abre el repaso final a la derecha."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "car",
+      "x": 23,
+      "y": 14,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 6,
+      "y": 10,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 22,
+      "y": 10,
+      "w": 2,
+      "h": 1
+    }
   ],
   "people": [
-    { "personId": "tomás", "x": 9, "y": 6, "message": "Bring the right document to the right office. Eventually." }
+    {
+      "personId": "valeria",
+      "x": 14,
+      "y": 10,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "adult-hub-orientation"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Bienvenido al Cruce de Responsabilidades. Hoy no basta con vocabulario: debes coordinar oficinas reales."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Primero consigue la licencia municipal, después activa tu póliza, repara el auto y finalmente verifica el expediente completo."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Cada oficina hablará rápido, con condiciones y excepciones. Escucha, resume y confirma antes de moverte."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál secuencia exige Valeria para desbloquear el repaso?",
+              "options": [
+                {
+                  "label": "Ayuntamiento, seguro, taller y centro documental.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Valeria",
+                      "text": "Exacto. Esta ciudad premia precisión, no prisa."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "adult-hub-orientation"
+                    }
+                  ]
+                },
+                {
+                  "label": "Taller, repaso, seguro y ayuntamiento.",
+                  "correct": false
+                },
+                {
+                  "label": "Solo hablar con una persona y salir.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Sin seguimiento escrito, cualquier trámite se cae."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 18,
+      "y": 10,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Trae evidencia: formulario, cita, revisión técnica y expediente sellado."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Cuando todo esté verificado, el Centro de Repaso abrirá el corredor de jefes."
+            }
+          ]
+        }
+      ]
+    }
   ],
-  "exits": []
+  "exits": [
+    {
+      "x": 29,
+      "y": 10,
+      "targetArea": "adult-review",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "adult-cityhall-license",
+          "adult-insurance-approved",
+          "adult-garage-repair",
+          "adult-documents-verified"
+        ]
+      },
+      "blockedMessage": "Completa primero los cuatro trámites obligatorios."
+    }
+  ]
 }

@@ -1,0 +1,91 @@
+{
+  "id": "family-casa-azul",
+  "name": "Casa Azul: Taller de Emociones",
+  "kind": "interior",
+  "chapterId": "family",
+  "region": "Chapter 7: Family Neighborhood",
+  "cefrLevel": "B2",
+  "teaches": ["expresar sentimientos", "matices", "tono", "escucha activa", "pedir disculpas"],
+  "legend": { "w": "insideWall", "s": "campusStone", "p": "woodFloor" },
+  "playerStart": { "x": 10, "y": 1, "facing": "down" },
+  "objects": [
+    { "type": "bookshelf", "x": 3, "y": 3, "w": 3, "h": 1 },
+    { "type": "table", "x": 8, "y": 3, "w": 3, "h": 1 },
+    { "type": "fridge", "x": 15, "y": 3 },
+    { "type": "familyPhoto", "x": 6, "y": 8 },
+    { "type": "whiteboard", "x": 12, "y": 8, "w": 4, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "sofia",
+      "x": 8,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "notebook", "count": 1 }], "missingMissions": ["family-azul-roles"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Sofía", "text": "Este cuaderno nos ayuda a repartir turnos. Sin estructura, todos se pisan." },
+            { "type": "showDialogue", "speaker": "Sofía", "text": "Moderar no es mandar: es crear espacio para cada voz." },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál es el objetivo del cuaderno en la conversación familiar?",
+              "options": [
+                {
+                  "label": "Evitar interrupciones y garantizar participación.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "removeItem", "itemId": "notebook", "count": 1 },
+                    { "type": "addItem", "itemId": "milk", "count": 1 },
+                    { "type": "showDialogue", "speaker": "Sofía", "text": "Exacto. Lleva esta leche a la casa roja." },
+                    { "type": "completeMission", "missionId": "family-azul-roles" }
+                  ]
+                },
+                { "label": "Hablar más rápido y reducir preguntas.", "correct": false },
+                { "label": "Dejar que solo una persona explique todo.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Sofía", "text": "Trae el cuaderno de Diego para organizar la ronda." }] }
+      ]
+    },
+    {
+      "personId": "javier",
+      "x": 14,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["family-azul-roles"], "missingMissions": ["family-azul-emotions"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Javier", "text": "A veces alguien dice 'estoy bien', pero su voz pide ayuda." },
+            { "type": "showDialogue", "speaker": "Javier", "text": "Necesitamos inferir emoción real, no repetir palabras literales." },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha y elige la interpretación más precisa.",
+              "audioText": "Sí, claro, estoy bien... solo que me quedé callada porque nadie me dejó terminar mi historia.",
+              "options": [
+                {
+                  "label": "La persona se siente herida y quiere ser escuchada.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "addItem", "itemId": "apple", "count": 1 },
+                    { "type": "showDialogue", "speaker": "Javier", "text": "Bien leído. Lleva esta manzana a la mesa común." },
+                    { "type": "completeMission", "missionId": "family-azul-emotions" }
+                  ]
+                },
+                { "label": "La persona está feliz porque ya terminó.", "correct": false },
+                { "label": "La persona quiere cancelar toda la reunión.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "Analiza tono y contexto antes de responder." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 10, "y": 11, "targetArea": "family-neighborhood", "targetX": 23, "targetY": 6, "facing": "down" }
+  ]
+}

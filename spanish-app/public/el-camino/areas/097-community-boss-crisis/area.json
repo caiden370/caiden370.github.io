@@ -1,0 +1,114 @@
+{
+  "id": "community-boss-crisis",
+  "name": "Jefe II: Sala de Gestión de Crisis",
+  "kind": "interior",
+  "chapterId": "community-leader",
+  "region": "Chapter 9: Community Leader",
+  "cefrLevel": "C1+",
+  "teaches": ["respuesta en crisis", "coordinación bajo presión", "comunicación de riesgo"],
+  "legend": { "w": "insideWall", "s": "stoneFloor", "p": "woodFloor" },
+  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "objects": [
+    { "type": "serviceCounter", "x": 6, "y": 3, "w": 8, "h": 1 },
+    { "type": "bulletinBoard", "x": 8, "y": 2, "w": 4, "h": 1 },
+    { "type": "queueRope", "x": 6, "y": 8, "w": 8, "h": 1 },
+    { "type": "microphone", "x": 10, "y": 7 }
+  ],
+  "people": [
+    {
+      "personId": "guardian-patio",
+      "x": 10,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["community-boss-crisis"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Guardián de Crisis", "text": "Segundo duelo: decisiones en tiempo real. Un error y todo vuelve al inicio." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "community-boss-crisis",
+              "title": "Duelo de Gestión de Crisis",
+              "restartMessage": "No. La simulación de crisis se reinicia desde la primera decisión.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Si suspendemos la carga nocturna sin plan alternativo, habrá desabasto y más tensión vecinal.",
+                  "options": [
+                    { "label": "If we suspend night loading without an alternative plan, there will be shortages and more neighborhood tension.", "correct": true },
+                    { "label": "Suspending night loading guarantees immediate harmony and lower prices.", "correct": false },
+                    { "label": "The sentence discusses school schedules, not logistics.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: During the emergency meeting, we agreed to communicate changes every six hours.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Durante la reunión de emergencia acordamos comunicar cambios cada seis horas",
+                    "Durante la reunion de emergencia acordamos comunicar cambios cada seis horas"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Una tormenta bloquea rutas de reparto. El equipo abre puntos temporales de entrega, prioriza medicinas y publica horarios provisionales. ¿Qué estrategia se aplicó?",
+                  "options": [
+                    { "label": "Continuidad operativa con prioridades críticas y comunicación transparente.", "correct": true },
+                    { "label": "Esperar sin informar hasta que pase la tormenta.", "correct": false },
+                    { "label": "Cancelar toda coordinación con comercios y vecinos.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha y elige la inferencia más sólida.",
+                  "audioText": "No prometamos normalidad hoy; prometamos información fiable, protección de servicios esenciales y revisión pública al cierre del día.",
+                  "options": [
+                    { "label": "The speaker prioritizes reliable communication, essential services, and daily public review over false certainty.", "correct": true },
+                    { "label": "The speaker promises full normality immediately and avoids any review.", "correct": false },
+                    { "label": "The speaker suggests canceling essential services for safety.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--La gente está asustada. --Sí, y por eso debemos comunicar lo que sabemos y lo que aún no sabemos. --____",
+                  "options": [
+                    { "label": "Actualizaremos el reporte con hora exacta y medidas concretas.", "correct": true },
+                    { "label": "Es mejor callar hasta tener control total.", "correct": false },
+                    { "label": "Podemos inventar una fecha para tranquilizar al barrio.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué área del capítulo entrenó mejor la traducción de acuerdos en procesos administrativos reales?",
+                  "options": [
+                    { "label": "El Centro de Servicios Integrados.", "correct": true },
+                    { "label": "Solo la plaza inicial.", "correct": false },
+                    { "label": "Únicamente la cámara del jefe anterior.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Guardián de Crisis", "text": "Respondiste con criterio en escenario crítico." },
+                { "type": "completeMission", "missionId": "community-boss-crisis" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Guardián de Crisis", "text": "Avanza al duelo final de liderazgo." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 6, "targetArea": "community-boss-policy", "targetX": 18, "targetY": 6, "facing": "left" },
+    {
+      "x": 19,
+      "y": 6,
+      "targetArea": "community-boss-final",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": { "completedMissions": ["community-boss-crisis"] },
+      "blockedMessage": "Derrota primero al Jefe de Gestión de Crisis."
+    }
+  ]
+}

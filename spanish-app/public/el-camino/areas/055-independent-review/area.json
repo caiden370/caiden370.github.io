@@ -1,0 +1,201 @@
+{
+  "id": "independent-review",
+  "name": "Centro de Repaso de Autonomía",
+  "kind": "interior",
+  "chapterId": "independent-life",
+  "region": "Chapter 5: Independent Life",
+  "cefrLevel": "B1",
+  "teaches": [
+    "síntesis",
+    "priorizar",
+    "verificar",
+    "explicar procesos"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 8,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "whiteboard",
+      "x": 8,
+      "y": 3,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 19,
+      "y": 3,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "meetingTable",
+      "x": 8,
+      "y": 10,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "meetingTable",
+      "x": 15,
+      "y": 10,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "routeGate",
+      "x": 24,
+      "y": 8
+    }
+  ],
+  "people": [
+    {
+      "personId": "sofia",
+      "x": 13,
+      "y": 7,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "coffeeCup",
+                "count": 1
+              }
+            ],
+            "completedMissions": [
+              "independent-apartment-verified",
+              "independent-grocery-complete",
+              "independent-bank-clinic-complete",
+              "independent-park-complete"
+            ],
+            "missingMissions": [
+              "independent-final-review"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Este repaso simula una semana real de vida independiente. No evaluamos palabras sueltas; evaluamos decisiones enlazadas."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Debes demostrar comprensión de secuencia, traducción de procesos y escucha detallada en situaciones de presión."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "Si primero validas compra, después haces transferencia y luego cierras plan de salud, ¿qué documento queda listo para el apartamento?",
+              "options": [
+                {
+                  "label": "El paquete completo de verificación del alquiler.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "askText",
+                      "prompt": "Write in Spanish: After completing all errands, I checked each document before submitting it.",
+                      "placeholder": "Respuesta en español",
+                      "correctAnswers": [
+                        "Después de completar todos los recados revisé cada documento antes de entregarlo",
+                        "Despues de completar todos los recados revise cada documento antes de entregarlo"
+                      ],
+                      "actions": [
+                        {
+                          "type": "askAudioChoice",
+                          "prompt": "Escucha y elige la interpretación correcta.",
+                          "audioText": "Aunque terminé las compras temprano, esperé en el banco para corregir un dato, y por eso confirmé el alquiler por la tarde.",
+                          "options": [
+                            {
+                              "label": "Terminó compras temprano, corrigió un dato en el banco y confirmó el alquiler por la tarde.",
+                              "correct": true,
+                              "actions": [
+                                {
+                                  "type": "removeItem",
+                                  "itemId": "coffeeCup",
+                                  "count": 1
+                                },
+                                {
+                                  "type": "showDialogue",
+                                  "speaker": "Sofia",
+                                  "text": "Repaso superado. El primer jefe ya está disponible."
+                                },
+                                {
+                                  "type": "completeMission",
+                                  "missionId": "independent-final-review"
+                                }
+                              ]
+                            },
+                            {
+                              "label": "Perdió todos los documentos y canceló los trámites.",
+                              "correct": false
+                            },
+                            {
+                              "label": "Fue directo al parque y evitó banco y clínica.",
+                              "correct": false
+                            }
+                          ],
+                          "wrongMessage": "No. Intenta otra vez."
+                        }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                {
+                  "label": "Solo una nota de compras sin valor legal.",
+                  "correct": false
+                },
+                {
+                  "label": "Una receta médica sin comprobante bancario.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Trae el café del parque y completa las cuatro verificaciones antes del repaso."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 8,
+      "targetArea": "independent-life",
+      "targetX": 28,
+      "targetY": 10,
+      "facing": "left"
+    },
+    {
+      "x": 25,
+      "y": 8,
+      "targetArea": "independent-boss-budget",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "independent-final-review"
+        ]
+      },
+      "blockedMessage": "Completa el repaso final antes del primer jefe."
+    }
+  ]
+}

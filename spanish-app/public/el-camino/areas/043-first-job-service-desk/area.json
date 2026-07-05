@@ -1,0 +1,412 @@
+{
+  "id": "first-job-service-desk",
+  "name": "Recepción de Servicios",
+  "kind": "interior",
+  "chapterId": "first-job",
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "recepción",
+    "turno",
+    "incidencia",
+    "resumen",
+    "seguimiento"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "a": "asphalt",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 1,
+    "facing": "down"
+  },
+  "objects": [
+    {
+      "type": "serviceCounter",
+      "x": 9,
+      "y": 4,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "queueRope",
+      "x": 8,
+      "y": 8,
+      "w": 12,
+      "h": 1
+    },
+    {
+      "type": "formDesk",
+      "x": 4,
+      "y": 12,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "printer",
+      "x": 22,
+      "y": 12
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 11,
+      "y": 2,
+      "w": 6,
+      "h": 1
+    }
+  ],
+  "people": [
+    {
+      "personId": "sofia",
+      "x": 14,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-started"
+            ],
+            "missingMissions": [
+              "firstjob-service-intro"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Bienvenido a recepción. Aquí resolvemos problemas bajo presión y con calma."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Escuchar no es opcional: cada cliente trae información clave."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Habla con Nico e Isabel, resume sus casos y luego vuelve conmigo."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál es el primer paso en recepción?",
+              "options": [
+                {
+                  "label": "Escuchar todo el caso antes de responder.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Sofia",
+                      "text": "Exacto. Ve con los clientes."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-service-intro"
+                    }
+                  ]
+                },
+                {
+                  "label": "Interrumpir para ahorrar tiempo.",
+                  "correct": false
+                },
+                {
+                  "label": "Culpar al cliente de inmediato.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-service-intro"
+            ],
+            "completedSteps": [
+              "firstjob-client-nico",
+              "firstjob-client-isabel",
+              "firstjob-got-textbook"
+            ],
+            "missingMissions": [
+              "firstjob-service-resolution"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Ya escuchaste dos casos y trajiste el manual actualizado."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Cierra la tarea con una frase de seguimiento profesional."
+            },
+            {
+              "type": "askSpeech",
+              "prompt": "Di en español: Revisé ambos casos y haré seguimiento hoy.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": [
+                "Revisé ambos casos y haré seguimiento hoy",
+                "Revise ambos casos y hare seguimiento hoy"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Sofia",
+                  "text": "Excelente cierre. Recepción completada."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "firstjob-service-resolution"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Necesito resumen de Nico e Isabel, y el manual actualizado."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "nico",
+      "x": 9,
+      "y": 10,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-service-intro"
+            ],
+            "missingSteps": [
+              "firstjob-client-nico"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Mi pedido llegó sin una pieza y nadie confirmó la hora de reposición."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "No quiero excusas; quiero un plan concreto."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál respuesta profesional sirve para Nico?",
+              "options": [
+                {
+                  "label": "Revisaré la pieza faltante y te confirmaré la hora exacta hoy.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Nico",
+                      "text": "Eso sí es seguimiento."
+                    },
+                    {
+                      "type": "completeStep",
+                      "stepId": "firstjob-client-nico"
+                    }
+                  ]
+                },
+                {
+                  "label": "No sé qué pasó; quizá mañana.",
+                  "correct": false
+                },
+                {
+                  "label": "No puedo ayudarte con eso.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Necesito hora exacta y confirmación."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "isabel",
+      "x": 19,
+      "y": 10,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-service-intro"
+            ],
+            "missingSteps": [
+              "firstjob-client-isabel"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Recibí una factura duplicada y me preocupa pagar dos veces."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Quiero una explicación breve y una acción concreta."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: I will review your invoice and send a corrected copy.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Revisaré su factura y enviaré una copia corregida",
+                "Revisare su factura y enviare una copia corregida"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Isabel",
+                  "text": "Gracias. Eso suena claro y responsable."
+                },
+                {
+                  "type": "completeStep",
+                  "stepId": "firstjob-client-isabel"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Quiero una acción concreta, no una promesa vacía."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 24,
+      "y": 13,
+      "interactions": [
+        {
+          "when": {
+            "completedSteps": [
+              "firstjob-client-nico",
+              "firstjob-client-isabel"
+            ],
+            "missingSteps": [
+              "firstjob-got-textbook"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Buen trabajo con los clientes. Para cerrar recepción necesitas el manual actualizado."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Demuestra comprensión del protocolo antes de entregártelo."
+            },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha el protocolo.",
+              "audioText": "Primero registramos el problema, después proponemos una solución y finalmente confirmamos el seguimiento.",
+              "options": [
+                {
+                  "label": "Registrar, proponer solución y confirmar seguimiento.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Marcos",
+                      "text": "Exacto. Aquí tienes el manual."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "textbook",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeStep",
+                      "stepId": "firstjob-got-textbook"
+                    }
+                  ]
+                },
+                {
+                  "label": "Culpar, ignorar y cerrar caso.",
+                  "correct": false
+                },
+                {
+                  "label": "Responder rápido sin registro.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Sin protocolo, no hay manual."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 14,
+      "y": 0,
+      "targetArea": "first-job",
+      "targetX": 6,
+      "targetY": 17,
+      "facing": "up"
+    },
+    {
+      "x": 27,
+      "y": 9,
+      "targetArea": "first-job-market-street",
+      "targetX": 1,
+      "targetY": 10,
+      "facing": "right"
+    },
+    {
+      "x": 0,
+      "y": 9,
+      "targetArea": "first-job-breakroom",
+      "targetX": 22,
+      "targetY": 8,
+      "facing": "left"
+    }
+  ]
+}

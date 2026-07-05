@@ -1,0 +1,104 @@
+{
+  "id": "dream-boss-strategy",
+  "name": "Sala Jefe: Estrategia",
+  "kind": "interior",
+  "chapterId": "dream-future",
+  "region": "Chapter 10: Dream Future",
+  "cefrLevel": "C1",
+  "teaches": ["priorización", "riesgo", "ejecución"],
+  "legend": { "w": "insideWall", "s": "stoneFloor" },
+  "playerStart": { "x": 1, "y": 8, "facing": "right" },
+  "objects": [
+    { "type": "taxFormDesk", "x": 4, "y": 2, "w": 4, "h": 1 },
+    { "type": "whiteboard", "x": 11, "y": 2, "w": 8, "h": 1 },
+    { "type": "meetingTable", "x": 9, "y": 9, "w": 10, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "guardian-patio",
+      "x": 13,
+      "y": 8,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["dream-boss-strategy"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Guardián de la Estrategia", "text": "Segundo duelo. Aquí se evalúa ejecución bajo incertidumbre." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "dream-boss-strategy",
+              "title": "Duelo de Estrategia",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Translate: Para reducir riesgo sistémico, distribuimos dependencias críticas entre equipos autónomos.",
+                  "options": [
+                    { "label": "To reduce systemic risk, we distributed critical dependencies across autonomous teams.", "correct": true },
+                    { "label": "To reduce risk, we centralized every decision in one person.", "correct": false },
+                    { "label": "Critical dependencies should remain undocumented.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: If the pilot fails in one market, we will iterate before expanding globally.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Si el piloto falla en un mercado iteraremos antes de expandir globalmente",
+                    "Si el piloto falla en un mercado, iteraremos antes de expandir globalmente"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Tu equipo detecta caída de adopción y aumento de soporte técnico. ¿Qué secuencia estratégica es más rigurosa?",
+                  "options": [
+                    { "label": "Diagnosticar causas, priorizar hipótesis y ejecutar experimentos con métricas de salida.", "correct": true },
+                    { "label": "Lanzar nuevas funciones sin investigar el problema.", "correct": false },
+                    { "label": "Esperar tres meses antes de revisar datos.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha y elige la opción correcta.",
+                  "audioText": "Acordamos una estrategia por fases: validación local, aprendizaje compartido y escalamiento condicionado por resultados.",
+                  "options": [
+                    { "label": "They agreed on phased strategy with conditional scaling based on results.", "correct": true },
+                    { "label": "They skipped local validation to accelerate expansion.", "correct": false },
+                    { "label": "They removed shared learning to avoid delays.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--La dirección pide resultados inmediatos en tres regiones. --____",
+                  "options": [
+                    { "label": "Propondré hitos por región con criterios de avance y umbrales de riesgo.", "correct": true },
+                    { "label": "Prometeré todo sin recursos adicionales.", "correct": false },
+                    { "label": "Cambiaré objetivos cada semana para mostrar actividad.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué combinación de misiones desbloqueó el repaso final?",
+                  "options": [
+                    { "label": "Carrera, red global, prototipo de innovación y consenso de mentoría.", "correct": true },
+                    { "label": "Solo carrera y café simbólico.", "correct": false },
+                    { "label": "Únicamente la prueba de audio del hub.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Guardián de la Estrategia", "text": "Estrategia superada." },
+                { "type": "completeMission", "missionId": "dream-boss-strategy" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Guardián de la Estrategia", "text": "La última sala mide liderazgo integral." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 8, "targetArea": "dream-boss-vision", "targetX": 26, "targetY": 8, "facing": "left" },
+    { "x": 27, "y": 8, "targetArea": "dream-boss-final", "targetX": 1, "targetY": 8, "facing": "right", "requires": { "completedMissions": ["dream-boss-strategy"] }, "blockedMessage": "Derrota primero al jefe de estrategia." }
+  ]
+}

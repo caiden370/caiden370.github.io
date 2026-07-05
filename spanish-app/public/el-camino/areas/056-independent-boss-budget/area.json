@@ -1,0 +1,219 @@
+{
+  "id": "independent-boss-budget",
+  "name": "Sala Jefe: Presupuesto",
+  "kind": "interior",
+  "chapterId": "independent-life",
+  "region": "Chapter 5: Independent Life",
+  "cefrLevel": "B1",
+  "teaches": [
+    "presupuesto",
+    "prioridades",
+    "justificación"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "r": "lightRedFloor"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "taxFormDesk",
+      "x": 3,
+      "y": 2,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "examDesk",
+      "x": 8,
+      "y": 2
+    },
+    {
+      "type": "meetingTable",
+      "x": 11,
+      "y": 9,
+      "w": 4,
+      "h": 1
+    }
+  ],
+  "people": [
+    {
+      "personId": "javier",
+      "x": 8,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "independent-boss-budget"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Jefe de presupuesto: aquí se evalúa precisión, no intuición."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "independent-boss-budget",
+              "title": "Duelo del Presupuesto",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Translate: Antes de pagar el alquiler, revisé cada gasto semanal para evitar un déficit al final del mes.",
+                  "options": [
+                    {
+                      "label": "Before paying rent, I reviewed each weekly expense to avoid a deficit at the end of the month.",
+                      "correct": true
+                    },
+                    {
+                      "label": "After paying rent, I ignored all expenses and bought extra coffee.",
+                      "correct": false
+                    },
+                    {
+                      "label": "I paid nothing and canceled the apartment contract.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: If I receive less income this week, I must reduce optional purchases.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Si recibo menos ingresos esta semana debo reducir las compras opcionales",
+                    "Si recibo menos ingresos esta semana, debo reducir las compras opcionales"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Una persona separa dinero para alquiler, transporte y comida. Después calcula ocio con lo que sobra. ¿Qué principio aplica?",
+                  "options": [
+                    {
+                      "label": "Priorizar necesidades antes de gastos opcionales.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Gastar primero en ocio y luego improvisar pagos fijos.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Evitar todo registro para decidir más rápido.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha. ¿Cuál interpretación es correcta?",
+                  "audioText": "Aunque tenía descuento en el supermercado, no superé el límite porque ya había reservado dinero para medicinas y transporte.",
+                  "options": [
+                    {
+                      "label": "Aprovechó descuento sin pasar el límite porque priorizó medicinas y transporte.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Gastó todo en ofertas y olvidó gastos esenciales.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Canceló la compra por no tener lista.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--¿Por qué no compraste ese artículo en oferta? --____",
+                  "options": [
+                    {
+                      "label": "Porque ya excedía mi presupuesto mensual y debía cubrir gastos fijos.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Porque el parque cerró temprano.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Porque olvidé mi nombre en casa.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "En este capítulo, ¿qué documento conecta compra y verificación de alquiler?",
+                  "options": [
+                    {
+                      "label": "El recibo sellado del supermercado.",
+                      "correct": true
+                    },
+                    {
+                      "label": "La entrada del parque.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Una foto del apartamento.",
+                      "correct": false
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Javier",
+                  "text": "Presupuesto dominado."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "independent-boss-budget"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "La siguiente sala evalúa salud y sostenibilidad."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "independent-review",
+      "targetX": 24,
+      "targetY": 8,
+      "facing": "left"
+    },
+    {
+      "x": 16,
+      "y": 6,
+      "targetArea": "independent-boss-health",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "independent-boss-budget"
+        ]
+      },
+      "blockedMessage": "Derrota primero al jefe de presupuesto."
+    }
+  ]
+}

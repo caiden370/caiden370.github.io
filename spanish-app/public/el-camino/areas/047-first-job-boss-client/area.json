@@ -1,0 +1,238 @@
+{
+  "id": "first-job-boss-client",
+  "name": "Sala del Cliente Estratégico",
+  "kind": "interior",
+  "chapterId": "first-job",
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "negociar",
+    "explicar",
+    "propuesta",
+    "objeciones"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 7,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "meetingTable",
+      "x": 8,
+      "y": 6,
+      "w": 8,
+      "h": 2
+    },
+    {
+      "type": "chair",
+      "x": 10,
+      "y": 5
+    },
+    {
+      "type": "chair",
+      "x": 14,
+      "y": 5
+    },
+    {
+      "type": "microphone",
+      "x": 12,
+      "y": 3
+    }
+  ],
+  "people": [
+    {
+      "personId": "capitana-equipo",
+      "x": 12,
+      "y": 8,
+      "boss": true,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "firstjob-boss-client"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Capitana del Equipo",
+              "text": "Soy la cliente estratégica. No evalúo simpatía; evalúo precisión y confianza."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Capitana del Equipo",
+              "text": "Responderás todo sin pistas. Un error reinicia la negociación."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "firstjob-boss-client",
+              "title": "Duelo de Cliente",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Translate: Nuestro equipo necesita seguimiento diario, no promesas generales.",
+                  "options": [
+                    {
+                      "label": "Our team needs daily follow-up, not general promises.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Our team needs fewer updates and more silence.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Our team needs to cancel all meetings.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Conversación: --El pedido llegó incompleto otra vez. --Entiendo la preocupación. ____",
+                  "options": [
+                    {
+                      "label": "Hoy confirmo el faltante y le envío hora exacta de reposición.",
+                      "correct": true
+                    },
+                    {
+                      "label": "No puedo hacer nada en este momento.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Tal vez la próxima semana reviso el caso.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha la exigencia del cliente.",
+                  "audioText": "Necesito una propuesta con responsables, fechas y una forma de verificar avances cada tarde.",
+                  "options": [
+                    {
+                      "label": "She asks for owners, dates, and daily progress verification.",
+                      "correct": true
+                    },
+                    {
+                      "label": "She asks for fewer details and no timeline.",
+                      "correct": false
+                    },
+                    {
+                      "label": "She asks only for coffee service.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: We will send a clear update every afternoon.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Enviaremos una actualización clara cada tarde",
+                    "Enviaremos una actualizacion clara cada tarde"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: El cliente duda porque hubo errores previos. ¿Qué reconstruye la confianza más rápido?",
+                  "options": [
+                    {
+                      "label": "Acciones verificables, responsables definidos y seguimiento diario.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Promesas largas sin fechas concretas.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Cambiar de tema durante la reunión.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué estación del capítulo te entrenó para hablar con cortesía y pedidos claros al mismo tiempo?",
+                  "options": [
+                    {
+                      "label": "La calle del mercado con proveedores.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Solo la sala de descanso.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Ninguna estación.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: I listened to your case and I am confirming the next step now.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Escuché su caso y estoy confirmando el siguiente paso ahora",
+                    "Escuche su caso y estoy confirmando el siguiente paso ahora"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Capitana del Equipo",
+                  "text": "Negociación aprobada. Entra al duelo final."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "firstjob-boss-client"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Capitana del Equipo",
+              "text": "Ahora demuestra liderazgo integral en la sala final."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 7,
+      "targetArea": "first-job-boss-interview",
+      "targetX": 22,
+      "targetY": 7,
+      "facing": "left"
+    },
+    {
+      "x": 23,
+      "y": 7,
+      "targetArea": "first-job-boss-final",
+      "targetX": 1,
+      "targetY": 7,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "firstjob-boss-client"
+        ]
+      },
+      "blockedMessage": "Derrota primero a la cliente estratégica."
+    }
+  ]
+}

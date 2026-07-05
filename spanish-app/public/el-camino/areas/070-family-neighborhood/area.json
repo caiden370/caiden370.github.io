@@ -1,22 +1,121 @@
 {
   "id": "family-neighborhood",
-  "name": "Family Neighborhood",
+  "name": "Barrio de la Familia",
   "kind": "outdoor",
   "chapterId": "family",
-  "region": "Chapter 7",
+  "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["feelings", "stories", "advice", "birthdays", "relationships"],
-  "legend": { "g": "grass", "p": "dirtPath" },
-  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "teaches": ["convivencia", "escucha profunda", "memorias", "coordinación familiar", "acuerdos"],
+  "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass" },
+  "playerStart": { "x": 14, "y": 17, "facing": "up" },
   "objects": [
-    { "type": "houseGreen", "x": 2, "y": 1, "w": 4, "h": 3 },
-    { "type": "houseRed", "x": 7, "y": 1, "w": 4, "h": 3 },
-    { "type": "houseBlue", "x": 12, "y": 1, "w": 4, "h": 3 },
-    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Family and Relationships will include birthdays, emotions, advice, stories, and conflict resolution." }] }] },
-    { "type": "table", "x": 7, "y": 6, "w": 2, "h": 1 }
+    {
+      "type": "houseGreen",
+      "x": 2,
+      "y": 1,
+      "w": 6,
+      "h": 4,
+      "entrance": { "x": 5, "y": 5, "targetArea": "family-casa-verde", "targetX": 10, "targetY": 1, "facing": "down" }
+    },
+    {
+      "type": "houseRed",
+      "x": 11,
+      "y": 1,
+      "w": 6,
+      "h": 4,
+      "entrance": { "x": 14, "y": 5, "targetArea": "family-casa-roja", "targetX": 10, "targetY": 1, "facing": "down" }
+    },
+    {
+      "type": "houseBlue",
+      "x": 20,
+      "y": 1,
+      "w": 6,
+      "h": 4,
+      "entrance": { "x": 23, "y": 5, "targetArea": "family-casa-azul", "targetX": 10, "targetY": 1, "facing": "down" }
+    },
+    {
+      "type": "restaurant",
+      "x": 10,
+      "y": 14,
+      "w": 9,
+      "h": 4,
+      "entrance": { "x": 14, "y": 18, "targetArea": "family-plaza-fiesta", "targetX": 14, "targetY": 1, "facing": "down" }
+    },
+    {
+      "type": "townBoard",
+      "x": 14,
+      "y": 8,
+      "interactions": [
+        {
+          "actions": [
+            { "type": "showDialogue", "text": "Semana familiar: historias largas, emociones reales y acuerdos concretos." },
+            { "type": "showDialogue", "text": "Completa casas y plaza para abrir el repaso final." }
+          ]
+        }
+      ]
+    },
+    { "type": "bench", "x": 9, "y": 13, "w": 2, "h": 1 },
+    { "type": "bench", "x": 18, "y": 13, "w": 2, "h": 1 }
   ],
   "people": [
-    { "personId": "lucia", "x": 9, "y": 6, "message": "Later this chapter will have longer emotional conversations." }
+    {
+      "personId": "lucia",
+      "x": 14,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["family-hub-orientation"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Bienvenido al Barrio de la Familia. Aquí nadie se entiende rápido: hay que escuchar de verdad." },
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Ana, Diego y Sofía preparan una noche difícil: hay recuerdos bonitos y heridas viejas." },
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Después coordina la plaza. Sin síntesis, la reunión puede romperse." },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué exige Lucía para avanzar en este capítulo?",
+              "options": [
+                {
+                  "label": "Entender emociones y relaciones en conversaciones largas.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Lucía", "text": "Exacto. Empieza por las tres casas y termina en la plaza." },
+                    { "type": "addItem", "itemId": "routePass", "count": 1 },
+                    { "type": "completeMission", "missionId": "family-hub-orientation" }
+                  ]
+                },
+                { "label": "Memorizar palabras aisladas sin hablar con nadie.", "correct": false },
+                { "label": "Ir directamente al jefe final.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Primero casas, luego plaza, después repaso y jefes." }] }
+      ]
+    },
+    {
+      "personId": "tomás",
+      "x": 5,
+      "y": 9,
+      "interactions": [
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Tomás", "text": "En familia, hablar lento y claro evita guerras largas." },
+            { "type": "showDialogue", "speaker": "Tomás", "text": "No confundas silencio con indiferencia; a veces es dolor." }
+          ]
+        }
+      ]
+    }
   ],
-  "exits": []
+  "exits": [
+    {
+      "x": 29,
+      "y": 10,
+      "targetArea": "family-review",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": { "completedMissions": ["family-verde-ready", "family-roja-bread", "family-azul-emotions", "family-plaza-ready"] },
+      "blockedMessage": "Termina primero todas las tareas del vecindario."
+    }
+  ]
 }

@@ -1,0 +1,117 @@
+{
+  "id": "travel-boss-emergency",
+  "name": "Sala de Emergencias de Viaje",
+  "kind": "interior",
+  "chapterId": "travel",
+  "region": "Chapter 6: Travel Terminal",
+  "cefrLevel": "B2",
+  "teaches": ["urgencias", "decisiones rápidas", "explicaciones precisas"],
+  "legend": { "w": "insideWall", "r": "lightRedFloor" },
+  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "objects": [
+    { "type": "doctorBed", "x": 3, "y": 3, "w": 2, "h": 1 },
+    { "type": "vendingMachine", "x": 8, "y": 2 },
+    { "type": "routeGate", "x": 16, "y": 6 }
+  ],
+  "people": [
+    {
+      "personId": "capitana-equipo",
+      "x": 8,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["travel-boss-emergency"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Capitana del Equipo",
+              "text": "Segundo duelo: salud, pérdida documental y cambios operativos sin tiempo extra."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "travel-boss-emergency",
+              "title": "Duelo de Emergencias",
+              "restartMessage": "No. La gestión de emergencia vuelve al punto cero.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Perdí mi pasaporte en el traslado al hotel y necesito una constancia para embarcar mañana temprano.",
+                  "options": [
+                    { "label": "I lost my passport on the way to the hotel and need a certificate to board early tomorrow.", "correct": true },
+                    { "label": "I found my suitcase in the café and canceled my trip.", "correct": false },
+                    { "label": "I forgot my coffee and will board tonight without documents.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Escribe en español: My colleague feels dizzy, so I need medical assistance at gate twelve.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Mi colega se siente mareado, así que necesito asistencia médica en la puerta doce",
+                    "Mi colega se siente mareado, asi que necesito asistencia medica en la puerta doce"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: El vuelo se retrasa tres horas, la reserva vence a medianoche y el equipaje sigue en tránsito. ¿Qué priorizas?",
+                  "options": [
+                    { "label": "Llamar al hotel para extender la reserva y notificar el retraso con datos del vuelo.", "correct": true },
+                    { "label": "No avisar a nadie y esperar instrucciones espontáneas.", "correct": false },
+                    { "label": "Abandonar equipaje y comprar otro billete sin consulta.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha y selecciona la conclusión correcta.",
+                  "audioText": "Si no encuentras tu maleta en la cinta, reporta el número de etiqueta inmediatamente y solicita seguimiento por escrito.",
+                  "options": [
+                    { "label": "Report the luggage tag immediately and request written tracking.", "correct": true },
+                    { "label": "Leave the airport and buy new clothes without reporting.", "correct": false },
+                    { "label": "Wait one week before notifying anyone.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Conversación: --Se canceló tu conexión por tormenta. --Podemos reubicarte vía Madrid o devolverte importe parcial. ¿Qué respondes si debes llegar hoy?",
+                  "options": [
+                    { "label": "Prefiero reubicación vía Madrid hoy; acepto el ajuste de horario.", "correct": true },
+                    { "label": "No decido nada y espero hasta mañana por la tarde.", "correct": false },
+                    { "label": "Cancelo todo y abandono la reunión urgente.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué misión previa te entrenó para justificar objetos y tiempos ante un agente?",
+                  "options": [
+                    { "label": "La autorización en Control de Seguridad.", "correct": true },
+                    { "label": "El mobiliario del lobby del hotel.", "correct": false },
+                    { "label": "El letrero del terminal sin interacción.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Gestión crítica aprobada." },
+                { "type": "completeMission", "missionId": "travel-boss-emergency" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Falta el duelo final." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 6, "targetArea": "travel-boss-directions", "targetX": 16, "targetY": 6, "facing": "left" },
+    {
+      "x": 17,
+      "y": 6,
+      "targetArea": "travel-boss-final",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": { "completedMissions": ["travel-boss-emergency"] },
+      "blockedMessage": "Derrota primero al jefe de emergencias."
+    }
+  ]
+}

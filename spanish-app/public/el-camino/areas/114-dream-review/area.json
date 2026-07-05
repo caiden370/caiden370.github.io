@@ -1,0 +1,76 @@
+{
+  "id": "dream-review",
+  "name": "Centro de Síntesis del Sueño",
+  "kind": "interior",
+  "chapterId": "dream-future",
+  "region": "Chapter 10: Dream Future",
+  "cefrLevel": "C1",
+  "teaches": ["síntesis avanzada", "inferencia", "plan integrado"],
+  "legend": { "w": "insideWall", "s": "stoneFloor", "c": "campusStone" },
+  "playerStart": { "x": 14, "y": 15, "facing": "up" },
+  "objects": [
+    { "type": "whiteboard", "x": 6, "y": 2, "w": 16, "h": 1 },
+    { "type": "meetingTable", "x": 8, "y": 8, "w": 12, "h": 2 },
+    { "type": "routeGate", "x": 24, "y": 8 },
+    { "type": "questSparkle", "x": 14, "y": 11, "walkable": true }
+  ],
+  "people": [
+    {
+      "personId": "lucia",
+      "x": 10,
+      "y": 12,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              { "itemId": "studyNotes", "count": 1 },
+              { "itemId": "routePass", "count": 1 },
+              { "itemId": "textbook", "count": 1 },
+              { "itemId": "coffeeCup", "count": 1 }
+            ],
+            "completedMissions": [
+              "dream-career-roadmap",
+              "dream-global-network",
+              "dream-innovation-prototype",
+              "dream-mentor-consensus"
+            ],
+            "missingMissions": ["dream-final-review"]
+          },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Lucia", "text": "Tu portafolio está completo. Ahora integra carrera, impacto global, innovación y liderazgo en un solo argumento." },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué tesis resume mejor un plan de futuro robusto?",
+              "options": [
+                { "label": "Visión con métricas, colaboración intercultural, innovación ética y mentoría sostenida.", "correct": true, "actions": [{ "type": "completeStep", "stepId": "dream-review-step1" }] },
+                { "label": "Priorizar velocidad sobre aprendizaje y confianza.", "correct": false },
+                { "label": "Cambiar de estrategia cada día sin criterios.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            },
+            {
+              "type": "askText",
+              "prompt": "Write in Spanish: To make this dream viable, we must measure progress, communicate clearly, and adapt responsibly.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Para hacer viable este sueño debemos medir avances comunicar con claridad y adaptarnos con responsabilidad",
+                "Para hacer viable este sueño, debemos medir avances, comunicar con claridad y adaptarnos con responsabilidad"
+              ],
+              "actions": [
+                { "type": "removeItem", "itemId": "coffeeCup", "count": 1 },
+                { "type": "showDialogue", "speaker": "Lucia", "text": "Repaso final aprobado. Se abre la secuencia de jefes." },
+                { "type": "completeMission", "missionId": "dream-final-review" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Lucia", "text": "Completa los cuatro núcleos y trae los recursos clave para habilitar jefes." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 16, "targetArea": "dream-future", "targetX": 14, "targetY": 6, "facing": "down" },
+    { "x": 25, "y": 8, "targetArea": "dream-boss-vision", "targetX": 1, "targetY": 8, "facing": "right", "requires": { "completedMissions": ["dream-final-review"] }, "blockedMessage": "Completa el repaso del capítulo antes del primer jefe." }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "travel-boss-directions",
+  "name": "Sala de Rutas Complejas",
+  "kind": "interior",
+  "chapterId": "travel",
+  "region": "Chapter 6: Travel Terminal",
+  "cefrLevel": "B2",
+  "teaches": ["direcciones avanzadas", "inferencia espacial", "reformulación"],
+  "legend": { "w": "insideWall", "c": "campusStone" },
+  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "objects": [
+    { "type": "townBoard", "x": 7, "y": 2, "w": 4, "h": 1 },
+    { "type": "routeGate", "x": 16, "y": 6 }
+  ],
+  "people": [
+    {
+      "personId": "mentor-horario",
+      "x": 8,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["travel-boss-directions"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Primer duelo: rutas ambiguas, anuncios rápidos y decisiones precisas." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "travel-boss-directions",
+              "title": "Duelo de Direcciones",
+              "restartMessage": "No. El recorrido se reinicia desde el inicio.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Cruza el vestíbulo, bordea la fila de taxis y sube por la rampa detrás del kiosco.",
+                  "options": [
+                    { "label": "Cross the lobby, go around the taxi line, and go up the ramp behind the kiosk.", "correct": true },
+                    { "label": "Leave the lobby, take a taxi, and wait at baggage claim.", "correct": false },
+                    { "label": "Go downstairs and board immediately without checking.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Escribe en español: Take the second corridor on the left and continue until you see the blue counter.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Toma el segundo pasillo a la izquierda y continúa hasta que veas el mostrador azul",
+                    "Toma el segundo pasillo a la izquierda y continua hasta que veas el mostrador azul"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Elena sale del control, gira dos veces a la derecha, baja una escalera y encuentra una cafetería cerrada. ¿Qué se deduce?",
+                  "options": [
+                    { "label": "Siguió la ruta correcta pero llegó fuera del horario de atención.", "correct": true },
+                    { "label": "Nunca salió del control de seguridad.", "correct": false },
+                    { "label": "Perdió su reserva en el hotel.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha y elige la interpretación correcta.",
+                  "audioText": "No cruces el puente peatonal todavía; primero verifica en la pantalla si tu puerta cambió a la terminal norte.",
+                  "options": [
+                    { "label": "You should check for a gate change before crossing the pedestrian bridge.", "correct": true },
+                    { "label": "You should cross immediately because boarding is already closed.", "correct": false },
+                    { "label": "You should return to the hotel and cancel the route.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Conversación: --¿La parada queda lejos? --No, está a tres cuadras, pero evita la avenida principal por la manifestación. ¿Qué haces?",
+                  "options": [
+                    { "label": "Camino tres cuadras por una ruta alterna evitando la avenida principal.", "correct": true },
+                    { "label": "Voy por la avenida principal porque parece más rápida.", "correct": false },
+                    { "label": "Espero dentro del avión hasta encontrar un mapa.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué zona del capítulo combinó entrega y comprensión de rutas urbanas?",
+                  "options": [
+                    { "label": "El Café de la Ciudad.", "correct": true },
+                    { "label": "La sala de facturación solamente.", "correct": false },
+                    { "label": "El control de seguridad sin salida urbana.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Ruta avanzada superada." },
+                { "type": "completeMission", "missionId": "travel-boss-directions" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Continúa al duelo de emergencias." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 6, "targetArea": "travel-review", "targetX": 26, "targetY": 5, "facing": "left" },
+    {
+      "x": 17,
+      "y": 6,
+      "targetArea": "travel-boss-emergency",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": { "completedMissions": ["travel-boss-directions"] },
+      "blockedMessage": "Derrota primero al jefe de direcciones."
+    }
+  ]
+}

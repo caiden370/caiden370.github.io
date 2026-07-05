@@ -1,20 +1,163 @@
 {
   "id": "travel-terminal",
-  "name": "Travel Terminal",
+  "name": "Terminal Internacional",
   "kind": "outdoor",
   "chapterId": "travel",
-  "region": "Chapter 6",
+  "region": "Chapter 6: Travel Terminal",
   "cefrLevel": "B1+",
-  "teaches": ["airport", "hotel", "directions", "restaurants", "emergencies"],
-  "legend": { "g": "grass", "p": "dirtPath" },
-  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "teaches": ["documentación", "facturación", "seguridad", "reserva", "orientación urbana"],
+  "legend": { "g": "grass", "p": "dirtPath", "s": "asphalt" },
+  "playerStart": { "x": 14, "y": 10, "facing": "up" },
   "objects": [
-    { "type": "office", "x": 2, "y": 1, "w": 5, "h": 3 },
-    { "type": "restaurant", "x": 11, "y": 1, "w": 5, "h": 3 },
-    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Travel will include airports, hotels, directions, reservations, and emergency conversations." }] }] }
+    {
+      "type": "office",
+      "x": 2,
+      "y": 1,
+      "w": 7,
+      "h": 3,
+      "entrance": { "x": 5, "y": 5, "targetArea": "travel-checkin-hall", "targetX": 14, "targetY": 18, "facing": "up" }
+    },
+    {
+      "type": "airportGate",
+      "x": 20,
+      "y": 1,
+      "w": 7,
+      "h": 3,
+      "entrance": { "x": 23, "y": 5, "targetArea": "travel-security-gate", "targetX": 14, "targetY": 18, "facing": "up" }
+    },
+    {
+      "type": "hotelDesk",
+      "x": 2,
+      "y": 16,
+      "w": 7,
+      "h": 3,
+      "entrance": { "x": 5, "y": 19, "targetArea": "travel-hotel-lobby", "targetX": 14, "targetY": 1, "facing": "down" }
+    },
+    {
+      "type": "restaurant",
+      "x": 20,
+      "y": 16,
+      "w": 7,
+      "h": 3,
+      "entrance": { "x": 23, "y": 19, "targetArea": "travel-city-cafe", "targetX": 14, "targetY": 1, "facing": "down" }
+    },
+    { "type": "ticketKiosk", "x": 12, "y": 8 },
+    { "type": "luggage", "x": 16, "y": 8 },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 6,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Facturación al oeste, seguridad al este, hotel al sur y cafetería al sureste."
+            }
+          ]
+        }
+      ]
+    }
   ],
   "people": [
-    { "personId": "nico", "x": 9, "y": 6, "message": "Travel missions will use audio-only directions and faster Spanish." }
+    {
+      "personId": "valeria",
+      "x": 13,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["travel-orientation"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Bienvenida al terminal internacional. Aquí cada conversación afecta tu ruta real."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Primero consigue documentos en facturación y luego cruza seguridad con explicaciones claras."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "Según Valeria, ¿qué va antes del control de seguridad?",
+              "options": [
+                {
+                  "label": "Conseguir los documentos en facturación.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Valeria", "text": "Exacto. Empieza con esta identificación." },
+                    { "type": "addItem", "itemId": "campusId", "count": 1 },
+                    { "type": "completeMission", "missionId": "travel-orientation" }
+                  ]
+                },
+                { "label": "Ir directo al hotel y pedir la llave.", "correct": false },
+                { "label": "Entrar al avión sin informar el destino.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Orden recomendado: facturación, seguridad, hotel y repaso."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 16,
+      "y": 9,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": ["travel-security-clearance", "travel-hotel-complete", "travel-directions"],
+            "missingMissions": ["travel-terminal-brief"]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Tu cadena está casi lista: documentos, control, reserva y orientación urbana."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué resumen refleja la cadena completa del terminal?",
+              "options": [
+                {
+                  "label": "Documentos correctos, control superado, reserva confirmada y rutas comprendidas.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Marcos", "text": "Perfecto. Se abre el centro de repaso." },
+                    { "type": "completeMission", "missionId": "travel-terminal-brief" }
+                  ]
+                },
+                { "label": "Café primero, luego improvisar todo lo demás.", "correct": false },
+                { "label": "Saltar seguridad porque ya tienes maleta.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Termina todas las cadenas y vuelve conmigo." }] }
+      ]
+    }
   ],
-  "exits": []
+  "exits": [
+    {
+      "x": 14,
+      "y": 0,
+      "targetArea": "travel-review",
+      "targetX": 14,
+      "targetY": 18,
+      "facing": "up",
+      "requires": { "completedMissions": ["travel-terminal-brief"] },
+      "blockedMessage": "Completa la cadena del terminal con Marcos."
+    }
+  ]
 }

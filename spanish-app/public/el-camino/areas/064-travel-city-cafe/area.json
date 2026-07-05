@@ -1,0 +1,95 @@
+{
+  "id": "travel-city-cafe",
+  "name": "Café de la Ciudad",
+  "kind": "interior",
+  "chapterId": "travel",
+  "region": "Chapter 6: Travel Terminal",
+  "cefrLevel": "B1+",
+  "teaches": ["pedido detallado", "entrega", "direcciones urbanas", "inferencia"],
+  "legend": { "w": "insideWall", "p": "woodFloor" },
+  "playerStart": { "x": 14, "y": 1, "facing": "down" },
+  "objects": [
+    { "type": "counter", "x": 9, "y": 4, "w": 10, "h": 1 },
+    { "type": "menuBoard", "x": 11, "y": 2, "w": 6, "h": 1 },
+    { "type": "table", "x": 6, "y": 10, "w": 3, "h": 1 },
+    { "type": "table", "x": 19, "y": 10, "w": 3, "h": 1 },
+    { "type": "chair", "x": 7, "y": 11 },
+    { "type": "chair", "x": 20, "y": 11 }
+  ],
+  "people": [
+    {
+      "personId": "carlos",
+      "x": 12,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "studyNotes", "count": 1 }], "missingMissions": ["travel-delivery-cafe"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Veo el paquete. Confirma el pedido final: café sin azúcar, leche aparte y factura digital."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué pedido coincide exactamente?",
+              "options": [
+                {
+                  "label": "Café sin azúcar, leche aparte y factura digital.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Carlos", "text": "Entrega cerrada. Toma el comprobante." },
+                    { "type": "removeItem", "itemId": "studyNotes", "count": 1 },
+                    { "type": "addItem", "itemId": "coffeeCup", "count": 1 },
+                    { "type": "completeMission", "missionId": "travel-delivery-cafe" }
+                  ]
+                },
+                { "label": "Té con miel, sin recibo y para mañana.", "correct": false },
+                { "label": "Chocolate doble y ningún dato de entrega.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Necesito primero el paquete de notas del hotel." }] }
+      ]
+    },
+    {
+      "personId": "ana",
+      "x": 18,
+      "y": 7,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["travel-delivery-cafe"], "missingMissions": ["travel-directions"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Sal del café, gira a la izquierda, toma la segunda calle a la derecha y encontrarás el hotel frente al parque."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿En qué punto aparece el hotel según Ana?",
+              "options": [
+                {
+                  "label": "Después de la segunda calle a la derecha, frente al parque.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Ana", "text": "Exacto. Tu orientación urbana ya es avanzada." },
+                    { "type": "addItem", "itemId": "marketStamp", "count": 1 },
+                    { "type": "completeMission", "missionId": "travel-directions" }
+                  ]
+                },
+                { "label": "Antes de salir del café, detrás de la barra.", "correct": false },
+                { "label": "Dentro del aeropuerto, junto al control.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Primero completa la entrega con Carlos." }] }
+      ]
+    }
+  ],
+  "exits": [{ "x": 14, "y": 0, "targetArea": "travel-terminal", "targetX": 23, "targetY": 17, "facing": "up" }]
+}
