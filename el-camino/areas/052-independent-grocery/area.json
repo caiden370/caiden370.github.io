@@ -1,0 +1,303 @@
+{
+  "id": "independent-grocery",
+  "name": "Supermercado del Barrio",
+  "kind": "interior",
+  "chapterId": "independent-life",
+  "region": "Chapter 5: Independent Life",
+  "cefrLevel": "B1",
+  "teaches": [
+    "cantidad",
+    "oferta",
+    "recibo",
+    "pedido formal",
+    "abastecer"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "dirtPath"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 16,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "serviceCounter",
+      "x": 10,
+      "y": 4,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "groceryShelf",
+      "x": 4,
+      "y": 8,
+      "w": 4,
+      "h": 1,
+      "interactions": [
+        {
+          "when": {
+            "missingSteps": [
+              "independent-took-bread"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Tomas pan integral para la lista semanal."
+            },
+            {
+              "type": "addItem",
+              "itemId": "bread",
+              "count": 1
+            },
+            {
+              "type": "completeStep",
+              "stepId": "independent-took-bread"
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Ya tomaste pan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "groceryShelf",
+      "x": 12,
+      "y": 8,
+      "w": 4,
+      "h": 1,
+      "interactions": [
+        {
+          "when": {
+            "missingSteps": [
+              "independent-took-milk"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Tomas leche para desayuno y cocina."
+            },
+            {
+              "type": "addItem",
+              "itemId": "milk",
+              "count": 1
+            },
+            {
+              "type": "completeStep",
+              "stepId": "independent-took-milk"
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Ya tomaste leche."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "groceryShelf",
+      "x": 20,
+      "y": 8,
+      "w": 4,
+      "h": 1,
+      "interactions": [
+        {
+          "when": {
+            "missingSteps": [
+              "independent-took-apple"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Tomas manzanas para comida y para la clínica."
+            },
+            {
+              "type": "addItem",
+              "itemId": "apple",
+              "count": 1
+            },
+            {
+              "type": "completeStep",
+              "stepId": "independent-took-apple"
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Ya tomaste manzana."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "queueRope",
+      "x": 13,
+      "y": 12,
+      "w": 2,
+      "h": 1
+    }
+  ],
+  "people": [
+    {
+      "personId": "carlos",
+      "x": 11,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "independent-grocery-list"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Aquí no compramos al azar. Para una semana independiente necesitas cantidades exactas y prioridades."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Lista base: un pan integral, una leche y una manzana. Después pagas y pides recibo sellado."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué elemento NO aparece en la lista base de Carlos?",
+              "options": [
+                {
+                  "label": "Calculadora",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "completeMission",
+                      "missionId": "independent-grocery-list"
+                    }
+                  ]
+                },
+                {
+                  "label": "Pan integral",
+                  "correct": false
+                },
+                {
+                  "label": "Leche",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Recoge pan, leche y manzana antes de ir a caja."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "emma",
+      "x": 17,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "bread",
+                "count": 1
+              },
+              {
+                "itemId": "milk",
+                "count": 1
+              },
+              {
+                "itemId": "apple",
+                "count": 1
+              }
+            ],
+            "completedMissions": [
+              "independent-grocery-list"
+            ],
+            "missingMissions": [
+              "independent-grocery-complete"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "Veo tu compra completa. Para trámites de alquiler necesitas hablar con precisión y pedir recibo formal."
+            },
+            {
+              "type": "askText",
+              "prompt": "Write in Spanish: Good afternoon, I need the stamped receipt for rent verification.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Buenas tardes necesito el recibo sellado para la verificación del alquiler",
+                "Buenas tardes, necesito el recibo sellado para la verificación del alquiler"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Emma",
+                  "text": "Excelente. Aquí está tu sello del mercado."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "marketStamp",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "independent-grocery-complete"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "Sin compra completa no puedo emitir recibo sellado."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 14,
+      "y": 17,
+      "targetArea": "independent-life",
+      "targetX": 15,
+      "targetY": 6,
+      "facing": "down"
+    }
+  ]
+}

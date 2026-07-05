@@ -1,0 +1,255 @@
+{
+  "id": "adult-boss-final",
+  "name": "Jefe III: Tribunal de la Insignia",
+  "kind": "interior",
+  "chapterId": "adult-responsibilities",
+  "region": "Chapter 8: Adult Responsibilities",
+  "cefrLevel": "B2",
+  "teaches": [
+    "síntesis total",
+    "resolución integral",
+    "comunicación ejecutiva"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "trophyCase",
+      "x": 9,
+      "y": 2
+    },
+    {
+      "type": "meetingTable",
+      "x": 6,
+      "y": 8,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "townBoard",
+      "x": 6,
+      "y": 3,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "townBoard",
+      "x": 12,
+      "y": 3,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "microphone",
+      "x": 10,
+      "y": 5
+    }
+  ],
+  "people": [
+    {
+      "personId": "rectora-campus",
+      "x": 10,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "adult-boss-final"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Rectora del Tribunal",
+              "text": "Duelo final: burocracia, seguro, taller y negociación en una sola evaluación."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Rectora del Tribunal",
+              "text": "Si fallas una respuesta, el tribunal reinicia completo."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "adult-boss-final",
+              "title": "Duelo de la Insignia de Responsabilidades",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Antes de prometer la entrega final, confirmé por escrito la licencia, la póliza y la orden de reparación.",
+                  "options": [
+                    {
+                      "label": "Before promising final delivery, I confirmed in writing the license, policy, and repair order.",
+                      "correct": true
+                    },
+                    {
+                      "label": "I promised delivery first and checked documents later.",
+                      "correct": false
+                    },
+                    {
+                      "label": "I canceled all paperwork to speed up the line.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: We solved the case because each office shared verified information on time.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Resolvimos el caso porque cada oficina compartió información verificada a tiempo",
+                    "Resolvimos el caso porque cada oficina compartio informacion verificada a tiempo"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia larga: Una persona llegó con formulario incompleto, recibió cita de seguro, detectó frenos críticos, obtuvo auto temporal y cerró expediente con sellos. ¿Qué principio sostuvo todo el proceso?",
+                  "options": [
+                    {
+                      "label": "Verificación progresiva con comunicación clara entre áreas.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Improvisación sin registros.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Velocidad por encima de seguridad.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha el cierre ejecutivo.",
+                  "audioText": "El caso se cerrará cuando el cliente reciba cronograma firmado, evidencia de reparación y canal de contacto para cualquier incidencia posterior.",
+                  "options": [
+                    {
+                      "label": "The case closes with signed timeline, repair evidence, and a follow-up contact channel.",
+                      "correct": true
+                    },
+                    {
+                      "label": "The case closes as soon as the customer stops asking questions.",
+                      "correct": false
+                    },
+                    {
+                      "label": "No follow-up channel is needed after payment.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--Aprecio la rapidez, pero necesito certeza documental. --____",
+                  "options": [
+                    {
+                      "label": "Tiene razón: le entrego copia sellada, resumen de cobertura y plan de seguimiento ahora mismo.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Confié en mi memoria, no hice copias.",
+                      "correct": false
+                    },
+                    {
+                      "label": "No es necesario documentar cuando hay buena intención.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué área funcionó como puerta obligatoria para abrir la cadena 086 → 087 → 088?",
+                  "options": [
+                    {
+                      "label": "El Centro de Repaso de Responsabilidades.",
+                      "correct": true
+                    },
+                    {
+                      "label": "La entrada exterior sin requisitos.",
+                      "correct": false
+                    },
+                    {
+                      "label": "El taller directamente.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: Adult responsibility means making realistic promises and proving every step.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "La responsabilidad adulta significa hacer promesas realistas y demostrar cada paso",
+                    "Responsabilidad adulta significa hacer promesas realistas y demostrar cada paso"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Cuál resumen representa mejor todo el capítulo ocho?",
+                  "options": [
+                    {
+                      "label": "Documentar, verificar, negociar con realismo y cerrar con seguimiento.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Hablar rápido, evitar registros y prometer sin límites.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Completar un solo trámite y omitir los demás.",
+                      "correct": false
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Rectora del Tribunal",
+                  "text": "Superaste el tribunal final. Ganaste la insignia del capítulo ocho."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "chapterEightBadge",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "adult-boss-final"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Rectora del Tribunal",
+              "text": "La insignia del capítulo ocho ya está en tu bolsa."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "adult-boss-negotiation",
+      "targetX": 18,
+      "targetY": 6,
+      "facing": "left"
+    }
+  ]
+}

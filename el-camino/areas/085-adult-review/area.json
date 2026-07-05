@@ -1,0 +1,265 @@
+{
+  "id": "adult-review",
+  "name": "Centro de Repaso de Responsabilidades",
+  "kind": "interior",
+  "chapterId": "adult-responsibilities",
+  "region": "Chapter 8: Adult Responsibilities",
+  "cefrLevel": "B2",
+  "teaches": [
+    "síntesis",
+    "cadena de decisiones",
+    "registro formal",
+    "negociación"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "campusStone",
+    "s": "stoneFloor"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "whiteboard",
+      "x": 6,
+      "y": 2,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "meetingTable",
+      "x": 7,
+      "y": 8,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 9,
+      "y": 4,
+      "w": 6,
+      "h": 1
+    },
+    {
+      "type": "questSparkle",
+      "x": 12,
+      "y": 6,
+      "walkable": true
+    }
+  ],
+  "people": [
+    {
+      "personId": "marcos",
+      "x": 8,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "adult-cityhall-license",
+              "adult-insurance-approved",
+              "adult-garage-repair",
+              "adult-documents-verified"
+            ],
+            "missingMissions": [
+              "adult-review-step1"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Repaso serio: quiero secuencia y propósito de cada oficina en una sola lógica."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué orden refleja una gestión adulta estable en este capítulo?",
+              "options": [
+                {
+                  "label": "Licencia, póliza, reparación priorizada y certificación documental.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Marcos",
+                      "text": "Bien. Tu secuencia no tiene huecos."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "adult-review-step1"
+                    }
+                  ]
+                },
+                {
+                  "label": "Reparación sin póliza y cierre sin evidencia.",
+                  "correct": false
+                },
+                {
+                  "label": "Entrar directo al jefe final para ahorrar tiempo.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "El repaso detecta contradicciones, no respuestas memorizadas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "valeria",
+      "x": 12,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "adult-review-step1"
+            ],
+            "missingMissions": [
+              "adult-review-step2"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Segundo filtro: comprensión auditiva de una negociación real con presión de tiempo."
+            },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha y elige la decisión más responsable.",
+              "audioText": "El cliente exige entrega hoy, pero la pieza crítica llega mañana. Ofrecemos auto temporal, reporte escrito y confirmación a primera hora.",
+              "options": [
+                {
+                  "label": "Ofrecer solución temporal y seguimiento escrito en vez de promesa imposible.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Valeria",
+                      "text": "Exacto. Gestionar expectativas evita conflictos mayores."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "adult-review-step2"
+                    }
+                  ]
+                },
+                {
+                  "label": "Prometer entrega hoy aunque sea falso.",
+                  "correct": false
+                },
+                {
+                  "label": "Cancelar contacto y esperar que el cliente olvide.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "En vida adulta, una promesa sin plan rompe confianza."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "javier",
+      "x": 16,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "adult-review-step1",
+              "adult-review-step2"
+            ],
+            "missingMissions": [
+              "adult-review-complete"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Último filtro: cierre ejecutivo. Debe sonar claro, responsable y verificable."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: Verifiqué documentos, coordiné oficinas y confirmé seguimiento para cerrar el caso sin pendientes.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Verifiqué documentos coordiné oficinas y confirmé seguimiento para cerrar el caso sin pendientes",
+                "Verifiqué documentos, coordiné oficinas y confirmé seguimiento para cerrar el caso sin pendientes",
+                "Verifique documentos coordine oficinas y confirme seguimiento para cerrar el caso sin pendientes"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Javier",
+                  "text": "Repaso completado. Se abre la cadena de jefes."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "adult-review-complete"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Sin repaso no hay acceso a jefatura."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "adult-responsibilities",
+      "targetX": 28,
+      "targetY": 10,
+      "facing": "left"
+    },
+    {
+      "x": 23,
+      "y": 6,
+      "targetArea": "adult-boss-bureaucracy",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "adult-review-complete"
+        ]
+      },
+      "blockedMessage": "Completa el repaso antes de entrar al primer jefe."
+    }
+  ]
+}

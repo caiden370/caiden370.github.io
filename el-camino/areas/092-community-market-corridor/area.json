@@ -1,0 +1,122 @@
+{
+  "id": "community-market-corridor",
+  "name": "Corredor del Mercado Vecinal",
+  "kind": "outdoor",
+  "chapterId": "community-leader",
+  "region": "Chapter 9: Community Leader",
+  "cefrLevel": "C1",
+  "teaches": ["negociación comercial", "costos sociales", "propuestas graduales", "convencer con evidencia"],
+  "legend": { "g": "grass", "p": "dirtPath", "s": "stoneFloor", "q": "flowerGrass" },
+  "playerStart": { "x": 14, "y": 18, "facing": "up" },
+  "objects": [
+    { "type": "store", "x": 3, "y": 2, "w": 6, "h": 4 },
+    { "type": "restaurant", "x": 21, "y": 2, "w": 6, "h": 4 },
+    { "type": "eventBooth", "x": 12, "y": 5, "w": 3, "h": 1 },
+    { "type": "menuBoard", "x": 12, "y": 7, "w": 3, "h": 1 },
+    { "type": "supplyShelf", "x": 5, "y": 10, "w": 2, "h": 1 },
+    { "type": "supplyShelf", "x": 23, "y": 10, "w": 2, "h": 1 },
+    { "type": "bench", "x": 10, "y": 14, "w": 2, "h": 1 },
+    { "type": "bench", "x": 18, "y": 14, "w": 2, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "emma",
+      "x": 6,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["community-market-survey"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Emma", "text": "Si reducimos horarios sin rediseñar rutas, perdemos clientes y aumentamos costos de distribución." },
+            { "type": "showDialogue", "speaker": "Emma", "text": "Necesito que escuches toda la cadena logística antes de proponer recortes." },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha y elige la lectura correcta.",
+              "audioText": "Podemos cerrar más temprano entre semana, pero el sábado necesitamos una franja extra para compensar ventas perdidas.",
+              "options": [
+                {
+                  "label": "Acepta restricción parcial y propone compensación temporal en otro día.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Emma", "text": "Bien leído. Ahora negocia detalles con Carlos." },
+                    { "type": "completeMission", "missionId": "community-market-survey" }
+                  ]
+                },
+                { "label": "Rechaza cualquier ajuste porque no existen alternativas.", "correct": false },
+                { "label": "Solo le preocupa cambiar el menú del restaurante.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "Sin datos de operación, cualquier promesa política se rompe." }] }
+      ]
+    },
+    {
+      "personId": "carlos",
+      "x": 14,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["community-market-survey"], "missingMissions": ["community-market-negotiation"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Tengo comerciantes cansados y vecinos molestos. Si no formulas un intercambio claro, nadie firmará nada." },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué propuesta tiende puentes sin ignorar costos reales?",
+              "options": [
+                {
+                  "label": "Horario moderado, rutas reordenadas y evaluación quincenal con vecinos y negocios.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Carlos", "text": "Propuesta sólida. Ya puedes defenderla en el debate." },
+                    { "type": "completeMission", "missionId": "community-market-negotiation" }
+                  ]
+                },
+                { "label": "Cierre inmediato total sin revisión ni acompañamiento.", "correct": false },
+                { "label": "Mantener todo igual y esperar que el conflicto desaparezca solo.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Una buena negociación especifica plazos, responsables y métricas." }] }
+      ]
+    },
+    {
+      "personId": "diego",
+      "x": 22,
+      "y": 9,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": ["community-market-negotiation", "community-hall-listen"],
+            "missingMissions": ["community-market-coalition"]
+          },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Diego", "text": "Vengo del ayuntamiento. Si quieres apoyo político, expresa el acuerdo sin tecnicismos vacíos." },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: The market accepts gradual limits because the city guarantees safety and joint monitoring.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "El mercado acepta límites graduales porque el municipio garantiza seguridad y seguimiento conjunto",
+                "El mercado acepta limites graduales porque el municipio garantiza seguridad y seguimiento conjunto"
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Diego", "text": "Excelente. Esta es una coalición defendible." },
+                { "type": "addItem", "itemId": "marketStamp", "count": 1 },
+                { "type": "completeMission", "missionId": "community-market-coalition" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Sin una frase políticamente clara, nadie respaldará la medida." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 19, "targetArea": "community-leader", "targetX": 14, "targetY": 6, "facing": "down" }
+  ]
+}

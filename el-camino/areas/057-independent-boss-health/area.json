@@ -1,0 +1,220 @@
+{
+  "id": "independent-boss-health",
+  "name": "Sala Jefe: Salud y Rutina",
+  "kind": "interior",
+  "chapterId": "independent-life",
+  "region": "Chapter 5: Independent Life",
+  "cefrLevel": "B1",
+  "teaches": [
+    "hábitos",
+    "prevención",
+    "equilibrio",
+    "autocuidado"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "g": "lightGreenFloor"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "doctorBed",
+      "x": 3,
+      "y": 2,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "plant",
+      "x": 10,
+      "y": 2
+    },
+    {
+      "type": "water",
+      "x": 14,
+      "y": 2
+    }
+  ],
+  "people": [
+    {
+      "personId": "elena",
+      "x": 8,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "independent-boss-health"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Jefa de salud: la independencia se sostiene con decisiones repetidas, no con una sola cita."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "independent-boss-health",
+              "title": "Duelo de Salud",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Translate: Si duermo poco durante varios días, mi rendimiento laboral y mi concentración disminuyen notablemente.",
+                  "options": [
+                    {
+                      "label": "If I sleep little for several days, my work performance and concentration decrease noticeably.",
+                      "correct": true
+                    },
+                    {
+                      "label": "If I sleep little one day, I automatically improve my routine.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Sleeping less helps me complete paperwork faster.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: Even with many errands, I should eat on schedule and stay hydrated.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Aunque tenga muchos recados debo comer a horario y mantenerme hidratado",
+                    "Aunque tenga muchos recados, debo comer a horario y mantenerme hidratado",
+                    "Aunque tenga muchos recados debo comer a horario y mantenerme hidratada",
+                    "Aunque tenga muchos recados, debo comer a horario y mantenerme hidratada"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Después del banco, una persona quiere saltarse la comida para ahorrar tiempo. Más tarde se siente débil y comete errores en formularios. ¿Qué habría sido mejor?",
+                  "options": [
+                    {
+                      "label": "Comer a tiempo para mantener energía y precisión.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Tomar solo café y seguir sin pausa.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Cancelar todos los trámites del día.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha. ¿Qué recomendación principal se menciona?",
+                  "audioText": "No esperes a sentirte agotado: programa descansos breves, lleva agua y ajusta tu agenda cuando acumules demasiadas tareas.",
+                  "options": [
+                    {
+                      "label": "Programar descansos, llevar agua y ajustar agenda cuando haya exceso de tareas.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Trabajar sin pausas para terminar antes.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Eliminar actividades de salud por una semana.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--No tengo tiempo para caminar esta semana. --____",
+                  "options": [
+                    {
+                      "label": "Puedes dividir la caminata en bloques cortos y mantener la constancia.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Entonces evita dormir para recuperar horas.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Mejor deja de beber agua para no detenerte.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué evidencia del capítulo demuestra que la salud también es un trámite verificable?",
+                  "options": [
+                    {
+                      "label": "El plan de salud validado en la clínica.",
+                      "correct": true
+                    },
+                    {
+                      "label": "La puerta del supermercado.",
+                      "correct": false
+                    },
+                    {
+                      "label": "El columpio del parque.",
+                      "correct": false
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Elena",
+                  "text": "Salud y rutina dominadas."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "independent-boss-health"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "La sala final integra todo el capítulo."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "independent-boss-budget",
+      "targetX": 15,
+      "targetY": 6,
+      "facing": "left"
+    },
+    {
+      "x": 16,
+      "y": 6,
+      "targetArea": "independent-boss-final",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "independent-boss-health"
+        ]
+      },
+      "blockedMessage": "Derrota primero al jefe de salud."
+    }
+  ]
+}

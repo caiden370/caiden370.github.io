@@ -1,0 +1,305 @@
+{
+  "id": "adult-insurance-office",
+  "name": "Oficina de Seguros y Riesgo",
+  "kind": "interior",
+  "chapterId": "adult-responsibilities",
+  "region": "Chapter 8: Adult Responsibilities",
+  "cefrLevel": "B2",
+  "teaches": [
+    "póliza",
+    "cobertura",
+    "riesgo",
+    "evidencia"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 12,
+    "y": 10,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "serviceCounter",
+      "x": 4,
+      "y": 2,
+      "w": 16,
+      "h": 1
+    },
+    {
+      "type": "filingCabinet",
+      "x": 5,
+      "y": 4
+    },
+    {
+      "type": "filingCabinet",
+      "x": 18,
+      "y": 4
+    },
+    {
+      "type": "printer",
+      "x": 11,
+      "y": 4
+    },
+    {
+      "type": "queueRope",
+      "x": 8,
+      "y": 7,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 9,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Seguro responsable: evidencia primero, cobertura después."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "personId": "elena",
+      "x": 6,
+      "y": 4,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "adult-cityhall-license"
+            ],
+            "missingMissions": [
+              "insurance-open-file"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Recepción de pólizas: sin expediente abierto, nadie evalúa tu riesgo."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Necesito número de licencia, forma de contacto y propósito del seguro en lenguaje preciso."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué paso corresponde a recepción antes de evaluar riesgos?",
+              "options": [
+                {
+                  "label": "Abrir expediente y asignar cita de revisión.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "addItem",
+                      "itemId": "scheduleCard",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Elena",
+                      "text": "Perfecto. Tu cita quedó registrada."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "insurance-open-file"
+                    }
+                  ]
+                },
+                {
+                  "label": "Prometer cobertura total sin documentos.",
+                  "correct": false
+                },
+                {
+                  "label": "Enviar al cliente directo al jefe final.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "La cita de revisión demuestra orden administrativo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "javier",
+      "x": 12,
+      "y": 5,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "insurance-open-file"
+            ],
+            "missingMissions": [
+              "insurance-risk-review"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Análisis de riesgo: no acepto respuestas vagas; necesito relación entre uso del auto, historial y cobertura deseada."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "Si usas el auto para trabajo diario y trayectos largos, ¿qué enfoque es más responsable?",
+              "options": [
+                {
+                  "label": "Solicitar cobertura amplia con revisión periódica y deducible claro.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "addItem",
+                      "itemId": "calculator",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Javier",
+                      "text": "Correcto. Este cálculo respalda tu propuesta."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "insurance-risk-review"
+                    }
+                  ]
+                },
+                {
+                  "label": "Elegir la póliza más barata sin revisar exclusiones.",
+                  "correct": false
+                },
+                {
+                  "label": "No contratar cobertura y esperar suerte.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "La cobertura se diseña con datos, no con intuición."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "lucia",
+      "x": 18,
+      "y": 5,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "insurance-open-file",
+              "insurance-risk-review"
+            ],
+            "missingMissions": [
+              "adult-insurance-approved"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Supervisión final de póliza: resume tu caso en tono profesional y sin omitir compromisos."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: Confirmo cobertura amplia, revisión trimestral y contacto inmediato en caso de siniestro.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Confirmo cobertura amplia revisión trimestral y contacto inmediato en caso de siniestro",
+                "Confirmo cobertura amplia, revisión trimestral y contacto inmediato en caso de siniestro"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Lucía",
+                  "text": "Excelente síntesis. Póliza activada."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "campusId",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "adult-insurance-approved"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Con póliza activa, ya puedes resolver el taller."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "adult-city-hall",
+      "targetX": 22,
+      "targetY": 6,
+      "facing": "left"
+    },
+    {
+      "x": 23,
+      "y": 6,
+      "targetArea": "adult-repair-garage",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "adult-insurance-approved"
+        ]
+      },
+      "blockedMessage": "Activa primero la póliza en esta oficina."
+    },
+    {
+      "x": 12,
+      "y": 11,
+      "targetArea": "adult-responsibilities",
+      "targetX": 15,
+      "targetY": 6,
+      "facing": "down"
+    }
+  ]
+}

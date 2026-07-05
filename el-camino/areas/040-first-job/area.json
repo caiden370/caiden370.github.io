@@ -1,21 +1,305 @@
 {
   "id": "first-job",
-  "name": "First Job District",
+  "name": "Distrito del Primer Trabajo",
   "kind": "outdoor",
   "chapterId": "first-job",
-  "region": "Chapter 4",
-  "cefrLevel": "A2+",
-  "teaches": ["interviews", "formal requests", "coworkers", "customers"],
-  "legend": { "g": "grass", "p": "dirtPath" },
-  "playerStart": { "x": 7, "y": 9, "facing": "up" },
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "turno",
+    "recepción",
+    "proveedor",
+    "prioridades",
+    "trato formal"
+  ],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "a": "asphalt",
+    "q": "flowerGrass"
+  },
+  "playerStart": {
+    "x": 15,
+    "y": 17,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "office", "x": 2, "y": 1, "w": 5, "h": 3 },
-    { "type": "store", "x": 9, "y": 1, "w": 5, "h": 3 },
-    { "type": "sign", "x": 7, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "First Job will include interviews, workplace tasks, customer problems, and formal Spanish." }] }] },
-    { "type": "table", "x": 6, "y": 6, "w": 2, "h": 1 }
+    {
+      "type": "office",
+      "x": 3,
+      "y": 1,
+      "w": 7,
+      "h": 4,
+      "entrance": {
+        "x": 6,
+        "y": 5,
+        "targetArea": "first-job-office",
+        "targetX": 14,
+        "targetY": 16,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "store",
+      "x": 20,
+      "y": 1,
+      "w": 7,
+      "h": 4,
+      "entrance": {
+        "x": 23,
+        "y": 5,
+        "targetArea": "first-job-market-street",
+        "targetX": 15,
+        "targetY": 17,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "serviceCounter",
+      "x": 3,
+      "y": 14,
+      "w": 7,
+      "h": 4,
+      "entrance": {
+        "x": 6,
+        "y": 18,
+        "targetArea": "first-job-service-desk",
+        "targetX": 14,
+        "targetY": 1,
+        "facing": "down"
+      }
+    },
+    {
+      "type": "restaurant",
+      "x": 20,
+      "y": 14,
+      "w": 7,
+      "h": 4,
+      "entrance": {
+        "x": 23,
+        "y": 18,
+        "targetArea": "first-job-breakroom",
+        "targetX": 12,
+        "targetY": 1,
+        "facing": "down"
+      }
+    },
+    {
+      "type": "townBoard",
+      "x": 13,
+      "y": 8,
+      "w": 4,
+      "h": 1,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Ruta del turno: oficina, proveedores, recepción, sala de descanso y repaso final."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "routeGate",
+      "x": 15,
+      "y": 0
+    },
+    {
+      "type": "bench",
+      "x": 12,
+      "y": 12,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 16,
+      "y": 12,
+      "w": 2,
+      "h": 1
+    }
   ],
   "people": [
-    { "personId": "carlos", "x": 8, "y": 5, "message": "Workplace missions will become more formal and task-based." }
+    {
+      "personId": "valeria",
+      "x": 14,
+      "y": 10,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "firstjob-started"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Bienvenido al distrito laboral. Hoy no estudias teoría: hoy trabajas con clientes reales."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Tu meta es coordinar cuatro estaciones: oficina, calle del mercado, recepción y sala de descanso."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Escucha bien: recoge materiales, entrégalos, verifica instrucciones y vuelve para el repaso."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué debes completar antes del repaso final?",
+              "options": [
+                {
+                  "label": "Las cuatro estaciones del turno.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Valeria",
+                      "text": "Exacto. Toma tu etiqueta y empieza con enfoque."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "nameTag",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-started"
+                    }
+                  ]
+                },
+                {
+                  "label": "Solo hablar con un jefe y volver.",
+                  "correct": false
+                },
+                {
+                  "label": "Comprar café y terminar el capítulo.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Cuando cierres las cuatro estaciones, sube al repaso del turno."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 17,
+      "y": 10,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-started"
+            ],
+            "missingMissions": [
+              "firstjob-route-pass"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Soy el guardia del distrito. La comunicación formal evita problemas."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "En este trabajo, no dices solo hola. Dices quién eres y para qué vienes."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: Good morning, I come for my first shift.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Buenos días, vengo a mi primer turno",
+                "Buenos dias, vengo a mi primer turno"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Marcos",
+                  "text": "Muy bien. Lenguaje claro y profesional."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "routePass",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "firstjob-route-pass"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Respira, habla claro y confirma cada tarea con la persona correcta."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "tomás",
+      "x": 15,
+      "y": 14,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Pista rápida: en la oficina te pedirán un paquete con cuaderno, calculadora, manual y café."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Si entregas sin verificar, te lo devuelven. Primero escuchar, luego actuar."
+            }
+          ]
+        }
+      ]
+    }
   ],
-  "exits": []
+  "exits": [
+    {
+      "x": 15,
+      "y": 0,
+      "targetArea": "first-job-review",
+      "targetX": 14,
+      "targetY": 16,
+      "facing": "up",
+      "requires": {
+        "completedMissions": [
+          "firstjob-office-kit",
+          "firstjob-market-delivery",
+          "firstjob-service-resolution",
+          "firstjob-breakroom-support"
+        ]
+      },
+      "blockedMessage": "Completa oficina, mercado, recepción y descanso antes del repaso."
+    }
+  ]
 }

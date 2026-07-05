@@ -1,0 +1,268 @@
+{
+  "id": "first-job-review",
+  "name": "Centro de Repaso del Turno",
+  "kind": "interior",
+  "chapterId": "first-job",
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "repaso",
+    "cadena de tareas",
+    "resumen",
+    "priorización"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 16,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "whiteboard",
+      "x": 9,
+      "y": 2,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "meetingTable",
+      "x": 10,
+      "y": 7,
+      "w": 8,
+      "h": 2
+    },
+    {
+      "type": "podium",
+      "x": 13,
+      "y": 5
+    },
+    {
+      "type": "questSparkle",
+      "x": 14,
+      "y": 11,
+      "walkable": true
+    }
+  ],
+  "people": [
+    {
+      "personId": "valeria",
+      "x": 9,
+      "y": 12,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-office-kit",
+              "firstjob-market-delivery",
+              "firstjob-service-resolution",
+              "firstjob-breakroom-support"
+            ],
+            "missingSteps": [
+              "firstjob-review-step1"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Buen trabajo. Llegaste al repaso real del turno."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Resume la cadena de mercado antes de pasar al siguiente evaluador."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál orden refleja la cadena correcta del mercado?",
+              "options": [
+                {
+                  "label": "Pedido con Carlos, leche con Emma, pan con Diego, calculadora con Lucía y verificación final.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Valeria",
+                      "text": "Resumen correcto. Continúa con Marcos."
+                    },
+                    {
+                      "type": "completeStep",
+                      "stepId": "firstjob-review-step1"
+                    }
+                  ]
+                },
+                {
+                  "label": "Primero descanso, luego cliente, después quizá proveedor.",
+                  "correct": false
+                },
+                {
+                  "label": "Solo hablé con Carlos y ya estaba todo listo.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "El repaso mide orden, precisión y comunicación."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 14,
+      "y": 12,
+      "interactions": [
+        {
+          "when": {
+            "completedSteps": [
+              "firstjob-review-step1"
+            ],
+            "missingSteps": [
+              "firstjob-review-step2"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Ahora evalúo tu cierre profesional."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Debes mencionar casos revisados y seguimiento del mismo día."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: I reviewed both client cases and I will follow up today.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Revisé ambos casos de clientes y haré seguimiento hoy",
+                "Revise ambos casos de clientes y hare seguimiento hoy"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Marcos",
+                  "text": "Muy bien. Tu cierre es claro."
+                },
+                {
+                  "type": "completeStep",
+                  "stepId": "firstjob-review-step2"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Sin cierre claro, no hay pase a jefatura."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "javier",
+      "x": 19,
+      "y": 12,
+      "interactions": [
+        {
+          "when": {
+            "completedSteps": [
+              "firstjob-review-step1",
+              "firstjob-review-step2"
+            ],
+            "missingMissions": [
+              "firstjob-final-review"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Último filtro antes de los jefes: prioriza en voz alta."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Quiero una frase que incluya clientes, equipo y seguimiento."
+            },
+            {
+              "type": "askSpeech",
+              "prompt": "Di en español: Primero atiendo al cliente, después coordino al equipo y finalmente confirmo seguimiento.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": [
+                "Primero atiendo al cliente después coordino al equipo y finalmente confirmo seguimiento",
+                "Primero atiendo al cliente, después coordino al equipo y finalmente confirmo seguimiento"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Javier",
+                  "text": "Repaso completado. Ya puedes enfrentar la secuencia de jefes."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "firstjob-final-review"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Habla con orden: cliente, equipo y seguimiento."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 14,
+      "y": 17,
+      "targetArea": "first-job",
+      "targetX": 15,
+      "targetY": 1,
+      "facing": "down"
+    },
+    {
+      "x": 27,
+      "y": 9,
+      "targetArea": "first-job-boss-interview",
+      "targetX": 1,
+      "targetY": 7,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "firstjob-final-review"
+        ]
+      },
+      "blockedMessage": "Completa el repaso final antes de entrar a jefatura."
+    }
+  ]
+}

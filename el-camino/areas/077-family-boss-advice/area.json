@@ -1,0 +1,115 @@
+{
+  "id": "family-boss-advice",
+  "name": "Jefe II: Consejo Bajo Presión",
+  "kind": "interior",
+  "chapterId": "family",
+  "region": "Chapter 7: Family Neighborhood",
+  "cefrLevel": "B2",
+  "teaches": ["consejo", "negociación", "reformulación"],
+  "legend": { "w": "insideWall", "r": "lightRedFloor", "p": "woodFloor" },
+  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "objects": [
+    { "type": "meetingTable", "x": 6, "y": 4, "w": 8, "h": 1 },
+    { "type": "chair", "x": 7, "y": 8 },
+    { "type": "chair", "x": 12, "y": 8 },
+    { "type": "townBoard", "x": 9, "y": 2 }
+  ],
+  "people": [
+    {
+      "personId": "directora-club",
+      "x": 10,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["family-boss-advice"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Directora del Consejo", "text": "Segundo duelo: dar consejos útiles cuando todos llegan sensibles." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "family-boss-advice",
+              "title": "Duelo de Consejos",
+              "restartMessage": "No. El consejo empieza otra vez desde cero.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Te aconsejo que primero preguntes qué necesita la otra persona antes de defenderte.",
+                  "options": [
+                    { "label": "I advise you to first ask what the other person needs before defending yourself.", "correct": true },
+                    { "label": "I advise you to defend yourself loudly before anyone speaks.", "correct": false },
+                    { "label": "I advise you to avoid all family meetings forever.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: If we pause for a minute, we can respond with more respect.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Si hacemos una pausa de un minuto podemos responder con más respeto",
+                    "Si hacemos una pausa de un minuto, podemos responder con más respeto",
+                    "Si hacemos una pausa de un minuto, podemos responder con mas respeto"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Una prima llega tarde y explica que cuidó a su hijo enfermo. ¿Cuál es el mejor primer consejo?",
+                  "options": [
+                    { "label": "Reconocer la dificultad y luego acordar cómo avisar antes.", "correct": true },
+                    { "label": "Ignorar su explicación y castigarla en silencio.", "correct": false },
+                    { "label": "Cancelar toda la reunión sin escuchar.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha la queja y elige la respuesta más constructiva.",
+                  "audioText": "Siempre interrumpen cuando empiezo a hablar y luego dicen que no aporto nada.",
+                  "options": [
+                    { "label": "Tienes razón; establezcamos turnos claros desde ahora.", "correct": true },
+                    { "label": "Habla más fuerte y así no te cortarán.", "correct": false },
+                    { "label": "No participes para evitar molestias.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--No sé cómo pedir perdón sin sonar falso. --Podrías decir: ____",
+                  "options": [
+                    { "label": "Me equivoqué al ignorarte; quiero reparar esto contigo.", "correct": true },
+                    { "label": "Perdón si te ofendiste, pero yo tenía razón.", "correct": false },
+                    { "label": "Lo siento y ya, no quiero hablar más.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué combinación de lugares preparó mejor este duelo?",
+                  "options": [
+                    { "label": "Casa Roja (aclarar contexto) y Plaza (coordinar acuerdos).", "correct": true },
+                    { "label": "Solo la entrada del barrio.", "correct": false },
+                    { "label": "Ninguna práctica previa.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Directora del Consejo", "text": "Tus consejos fueron precisos bajo presión." },
+                { "type": "completeMission", "missionId": "family-boss-advice" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Directora del Consejo", "text": "Te espera el duelo final." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 6, "targetArea": "family-boss-storytelling", "targetX": 18, "targetY": 6, "facing": "left" },
+    {
+      "x": 19,
+      "y": 6,
+      "targetArea": "family-boss-final",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": { "completedMissions": ["family-boss-advice"] },
+      "blockedMessage": "Derrota primero al Jefe de Consejos."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "travel-hotel-lobby",
+  "name": "Lobby del Hotel Central",
+  "kind": "interior",
+  "chapterId": "travel",
+  "region": "Chapter 6: Travel Terminal",
+  "cefrLevel": "B1+",
+  "teaches": ["reserva", "preferencias de habitación", "entrega", "confirmación"],
+  "legend": { "w": "insideWall", "c": "carpetBlue" },
+  "playerStart": { "x": 14, "y": 1, "facing": "down" },
+  "objects": [
+    { "type": "hotelDesk", "x": 10, "y": 4, "w": 8, "h": 1 },
+    { "type": "couch", "x": 5, "y": 9, "w": 3, "h": 1 },
+    { "type": "couch", "x": 20, "y": 9, "w": 3, "h": 1 },
+    { "type": "plant", "x": 4, "y": 4 },
+    { "type": "plant", "x": 23, "y": 4 }
+  ],
+  "people": [
+    {
+      "personId": "sofia",
+      "x": 12,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              { "itemId": "libraryCard", "count": 1 },
+              { "itemId": "scheduleCard", "count": 1 }
+            ],
+            "missingMissions": ["travel-hotel-booking"]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Para confirmar la reserva necesito una respuesta completa: piso alto, habitación tranquila y salida temprana."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué respuesta cumple exactamente las tres condiciones?",
+              "options": [
+                {
+                  "label": "Quiero piso alto, habitación tranquila y salida temprana.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Sofia", "text": "Reserva confirmada. Habla con Emma para una entrega urgente." },
+                    { "type": "completeMission", "missionId": "travel-hotel-booking" }
+                  ]
+                },
+                { "label": "Prefiero ruido, planta baja y salida indefinida.", "correct": false },
+                { "label": "Solo necesito pagar mañana sin registrarme.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Sofia", "text": "Sin validación de seguridad no puedo activar la reserva." }] }
+      ]
+    },
+    {
+      "personId": "emma",
+      "x": 17,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["travel-hotel-booking"], "missingMissions": ["travel-delivery-start"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "Lleva este paquete de notas al barista del Café de la Ciudad y tráeme el comprobante."
+            },
+            { "type": "addItem", "itemId": "studyNotes", "count": 1 },
+            { "type": "completeMission", "missionId": "travel-delivery-start" }
+          ]
+        },
+        {
+          "when": { "hasItems": [{ "itemId": "coffeeCup", "count": 1 }], "missingMissions": ["travel-hotel-complete"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Emma", "text": "Comprobante recibido. Aquí tienes la llave de habitación." },
+            { "type": "removeItem", "itemId": "coffeeCup", "count": 1 },
+            { "type": "addItem", "itemId": "dormKey", "count": 1 },
+            { "type": "completeMission", "missionId": "travel-hotel-complete" }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "Entrega el paquete en el café y vuelve sin retrasarte." }] }
+      ]
+    }
+  ],
+  "exits": [{ "x": 14, "y": 0, "targetArea": "travel-terminal", "targetX": 5, "targetY": 17, "facing": "up" }]
+}

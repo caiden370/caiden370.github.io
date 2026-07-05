@@ -1,0 +1,77 @@
+{
+  "id": "travel-review",
+  "name": "Centro de Repaso del Viaje",
+  "kind": "interior",
+  "chapterId": "travel",
+  "region": "Chapter 6: Travel Terminal",
+  "cefrLevel": "B1+",
+  "teaches": ["síntesis", "comprensión situacional", "decisiones de viaje"],
+  "legend": { "w": "insideWall", "s": "stoneFloor" },
+  "playerStart": { "x": 14, "y": 18, "facing": "up" },
+  "objects": [
+    { "type": "bulletinBoard", "x": 10, "y": 3, "w": 8, "h": 1 },
+    { "type": "examDesk", "x": 9, "y": 8, "w": 4, "h": 1 },
+    { "type": "examDesk", "x": 15, "y": 8, "w": 4, "h": 1 },
+    { "type": "routeGate", "x": 24, "y": 5 }
+  ],
+  "people": [
+    {
+      "personId": "lucia",
+      "x": 14,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "travel-checkin-complete",
+              "travel-security-clearance",
+              "travel-hotel-complete",
+              "travel-delivery-cafe",
+              "travel-directions",
+              "travel-terminal-brief"
+            ],
+            "missingMissions": ["travel-final-review"]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucia",
+              "text": "Ahora integra todo: trámite documental, control, reserva, entrega y orientación urbana en una sola lógica."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué decisión demuestra dominio completo del capítulo?",
+              "options": [
+                {
+                  "label": "Verificar documentos, seguir protocolos, confirmar reserva y comunicar rutas precisas.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Lucia", "text": "Repaso aprobado. Se abre la secuencia de jefes." },
+                    { "type": "completeMission", "missionId": "travel-final-review" }
+                  ]
+                },
+                { "label": "Improvisar respuestas mínimas sin validar condiciones.", "correct": false },
+                { "label": "Hablar solo en inglés y omitir datos críticos.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Lucia", "text": "Completa todas las cadenas antes de entrar a jefes." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 19, "targetArea": "travel-terminal", "targetX": 14, "targetY": 1, "facing": "down" },
+    {
+      "x": 27,
+      "y": 5,
+      "targetArea": "travel-boss-directions",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": { "completedMissions": ["travel-final-review"] },
+      "blockedMessage": "Completa el repaso final con Lucia."
+    }
+  ]
+}

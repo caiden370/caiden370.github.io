@@ -1,0 +1,338 @@
+{
+  "id": "first-job-breakroom",
+  "name": "Sala de Descanso",
+  "kind": "interior",
+  "chapterId": "first-job",
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "descanso",
+    "turno",
+    "apoyar",
+    "coordinar",
+    "servir"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "p": "woodFloor",
+    "s": "stoneFloor",
+    "c": "lightGreenFloor"
+  },
+  "playerStart": {
+    "x": 12,
+    "y": 1,
+    "facing": "down"
+  },
+  "objects": [
+    {
+      "type": "kitchenCounter",
+      "x": 3,
+      "y": 4,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "fridge",
+      "x": 4,
+      "y": 7
+    },
+    {
+      "type": "coffeeMachine",
+      "x": 9,
+      "y": 7,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-breakroom-intro"
+            ],
+            "missingSteps": [
+              "firstjob-brewed-coffee"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "La máquina pide una orden completa antes de servir."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: Please prepare a coffee for the office meeting.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Por favor prepare un café para la reunión de la oficina",
+                "Por favor, prepare un café para la reunión de la oficina"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "text": "La máquina entrega una taza de café."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "coffeeCup",
+                  "count": 1
+                },
+                {
+                  "type": "completeStep",
+                  "stepId": "firstjob-brewed-coffee"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "La máquina está en espera."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "x": 14,
+      "y": 6,
+      "w": 4,
+      "h": 2
+    },
+    {
+      "type": "couch",
+      "x": 15,
+      "y": 10,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "vendingMachine",
+      "x": 20,
+      "y": 4
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 11,
+      "y": 13,
+      "w": 3,
+      "h": 1
+    }
+  ],
+  "people": [
+    {
+      "personId": "mateo",
+      "x": 8,
+      "y": 9,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-started"
+            ],
+            "missingMissions": [
+              "firstjob-breakroom-intro"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "La sala de descanso parece tranquila, pero aquí se coordinan cambios de turno."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "Si nadie comunica descansos, la recepción se queda sola y el cliente espera."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "Habla con Ana y luego prepara un café para la reunión."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál es la función principal de esta sala?",
+              "options": [
+                {
+                  "label": "Coordinar descansos y apoyar al equipo.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Mateo",
+                      "text": "Exacto. Empezamos."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-breakroom-intro"
+                    }
+                  ]
+                },
+                {
+                  "label": "Evitar toda comunicación.",
+                  "correct": false
+                },
+                {
+                  "label": "Cerrar la recepción durante una hora.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "Necesitamos coordinación real, no descanso desordenado."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "ana",
+      "x": 16,
+      "y": 9,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "firstjob-breakroom-intro"
+            ],
+            "missingSteps": [
+              "firstjob-ana-check"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Antes de la reunión, confirma que puedes cubrir recepción si alguien está en descanso."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Responder 'sí' sin contexto no sirve; necesito un compromiso claro."
+            },
+            {
+              "type": "askSpeech",
+              "prompt": "Di en español: Puedo cubrir recepción mientras tú descansas.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": [
+                "Puedo cubrir recepción mientras tú descansas",
+                "Puedo cubrir recepcion mientras tu descansas"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Ana",
+                  "text": "Gracias. Ese compromiso sí ayuda."
+                },
+                {
+                  "type": "completeStep",
+                  "stepId": "firstjob-ana-check"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Apoyo mutuo: esa es la regla del equipo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "elena",
+      "x": 12,
+      "y": 12,
+      "interactions": [
+        {
+          "when": {
+            "completedSteps": [
+              "firstjob-ana-check",
+              "firstjob-brewed-coffee"
+            ],
+            "missingMissions": [
+              "firstjob-breakroom-support"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Veo coordinación y café listo. Falta cerrar con una decisión de prioridad."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "Si recepción está llena y empieza tu descanso, ¿qué haces primero?",
+              "options": [
+                {
+                  "label": "Aviso al equipo y aseguro cobertura antes de salir.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Elena",
+                      "text": "Exacto. Prioridad al cliente y al equipo."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "firstjob-breakroom-support"
+                    }
+                  ]
+                },
+                {
+                  "label": "Me voy sin avisar para no perder tiempo.",
+                  "correct": false
+                },
+                {
+                  "label": "Apago el sistema y cierro la recepción.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Necesito coordinación con Ana y café de reunión listo."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 12,
+      "y": 0,
+      "targetArea": "first-job",
+      "targetX": 23,
+      "targetY": 17,
+      "facing": "up"
+    },
+    {
+      "x": 23,
+      "y": 8,
+      "targetArea": "first-job-service-desk",
+      "targetX": 1,
+      "targetY": 9,
+      "facing": "right"
+    }
+  ]
+}

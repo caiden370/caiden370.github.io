@@ -1,0 +1,239 @@
+{
+  "id": "first-job-boss-interview",
+  "name": "Sala de Entrevista de Jefatura",
+  "kind": "interior",
+  "chapterId": "first-job",
+  "region": "Chapter 4: Primer Trabajo",
+  "cefrLevel": "B1",
+  "teaches": [
+    "entrevista",
+    "argumentar",
+    "resolver",
+    "formalidad"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 7,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "interviewChair",
+      "x": 8,
+      "y": 7
+    },
+    {
+      "type": "interviewChair",
+      "x": 15,
+      "y": 7
+    },
+    {
+      "type": "podium",
+      "x": 11,
+      "y": 4
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 8,
+      "y": 2,
+      "w": 8,
+      "h": 1
+    }
+  ],
+  "people": [
+    {
+      "personId": "mentor-horario",
+      "x": 12,
+      "y": 7,
+      "boss": true,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "firstjob-boss-interview"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Mentor del Horario",
+              "text": "Entrevista de jefatura: cada error reinicia la ronda completa."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Mentor del Horario",
+              "text": "No busco frases bonitas; busco decisiones correctas bajo presión."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "firstjob-boss-interview",
+              "title": "Duelo de Entrevista",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Translate: Antes de prometer una solución, revisé el caso completo y confirmé los datos del cliente.",
+                  "options": [
+                    {
+                      "label": "Before promising a solution, I reviewed the full case and confirmed the client data.",
+                      "correct": true
+                    },
+                    {
+                      "label": "After closing the office, I ignored the client data.",
+                      "correct": false
+                    },
+                    {
+                      "label": "I promised a solution without reading anything.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: I prioritized the client and coordinated with the team before taking my break.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Prioricé al cliente y coordiné con el equipo antes de tomar mi descanso",
+                    "Priorice al cliente y coordine con el equipo antes de tomar mi descanso"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: El proveedor entrega tarde, la recepción está llena y el equipo está en cambio de turno. ¿Qué acción es más profesional?",
+                  "options": [
+                    {
+                      "label": "Comunicar estado real, cubrir recepción y confirmar nueva hora de entrega.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Salir a descansar sin avisar y esperar que se resuelva solo.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Decir al cliente que vuelva otro día sin revisar su caso.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha la política de entrevista.",
+                  "audioText": "Un líder de turno escucha primero, verifica después y comunica un plan con tiempos concretos.",
+                  "options": [
+                    {
+                      "label": "Listen first, verify next, and communicate a plan with concrete timing.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Speak first, guess later, and avoid timelines.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Ignore verification and offer discounts immediately.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--Tenemos dos reclamos al mismo tiempo. --Perfecto, dividiré tareas y te confirmo en quince minutos. ¿Qué demuestra esa respuesta?",
+                  "options": [
+                    {
+                      "label": "Planificación y compromiso medible.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Falta total de responsabilidad.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Negación del problema.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué área del capítulo te entrenó para resumir casos y prometer seguimiento?",
+                  "options": [
+                    {
+                      "label": "La recepción de servicios.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Solo la calle del mercado.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Ninguna; no se practicó eso.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: The complete package included notebook, calculator, manual, and coffee.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "El paquete completo incluyó cuaderno calculadora manual y café",
+                    "El paquete completo incluyó cuaderno, calculadora, manual y café",
+                    "El paquete completo incluyo cuaderno calculadora manual y cafe"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Mentor del Horario",
+                  "text": "Entrevista superada. Avanza al cliente jefe."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "firstjob-boss-interview"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Mentor del Horario",
+              "text": "Siguiente fase: manejo de cliente estratégico."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 7,
+      "targetArea": "first-job-review",
+      "targetX": 26,
+      "targetY": 9,
+      "facing": "left"
+    },
+    {
+      "x": 23,
+      "y": 7,
+      "targetArea": "first-job-boss-client",
+      "targetX": 1,
+      "targetY": 7,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "firstjob-boss-interview"
+        ]
+      },
+      "blockedMessage": "Derrota primero la entrevista de jefatura."
+    }
+  ]
+}

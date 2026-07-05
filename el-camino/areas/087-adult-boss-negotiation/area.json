@@ -1,0 +1,232 @@
+{
+  "id": "adult-boss-negotiation",
+  "name": "Jefe II: Sala de Negociación",
+  "kind": "interior",
+  "chapterId": "adult-responsibilities",
+  "region": "Chapter 8: Adult Responsibilities",
+  "cefrLevel": "B2",
+  "teaches": [
+    "negociar bajo presión",
+    "soluciones realistas",
+    "tono profesional"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "carpetBlue",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
+  "objects": [
+    {
+      "type": "meetingTable",
+      "x": 6,
+      "y": 4,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "interviewChair",
+      "x": 7,
+      "y": 8
+    },
+    {
+      "type": "interviewChair",
+      "x": 12,
+      "y": 8
+    },
+    {
+      "type": "microphone",
+      "x": 10,
+      "y": 3
+    }
+  ],
+  "people": [
+    {
+      "personId": "capitana-equipo",
+      "x": 10,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "adult-boss-negotiation"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Capitana de Negociación",
+              "text": "Segundo duelo: debes negociar sin prometer imposibles. Cada error reinicia la ronda."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "adult-boss-negotiation",
+              "title": "Duelo de Negociación",
+              "restartMessage": "No. Intenta otra vez.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Le ofrecimos un vehículo temporal mientras llegaba la pieza, porque priorizamos seguridad sobre velocidad.",
+                  "options": [
+                    {
+                      "label": "We offered a temporary vehicle while the part arrived because we prioritized safety over speed.",
+                      "correct": true
+                    },
+                    {
+                      "label": "We refused service because speed was the only goal.",
+                      "correct": false
+                    },
+                    {
+                      "label": "We delivered the car without brakes to save time.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: I cannot deliver today, but I can give a temporary solution and a signed timeline.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "No puedo entregar hoy pero puedo dar una solución temporal y un cronograma firmado",
+                    "No puedo entregar hoy, pero puedo dar una solución temporal y un cronograma firmado"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: El cliente está molesto, la pieza no llega y hay dos autos en espera. ¿Qué estrategia negocia mejor?",
+                  "options": [
+                    {
+                      "label": "Explicar límites reales, ofrecer alternativa concreta y confirmar actualización escrita.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Evitar responder hasta que se calme solo.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Prometer entrega inmediata sin revisar inventario.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha la conversación y elige la lectura correcta.",
+                  "audioText": "Entiendo su urgencia; por eso le propongo una salida temporal hoy y cierre definitivo mañana con evidencia fotográfica del trabajo.",
+                  "options": [
+                    {
+                      "label": "Shows empathy plus a two-step plan with evidence.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Cancels the case without alternatives.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Offers only emotional support and no plan.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "--Necesito una fecha exacta, no excusas. --____",
+                  "options": [
+                    {
+                      "label": "Tiene razón: le envío confirmación hoy a las 18:00 y entrega final mañana a las 11:00.",
+                      "correct": true
+                    },
+                    {
+                      "label": "No puedo dar ninguna hora; espere sin noticias.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Le escribo cuando pueda, quizá la próxima semana.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Dónde practicó más este capítulo la negociación con límites reales?",
+                  "options": [
+                    {
+                      "label": "En seguros, taller y repaso auditivo.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Solo en la entrada del barrio.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Únicamente en el ayuntamiento sin clientes.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: Negotiation without follow-up creates new conflicts instead of closing cases.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Negociar sin seguimiento crea nuevos conflictos en lugar de cerrar casos",
+                    "La negociación sin seguimiento crea nuevos conflictos en lugar de cerrar casos"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Capitana de Negociación",
+                  "text": "Negociaste con firmeza y realismo."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "adult-boss-negotiation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Capitana de Negociación",
+              "text": "Te espera el jefe final de responsabilidades."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "adult-boss-bureaucracy",
+      "targetX": 18,
+      "targetY": 6,
+      "facing": "left"
+    },
+    {
+      "x": 19,
+      "y": 6,
+      "targetArea": "adult-boss-final",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "adult-boss-negotiation"
+        ]
+      },
+      "blockedMessage": "Derrota primero al Jefe de Negociación."
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "id": "independent-neighborhood-park",
+  "name": "Parque del Vecindario",
+  "kind": "outdoor",
+  "chapterId": "independent-life",
+  "region": "Chapter 5: Independent Life",
+  "cefrLevel": "B1",
+  "teaches": [
+    "entrega",
+    "coordinación",
+    "rutina",
+    "confirmar",
+    "puntualidad"
+  ],
+  "legend": {
+    "g": "grass",
+    "q": "flowerGrass",
+    "p": "dirtPath",
+    "a": "asphalt"
+  },
+  "defaultTile": "g",
+  "playerStart": {
+    "x": 15,
+    "y": 1,
+    "facing": "down"
+  },
+  "objects": [
+    {
+      "type": "tree",
+      "x": 4,
+      "y": 4
+    },
+    {
+      "type": "tree",
+      "x": 26,
+      "y": 4
+    },
+    {
+      "type": "swings",
+      "x": 7,
+      "y": 8,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "slide",
+      "x": 22,
+      "y": 8
+    },
+    {
+      "type": "bench",
+      "x": 12,
+      "y": 10,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 17,
+      "y": 10,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "busStop",
+      "x": 2,
+      "y": 14
+    },
+    {
+      "type": "questSparkle",
+      "x": 15,
+      "y": 14,
+      "walkable": true
+    }
+  ],
+  "people": [
+    {
+      "personId": "diego",
+      "x": 14,
+      "y": 8,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "independent-grocery-complete"
+            ],
+            "missingMissions": [
+              "independent-park-delivery"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "El vecino Nico trabaja doble turno. Necesita entrega puntual: pan y leche antes de las seis."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Esta misión mide coordinación: comprar, entregar, confirmar y volver con respuesta."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué debe entregar el jugador a Nico?",
+              "options": [
+                {
+                  "label": "Pan y leche antes de la hora límite.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "completeMission",
+                      "missionId": "independent-park-delivery"
+                    }
+                  ]
+                },
+                {
+                  "label": "Solo una botella de agua.",
+                  "correct": false
+                },
+                {
+                  "label": "Formulario bancario y calculadora.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "when": {
+            "completedMissions": [
+              "independent-neighbor-delivered"
+            ],
+            "missingMissions": [
+              "independent-park-complete"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Nico confirmó la entrega. Falta verificar que entendiste la cadena completa de acciones."
+            },
+            {
+              "type": "askText",
+              "prompt": "Write in Spanish: I delivered the order and confirmed the schedule with the neighbor.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Entregué el pedido y confirmé el horario con el vecino",
+                "Entregue el pedido y confirme el horario con el vecino"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Diego",
+                  "text": "Parque verificado."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "independent-park-complete"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Coordina compra, entrega y confirmación sin perder tiempo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "nico",
+      "x": 20,
+      "y": 14,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "bread",
+                "count": 1
+              },
+              {
+                "itemId": "milk",
+                "count": 1
+              }
+            ],
+            "completedMissions": [
+              "independent-park-delivery"
+            ],
+            "missingMissions": [
+              "independent-neighbor-delivered"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Gracias por llegar a tiempo. Cuando todo se retrasa, mi turno se complica."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué valora Nico en esta entrega?",
+              "options": [
+                {
+                  "label": "La puntualidad y la confirmación clara.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "removeItem",
+                      "itemId": "bread",
+                      "count": 1
+                    },
+                    {
+                      "type": "removeItem",
+                      "itemId": "milk",
+                      "count": 1
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "coffeeCup",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Nico",
+                      "text": "Toma este café para tu repaso."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "independent-neighbor-delivered"
+                    }
+                  ]
+                },
+                {
+                  "label": "Cambiar la receta de la clínica.",
+                  "correct": false
+                },
+                {
+                  "label": "Cancelar todos los trámites.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Necesito pan y leche para cerrar mi día."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 15,
+      "y": 0,
+      "targetArea": "independent-life",
+      "targetX": 5,
+      "targetY": 20,
+      "facing": "up"
+    }
+  ]
+}

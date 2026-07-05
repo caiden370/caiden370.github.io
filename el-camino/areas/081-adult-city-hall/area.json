@@ -1,0 +1,299 @@
+{
+  "id": "adult-city-hall",
+  "name": "Ayuntamiento de Trámites",
+  "kind": "interior",
+  "chapterId": "adult-responsibilities",
+  "region": "Chapter 8: Adult Responsibilities",
+  "cefrLevel": "B2",
+  "teaches": [
+    "ventanilla",
+    "licencia",
+    "requisitos",
+    "resumen formal"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 12,
+    "y": 10,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "serviceCounter",
+      "x": 4,
+      "y": 2,
+      "w": 16,
+      "h": 1
+    },
+    {
+      "type": "taxFormDesk",
+      "x": 5,
+      "y": 5,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "formDesk",
+      "x": 11,
+      "y": 5,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "filingCabinet",
+      "x": 18,
+      "y": 4
+    },
+    {
+      "type": "queueRope",
+      "x": 9,
+      "y": 7,
+      "w": 6,
+      "h": 1
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 9,
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "text": "Turno municipal: escucha completa, respuesta breve y confirmación final."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "personId": "ana",
+      "x": 6,
+      "y": 4,
+      "interactions": [
+        {
+          "when": {
+            "missingMissions": [
+              "cityhall-form-intake"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Ventanilla uno: sin formulario correcto, no existe trámite."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Debes diferenciar solicitud inicial, declaración de datos y autorización de contacto."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué documento entrega la ventanilla uno para iniciar el expediente municipal?",
+              "options": [
+                {
+                  "label": "El formulario base de solicitud.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "addItem",
+                      "itemId": "clubForm",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Ana",
+                      "text": "Listo. Revisa que no falte firma ni fecha."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "cityhall-form-intake"
+                    }
+                  ]
+                },
+                {
+                  "label": "Un boleto de cafetería.",
+                  "correct": false
+                },
+                {
+                  "label": "La resolución final ya aprobada.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Si no lees cada campo, te regresan al inicio."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "javier",
+      "x": 12,
+      "y": 4,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "cityhall-form-intake"
+            ],
+            "missingMissions": [
+              "cityhall-tax-check"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Archivo técnico: verifico si tu actividad requiere declaración complementaria."
+            },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha el criterio del archivo.",
+              "audioText": "Si cambiaste de domicilio este año, necesitas sello de actualización antes de pedir la licencia.",
+              "options": [
+                {
+                  "label": "Debe obtener un sello de actualización de domicilio antes de la licencia.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "addItem",
+                      "itemId": "marketStamp",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Javier",
+                      "text": "Perfecto. Aquí tienes el sello de actualización."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "cityhall-tax-check"
+                    }
+                  ]
+                },
+                {
+                  "label": "Puede saltarse la actualización y pedir licencia directa.",
+                  "correct": false
+                },
+                {
+                  "label": "Debe ir primero al taller mecánico.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Sin sello de actualización no pasa a firma municipal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "personId": "tomás",
+      "x": 18,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "cityhall-form-intake",
+              "cityhall-tax-check"
+            ],
+            "missingMissions": [
+              "adult-cityhall-license"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Dirección municipal: voy a aprobar solo si puedes resumir el trámite completo en una frase formal."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: Entrego formulario, sello y datos verificados para recibir la licencia municipal.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Entrego formulario sello y datos verificados para recibir la licencia municipal",
+                "Entrego formulario, sello y datos verificados para recibir la licencia municipal"
+              ],
+              "actions": [
+                {
+                  "type": "showDialogue",
+                  "speaker": "Tomás",
+                  "text": "Redacción clara. Licencia aprobada."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "routePass",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "adult-cityhall-license"
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "La licencia municipal abre el expediente del seguro."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 12,
+      "y": 11,
+      "targetArea": "adult-responsibilities",
+      "targetX": 5,
+      "targetY": 6,
+      "facing": "down"
+    },
+    {
+      "x": 23,
+      "y": 6,
+      "targetArea": "adult-insurance-office",
+      "targetX": 1,
+      "targetY": 6,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "adult-cityhall-license"
+        ]
+      },
+      "blockedMessage": "Primero aprueba la licencia municipal."
+    }
+  ]
+}

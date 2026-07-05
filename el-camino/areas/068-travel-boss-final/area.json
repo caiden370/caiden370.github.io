@@ -1,0 +1,129 @@
+{
+  "id": "travel-boss-final",
+  "name": "Sala de la Insignia del Viaje",
+  "kind": "interior",
+  "chapterId": "travel",
+  "region": "Chapter 6: Travel Terminal",
+  "cefrLevel": "B2",
+  "teaches": ["síntesis global", "comprensión profunda", "producción compleja"],
+  "legend": { "w": "insideWall", "s": "stoneFloor" },
+  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "objects": [
+    { "type": "trophyCase", "x": 8, "y": 2, "w": 2, "h": 1 },
+    { "type": "serviceCounter", "x": 6, "y": 9, "w": 6, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "rectora-campus",
+      "x": 8,
+      "y": 6,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["travel-boss-final"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Rectora del Campus",
+              "text": "Duelo final del viaje. Solo cuenta la precisión total."
+            },
+            {
+              "type": "askBossQuiz",
+              "bossId": "travel-boss-final",
+              "title": "Duelo de la Insignia del Viaje",
+              "restartMessage": "No. La entrevista final se reinicia desde la primera pregunta.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Traduce: Aunque el vuelo salió con retraso, logré reorganizar la reserva y entregar la documentación antes del cierre.",
+                  "options": [
+                    {
+                      "label": "Although the flight left late, I managed to reorganize the booking and submit documentation before closing.",
+                      "correct": true
+                    },
+                    { "label": "Because the flight was early, I skipped check-in and rested all day.", "correct": false },
+                    { "label": "The hotel canceled everything before I reached security.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Escribe en español: If my luggage does not arrive tonight, I will file a formal report and request temporary assistance.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": [
+                    "Si mi equipaje no llega esta noche, presentaré un informe formal y solicitaré asistencia temporal",
+                    "Si mi equipaje no llega esta noche, presentare un informe formal y solicitare asistencia temporal"
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Historia: Facturó, pasó seguridad y confirmó hotel. En el café le adelantan una reunión dos horas. Cancela descanso, pide taxi y envía ubicación. ¿Qué revela?",
+                  "options": [
+                    { "label": "Priorizó objetivos y comunicó ajustes logísticos con rapidez.", "correct": true },
+                    { "label": "Ignoró el cambio y mantuvo su plan original.", "correct": false },
+                    { "label": "Perdió todos los documentos durante el trayecto.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha el anuncio y selecciona la inferencia correcta.",
+                  "audioText": "Atención pasajeros con conexión internacional: el embarque iniciará por grupos y se exigirá verificación doble de identidad en la puerta dieciocho.",
+                  "options": [
+                    { "label": "Boarding is grouped and requires double identity verification at gate 18.", "correct": true },
+                    { "label": "All passengers must leave and return tomorrow.", "correct": false },
+                    { "label": "Only domestic passengers may board without documents.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Conversación: --Tu conexión cambió y queda poco tiempo. --Puedo guiarte por un atajo, pero deberás explicar tu caso en control prioritario. ¿Qué respuesta es mejor?",
+                  "options": [
+                    {
+                      "label": "Gracias. Explicaré mi conexión brevemente, mostraré documentos y seguiré indicaciones.",
+                      "correct": true
+                    },
+                    { "label": "No mostraré documentos; prefiero discutir con el personal.", "correct": false },
+                    { "label": "Me quedo en la cafetería hasta que termine el día.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Qué secuencia describe correctamente el capítulo 6?",
+                  "options": [
+                    {
+                      "label": "Facturación -> Seguridad -> Hotel y entrega -> Direcciones -> Repaso -> Jefes.",
+                      "correct": true
+                    },
+                    { "label": "Hotel -> Jefes -> Facturación -> Cafetería -> Seguridad.", "correct": false },
+                    { "label": "Repaso -> Final inmediato sin controles.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "¿Cuál frase mantiene registro formal para reportar una incidencia de viaje?",
+                  "options": [
+                    {
+                      "label": "Solicito constancia escrita del incidente y número de seguimiento para presentarlo a mi empresa.",
+                      "correct": true
+                    },
+                    { "label": "No sé qué pasó, arréglenlo ya.", "correct": false },
+                    { "label": "Me voy sin reporte porque tengo prisa.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Rectora del Campus", "text": "Dominaste el capítulo de viaje." },
+                { "type": "addItem", "itemId": "chapterSixBadge", "count": 1 },
+                { "type": "completeMission", "missionId": "travel-boss-final" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Rectora del Campus", "text": "La insignia de viaje ya está en tu bolsa." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 6, "targetArea": "travel-boss-emergency", "targetX": 16, "targetY": 6, "facing": "left" },
+    { "x": 8, "y": 11, "targetArea": "travel-terminal", "targetX": 14, "targetY": 2, "facing": "down" }
+  ]
+}

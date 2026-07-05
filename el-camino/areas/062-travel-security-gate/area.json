@@ -1,0 +1,94 @@
+{
+  "id": "travel-security-gate",
+  "name": "Control de Seguridad",
+  "kind": "interior",
+  "chapterId": "travel",
+  "region": "Chapter 6: Travel Terminal",
+  "cefrLevel": "B1+",
+  "teaches": ["inspección", "objetos permitidos", "secuencias de instrucciones", "justificación"],
+  "legend": { "w": "insideWall", "s": "stoneFloor" },
+  "playerStart": { "x": 14, "y": 18, "facing": "up" },
+  "objects": [
+    { "type": "queueRope", "x": 5, "y": 8, "w": 18, "h": 1 },
+    { "type": "airportGate", "x": 12, "y": 3, "w": 4, "h": 1 },
+    { "type": "airportGate", "x": 14, "y": 6 },
+    { "type": "luggage", "x": 8, "y": 12 },
+    { "type": "luggage", "x": 20, "y": 12 }
+  ],
+  "people": [
+    {
+      "personId": "diego",
+      "x": 10,
+      "y": 6,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [
+              { "itemId": "routePass", "count": 1 },
+              { "itemId": "nameTag", "count": 1 }
+            ],
+            "missingMissions": ["travel-security-screening"]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Coloca portátil, líquidos y documentos en bandejas separadas; después avanza sin detenerte."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué secuencia coincide con la instrucción exacta?",
+              "options": [
+                {
+                  "label": "Separar objetos en bandejas y luego avanzar sin detenerse.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Diego", "text": "Inspección inicial aprobada." },
+                    { "type": "completeMission", "missionId": "travel-security-screening" }
+                  ]
+                },
+                { "label": "Avanzar primero y explicar después el contenido.", "correct": false },
+                { "label": "Guardar todo para pasar más rápido.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Necesito pase de ruta y etiqueta para comenzar." }] }
+      ]
+    },
+    {
+      "personId": "tomás",
+      "x": 18,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["travel-security-screening"], "missingMissions": ["travel-security-clearance"] },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Tomas",
+              "text": "Justifica por qué llevas dos cargadores y por qué necesitas trabajar durante la escala."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: Llevo dos cargadores porque tengo una escala larga y necesito trabajar durante la espera.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Llevo dos cargadores porque tengo una escala larga y necesito trabajar durante la espera"
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Tomas", "text": "Argumento sólido. Puedes continuar." },
+                { "type": "addItem", "itemId": "libraryCard", "count": 1 },
+                { "type": "completeMission", "missionId": "travel-security-clearance" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Tomas", "text": "Primero supera la inspección con Diego." }] }
+      ]
+    }
+  ],
+  "exits": [{ "x": 14, "y": 19, "targetArea": "travel-terminal", "targetX": 23, "targetY": 6, "facing": "down" }]
+}

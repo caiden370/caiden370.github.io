@@ -1,20 +1,51 @@
 {
   "id": "dream-future",
-  "name": "Dream Future Overlook",
+  "name": "Mirador del Futuro",
   "kind": "outdoor",
   "chapterId": "dream-future",
-  "region": "Chapter 10",
-  "cefrLevel": "C1+",
-  "teaches": ["career change", "moving abroad", "goals", "abstract conversations"],
-  "legend": { "g": "grass", "p": "dirtPath" },
-  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "region": "Chapter 10: Dream Future",
+  "cefrLevel": "C1",
+  "teaches": ["visión profesional", "metas de largo plazo", "negociación", "innovación"],
+  "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass", "s": "campusStone" },
+  "playerStart": { "x": 14, "y": 18, "facing": "up" },
   "objects": [
-    { "type": "houseRed", "x": 2, "y": 1, "w": 5, "h": 3 },
-    { "type": "office", "x": 11, "y": 1, "w": 5, "h": 3 },
-    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Dream Future will use Spanish-only missions about careers, moving abroad, goals, and big life decisions." }] }] }
+    { "type": "skyline", "x": 1, "y": 1, "w": 26, "h": 2 },
+    { "type": "dreamBoard", "x": 12, "y": 9, "w": 4, "h": 1 },
+    { "type": "office", "x": 2, "y": 4, "w": 6, "h": 4, "entrance": { "x": 5, "y": 8, "targetArea": "dream-career-lab", "targetX": 14, "targetY": 15, "facing": "up" } },
+    { "type": "auditorium", "x": 20, "y": 4, "w": 6, "h": 4, "entrance": { "x": 23, "y": 8, "targetArea": "dream-global-hub", "targetX": 14, "targetY": 15, "facing": "up" } },
+    { "type": "labTable", "x": 2, "y": 12, "w": 6, "h": 3, "entrance": { "x": 5, "y": 15, "targetArea": "dream-innovation-studio", "targetX": 14, "targetY": 15, "facing": "up" } },
+    { "type": "library", "x": 20, "y": 12, "w": 6, "h": 3, "entrance": { "x": 23, "y": 15, "targetArea": "dream-mentor-garden", "targetX": 14, "targetY": 15, "facing": "up" } },
+    { "type": "routeGate", "x": 14, "y": 5 },
+    { "type": "serviceCounter", "x": 11, "y": 4, "w": 6, "h": 1, "entrance": { "x": 14, "y": 5, "targetArea": "dream-review", "targetX": 14, "targetY": 15, "facing": "up" } }
   ],
   "people": [
-    { "personId": "mateo", "x": 9, "y": 6, "message": "The final path should feel like living your future in Spanish." }
+    {
+      "personId": "valeria",
+      "x": 13,
+      "y": 11,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["dream-hub-briefing"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Bienvenido al Mirador del Futuro. Aquí no memorizas frases: tomas decisiones con consecuencias." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Construye una visión completa: carrera, impacto global, innovación y mentoría." },
+            {
+              "type": "askChoice",
+              "prompt": "¿Cuál enfoque coincide con una visión profesional sostenible?",
+              "options": [
+                { "label": "Definir metas medibles, revisar riesgos y ajustar estrategias con evidencia.", "correct": true, "actions": [{ "type": "completeMission", "missionId": "dream-hub-briefing" }] },
+                { "label": "Improvisar cada semana sin evaluar resultados.", "correct": false },
+                { "label": "Evitar retroalimentación para avanzar más rápido.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Cuando cierres los cuatro laboratorios, entra al área de repaso." }] }
+      ]
+    }
   ],
-  "exits": []
+  "exits": [
+    { "x": 14, "y": 19, "targetArea": "community-leader", "targetX": 8, "targetY": 1, "facing": "down" }
+  ]
 }
