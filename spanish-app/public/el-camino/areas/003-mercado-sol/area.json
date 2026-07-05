@@ -1,0 +1,90 @@
+{
+  "id": "mercado-sol",
+  "name": "Mercado Sol",
+  "kind": "outdoor",
+  "chapterId": "elementary-school",
+  "region": "A1 Market Region",
+  "cefrLevel": "A1",
+  "teaches": ["pan", "manzana", "quiero", "gracias", "cuánto cuesta"],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "q": "flowerGrass"
+  },
+  "playerStart": { "x": 7, "y": 10, "facing": "up" },
+  "objects": [
+    { "type": "tree", "x": 1, "y": 1, "w": 1, "h": 1 },
+    { "type": "tree", "x": 13, "y": 1, "w": 1, "h": 1 },
+    { "type": "store", "x": 2, "y": 1, "w": 4, "h": 3, "entrance": { "x": 4, "y": 4, "targetArea": "panaderia-sol", "targetX": 5, "targetY": 6 } },
+    { "type": "restaurant", "x": 9, "y": 1, "w": 4, "h": 3, "entrance": { "x": 11, "y": 4, "targetArea": "cafe-sol", "targetX": 5, "targetY": 6 } },
+    { "type": "table", "x": 4, "y": 6, "w": 2, "h": 1 },
+    { "type": "table", "x": 9, "y": 6, "w": 2, "h": 1 },
+    {
+      "type": "routeGate",
+      "x": 6,
+      "y": 11,
+      "w": 1,
+      "h": 1,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["market-breakfast"] },
+          "actions": [{ "type": "showDialogue", "text": "Nice work in Mercado Sol. The next road can become level 3." }]
+        },
+        {
+          "actions": [{ "type": "showDialogue", "text": "Help Lucía with breakfast before leaving the market." }]
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "personId": "lucia",
+      "x": 7,
+      "y": 5,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "bread", "count": 1 }], "missingMissions": ["market-breakfast"] },
+          "actions": [
+            {
+              "type": "askText",
+              "prompt": "Lucía smiles. Type the polite Spanish word for thank you.",
+              "placeholder": "gracias",
+              "correctAnswers": ["gracias", "Gracias"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Lucía", "text": "¡Gracias! You remembered how to be polite." },
+                { "type": "removeItem", "itemId": "bread", "count": 1 },
+                { "type": "addItem", "itemId": "marketStamp", "count": 1 },
+                { "type": "completeMission", "missionId": "market-breakfast" },
+                { "type": "showDialogue", "text": "Mission complete: Mercado Sol is finished." }
+              ],
+              "wrongMessage": "Type gracias."
+            }
+          ]
+        },
+        {
+          "when": { "completedSteps": ["lucia-asked-bread"], "missingMissions": ["market-breakfast"] },
+          "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Please buy pan from Emma. Pan means bread." }]
+        },
+        {
+          "when": { "missingMissions": ["market-breakfast"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Tengo hambre. I am hungry. Can you buy pan from Emma?" },
+            { "type": "completeStep", "stepId": "lucia-asked-bread" }
+          ]
+        },
+        {
+          "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Mercado Sol is complete. Great job." }]
+        }
+      ]
+    },
+    {
+      "personId": "nico",
+      "x": 10,
+      "y": 5,
+      "message": "The bakery is on the left. The café is on the right."
+    }
+  ],
+  "exits": [
+    { "x": 7, "y": 11, "targetArea": "camino-hola", "targetX": 4, "targetY": 6, "facing": "up" }
+  ]
+}

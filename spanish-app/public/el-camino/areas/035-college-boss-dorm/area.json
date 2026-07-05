@@ -1,0 +1,72 @@
+{
+  "id": "college-boss-dorm",
+  "name": "Sala del Dormitorio",
+  "kind": "interior",
+  "chapterId": "college",
+  "region": "Chapter 3: Universidad",
+  "cefrLevel": "A2",
+  "teaches": ["rutina", "convivencia", "recados"],
+  "legend": { "w": "insideWall", "r": "lightRedFloor" },
+  "playerStart": { "x": 8, "y": 10, "facing": "up" },
+  "objects": [
+    { "type": "bed", "x": 3, "y": 2, "w": 2, "h": 1 },
+    { "type": "laundryMachine", "x": 12, "y": 2 },
+    { "type": "studyDesk", "x": 7, "y": 8, "w": 3, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "mentor-dormitorio",
+      "x": 8,
+      "y": 5,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["college-boss-dorm"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Duelo universitario uno. Piensa antes de responder." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "college-boss-dorm",
+              "title": "Duelo del Dormitorio",
+              "restartMessage": "No. La rutina vuelve a empezar.",
+              "questions": [
+                { "type": "askChoice", "prompt": "Translate: Mi compañero de cuarto necesita detergente, así que voy a la tienda antes de estudiar.", "options": [
+                  { "label": "My roommate needs detergent, so I go to the store before studying.", "correct": true },
+                  { "label": "My professor needs coffee, so I go to class after sleeping.", "correct": false },
+                  { "label": "My friend needs a notebook, so I close the dorm.", "correct": false }
+                ] },
+                { "type": "askText", "prompt": "Write in Spanish: I would like to rest after finishing my notes.", "placeholder": "Respuesta en español", "correctAnswers": ["Me gustaría descansar después de terminar mis apuntes", "Me gustaria descansar despues de terminar mis apuntes", "Me gustaría descansar después de terminar los apuntes"] },
+                { "type": "askChoice", "prompt": "Historia: En el dormitorio, Rosa lava ropa. Su compañero estudia. Ella dice que hará café cuando termine la ropa. ¿Qué hará Rosa después de lavar?",
+                  "options": [
+                    { "label": "Hará café.", "correct": true },
+                    { "label": "Comprará un libro.", "correct": false },
+                    { "label": "Tomará un examen.", "correct": false }
+                  ]
+                },
+                { "type": "askAudioChoice", "prompt": "Escucha y elige el resumen correcto.", "audioText": "No puedo salir ahora; tengo que limpiar el cuarto y entregar los apuntes a mi compañero.", "options": [
+                  { "label": "They cannot leave now because they must clean the room and deliver notes.", "correct": true },
+                  { "label": "They cannot study because the bookstore is closed.", "correct": false },
+                  { "label": "They cannot drink coffee because the library is quiet.", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "--¿Puedes traer detergente? --Tengo clase en diez minutos. --____", "options": [
+                  { "label": "Está bien; tráelo después de clase, por favor.", "correct": true },
+                  { "label": "No, el examen vive en la cafetería.", "correct": false },
+                  { "label": "Sí, la bicicleta lee despacio.", "correct": false }
+                ] }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Rutina universitaria dominada." },
+                { "type": "completeMission", "missionId": "college-boss-dorm" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Sigue a la biblioteca." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 8, "y": 11, "targetArea": "college-cafe", "targetX": 24, "targetY": 1, "facing": "down" },
+    { "x": 15, "y": 5, "targetArea": "college-boss-study", "targetX": 1, "targetY": 5, "facing": "right", "requires": { "completedMissions": ["college-boss-dorm"] }, "blockedMessage": "Derrota primero al Mentor del Dormitorio." }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "dream-future",
+  "name": "Dream Future Overlook",
+  "kind": "outdoor",
+  "chapterId": "dream-future",
+  "region": "Chapter 10",
+  "cefrLevel": "C1+",
+  "teaches": ["career change", "moving abroad", "goals", "abstract conversations"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "objects": [
+    { "type": "houseRed", "x": 2, "y": 1, "w": 5, "h": 3 },
+    { "type": "office", "x": 11, "y": 1, "w": 5, "h": 3 },
+    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Dream Future will use Spanish-only missions about careers, moving abroad, goals, and big life decisions." }] }] }
+  ],
+  "people": [
+    { "personId": "mateo", "x": 9, "y": 6, "message": "The final path should feel like living your future in Spanish." }
+  ],
+  "exits": []
+}

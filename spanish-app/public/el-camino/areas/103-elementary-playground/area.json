@@ -1,0 +1,163 @@
+{
+  "id": "elementary-playground",
+  "name": "Patio y Cancha",
+  "kind": "outdoor",
+  "chapterId": "elementary-school",
+  "region": "Chapter 1: Escuela Primaria",
+  "cefrLevel": "A1",
+  "teaches": ["corre", "camina", "salta", "para", "ven aquí", "me gusta", "no me gusta", "pelota"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 26, "y": 10, "facing": "left" },
+  "objects": [
+    { "type": "slide", "x": 4, "y": 2, "w": 2, "h": 1 },
+    { "type": "swings", "x": 10, "y": 2, "w": 3, "h": 1 },
+    { "type": "sportsGoal", "x": 20, "y": 2, "w": 3, "h": 1 },
+    { "type": "gymMat", "x": 6, "y": 11, "w": 3, "h": 1 },
+    { "type": "gymMat", "x": 18, "y": 11, "w": 3, "h": 1 },
+    { "type": "toyBox", "x": 13, "y": 5, "interactions": [{ "when": { "missingSteps": ["found-lost-toy"] }, "actions": [
+      { "type": "showDialogue", "text": "Encuentras un juguete perdido cerca de la caja." },
+      { "type": "addItem", "itemId": "lostToy", "count": 1 },
+      { "type": "completeStep", "stepId": "found-lost-toy" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Juguete encontrado. Muy bien." }] }] },
+    { "type": "itemSparkle", "x": 21, "y": 12, "walkable": true, "interactions": [{ "when": { "missingSteps": ["found-ball"] }, "actions": [
+      { "type": "showDialogue", "text": "La pelota está junto a la cancha." },
+      { "type": "addItem", "itemId": "playgroundBall", "count": 1 },
+      { "type": "completeStep", "stepId": "found-ball" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Pelota lista." }] }] },
+    { "type": "tree", "x": 2, "y": 16 },
+    { "type": "tree", "x": 25, "y": 16 }
+  ],
+  "people": [
+    {
+      "personId": "diego",
+      "x": 14,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["elem-actions"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Diego", "text": "Soy el entrenador del patio. Cuando digo corre, te mueves rápido." },
+            { "type": "showDialogue", "speaker": "Diego", "text": "Cuando digo para, te detienes. Cuando digo salta, subes y bajas." },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha la orden. ¿Qué debe hacer el estudiante?",
+              "audioText": "para",
+              "options": [
+                {
+                  "label": "detenerse",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Diego", "text": "Correcto. Para es detenerse." },
+                    {
+                      "type": "askChoice",
+                      "prompt": "Si Diego dice salta, ¿qué acción corresponde?",
+                      "options": [
+                        { "label": "jump", "correct": true, "actions": [
+                          { "type": "showDialogue", "speaker": "Diego", "text": "Bien. Ya entiendes las órdenes del patio." },
+                          { "type": "completeMission", "missionId": "elem-actions" }
+                        ] },
+                        { "label": "stop", "correct": false },
+                        { "label": "read", "correct": false }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "correr", "correct": false },
+                { "label": "leer", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Corre, camina, salta, para." }] }
+      ]
+    },
+    {
+      "personId": "nico",
+      "x": 8,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["elem-actions"], "missingMissions": ["elem-likes"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Nico", "text": "Me gusta jugar con la pelota. No me gusta esperar mucho." },
+            { "type": "showDialogue", "speaker": "Nico", "text": "Lucía perdió un juguete. Si la ayudas, todos podemos jugar." },
+            {
+              "type": "askChoice",
+              "prompt": "Nico says: Me gusta jugar. What does he mean?",
+              "options": [
+                { "label": "He likes to play.", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Nico", "text": "Sí. Me gusta jugar." },
+                  { "type": "completeMission", "missionId": "elem-likes" }
+                ] },
+                { "label": "He needs a book.", "correct": false },
+                { "label": "He is tired.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Nico", "text": "Me gusta jugar. Busca el juguete de Lucía." }] }
+      ]
+    },
+    {
+      "personId": "lucia",
+      "x": 20,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "lostToy", "count": 1 }], "completedMissions": ["elem-likes"], "missingMissions": ["elem-lost-toy"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Mi juguete estaba perdido. Ahora está aquí. ¡Gracias!" },
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Cuando alguien ayuda, la respuesta amable es gracias." },
+            {
+              "type": "askText",
+              "prompt": "Responde con la palabra amable apropiada.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": ["gracias"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Lucía", "text": "Gracias. Ahora busca la pelota para Carlos." },
+                { "type": "removeItem", "itemId": "lostToy", "count": 1 },
+                { "type": "completeMission", "missionId": "elem-lost-toy" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Busco un juguete perdido." }] }
+      ]
+    },
+    {
+      "personId": "carlos",
+      "x": 14,
+      "y": 12,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "playgroundBall", "count": 1 }], "completedMissions": ["elem-actions", "elem-likes", "elem-lost-toy"], "missingMissions": ["elem-playground-complete"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Diego dio órdenes. Nico dijo qué le gusta. Lucía recuperó su juguete." },
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Ahora con la pelota podemos jugar. Responde como estudiante del patio." },
+            {
+              "type": "askSpeech",
+              "prompt": "Di una frase sobre lo que te gusta hacer en el patio.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": ["Me gusta jugar", "Me gusta correr", "Me gusta saltar"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Carlos", "text": "Patio completo. Muy bien." },
+                { "type": "completeMission", "missionId": "elem-playground-complete" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Necesitamos juguete, pelota y práctica." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 27, "y": 10, "targetArea": "elementary-entrance", "targetX": 1, "targetY": 10, "facing": "right" },
+    { "x": 27, "y": 8, "targetArea": "elementary-classroom", "targetX": 1, "targetY": 9, "facing": "right" },
+    { "x": 14, "y": 0, "targetArea": "elementary-library-art", "targetX": 14, "targetY": 18, "facing": "up" }
+  ]
+}

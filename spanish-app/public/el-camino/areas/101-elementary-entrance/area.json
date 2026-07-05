@@ -1,0 +1,254 @@
+{
+  "id": "elementary-entrance",
+  "name": "Entrada de la Escuela",
+  "kind": "outdoor",
+  "chapterId": "elementary-school",
+  "region": "Chapter 1: Escuela Primaria",
+  "cefrLevel": "A1",
+  "teaches": ["hola", "buenos días", "me llamo", "por favor", "gracias", "izquierda", "derecha"],
+  "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass" },
+  "playerStart": { "x": 14, "y": 17, "facing": "up" },
+  "objects": [
+    { "type": "school", "x": 10, "y": 1, "w": 8, "h": 4 },
+    { "type": "sign", "x": 13, "y": 6, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Bienvenido. Escucha, responde y practica." }] }] },
+    { "type": "sign", "x": 6, "y": 9, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Izquierda: patio. Derecha: cafetería. Arriba: aula. Abajo: biblioteca y arte." }] }] },
+    { "type": "questSparkle", "x": 14, "y": 10, "walkable": true },
+    { "type": "tree", "x": 2, "y": 2 },
+    { "type": "tree", "x": 25, "y": 2 },
+    { "type": "tree", "x": 2, "y": 17 },
+    { "type": "tree", "x": 25, "y": 17 },
+    { "type": "bench", "x": 5, "y": 13, "w": 2, "h": 1 },
+    { "type": "bench", "x": 21, "y": 13, "w": 2, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "ana",
+      "x": 12,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["elem-greeting"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Ana", "text": "Buenos días. Soy Ana. En la mañana digo: Buenos días." },
+            { "type": "showDialogue", "speaker": "Ana", "text": "Tú puedes responder con el mismo saludo. Es amable y normal." },
+            {
+              "type": "askChoice",
+              "prompt": "Ana llega por la mañana. ¿Qué respuesta tiene sentido?",
+              "options": [
+                {
+                  "label": "Buenos días.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Ana", "text": "Sí. Buenos días. Ahora escucha la frase." },
+                    {
+                      "type": "askAudioChoice",
+                      "prompt": "¿Qué idea comunica la frase que escuchas?",
+                      "audioText": "Buenos días.",
+                      "options": [
+                        {
+                          "label": "un saludo de la mañana",
+                          "correct": true,
+                          "actions": [
+                            { "type": "showDialogue", "speaker": "Ana", "text": "Muy bien. Saludo de la mañana." },
+                            { "type": "addItem", "itemId": "morningStar", "count": 1 },
+                            { "type": "completeMission", "missionId": "elem-greeting" }
+                          ]
+                        },
+                        { "label": "una comida", "correct": false },
+                        { "label": "un color", "correct": false }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "Tengo pan.", "correct": false },
+                { "label": "Soy lápiz.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Buenos días. Sigue practicando." }] }
+      ]
+    },
+    {
+      "personId": "mateo",
+      "x": 16,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["elem-greeting"], "missingMissions": ["elem-introduction"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Mateo", "text": "Hola. Ana ya te saludó. Ahora yo pregunto: ¿Cómo te llamas?" },
+            { "type": "showDialogue", "speaker": "Mateo", "text": "Cuando alguien pregunta eso, la respuesta empieza con Me llamo..." },
+            {
+              "type": "askChoice",
+              "prompt": "Mateo pregunta: ¿Cómo te llamas? ¿Qué necesita saber?",
+              "options": [
+                {
+                  "label": "tu nombre",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Mateo", "text": "Correcto. Es una pregunta de presentación." },
+                    {
+                      "type": "askText",
+                      "prompt": "Responde con una presentación en español.",
+                      "placeholder": "Respuesta en español",
+                      "correctAnswers": ["Me llamo estudiante"],
+                      "actions": [
+                        { "type": "showDialogue", "speaker": "Mateo", "text": "Excelente. Ya puedes presentarte." },
+                        { "type": "addItem", "itemId": "nameTag", "count": 1 },
+                        { "type": "completeMission", "missionId": "elem-introduction" }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "tu comida", "correct": false },
+                { "label": "tu color favorito", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Mateo", "text": "Hola, estudiante. Bienvenido." }] }
+      ]
+    },
+    {
+      "personId": "diego",
+      "x": 8,
+      "y": 11,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["elem-introduction"], "missingMissions": ["elem-directions"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Diego", "text": "Tengo un mapa. El patio está a la izquierda. La cafetería está a la derecha." },
+            { "type": "showDialogue", "speaker": "Diego", "text": "El aula está arriba. La biblioteca está abajo. Mira y piensa." },
+            {
+              "type": "askChoice",
+              "prompt": "Quieres ir al patio. ¿Qué dirección sigues?",
+              "options": [
+                {
+                  "label": "izquierda",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Diego", "text": "Sí. Patio: izquierda." },
+                    {
+                      "type": "askChoice",
+                      "prompt": "Quieres ir a la cafetería. ¿Qué dirección sigues?",
+                      "options": [
+                        {
+                          "label": "derecha",
+                          "correct": true,
+                          "actions": [
+                            { "type": "showDialogue", "speaker": "Diego", "text": "Bien. Ya puedes leer caminos básicos." },
+                            { "type": "addItem", "itemId": "schoolMap", "count": 1 },
+                            { "type": "completeMission", "missionId": "elem-directions" }
+                          ]
+                        },
+                        { "label": "abajo", "correct": false },
+                        { "label": "izquierda", "correct": false }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "derecha", "correct": false },
+                { "label": "gracias", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Izquierda, derecha, arriba, abajo." }] }
+      ]
+    },
+    {
+      "personId": "lucia",
+      "x": 20,
+      "y": 11,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["elem-directions"], "missingMissions": ["elem-politeness"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Necesito ayuda con mi mochila. Si pido ayuda, digo por favor." },
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Cuando alguien ayuda, digo gracias. Si choco con alguien, digo perdón." },
+            {
+              "type": "askChoice",
+              "prompt": "Lucía pide ayuda con la mochila. ¿Qué palabra necesita?",
+              "options": [
+                {
+                  "label": "por favor",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Lucía", "text": "Muy amable. Ahora otra situación." },
+                    {
+                      "type": "askChoice",
+                      "prompt": "Alguien te da el mapa. ¿Qué dices?",
+                      "options": [
+                        {
+                          "label": "gracias",
+                          "correct": true,
+                          "actions": [
+                            { "type": "showDialogue", "speaker": "Lucía", "text": "Perfecto. Palabras amables listas." },
+                            { "type": "addItem", "itemId": "politePass", "count": 1 },
+                            { "type": "completeMission", "missionId": "elem-politeness" }
+                          ]
+                        },
+                        { "label": "rojo", "correct": false },
+                        { "label": "corre", "correct": false }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "rojo", "correct": false },
+                { "label": "correr", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Gracias por practicar." }] }
+      ]
+    },
+    {
+      "personId": "sofia",
+      "x": 14,
+      "y": 12,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["elem-greeting", "elem-introduction", "elem-directions", "elem-politeness"], "missingMissions": ["elem-entrance-ready"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Sofia", "text": "Veo una estrella, una etiqueta, un mapa y un pase amable." },
+            { "type": "showDialogue", "speaker": "Sofia", "text": "Antes de entrar, revisamos comprensión. Entiende la situación." },
+            {
+              "type": "askChoice",
+              "prompt": "Un estudiante llega por la mañana y se presenta. ¿Qué combinación tiene sentido?",
+              "options": [
+                {
+                  "label": "Buenos días. Me llamo estudiante.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Sofia", "text": "Correcto. La escuela está abierta." },
+                    { "type": "completeMission", "missionId": "elem-entrance-ready" }
+                  ]
+                },
+                { "label": "Quiero pan. Soy lápiz.", "correct": false },
+                { "label": "Rojo. Corre. Leche.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Sofia", "text": "Explora: aula, patio, cafetería, biblioteca y arte." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 0, "targetArea": "elementary-classroom", "targetX": 14, "targetY": 18, "facing": "up" },
+    { "x": 0, "y": 10, "targetArea": "elementary-playground", "targetX": 26, "targetY": 10, "facing": "left" },
+    { "x": 27, "y": 10, "targetArea": "elementary-cafeteria", "targetX": 1, "targetY": 10, "facing": "right" },
+    { "x": 14, "y": 19, "targetArea": "elementary-library-art", "targetX": 14, "targetY": 1, "facing": "down" }
+  ]
+}

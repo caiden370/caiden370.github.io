@@ -1,0 +1,91 @@
+{
+  "id": "elementary-boss-greetings",
+  "name": "Sala del Saludo",
+  "kind": "interior",
+  "chapterId": "elementary-school",
+  "region": "Chapter 1: Escuela Primaria",
+  "cefrLevel": "A1",
+  "teaches": ["saludos", "presentaciones", "emociones"],
+  "legend": { "w": "insideWall", "r": "lightRedFloor" },
+  "playerStart": { "x": 8, "y": 10, "facing": "up" },
+  "objects": [
+    { "type": "chalkboard", "x": 5, "y": 2, "w": 8, "h": 1 },
+    { "type": "questSparkle", "x": 8, "y": 4, "walkable": true }
+  ],
+  "people": [
+    {
+      "personId": "guardian-aula",
+      "x": 8,
+      "y": 5,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["elem-boss-greetings"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Guardiana del Aula", "text": "Primer duelo. Todo correcto, o empezamos otra vez." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "elem-boss-greetings",
+              "title": "Duelo del Saludo",
+              "restartMessage": "No. Vuelve al primer saludo.",
+              "questions": [
+                {
+                  "type": "askChoice",
+                  "prompt": "Translate: La niña está cansada, pero saluda al maestro con respeto.",
+                  "options": [
+                    { "label": "The girl is tired, but greets the teacher respectfully.", "correct": true },
+                    { "label": "The teacher is tired and asks for bread.", "correct": false },
+                    { "label": "The girl is happy because she has water.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askText",
+                  "prompt": "Write in Spanish: Good morning, teacher. I am well, thank you.",
+                  "placeholder": "Respuesta en español",
+                  "correctAnswers": ["Buenos días maestro estoy bien gracias", "Buenos dias maestro estoy bien gracias", "Buenos días, maestro. Estoy bien, gracias"]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "Story: Mateo dice: Hola, estoy nervioso. No conozco la clase. Ana responde: Ven conmigo; la maestra es amable. ¿Por qué está nervioso Mateo?",
+                  "options": [
+                    { "label": "Porque no conoce la clase.", "correct": true },
+                    { "label": "Porque no tiene almuerzo.", "correct": false },
+                    { "label": "Porque perdió un libro rojo.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askAudioChoice",
+                  "prompt": "Escucha y elige el significado.",
+                  "audioText": "Estoy feliz porque tengo un amigo nuevo.",
+                  "options": [
+                    { "label": "I am happy because I have a new friend.", "correct": true },
+                    { "label": "I am tired because I need a notebook.", "correct": false },
+                    { "label": "I am hungry because I want milk.", "correct": false }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "La guardiana dice: Buenas tardes. ¿Cuál respuesta sigue mejor?",
+                  "options": [
+                    { "label": "Buenas tardes. ¿Cómo está usted?", "correct": true },
+                    { "label": "No tengo lápiz rojo.", "correct": false },
+                    { "label": "La puerta está cerrada.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Guardiana del Aula", "text": "Pasas el primer duelo." },
+                { "type": "completeMission", "missionId": "elem-boss-greetings" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Guardiana del Aula", "text": "Primer duelo completo. Sigue al Patio." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 8, "y": 11, "targetArea": "elementary-library-art", "targetX": 24, "targetY": 1, "facing": "down" },
+    { "x": 15, "y": 5, "targetArea": "elementary-boss-schoolday", "targetX": 1, "targetY": 5, "facing": "right", "requires": { "completedMissions": ["elem-boss-greetings"] }, "blockedMessage": "Derrota primero a la Guardiana del Aula." }
+  ]
+}

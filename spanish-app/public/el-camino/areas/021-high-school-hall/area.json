@@ -1,0 +1,79 @@
+{
+  "id": "high-school-hall",
+  "name": "Pasillo y Casilleros",
+  "kind": "interior",
+  "chapterId": "high-school",
+  "region": "Chapter 2: Instituto",
+  "cefrLevel": "A1+",
+  "teaches": ["casillero", "tengo que", "llegar tarde", "antes", "después"],
+  "legend": { "w": "insideWall", "c": "carpetBlue" },
+  "playerStart": { "x": 14, "y": 17, "facing": "up" },
+  "objects": [
+    { "type": "locker", "x": 3, "y": 2, "w": 4, "h": 1 },
+    { "type": "locker", "x": 21, "y": 2, "w": 4, "h": 1 },
+    { "type": "vendingMachine", "x": 5, "y": 13 },
+    { "type": "trophyCase", "x": 20, "y": 13, "w": 2, "h": 1 },
+    { "type": "schoolBell", "x": 14, "y": 4 }
+  ],
+  "people": [
+    {
+      "personId": "elena",
+      "x": 14,
+      "y": 7,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "scheduleCard", "count": 1 }], "missingMissions": ["hs-hall-pass"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Elena", "text": "Veo tu horario. Si tienes ciencias primero, necesitas llegar al laboratorio antes de la campana." },
+            { "type": "showDialogue", "speaker": "Elena", "text": "También necesitas un pase para el gimnasio. Está en el casillero correcto." },
+            {
+              "type": "askChoice",
+              "prompt": "Elena says you need to arrive antes de la campana. What does antes imply?",
+              "options": [
+                { "label": "before", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Elena", "text": "Correcto. Antes de la campana." },
+                  { "type": "addItem", "itemId": "gymPass", "count": 1 },
+                  { "type": "completeMission", "missionId": "hs-hall-pass" }
+                ] },
+                { "label": "after", "correct": false },
+                { "label": "never", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Trae tu horario. Después puedes ir al gimnasio." }] }
+      ]
+    },
+    {
+      "personId": "javier",
+      "x": 9,
+      "y": 10,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["hs-hall-pass"], "missingMissions": ["hs-club-form"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Javier", "text": "Estoy organizando clubes. Si quieres unirte, necesitas formulario." },
+            { "type": "showDialogue", "speaker": "Javier", "text": "El formulario pregunta: ¿qué prefieres, música, ciencias o deportes?" },
+            {
+              "type": "askText",
+              "prompt": "Responde en español con una preferencia: I prefer science.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": ["Prefiero ciencias", "Yo prefiero ciencias"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Javier", "text": "Buena elección. Lleva este formulario al club." },
+                { "type": "addItem", "itemId": "clubForm", "count": 1 },
+                { "type": "completeMission", "missionId": "hs-club-form" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "Prefiero ciencias. ¿Y tú?" }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 19, "targetArea": "high-school", "targetX": 6, "targetY": 6, "facing": "down" }
+  ]
+}

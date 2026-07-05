@@ -1,0 +1,78 @@
+{
+  "id": "high-school-boss-final",
+  "name": "Sala del Club Final",
+  "kind": "interior",
+  "chapterId": "high-school",
+  "region": "Chapter 2: Instituto",
+  "cefrLevel": "A1+",
+  "teaches": ["repaso final", "club", "laboratorio"],
+  "legend": { "w": "insideWall", "c": "lightGreenFloor" },
+  "playerStart": { "x": 1, "y": 5, "facing": "right" },
+  "objects": [
+    { "type": "clubBooth", "x": 3, "y": 2, "w": 4, "h": 1 },
+    { "type": "labTable", "x": 11, "y": 2, "w": 3, "h": 1 },
+    { "type": "labSink", "x": 12, "y": 8 }
+  ],
+  "people": [
+    {
+      "personId": "directora-club",
+      "x": 8,
+      "y": 5,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["hs-boss-final"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Directora del Club", "text": "Duelo final del instituto. Cinco respuestas seguidas." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "hs-boss-final",
+              "title": "Duelo de la Insignia",
+              "restartMessage": "No. El club empieza de nuevo.",
+              "questions": [
+                { "type": "askChoice", "prompt": "Translate: Antes de mezclar, lee las instrucciones; después, explica tu opinión con una razón.", "options": [
+                  { "label": "Before mixing, read the instructions; afterward, explain your opinion with a reason.", "correct": true },
+                  { "label": "After lunch, close the gym and buy a notebook.", "correct": false },
+                  { "label": "Before class, ask for bread because you like music.", "correct": false }
+                ] },
+                { "type": "askText", "prompt": "Write in Spanish: I cannot go now because I have to finish the experiment.", "placeholder": "Respuesta en español", "correctAnswers": ["No puedo ir ahora porque tengo que terminar el experimento", "No puedo ir ahora porque debo terminar el experimento"] },
+                { "type": "askChoice", "prompt": "Historia: En el club, Javier pide una razón. Elena pide orden en el laboratorio. Valeria pide una preferencia. ¿Qué palabra conecta una razón?", "options": [
+                  { "label": "porque", "correct": true },
+                  { "label": "después", "correct": false },
+                  { "label": "almuerzo", "correct": false }
+                ] },
+                { "type": "askAudioChoice", "prompt": "Escucha. ¿Qué secuencia se menciona?", "audioText": "Primero leo, después mezclo y finalmente escribo una conclusión.", "options": [
+                  { "label": "Read, mix, then write a conclusion.", "correct": true },
+                  { "label": "Eat, train, then buy a pass.", "correct": false },
+                  { "label": "Listen, draw, then sleep.", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "--¿Por qué quieres entrar al club? --____", "options": [
+                  { "label": "Porque me interesa ciencias y quiero investigar con otros estudiantes.", "correct": true },
+                  { "label": "Después de la puerta, necesito un sándwich.", "correct": false },
+                  { "label": "Tengo dos panes, pero no tengo laboratorio.", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "¿Qué parte del capítulo combina formulario, razón y experimento?",
+                  "options": [
+                    { "label": "Club y Laboratorio.", "correct": true },
+                    { "label": "Gimnasio.", "correct": false },
+                    { "label": "Cafetería.", "correct": false }
+                  ]
+                }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Directora del Club", "text": "Insignia del capítulo dos ganada." },
+                { "type": "addItem", "itemId": "chapterTwoBadge", "count": 1 },
+                { "type": "completeMission", "missionId": "hs-boss-final" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Directora del Club", "text": "La insignia del instituto está en tu bolsa." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 5, "targetArea": "high-school-boss-social", "targetX": 14, "targetY": 5, "facing": "left" },
+    { "x": 8, "y": 11, "targetArea": "high-school-club-lab", "targetX": 24, "targetY": 1, "facing": "down" }
+  ]
+}

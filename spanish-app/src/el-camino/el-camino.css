@@ -1,0 +1,555 @@
+.el-camino-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  background: #111827;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.el-camino-game-host {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100dvh;
+}
+
+.el-camino-game-host canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.el-camino-exit-button {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: 12px;
+  z-index: 1003;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 3px solid #111827;
+  border-radius: 0;
+  background: #fff7cf;
+  box-shadow: 0 5px 0 #0b1020;
+  color: #111827;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.el-camino-plaza-button {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: 64px;
+  z-index: 1003;
+  height: 42px;
+  min-width: 66px;
+  border: 3px solid #111827;
+  border-radius: 0;
+  background: #fff7cf;
+  box-shadow: 0 5px 0 #0b1020;
+  color: #111827;
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+.el-camino-plaza-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #0b1020;
+}
+
+.el-camino-coin-counter {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: 50%;
+  z-index: 1003;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 68px;
+  height: 42px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 3px solid #111827;
+  background: #fff7cf;
+  box-shadow: 0 5px 0 #0b1020;
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 950;
+  transform: translateX(-50%);
+}
+
+.el-camino-coin-icon {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #8a5b00;
+  border-radius: 999px;
+  background: #ffd166;
+  box-shadow: inset -2px -2px 0 #d99a00;
+  color: transparent;
+}
+
+.el-camino-top-actions {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  right: 12px;
+  z-index: 1003;
+  display: flex;
+  gap: 8px;
+}
+
+.el-camino-panel-button {
+  min-width: 58px;
+  height: 42px;
+  border: 3px solid #111827;
+  border-radius: 0;
+  background: #fff7cf;
+  box-shadow: 0 5px 0 #0b1020;
+  color: #111827;
+  font-size: 0.8rem;
+  font-weight: 950;
+}
+
+.el-camino-panel-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #0b1020;
+}
+
+.el-camino-info-panel {
+  position: fixed;
+  top: calc(max(12px, env(safe-area-inset-top)) + 54px);
+  right: 12px;
+  z-index: 1004;
+  box-sizing: border-box;
+  width: min(310px, calc(100vw - 24px));
+  max-height: min(55vh, 360px);
+  overflow: auto;
+  padding: 14px;
+  border: 3px solid #111827;
+  background: #fff7cf;
+  box-shadow: 0 5px 0 #0b1020;
+  color: #111827;
+  font-family: "Inter", sans-serif;
+  text-align: left;
+}
+
+.el-camino-info-panel.map {
+  width: min(680px, calc(100vw - 24px));
+  max-height: min(70vh, 560px);
+}
+
+.el-camino-panel-close {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  border: 0;
+  background: transparent;
+  color: #111827;
+  font-size: 1.4rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.el-camino-panel-title {
+  margin-right: 30px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 950;
+}
+
+.el-camino-bag-tabs {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.el-camino-bag-tabs button {
+  border: 2px solid #111827;
+  border-radius: 999px;
+  background: #fff7d6;
+  color: #111827;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 5px 10px;
+}
+
+.el-camino-bag-tabs button.active {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.el-camino-inventory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.el-camino-inventory-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 9px;
+  border: 2px solid #111827;
+  background: rgba(255, 255, 255, 0.68);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.el-camino-inventory-item span:last-child {
+  color: #7c3f12;
+  font-weight: 950;
+}
+
+.el-camino-help-text,
+.el-camino-panel-empty {
+  padding: 8px 9px;
+  border: 2px dashed #111827;
+  background: rgba(255, 255, 255, 0.68);
+  font-size: 0.86rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.el-camino-chapter-map {
+  position: relative;
+  min-width: 100%;
+  min-height: 142px;
+}
+
+.el-camino-map-objective {
+  margin-bottom: 10px;
+  padding: 8px 9px;
+  border: 2px dashed #111827;
+  background: rgba(255, 255, 255, 0.68);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.el-camino-map-area {
+  position: absolute;
+  box-sizing: border-box;
+  width: 136px;
+  min-height: 126px;
+  padding: 7px;
+  border: 2px solid #111827;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 3px 0 #111827;
+}
+
+.el-camino-map-area.current {
+  border-color: #dc2626;
+  background: #fff1b8;
+  box-shadow: 0 3px 0 #7f1d1d;
+}
+
+.el-camino-map-area-name {
+  overflow: hidden;
+  margin-bottom: 5px;
+  color: #111827;
+  font-size: 0.72rem;
+  font-weight: 950;
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.el-camino-mini-map {
+  display: grid;
+  width: fit-content;
+  max-width: 98px;
+  max-height: 88px;
+  overflow: hidden;
+  border: 2px solid #111827;
+  background: #111827;
+}
+
+.el-camino-mini-tile {
+  position: relative;
+  display: block;
+  min-width: 3px;
+  min-height: 3px;
+}
+
+.el-camino-mini-tile.player::after {
+  position: absolute;
+  inset: -2px;
+  z-index: 1;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  background: #dc2626;
+  box-shadow: 0 0 0 1px #111827;
+  content: "";
+}
+
+.el-camino-map-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 5px;
+  color: #3f2b10;
+  font-size: 0.62rem;
+  font-weight: 850;
+  line-height: 1.05;
+}
+
+.el-camino-map-links span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.el-camino-map-legend {
+  margin-top: 9px;
+  padding-top: 7px;
+  border-top: 2px solid rgba(17, 24, 39, 0.25);
+  color: #3f2b10;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.el-camino-status-box {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(max(18px, env(safe-area-inset-bottom)) + 150px);
+  z-index: 1002;
+  box-sizing: border-box;
+  max-width: 560px;
+  min-height: 48px;
+  margin: 0 auto;
+  padding: 10px 12px;
+  border: 3px solid #111827;
+  background: #fff7cf;
+  box-shadow: 0 5px 0 #0b1020;
+  color: #1f2937;
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.el-camino-choice-box {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(max(18px, env(safe-area-inset-bottom)) + 78px);
+  z-index: 1002;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 3px solid #111827;
+  background: #fff7cf;
+  box-shadow: 0 5px 0 #0b1020;
+  color: #111827;
+  font-family: "Inter", sans-serif;
+}
+
+.el-camino-choice-prompt {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.el-camino-question-feedback {
+  margin-bottom: 9px;
+  padding: 8px 10px;
+  border: 2px solid #b45309;
+  background: #fff0bd;
+  color: #7c2d12;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.el-camino-choice-button {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 10px 12px;
+  border: 2px solid #111827;
+  border-radius: 0;
+  background: #ffffff;
+  color: #111827;
+  font-size: 0.86rem;
+  font-weight: 850;
+  text-align: left;
+}
+
+.el-camino-choice-button:active {
+  transform: translateY(2px);
+  background: #f5df8f;
+}
+
+.el-camino-audio-button,
+.el-camino-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 2px solid #111827;
+  border-radius: 0;
+  background: #f5df8f;
+  color: #111827;
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.el-camino-audio-button {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.el-camino-answer-form {
+  display: flex;
+  gap: 8px;
+}
+
+.el-camino-answer-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  border: 2px solid #111827;
+  border-radius: 0;
+  background: #ffffff;
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.el-camino-speech-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.el-camino-transcript {
+  padding: 8px 10px;
+  border: 2px dashed #111827;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.el-camino-controls {
+  position: fixed;
+  right: 12px;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 1002;
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  grid-template-rows: repeat(3, 46px);
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.camino-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.42);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  color: rgba(255, 247, 207, 0.9);
+  font-size: 1rem;
+  font-weight: 950;
+  line-height: 1;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.camino-control:active {
+  transform: translateY(2px);
+  background: rgba(17, 24, 39, 0.64);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18), inset 0 2px 5px rgba(0, 0, 0, 0.22);
+}
+
+.camino-up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.camino-left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.camino-right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.camino-down {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+@media (max-width: 360px) {
+  .el-camino-plaza-button {
+    left: 58px;
+    min-width: 56px;
+    font-size: 0.72rem;
+  }
+
+  .el-camino-coin-counter {
+    min-width: 58px;
+    padding: 0 9px;
+  }
+
+  .el-camino-top-actions {
+    gap: 6px;
+  }
+
+  .el-camino-panel-button {
+    min-width: 50px;
+    font-size: 0.74rem;
+  }
+
+  .el-camino-controls {
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+  }
+
+  .el-camino-status-box {
+    font-size: 0.74rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 560px) {
+  .el-camino-exit-button {
+    width: 38px;
+    height: 38px;
+    font-size: 1.65rem;
+  }
+
+  .el-camino-status-box {
+    bottom: max(10px, env(safe-area-inset-bottom));
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: 0.74rem;
+  }
+
+  .el-camino-controls {
+    bottom: max(10px, env(safe-area-inset-bottom));
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+  }
+}

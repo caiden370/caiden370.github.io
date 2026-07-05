@@ -1,0 +1,88 @@
+{
+  "id": "college-cafe",
+  "name": "Café del Campus",
+  "kind": "interior",
+  "chapterId": "college",
+  "region": "Chapter 3: Universidad",
+  "cefrLevel": "A2",
+  "teaches": ["quedar", "café", "repasar", "invitar", "me gustaría", "después de"],
+  "legend": { "w": "insideWall", "r": "lightRedFloor", "p": "dirtPath" },
+  "playerStart": { "x": 14, "y": 1, "facing": "down" },
+  "objects": [
+    { "type": "coffeeMachine", "x": 7, "y": 5 },
+    { "type": "serviceCounter", "x": 11, "y": 5, "w": 5, "h": 1 },
+    { "type": "table", "x": 7, "y": 12, "w": 3, "h": 1 },
+    { "type": "table", "x": 18, "y": 12, "w": 3, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "carlos",
+      "x": 10,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["college-buy-supplies", "college-library-complete"], "missingMissions": ["college-buy-coffee"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Después de estudiar, mucha gente compra café y repasa con amigos." },
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Puedes decir: me gustaría un café, por favor." },
+            {
+              "type": "askSpeech",
+              "prompt": "Politely ask for a coffee in Spanish.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": ["Me gustaría un café por favor", "Me gustaria un cafe por favor", "Quiero un café por favor", "Quiero un cafe por favor"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Carlos", "text": "Aquí tienes café." },
+                { "type": "addItem", "itemId": "coffeeCup", "count": 1 },
+                { "type": "completeMission", "missionId": "college-buy-coffee" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Estudia primero; después café." }] }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 18,
+      "y": 12,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "coffeeCup", "count": 1 }, { "itemId": "textbook", "count": 1 }, { "itemId": "calculator", "count": 1 }, { "itemId": "studyNotes", "count": 1 }], "completedMissions": ["college-buy-coffee"], "missingMissions": ["college-final-review"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Tienes libro, calculadora, apuntes y café. Parece un verdadero día universitario." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Ahora explica tu plan: comprar, estudiar, descansar y repasar." },
+            {
+              "type": "askChoice",
+              "prompt": "If someone says: Después de estudiar, voy al café, when do they go to the café?",
+              "options": [
+                { "label": "after studying", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Marcos", "text": "Correcto." },
+                  {
+                    "type": "askText",
+                    "prompt": "Write in Spanish: I should study tomorrow.",
+                    "placeholder": "Respuesta en español",
+                    "correctAnswers": ["Debería estudiar mañana", "Deberia estudiar manana", "Deberia estudiar mañana"],
+                    "actions": [
+                      { "type": "showDialogue", "speaker": "Marcos", "text": "Repaso completo. La sala de jefes está abierta." },
+                      { "type": "completeMission", "missionId": "college-final-review" }
+                    ],
+                    "wrongMessage": "No. Intenta otra vez."
+                  }
+                ] },
+                { "label": "before studying", "correct": false },
+                { "label": "instead of studying", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Trae libro, calculadora, apuntes y café." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 0, "targetArea": "college-campus", "targetX": 23, "targetY": 17, "facing": "up" },
+    { "x": 24, "y": 0, "targetArea": "college-boss-dorm", "targetX": 8, "targetY": 10, "facing": "up", "requires": { "completedMissions": ["college-final-review"] }, "blockedMessage": "Completa el repaso final con Marcos antes de entrar." }
+  ]
+}

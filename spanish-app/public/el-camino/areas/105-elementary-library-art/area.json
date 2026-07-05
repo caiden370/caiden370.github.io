@@ -1,0 +1,215 @@
+{
+  "id": "elementary-library-art",
+  "name": "Biblioteca y Arte",
+  "kind": "outdoor",
+  "chapterId": "elementary-school",
+  "region": "Chapter 1: Escuela Primaria",
+  "cefrLevel": "A1",
+  "teaches": ["estoy bien", "estoy feliz", "estoy cansado", "círculo", "cuadrado", "triángulo", "lee", "escucha", "silencio"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 14, "y": 1, "facing": "down" },
+  "objects": [
+    { "type": "bookshelf", "x": 4, "y": 2, "w": 3, "h": 1 },
+    { "type": "bookshelf", "x": 21, "y": 2, "w": 3, "h": 1 },
+    { "type": "bulletinBoard", "x": 12, "y": 4, "w": 4, "h": 1 },
+    { "type": "crayonBox", "x": 6, "y": 9, "interactions": [{ "when": { "missingSteps": ["got-art-poster"] }, "actions": [
+      { "type": "showDialogue", "text": "Haces un cartel de arte: rojo, azul, verde." },
+      { "type": "addItem", "itemId": "artPoster", "count": 1 },
+      { "type": "completeStep", "stepId": "got-art-poster" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Cartel de arte listo." }] }] },
+    { "type": "studyDesk", "x": 20, "y": 9, "w": 2, "h": 1, "interactions": [{ "when": { "missingSteps": ["got-library-card"] }, "actions": [
+      { "type": "showDialogue", "text": "Una tarjeta de biblioteca." },
+      { "type": "addItem", "itemId": "libraryCard", "count": 1 },
+      { "type": "completeStep", "stepId": "got-library-card" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Tarjeta de biblioteca." }] }] },
+    { "type": "familyPhoto", "x": 10, "y": 13 },
+    { "type": "dreamBoard", "x": 17, "y": 13, "w": 2, "h": 1 },
+    { "type": "questSparkle", "x": 14, "y": 16, "walkable": true }
+  ],
+  "people": [
+    {
+      "personId": "isabel",
+      "x": 8,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["elem-feelings"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Isabel", "text": "En la biblioteca hablamos bajo. Yo digo: Estoy cansada, pero estoy bien." },
+            { "type": "showDialogue", "speaker": "Isabel", "text": "Si alguien dice Estoy feliz, entiendes una emoción positiva." },
+            {
+              "type": "askChoice",
+              "prompt": "Isabel says: Estoy cansada, pero estoy bien. What is true?",
+              "options": [
+                {
+                  "label": "She is tired but okay.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Isabel", "text": "Sí. Entendiste la idea completa." },
+                    { "type": "completeMission", "missionId": "elem-feelings" }
+                  ]
+                },
+                { "label": "She wants water and bread.", "correct": false },
+                { "label": "She has a red book.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Isabel", "text": "Estoy bien. Estoy feliz. Estoy cansada." }] }
+      ]
+    },
+    {
+      "personId": "sofia",
+      "x": 20,
+      "y": 6,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["elem-feelings"], "missingMissions": ["elem-shapes"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Sofia", "text": "Arte usa colores y formas. Veo un círculo rojo y un triángulo azul." },
+            { "type": "showDialogue", "speaker": "Sofia", "text": "Escucha una forma y elige el objeto correcto para el cartel." },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha. ¿Qué forma debes dibujar?",
+              "audioText": "triángulo",
+              "options": [
+                {
+                  "label": "triangle",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Sofia", "text": "Correcto. Triángulo." },
+                    { "type": "completeMission", "missionId": "elem-shapes" }
+                  ]
+                },
+                { "label": "circle", "correct": false },
+                { "label": "square", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Sofia", "text": "Círculo, cuadrado, triángulo." }] }
+      ]
+    },
+    {
+      "personId": "ana",
+      "x": 8,
+      "y": 12,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "libraryCard", "count": 1 }], "completedMissions": ["elem-shapes"], "missingMissions": ["elem-library-card"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Ana", "text": "Con la tarjeta puedes usar la biblioteca. Aquí decimos: lee, escucha, silencio." },
+            { "type": "showDialogue", "speaker": "Ana", "text": "Si la clase necesita estar callada, la palabra importante es silencio." },
+            {
+              "type": "askText",
+              "prompt": "La biblioteca está callada. Escribe la palabra correcta en español.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": ["silencio"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Ana", "text": "Silencio. Muy bien." },
+                { "type": "completeMission", "missionId": "elem-library-card" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Necesitas una tarjeta y práctica de formas." }] }
+      ]
+    },
+    {
+      "personId": "mateo",
+      "x": 20,
+      "y": 12,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "artPoster", "count": 1 }], "completedMissions": ["elem-library-card"], "missingMissions": ["elem-art-poster"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Mateo", "text": "Tu cartel tiene colores. Si dices libro rojo, rojo describe libro." },
+            { "type": "showDialogue", "speaker": "Mateo", "text": "Si dices triángulo azul, azul describe triángulo." },
+            {
+              "type": "askChoice",
+              "prompt": "In triángulo azul, what does azul describe?",
+              "options": [
+                {
+                  "label": "the triangle",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Mateo", "text": "Sí. Azul describe la forma." },
+                    { "type": "completeMission", "missionId": "elem-art-poster" }
+                  ]
+                },
+                { "label": "the food", "correct": false },
+                { "label": "the greeting", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Mateo", "text": "Haz un cartel y habla de colores." }] }
+      ]
+    },
+    {
+      "personId": "tomás",
+      "x": 14,
+      "y": 16,
+      "interactions": [
+        {
+          "when": {
+            "completedMissions": [
+              "elem-entrance-ready",
+              "elem-classroom-complete",
+              "elem-playground-complete",
+              "elem-cafeteria-complete",
+              "elem-feelings",
+              "elem-shapes",
+              "elem-library-card",
+              "elem-art-poster"
+            ],
+            "missingMissions": ["elem-library-complete"]
+          },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Tomás", "text": "Repaso final. Hoy saludaste, te presentaste, seguiste caminos y ayudaste a la clase." },
+            { "type": "showDialogue", "speaker": "Tomás", "text": "También pediste comida, recuperaste objetos, hablaste de colores y expresaste sentimientos." },
+            {
+              "type": "askChoice",
+              "prompt": "A classmate says: Estoy cansado, pero quiero jugar. What does the classmate mean?",
+              "options": [
+                {
+                  "label": "They are tired but want to play.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Tomás", "text": "Correcto. Última respuesta hablada." },
+                    {
+                      "type": "askSpeech",
+                      "prompt": "Responde a Tomás con una frase amable sobre cómo estás.",
+                      "placeholder": "Respuesta hablada",
+                      "correctAnswers": ["Estoy bien gracias", "Estoy bien, gracias", "Estoy feliz gracias", "Estoy feliz, gracias"],
+                      "actions": [
+                        { "type": "showDialogue", "speaker": "Tomás", "text": "Repaso completo. La sala de jefes está abierta." },
+                        { "type": "completeMission", "missionId": "elem-library-complete" },
+                        { "type": "completeMission", "missionId": "elem-final-review" }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "They have two breads.", "correct": false },
+                { "label": "They need a blue pencil.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Tomás", "text": "Completa aula, patio, cafetería, biblioteca y arte." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 0, "targetArea": "elementary-entrance", "targetX": 14, "targetY": 18, "facing": "up" },
+    { "x": 14, "y": 19, "targetArea": "elementary-playground", "targetX": 14, "targetY": 1, "facing": "down" },
+    { "x": 18, "y": 0, "targetArea": "elementary-cafeteria", "targetX": 14, "targetY": 18, "facing": "up" },
+    { "x": 24, "y": 0, "targetArea": "elementary-boss-greetings", "targetX": 8, "targetY": 10, "facing": "up", "requires": { "completedMissions": ["elem-final-review"] }, "blockedMessage": "Completa el repaso final con Tomás antes de entrar." }
+  ]
+}
