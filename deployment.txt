@@ -1,51 +1,52 @@
-{
-  "name": "spanish-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.2.0",
-    "@mui/joy": "^5.0.0-beta.52",
-    "@mui/material": "^7.2.0",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-scripts": "5.0.1",
-    "text-to-speech-js": "^1.1.11",
-    "tone": "^15.1.22",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
-  }
-}
+# Masblo GitHub Pages deployment
+
+The deployed app is served from the `gh-pages` branch, not directly from `main`.
+
+## Source branch
+
+Use `main` for source code changes:
+
+```powershell
+Set-Location C:\Users\caidenkiani\personal\side_projects\caiden370.github.io
+git checkout main
+git pull origin main
+```
+
+## Deploy the app
+
+Deploy from the React app folder:
+
+```powershell
+Set-Location C:\Users\caidenkiani\personal\side_projects\caiden370.github.io\spanish-app
+npm run deploy
+```
+
+`npm run deploy` runs:
+
+1. `npm run build`
+2. `gh-pages -d build`
+
+This builds `spanish-app\build` and pushes the static output to the remote `gh-pages` branch.
+
+## Live site
+
+GitHub Pages serves the `gh-pages` branch at:
+
+```text
+https://masblo.com
+```
+
+The custom domain is set by `spanish-app\public\CNAME` and copied into `build\CNAME` during the build.
+
+## Important notes
+
+- Pushing `main` updates source code only.
+- The live app updates only after `npm run deploy` successfully pushes `gh-pages`.
+- There is currently no GitHub Actions workflow for automatic deployment.
+- After deploying, confirm the remote `gh-pages` branch advanced:
+
+```powershell
+Set-Location C:\Users\caidenkiani\personal\side_projects\caiden370.github.io
+git fetch origin gh-pages
+git --no-pager log --oneline origin/gh-pages -3
+```
