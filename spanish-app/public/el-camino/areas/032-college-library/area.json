@@ -1,0 +1,72 @@
+{
+  "id": "college-library",
+  "name": "Biblioteca Universitaria",
+  "kind": "interior",
+  "chapterId": "college",
+  "region": "Chapter 3: Universidad",
+  "cefrLevel": "A2",
+  "teaches": ["apuntes", "examen", "estudiar", "entender", "aunque", "sin embargo"],
+  "legend": { "w": "insideWall", "s": "campusStone", "p": "dirtPath", "c": "carpetBlue" },
+  "playerStart": { "x": 14, "y": 17, "facing": "up" },
+  "objects": [
+    { "type": "bookshelf", "x": 4, "y": 4, "w": 3, "h": 1 },
+    { "type": "bookshelf", "x": 21, "y": 4, "w": 3, "h": 1 },
+    { "type": "studyDesk", "x": 8, "y": 12, "w": 3, "h": 1 },
+    { "type": "studyDesk", "x": 18, "y": 12, "w": 3, "h": 1 },
+    { "type": "itemSparkle", "x": 19, "y": 15, "walkable": true, "interactions": [{ "when": { "missingSteps": ["found-study-notes"] }, "actions": [
+      { "type": "showDialogue", "text": "Encuentras apuntes de estudio entre los libros." },
+      { "type": "addItem", "itemId": "studyNotes", "count": 1 },
+      { "type": "completeStep", "stepId": "found-study-notes" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Apuntes listos." }] }] }
+  ],
+  "people": [
+    {
+      "personId": "sofia",
+      "x": 14,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["college-study-plan"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Sofia", "text": "El examen no es difícil si estudias con apuntes y haces preguntas." },
+            { "type": "showDialogue", "speaker": "Sofia", "text": "Aunque estás cansado, deberías estudiar un poco antes del café." },
+            {
+              "type": "askChoice",
+              "prompt": "Sofia says: Aunque estás cansado, deberías estudiar. What does aunque signal?",
+              "options": [
+                { "label": "a contrast", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Sofia", "text": "Correcto. Aunque introduces contrast." },
+                  { "type": "completeMission", "missionId": "college-study-plan" }
+                ] },
+                { "label": "a price", "correct": false },
+                { "label": "a greeting", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "when": { "hasItems": [{ "itemId": "studyNotes", "count": 1 }], "missingMissions": ["college-library-complete"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Sofia", "text": "Buenos apuntes. Ahora puedes explicar tu plan de estudio." },
+            {
+              "type": "askSpeech",
+              "prompt": "Say: I should study before coffee.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": ["Debería estudiar antes del café", "Deberia estudiar antes del cafe"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Sofia", "text": "Excelente. Biblioteca completa." },
+                { "type": "completeMission", "missionId": "college-library-complete" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Sofia", "text": "Busca apuntes y piensa en tu plan." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 19, "targetArea": "college-campus", "targetX": 23, "targetY": 6, "facing": "down" }
+  ]
+}

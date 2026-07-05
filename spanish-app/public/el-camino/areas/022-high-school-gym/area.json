@@ -1,0 +1,76 @@
+{
+  "id": "high-school-gym",
+  "name": "Gimnasio y Cancha",
+  "kind": "interior",
+  "chapterId": "high-school",
+  "region": "Chapter 2: Instituto",
+  "cefrLevel": "A1+",
+  "teaches": ["entrenar", "equipo", "ganar", "perder", "deber", "preferir"],
+  "legend": { "w": "insideWall", "t": "track", "p": "gymFloor", "n": "stoneFloor" },
+  "playerStart": { "x": 14, "y": 17, "facing": "up" },
+  "objects": [
+    { "type": "sportsGoal", "x": 5, "y": 5, "w": 3, "h": 1 },
+    { "type": "sportsGoal", "x": 20, "y": 5, "w": 3, "h": 1 },
+    { "type": "gymMat", "x": 12, "y": 8, "w": 4, "h": 1 },
+    { "type": "trophyCase", "x": 21, "y": 15, "w": 2, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "diego",
+      "x": 14,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "gymPass", "count": 1 }], "missingMissions": ["hs-gym-practice"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Diego", "text": "En el instituto no solo decimos corre. Ahora hablamos de equipos y responsabilidades." },
+            { "type": "showDialogue", "speaker": "Diego", "text": "Tienes que entrenar, escuchar al equipo y llegar a tiempo." },
+            {
+              "type": "askChoice",
+              "prompt": "Diego says: Tienes que entrenar. What is the obligation?",
+              "options": [
+                { "label": "You have to practice.", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Diego", "text": "Sí. Tener que expresa obligación." },
+                  { "type": "completeMission", "missionId": "hs-gym-practice" }
+                ] },
+                { "label": "You want lunch.", "correct": false },
+                { "label": "You lost a book.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Necesitas el pase del gimnasio." }] }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 18,
+      "y": 12,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["hs-gym-practice"], "missingMissions": ["hs-team-talk"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Nuestro equipo quiere ganar, pero también quiere jugar bien." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Si perdemos, decimos: está bien, practicamos más." },
+            {
+              "type": "askSpeech",
+              "prompt": "Responde como compañero de equipo: We practice more.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": ["Practicamos más", "Practicamos mas"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Marcos", "text": "Buen compañero. Gimnasio completo." },
+                { "type": "completeMission", "missionId": "hs-team-talk" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Practicamos más." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 19, "targetArea": "high-school", "targetX": 22, "targetY": 6, "facing": "down" }
+  ]
+}

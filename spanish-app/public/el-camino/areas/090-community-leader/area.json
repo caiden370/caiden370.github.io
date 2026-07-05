@@ -1,0 +1,20 @@
+{
+  "id": "community-leader",
+  "name": "Community Leader Plaza",
+  "kind": "outdoor",
+  "chapterId": "community-leader",
+  "region": "Chapter 9",
+  "cefrLevel": "C1",
+  "teaches": ["persuasion", "planning", "negotiation", "community problems"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "objects": [
+    { "type": "office", "x": 2, "y": 1, "w": 5, "h": 3 },
+    { "type": "restaurant", "x": 11, "y": 1, "w": 5, "h": 3 },
+    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Community Leader will include organizing events, persuading NPCs, solving disputes, and Spanish debates." }] }] }
+  ],
+  "people": [
+    { "personId": "ana", "x": 9, "y": 6, "message": "This path will test persuasion and complex mission chains." }
+  ],
+  "exits": []
+}

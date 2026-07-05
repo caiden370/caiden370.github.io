@@ -60,6 +60,40 @@ html, body {
   z-index: 40;
 }
 
+.bottom-nav-box .MuiBottomNavigation-root {
+  min-width: 0;
+}
+
+.bottom-nav-box .MuiBottomNavigationAction-root {
+  min-width: 0;
+  flex: 1 1 20%;
+  padding: 4px 0 2px;
+}
+
+.bottom-nav-icon {
+  width: clamp(27px, 8vw, 38px);
+  height: clamp(27px, 8vw, 38px);
+}
+
+.bottom-nav-icon-selected {
+  width: clamp(30px, 8.8vw, 42px);
+  height: clamp(30px, 8.8vw, 42px);
+}
+
+@media (max-width: 380px) {
+  .navbar-container {
+    box-shadow: 0 -1px 1px rgba(23, 23, 23, 0.08);
+  }
+
+  .bottom-nav-box .MuiBottomNavigation-root {
+    height: 54px;
+  }
+
+  .bottom-nav-box .MuiBottomNavigationAction-root {
+    max-width: 20vw;
+  }
+}
+
 .leave-button-row {
   position: absolute;
   display: flex;

@@ -1,0 +1,112 @@
+{
+  "id": "high-school-club-lab",
+  "name": "Club y Laboratorio",
+  "kind": "interior",
+  "chapterId": "high-school",
+  "region": "Chapter 2: Instituto",
+  "cefrLevel": "A1+",
+  "teaches": ["club", "experimento", "formulario", "opinar", "porque", "me interesa"],
+  "legend": { "w": "insideWall", "s": "stoneFloor", "p": "dirtPath", "c": "lightGreenFloor" },
+  "playerStart": { "x": 14, "y": 1, "facing": "down" },
+  "objects": [
+    { "type": "clubBooth", "x": 5, "y": 4, "w": 4, "h": 1 },
+    { "type": "labTable", "x": 18, "y": 4, "w": 3, "h": 1 },
+    { "type": "labSink", "x": 22, "y": 7 },
+    { "type": "whiteboard", "x": 11, "y": 13, "w": 5, "h": 1 },
+    { "type": "eventBooth", "x": 5, "y": 15, "w": 4, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "javier",
+      "x": 9,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "clubForm", "count": 1 }], "missingMissions": ["hs-join-club"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Javier", "text": "Trajiste el formulario. Ahora necesito saber por qué quieres entrar al club." },
+            { "type": "showDialogue", "speaker": "Javier", "text": "Puedes decir: me interesa ciencias porque me gusta investigar." },
+            {
+              "type": "askChoice",
+              "prompt": "Javier asks for a reason. Which answer gives a reason?",
+              "options": [
+                { "label": "Me interesa ciencias porque me gusta investigar.", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Javier", "text": "Muy bien. Porque introduce una razón." },
+                  { "type": "removeItem", "itemId": "clubForm", "count": 1 },
+                  { "type": "completeMission", "missionId": "hs-join-club" }
+                ] },
+                { "label": "Dos panes, por favor.", "correct": false },
+                { "label": "Estoy en la cafetería.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "Necesitas el formulario del club." }] }
+      ]
+    },
+    {
+      "personId": "elena",
+      "x": 19,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["hs-join-club"], "missingMissions": ["hs-science-kit"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Elena", "text": "En el laboratorio, un experimento necesita orden: primero leer, después mezclar." },
+            { "type": "showDialogue", "speaker": "Elena", "text": "Si mezclas antes de leer, hay problemas." },
+            {
+              "type": "askChoice",
+              "prompt": "Elena says: primero leer, después mezclar. What should you do first?",
+              "options": [
+                { "label": "read", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Elena", "text": "Correcto. Toma el kit de ciencias." },
+                  { "type": "addItem", "itemId": "scienceKit", "count": 1 },
+                  { "type": "completeMission", "missionId": "hs-science-kit" }
+                ] },
+                { "label": "mix", "correct": false },
+                { "label": "eat", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Primero leer, después mezclar." }] }
+      ]
+    },
+    {
+      "personId": "valeria",
+      "x": 14,
+      "y": 14,
+      "interactions": [
+        {
+          "when": {
+            "hasItems": [{ "itemId": "scienceKit", "count": 1 }],
+            "completedMissions": ["hs-schedule", "hs-opinions", "hs-hall-pass", "hs-club-form", "hs-gym-practice", "hs-team-talk", "hs-buy-lunch", "hs-lunch-delivery", "hs-join-club", "hs-science-kit"],
+            "missingMissions": ["hs-final-review"]
+          },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Hoy leíste horarios, hablaste de preferencias, compraste almuerzo, entrenaste y entraste al club." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Repaso: tengo que, prefiero, porque, antes y después." },
+            {
+              "type": "askSpeech",
+              "prompt": "Say a sentence explaining a school preference with porque.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": ["Prefiero ciencias porque me gusta investigar", "Prefiero deportes porque me gusta jugar", "Prefiero música porque me gusta cantar"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Valeria", "text": "Repaso completo. La sala de jefes está abierta." },
+                { "type": "completeMission", "missionId": "hs-final-review" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Completa pasillo, gimnasio, cafetería y club." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 0, "targetArea": "high-school", "targetX": 22, "targetY": 17, "facing": "up" },
+    { "x": 24, "y": 0, "targetArea": "high-school-boss-schedule", "targetX": 8, "targetY": 10, "facing": "up", "requires": { "completedMissions": ["hs-final-review"] }, "blockedMessage": "Completa el repaso final con Valeria antes de entrar." }
+  ]
+}

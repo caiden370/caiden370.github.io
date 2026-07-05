@@ -1,0 +1,140 @@
+{
+  "id": "plaza-hola",
+  "name": "Plaza Hola",
+  "kind": "outdoor",
+  "chapterId": "elementary-school",
+  "region": "A1 First Words",
+  "cefrLevel": "A1",
+  "teaches": ["hola", "buenos días", "me llamo", "quiero agua"],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath"
+  },
+  "playerStart": { "x": 8, "y": 10, "facing": "up" },
+  "objects": [
+    { "type": "tree", "x": 1, "y": 1, "w": 1, "h": 1 },
+    { "type": "tree", "x": 16, "y": 1, "w": 1, "h": 1 },
+    { "type": "tree", "x": 1, "y": 9, "w": 1, "h": 1 },
+    { "type": "tree", "x": 16, "y": 9, "w": 1, "h": 1 },
+    { "type": "school", "x": 2, "y": 1, "w": 5, "h": 3, "entrance": { "x": 4, "y": 4, "targetArea": "aula-hola", "targetX": 5, "targetY": 6 } },
+    { "type": "store", "x": 11, "y": 1, "w": 5, "h": 3, "entrance": { "x": 13, "y": 4, "targetArea": "tienda-agua", "targetX": 5, "targetY": 6 } },
+    {
+      "type": "routeGate",
+      "x": 7,
+      "y": 11,
+      "w": 1,
+      "h": 1,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["first-greetings", "introduce-yourself", "buy-water-for-ana"] },
+          "actions": [{ "type": "showDialogue", "text": "The first path is open. Walk south to Camino Hola." }]
+        },
+        {
+          "actions": [{ "type": "showDialogue", "text": "Finish Ana's first Spanish missions before leaving Plaza Hola." }]
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "personId": "ana",
+      "x": 7,
+      "y": 5,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "waterBottle", "count": 1 }], "missingMissions": ["buy-water-for-ana"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Ana", "text": "¡Gracias! Agua means water." },
+            { "type": "removeItem", "itemId": "waterBottle", "count": 1 },
+            { "type": "addItem", "itemId": "routePass", "count": 1 },
+            { "type": "completeMission", "missionId": "buy-water-for-ana" },
+            { "type": "showDialogue", "text": "Mission complete: Ana opened the first path." }
+          ]
+        },
+        {
+          "when": { "completedMissions": ["first-greetings", "introduce-yourself"], "missingMissions": ["buy-water-for-ana"], "missingSteps": ["ana-asked-water"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Ana", "text": "Now try the store. Buy agua by saying: Quiero agua, por favor." },
+            { "type": "completeStep", "stepId": "ana-asked-water" }
+          ]
+        },
+        {
+          "when": { "completedSteps": ["ana-asked-water"], "missingMissions": ["buy-water-for-ana"] },
+          "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Go to the store and ask for agua." }]
+        },
+        {
+          "when": { "missingMissions": ["first-greetings"] },
+          "actions": [
+            {
+              "type": "askAudioChoice",
+              "prompt": "Listen to Ana. What greeting did she say?",
+              "audioText": "Buenos días.",
+              "options": [
+                {
+                  "label": "Buenos días.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Ana", "text": "Perfecto. Buenos días means good morning." },
+                    { "type": "addItem", "itemId": "greetingBadge", "count": 1 },
+                    { "type": "completeMission", "missionId": "first-greetings" }
+                  ]
+                },
+                { "label": "Tengo tienda.", "correct": false },
+                { "label": "Soy agua.", "correct": false }
+              ],
+              "wrongMessage": "Listen again and choose the morning greeting."
+            }
+          ]
+        },
+        {
+          "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Talk to Mateo next and practice saying your name." }]
+        }
+      ]
+    },
+    {
+      "personId": "mateo",
+      "x": 10,
+      "y": 5,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["first-greetings"], "missingMissions": ["introduce-yourself"] },
+          "actions": [
+            {
+              "type": "askText",
+              "prompt": "Mateo asks: ¿Cómo te llamas? Type: Me llamo estudiante",
+              "placeholder": "Me llamo estudiante",
+              "correctAnswers": ["Me llamo estudiante", "Me llamo estudiante."],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Mateo", "text": "Muy bien. Me llamo means my name is." },
+                { "type": "addItem", "itemId": "nameCard", "count": 1 },
+                { "type": "completeMission", "missionId": "introduce-yourself" }
+              ],
+              "wrongMessage": "Try the answer that starts with Me llamo."
+            }
+          ]
+        },
+        {
+          "when": { "missingMissions": ["first-greetings"] },
+          "actions": [{ "type": "showDialogue", "speaker": "Mateo", "text": "Say good morning to Ana first." }]
+        },
+        {
+          "actions": [{ "type": "showDialogue", "speaker": "Mateo", "text": "Nice introduction. Me llamo is useful everywhere." }]
+        }
+      ]
+    },
+    { "personId": "lucia", "x": 5, "y": 8, "message": "The school has extra practice for ¿Cómo estás?" },
+    { "personId": "diego", "x": 12, "y": 8, "message": "The store is where you ask for agua." }
+  ],
+  "exits": [
+    {
+      "x": 8,
+      "y": 11,
+      "targetArea": "camino-hola",
+      "targetX": 4,
+      "targetY": 1,
+      "facing": "down",
+      "requires": { "completedMissions": ["first-greetings", "introduce-yourself", "buy-water-for-ana"] },
+      "blockedMessage": "Practice greetings, introduce yourself, and bring Ana water before leaving."
+    }
+  ]
+}

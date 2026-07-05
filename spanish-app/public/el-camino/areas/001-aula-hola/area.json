@@ -1,0 +1,53 @@
+{
+  "id": "aula-hola",
+  "name": "Aula Hola",
+  "kind": "interior",
+  "chapterId": "elementary-school",
+  "region": "A1 First Words",
+  "cefrLevel": "A1",
+  "teaches": ["cómo estás", "estoy bien", "gracias"],
+  "legend": { "i": "insideWall", "w": "woodFloor" },
+  "playerStart": { "x": 5, "y": 6, "facing": "up" },
+  "objects": [
+    { "type": "desk", "x": 2, "y": 3, "w": 2, "h": 1 },
+    { "type": "chair", "x": 2, "y": 4, "w": 1, "h": 1 },
+    { "type": "desk", "x": 6, "y": 3, "w": 2, "h": 1 },
+    { "type": "chair", "x": 6, "y": 4, "w": 1, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "sofia",
+      "x": 8,
+      "y": 5,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["how-are-you-practice"] },
+          "actions": [
+            {
+              "type": "askAudioChoice",
+              "prompt": "Sofia asks: ¿Cómo estás? What is a good answer?",
+              "audioText": "¿Cómo estás?",
+              "options": [
+                {
+                  "label": "Estoy bien, gracias.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Sofia", "text": "Excelente. Estoy bien means I am well." },
+                    { "type": "completeMission", "missionId": "how-are-you-practice" }
+                  ]
+                },
+                { "label": "Quiero lápiz.", "correct": false },
+                { "label": "Soy tienda.", "correct": false }
+              ],
+              "wrongMessage": "Try the answer that means: I am well, thank you."
+            }
+          ]
+        },
+        {
+          "actions": [{ "type": "showDialogue", "speaker": "Sofia", "text": "Remember: Estoy bien, gracias." }]
+        }
+      ]
+    }
+  ],
+  "exits": [{ "x": 5, "y": 6, "targetArea": "plaza-hola", "targetX": 4, "targetY": 5, "facing": "down" }]
+}

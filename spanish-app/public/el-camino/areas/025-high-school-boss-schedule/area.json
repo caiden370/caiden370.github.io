@@ -1,0 +1,70 @@
+{
+  "id": "high-school-boss-schedule",
+  "name": "Sala del Horario",
+  "kind": "interior",
+  "chapterId": "high-school",
+  "region": "Chapter 2: Instituto",
+  "cefrLevel": "A1+",
+  "teaches": ["horarios", "obligaciones", "antes/después"],
+  "legend": { "w": "insideWall", "s": "stoneFloor" },
+  "playerStart": { "x": 8, "y": 10, "facing": "up" },
+  "objects": [
+    { "type": "whiteboard", "x": 5, "y": 2, "w": 8, "h": 1 },
+    { "type": "desk", "x": 4, "y": 8, "w": 2, "h": 1 },
+    { "type": "desk", "x": 11, "y": 8, "w": 2, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "mentor-horario",
+      "x": 8,
+      "y": 5,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["hs-boss-schedule"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Duelo del horario. No hay pistas." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "hs-boss-schedule",
+              "title": "Duelo del Horario",
+              "restartMessage": "No. Repite el horario desde el inicio.",
+              "questions": [
+                { "type": "askChoice", "prompt": "Translate: Tengo que ir al laboratorio después del almuerzo, pero antes del club.", "options": [
+                  { "label": "I have to go to the lab after lunch, but before club.", "correct": true },
+                  { "label": "I prefer lunch after club and before sports.", "correct": false },
+                  { "label": "I cannot enter the lab because I lost my pass.", "correct": false }
+                ] },
+                { "type": "askText", "prompt": "Write in Spanish: I have to study before gym class.", "placeholder": "Respuesta en español", "correctAnswers": ["Tengo que estudiar antes de la clase de gimnasia", "Tengo que estudiar antes de gimnasia"] },
+                { "type": "askChoice", "prompt": "Historia: Elena revisa su horario. Primero tiene matemáticas, después almuerzo y finalmente club de ciencias. ¿Qué ocurre justo después de matemáticas?", "options": [
+                  { "label": "Almuerzo.", "correct": true },
+                  { "label": "Club de ciencias.", "correct": false },
+                  { "label": "Gimnasio.", "correct": false }
+                ] },
+                { "type": "askAudioChoice", "prompt": "Escucha. ¿Cuál plan es correcto?", "audioText": "Después de educación física, necesito entregar el formulario del club.", "options": [
+                  { "label": "After PE, they need to turn in the club form.", "correct": true },
+                  { "label": "Before lunch, they need to buy a sandwich.", "correct": false },
+                  { "label": "During math, they need to play basketball.", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "Conversación: --Llegas tarde. --Lo siento, tuve que comprar almuerzo para Luis. --Entonces entra rápido y abre el cuaderno. ¿Cuál respuesta conviene?", "options": [
+                  { "label": "Gracias, abro el cuaderno ahora.", "correct": true },
+                  { "label": "Prefiero dormir en la cafetería.", "correct": false },
+                  { "label": "No tengo hambre, pero compro dos jugos.", "correct": false }
+                ] }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Horario dominado." },
+                { "type": "completeMission", "missionId": "hs-boss-schedule" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Sigue al duelo social." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 8, "y": 11, "targetArea": "high-school-club-lab", "targetX": 24, "targetY": 1, "facing": "down" },
+    { "x": 15, "y": 5, "targetArea": "high-school-boss-social", "targetX": 1, "targetY": 5, "facing": "right", "requires": { "completedMissions": ["hs-boss-schedule"] }, "blockedMessage": "Derrota primero al Mentor del Horario." }
+  ]
+}

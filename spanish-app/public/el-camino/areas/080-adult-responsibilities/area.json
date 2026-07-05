@@ -1,0 +1,21 @@
+{
+  "id": "adult-responsibilities",
+  "name": "Adult Responsibilities",
+  "kind": "outdoor",
+  "chapterId": "adult-responsibilities",
+  "region": "Chapter 8",
+  "cefrLevel": "B2+",
+  "teaches": ["taxes", "insurance", "repairs", "documents", "official forms"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "objects": [
+    { "type": "office", "x": 2, "y": 1, "w": 4, "h": 3 },
+    { "type": "office", "x": 7, "y": 1, "w": 4, "h": 3 },
+    { "type": "store", "x": 12, "y": 1, "w": 4, "h": 3 },
+    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Adult Responsibilities will become the bureaucracy dungeon: forms, taxes, insurance, repairs, and precise instructions." }] }] }
+  ],
+  "people": [
+    { "personId": "tomás", "x": 9, "y": 6, "message": "Bring the right document to the right office. Eventually." }
+  ],
+  "exits": []
+}

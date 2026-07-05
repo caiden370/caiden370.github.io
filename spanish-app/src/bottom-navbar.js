@@ -19,7 +19,8 @@ import {
   Storefront,
   House,
   Brain,
-  Gear
+  Gear,
+  MapTrifold
 } from 'phosphor-react';
 
 export function removeAdScript() {
@@ -37,35 +38,42 @@ export default function BottomNavbar({setSelection}) {
 
   const chapters = 'Chapters';
   const topWords = 'TopWords';
+  const elCamino = 'ElCamino';
   const store = 'Store';
   const profile = 'Profile';  
   const settings = 'Settings';
 
 
-  const Home = <House size={38} color={"rgb(0, 174, 255)"} weight={"duotone"} className={"drop-shadow-sm"} ></House>
-  const TopWords = <Brain size={38} color={"rgb(4, 114, 2)"} weight={"duotone"} className={"drop-shadow-sm"} ></Brain>
-  const Store = <Storefront size={38} color={"rgb(255, 0, 0)"} weight={"duotone"} className={"drop-shadow-sm"} ></Storefront>
-  const Profile = <UserCircle size={38} color={"rgb(226, 123, 13)"} weight={"duotone"} className={"drop-shadow-sm"} ></UserCircle>
+  const iconClass = "drop-shadow-sm bottom-nav-icon";
+  const selectedIconClass = "drop-shadow-sm bottom-nav-icon bottom-nav-icon-selected";
+
+  const Home = <House color={"rgb(0, 174, 255)"} weight={"duotone"} className={iconClass} ></House>
+  const TopWords = <Brain color={"rgb(4, 114, 2)"} weight={"duotone"} className={iconClass} ></Brain>
+  const ElCamino = <MapTrifold color={"rgb(180, 103, 28)"} weight={"duotone"} className={iconClass} ></MapTrifold>
+  const Store = <Storefront color={"rgb(255, 0, 0)"} weight={"duotone"} className={iconClass} ></Storefront>
+  const Profile = <UserCircle color={"rgb(226, 123, 13)"} weight={"duotone"} className={iconClass} ></UserCircle>
   
 
-  const SelectedHome = <House size={42} color={"rgb(0, 174, 255)"} weight={"duotone"} className={"drop-shadow-sm"} ></House>
-  const SelectedTopWords = <Brain size={42} color={"rgb(4, 114, 2)"} weight={"duotone"} className={"drop-shadow-sm"} ></Brain>
-  const SelectedStore = <Storefront size={42} color={"rgb(255, 0, 0)"} weight={"duotone"} className={"drop-shadow-sm"} ></Storefront>
-  const SelectedProfile = <UserCircle size={42} color={"rgb(226, 123, 13)"} weight={"duotone"} className={"drop-shadow-sm"} ></UserCircle>
+  const SelectedHome = <House color={"rgb(0, 174, 255)"} weight={"duotone"} className={selectedIconClass} ></House>
+  const SelectedTopWords = <Brain color={"rgb(4, 114, 2)"} weight={"duotone"} className={selectedIconClass} ></Brain>
+  const SelectedElCamino = <MapTrifold color={"rgb(180, 103, 28)"} weight={"duotone"} className={selectedIconClass} ></MapTrifold>
+  const SelectedStore = <Storefront color={"rgb(255, 0, 0)"} weight={"duotone"} className={selectedIconClass} ></Storefront>
+  const SelectedProfile = <UserCircle color={"rgb(226, 123, 13)"} weight={"duotone"} className={selectedIconClass} ></UserCircle>
   const SelectedSettings =<Gear size={42} color={"rgb(117, 100, 100)"} weight={"duotone"} className={"drop-shadow-sm"} ></Gear>
 
 
   const dictionary = {
     "0": chapters,
     "1": topWords,
-    "2": store,
-    "3": profile,
-    "4": settings,
+    "2": elCamino,
+    "3": store,
+    "4": profile,
+    "5": settings,
 };
   return (
-    <Box sx={{ width: "100vw"}}>
+    <Box className="bottom-nav-box" sx={{ width: "100vw"}}>
       <BottomNavigation
-        sx={{paddingBottom: '20px', backgroundColor:'inherit'}}
+        sx={{paddingBottom: 'clamp(8px, 2.8vw, 20px)', backgroundColor:'inherit'}}
         showLabels
         value={value}
         onChange={(event, newValue) => {
@@ -79,6 +87,7 @@ export default function BottomNavbar({setSelection}) {
       >
         <BottomNavigationAction  icon={dictionary[value] === chapters? SelectedHome : Home} />
         <BottomNavigationAction icon={dictionary[value] === topWords? SelectedTopWords : TopWords} />
+        <BottomNavigationAction icon={dictionary[value] === elCamino? SelectedElCamino : ElCamino} />
         <BottomNavigationAction icon={dictionary[value] === store? SelectedStore : Store} />
         <BottomNavigationAction  icon={dictionary[value] === profile? SelectedProfile : Profile} />
         {/* <BottomNavigationAction  icon={dictionary[value] === settings? SelectedSettings : Settings} /> */}

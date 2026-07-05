@@ -1,6 +1,6 @@
 
 import './App.css';
-import { use, useEffect, useState } from 'react';
+import { lazy, Suspense, use, useEffect, useState } from 'react';
 import BottomNavbar from './bottom-navbar';
 import ChaptersPage from './chapters-page';
 import ProfilePage from './profile-page';
@@ -14,6 +14,8 @@ import { initMascotStorage } from './utils/mascotStorage';
 import Store from './store';
 import TopWordsPage from './top-words-page';
 import HomeScreenInstallPrompt from './HomeScreenInstallPrompt';
+
+const ElCaminoPage = lazy(() => import('./el-camino/ElCaminoPage'));
 
 export const TOP_WORDS_INDEX_RANGE = 10000;
 export const CHAPTERS_INDEX_RANGE = 0;
@@ -43,6 +45,7 @@ export function setNameInStorage(name) {
 function App() {
   const chapters = "Chapters";
   const topWords = "TopWords";
+  const elCamino = "ElCamino";
   const store = "Store";
   const profile = "Profile";
   const gamePage = "MenuGame";
@@ -69,6 +72,13 @@ function App() {
         break;
       case topWords:
         setPageContent(<TopWordsPage setChapterIndex={setChapterIndex} setSection={setNavSelection} setGameId={setGameId}/>);
+        break;
+      case elCamino:
+        setPageContent(
+          <Suspense fallback={<div></div>}>
+            <ElCaminoPage onExit={() => setNavSelection(chapters)} />
+          </Suspense>
+        );
         break;
       case store:
         setPageContent(<Store setGlobalCoins={setCoins}/>);
@@ -117,12 +127,12 @@ function App() {
   return (
     <div className="App">
       <div className='top-header-outer-container'>
-      <TopHeader coins={coins} level={computeLevel(experience)} setSection={setNavSelection}></TopHeader>
+      {navSelection != elCamino && <TopHeader coins={coins} level={computeLevel(experience)} setSection={setNavSelection}></TopHeader>}
       </div>
       <div className='page-container'>
         {pageContent}
       </div>
-      {navSelection != game && (<div className='navbar-container'>
+      {navSelection != game && navSelection != elCamino && (<div className='navbar-container'>
       <BottomNavbar setSelection={setNavSelection}/>
       </div>)}
       <div className='app-background'></div>

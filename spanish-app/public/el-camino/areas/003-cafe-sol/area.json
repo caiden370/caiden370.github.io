@@ -1,0 +1,27 @@
+{
+  "id": "cafe-sol",
+  "name": "Café Sol",
+  "kind": "interior",
+  "chapterId": "elementary-school",
+  "region": "A1 Market Region",
+  "cefrLevel": "A1",
+  "teaches": ["manzana", "gracias"],
+  "legend": { "i": "insideWall", "w": "woodFloor" },
+  "playerStart": { "x": 5, "y": 6, "facing": "up" },
+  "objects": [
+    { "type": "counter", "x": 1, "y": 2, "w": 4, "h": 1 },
+    { "type": "table", "x": 2, "y": 4, "w": 2, "h": 1 },
+    { "type": "chair", "x": 4, "y": 4, "w": 1, "h": 1 },
+    { "type": "table", "x": 7, "y": 4, "w": 2, "h": 1 },
+    { "type": "chair", "x": 9, "y": 4, "w": 1, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "nico",
+      "x": 7,
+      "y": 2,
+      "message": "Café tip: manzana means apple. Gracias means thank you."
+    }
+  ],
+  "exits": [{ "x": 5, "y": 6, "targetArea": "mercado-sol", "targetX": 11, "targetY": 5, "facing": "down" }]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "panaderia-sol",
+  "name": "Panadería Sol",
+  "kind": "interior",
+  "chapterId": "elementary-school",
+  "region": "A1 Market Region",
+  "cefrLevel": "A1",
+  "teaches": ["pan", "quiero", "por favor"],
+  "legend": { "i": "insideWall", "g": "lightGreenFloor", "w": "woodFloor" },
+  "playerStart": { "x": 5, "y": 6, "facing": "up" },
+  "objects": [
+    { "type": "counter", "x": 2, "y": 2, "w": 5, "h": 1 },
+    { "type": "shelf", "x": 2, "y": 4, "w": 2, "h": 1, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Fresh pan is on the shelf. Talk to Emma to buy it." }] }] },
+    { "type": "table", "x": 7, "y": 4, "w": 2, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "emma",
+      "x": 8,
+      "y": 2,
+      "interactions": [
+        {
+          "when": {
+            "completedSteps": ["lucia-asked-bread"],
+            "missingSteps": ["heard-market-foods"]
+          },
+          "actions": [
+            {
+              "type": "askAudioChoice",
+              "prompt": "Emma says a bakery word. What did you hear?",
+              "audioText": "pan",
+              "options": [
+                {
+                  "label": "pan",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Emma", "text": "Correct. Pan means bread." },
+                    { "type": "completeStep", "stepId": "heard-market-foods" }
+                  ]
+                },
+                { "label": "agua", "correct": false },
+                { "label": "hola", "correct": false }
+              ],
+              "wrongMessage": "Listen again. The word is pan."
+            }
+          ]
+        },
+        {
+          "when": {
+            "completedSteps": ["heard-market-foods"],
+            "missingSteps": ["bought-bread"],
+            "hasItems": [{ "itemId": "coins", "count": 2 }]
+          },
+          "actions": [
+            {
+              "type": "askSpeech",
+              "prompt": "Say the order to Emma: Quiero pan, por favor.",
+              "audioText": "Quiero pan, por favor.",
+              "correctAnswers": ["Quiero pan por favor", "Quiero pan, por favor."],
+              "actions": [
+                { "type": "removeItem", "itemId": "coins", "count": 2 },
+                { "type": "addItem", "itemId": "bread", "count": 1 },
+                { "type": "completeStep", "stepId": "bought-bread" },
+                { "type": "showDialogue", "speaker": "Emma", "text": "Aquí tienes pan. Bring it to Lucía." }
+              ],
+              "wrongMessage": "Try saying: Quiero pan, por favor."
+            }
+          ]
+        },
+        {
+          "when": { "completedSteps": ["bought-bread"], "missingMissions": ["market-breakfast"] },
+          "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "You have pan. Bring it to Lucía outside." }]
+        },
+        {
+          "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "Hola. Lucía may need something from the bakery." }]
+        }
+      ]
+    }
+  ],
+  "exits": [{ "x": 5, "y": 6, "targetArea": "mercado-sol", "targetX": 4, "targetY": 5, "facing": "down" }]
+}
