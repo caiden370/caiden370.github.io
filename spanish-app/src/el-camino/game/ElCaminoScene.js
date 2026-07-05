@@ -198,13 +198,14 @@ export default class ElCaminoScene extends Phaser.Scene {
     this.drawObjects(area);
     this.drawPeople(area);
     this.refreshLockedEntranceMarkers();
-    this.createPlayer(playerX, playerY, facing);
+    const safeSpawn = this.resolveSafeSpawn(playerX, playerY);
+    this.createPlayer(safeSpawn.x, safeSpawn.y, facing);
 
     this.cameras.main.setBounds(0, 0, area.width * TILE_SIZE, area.height * TILE_SIZE);
     this.cameras.main.startFollow(this.player, true, 0.14, 0.14);
     this.updateCameraForViewport();
 
-    this.saveGame({ areaId: area.id, x: playerX, y: playerY, facing });
+    this.saveGame({ areaId: area.id, x: safeSpawn.x, y: safeSpawn.y, facing });
     this.emitStatus(null);
     this.emitProgress();
   }
@@ -1302,6 +1303,40 @@ export default class ElCaminoScene extends Phaser.Scene {
   canWalkTo(x, y) {
     if (x < 0 || y < 0 || x >= this.currentArea.width || y >= this.currentArea.height) return false;
     return !this.blocked.has(this.positionKey(Math.round(x), Math.round(y)));
+  }
+
+  resolveSafeSpawn(x, y) {
+    const target = { x: Math.round(x), y: Math.round(y) };
+    if (this.isSafeSpawnTile(target.x, target.y)) return target;
+
+    const maxRadius = Math.max(this.currentArea.width, this.currentArea.height);
+    for (let radius = 1; radius <= maxRadius; radius += 1) {
+      const candidates = [];
+      for (let dy = -radius; dy <= radius; dy += 1) {
+        for (let dx = -radius; dx <= radius; dx += 1) {
+          if (Math.abs(dx) !== radius && Math.abs(dy) !== radius) continue;
+          candidates.push({ x: target.x + dx, y: target.y + dy, distance: Math.abs(dx) + Math.abs(dy) });
+        }
+      }
+
+      const safeCandidate = candidates
+        .sort((a, b) => a.distance - b.distance)
+        .find((candidate) => this.isSafeSpawnTile(candidate.x, candidate.y));
+
+      if (safeCandidate) {
+        return { x: safeCandidate.x, y: safeCandidate.y };
+      }
+    }
+
+    return target;
+  }
+
+  isSafeSpawnTile(x, y) {
+    if (x < 0 || y < 0 || x >= this.currentArea.width || y >= this.currentArea.height) return false;
+    const key = this.positionKey(x, y);
+    return !this.blocked.has(key)
+      && !this.peopleByPosition.has(key)
+      && !this.objectsByPosition.has(key);
   }
 
   setPlayerFacing(facing) {
