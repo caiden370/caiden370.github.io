@@ -1,0 +1,80 @@
+{
+  "id": "college-campus",
+  "name": "Plaza Universitaria",
+  "kind": "outdoor",
+  "chapterId": "college",
+  "region": "Chapter 3: Universidad",
+  "cefrLevel": "A2",
+  "teaches": ["universidad", "dormitorio", "biblioteca", "librería", "planear", "debería", "mañana"],
+  "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass", "s": "campusStone" },
+  "playerStart": { "x": 14, "y": 17, "facing": "up" },
+  "objects": [
+    { "type": "dorm", "x": 2, "y": 1, "w": 6, "h": 4, "entrance": { "x": 5, "y": 5, "targetArea": "college-dorm", "targetX": 14, "targetY": 17, "facing": "up" } },
+    { "type": "library", "x": 20, "y": 1, "w": 6, "h": 4, "entrance": { "x": 23, "y": 5, "targetArea": "college-library", "targetX": 14, "targetY": 17, "facing": "up" } },
+    { "type": "store", "x": 2, "y": 14, "w": 6, "h": 4, "entrance": { "x": 5, "y": 18, "targetArea": "college-bookstore", "targetX": 14, "targetY": 1, "facing": "down" } },
+    { "type": "restaurant", "x": 20, "y": 14, "w": 6, "h": 4, "entrance": { "x": 23, "y": 18, "targetArea": "college-cafe", "targetX": 14, "targetY": 1, "facing": "down" } },
+    { "type": "campusFountain", "x": 13, "y": 10 },
+    { "type": "bikeRack", "x": 9, "y": 12, "w": 2, "h": 1 },
+    { "type": "sign", "x": 16, "y": 12, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Dormitorio, biblioteca, librería y café. Planea tu día." }] }] }
+  ],
+  "people": [
+    {
+      "personId": "valeria",
+      "x": 12,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["college-orientation"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Bienvenido a la universidad. Aquí tienes más libertad, pero también más responsabilidades." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Si tienes examen mañana, deberías comprar libros, estudiar y descansar." },
+            {
+              "type": "askChoice",
+              "prompt": "Valeria says you have an exam mañana. When is the exam?",
+              "options": [
+                { "label": "tomorrow", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Valeria", "text": "Correcto. Mañana." },
+                  { "type": "addItem", "itemId": "campusId", "count": 1 },
+                  { "type": "completeMission", "missionId": "college-orientation" }
+                ] },
+                { "label": "today", "correct": false },
+                { "label": "never", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Compra libros, estudia y descansa." }] }
+      ]
+    },
+    {
+      "personId": "marcos",
+      "x": 16,
+      "y": 9,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["college-orientation"], "missingMissions": ["college-plan"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Tengo un plan: primero dormitorio, después librería, luego biblioteca y por último café." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "En la universidad, luego significa later. Por último significa last." },
+            {
+              "type": "askChoice",
+              "prompt": "Marcos's plan ends at the café. Which phrase showed that?",
+              "options": [
+                { "label": "por último", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Marcos", "text": "Sí. Por último: café." },
+                  { "type": "completeMission", "missionId": "college-plan" }
+                ] },
+                { "label": "primero", "correct": false },
+                { "label": "después", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Primero dormitorio, por último café." }] }
+      ]
+    }
+  ],
+  "exits": []
+}

@@ -1,0 +1,52 @@
+{
+  "id": "college-bookstore",
+  "name": "Librería del Campus",
+  "kind": "interior",
+  "chapterId": "college",
+  "region": "Chapter 3: Universidad",
+  "cefrLevel": "A2",
+  "teaches": ["comprar", "caro", "barato", "necesito", "me falta", "calculadora"],
+  "legend": { "w": "insideWall", "c": "lightGreenFloor", "p": "dirtPath" },
+  "playerStart": { "x": 14, "y": 1, "facing": "down" },
+  "objects": [
+    { "type": "bookshelf", "x": 5, "y": 5, "w": 4, "h": 1 },
+    { "type": "supplyShelf", "x": 19, "y": 5, "w": 4, "h": 1 },
+    { "type": "serviceCounter", "x": 11, "y": 12, "w": 5, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "emma",
+      "x": 14,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["college-dorm-complete"], "missingMissions": ["college-buy-supplies"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Emma", "text": "Para el examen necesitas un libro de texto y una calculadora." },
+            { "type": "showDialogue", "speaker": "Emma", "text": "El libro cuesta dos monedas. La calculadora cuesta una moneda. Total: tres." },
+            {
+              "type": "askChoice",
+              "prompt": "Emma sells a textbook for 2 and a calculator for 1. How many coins total?",
+              "options": [
+                { "label": "three", "correct": true, "actions": [
+                  { "type": "showDialogue", "speaker": "Emma", "text": "Correcto. Tres monedas." },
+                  { "type": "removeItem", "itemId": "coins", "count": 3 },
+                  { "type": "addItem", "itemId": "textbook", "count": 1 },
+                  { "type": "addItem", "itemId": "calculator", "count": 1 },
+                  { "type": "completeMission", "missionId": "college-buy-supplies" }
+                ] },
+                { "label": "one", "correct": false },
+                { "label": "five", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "Necesitas libro de texto y calculadora." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 0, "targetArea": "college-campus", "targetX": 5, "targetY": 17, "facing": "up" }
+  ]
+}

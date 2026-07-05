@@ -1,0 +1,67 @@
+{
+  "id": "tienda-agua",
+  "name": "Tienda Agua",
+  "kind": "interior",
+  "chapterId": "elementary-school",
+  "region": "A1 First Words",
+  "cefrLevel": "A1",
+  "teaches": ["quiero", "agua", "por favor"],
+  "legend": { "i": "insideWall", "g": "lightGreenFloor", "w": "woodFloor" },
+  "playerStart": { "x": 5, "y": 6, "facing": "up" },
+  "objects": [
+    { "type": "counter", "x": 2, "y": 2, "w": 5, "h": 1 },
+    {
+      "id": "water-shelf",
+      "type": "shelf",
+      "x": 2,
+      "y": 4,
+      "w": 2,
+      "h": 1,
+      "interactions": [
+        {
+          "actions": [{ "type": "showDialogue", "text": "A shelf of water bottles. Talk to Carlos, the clerk, to buy one." }]
+        }
+      ]
+    },
+    { "type": "table", "x": 7, "y": 4, "w": 2, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "carlos",
+      "x": 8,
+      "y": 2,
+      "interactions": [
+        {
+          "when": {
+            "completedSteps": ["ana-asked-water"],
+            "missingSteps": ["buy-water-at-store"],
+            "hasItems": [{ "itemId": "coins", "count": 1 }]
+          },
+          "actions": [
+            {
+              "type": "askSpeech",
+              "prompt": "Carlos asks: ¿Qué quieres? Say: Quiero agua, por favor.",
+              "audioText": "Quiero agua, por favor.",
+              "correctAnswers": ["Quiero agua por favor", "Quiero agua, por favor."],
+              "actions": [
+                { "type": "removeItem", "itemId": "coins", "count": 1 },
+                { "type": "addItem", "itemId": "waterBottle", "count": 1 },
+                { "type": "completeStep", "stepId": "buy-water-at-store" },
+                { "type": "showDialogue", "speaker": "Carlos", "text": "Aquí tienes agua. Bring it back to Ana." }
+              ],
+              "wrongMessage": "Try saying: Quiero agua, por favor."
+            }
+          ]
+        },
+        {
+          "when": { "completedSteps": ["buy-water-at-store"] },
+          "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "You already bought agua. Bring it to Ana." }]
+        },
+        {
+          "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Hola. Come back when Ana asks you to buy agua." }]
+        }
+      ]
+    }
+  ],
+  "exits": [{ "x": 5, "y": 6, "targetArea": "plaza-hola", "targetX": 13, "targetY": 5, "facing": "down" }]
+}

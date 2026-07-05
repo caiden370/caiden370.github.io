@@ -1,0 +1,20 @@
+{
+  "id": "travel-terminal",
+  "name": "Travel Terminal",
+  "kind": "outdoor",
+  "chapterId": "travel",
+  "region": "Chapter 6",
+  "cefrLevel": "B1+",
+  "teaches": ["airport", "hotel", "directions", "restaurants", "emergencies"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "objects": [
+    { "type": "office", "x": 2, "y": 1, "w": 5, "h": 3 },
+    { "type": "restaurant", "x": 11, "y": 1, "w": 5, "h": 3 },
+    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Travel will include airports, hotels, directions, reservations, and emergency conversations." }] }] }
+  ],
+  "people": [
+    { "personId": "nico", "x": 9, "y": 6, "message": "Travel missions will use audio-only directions and faster Spanish." }
+  ],
+  "exits": []
+}

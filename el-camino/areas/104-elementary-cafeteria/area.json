@@ -1,0 +1,156 @@
+{
+  "id": "elementary-cafeteria",
+  "name": "Cafetería y Tienda",
+  "kind": "outdoor",
+  "chapterId": "elementary-school",
+  "region": "Chapter 1: Escuela Primaria",
+  "cefrLevel": "A1",
+  "teaches": ["agua", "pan", "leche", "jugo", "manzana", "quiero", "por favor", "uno", "dos"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 1, "y": 10, "facing": "right" },
+  "objects": [
+    { "type": "restaurant", "x": 4, "y": 1, "w": 8, "h": 4 },
+    { "type": "store", "x": 16, "y": 1, "w": 8, "h": 4 },
+    { "type": "menuBoard", "x": 13, "y": 5, "w": 2, "h": 1, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Menú: agua, pan, leche, jugo, manzana." }] }] },
+    { "type": "serviceCounter", "x": 6, "y": 6, "w": 4, "h": 1 },
+    { "type": "groceryShelf", "x": 18, "y": 6, "w": 4, "h": 1, "interactions": [{ "when": { "missingSteps": ["got-juice"] }, "actions": [
+      { "type": "showDialogue", "text": "Tomas un jugo para la mesa." },
+      { "type": "addItem", "itemId": "juiceBox", "count": 1 },
+      { "type": "completeStep", "stepId": "got-juice" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Jugo listo." }] }] },
+    { "type": "lunchTray", "x": 8, "y": 11, "interactions": [{ "when": { "missingSteps": ["got-tray"] }, "actions": [
+      { "type": "showDialogue", "text": "Una bandeja para el almuerzo." },
+      { "type": "addItem", "itemId": "lunchTrayItem", "count": 1 },
+      { "type": "completeStep", "stepId": "got-tray" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Bandeja lista." }] }] },
+    { "type": "table", "x": 5, "y": 13, "w": 3, "h": 1 },
+    { "type": "table", "x": 17, "y": 13, "w": 3, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "emma",
+      "x": 10,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["elem-food-words"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Emma", "text": "Hoy la mesa necesita comida. Ana quiere manzana. Nico quiere dos panes." },
+            { "type": "showDialogue", "speaker": "Emma", "text": "Carlos vende agua. La tienda tiene jugo. Escucha una palabra del menú." },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha. ¿Qué necesita Ana?",
+              "audioText": "manzana",
+              "options": [
+                {
+                  "label": "apple",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Emma", "text": "Sí. Ana quiere una manzana." },
+                    { "type": "addItem", "itemId": "apple", "count": 1 },
+                    { "type": "completeMission", "missionId": "elem-food-words" }
+                  ]
+                },
+                { "label": "bread", "correct": false },
+                { "label": "water", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "Recuerda: Ana quiere manzana. Nico quiere dos panes." }] }
+      ]
+    },
+    {
+      "personId": "carlos",
+      "x": 18,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["elem-food-words"], "missingMissions": ["elem-order-water"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Soy el encargado del agua. Si quieres algo, usa quiero y por favor." },
+            { "type": "showDialogue", "speaker": "Carlos", "text": "No voy a decirte la frase completa. Piensa en pedir agua con cortesía." },
+            {
+              "type": "askSpeech",
+              "prompt": "Pide agua con cortesía.",
+              "placeholder": "Respuesta hablada",
+              "correctAnswers": ["Quiero agua por favor", "Quiero agua, por favor"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Carlos", "text": "Aquí tienes agua." },
+                { "type": "addItem", "itemId": "waterBottle", "count": 1 },
+                { "type": "completeMission", "missionId": "elem-order-water" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Pide con cortesía." }] }
+      ]
+    },
+    {
+      "personId": "nico",
+      "x": 8,
+      "y": 14,
+      "interactions": [
+        {
+          "when": { "completedMissions": ["elem-order-water"], "missingMissions": ["elem-quantities"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Nico", "text": "Tengo hambre. Para la mesa necesito dos panes." },
+            { "type": "showDialogue", "speaker": "Nico", "text": "Si Emma ya dio una manzana y Carlos dio agua, faltan panes." },
+            {
+              "type": "askChoice",
+              "prompt": "Nico dice: necesito dos panes. ¿Qué debe recibir la mesa?",
+              "options": [
+                {
+                  "label": "two breads",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Nico", "text": "Sí. Dos panes." },
+                    { "type": "addItem", "itemId": "bread", "count": 2 },
+                    { "type": "completeMission", "missionId": "elem-quantities" }
+                  ]
+                },
+                { "label": "one juice", "correct": false },
+                { "label": "three pencils", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Nico", "text": "Necesito dos panes para la mesa." }] }
+      ]
+    },
+    {
+      "personId": "lucia",
+      "x": 20,
+      "y": 14,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "lunchTrayItem", "count": 1 }, { "itemId": "juiceBox", "count": 1 }, { "itemId": "apple", "count": 1 }, { "itemId": "waterBottle", "count": 1 }, { "itemId": "bread", "count": 2 }], "completedMissions": ["elem-food-words", "elem-order-water", "elem-quantities"], "missingMissions": ["elem-cafeteria-complete"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Veo bandeja, jugo, manzana, agua y dos panes." },
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Ahora dime qué hiciste. Usa una frase corta en español." },
+            {
+              "type": "askText",
+              "prompt": "Escribe una petición de comida en español.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": ["Quiero pan", "Quiero agua", "Quiero jugo", "Quiero una manzana"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Lucía", "text": "Cafetería completa. Buen trabajo." },
+                { "type": "completeMission", "missionId": "elem-cafeteria-complete" }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Necesitas bandeja, jugo, manzana, agua y dos panes." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 10, "targetArea": "elementary-entrance", "targetX": 26, "targetY": 10, "facing": "left" },
+    { "x": 0, "y": 8, "targetArea": "elementary-classroom", "targetX": 26, "targetY": 9, "facing": "left" },
+    { "x": 14, "y": 19, "targetArea": "elementary-library-art", "targetX": 18, "targetY": 1, "facing": "down" }
+  ]
+}

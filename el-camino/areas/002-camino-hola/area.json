@@ -1,0 +1,31 @@
+{
+  "id": "camino-hola",
+  "name": "Camino Hola",
+  "kind": "outdoor",
+  "chapterId": "elementary-school",
+  "region": "A1 First Words",
+  "cefrLevel": "A1",
+  "teaches": ["review"],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "w": "water"
+  },
+  "playerStart": { "x": 4, "y": 1, "facing": "down" },
+  "objects": [
+    { "type": "tree", "x": 1, "y": 2, "w": 1, "h": 1 },
+    { "type": "tree", "x": 8, "y": 2, "w": 1, "h": 1 }
+  ],
+  "people": [
+    {
+      "personId": "diego",
+      "x": 6,
+      "y": 4,
+      "message": "Follow the road south to Mercado Sol for your next mission."
+    }
+  ],
+  "exits": [
+    { "x": 4, "y": 0, "targetArea": "plaza-hola", "targetX": 8, "targetY": 10, "facing": "up" },
+    { "x": 4, "y": 7, "targetArea": "mercado-sol", "targetX": 7, "targetY": 10, "facing": "up" }
+  ]
+}

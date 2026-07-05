@@ -1,0 +1,48 @@
+{
+  "id": "plaza-del-camino",
+  "name": "Plaza del Camino",
+  "kind": "outdoor",
+  "chapterId": "home-base",
+  "region": "Home Base",
+  "cefrLevel": "Hub",
+  "teaches": ["chapter selection", "life paths"],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "q": "flowerGrass",
+    "t": "stoneFloor"
+  },
+  "defaultTile": "g",
+  "playerStart": { "x": 15, "y": 12, "facing": "up" },
+  "objects": [
+    { "type": "school", "x": 3, "y": 1, "w": 4, "h": 3, "entrance": { "x": 5, "y": 4, "targetArea": "elementary-entrance", "targetX": 14, "targetY": 17, "facing": "up", "chapterId": "elementary-school" } },
+    { "type": "school", "x": 11, "y": 1, "w": 4, "h": 3, "entrance": { "x": 13, "y": 4, "targetArea": "high-school", "targetX": 7, "targetY": 9, "facing": "up", "chapterId": "high-school" } },
+    { "type": "school", "x": 19, "y": 1, "w": 4, "h": 3, "entrance": { "x": 21, "y": 4, "targetArea": "college-campus", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "college" } },
+    { "type": "office", "x": 25, "y": 1, "w": 4, "h": 3, "entrance": { "x": 27, "y": 4, "targetArea": "first-job", "targetX": 7, "targetY": 9, "facing": "up", "chapterId": "first-job" } },
+    { "type": "houseBlue", "x": 3, "y": 15, "w": 4, "h": 3, "entrance": { "x": 5, "y": 18, "targetArea": "independent-life", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "independent-life" } },
+    { "type": "restaurant", "x": 11, "y": 15, "w": 4, "h": 3, "entrance": { "x": 13, "y": 18, "targetArea": "travel-terminal", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "travel" } },
+    { "type": "houseGreen", "x": 19, "y": 15, "w": 4, "h": 3, "entrance": { "x": 21, "y": 18, "targetArea": "family-neighborhood", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "family" } },
+    { "type": "office", "x": 25, "y": 15, "w": 4, "h": 3, "entrance": { "x": 27, "y": 18, "targetArea": "adult-responsibilities", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "adult-responsibilities" } },
+    { "type": "store", "x": 1, "y": 8, "w": 4, "h": 3, "entrance": { "x": 3, "y": 11, "targetArea": "community-leader", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "community-leader" } },
+    { "type": "houseRed", "x": 25, "y": 8, "w": 4, "h": 3, "entrance": { "x": 27, "y": 11, "targetArea": "dream-future", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "dream-future" } },
+    { "type": "sign", "x": 5, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Escuela Primaria: saludos, útiles, colores, números, patio, comida, biblioteca y arte." }] }] },
+    { "type": "sign", "x": 13, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Middle and High School: schedules, clubs, sports, and opinions." }] }] },
+    { "type": "sign", "x": 21, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "College: exams, supplies, friends, dates, and campus life." }] }] },
+    { "type": "sign", "x": 27, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "First Job: interviews, coworkers, customers, and formal Spanish." }] }] },
+    { "type": "sign", "x": 5, "y": 14, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Independent Life: groceries, cooking, rent, banks, and doctors." }] }] },
+    { "type": "sign", "x": 13, "y": 14, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Travel: airports, hotels, restaurants, directions, and emergencies." }] }] },
+    { "type": "sign", "x": 21, "y": 14, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Family and Relationships: birthdays, feelings, stories, and advice." }] }] },
+    { "type": "sign", "x": 27, "y": 14, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Adult Responsibilities: taxes, insurance, repairs, and official forms." }] }] },
+    { "type": "sign", "x": 5, "y": 11, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Community Leader: organize events, solve town problems, and persuade people." }] }] },
+    { "type": "sign", "x": 25, "y": 11, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Dream Future: moving abroad, career choices, big goals, and Spanish-only conversations." }] }] },
+    { "type": "plant", "x": 13, "y": 9 },
+    { "type": "plant", "x": 16, "y": 9 },
+    { "type": "tree", "x": 1, "y": 1 },
+    { "type": "tree", "x": 29, "y": 18 }
+  ],
+  "people": [
+    { "personId": "ana", "x": 14, "y": 11, "message": "Welcome to Plaza del Camino. Pick any chapter station to begin." },
+    { "personId": "mateo", "x": 16, "y": 11, "message": "Use the Plaza button anytime to return here. Your chapter position is saved." }
+  ],
+  "exits": []
+}

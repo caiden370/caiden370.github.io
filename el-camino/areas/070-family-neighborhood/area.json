@@ -1,0 +1,22 @@
+{
+  "id": "family-neighborhood",
+  "name": "Family Neighborhood",
+  "kind": "outdoor",
+  "chapterId": "family",
+  "region": "Chapter 7",
+  "cefrLevel": "B2",
+  "teaches": ["feelings", "stories", "advice", "birthdays", "relationships"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 8, "y": 9, "facing": "up" },
+  "objects": [
+    { "type": "houseGreen", "x": 2, "y": 1, "w": 4, "h": 3 },
+    { "type": "houseRed", "x": 7, "y": 1, "w": 4, "h": 3 },
+    { "type": "houseBlue", "x": 12, "y": 1, "w": 4, "h": 3 },
+    { "type": "sign", "x": 8, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Family and Relationships will include birthdays, emotions, advice, stories, and conflict resolution." }] }] },
+    { "type": "table", "x": 7, "y": 6, "w": 2, "h": 1 }
+  ],
+  "people": [
+    { "personId": "lucia", "x": 9, "y": 6, "message": "Later this chapter will have longer emotional conversations." }
+  ],
+  "exits": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "first-job",
+  "name": "First Job District",
+  "kind": "outdoor",
+  "chapterId": "first-job",
+  "region": "Chapter 4",
+  "cefrLevel": "A2+",
+  "teaches": ["interviews", "formal requests", "coworkers", "customers"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 7, "y": 9, "facing": "up" },
+  "objects": [
+    { "type": "office", "x": 2, "y": 1, "w": 5, "h": 3 },
+    { "type": "store", "x": 9, "y": 1, "w": 5, "h": 3 },
+    { "type": "sign", "x": 7, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "First Job will include interviews, workplace tasks, customer problems, and formal Spanish." }] }] },
+    { "type": "table", "x": 6, "y": 6, "w": 2, "h": 1 }
+  ],
+  "people": [
+    { "personId": "carlos", "x": 8, "y": 5, "message": "Workplace missions will become more formal and task-based." }
+  ],
+  "exits": []
+}

@@ -1,0 +1,70 @@
+{
+  "id": "high-school-boss-social",
+  "name": "Sala del Equipo",
+  "kind": "interior",
+  "chapterId": "high-school",
+  "region": "Chapter 2: Instituto",
+  "cefrLevel": "A1+",
+  "teaches": ["opiniones", "equipo", "porque"],
+  "legend": { "w": "insideWall", "t": "track" },
+  "playerStart": { "x": 1, "y": 5, "facing": "right" },
+  "objects": [
+    { "type": "trophyCase", "x": 3, "y": 2, "w": 3, "h": 1 },
+    { "type": "bench", "x": 11, "y": 8, "w": 3, "h": 1 },
+    { "type": "gymMat", "x": 14, "y": 3 }
+  ],
+  "people": [
+    {
+      "personId": "capitana-equipo",
+      "x": 8,
+      "y": 5,
+      "boss": true,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["hs-boss-social"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Duelo social. Elige respuestas naturales en español." },
+            {
+              "type": "askBossQuiz",
+              "bossId": "hs-boss-social",
+              "title": "Duelo del Equipo",
+              "restartMessage": "No. El equipo vuelve al inicio.",
+              "questions": [
+                { "type": "askChoice", "prompt": "Translate: Prefiero practicar con el equipo porque aprendo más cuando escucho a mis compañeros.", "options": [
+                  { "label": "I prefer practicing with the team because I learn more when I listen to my classmates.", "correct": true },
+                  { "label": "I prefer buying lunch because the teacher listens to science.", "correct": false },
+                  { "label": "I need a hall pass because the team is closed.", "correct": false }
+                ] },
+                { "type": "askText", "prompt": "Write in Spanish: I prefer science because I like to investigate.", "placeholder": "Respuesta en español", "correctAnswers": ["Prefiero ciencias porque me gusta investigar", "Prefiero la ciencia porque me gusta investigar"] },
+                { "type": "askChoice", "prompt": "Historia: Luis no entiende la jugada. La capitana habla despacio, muestra el balón y dice que todos pueden practicar. ¿Qué hace la capitana?", "options": [
+                  { "label": "Ayuda a Luis a entender la jugada.", "correct": true },
+                  { "label": "Compra almuerzo para Luis.", "correct": false },
+                  { "label": "Cierra el laboratorio.", "correct": false }
+                ] },
+                { "type": "askAudioChoice", "prompt": "Escucha y responde.", "audioText": "No puedo ir al club ahora porque tengo entrenamiento, pero voy después.", "options": [
+                  { "label": "They cannot go now because they have practice, but they will go later.", "correct": true },
+                  { "label": "They cannot eat because they forgot money, but they will read later.", "correct": false },
+                  { "label": "They cannot study because the lab is loud.", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "--¿Quieres practicar conmigo? --No sé, el ejercicio parece difícil. --____", "options": [
+                  { "label": "Sí, pero lo hacemos paso a paso.", "correct": true },
+                  { "label": "No, la cafetería está cerrada.", "correct": false },
+                  { "label": "Tengo una calculadora verde.", "correct": false }
+                ] }
+              ],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "El equipo te acepta." },
+                { "type": "completeMission", "missionId": "hs-boss-social" }
+              ]
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Ve al club final." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 0, "y": 5, "targetArea": "high-school-boss-schedule", "targetX": 14, "targetY": 5, "facing": "left" },
+    { "x": 15, "y": 5, "targetArea": "high-school-boss-final", "targetX": 1, "targetY": 5, "facing": "right", "requires": { "completedMissions": ["hs-boss-social"] }, "blockedMessage": "Derrota primero a la Capitana del Equipo." }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "id": "elementary-classroom",
+  "name": "Aula y Pasillo",
+  "kind": "outdoor",
+  "chapterId": "elementary-school",
+  "region": "Chapter 1: Escuela Primaria",
+  "cefrLevel": "A1",
+  "teaches": ["lápiz", "libro", "cuaderno", "borrador", "rojo", "azul", "verde", "uno", "dos", "tres", "tengo", "necesito"],
+  "legend": { "g": "grass", "p": "dirtPath" },
+  "playerStart": { "x": 14, "y": 18, "facing": "up" },
+  "objects": [
+    { "type": "school", "x": 4, "y": 1, "w": 7, "h": 4 },
+    { "type": "school", "x": 17, "y": 1, "w": 7, "h": 4 },
+    { "type": "locker", "x": 4, "y": 6, "w": 3, "h": 1 },
+    { "type": "cubby", "x": 21, "y": 6, "w": 3, "h": 1 },
+    { "type": "chalkboard", "x": 4, "y": 9, "w": 3, "h": 1 },
+    { "type": "teacherDesk", "x": 20, "y": 9, "w": 2, "h": 1 },
+    { "type": "studyDesk", "x": 8, "y": 13, "w": 2, "h": 1 },
+    { "type": "studyDesk", "x": 18, "y": 13, "w": 2, "h": 1 },
+    { "type": "crayonBox", "x": 6, "y": 15, "interactions": [{ "when": { "missingSteps": ["found-blue-pencil"] }, "actions": [
+      { "type": "showDialogue", "text": "Ves útiles. Un lápiz es azul." },
+      { "type": "addItem", "itemId": "bluePencil", "count": 1 },
+      { "type": "completeStep", "stepId": "found-blue-pencil" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Lápiz azul. Ya está." }] }] },
+    { "type": "bookshelf", "x": 21, "y": 15, "w": 2, "h": 1, "interactions": [{ "when": { "missingSteps": ["found-red-book"] }, "actions": [
+      { "type": "showDialogue", "text": "Encuentras un libro rojo." },
+      { "type": "addItem", "itemId": "redBook", "count": 1 },
+      { "type": "completeStep", "stepId": "found-red-book" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Libro rojo. Muy bien." }] }] },
+    { "type": "supplyShelf", "x": 13, "y": 15, "w": 2, "h": 1, "interactions": [{ "when": { "missingSteps": ["found-notebook-eraser"] }, "actions": [
+      { "type": "showDialogue", "text": "Hay un cuaderno verde y un borrador." },
+      { "type": "addItem", "itemId": "greenNotebook", "count": 1 },
+      { "type": "addItem", "itemId": "eraser", "count": 1 },
+      { "type": "completeStep", "stepId": "found-notebook-eraser" }
+    ] }, { "actions": [{ "type": "showDialogue", "text": "Cuaderno y borrador. Listo." }] }] }
+  ],
+  "people": [
+    {
+      "personId": "sofia",
+      "x": 14,
+      "y": 8,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "bluePencil", "count": 1 }], "missingMissions": ["elem-blue-pencil"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Sofia", "text": "Necesito preparar la clase. No necesito cualquier lápiz." },
+            { "type": "showDialogue", "speaker": "Sofia", "text": "Necesito un lápiz azul. Mira tu mochila y responde." },
+            {
+              "type": "askChoice",
+              "prompt": "Sofia necesita un lápiz azul. ¿Qué frase confirma que tienes el objeto correcto?",
+              "options": [
+                {
+                  "label": "Tengo un lápiz azul.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Sofia", "text": "Perfecto. Ese objeto es para la clase." },
+                    {
+                      "type": "askChoice",
+                      "prompt": "En la frase Tengo un lápiz azul, ¿qué parte describe el color?",
+                      "options": [
+                        {
+                          "label": "azul",
+                          "correct": true,
+                          "actions": [
+                            { "type": "showDialogue", "speaker": "Sofia", "text": "Correcto. Azul describe el lápiz." },
+                            { "type": "removeItem", "itemId": "bluePencil", "count": 1 },
+                            { "type": "completeMission", "missionId": "elem-blue-pencil" }
+                          ]
+                        },
+                        { "label": "tengo", "correct": false },
+                        { "label": "un", "correct": false }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "Tengo una manzana.", "correct": false },
+                { "label": "Tengo agua.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Sofia", "text": "Busca útiles y piensa: ¿qué tienes?, ¿qué necesitas?" }] }
+      ]
+    },
+    {
+      "personId": "ana",
+      "x": 8,
+      "y": 10,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["elem-colors"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Ana", "text": "Estoy ordenando colores. El libro es rojo. El cuaderno es verde." },
+            { "type": "showDialogue", "speaker": "Ana", "text": "Si escuchas el color, busca la idea, no solo el sonido." },
+            {
+              "type": "askAudioChoice",
+              "prompt": "Escucha. ¿Qué objeto sería correcto si necesitas ese color?",
+              "audioText": "verde",
+              "options": [
+                {
+                  "label": "el cuaderno verde",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Ana", "text": "Sí. Verde conecta con cuaderno verde." },
+                    { "type": "completeMission", "missionId": "elem-colors" }
+                  ]
+                },
+                { "label": "el libro rojo", "correct": false },
+                { "label": "la leche blanca", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Rojo, azul, verde, amarillo." }] }
+      ]
+    },
+    {
+      "personId": "mateo",
+      "x": 20,
+      "y": 10,
+      "interactions": [
+        {
+          "when": { "missingMissions": ["elem-numbers"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Mateo", "text": "Tengo tres pupitres para tres estudiantes." },
+            { "type": "showDialogue", "speaker": "Mateo", "text": "Uno, dos, tres. Ahora dime el número sin copiar una pista." },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español el número de estudiantes si hay 3 estudiantes.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": ["tres"],
+              "actions": [
+                { "type": "showDialogue", "speaker": "Mateo", "text": "Correcto. Tres estudiantes." },
+                {
+                  "type": "askChoice",
+                  "prompt": "Si tienes dos libros y un cuaderno, ¿cuántos objetos tienes?",
+                  "options": [
+                    { "label": "tres", "correct": true, "actions": [
+                      { "type": "showDialogue", "speaker": "Mateo", "text": "Sí. Dos más uno: tres." },
+                      { "type": "completeMission", "missionId": "elem-numbers" }
+                    ] },
+                    { "label": "uno", "correct": false },
+                    { "label": "dos", "correct": false }
+                  ],
+                  "wrongMessage": "No. Intenta otra vez."
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Mateo", "text": "Uno, dos, tres." }] }
+      ]
+    },
+    {
+      "personId": "carlos",
+      "x": 14,
+      "y": 13,
+      "interactions": [
+        {
+          "when": { "hasItems": [{ "itemId": "redBook", "count": 1 }, { "itemId": "greenNotebook", "count": 1 }, { "itemId": "eraser", "count": 1 }], "completedMissions": ["elem-blue-pencil", "elem-colors", "elem-numbers"], "missingMissions": ["elem-classroom-complete"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Sofia pidió ayuda. Ana repasó colores. Mateo repasó números." },
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Ahora verifica tu mochila: libro rojo, cuaderno verde y borrador." },
+            {
+              "type": "askChoice",
+              "prompt": "Tienes un libro rojo y un cuaderno verde. ¿Qué frase resume mejor tu mochila?",
+              "options": [
+                {
+                  "label": "Tengo útiles de clase.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Carlos", "text": "Sí. Útiles de clase." },
+                    {
+                      "type": "askSpeech",
+                      "prompt": "Di una frase con Tengo y un objeto de clase.",
+                      "placeholder": "Respuesta hablada",
+                      "correctAnswers": ["Tengo un libro rojo", "Tengo un cuaderno verde", "Tengo un borrador"],
+                      "actions": [
+                        { "type": "showDialogue", "speaker": "Carlos", "text": "Excelente. Aula completa." },
+                        { "type": "completeMission", "missionId": "elem-classroom-complete" }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "Tengo comida del patio.", "correct": false },
+                { "label": "Necesito correr.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Practica con todos: tengo, necesito, lápiz, libro, cuaderno." }] }
+      ]
+    }
+  ],
+  "exits": [
+    { "x": 14, "y": 19, "targetArea": "elementary-entrance", "targetX": 14, "targetY": 1, "facing": "down" },
+    { "x": 0, "y": 9, "targetArea": "elementary-playground", "targetX": 26, "targetY": 8, "facing": "left" },
+    { "x": 27, "y": 9, "targetArea": "elementary-cafeteria", "targetX": 1, "targetY": 8, "facing": "right" }
+  ]
+}
