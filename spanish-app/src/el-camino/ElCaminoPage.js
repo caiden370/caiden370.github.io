@@ -32,6 +32,7 @@ export default function ElCaminoPage({ onExit }) {
   const gameRef = useRef(null);
   const holdTimerRef = useRef(null);
   const questionPromptRef = useRef(null);
+  const speechRecognitionRef = useRef(null);
   const [statusText, setStatusText] = useState(null);
   const [questionPrompt, setQuestionPrompt] = useState(null);
   const [questionFeedback, setQuestionFeedback] = useState(null);
@@ -69,6 +70,13 @@ export default function ElCaminoPage({ onExit }) {
 
     return () => {
       stopHoldMove();
+      if (speechRecognitionRef.current) {
+        speechRecognitionRef.current.onresult = null;
+        speechRecognitionRef.current.onerror = null;
+        speechRecognitionRef.current.onend = null;
+        speechRecognitionRef.current.stop();
+        speechRecognitionRef.current = null;
+      }
       game.events.off("el-camino-status", handleStatus);
       game.events.off("el-camino-question", handleQuestion);
       game.events.off("el-camino-progress", handleProgress);
@@ -87,6 +95,10 @@ export default function ElCaminoPage({ onExit }) {
   }
 
   function sendAnswer(answer) {
+    if (!answer?.trim()) {
+      setQuestionFeedback("No te escuché. Intenta otra vez.");
+      return;
+    }
     setQuestionFeedback(null);
     gameRef.current?.events.emit("el-camino-answer", answer);
   }
@@ -110,25 +122,48 @@ export default function ElCaminoPage({ onExit }) {
   function startSpeechAnswer() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
-      setStatusText("Speech recognition is not supported in this browser.");
+      setQuestionFeedback("Este navegador no soporta reconocimiento de voz.");
+      return;
+    }
+
+    if (isListening && speechRecognitionRef.current) {
+      speechRecognitionRef.current.stop();
       return;
     }
 
     const recognition = new SpeechRecognition();
     recognition.lang = "es-ES";
+    recognition.continuous = false;
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
+    speechRecognitionRef.current = recognition;
+
+    let heardAnswer = false;
+    let hadError = false;
     setIsListening(true);
+    setQuestionFeedback(null);
+
     recognition.onresult = (event) => {
       const transcript = event.results?.[0]?.[0]?.transcript || "";
+      heardAnswer = transcript.trim().length > 0;
       setAnswerText(transcript);
+      recognition.stop();
       sendAnswer(transcript);
     };
-    recognition.onerror = () => {
-      setStatusText("I could not hear that. Try speaking again.");
+    recognition.onerror = (event) => {
+      hadError = true;
+      if (event.error === "not-allowed" || event.error === "service-not-allowed") {
+        setQuestionFeedback("No tengo permiso para usar el micrófono.");
+      } else if (event.error !== "aborted") {
+        setQuestionFeedback("No te escuché bien. Intenta otra vez.");
+      }
     };
     recognition.onend = () => {
       setIsListening(false);
+      speechRecognitionRef.current = null;
+      if (!heardAnswer && !hadError) {
+        setQuestionFeedback("No te escuché. Intenta otra vez.");
+      }
     };
     recognition.start();
   }
@@ -345,7 +380,7 @@ export default function ElCaminoPage({ onExit }) {
           {questionPrompt.kind === "speech" && (
             <div className="el-camino-speech-actions">
               <button className="el-camino-submit-button" onClick={startSpeechAnswer}>
-                {isListening ? "Listening..." : "Speak answer"}
+                {isListening ? "Stop listening" : "Speak answer"}
               </button>
               {answerText && <div className="el-camino-transcript">Heard: {answerText}</div>}
             </div>
