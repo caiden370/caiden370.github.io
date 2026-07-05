@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createElCaminoGame } from "./game/createElCaminoGame";
 import "./el-camino.css";
+import SpeechButton from "../speech.js";
 
 function getMapBounds(areas = []) {
   if (!areas.length) return { minX: 0, minY: 0, width: 1, height: 1 };
@@ -41,6 +42,7 @@ export default function ElCaminoPage({ onExit }) {
   const [playerProgress, setPlayerProgress] = useState({ coins: 0, inventory: [], badges: [], objective: "Loading El Camino..." });
   const [openPanel, setOpenPanel] = useState(null);
   const [bagTab, setBagTab] = useState("items");
+  const [cantSpeak, setCantSpeak] = useState(false);
 
   useEffect(() => {
     if (!gameHostRef.current || gameRef.current) return;
@@ -61,7 +63,6 @@ export default function ElCaminoPage({ onExit }) {
       setQuestionPrompt(question);
       setQuestionFeedback(null);
       setAnswerText("");
-      if (question?.audioText) speakSpanish(question.audioText);
     };
     const handleProgress = (progress) => setPlayerProgress(progress);
     game.events.on("el-camino-status", handleStatus);
@@ -110,11 +111,18 @@ export default function ElCaminoPage({ onExit }) {
     gameRef.current?.events.emit("el-camino-return-home");
   }
 
+  function closeQuestionPrompt() {
+    questionPromptRef.current = null;
+    setQuestionPrompt(null);
+    setQuestionFeedback(null);
+    setAnswerText("");
+  }
+
   function speakSpanish(text) {
     if (!text || !window.speechSynthesis) return;
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "es-ES";
+    utterance.lang = "es-MX";
     utterance.rate = 0.86;
     window.speechSynthesis.speak(utterance);
   }
@@ -198,6 +206,50 @@ export default function ElCaminoPage({ onExit }) {
     );
   }
 
+  function renderRichText(text) {
+
+    const messages = []
+    
+    if (text.includes("<dialogue>")) {
+      text = text.replaceAll("<dialogue>","");
+      let lines = text.split("<break>");
+      for (const line of lines) {
+        let splits = line.split("<name>");
+        let m = {}
+        if (splits.length == 0) {
+          m = {
+            name:"Narrador",
+            text:"..."
+          }
+        } else if (splits.length == 1) {
+          m = {
+            name:"Narrador",
+            text:splits[0]
+          }
+        }
+        else {
+          m = {
+            name:splits[0],
+            text:splits[1]
+          }
+        }
+        messages.push(m);
+      }
+    } else {
+      return text;
+    }
+    
+    return (
+      <>
+            {messages.map((m) => (
+          <div className="el-camino-dialogue-line" key={m.name + m.text}>
+            <span className="el-camino-dialogue-name">{m.name}:</span><div className="el-camino-dialogue-text">{m.text}</div>
+          </div>
+            ))}  
+      </>
+    )
+  }
+
   function renderChapterMap() {
     const chapterMap = playerProgress.map;
     if (!chapterMap?.areas?.length) {
@@ -267,12 +319,13 @@ export default function ElCaminoPage({ onExit }) {
         Plaza
       </button>
 
-      <div className="el-camino-coin-counter" aria-label={`${playerProgress.coins || 0} coins`}>
-        <span className="el-camino-coin-icon">●</span>
-        <span>{playerProgress.coins || 0}</span>
-      </div>
-
       <div className="el-camino-top-actions">
+
+        <div className="el-camino-coin-counter" aria-label={`${playerProgress.coins || 0} coins`}>
+          <span className="el-camino-coin-icon">●</span>
+          <span>{playerProgress.coins || 0}</span>
+        </div>
+
         <button className="el-camino-panel-button" onClick={() => setOpenPanel(openPanel === "map" ? null : "map")}>
           Map
         </button>
@@ -331,17 +384,21 @@ export default function ElCaminoPage({ onExit }) {
 
       <div className="el-camino-game-host" ref={gameHostRef} />
 
-      {statusText && !questionPrompt && <div className="el-camino-status-box">{statusText}</div>}
+      {statusText && !questionPrompt && <div className="el-camino-status-box">{renderRichText(statusText)}</div>}
 
       {questionPrompt && (
         <div className="el-camino-choice-box">
-          <div className="el-camino-choice-prompt">{questionPrompt.prompt}</div>
-          {questionFeedback && <div className="el-camino-question-feedback">{questionFeedback}</div>}
+          <button className="el-camino-choice-box-close" onClick={closeQuestionPrompt} aria-label="Close prompt">×</button>
+          
+          {questionFeedback && <div className="el-camino-question-feedback">{renderRichText(questionFeedback)}</div>}
           {questionPrompt.audioText && (
-            <button className="el-camino-audio-button" onClick={() => speakSpanish(questionPrompt.audioText)}>
-              🔊 Play Spanish
-            </button>
+            // <button className="el-camino-audio-button" onClick={() => speakSpanish(questionPrompt.audioText)}>
+            //   🔊 Play Spanish
+            // </button>
+            <SpeechButton text={questionPrompt.audioText} inSpanish={true} big={true} />
           )}
+
+          <div className="el-camino-choice-prompt">{questionPrompt.prompt}</div>
 
           {["choice", "audioChoice"].includes(questionPrompt.kind) && questionPrompt.options.map((option) => (
               <button
@@ -353,7 +410,7 @@ export default function ElCaminoPage({ onExit }) {
               </button>
             ))}
 
-          {questionPrompt.kind === "text" && (
+          {(questionPrompt.kind === "text" || (questionPrompt.kind === "speech" && cantSpeak)) && (
             <form
               className="el-camino-answer-form"
               onKeyDown={(event) => event.stopPropagation()}
@@ -377,11 +434,12 @@ export default function ElCaminoPage({ onExit }) {
             </form>
           )}
 
-          {questionPrompt.kind === "speech" && (
+          {questionPrompt.kind === "speech" && !cantSpeak && (
             <div className="el-camino-speech-actions">
               <button className="el-camino-submit-button" onClick={startSpeechAnswer}>
                 {isListening ? "Stop listening" : "Speak answer"}
               </button>
+              <button className="el-camino-cant-speak-button" onClick={() => setCantSpeak(true)}>Can't speak</button>
               {answerText && <div className="el-camino-transcript">Heard: {answerText}</div>}
             </div>
           )}

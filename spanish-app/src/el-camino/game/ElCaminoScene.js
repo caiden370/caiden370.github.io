@@ -201,7 +201,7 @@ export default class ElCaminoScene extends Phaser.Scene {
     const safeSpawn = this.resolveSafeSpawn(playerX, playerY);
     this.createPlayer(safeSpawn.x, safeSpawn.y, facing);
 
-    this.cameras.main.setBounds(0, 0, area.width * TILE_SIZE, area.height * TILE_SIZE);
+    // this.cameras.main.setBounds(0, 0, area.width * TILE_SIZE, area.height * TILE_SIZE);
     this.cameras.main.startFollow(this.player, true, 0.14, 0.14);
     this.updateCameraForViewport();
 
@@ -1585,7 +1585,7 @@ export default class ElCaminoScene extends Phaser.Scene {
     actions.forEach((action) => {
       switch (action.type) {
         case "showDialogue":
-          messages.push(action.speaker ? `${action.speaker}: ${action.text}` : action.text);
+          messages.push(action.speaker ? `<dialogue>${action.speaker}<name> ${action.text}` : `<dialogue>${action.text}`);
           break;
         case "addItem":
           this.addItem(action.itemId, action.count);
@@ -1635,7 +1635,7 @@ export default class ElCaminoScene extends Phaser.Scene {
 
     this.saveCurrentPosition(this.playerTile.facing);
     if (messages.length > 0) {
-      this.emitStatus(messages.join(" "));
+      this.emitStatus(messages.join("<break>"));
     }
   }
 
@@ -1763,7 +1763,7 @@ export default class ElCaminoScene extends Phaser.Scene {
     }
 
     if (!isCorrect) {
-      boss.currentIndex = 0;
+      // boss.currentIndex = 0;
       this.emitStatus(boss.restartMessage || "No. El duelo empieza de nuevo.");
       this.emitBossQuestion();
       return;

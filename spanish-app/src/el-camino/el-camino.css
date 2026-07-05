@@ -68,29 +68,23 @@
 }
 
 .el-camino-coin-counter {
-  position: fixed;
-  top: max(12px, env(safe-area-inset-top));
-  left: 50%;
-  z-index: 1003;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  min-width: 68px;
-  height: 42px;
-  box-sizing: border-box;
-  padding: 0 12px;
+  min-width: 40px;
+  height: 35px;
   border: 3px solid #111827;
+  border-radius: 0;
   background: #fff7cf;
   box-shadow: 0 5px 0 #0b1020;
   color: #111827;
   font-size: 0.9rem;
   font-weight: 950;
-  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .el-camino-coin-icon {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border: 2px solid #8a5b00;
   border-radius: 999px;
   background: #ffd166;
@@ -322,7 +316,7 @@
   position: fixed;
   left: 12px;
   right: 12px;
-  bottom: calc(max(18px, env(safe-area-inset-bottom)) + 150px);
+  bottom: calc(max(18px, env(safe-area-inset-bottom)) + 0px);
   z-index: 1002;
   box-sizing: border-box;
   max-width: 560px;
@@ -344,8 +338,8 @@
   position: fixed;
   left: 12px;
   right: 12px;
-  bottom: calc(max(18px, env(safe-area-inset-bottom)) + 78px);
-  z-index: 1002;
+  bottom: calc(max(18px, env(safe-area-inset-bottom)) + 0px);
+  z-index: 10010;
   box-sizing: border-box;
   padding: 12px;
   border: 3px solid #111827;
@@ -355,14 +349,28 @@
   font-family: "Inter", sans-serif;
 }
 
+.el-camino-choice-box-close {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  border: 0;
+  background: transparent;
+  color: #111827;
+  font-size: 1.4rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
 .el-camino-choice-prompt {
   margin-bottom: 10px;
   font-size: 0.9rem;
   font-weight: 900;
   line-height: 1.2;
+  text-align: left;
 }
 
 .el-camino-question-feedback {
+  margin-top: 20px;
   margin-bottom: 9px;
   padding: 8px 10px;
   border: 2px solid #b45309;
@@ -371,6 +379,41 @@
   font-size: 0.82rem;
   font-weight: 900;
   line-height: 1.2;
+}
+
+.el-camino-dialogue-line {
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1.2;
+  align-items: left;
+  justify-content: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.el-camino-dialogue-name {
+  margin-right: 4px;
+  font-weight: 900;
+}
+
+.el-camino-dialogue-text {
+  font-weight: 600;
+  text-align: left;
+  align-items: left;
+}
+
+.el-camino-cant-speak-button {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 4px 12px;
+  border: 2px solid #111827;
+  border-radius: 0;
+  background: #ffffff;
+  color: #111827;
+  font-size: 0.76rem;
+  font-weight: 850;
 }
 
 .el-camino-choice-button {
@@ -445,12 +488,12 @@
 
 .el-camino-controls {
   position: fixed;
-  right: 12px;
-  bottom: max(18px, env(safe-area-inset-bottom));
+  right: 15px;
+  bottom: max(25px, env(safe-area-inset-bottom));
   z-index: 1002;
   display: grid;
-  grid-template-columns: repeat(3, 46px);
-  grid-template-rows: repeat(3, 46px);
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
   gap: 5px;
   padding: 0;
   border: 0;
@@ -485,21 +528,42 @@
 .camino-up {
   grid-column: 2;
   grid-row: 1;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;  
+  -ms-user-select: none;  
+  user-select: none;         
+  -webkit-tap-highlight-color: transparent;
 }
 
 .camino-left {
   grid-column: 1;
   grid-row: 2;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;  
+  -ms-user-select: none;  
+  user-select: none;         
+  -webkit-tap-highlight-color: transparent;
 }
 
 .camino-right {
   grid-column: 3;
   grid-row: 2;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;  
+  -ms-user-select: none;  
+  user-select: none;         
+  -webkit-tap-highlight-color: transparent;
 }
 
 .camino-down {
   grid-column: 2;
   grid-row: 3;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;  
+  -ms-user-select: none;  
+  user-select: none;         
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 360px) {
@@ -530,6 +594,7 @@
 
   .el-camino-status-box {
     font-size: 0.74rem;
+    bottom: max(10px, env(safe-area-inset-bottom));
   }
 }
 
@@ -549,7 +614,17 @@
 
   .el-camino-controls {
     bottom: max(10px, env(safe-area-inset-bottom));
-    grid-template-columns: repeat(3, 40px);
-    grid-template-rows: repeat(3, 40px);
+    grid-template-columns: repeat(3, 46px);
+    grid-template-rows: repeat(3, 46px);
+      /* Disables the pop-up context menu (copy, share, save image, etc.) */
+    -webkit-touch-callout: none;
+    
+    /* Disables text highlighting/selection when holding down */
+    -webkit-user-select: none;  /* Safari */
+    -ms-user-select: none;      /* IE 10 and older */
+    user-select: none;          /* Standard syntax for Chrome, Firefox, Opera */
+    
+    /* Optional: Disables the faint gray tap highlight box on mobile Safari */
+    -webkit-tap-highlight-color: transparent;
   }
 }
