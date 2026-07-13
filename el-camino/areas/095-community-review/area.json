@@ -5,14 +5,49 @@
   "chapterId": "community-leader",
   "region": "Chapter 9: Community Leader",
   "cefrLevel": "C1+",
-  "teaches": ["síntesis crítica", "coherencia de políticas", "comunicación bajo presión"],
-  "legend": { "w": "insideWall", "s": "stoneFloor", "p": "woodFloor", "c": "carpetBlue" },
-  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "teaches": [
+    "síntesis crítica",
+    "coherencia de políticas",
+    "comunicación bajo presión"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor",
+    "c": "carpetBlue"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
   "objects": [
-    { "type": "whiteboard", "x": 7, "y": 2, "w": 10, "h": 1 },
-    { "type": "meetingTable", "x": 8, "y": 8, "w": 8, "h": 1 },
-    { "type": "bulletinBoard", "x": 10, "y": 4, "w": 4, "h": 1 },
-    { "type": "microphone", "x": 12, "y": 6 }
+    {
+      "type": "whiteboard",
+      "x": 7,
+      "y": 2,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "meetingTable",
+      "x": 8,
+      "y": 8,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 10,
+      "y": 4,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "microphone",
+      "x": 12,
+      "y": 6
+    }
   ],
   "people": [
     {
@@ -22,11 +57,32 @@
       "interactions": [
         {
           "when": {
-            "completedMissions": ["community-hall-accord", "community-market-coalition", "community-debate-charter", "community-service-plan"],
-            "missingSteps": ["community-review-step1"]
+            "completedMissions": [
+              "community-hall-accord",
+              "community-market-coalition",
+              "community-debate-charter",
+              "community-service-plan"
+            ],
+            "missingSteps": [
+              "community-review-step1"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Tomás", "text": "Repaso uno: consistencia política. Si una promesa contradice el sistema de seguimiento, todo el capítulo colapsa." },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Imagina una política que baja el ruido pero desordena las entregas: si el seguimiento no detecta ese costo, la promesa se vuelve propaganda."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "La coherencia aparece cuando la misma lógica sirve para negociar, explicar y corregir."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Aplica esa idea a esta decisión."
+            },
             {
               "type": "askChoice",
               "prompt": "¿Qué opción mantiene coherencia entre negociación, debate y ejecución pública?",
@@ -35,18 +91,39 @@
                   "label": "Aplicar fases, publicar métricas y ajustar con participación vecinal documentada.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Tomás", "text": "Coherencia aprobada. Continúa con Lucía." },
-                    { "type": "completeStep", "stepId": "community-review-step1" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Tomás",
+                      "text": "Coherencia aprobada. Lucía revisará si también sabes comunicar sin simplificar de más."
+                    },
+                    {
+                      "type": "completeStep",
+                      "stepId": "community-review-step1"
+                    }
                   ]
                 },
-                { "label": "Prometer resultados rápidos sin reportes para evitar críticas.", "correct": false },
-                { "label": "Delegar todo en comercios sin rol municipal ni vecinal.", "correct": false }
+                {
+                  "label": "Prometer resultados rápidos sin reportes para evitar críticas.",
+                  "correct": false
+                },
+                {
+                  "label": "Delegar todo en comercios sin rol municipal ni vecinal.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Tomás", "text": "La coherencia institucional se demuestra, no se declara." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "La coherencia institucional se demuestra, no se declara."
+            }
+          ]
+        }
       ]
     },
     {
@@ -55,9 +132,30 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "completedSteps": ["community-review-step1"], "missingSteps": ["community-review-step2"] },
+          "when": {
+            "completedSteps": [
+              "community-review-step1"
+            ],
+            "missingSteps": [
+              "community-review-step2"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Lucía", "text": "Repaso dos: comprensión profunda de intención política." },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "En una reunión tensa, algunos líderes exageran sanciones y otros esconden costos para sonar amables."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Ninguna de las dos cosas construye cooperación; la buena comunicación explica beneficios, límites y revisión."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Escucha el mensaje completo y elige la inferencia más precisa."
+            },
             {
               "type": "askAudioChoice",
               "prompt": "Escucha y selecciona la inferencia más precisa.",
@@ -67,18 +165,39 @@
                   "label": "La estrategia combina rendición de cuentas con narrativa de beneficios y mejora continua.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Lucía", "text": "Lectura correcta. Ve al cierre con Marcos." },
-                    { "type": "completeStep", "stepId": "community-review-step2" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Lucía",
+                      "text": "Lectura correcta. Ve al cierre con Marcos."
+                    },
+                    {
+                      "type": "completeStep",
+                      "stepId": "community-review-step2"
+                    }
                   ]
                 },
-                { "label": "La prioridad es aplicar sanciones inmediatas sin diálogo.", "correct": false },
-                { "label": "El mensaje propone cancelar todo el programa comunitario.", "correct": false }
+                {
+                  "label": "La prioridad es aplicar sanciones inmediatas sin diálogo.",
+                  "correct": false
+                },
+                {
+                  "label": "El mensaje propone cancelar todo el programa comunitario.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "La forma de comunicar puede salvar o destruir una política útil." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "La forma de comunicar puede salvar o destruir una política útil."
+            }
+          ]
+        }
       ]
     },
     {
@@ -87,9 +206,31 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "completedSteps": ["community-review-step1", "community-review-step2"], "missingMissions": ["community-review-complete"] },
+          "when": {
+            "completedSteps": [
+              "community-review-step1",
+              "community-review-step2"
+            ],
+            "missingMissions": [
+              "community-review-complete"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Cierre final: formula una línea de liderazgo que incluya evidencia, negociación y seguimiento." },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Ahora no evalúo memoria, sino autoridad verbal."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Una frase de liderazgo maduro conecta datos, personas y corrección pública sin sonar defensiva."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Dila como si tuvieras delante a vecinos, comerciantes y funcionarios a la vez."
+            },
             {
               "type": "askSpeech",
               "prompt": "Di en español: Liderar es escuchar datos y personas, negociar acuerdos viables y evaluar resultados con transparencia.",
@@ -99,19 +240,41 @@
                 "Liderar es escuchar datos y personas, negociar acuerdos viables y evaluar resultados con transparencia"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Marcos", "text": "Repaso superado. Se abre la secuencia de jefes." },
-                { "type": "completeMission", "missionId": "community-review-complete" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Marcos",
+                  "text": "Repaso superado. Se abre la secuencia de jefes."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "community-review-complete"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Sin cierre oral sólido no hay autoridad para enfrentar crisis." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Sin cierre oral sólido no hay autoridad para enfrentar crisis."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 0, "y": 6, "targetArea": "community-leader", "targetX": 28, "targetY": 10, "facing": "left" },
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "community-leader",
+      "targetX": 28,
+      "targetY": 10,
+      "facing": "left"
+    },
     {
       "x": 23,
       "y": 6,
@@ -119,7 +282,11 @@
       "targetX": 1,
       "targetY": 6,
       "facing": "right",
-      "requires": { "completedMissions": ["community-review-complete"] },
+      "requires": {
+        "completedMissions": [
+          "community-review-complete"
+        ]
+      },
       "blockedMessage": "Completa primero el repaso comunitario."
     }
   ]

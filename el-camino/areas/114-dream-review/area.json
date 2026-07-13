@@ -5,14 +5,47 @@
   "chapterId": "dream-future",
   "region": "Chapter 10: Dream Future",
   "cefrLevel": "C1",
-  "teaches": ["síntesis avanzada", "inferencia", "plan integrado"],
-  "legend": { "w": "insideWall", "s": "stoneFloor", "c": "campusStone" },
-  "playerStart": { "x": 14, "y": 15, "facing": "up" },
+  "teaches": [
+    "síntesis avanzada",
+    "inferencia",
+    "plan integrado"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 15,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "whiteboard", "x": 6, "y": 2, "w": 16, "h": 1 },
-    { "type": "meetingTable", "x": 8, "y": 8, "w": 12, "h": 2 },
-    { "type": "routeGate", "x": 24, "y": 8 },
-    { "type": "questSparkle", "x": 14, "y": 11, "walkable": true }
+    {
+      "type": "whiteboard",
+      "x": 6,
+      "y": 2,
+      "w": 16,
+      "h": 1
+    },
+    {
+      "type": "meetingTable",
+      "x": 8,
+      "y": 8,
+      "w": 12,
+      "h": 2
+    },
+    {
+      "type": "routeGate",
+      "x": 24,
+      "y": 8
+    },
+    {
+      "type": "questSparkle",
+      "x": 14,
+      "y": 11,
+      "walkable": true
+    }
   ],
   "people": [
     {
@@ -23,10 +56,22 @@
         {
           "when": {
             "hasItems": [
-              { "itemId": "studyNotes", "count": 1 },
-              { "itemId": "routePass", "count": 1 },
-              { "itemId": "textbook", "count": 1 },
-              { "itemId": "coffeeCup", "count": 1 }
+              {
+                "itemId": "studyNotes",
+                "count": 1
+              },
+              {
+                "itemId": "routePass",
+                "count": 1
+              },
+              {
+                "itemId": "textbook",
+                "count": 1
+              },
+              {
+                "itemId": "coffeeCup",
+                "count": 1
+              }
             ],
             "completedMissions": [
               "dream-career-roadmap",
@@ -34,17 +79,53 @@
               "dream-innovation-prototype",
               "dream-mentor-consensus"
             ],
-            "missingMissions": ["dream-final-review"]
+            "missingMissions": [
+              "dream-final-review"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Lucia", "text": "Tu portafolio está completo. Ahora integra carrera, impacto global, innovación y liderazgo en un solo argumento." },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucia",
+              "text": "Lo que traes no son recuerdos; es un portafolio. Cada objeto demuestra una capacidad que el Consejo del Horizonte te exigirá defender."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucia",
+              "text": "Imagina un proyecto brillante en innovación, pero incapaz de coordinarse con socios globales o de sostener aprendizaje interno: se caería aunque tuviera buenas intenciones."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucia",
+              "text": "Ahora integra las cuatro piezas en una sola tesis y luego en una formulación precisa."
+            },
             {
               "type": "askChoice",
-              "prompt": "¿Qué tesis resume mejor un plan de futuro robusto?",
+              "prompt": "¿Qué tesis sostiene mejor una defensa final ante el Consejo?",
               "options": [
-                { "label": "Visión con métricas, colaboración intercultural, innovación ética y mentoría sostenida.", "correct": true, "actions": [{ "type": "completeStep", "stepId": "dream-review-step1" }] },
-                { "label": "Priorizar velocidad sobre aprendizaje y confianza.", "correct": false },
-                { "label": "Cambiar de estrategia cada día sin criterios.", "correct": false }
+                {
+                  "label": "Visión con métricas claras, colaboración intercultural, innovación ética y mentoría sostenida.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Lucia",
+                      "text": "Bien. Esa tesis conecta resultados, personas y responsabilidad a largo plazo."
+                    },
+                    {
+                      "type": "completeStep",
+                      "stepId": "dream-review-step1"
+                    }
+                  ]
+                },
+                {
+                  "label": "Priorizar velocidad sobre aprendizaje y confianza.",
+                  "correct": false
+                },
+                {
+                  "label": "Cambiar de estrategia cada día sin criterios.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             },
@@ -57,20 +138,59 @@
                 "Para hacer viable este sueño, debemos medir avances, comunicar con claridad y adaptarnos con responsabilidad"
               ],
               "actions": [
-                { "type": "removeItem", "itemId": "coffeeCup", "count": 1 },
-                { "type": "showDialogue", "speaker": "Lucia", "text": "Repaso final aprobado. Se abre la secuencia de jefes." },
-                { "type": "completeMission", "missionId": "dream-final-review" }
+                {
+                  "type": "removeItem",
+                  "itemId": "coffeeCup",
+                  "count": 1
+                },
+                {
+                  "type": "showDialogue",
+                  "speaker": "Lucia",
+                  "text": "Repaso final aprobado. La secuencia de jefes ya reconoce tu portafolio."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "dream-final-review"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Lucia", "text": "Completa los cuatro núcleos y trae los recursos clave para habilitar jefes." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucia",
+              "text": "Completa los cuatro núcleos y trae el portafolio completo para abrir la secuencia de jefes."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 14, "y": 16, "targetArea": "dream-future", "targetX": 14, "targetY": 6, "facing": "down" },
-    { "x": 25, "y": 8, "targetArea": "dream-boss-vision", "targetX": 1, "targetY": 8, "facing": "right", "requires": { "completedMissions": ["dream-final-review"] }, "blockedMessage": "Completa el repaso del capítulo antes del primer jefe." }
+    {
+      "x": 14,
+      "y": 16,
+      "targetArea": "dream-future",
+      "targetX": 14,
+      "targetY": 6,
+      "facing": "down"
+    },
+    {
+      "x": 25,
+      "y": 8,
+      "targetArea": "dream-boss-vision",
+      "targetX": 1,
+      "targetY": 8,
+      "facing": "right",
+      "requires": {
+        "completedMissions": [
+          "dream-final-review"
+        ]
+      },
+      "blockedMessage": "Completa el repaso del capítulo antes del primer jefe."
+    }
   ]
 }

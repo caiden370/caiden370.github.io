@@ -71,16 +71,16 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Buen trabajo. Llegaste al repaso real del turno."
+              "text": "Este repaso no mide memoria suelta. Mide si entendiste la cadena completa de tu primer turno."
             },
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Resume la cadena de mercado antes de pasar al siguiente evaluador."
+              "text": "En el mercado no bastaba recoger cosas; había que pasar por proveedor, puestos y verificación final."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál orden refleja la cadena correcta del mercado?",
+              "prompt": "¿Cuál orden refleja mejor la cadena correcta del mercado?",
               "options": [
                 {
                   "label": "Pedido con Carlos, leche con Emma, pan con Diego, calculadora con Lucía y verificación final.",
@@ -144,15 +144,19 @@
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Debes mencionar casos revisados y seguimiento del mismo día."
+              "text": "Un buen cierre menciona casos revisados y seguimiento del mismo día, no promesas vacías."
             },
             {
               "type": "askText",
-              "prompt": "Escribe en español: I reviewed both client cases and I will follow up today.",
+              "prompt": "Escribe en español: I reviewed both client cases and confirmed same-day follow-up.",
               "placeholder": "Respuesta en español",
               "correctAnswers": [
-                "Revisé ambos casos de clientes y haré seguimiento hoy",
-                "Revise ambos casos de clientes y hare seguimiento hoy"
+                "Revisé ambos casos de clientes y confirmé seguimiento hoy",
+                "Revise ambos casos de clientes y confirme seguimiento hoy",
+                "Revisé ambos casos de clientes y confirmé seguimiento el mismo día",
+                "Revise ambos casos de clientes y confirme seguimiento el mismo dia",
+                "Revisé ambos casos de clientes y confirmé seguimiento hoy mismo",
+                "Revise ambos casos de clientes y confirme seguimiento hoy mismo"
               ],
               "actions": [
                 {
@@ -199,26 +203,26 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Último filtro antes de los jefes: prioriza en voz alta."
+              "text": "Último filtro antes de los jefes: prioriza como si el turno acabara de complicarse."
             },
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Quiero una frase que incluya clientes, equipo y seguimiento."
+              "text": "Quiero oír cliente primero, luego cobertura del equipo y al final seguimiento."
             },
             {
               "type": "askSpeech",
-              "prompt": "Di en español: Primero atiendo al cliente, después coordino al equipo y finalmente confirmo seguimiento.",
+              "prompt": "Di en español: Primero atiendo al cliente, luego coordino cobertura y al final confirmo seguimiento.",
               "placeholder": "Respuesta hablada",
               "correctAnswers": [
-                "Primero atiendo al cliente después coordino al equipo y finalmente confirmo seguimiento",
-                "Primero atiendo al cliente, después coordino al equipo y finalmente confirmo seguimiento"
+                "Primero atiendo al cliente luego coordino cobertura y al final confirmo seguimiento",
+                "Primero atiendo al cliente, luego coordino cobertura y al final confirmo seguimiento"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Javier",
-                  "text": "Repaso completado. Ya puedes enfrentar la secuencia de jefes."
+                  "text": "Repaso completado. Ya puedes enfrentar entrevista, cliente estratégico y consejo final."
                 },
                 {
                   "type": "completeMission",
@@ -234,7 +238,7 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Habla con orden: cliente, equipo y seguimiento."
+              "text": "Los jefes esperan orden real: cliente, cobertura y seguimiento."
             }
           ]
         }

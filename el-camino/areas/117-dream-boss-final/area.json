@@ -5,14 +5,47 @@
   "chapterId": "dream-future",
   "region": "Chapter 10: Dream Future",
   "cefrLevel": "C1+",
-  "teaches": ["liderazgo final", "comunicación avanzada", "síntesis de capítulo"],
-  "legend": { "w": "insideWall", "c": "campusStone" },
-  "playerStart": { "x": 1, "y": 8, "facing": "right" },
+  "teaches": [
+    "liderazgo final",
+    "comunicación avanzada",
+    "síntesis de capítulo"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "campusStone"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 8,
+    "facing": "right"
+  },
   "objects": [
-    { "type": "skyline", "x": 4, "y": 2, "w": 20, "h": 2 },
-    { "type": "trophyCase", "x": 22, "y": 5, "w": 2, "h": 2 },
-    { "type": "microphone", "x": 13, "y": 4 },
-    { "type": "dreamBoard", "x": 10, "y": 10, "w": 6, "h": 1 }
+    {
+      "type": "skyline",
+      "x": 4,
+      "y": 2,
+      "w": 20,
+      "h": 2
+    },
+    {
+      "type": "trophyCase",
+      "x": 22,
+      "y": 5,
+      "w": 2,
+      "h": 2
+    },
+    {
+      "type": "microphone",
+      "x": 13,
+      "y": 4
+    },
+    {
+      "type": "dreamBoard",
+      "x": 10,
+      "y": 10,
+      "w": 6,
+      "h": 1
+    }
   ],
   "people": [
     {
@@ -22,9 +55,22 @@
       "boss": true,
       "interactions": [
         {
-          "when": { "missingMissions": ["dream-boss-final"] },
+          "when": {
+            "missingMissions": [
+              "dream-boss-final"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Rectora del Horizonte", "text": "Duelo final. Una respuesta incorrecta reinicia todo el examen." },
+            {
+              "type": "showDialogue",
+              "speaker": "Rectora del Horizonte",
+              "text": "Duelo final. Aquí comparecen las decisiones de todo tu camino: visión, ejecución, empatía y responsabilidad."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Rectora del Horizonte",
+              "text": "No ganarás con frases grandiosas. Necesitas mostrar que puedes convertir un sueño personal en una práctica colectiva y verificable."
+            },
             {
               "type": "askBossQuiz",
               "bossId": "dream-boss-final",
@@ -35,9 +81,18 @@
                   "type": "askChoice",
                   "prompt": "Translate: Solo cuando una visión se convierte en hábitos colectivos puede sostenerse frente a la incertidumbre.",
                   "options": [
-                    { "label": "Only when a vision becomes collective habits can it endure uncertainty.", "correct": true },
-                    { "label": "A vision survives uncertainty by remaining private.", "correct": false },
-                    { "label": "Uncertainty disappears if goals are ambitious.", "correct": false }
+                    {
+                      "label": "Only when a vision becomes collective habits can it endure uncertainty.",
+                      "correct": true
+                    },
+                    {
+                      "label": "A vision survives uncertainty by remaining private.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Uncertainty disappears if goals are ambitious.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
@@ -53,9 +108,18 @@
                   "type": "askChoice",
                   "prompt": "Historia larga: El equipo expandió su piloto a dos países, detectó brechas de acceso, rediseñó procesos y formó mentores locales. Seis meses después aumentó adopción sin perder calidad. ¿Qué explica el éxito?",
                   "options": [
-                    { "label": "Aprendizaje iterativo, adaptación contextual y liderazgo distribuido.", "correct": true },
-                    { "label": "Suerte por entrar en mercados pequeños.", "correct": false },
-                    { "label": "Reducción de estándares para crecer más rápido.", "correct": false }
+                    {
+                      "label": "Aprendizaje iterativo, adaptación contextual y liderazgo distribuido.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Suerte por entrar en mercados pequeños.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Reducción de estándares para crecer más rápido.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
@@ -63,27 +127,72 @@
                   "prompt": "Escucha la declaración final.",
                   "audioText": "Nuestro objetivo no era crecer por crecer, sino crear valor verificable para comunidades diversas, con transparencia y mejora continua.",
                   "options": [
-                    { "label": "They prioritized verifiable value, transparency, and continuous improvement across diverse communities.", "correct": true },
-                    { "label": "They prioritized growth regardless of social impact.", "correct": false },
-                    { "label": "They delayed transparency until after expansion.", "correct": false }
+                    {
+                      "label": "They prioritized verifiable value, transparency, and continuous improvement across diverse communities.",
+                      "correct": true
+                    },
+                    {
+                      "label": "They prioritized growth regardless of social impact.",
+                      "correct": false
+                    },
+                    {
+                      "label": "They delayed transparency until after expansion.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
                   "type": "askChoice",
                   "prompt": "--¿Qué harás si una métrica clave cae justo antes del lanzamiento global? --____",
                   "options": [
-                    { "label": "Pausaré el lanzamiento, investigaré causas raíz y comunicaré un plan de recuperación verificable.", "correct": true },
-                    { "label": "Continuaré igual para no perder impulso mediático.", "correct": false },
-                    { "label": "Eliminaré esa métrica del reporte.", "correct": false }
+                    {
+                      "label": "Pausaré el lanzamiento, investigaré causas raíz y comunicaré un plan de recuperación verificable.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Continuaré igual para no perder impulso mediático.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Eliminaré esa métrica del reporte.",
+                      "correct": false
+                    }
+                  ]
+                },
+                {
+                  "type": "askChoice",
+                  "prompt": "A lo largo de El Camino aprendiste vocabulario, conversaciones, errores y correcciones. ¿Qué principio une mejor todo ese recorrido?",
+                  "options": [
+                    {
+                      "label": "Escuchar con atención, reformular con precisión y ajustar decisiones según evidencia y comunidad.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Memorizar respuestas fijas para repetirlas en cualquier contexto.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Hablar rápido para parecer seguro, aunque el mensaje sea confuso.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
                   "type": "askChoice",
                   "prompt": "¿Qué evidencia del capítulo demuestra integración completa de habilidades?",
                   "options": [
-                    { "label": "Completar laboratorios interdependientes, superar repaso y vencer tres jefes secuenciales.", "correct": true },
-                    { "label": "Responder una sola traducción en el hub.", "correct": false },
-                    { "label": "Visitar dos áreas sin cerrar misiones.", "correct": false }
+                    {
+                      "label": "Completar laboratorios interdependientes, superar repaso y vencer tres jefes secuenciales.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Responder una sola traducción en el hub.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Visitar dos áreas sin cerrar misiones.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
@@ -97,18 +206,44 @@
                 }
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Rectora del Horizonte", "text": "Has completado Dream Future. Recibe la insignia final del capítulo diez." },
-                { "type": "addItem", "itemId": "chapterTenBadge", "count": 1 },
-                { "type": "completeMission", "missionId": "dream-boss-final" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Rectora del Horizonte",
+                  "text": "Has completado Dream Future y cerrado el recorrido de El Camino. Recibe la insignia final del capítulo diez."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "chapterTenBadge",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "dream-boss-final"
+                }
               ]
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Rectora del Horizonte", "text": "La insignia del capítulo diez está en tu bolsa." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Rectora del Horizonte",
+              "text": "La insignia del capítulo diez está en tu bolsa."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 0, "y": 8, "targetArea": "dream-boss-strategy", "targetX": 26, "targetY": 8, "facing": "left" }
+    {
+      "x": 0,
+      "y": 8,
+      "targetArea": "dream-boss-strategy",
+      "targetX": 26,
+      "targetY": 8,
+      "facing": "left"
+    }
   ]
 }

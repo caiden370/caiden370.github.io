@@ -5,15 +5,54 @@
   "chapterId": "dream-future",
   "region": "Chapter 10: Dream Future",
   "cefrLevel": "C1",
-  "teaches": ["movilidad internacional", "registro formal", "interculturalidad"],
-  "legend": { "w": "insideWall", "c": "campusStone", "a": "asphalt" },
-  "playerStart": { "x": 14, "y": 15, "facing": "up" },
+  "teaches": [
+    "movilidad internacional",
+    "registro formal",
+    "interculturalidad"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "campusStone",
+    "a": "asphalt"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 15,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "passportDesk", "x": 5, "y": 3, "w": 4, "h": 1 },
-    { "type": "ticketKiosk", "x": 18, "y": 3 },
-    { "type": "queueRope", "x": 12, "y": 5, "w": 5, "h": 1 },
-    { "type": "airportGate", "x": 21, "y": 8, "w": 3, "h": 2 },
-    { "type": "itemSparkle", "x": 9, "y": 8, "walkable": true }
+    {
+      "type": "passportDesk",
+      "x": 5,
+      "y": 3,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "ticketKiosk",
+      "x": 18,
+      "y": 3
+    },
+    {
+      "type": "queueRope",
+      "x": 12,
+      "y": 5,
+      "w": 5,
+      "h": 1
+    },
+    {
+      "type": "airportGate",
+      "x": 21,
+      "y": 8,
+      "w": 3,
+      "h": 2
+    },
+    {
+      "type": "itemSparkle",
+      "x": 9,
+      "y": 8,
+      "walkable": true
+    }
   ],
   "people": [
     {
@@ -22,23 +61,75 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "hasItems": [{ "itemId": "campusId", "count": 1 }], "missingMissions": ["dream-global-screening"] },
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "campusId",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "dream-global-screening"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Isabel", "text": "Tu credencial es válida. Antes de movilidad internacional debes interpretar escenarios ambiguos." },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "En movilidad global, una frase ambigua puede retrasar meses de trabajo."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Ayer un convenio casi se cayó porque nadie aclaró si la revisión legal era obligatoria o solo recomendada."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Aquí evaluamos si sabes bajar la tensión sin sacrificar precisión."
+            },
             {
               "type": "askAudioChoice",
-              "prompt": "Escucha el caso y elige la mejor respuesta diplomática.",
+              "prompt": "Escucha el caso y elige la respuesta diplomática más sólida.",
               "audioText": "El socio extranjero retrasa la firma porque detectó una cláusula imprecisa; propone reunir a los equipos legales mañana.",
               "options": [
-                { "label": "Aceptar la reunión, clarificar la cláusula y documentar acuerdos antes de firmar.", "correct": true, "actions": [{ "type": "completeMission", "missionId": "dream-global-screening" }] },
-                { "label": "Firmar de inmediato para no perder velocidad.", "correct": false },
-                { "label": "Cancelar el proyecto sin preguntar detalles.", "correct": false }
+                {
+                  "label": "Aceptar la reunión, clarificar la cláusula y documentar acuerdos antes de firmar.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Isabel",
+                      "text": "Correcto. La diplomacia útil aclara, documenta y mantiene la relación abierta."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "dream-global-screening"
+                    }
+                  ]
+                },
+                {
+                  "label": "Firmar de inmediato para no perder velocidad.",
+                  "correct": false
+                },
+                {
+                  "label": "Cancelar el proyecto sin preguntar detalles.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Isabel", "text": "Trae una credencial activa para iniciar el filtro global." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Trae una credencial activa; sin registro no hay filtro global."
+            }
+          ]
+        }
       ]
     },
     {
@@ -47,9 +138,25 @@
       "y": 7,
       "interactions": [
         {
-          "when": { "completedMissions": ["dream-global-screening"], "missingMissions": ["dream-global-network"] },
+          "when": {
+            "completedMissions": [
+              "dream-global-screening"
+            ],
+            "missingMissions": [
+              "dream-global-network"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Javier", "text": "Última prueba: formular una propuesta breve y negociable." },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Negociar con socios de distintos países exige proponer algo concreto sin sonar rígido."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "No basta con decir colaboremos; debes fijar tiempos, riesgos y cómo revisarán juntos el avance."
+            },
             {
               "type": "askSpeech",
               "prompt": "Di en español: Propongo un piloto de seis meses con metas trimestrales y revisión conjunta de riesgos.",
@@ -59,19 +166,45 @@
                 "Propongo un piloto de seis meses con metas trimestrales y revision conjunta de riesgos"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Javier", "text": "Negociación clara. Recibe el pase global." },
-                { "type": "addItem", "itemId": "routePass", "count": 1 },
-                { "type": "completeMission", "missionId": "dream-global-network" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Javier",
+                  "text": "Bien dicho. Esa propuesta abre espacio para confiar y corregir a tiempo."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "routePass",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "dream-global-network"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "La movilidad global exige precisión y escucha intercultural." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "La movilidad global exige precisión y escucha intercultural."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 14, "y": 16, "targetArea": "dream-future", "targetX": 23, "targetY": 9, "facing": "down" }
+    {
+      "x": 14,
+      "y": 16,
+      "targetArea": "dream-future",
+      "targetX": 23,
+      "targetY": 9,
+      "facing": "down"
+    }
   ]
 }

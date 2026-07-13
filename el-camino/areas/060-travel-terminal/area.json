@@ -4,7 +4,7 @@
   "kind": "outdoor",
   "chapterId": "travel",
   "region": "Chapter 6: Travel Terminal",
-  "cefrLevel": "B1+",
+  "cefrLevel": "B2",
   "teaches": ["documentación", "facturación", "seguridad", "reserva", "orientación urbana"],
   "legend": { "g": "grass", "p": "dirtPath", "s": "asphalt" },
   "playerStart": { "x": 14, "y": 10, "facing": "up" },
@@ -15,7 +15,16 @@
       "y": 1,
       "w": 7,
       "h": 3,
-      "entrance": { "x": 5, "y": 5, "targetArea": "travel-checkin-hall", "targetX": 14, "targetY": 18, "facing": "up" }
+      "entrance": {
+        "x": 5,
+        "y": 5,
+        "targetArea": "travel-checkin-hall",
+        "targetX": 14,
+        "targetY": 18,
+        "facing": "up",
+        "requires": { "completedMissions": ["travel-orientation"] },
+        "blockedMessage": "Habla primero con Valeria para entender la misión del viaje."
+      }
     },
     {
       "type": "airportGate",
@@ -23,7 +32,16 @@
       "y": 1,
       "w": 7,
       "h": 3,
-      "entrance": { "x": 23, "y": 5, "targetArea": "travel-security-gate", "targetX": 14, "targetY": 18, "facing": "up" }
+      "entrance": {
+        "x": 23,
+        "y": 5,
+        "targetArea": "travel-security-gate",
+        "targetX": 14,
+        "targetY": 18,
+        "facing": "up",
+        "requires": { "completedMissions": ["travel-checkin-complete"] },
+        "blockedMessage": "Primero completa la facturación y conserva tus documentos."
+      }
     },
     {
       "type": "hotelDesk",
@@ -31,7 +49,16 @@
       "y": 16,
       "w": 7,
       "h": 3,
-      "entrance": { "x": 5, "y": 19, "targetArea": "travel-hotel-lobby", "targetX": 14, "targetY": 1, "facing": "down" }
+      "entrance": {
+        "x": 5,
+        "y": 19,
+        "targetArea": "travel-hotel-lobby",
+        "targetX": 14,
+        "targetY": 1,
+        "facing": "down",
+        "requires": { "completedMissions": ["travel-security-clearance"] },
+        "blockedMessage": "Cruza seguridad antes de continuar con la llegada al hotel."
+      }
     },
     {
       "type": "restaurant",
@@ -39,7 +66,16 @@
       "y": 16,
       "w": 7,
       "h": 3,
-      "entrance": { "x": 23, "y": 19, "targetArea": "travel-city-cafe", "targetX": 14, "targetY": 1, "facing": "down" }
+      "entrance": {
+        "x": 23,
+        "y": 19,
+        "targetArea": "travel-city-cafe",
+        "targetX": 14,
+        "targetY": 1,
+        "facing": "down",
+        "requires": { "completedMissions": ["travel-delivery-start"] },
+        "blockedMessage": "Primero recibe de Emma el encargo para el café."
+      }
     },
     { "type": "ticketKiosk", "x": 12, "y": 8 },
     { "type": "luggage", "x": 16, "y": 8 },
@@ -52,7 +88,7 @@
           "actions": [
             {
               "type": "showDialogue",
-              "text": "Facturación al oeste, seguridad al este, hotel al sur y cafetería al sureste."
+              "text": "Meta del viaje: facturación, seguridad, hotel, entrega en el café y repaso antes del encuentro internacional."
             }
           ]
         }
@@ -71,28 +107,33 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Bienvenida al terminal internacional. Aquí cada conversación afecta tu ruta real."
+              "text": "Hoy viajas al encuentro internacional de El Camino en otra ciudad. Para llegar a tiempo, cada trámite debe salir bien."
             },
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Primero consigue documentos en facturación y luego cruza seguridad con explicaciones claras."
+              "text": "Ayer una viajera fue directa al control sin pasar por facturación y perdió la conexión porque no podía justificar su itinerario."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Aquí el orden importa: documentos, seguridad, llegada al hotel y un encargo urbano antes del repaso final."
             },
             {
               "type": "askChoice",
-              "prompt": "Según Valeria, ¿qué va antes del control de seguridad?",
+              "prompt": "Si quieres evitar el mismo error que la otra viajera, ¿qué debes hacer primero?",
               "options": [
                 {
-                  "label": "Conseguir los documentos en facturación.",
+                  "label": "Entrar a facturación para registrar el viaje y reunir los documentos.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Valeria", "text": "Exacto. Empieza con esta identificación." },
+                    { "type": "showDialogue", "speaker": "Valeria", "text": "Bien. Lleva esta identificación temporal; Javier te pedirá un plan de viaje claro." },
                     { "type": "addItem", "itemId": "campusId", "count": 1 },
                     { "type": "completeMission", "missionId": "travel-orientation" }
                   ]
                 },
-                { "label": "Ir directo al hotel y pedir la llave.", "correct": false },
-                { "label": "Entrar al avión sin informar el destino.", "correct": false }
+                { "label": "Buscar la puerta de embarque y explicar después el destino.", "correct": false },
+                { "label": "Ir al hotel antes de confirmar los datos del vuelo.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
@@ -103,7 +144,7 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Orden recomendado: facturación, seguridad, hotel y repaso."
+              "text": "Tu objetivo es llegar al encuentro internacional con documentos, reserva y ruta ya resueltos."
             }
           ]
         }
@@ -123,28 +164,41 @@
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Tu cadena está casi lista: documentos, control, reserva y orientación urbana."
+              "text": "Ya resolviste el aeropuerto y la llegada a la ciudad. Ahora necesito comprobar que entiendes el hilo completo del viaje."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Un viajero competente no solo responde preguntas sueltas: anticipa documentos, confirma la reserva y usa referencias claras para orientarse."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué resumen refleja la cadena completa del terminal?",
+              "prompt": "¿Qué resumen demuestra que estás listo para pasar al centro de repaso?",
               "options": [
                 {
-                  "label": "Documentos correctos, control superado, reserva confirmada y rutas comprendidas.",
+                  "label": "Registré el viaje, superé el control, confirmé el hotel, entregué el encargo y entendí cómo volver por la ciudad.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Marcos", "text": "Perfecto. Se abre el centro de repaso." },
+                    { "type": "showDialogue", "speaker": "Marcos", "text": "Exacto. Lucía te espera en el centro de repaso para unir todo bajo presión." },
                     { "type": "completeMission", "missionId": "travel-terminal-brief" }
                   ]
                 },
-                { "label": "Café primero, luego improvisar todo lo demás.", "correct": false },
-                { "label": "Saltar seguridad porque ya tienes maleta.", "correct": false }
+                { "label": "Con la maleta basta; el resto puede improvisarse sobre la marcha.", "correct": false },
+                { "label": "Después del café ya no hace falta explicar ni verificar nada más.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Termina todas las cadenas y vuelve conmigo." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Completa seguridad, hotel, entrega y orientación urbana antes de volver conmigo."
+            }
+          ]
+        }
       ]
     }
   ],

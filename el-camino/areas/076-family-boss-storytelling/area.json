@@ -5,14 +5,42 @@
   "chapterId": "family",
   "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["narración", "secuencia", "matiz emocional"],
-  "legend": { "w": "insideWall", "c": "carpetBlue", "p": "woodFloor" },
-  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "teaches": [
+    "narración",
+    "secuencia",
+    "matiz emocional"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "carpetBlue",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
   "objects": [
-    { "type": "podium", "x": 9, "y": 3 },
-    { "type": "familyPhoto", "x": 5, "y": 3 },
-    { "type": "familyPhoto", "x": 14, "y": 3 },
-    { "type": "microphone", "x": 10, "y": 8 }
+    {
+      "type": "podium",
+      "x": 9,
+      "y": 3
+    },
+    {
+      "type": "familyPhoto",
+      "x": 5,
+      "y": 3
+    },
+    {
+      "type": "familyPhoto",
+      "x": 14,
+      "y": 3
+    },
+    {
+      "type": "microphone",
+      "x": 10,
+      "y": 8
+    }
   ],
   "people": [
     {
@@ -22,9 +50,27 @@
       "boss": true,
       "interactions": [
         {
-          "when": { "missingMissions": ["family-boss-storytelling"] },
+          "when": {
+            "missingMissions": [
+              "family-boss-storytelling"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Guardiana de Relatos", "text": "Primer duelo: historias familiares con detalles incómodos y emociones mezcladas." },
+            {
+              "type": "showDialogue",
+              "speaker": "Guardiana de Relatos",
+              "text": "Primer duelo: aquí no basta con recordar hechos; debes reconstruir intenciones, silencios y cambios de tono."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Guardiana de Relatos",
+              "text": "Piensa en relatos familiares donde una persona cuida, otra duda y otra por fin se atreve a hablar."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Guardiana de Relatos",
+              "text": "Si mezclas memoria, secuencia y escucha, la historia se sostiene. Si no, vuelve al inicio."
+            },
             {
               "type": "askBossQuiz",
               "bossId": "family-boss-storytelling",
@@ -35,24 +81,45 @@
                   "type": "askChoice",
                   "prompt": "Traduce: Cuando mi tío se quedó en silencio, entendí que no estaba enojado, sino avergonzado.",
                   "options": [
-                    { "label": "When my uncle went silent, I understood he was not angry but ashamed.", "correct": true },
-                    { "label": "When my uncle laughed loudly, I knew he was joking with everyone.", "correct": false },
-                    { "label": "When my uncle left early, I knew he wanted more dessert.", "correct": false }
+                    {
+                      "label": "When my uncle went silent, I understood he was not angry but ashamed.",
+                      "correct": true
+                    },
+                    {
+                      "label": "When my uncle laughed loudly, I knew he was joking with everyone.",
+                      "correct": false
+                    },
+                    {
+                      "label": "When my uncle left early, I knew he wanted more dessert.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
                   "type": "askText",
                   "prompt": "Write in Spanish: She apologized without excuses and asked how to repair the trust.",
                   "placeholder": "Respuesta en español",
-                  "correctAnswers": ["Ella pidió perdón sin excusas y preguntó cómo reparar la confianza", "Ella pidio perdon sin excusas y pregunto como reparar la confianza"]
+                  "correctAnswers": [
+                    "Ella pidió perdón sin excusas y preguntó cómo reparar la confianza",
+                    "Ella pidio perdon sin excusas y pregunto como reparar la confianza"
+                  ]
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "Historia: 'Primero discutieron, luego respiraron, después cada uno contó su versión y finalmente acordaron turnarse.' ¿Qué permitió el acuerdo?",
+                  "prompt": "Historia: Diego guardó la carta en el bolsillo, pidió un minuto para respirar, dejó hablar a Ana sin interrumpir y solo entonces contó su versión. ¿Qué hizo posible ese cambio?",
                   "options": [
-                    { "label": "Escuchar versiones completas antes de decidir.", "correct": true },
-                    { "label": "Hablar más fuerte para imponer una opinión.", "correct": false },
-                    { "label": "Cambiar de tema y evitar el conflicto.", "correct": false }
+                    {
+                      "label": "La invitación empática y la pausa le permitieron bajar la defensa y narrar completo.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Que decidió hablar más rápido para terminar antes.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Que quiso evitar todo recuerdo del conflicto.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
@@ -60,43 +127,92 @@
                   "prompt": "Escucha y elige la inferencia más precisa.",
                   "audioText": "Mi hermana dijo que estaba cansada, pero siguió preparando la mesa para que nadie llegara a una casa fría.",
                   "options": [
-                    { "label": "Estaba agotada, pero quiso cuidar el ambiente para los demás.", "correct": true },
-                    { "label": "No quería participar y abandonó la reunión.", "correct": false },
-                    { "label": "Olvidó por completo que había visita.", "correct": false }
+                    {
+                      "label": "Estaba agotada, pero quiso cuidar el ambiente para los demás.",
+                      "correct": true
+                    },
+                    {
+                      "label": "No quería participar y abandonó la reunión.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Olvidó por completo que había visita.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
                   "type": "askChoice",
                   "prompt": "--No escuchaste mi parte. --Tienes razón, hablé encima. --____",
                   "options": [
-                    { "label": "¿Te parece si vuelves a empezar y yo no interrumpo?", "correct": true },
-                    { "label": "Entonces mejor terminemos todo aquí.", "correct": false },
-                    { "label": "La historia no importa si la cena está lista.", "correct": false }
+                    {
+                      "label": "¿Te parece si vuelves a empezar y yo no interrumpo?",
+                      "correct": true
+                    },
+                    {
+                      "label": "Entonces mejor terminemos todo aquí.",
+                      "correct": false
+                    },
+                    {
+                      "label": "La historia no importa si la cena está lista.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Dónde se practicó inferencia emocional en este capítulo?",
+                  "prompt": "Después de interrumpir un relato familiar, ¿qué respuesta mantiene la historia viva sin borrar a la otra persona?",
                   "options": [
-                    { "label": "En la Casa Azul, analizando tono y contenido.", "correct": true },
-                    { "label": "Solo en el cartel del barrio.", "correct": false },
-                    { "label": "Únicamente en la salida del jefe final.", "correct": false }
+                    {
+                      "label": "Retoma desde donde te corté; voy a escucharte y anotar tu turno.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Resume tú en una frase y seguimos con otra cosa.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Déjalo así; lo importante es no volver a tocar el tema.",
+                      "correct": false
+                    }
                   ]
                 }
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Guardiana de Relatos", "text": "Superaste el primer duelo." },
-                { "type": "completeMission", "missionId": "family-boss-storytelling" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Guardiana de Relatos",
+                  "text": "Tus relatos mantuvieron memoria, orden y matiz."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "family-boss-storytelling"
+                }
               ]
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Guardiana de Relatos", "text": "Continúa al duelo de consejos." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Guardiana de Relatos",
+              "text": "Continúa al duelo de consejos."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 0, "y": 6, "targetArea": "family-review", "targetX": 18, "targetY": 6, "facing": "left" },
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "family-review",
+      "targetX": 18,
+      "targetY": 6,
+      "facing": "left"
+    },
     {
       "x": 19,
       "y": 6,
@@ -104,7 +220,11 @@
       "targetX": 1,
       "targetY": 6,
       "facing": "right",
-      "requires": { "completedMissions": ["family-boss-storytelling"] },
+      "requires": {
+        "completedMissions": [
+          "family-boss-storytelling"
+        ]
+      },
       "blockedMessage": "Derrota primero al Jefe de Relatos."
     }
   ]

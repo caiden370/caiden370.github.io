@@ -61,7 +61,12 @@
             {
               "type": "showDialogue",
               "speaker": "Capitana de Negociación",
-              "text": "Segundo duelo: debes negociar sin prometer imposibles. Cada error reinicia la ronda."
+              "text": "Negociar bien no es sonreír y concederlo todo. Es marcar límites reales, proponer alternativas y dejar seguimiento."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Capitana de Negociación",
+              "text": "Si prometes una fecha imposible, ganas unos minutos y pierdes todo el caso."
             },
             {
               "type": "askBossQuiz",
@@ -98,7 +103,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "Historia: El cliente está molesto, la pieza no llega y hay dos autos en espera. ¿Qué estrategia negocia mejor?",
+                  "prompt": "Historia: el cliente está molesto, la pieza no llega y hay dos autos en espera; además, el seguro solo autorizó una solución temporal. ¿Qué estrategia negocia mejor?",
                   "options": [
                     {
                       "label": "Explicar límites reales, ofrecer alternativa concreta y confirmar actualización escrita.",
@@ -153,7 +158,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Dónde practicó más este capítulo la negociación con límites reales?",
+                  "prompt": "¿En qué partes del capítulo convertiste presión del cliente en un plan concreto y verificable?",
                   "options": [
                     {
                       "label": "En seguros, taller y repaso auditivo.",
@@ -183,7 +188,7 @@
                 {
                   "type": "showDialogue",
                   "speaker": "Capitana de Negociación",
-                  "text": "Negociaste con firmeza y realismo."
+                  "text": "Negociaste con firmeza, límites claros y seguimiento real."
                 },
                 {
                   "type": "completeMission",
@@ -198,7 +203,7 @@
             {
               "type": "showDialogue",
               "speaker": "Capitana de Negociación",
-              "text": "Te espera el jefe final de responsabilidades."
+              "text": "Ya conoces el precio de prometer de más. El tribunal final te espera."
             }
           ]
         }

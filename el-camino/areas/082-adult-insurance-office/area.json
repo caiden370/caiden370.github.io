@@ -13,6 +13,7 @@
   ],
   "legend": {
     "w": "insideWall",
+    "p": "stoneFloor",
     "s": "stoneFloor",
     "c": "campusStone"
   },
@@ -86,19 +87,24 @@
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Recepción de pólizas: sin expediente abierto, nadie evalúa tu riesgo."
+              "text": "Abrir expediente no significa regalar cobertura. Primero registro el caso para que cada dato pueda revisarse después."
             },
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Necesito número de licencia, forma de contacto y propósito del seguro en lenguaje preciso."
+              "text": "Piensa en un seguro del hogar: antes de hablar de precio, recepción fija contacto, motivo y próxima revisión."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Aquí haremos lo mismo con tu caso del auto."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué paso corresponde a recepción antes de evaluar riesgos?",
+              "prompt": "Antes de discutir riesgos o descuentos, ¿qué corresponde hacer en recepción para un trámite responsable?",
               "options": [
                 {
-                  "label": "Abrir expediente y asignar cita de revisión.",
+                  "label": "Abrir el expediente y asignar una cita de revisión.",
                   "correct": true,
                   "actions": [
                     {
@@ -109,7 +115,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Elena",
-                      "text": "Perfecto. Tu cita quedó registrada."
+                      "text": "Perfecto. Sin expediente abierto, nadie podría defender tu caso con seriedad."
                     },
                     {
                       "type": "completeMission",
@@ -118,7 +124,7 @@
                   ]
                 },
                 {
-                  "label": "Prometer cobertura total sin documentos.",
+                  "label": "Prometer cobertura total sin registrar el caso.",
                   "correct": false
                 },
                 {
@@ -159,11 +165,16 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Análisis de riesgo: no acepto respuestas vagas; necesito relación entre uso del auto, historial y cobertura deseada."
+              "text": "Dos conductores pueden pedir la misma póliza y necesitar planes muy distintos: no pesa igual un uso ocasional que trayectos diarios largos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Negociar bien no es pedir 'lo máximo', sino relacionar uso, riesgo y seguimiento verificable."
             },
             {
               "type": "askChoice",
-              "prompt": "Si usas el auto para trabajo diario y trayectos largos, ¿qué enfoque es más responsable?",
+              "prompt": "Si usas el auto para trabajo diario y trayectos largos, ¿qué enfoque de cobertura es el más responsable?",
               "options": [
                 {
                   "label": "Solicitar cobertura amplia con revisión periódica y deducible claro.",
@@ -177,7 +188,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Javier",
-                      "text": "Correcto. Este cálculo respalda tu propuesta."
+                      "text": "Correcto. Esa propuesta equilibra protección, costo y seguimiento."
                     },
                     {
                       "type": "completeMission",
@@ -228,7 +239,12 @@
             {
               "type": "showDialogue",
               "speaker": "Lucía",
-              "text": "Supervisión final de póliza: resume tu caso en tono profesional y sin omitir compromisos."
+              "text": "Una supervisora no quiere discursos largos; quiere un resumen que deje claros cobertura, frecuencia de revisión y protocolo de respuesta."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Escríbelo como si fueras a firmarlo delante de un cliente exigente que luego lo llevará al taller."
             },
             {
               "type": "askText",
@@ -236,13 +252,14 @@
               "placeholder": "Respuesta en español",
               "correctAnswers": [
                 "Confirmo cobertura amplia revisión trimestral y contacto inmediato en caso de siniestro",
-                "Confirmo cobertura amplia, revisión trimestral y contacto inmediato en caso de siniestro"
+                "Confirmo cobertura amplia, revisión trimestral y contacto inmediato en caso de siniestro",
+                "Confirmo cobertura amplia, la revisión trimestral y el contacto inmediato en caso de siniestro"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Lucía",
-                  "text": "Excelente síntesis. Póliza activada."
+                  "text": "Excelente síntesis. Ahora el taller leerá una póliza seria, no una promesa vaga."
                 },
                 {
                   "type": "addItem",

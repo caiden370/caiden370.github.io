@@ -23,41 +23,40 @@
         {
           "when": { "missingMissions": ["hs-boss-final"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Directora del Club", "text": "Duelo final del instituto. Cinco respuestas seguidas." },
+            { "type": "showDialogue", "speaker": "Directora del Club", "text": "Has llegado al final de tu primer día en el instituto. Aquí mezclas horario, ayuda a compañeros, club y laboratorio." },
+            { "type": "showDialogue", "speaker": "Directora del Club", "text": "Seis respuestas seguidas. Si fallas, demuestras otra vez que puedes recorrer todo El Camino escolar." },
             {
               "type": "askBossQuiz",
               "bossId": "hs-boss-final",
               "title": "Duelo de la Insignia",
               "restartMessage": "No. El club empieza de nuevo.",
               "questions": [
-                { "type": "askChoice", "prompt": "Translate: Antes de mezclar, lee las instrucciones; después, explica tu opinión con una razón.", "options": [
-                  { "label": "Before mixing, read the instructions; afterward, explain your opinion with a reason.", "correct": true },
-                  { "label": "After lunch, close the gym and buy a notebook.", "correct": false },
-                  { "label": "Before class, ask for bread because you like music.", "correct": false }
+                { "type": "askChoice", "prompt": "Translate: Antes del club, tuve que comprar almuerzo para una compañera y después llevé el formulario al laboratorio.", "options": [
+                  { "label": "Before club, I had to buy lunch for a classmate and afterward I took the form to the lab.", "correct": true },
+                  { "label": "After club, I preferred to sleep in the cafeteria with a form.", "correct": false },
+                  { "label": "Before lunch, my classmate bought the gym and closed the lab.", "correct": false }
                 ] },
-                { "type": "askText", "prompt": "Write in Spanish: I cannot go now because I have to finish the experiment.", "placeholder": "Respuesta en español", "correctAnswers": ["No puedo ir ahora porque tengo que terminar el experimento", "No puedo ir ahora porque debo terminar el experimento"] },
-                { "type": "askChoice", "prompt": "Historia: En el club, Javier pide una razón. Elena pide orden en el laboratorio. Valeria pide una preferencia. ¿Qué palabra conecta una razón?", "options": [
-                  { "label": "porque", "correct": true },
-                  { "label": "después", "correct": false },
-                  { "label": "almuerzo", "correct": false }
+                { "type": "askText", "prompt": "Write in Spanish: I cannot stay in the cafeteria because I have to finish my science project.", "placeholder": "Respuesta en español", "correctAnswers": ["No puedo quedarme en la cafetería porque tengo que terminar mi proyecto de ciencias", "No puedo quedarme en la cafetería porque debo terminar mi proyecto de ciencias"] },
+                { "type": "askChoice", "prompt": "Historia: El estudiante revisa el horario en la entrada, consigue un pase en el pasillo, compra almuerzo para Valeria y finalmente vuelve al laboratorio para explicar por qué le interesa el club. Después, Elena le entrega un kit de ciencias. ¿Qué hace justo antes de recibir el kit?", "options": [
+                  { "label": "Explica por qué le interesa el club.", "correct": true },
+                  { "label": "Compra otro almuerzo.", "correct": false },
+                  { "label": "Empieza el duelo final.", "correct": false }
                 ] },
-                { "type": "askAudioChoice", "prompt": "Escucha. ¿Qué secuencia se menciona?", "audioText": "Primero leo, después mezclo y finalmente escribo una conclusión.", "options": [
-                  { "label": "Read, mix, then write a conclusion.", "correct": true },
-                  { "label": "Eat, train, then buy a pass.", "correct": false },
-                  { "label": "Listen, draw, then sleep.", "correct": false }
+                { "type": "askAudioChoice", "prompt": "Escucha. ¿Qué secuencia oyes?", "audioText": "Primero termino educación física, luego entrego el formulario y después vuelvo a la cafetería para ayudar a mi amiga.", "options": [
+                  { "label": "Finish PE, turn in the form, then return to the cafeteria to help a friend.", "correct": true },
+                  { "label": "Finish lunch, skip the form, then go home to sleep.", "correct": false },
+                  { "label": "Start in the lab, buy a trophy, then visit the hallway.", "correct": false }
                 ] },
-                { "type": "askChoice", "prompt": "--¿Por qué quieres entrar al club? --____", "options": [
-                  { "label": "Porque me interesa ciencias y quiero investigar con otros estudiantes.", "correct": true },
-                  { "label": "Después de la puerta, necesito un sándwich.", "correct": false },
-                  { "label": "Tengo dos panes, pero no tengo laboratorio.", "correct": false }
+                { "type": "askChoice", "prompt": "Conversación: --¿Por qué quieres entrar al club de ciencias si ya tuviste un día tan largo? --____", "options": [
+                  { "label": "Porque me interesan los experimentos y quiero aprender con otros estudiantes.", "correct": true },
+                  { "label": "Porque el banco es verde y la cancha canta.", "correct": false },
+                  { "label": "Porque prefiero comprar tres puertas en la cafetería.", "correct": false }
                 ] },
-                { "type": "askChoice", "prompt": "¿Qué parte del capítulo combina formulario, razón y experimento?",
-                  "options": [
-                    { "label": "Club y Laboratorio.", "correct": true },
-                    { "label": "Gimnasio.", "correct": false },
-                    { "label": "Cafetería.", "correct": false }
-                  ]
-                }
+                { "type": "askChoice", "prompt": "La directora pide una respuesta completa sobre tu día. ¿Cuál muestra orden, obligación y razón?", "options": [
+                  { "label": "Primero reviso mi horario, después ayudo a mi compañera y al final voy al club porque quiero aprender.", "correct": true },
+                  { "label": "Prefiero la pared, tengo hambre y después azul.", "correct": false },
+                  { "label": "Voy al duelo final antes del horario porque no necesito practicar.", "correct": false }
+                ] }
               ],
               "actions": [
                 { "type": "showDialogue", "speaker": "Directora del Club", "text": "Insignia del capítulo dos ganada." },
@@ -67,7 +66,7 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Directora del Club", "text": "La insignia del instituto está en tu bolsa." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Directora del Club", "text": "La insignia del instituto ya está en tu bolsa." }] }
       ]
     }
   ],

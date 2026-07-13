@@ -5,15 +5,55 @@
   "chapterId": "family",
   "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["expresar sentimientos", "matices", "tono", "escucha activa", "pedir disculpas"],
-  "legend": { "w": "insideWall", "s": "campusStone", "p": "woodFloor" },
-  "playerStart": { "x": 10, "y": 1, "facing": "down" },
+  "teaches": [
+    "expresar sentimientos",
+    "matices",
+    "tono",
+    "escucha activa",
+    "pedir disculpas"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "campusStone",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 10,
+    "y": 1,
+    "facing": "down"
+  },
   "objects": [
-    { "type": "bookshelf", "x": 3, "y": 3, "w": 3, "h": 1 },
-    { "type": "table", "x": 8, "y": 3, "w": 3, "h": 1 },
-    { "type": "fridge", "x": 15, "y": 3 },
-    { "type": "familyPhoto", "x": 6, "y": 8 },
-    { "type": "whiteboard", "x": 12, "y": 8, "w": 4, "h": 1 }
+    {
+      "type": "bookshelf",
+      "x": 3,
+      "y": 3,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "table",
+      "x": 8,
+      "y": 3,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "fridge",
+      "x": 15,
+      "y": 3
+    },
+    {
+      "type": "familyPhoto",
+      "x": 6,
+      "y": 8
+    },
+    {
+      "type": "whiteboard",
+      "x": 12,
+      "y": 8,
+      "w": 4,
+      "h": 1
+    }
   ],
   "people": [
     {
@@ -22,32 +62,84 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "hasItems": [{ "itemId": "notebook", "count": 1 }], "missingMissions": ["family-azul-roles"] },
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "notebook",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "family-azul-roles"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Sofía", "text": "Este cuaderno nos ayuda a repartir turnos. Sin estructura, todos se pisan." },
-            { "type": "showDialogue", "speaker": "Sofía", "text": "Moderar no es mandar: es crear espacio para cada voz." },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "En una sobremesa difícil, moderar no es mandar; es notar quién aún no habló y quién necesita una respuesta."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "La última vez usé un cuaderno para repartir turnos y nadie tuvo que gritar para existir."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Si Diego te lo confió, conviértelo en orden compartido para esta reunión."
+            },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál es el objetivo del cuaderno en la conversación familiar?",
+              "prompt": "¿Para qué servirá el cuaderno en la ronda familiar?",
               "options": [
                 {
-                  "label": "Evitar interrupciones y garantizar participación.",
+                  "label": "Para repartir turnos y asegurar que todas las voces entren con orden.",
                   "correct": true,
                   "actions": [
-                    { "type": "removeItem", "itemId": "notebook", "count": 1 },
-                    { "type": "addItem", "itemId": "milk", "count": 1 },
-                    { "type": "showDialogue", "speaker": "Sofía", "text": "Exacto. Lleva esta leche a la casa roja." },
-                    { "type": "completeMission", "missionId": "family-azul-roles" }
+                    {
+                      "type": "removeItem",
+                      "itemId": "notebook",
+                      "count": 1
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "milk",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Sofía",
+                      "text": "Exacto. Lleva la leche a Elena en la Casa Roja; ella la usará para bajar la tensión de la cocina."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "family-azul-roles"
+                    }
                   ]
                 },
-                { "label": "Hablar más rápido y reducir preguntas.", "correct": false },
-                { "label": "Dejar que solo una persona explique todo.", "correct": false }
+                {
+                  "label": "Para decidir que solo una persona hable toda la noche.",
+                  "correct": false
+                },
+                {
+                  "label": "Para terminar más rápido sin preguntas ni pausas.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Sofía", "text": "Trae el cuaderno de Diego para organizar la ronda." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Diego guarda el cuaderno en la Casa Roja. Tráelo y organizamos la ronda."
+            }
+          ]
+        }
       ]
     },
     {
@@ -56,36 +148,88 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "completedMissions": ["family-azul-roles"], "missingMissions": ["family-azul-emotions"] },
+          "when": {
+            "completedMissions": [
+              "family-azul-roles"
+            ],
+            "missingMissions": [
+              "family-azul-emotions"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Javier", "text": "A veces alguien dice 'estoy bien', pero su voz pide ayuda." },
-            { "type": "showDialogue", "speaker": "Javier", "text": "Necesitamos inferir emoción real, no repetir palabras literales." },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "A veces alguien dice estoy bien solo para no explotar delante de todos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Yo escucho las pausas, la respiración y lo que la persona no se animó a pedir de frente."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Decide qué emoción manda de verdad."
+            },
             {
               "type": "askAudioChoice",
-              "prompt": "Escucha y elige la interpretación más precisa.",
+              "prompt": "Escucha el tono y elige la lectura más precisa.",
               "audioText": "Sí, claro, estoy bien... solo que me quedé callada porque nadie me dejó terminar mi historia.",
               "options": [
                 {
                   "label": "La persona se siente herida y quiere ser escuchada.",
                   "correct": true,
                   "actions": [
-                    { "type": "addItem", "itemId": "apple", "count": 1 },
-                    { "type": "showDialogue", "speaker": "Javier", "text": "Bien leído. Lleva esta manzana a la mesa común." },
-                    { "type": "completeMission", "missionId": "family-azul-emotions" }
+                    {
+                      "type": "addItem",
+                      "itemId": "apple",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Javier",
+                      "text": "Bien leído. Llévale esta manzana a Ana; cuando alguien se siente escuchado, la familia ya puede sentarse a la mesa."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "family-azul-emotions"
+                    }
                   ]
                 },
-                { "label": "La persona está feliz porque ya terminó.", "correct": false },
-                { "label": "La persona quiere cancelar toda la reunión.", "correct": false }
+                {
+                  "label": "La persona está feliz porque ya terminó de hablar.",
+                  "correct": false
+                },
+                {
+                  "label": "La persona quiere cancelar la reunión sin explicar nada.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "Analiza tono y contexto antes de responder." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Primero deja que Sofía ordene los turnos; luego afinamos emociones y tonos."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 10, "y": 11, "targetArea": "family-neighborhood", "targetX": 23, "targetY": 6, "facing": "down" }
+    {
+      "x": 10,
+      "y": 11,
+      "targetArea": "family-neighborhood",
+      "targetX": 23,
+      "targetY": 6,
+      "facing": "down"
+    }
   ]
 }

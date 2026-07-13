@@ -36,7 +36,13 @@
         "targetArea": "first-job-office",
         "targetX": 14,
         "targetY": 16,
-        "facing": "up"
+        "facing": "up",
+        "requires": {
+          "completedMissions": [
+            "firstjob-route-pass"
+          ]
+        },
+        "blockedMessage": "Habla con Marcos y consigue el pase del turno."
       }
     },
     {
@@ -51,7 +57,13 @@
         "targetArea": "first-job-market-street",
         "targetX": 15,
         "targetY": 17,
-        "facing": "up"
+        "facing": "up",
+        "requires": {
+          "completedMissions": [
+            "firstjob-route-pass"
+          ]
+        },
+        "blockedMessage": "Habla con Marcos y consigue el pase del turno."
       }
     },
     {
@@ -66,7 +78,13 @@
         "targetArea": "first-job-service-desk",
         "targetX": 14,
         "targetY": 1,
-        "facing": "down"
+        "facing": "down",
+        "requires": {
+          "completedMissions": [
+            "firstjob-route-pass"
+          ]
+        },
+        "blockedMessage": "Habla con Marcos y consigue el pase del turno."
       }
     },
     {
@@ -81,7 +99,13 @@
         "targetArea": "first-job-breakroom",
         "targetX": 12,
         "targetY": 1,
-        "facing": "down"
+        "facing": "down",
+        "requires": {
+          "completedMissions": [
+            "firstjob-route-pass"
+          ]
+        },
+        "blockedMessage": "Habla con Marcos y consigue el pase del turno."
       }
     },
     {
@@ -95,7 +119,7 @@
           "actions": [
             {
               "type": "showDialogue",
-              "text": "Ruta del turno: oficina, proveedores, recepción, sala de descanso y repaso final."
+              "text": "Objetivo del turno: completa oficina, mercado, recepción y descanso; luego sube al repaso y supera las tres jefaturas."
             }
           ]
         }
@@ -137,30 +161,30 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Bienvenido al distrito laboral. Hoy no estudias teoría: hoy trabajas con clientes reales."
+              "text": "Hoy empiezas tu primer trabajo en El Camino. No vienes solo a practicar palabras; vienes a sostener un turno completo."
             },
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Tu meta es coordinar cuatro estaciones: oficina, calle del mercado, recepción y sala de descanso."
+              "text": "La meta del día es dejar listo a un cliente nuevo para una reunión importante mientras ayudas al equipo a mantener la calma."
             },
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Escucha bien: recoge materiales, entrégalos, verifica instrucciones y vuelve para el repaso."
+              "text": "Para lograrlo, coordina cuatro estaciones: oficina, mercado, recepción y sala de descanso. Después vendrán el repaso y las tres jefaturas."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué debes completar antes del repaso final?",
+              "prompt": "Si una estación se retrasa, ¿qué mantiene vivo el turno?",
               "options": [
                 {
-                  "label": "Las cuatro estaciones del turno.",
+                  "label": "Comunicar el estado y seguir la cadena completa de tareas.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "showDialogue",
                       "speaker": "Valeria",
-                      "text": "Exacto. Toma tu etiqueta y empieza con enfoque."
+                      "text": "Exacto. Ponte la etiqueta, consigue tu pase con Marcos y empieza el turno."
                     },
                     {
                       "type": "addItem",
@@ -174,11 +198,11 @@
                   ]
                 },
                 {
-                  "label": "Solo hablar con un jefe y volver.",
+                  "label": "Saltar pasos y esperar que otro los resuelva.",
                   "correct": false
                 },
                 {
-                  "label": "Comprar café y terminar el capítulo.",
+                  "label": "Ir directo al repaso sin cerrar las estaciones.",
                   "correct": false
                 }
               ],
@@ -191,7 +215,7 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Cuando cierres las cuatro estaciones, sube al repaso del turno."
+              "text": "Cierra oficina, mercado, recepción y descanso; luego vuelve para el repaso y las tres jefaturas."
             }
           ]
         }
@@ -215,26 +239,28 @@
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Soy el guardia del distrito. La comunicación formal evita problemas."
+              "text": "En la entrada no decimos solo hola. Ayer registré a una repartidora que dijo: 'Buenos días, vengo a dejar una entrega para recepción'."
             },
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "En este trabajo, no dices solo hola. Dices quién eres y para qué vienes."
+              "text": "Presentarte y explicar tu motivo abre puertas y evita confusiones."
             },
             {
               "type": "askText",
-              "prompt": "Escribe en español: Good morning, I come for my first shift.",
+              "prompt": "Escribe en español: Good morning, I come for my first shift and I need the route pass.",
               "placeholder": "Respuesta en español",
               "correctAnswers": [
-                "Buenos días, vengo a mi primer turno",
-                "Buenos dias, vengo a mi primer turno"
+                "Buenos días, vengo a mi primer turno y necesito el pase de ruta",
+                "Buenos dias, vengo a mi primer turno y necesito el pase de ruta",
+                "Buenos días, vengo a mi primer turno y necesito el pase del turno",
+                "Buenos dias, vengo a mi primer turno y necesito el pase del turno"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Marcos",
-                  "text": "Muy bien. Lenguaje claro y profesional."
+                  "text": "Muy bien. Aquí tienes el pase: con esto puedes entrar a las cuatro estaciones del día."
                 },
                 {
                   "type": "addItem",
@@ -255,7 +281,7 @@
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Respira, habla claro y confirma cada tarea con la persona correcta."
+              "text": "Presentación clara primero; después entra con tu pase."
             }
           ]
         }
@@ -271,12 +297,12 @@
             {
               "type": "showDialogue",
               "speaker": "Tomás",
-              "text": "Pista rápida: en la oficina te pedirán un paquete con cuaderno, calculadora, manual y café."
+              "text": "En la oficina te pedirán un paquete armado entre varias áreas. No intentes cerrarlo de memoria."
             },
             {
               "type": "showDialogue",
               "speaker": "Tomás",
-              "text": "Si entregas sin verificar, te lo devuelven. Primero escuchar, luego actuar."
+              "text": "Piensa así: una parte se encuentra allí, otras salen de proveedores, recepción y descanso. No anuncies nada como completo hasta que cada responsable lo valide."
             }
           ]
         }

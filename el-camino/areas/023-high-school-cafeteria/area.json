@@ -24,15 +24,16 @@
         {
           "when": { "missingMissions": ["hs-buy-lunch"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Emma", "text": "Hoy el almuerzo cuesta dos monedas. No es caro; es bastante barato." },
-            { "type": "showDialogue", "speaker": "Emma", "text": "Si compras para un amigo, debes decir para mi amigo." },
+            { "type": "showDialogue", "speaker": "Emma", "text": "Entre clases mucha gente compra rápido para otra persona. Yo suelo oír: una bandeja para mi hermano y un jugo para mi compañera." },
+            { "type": "showDialogue", "speaker": "Emma", "text": "Si compras para alguien más, dilo con claridad y recuerda que hoy el almuerzo cuesta dos monedas." },
+            { "type": "showDialogue", "speaker": "Emma", "text": "Valeria me avisó que viene tarde del laboratorio, así que esta compra también es una ayuda para tu ruta." },
             {
               "type": "askText",
-              "prompt": "Ask to buy lunch for a friend in Spanish.",
+              "prompt": "Pide en español un almuerzo para una amiga.",
               "placeholder": "Respuesta en español",
-              "correctAnswers": ["Quiero comprar almuerzo para mi amigo", "Quiero comprar un almuerzo para mi amigo"],
+              "correctAnswers": ["Quiero comprar un almuerzo para mi amiga", "Quiero comprar almuerzo para mi amiga", "Quiero comprar un almuerzo para una amiga"],
               "actions": [
-                { "type": "showDialogue", "speaker": "Emma", "text": "Aquí está el boleto de cafetería." },
+                { "type": "showDialogue", "speaker": "Emma", "text": "Perfecto. Aquí tienes el boleto de cafetería para la entrega." },
                 { "type": "removeItem", "itemId": "coins", "count": 2 },
                 { "type": "addItem", "itemId": "cafeteriaTicket", "count": 1 },
                 { "type": "completeMission", "missionId": "hs-buy-lunch" }
@@ -41,7 +42,7 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "El almuerzo cuesta dos monedas." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "Con dos monedas y una petición clara puedes ayudar a cualquier compañero en la cafetería." }] }
       ]
     },
     {
@@ -52,25 +53,30 @@
         {
           "when": { "hasItems": [{ "itemId": "cafeteriaTicket", "count": 1 }], "missingMissions": ["hs-lunch-delivery"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Gracias. No tuve tiempo porque fui al laboratorio antes del almuerzo." },
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Ahora entiendo: primero clase, después almuerzo." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Gracias por venir. Salí del laboratorio tarde y después corrí aquí para no perder el almuerzo." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Cuando cuento mi mañana, el orden importa: primero clase, luego laboratorio y después almuerzo." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Si entiendes ese orden, también entiendes por qué necesité tu ayuda." },
             {
               "type": "askChoice",
-              "prompt": "Valeria went to the lab before lunch. What happened after class?",
+              "prompt": "Según Valeria, ¿qué ocurrió justo antes del almuerzo?",
               "options": [
-                { "label": "lunch", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Valeria", "text": "Exacto. Después, almuerzo." },
-                  { "type": "removeItem", "itemId": "cafeteriaTicket", "count": 1 },
-                  { "type": "completeMission", "missionId": "hs-lunch-delivery" }
-                ] },
-                { "label": "gym practice", "correct": false },
-                { "label": "sleep", "correct": false }
+                {
+                  "label": "El laboratorio.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Valeria", "text": "Exacto. Llegué aquí después del laboratorio." },
+                    { "type": "removeItem", "itemId": "cafeteriaTicket", "count": 1 },
+                    { "type": "completeMission", "missionId": "hs-lunch-delivery" }
+                  ]
+                },
+                { "label": "El gimnasio.", "correct": false },
+                { "label": "Dormir.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "¿Puedes comprar almuerzo para mí?" }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Si consigues un boleto con Emma, por fin podré almorzar." }] }
       ]
     }
   ],

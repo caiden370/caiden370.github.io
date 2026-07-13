@@ -25,13 +25,18 @@
             {
               "type": "showDialogue",
               "speaker": "Rectora del Campus",
-              "text": "Duelo final del viaje. Solo cuenta la precisión total."
+              "text": "Duelo final del viaje: ahora debes coordinar documentos, cambios, incidencias y lenguaje formal sin perder el objetivo del encuentro."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Rectora del Campus",
+              "text": "No quiero respuestas sueltas; quiero criterio completo. Un error reinicia todo, igual que en un viaje real."
             },
             {
               "type": "askBossQuiz",
               "bossId": "travel-boss-final",
               "title": "Duelo de la Insignia del Viaje",
-              "restartMessage": "No. La entrevista final se reinicia desde la primera pregunta.",
+              "restartMessage": "No. La entrevista final se reinicia.",
               "questions": [
                 {
                   "type": "askChoice",
@@ -99,7 +104,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Cuál frase mantiene registro formal para reportar una incidencia de viaje?",
+                  "prompt": "¿Cuál frase mantiene un registro formal para reportar una incidencia de viaje?",
                   "options": [
                     {
                       "label": "Solicito constancia escrita del incidente y número de seguimiento para presentarlo a mi empresa.",

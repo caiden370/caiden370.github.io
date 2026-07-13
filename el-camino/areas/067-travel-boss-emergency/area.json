@@ -29,10 +29,15 @@
               "text": "Segundo duelo: salud, pérdida documental y cambios operativos sin tiempo extra."
             },
             {
+              "type": "showDialogue",
+              "speaker": "Capitana del Equipo",
+              "text": "En una emergencia no basta con entender; debes priorizar, explicar y pedir ayuda con exactitud desde la primera frase."
+            },
+            {
               "type": "askBossQuiz",
               "bossId": "travel-boss-emergency",
               "title": "Duelo de Emergencias",
-              "restartMessage": "No. La gestión de emergencia vuelve al punto cero.",
+              "restartMessage": "No. Todo vuelve al punto cero.",
               "questions": [
                 {
                   "type": "askChoice",

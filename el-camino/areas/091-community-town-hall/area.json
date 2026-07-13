@@ -5,14 +5,50 @@
   "chapterId": "community-leader",
   "region": "Chapter 9: Community Leader",
   "cefrLevel": "C1",
-  "teaches": ["escucha activa", "priorización", "acuerdos formales", "lenguaje institucional"],
-  "legend": { "w": "insideWall", "s": "stoneFloor", "p": "woodFloor", "c": "carpetBlue" },
-  "playerStart": { "x": 10, "y": 10, "facing": "up" },
+  "teaches": [
+    "escucha activa",
+    "priorización",
+    "acuerdos formales",
+    "lenguaje institucional"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor",
+    "c": "carpetBlue"
+  },
+  "playerStart": {
+    "x": 10,
+    "y": 10,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "meetingTable", "x": 6, "y": 7, "w": 8, "h": 1 },
-    { "type": "whiteboard", "x": 6, "y": 2, "w": 8, "h": 1 },
-    { "type": "bulletinBoard", "x": 8, "y": 4, "w": 4, "h": 1 },
-    { "type": "podium", "x": 10, "y": 5 }
+    {
+      "type": "meetingTable",
+      "x": 6,
+      "y": 7,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "whiteboard",
+      "x": 6,
+      "y": 2,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 8,
+      "y": 4,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "podium",
+      "x": 10,
+      "y": 5
+    }
   ],
   "people": [
     {
@@ -21,11 +57,27 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "missingMissions": ["community-hall-listen"] },
+          "when": {
+            "missingMissions": [
+              "community-hall-listen"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Tomás", "text": "Presidir una mesa vecinal exige distinguir entre demandas urgentes y demandas importantes." },
-            { "type": "showDialogue", "speaker": "Tomás", "text": "Hoy tenemos tres conflictos: ruido nocturno, cierre de negocios y saturación del centro de servicios." },
-            { "type": "showDialogue", "speaker": "Tomás", "text": "Si no clasificas bien las prioridades, cualquier acuerdo será inestable." },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Presidir una mesa vecinal exige distinguir entre demandas urgentes y demandas importantes."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Hoy tenemos tres conflictos: ruido nocturno, cierre de negocios y saturación del centro de servicios."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Si no clasificas bien las prioridades, cualquier acuerdo será inestable."
+            },
             {
               "type": "askChoice",
               "prompt": "¿Qué criterio fortalece una priorización comunitaria legítima?",
@@ -34,12 +86,25 @@
                   "label": "Combinar impacto social, urgencia temporal y capacidad real de implementación.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Tomás", "text": "Correcto. Ya puedes pasar a la redacción técnica del acta." },
-                    { "type": "completeMission", "missionId": "community-hall-listen" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Tomás",
+                      "text": "Correcto. Ya puedes pasar a la redacción técnica del acta."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "community-hall-listen"
+                    }
                   ]
                 },
-                { "label": "Atender solo a quien hable más fuerte durante la reunión.", "correct": false },
-                { "label": "Evitar decisiones para no asumir costos políticos.", "correct": false }
+                {
+                  "label": "Atender solo a quien hable más fuerte durante la reunión.",
+                  "correct": false
+                },
+                {
+                  "label": "Evitar decisiones para no asumir costos políticos.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
@@ -47,11 +112,31 @@
         },
         {
           "when": {
-            "completedMissions": ["community-hall-minutes", "community-market-coalition", "community-debate-charter"],
-            "missingMissions": ["community-hall-accord"]
+            "completedMissions": [
+              "community-hall-minutes",
+              "community-market-coalition",
+              "community-debate-charter"
+            ],
+            "missingMissions": [
+              "community-hall-accord"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Tomás", "text": "Ya contamos con datos del mercado y con el marco del debate. Falta tu declaración final de acuerdo." },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "En otra mesa resolvimos horarios escolares diciendo: no prometemos comodidad total; prometemos reglas claras, revisión corta y corrección si fallan."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Un acta fuerte nombra a quién protege, qué cambia y cómo se comprobará."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Ahora redacta el acuerdo del barrio con ese mismo equilibrio."
+            },
             {
               "type": "askText",
               "prompt": "Escribe en español: We approved a phased plan that protects local commerce and guarantees neighborhood rest.",
@@ -61,14 +146,29 @@
                 "Aprobamos un plan por fases, que protege el comercio local y garantiza el descanso vecinal"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Tomás", "text": "Acta validada. El ayuntamiento confirma el acuerdo." },
-                { "type": "completeMission", "missionId": "community-hall-accord" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Tomás",
+                  "text": "Acta validada. El ayuntamiento confirma el acuerdo."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "community-hall-accord"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Tomás", "text": "Sin criterios claros, no hay política pública sostenible." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Sin criterios claros, no hay política pública sostenible."
+            }
+          ]
+        }
       ]
     },
     {
@@ -77,9 +177,30 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "completedMissions": ["community-hall-listen"], "missingMissions": ["community-hall-minutes"] },
+          "when": {
+            "completedMissions": [
+              "community-hall-listen"
+            ],
+            "missingMissions": [
+              "community-hall-minutes"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Necesito que registres una síntesis fiel; no un resumen cómodo." },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Ayer alguien resumió una reunión como si todos hubieran dicho sí, pero omitió que el comercio pidió iluminación y patrullaje."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Una minuta fiel conserva concesiones y contraprestaciones; si borras una, cambias la política."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Escucha esta intervención y registra el sentido completo, no solo la parte cómoda."
+            },
             {
               "type": "askAudioChoice",
               "prompt": "Escucha la intervención y marca la síntesis más precisa.",
@@ -89,19 +210,44 @@
                   "label": "La parte comercial cede en horarios a cambio de seguridad pública verificable.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Valeria", "text": "Exacto. Toma la tarjeta de agenda para coordinar las próximas reuniones." },
-                    { "type": "addItem", "itemId": "scheduleCard", "count": 1 },
-                    { "type": "completeMission", "missionId": "community-hall-minutes" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Valeria",
+                      "text": "Exacto. Toma la tarjeta de agenda y llévala donde la negociación se vuelve calendario."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "scheduleCard",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "community-hall-minutes"
+                    }
                   ]
                 },
-                { "label": "El municipio cancela la seguridad y el comercio no cambia horarios.", "correct": false },
-                { "label": "La propuesta trata únicamente sobre transporte escolar.", "correct": false }
+                {
+                  "label": "El municipio cancela la seguridad y el comercio no cambia horarios.",
+                  "correct": false
+                },
+                {
+                  "label": "La propuesta trata únicamente sobre transporte escolar.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Una mala síntesis distorsiona decisiones enteras." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Una mala síntesis distorsiona decisiones enteras."
+            }
+          ]
+        }
       ]
     },
     {
@@ -111,14 +257,34 @@
       "interactions": [
         {
           "actions": [
-            { "type": "showDialogue", "speaker": "Javier", "text": "Negociar no es ceder todo; es diseñar intercambios que ambas partes puedan sostener." },
-            { "type": "showDialogue", "speaker": "Javier", "text": "Ve al mercado y verifica si la propuesta realmente funciona fuera del papel." }
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Negociar no es ceder todo; es diseñar intercambios que ambas partes puedan sostener."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "En el mercado no busques aplausos rápidos: busca horarios, costos y garantías verificables."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Cuando regreses, trae evidencia que el ayuntamiento pueda defender sin adornos."
+            }
           ]
         }
       ]
     }
   ],
   "exits": [
-    { "x": 10, "y": 11, "targetArea": "community-leader", "targetX": 5, "targetY": 6, "facing": "down" }
+    {
+      "x": 10,
+      "y": 11,
+      "targetArea": "community-leader",
+      "targetX": 5,
+      "targetY": 6,
+      "facing": "down"
+    }
   ]
 }

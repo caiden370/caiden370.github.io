@@ -5,15 +5,57 @@
   "chapterId": "family",
   "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["malentendido", "aclarar", "turnarse", "detalles", "contexto"],
-  "legend": { "w": "insideWall", "r": "lightRedFloor", "p": "woodFloor" },
-  "playerStart": { "x": 10, "y": 1, "facing": "down" },
+  "teaches": [
+    "malentendido",
+    "aclarar",
+    "turnarse",
+    "detalles",
+    "contexto"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "r": "lightRedFloor",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 10,
+    "y": 1,
+    "facing": "down"
+  },
   "objects": [
-    { "type": "kitchenCounter", "x": 3, "y": 6, "w": 5, "h": 1 },
-    { "type": "stove", "x": 8, "y": 6 },
-    { "type": "table", "x": 12, "y": 6, "w": 3, "h": 1 },
-    { "type": "menuBoard", "x": 13, "y": 3, "w": 3, "h": 1 },
-    { "type": "birthdayTable", "x": 5, "y": 9, "w": 3, "h": 1 }
+    {
+      "type": "kitchenCounter",
+      "x": 3,
+      "y": 6,
+      "w": 5,
+      "h": 1
+    },
+    {
+      "type": "stove",
+      "x": 8,
+      "y": 6
+    },
+    {
+      "type": "table",
+      "x": 12,
+      "y": 6,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "menuBoard",
+      "x": 13,
+      "y": 3,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "birthdayTable",
+      "x": 5,
+      "y": 9,
+      "w": 3,
+      "h": 1
+    }
   ],
   "people": [
     {
@@ -22,27 +64,92 @@
       "y": 4,
       "interactions": [
         {
-          "when": { "hasItems": [{ "itemId": "rosaLetter", "count": 1 }], "missingMissions": ["family-roja-story-list"] },
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "rosaLetter",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "family-roja-story-list"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Diego", "text": "Gracias por la carta de Ana. Pensé que ya no quería hablar de lo que pasó el año pasado." },
-            { "type": "showDialogue", "speaker": "Diego", "text": "La carta no acusa: invita a escuchar versiones completas." },
-            { "type": "showDialogue", "speaker": "Diego", "text": "Haré una lista para que cada persona cuente su historia sin interrupciones." },
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "La carta no me pidió olvidar nada. Me recordó una tarde en la que todos escucharon sin competir."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Cuando alguien empieza así, uno baja la defensa y por fin puede contar la historia completa."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Voy a ordenar los relatos para que nadie quede borrado en la fiesta de esta noche."
+            },
             {
               "type": "askText",
               "prompt": "Write in Spanish: Your letter moved me, and I want to listen first.",
               "placeholder": "Respuesta en español",
-              "correctAnswers": ["Tu carta me emocionó y quiero escuchar primero", "Tu carta me emociono y quiero escuchar primero"],
+              "correctAnswers": [
+                "Tu carta me emocionó y quiero escuchar primero",
+                "Tu carta me emociono y quiero escuchar primero"
+              ],
               "actions": [
-                { "type": "removeItem", "itemId": "rosaLetter", "count": 1 },
-                { "type": "addItem", "itemId": "notebook", "count": 1 },
-                { "type": "showDialogue", "speaker": "Diego", "text": "Muy bien. Toma este cuaderno con el orden de relatos." },
-                { "type": "completeMission", "missionId": "family-roja-story-list" }
+                {
+                  "type": "removeItem",
+                  "itemId": "rosaLetter",
+                  "count": 1
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "notebook",
+                  "count": 1
+                },
+                {
+                  "type": "showDialogue",
+                  "speaker": "Diego",
+                  "text": "Gracias. Lleva este cuaderno a Sofía en la Casa Azul; ella convertirá los relatos en turnos claros."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "family-roja-story-list"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Leer una carta con calma puede cambiar toda una conversación." }] }
+        {
+          "when": {
+            "completedMissions": [
+              "family-roja-story-list"
+            ],
+            "missingMissions": [
+              "family-roja-bread"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "El cuaderno ya va hacia Casa Azul. Cuando Sofía termine, vuelve con leche para que Elena cierre la mesa."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Leer una carta con calma puede cambiar toda una conversación."
+            }
+          ]
+        }
       ]
     },
     {
@@ -51,35 +158,110 @@
       "y": 8,
       "interactions": [
         {
-          "when": { "completedMissions": ["family-roja-story-list"], "hasItems": [{ "itemId": "milk", "count": 1 }], "missingMissions": ["family-roja-bread"] },
+          "when": {
+            "completedMissions": [
+              "family-roja-story-list"
+            ],
+            "hasItems": [
+              {
+                "itemId": "milk",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "family-roja-bread"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Elena", "text": "Perfecto, trajiste leche de la casa azul. Ahora sí la cena tiene equilibrio." },
-            { "type": "showDialogue", "speaker": "Elena", "text": "Cuando suba la tensión, recuerda: primero aclarar contexto, luego opinar." },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Cuando dos primos discuten por una frase, casi nunca discuten solo por esa frase; discuten por la intención que imaginaron detrás."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "En otra cena pregunté primero desde qué cansancio había hablado cada persona, y la tensión bajó sola."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Haz eso aquí: aclara contexto antes de decidir quién tiene razón."
+            },
             {
               "type": "askChoice",
-              "prompt": "¿Qué frase reduce tensión antes de debatir?",
+              "prompt": "En una conversación tensa, ¿qué conviene hacer antes de debatir el contenido?",
               "options": [
                 {
-                  "label": "Primero aclaremos el contexto para entendernos.",
+                  "label": "Aclarar el contexto y la intención para entenderse mejor.",
                   "correct": true,
                   "actions": [
-                    { "type": "addItem", "itemId": "bread", "count": 1 },
-                    { "type": "showDialogue", "speaker": "Elena", "text": "Exacto. Lleva este pan a la mesa comunitaria." },
-                    { "type": "completeMission", "missionId": "family-roja-bread" }
+                    {
+                      "type": "addItem",
+                      "itemId": "bread",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Elena",
+                      "text": "Exacto. Lleva este pan a Ana y a Carlos: sin contexto claro, la mesa común no aguanta."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "family-roja-bread"
+                    }
                   ]
                 },
-                { "label": "Mejor hablemos todos a la vez.", "correct": false },
-                { "label": "Cambiemos de tema para evitar emociones.", "correct": false }
+                {
+                  "label": "Hablar todos a la vez para que nadie pierda turno.",
+                  "correct": false
+                },
+                {
+                  "label": "Evitar emociones y cambiar de tema de inmediato.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Trae leche, luego te entrego el pan para la reunión." }] }
+        {
+          "when": {
+            "completedMissions": [
+              "family-roja-story-list"
+            ],
+            "missingMissions": [
+              "family-roja-bread"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Sofía te espera con la leche en la Casa Azul. Sin esa parada, aquí no cerramos la cena."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Empieza con la carta de Ana y vuelve cuando la cocina también tenga contexto."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 10, "y": 11, "targetArea": "family-neighborhood", "targetX": 14, "targetY": 6, "facing": "down" }
+    {
+      "x": 10,
+      "y": 11,
+      "targetArea": "family-neighborhood",
+      "targetX": 14,
+      "targetY": 6,
+      "facing": "down"
+    }
   ]
 }

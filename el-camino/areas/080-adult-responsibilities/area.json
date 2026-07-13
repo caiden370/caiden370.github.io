@@ -51,7 +51,13 @@
         "targetArea": "adult-insurance-office",
         "targetX": 12,
         "targetY": 10,
-        "facing": "up"
+        "facing": "up",
+        "requires": {
+          "completedMissions": [
+            "adult-cityhall-license"
+          ]
+        },
+        "blockedMessage": "Primero resuelve la licencia en el ayuntamiento."
       }
     },
     {
@@ -66,7 +72,13 @@
         "targetArea": "adult-repair-garage",
         "targetX": 12,
         "targetY": 10,
-        "facing": "up"
+        "facing": "up",
+        "requires": {
+          "completedMissions": [
+            "adult-insurance-approved"
+          ]
+        },
+        "blockedMessage": "Primero activa la póliza en la oficina de seguros."
       }
     },
     {
@@ -81,7 +93,13 @@
         "targetArea": "adult-document-center",
         "targetX": 12,
         "targetY": 10,
-        "facing": "up"
+        "facing": "up",
+        "requires": {
+          "completedMissions": [
+            "adult-garage-repair"
+          ]
+        },
+        "blockedMessage": "Primero cierra la reparación en el taller."
       }
     },
     {
@@ -93,11 +111,15 @@
           "actions": [
             {
               "type": "showDialogue",
-              "text": "Ciudad de trámites: completa ayuntamiento, seguro, taller y centro documental."
+              "text": "Objetivo del barrio: salir con un expediente listo para defender ante el Tribunal de Responsabilidades."
             },
             {
               "type": "showDialogue",
-              "text": "Cuando tengas cuatro verificaciones, se abre el repaso final a la derecha."
+              "text": "La cadena adulta aquí no se improvisa: licencia municipal, póliza activa, reparación priorizada y verificación documental."
+            },
+            {
+              "type": "showDialogue",
+              "text": "Si una oficina te entrega una condición o un comprobante, úsalo como siguiente paso; el repaso final solo abre cuando todo coincide."
             }
           ]
         }
@@ -141,30 +163,30 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Bienvenido al Cruce de Responsabilidades. Hoy no basta con vocabulario: debes coordinar oficinas reales."
+              "text": "Bienvenido al Cruce de Responsabilidades. Aquí no vienes a memorizar palabras sueltas; vienes a cerrar un caso adulto de principio a fin."
             },
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Primero consigue la licencia municipal, después activa tu póliza, repara el auto y finalmente verifica el expediente completo."
+              "text": "Imagina a alguien que consiguió licencia y póliza, pero ignoró un problema serio del auto: aunque hable bien, el expediente sigue siendo frágil."
             },
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Cada oficina hablará rápido, con condiciones y excepciones. Escucha, resume y confirma antes de moverte."
+              "text": "Cada oficina te dará una prueba para la siguiente. Si resumes, confirmas y guardas cada paso, llegarás al tribunal con credibilidad."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál secuencia exige Valeria para desbloquear el repaso?",
+              "prompt": "Si ya saliste de seguros con cobertura aprobada, ¿qué trámite debes cerrar antes de llevar el caso al centro documental?",
               "options": [
                 {
-                  "label": "Ayuntamiento, seguro, taller y centro documental.",
+                  "label": "La reparación priorizada del auto en el taller.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "showDialogue",
                       "speaker": "Valeria",
-                      "text": "Exacto. Esta ciudad premia precisión, no prisa."
+                      "text": "Exacto. Un expediente adulto no pasa al archivo mientras la seguridad del auto siga abierta."
                     },
                     {
                       "type": "completeMission",
@@ -173,11 +195,11 @@
                   ]
                 },
                 {
-                  "label": "Taller, repaso, seguro y ayuntamiento.",
+                  "label": "Entrar directo al repaso final para ganar tiempo.",
                   "correct": false
                 },
                 {
-                  "label": "Solo hablar con una persona y salir.",
+                  "label": "Volver al ayuntamiento a pedir una segunda licencia.",
                   "correct": false
                 }
               ],
@@ -202,16 +224,63 @@
       "y": 10,
       "interactions": [
         {
+          "when": {
+            "completedMissions": [
+              "adult-cityhall-license",
+              "adult-insurance-approved",
+              "adult-garage-repair",
+              "adult-documents-verified"
+            ],
+            "missingMissions": [
+              "adult-review-complete"
+            ]
+          },
           "actions": [
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Trae evidencia: formulario, cita, revisión técnica y expediente sellado."
+              "text": "Ya reuniste licencia, póliza, cierre técnico y verificación documental."
             },
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Cuando todo esté verificado, el Centro de Repaso abrirá el corredor de jefes."
+              "text": "Ahora no colecciones más sellos: cruza al centro de repaso y demuestra que entiendes la lógica completa del caso."
+            }
+          ]
+        },
+        {
+          "when": {
+            "completedMissions": [
+              "adult-review-complete"
+            ],
+            "missingMissions": [
+              "adult-boss-bureaucracy"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "El repaso ya certificó tu expediente."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "A la derecha te espera la cadena de jefes: primero burocracia, luego negociación y al final el tribunal."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Trae evidencia que se pueda defender: formulario, cita, revisión técnica y expediente sellado."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Aquí no basta con llevar papeles; tienes que entender por qué cada comprobante abre el siguiente paso."
             }
           ]
         }

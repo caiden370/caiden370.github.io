@@ -13,7 +13,7 @@
     "t": "stoneFloor"
   },
   "defaultTile": "g",
-  "playerStart": { "x": 15, "y": 12, "facing": "up" },
+  "playerStart": { "x": 15, "y": 13, "facing": "up" },
   "objects": [
     { "type": "school", "x": 3, "y": 1, "w": 4, "h": 3, "entrance": { "x": 5, "y": 4, "targetArea": "elementary-entrance", "targetX": 14, "targetY": 17, "facing": "up", "chapterId": "elementary-school" } },
     { "type": "school", "x": 11, "y": 1, "w": 4, "h": 3, "entrance": { "x": 13, "y": 4, "targetArea": "high-school", "targetX": 7, "targetY": 9, "facing": "up", "chapterId": "high-school" } },
@@ -25,6 +25,7 @@
     { "type": "office", "x": 25, "y": 15, "w": 4, "h": 3, "entrance": { "x": 27, "y": 18, "targetArea": "adult-responsibilities", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "adult-responsibilities" } },
     { "type": "store", "x": 1, "y": 8, "w": 4, "h": 3, "entrance": { "x": 3, "y": 11, "targetArea": "community-leader", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "community-leader" } },
     { "type": "houseRed", "x": 25, "y": 8, "w": 4, "h": 3, "entrance": { "x": 27, "y": 11, "targetArea": "dream-future", "targetX": 8, "targetY": 9, "facing": "up", "chapterId": "dream-future" } },
+    { "type": "dojo", "x": 11, "y": 7, "w": 10, "h": 4, "entrance": { "x": 15, "y": 11, "targetArea": "chapter-dojo", "targetX": 11, "targetY": 13, "facing": "up", "chapterId": "home-base", "restorePosition": false } },
     { "type": "sign", "x": 5, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Escuela Primaria: saludos, útiles, colores, números, patio, comida, biblioteca y arte." }] }] },
     { "type": "sign", "x": 13, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Middle and High School: schedules, clubs, sports, and opinions." }] }] },
     { "type": "sign", "x": 21, "y": 5, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "College: exams, supplies, friends, dates, and campus life." }] }] },
@@ -35,14 +36,13 @@
     { "type": "sign", "x": 27, "y": 14, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Adult Responsibilities: taxes, insurance, repairs, and official forms." }] }] },
     { "type": "sign", "x": 5, "y": 11, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Community Leader: organize events, solve town problems, and persuade people." }] }] },
     { "type": "sign", "x": 25, "y": 11, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Dream Future: moving abroad, career choices, big goals, and Spanish-only conversations." }] }] },
-    { "type": "plant", "x": 13, "y": 9 },
-    { "type": "plant", "x": 16, "y": 9 },
+    { "type": "sign", "x": 10, "y": 11, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Dojo del Camino: habla con el maestro para elegir un capítulo y completar 30 ejercicios de vocabulario y frases." }] }] },
     { "type": "tree", "x": 1, "y": 1 },
     { "type": "tree", "x": 29, "y": 18 }
   ],
   "people": [
-    { "personId": "ana", "x": 14, "y": 11, "message": "Welcome to Plaza del Camino. Pick any chapter station to begin." },
-    { "personId": "mateo", "x": 16, "y": 11, "message": "Use the Plaza button anytime to return here. Your chapter position is saved." }
+    { "personId": "ana", "x": 9, "y": 12, "message": "Welcome to Plaza del Camino. The central dojo can prepare you for any chapter." },
+    { "personId": "mateo", "x": 22, "y": 12, "message": "Use the dojo to learn chapter words, then enter a chapter building when you feel ready." }
   ],
   "exits": []
 }

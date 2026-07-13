@@ -23,45 +23,53 @@
         {
           "when": { "missingMissions": ["college-boss-study"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Profesora de Biblioteca", "text": "Duelo de estudio. Lee con cuidado." },
+            { "type": "showDialogue", "speaker": "Profesora de Biblioteca", "text": "Segundo duelo: lectura, estrategia y comprensión universitaria." },
+            { "type": "showDialogue", "speaker": "Profesora de Biblioteca", "text": "Tus respuestas deben mostrar que sabes aplicar ideas nuevas, no repetir frases del capítulo." },
             {
               "type": "askBossQuiz",
               "bossId": "college-boss-study",
               "title": "Duelo de Estudio",
-              "restartMessage": "No. Vuelve a abrir los apuntes.",
+              "restartMessage": "No. Empieza otra vez.",
               "questions": [
                 { "type": "askChoice", "prompt": "Translate: Aunque la biblioteca está llena, encontré una mesa cerca de la ventana para repasar.", "options": [
                   { "label": "Although the library is full, I found a table near the window to review.", "correct": true },
                   { "label": "Although the café is closed, I bought a calculator by the door.", "correct": false },
                   { "label": "Although the dorm is quiet, I lost my bicycle near class.", "correct": false }
                 ] },
-                { "type": "askText", "prompt": "Write in Spanish: We should review the chapter before the exam.", "placeholder": "Respuesta en español", "correctAnswers": ["Deberíamos repasar el capítulo antes del examen", "Deberiamos repasar el capitulo antes del examen"] },
-                { "type": "askChoice", "prompt": "Historia: Un grupo divide el trabajo. Una persona busca fuentes, otra escribe ejemplos y otra revisa la presentación. ¿Por qué dividen el trabajo?",
+                { "type": "askText", "prompt": "Write in Spanish: We should review the chapter before the exam.", "placeholder": "Respuesta en español", "correctAnswers": ["Deberíamos repasar el capítulo antes del examen", "Deberiamos repasar el capitulo antes del examen", "Debemos repasar el capítulo antes del examen", "Debemos repasar el capitulo antes del examen"] },
+                { "type": "askChoice", "prompt": "Historia: Un grupo divide el trabajo. Una persona busca fuentes, otra escribe ejemplos y otra revisa la presentación final. ¿Por qué dividen el trabajo?",
                   "options": [
                     { "label": "Para preparar mejor la presentación.", "correct": true },
-                    { "label": "Para evitar comprar café.", "correct": false },
-                    { "label": "Para cerrar la residencia.", "correct": false }
+                    { "label": "Para evitar comprar café para siempre.", "correct": false },
+                    { "label": "Para cerrar la residencia temprano.", "correct": false }
                   ]
                 },
-                { "type": "askAudioChoice", "prompt": "Escucha. ¿Qué preocupación tiene la estudiante?", "audioText": "Me preocupa el examen porque entiendo la lectura, pero todavía cometo errores al escribir respuestas largas.", "options": [
-                  { "label": "She understands the reading but still makes mistakes writing long answers.", "correct": true },
-                  { "label": "She cannot find the bookstore and lost her calculator.", "correct": false },
-                  { "label": "She wants to leave campus because the café is too loud.", "correct": false }
+                { "type": "askAudioChoice", "prompt": "Escucha. ¿Qué preocupación tiene la estudiante?", "audioText": "Me preocupa el examen porque entiendo la lectura, pero todavía cometo errores al escribir respuestas largas y necesito practicar más.", "options": [
+                  { "label": "She understands the reading but still makes mistakes writing long answers and needs more practice.", "correct": true },
+                  { "label": "She cannot find the bookstore and lost her calculator yesterday.", "correct": false },
+                  { "label": "She wants to leave campus because the café is too quiet.", "correct": false }
                 ] },
                 { "type": "askChoice", "prompt": "--No entiendo este párrafo. --¿Qué parte es difícil? --La conclusión. --____", "options": [
                   { "label": "Leámosla otra vez y busquemos la idea principal.", "correct": true },
                   { "label": "Entonces compra café sin apuntes.", "correct": false },
-                  { "label": "La conclusión vive en el dormitorio.", "correct": false }
-                ] }
+                  { "label": "La conclusión duerme en el dormitorio.", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "¿Qué acción muestra una buena estrategia de estudio universitaria?",
+                  "options": [
+                    { "label": "Resumir, comparar ideas y hacer preguntas nuevas.", "correct": true },
+                    { "label": "Copiar la respuesta exacta sin entenderla.", "correct": false },
+                    { "label": "Esperar al examen sin revisar nada.", "correct": false }
+                  ]
+                }
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Profesora de Biblioteca", "text": "Comprensión de estudio aprobada." },
+                { "type": "showDialogue", "speaker": "Profesora de Biblioteca", "text": "Tu comprensión ya alcanza nivel universitario." },
                 { "type": "completeMission", "missionId": "college-boss-study" }
               ]
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Profesora de Biblioteca", "text": "La rectora espera." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Profesora de Biblioteca", "text": "La rectora ya puede entrevistarte." }] }
       ]
     }
   ],

@@ -4,7 +4,7 @@
   "kind": "interior",
   "chapterId": "travel",
   "region": "Chapter 6: Travel Terminal",
-  "cefrLevel": "B1+",
+  "cefrLevel": "B2",
   "teaches": ["síntesis", "comprensión situacional", "decisiones de viaje"],
   "legend": { "w": "insideWall", "s": "stoneFloor" },
   "playerStart": { "x": 14, "y": 18, "facing": "up" },
@@ -35,29 +35,43 @@
           "actions": [
             {
               "type": "showDialogue",
-              "speaker": "Lucia",
-              "text": "Ahora integra todo: trámite documental, control, reserva, entrega y orientación urbana en una sola lógica."
+              "speaker": "Lucía",
+              "text": "Tu meta sigue siendo la misma: llegar al encuentro internacional sin perder documentos, reserva ni tiempo de traslado."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Piensa en la cadena entera. Un mal resumen en facturación complica seguridad; una entrega confusa retrasa el hotel; unas direcciones vagas te devuelven al punto de partida."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Ahora ya no quiero frases aisladas. Quiero una decisión que conecte todos los pasos con sentido práctico."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué decisión demuestra dominio completo del capítulo?",
+              "prompt": "Si el vuelo llegó tarde pero todavía debes asistir a la reunión, ¿qué plan muestra dominio completo del capítulo?",
               "options": [
                 {
-                  "label": "Verificar documentos, seguir protocolos, confirmar reserva y comunicar rutas precisas.",
+                  "label": "Verificar documentos, pasar el control, confirmar la reserva, cerrar la entrega y seguir referencias claras hasta el hotel o la reunión.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Lucia", "text": "Repaso aprobado. Se abre la secuencia de jefes." },
+                    { "type": "showDialogue", "speaker": "Lucía", "text": "Repaso aprobado. Las tres salas de jefes medirán rutas, emergencias y cierre total del viaje." },
                     { "type": "completeMission", "missionId": "travel-final-review" }
                   ]
                 },
-                { "label": "Improvisar respuestas mínimas sin validar condiciones.", "correct": false },
-                { "label": "Hablar solo en inglés y omitir datos críticos.", "correct": false }
+                { "label": "Entrar primero a la reunión y resolver los trámites solo si alguien pregunta.", "correct": false },
+                { "label": "Hablar siempre en general, sin confirmar horarios, papeles ni ubicaciones.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Lucia", "text": "Completa todas las cadenas antes de entrar a jefes." }] }
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Lucía", "text": "Vuelve cuando hayas completado aeropuerto, hotel, entrega y orientación urbana." }
+          ]
+        }
       ]
     }
   ],
@@ -71,7 +85,7 @@
       "targetY": 6,
       "facing": "right",
       "requires": { "completedMissions": ["travel-final-review"] },
-      "blockedMessage": "Completa el repaso final con Lucia."
+      "blockedMessage": "Completa el repaso final con Lucía."
     }
   ]
 }

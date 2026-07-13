@@ -5,15 +5,56 @@
   "chapterId": "dream-future",
   "region": "Chapter 10: Dream Future",
   "cefrLevel": "C1",
-  "teaches": ["proyección laboral", "competencias transferibles", "argumentación"],
-  "legend": { "w": "insideWall", "c": "campusStone", "s": "stoneFloor" },
-  "playerStart": { "x": 14, "y": 15, "facing": "up" },
+  "teaches": [
+    "proyección laboral",
+    "competencias transferibles",
+    "argumentación"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "campusStone",
+    "s": "stoneFloor"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 15,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "whiteboard", "x": 4, "y": 2, "w": 8, "h": 1 },
-    { "type": "dreamBoard", "x": 15, "y": 2, "w": 4, "h": 1 },
-    { "type": "computerDesk", "x": 6, "y": 7, "w": 4, "h": 1 },
-    { "type": "meetingTable", "x": 14, "y": 8, "w": 5, "h": 2 },
-    { "type": "itemSparkle", "x": 20, "y": 7, "walkable": true }
+    {
+      "type": "whiteboard",
+      "x": 4,
+      "y": 2,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "dreamBoard",
+      "x": 15,
+      "y": 2,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "computerDesk",
+      "x": 6,
+      "y": 7,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "meetingTable",
+      "x": 14,
+      "y": 8,
+      "w": 5,
+      "h": 2
+    },
+    {
+      "type": "itemSparkle",
+      "x": 20,
+      "y": 7,
+      "walkable": true
+    }
   ],
   "people": [
     {
@@ -22,23 +63,68 @@
       "y": 5,
       "interactions": [
         {
-          "when": { "missingMissions": ["dream-career-analysis"] },
+          "when": {
+            "missingMissions": [
+              "dream-career-analysis"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Marcos", "text": "La pregunta no es qué trabajo quieres mañana, sino qué impacto sostendrás durante diez años." },
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Compara dos ofertas: una paga más hoy, otra invierte en aprendizaje y mentoría." },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Antes asesoré a una persona que eligió un cargo prestigioso, pero sin mentoría, sin tiempo para aprender y con tareas repetitivas."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Otra aceptó un puesto menos vistoso, aunque con proyectos difíciles, retroalimentación constante y acceso directo a decisiones reales."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Cinco años después, la segunda podía liderar equipos porque había desarrollado criterio transferible."
+            },
             {
               "type": "askChoice",
-              "prompt": "¿Qué inferencia es más sólida para crecimiento a largo plazo?",
+              "prompt": "Entre una oferta con salario alto inmediato y otra con aprendizaje exigente y mentoría real, ¿qué inferencia favorece mejor el crecimiento a largo plazo?",
               "options": [
-                { "label": "Elegir el entorno que acelera aprendizaje y red profesional, aunque el salario inicial sea menor.", "correct": true, "actions": [{ "type": "completeMission", "missionId": "dream-career-analysis" }] },
-                { "label": "Elegir solo por título sin evaluar funciones reales.", "correct": false },
-                { "label": "Evitar feedback para proteger la confianza.", "correct": false }
+                {
+                  "label": "Elegir el entorno que acelera aprendizaje y red profesional, aunque el salario inicial sea menor.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Marcos",
+                      "text": "Bien. Una carrera sólida se apoya en aprendizaje acumulativo y relaciones de confianza."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "dream-career-analysis"
+                    }
+                  ]
+                },
+                {
+                  "label": "Elegir solo por título sin evaluar funciones reales.",
+                  "correct": false
+                },
+                {
+                  "label": "Evitar feedback para proteger la confianza.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Define impacto, métricas y aprendizaje continuo." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Piensa en trayectoria, no solo en salario o título."
+            }
+          ]
+        }
       ]
     },
     {
@@ -47,9 +133,30 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "completedMissions": ["dream-career-analysis"], "missingMissions": ["dream-career-roadmap"] },
+          "when": {
+            "completedMissions": [
+              "dream-career-analysis"
+            ],
+            "missingMissions": [
+              "dream-career-roadmap"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Elena", "text": "Ahora redacta un plan en español profesional: objetivos, riesgos y mitigaciones." },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Una hoja de ruta profesional no es una lista de deseos. Sirve para conectar ambición, riesgos y próximos pasos verificables."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Por ejemplo, alguien puede querer dirigir equipos internacionales, pero primero necesita experiencia intercultural, métricas de impacto y un plan para cerrar vacíos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Ahora formula tu propia proyección con precisión profesional."
+            },
             {
               "type": "askText",
               "prompt": "Write in Spanish: In five years I want to lead ethical innovation teams in multiple countries.",
@@ -59,21 +166,55 @@
                 "En cinco anos quiero liderar equipos de innovacion etica en varios paises"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Elena", "text": "Excelente precisión. Toma esta credencial para el Hub Global." },
-                { "type": "addItem", "itemId": "campusId", "count": 1 },
-                { "type": "addItem", "itemId": "studyNotes", "count": 1 },
-                { "type": "addItem", "itemId": "calculator", "count": 1 },
-                { "type": "completeMission", "missionId": "dream-career-roadmap" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Elena",
+                  "text": "Muy bien. Tu plan ya tiene horizonte, criterios y herramientas para la siguiente etapa."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "campusId",
+                  "count": 1
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "studyNotes",
+                  "count": 1
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "calculator",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "dream-career-roadmap"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Sin hoja de ruta no hay avance estratégico." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Sin hoja de ruta clara, la visión se desordena."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 14, "y": 16, "targetArea": "dream-future", "targetX": 5, "targetY": 9, "facing": "down" }
+    {
+      "x": 14,
+      "y": 16,
+      "targetArea": "dream-future",
+      "targetX": 5,
+      "targetY": 9,
+      "facing": "down"
+    }
   ]
 }

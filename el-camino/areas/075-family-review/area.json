@@ -5,13 +5,45 @@
   "chapterId": "family",
   "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["síntesis", "inferencia", "conectores", "posturas", "acuerdos"],
-  "legend": { "w": "insideWall", "s": "stoneFloor", "p": "woodFloor" },
-  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "teaches": [
+    "síntesis",
+    "inferencia",
+    "conectores",
+    "posturas",
+    "acuerdos"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
   "objects": [
-    { "type": "whiteboard", "x": 6, "y": 2, "w": 8, "h": 1 },
-    { "type": "meetingTable", "x": 6, "y": 8, "w": 8, "h": 1 },
-    { "type": "bulletinBoard", "x": 8, "y": 4, "w": 4, "h": 1 }
+    {
+      "type": "whiteboard",
+      "x": 6,
+      "y": 2,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "meetingTable",
+      "x": 6,
+      "y": 8,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "bulletinBoard",
+      "x": 8,
+      "y": 4,
+      "w": 4,
+      "h": 1
+    }
   ],
   "people": [
     {
@@ -20,17 +52,46 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "completedMissions": ["family-verde-ready", "family-roja-bread", "family-azul-emotions", "family-plaza-ready"], "missingMissions": ["family-review-complete"] },
+          "when": {
+            "completedMissions": [
+              "family-verde-ready",
+              "family-roja-bread",
+              "family-azul-emotions",
+              "family-plaza-ready"
+            ],
+            "missingMissions": [
+              "family-review-complete"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Tomás", "text": "Repaso serio: aquí evaluamos comprensión de intención, no solo vocabulario." },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Antes de los duelos, este repaso mide si puedes unir intención, emoción y acuerdo sin caer en respuestas literales."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Piensa en un ejemplo distinto: alguien puede decir no vine a ganar y en realidad estar pidiendo un marco seguro para hablar."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Ahora aplica esa lógica a una frase parecida, pero no idéntica."
+            },
             {
               "type": "askChoice",
-              "prompt": "Si alguien dice 'quiero hablar, pero sin culpas', ¿qué propone?",
+              "prompt": "Si alguien dice \"quiero hablar, pero sin culpas\", ¿qué tipo de conversación está abriendo?",
               "options": [
                 {
                   "label": "Un diálogo orientado a soluciones y responsabilidad compartida.",
                   "correct": true,
                   "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Tomás",
+                      "text": "Bien. Ahora escucha una disculpa que reconoce un error y también pide una mejora concreta."
+                    },
                     {
                       "type": "askAudioChoice",
                       "prompt": "Escucha y resume.",
@@ -41,6 +102,11 @@
                           "correct": true,
                           "actions": [
                             {
+                              "type": "showDialogue",
+                              "speaker": "Tomás",
+                              "text": "Exacto. Ya viste responsabilidad compartida sin borrar límites. Cierra el repaso con una regla para toda la cena."
+                            },
+                            {
                               "type": "askText",
                               "prompt": "Write in Spanish: We can disagree, but we should protect respect and keep listening.",
                               "placeholder": "Respuesta en español",
@@ -49,33 +115,67 @@
                                 "Podemos estar en desacuerdo, pero debemos cuidar el respeto y seguir escuchando"
                               ],
                               "actions": [
-                                { "type": "showDialogue", "speaker": "Tomás", "text": "Repaso completo. Ya puedes entrar al primer jefe." },
-                                { "type": "completeMission", "missionId": "family-review-complete" }
+                                {
+                                  "type": "showDialogue",
+                                  "speaker": "Tomás",
+                                  "text": "Repaso completo. Ya puedes entrar al primer duelo."
+                                },
+                                {
+                                  "type": "completeMission",
+                                  "missionId": "family-review-complete"
+                                }
                               ],
                               "wrongMessage": "No. Intenta otra vez."
                             }
                           ]
                         },
-                        { "label": "Culpa totalmente al otro y rompe la relación.", "correct": false },
-                        { "label": "Decide evitar cualquier conversación futura.", "correct": false }
+                        {
+                          "label": "Culpa totalmente al otro y rompe la relación.",
+                          "correct": false
+                        },
+                        {
+                          "label": "Decide evitar cualquier conversación futura.",
+                          "correct": false
+                        }
                       ],
                       "wrongMessage": "No. Intenta otra vez."
                     }
                   ]
                 },
-                { "label": "Que nadie hable de emociones para evitar conflicto.", "correct": false },
-                { "label": "Que una sola persona decida todo.", "correct": false }
+                {
+                  "label": "Que nadie hable de emociones para evitar conflicto.",
+                  "correct": false
+                },
+                {
+                  "label": "Que una sola persona decida todo.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Tomás", "text": "Sin repaso no se abre la secuencia de jefes." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Sin repaso no se abre la secuencia de jefes."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 0, "y": 6, "targetArea": "family-neighborhood", "targetX": 28, "targetY": 10, "facing": "left" },
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "family-neighborhood",
+      "targetX": 28,
+      "targetY": 10,
+      "facing": "left"
+    },
     {
       "x": 19,
       "y": 6,
@@ -83,7 +183,11 @@
       "targetX": 1,
       "targetY": 6,
       "facing": "right",
-      "requires": { "completedMissions": ["family-review-complete"] },
+      "requires": {
+        "completedMissions": [
+          "family-review-complete"
+        ]
+      },
       "blockedMessage": "Completa el repaso familiar antes de entrar."
     }
   ]

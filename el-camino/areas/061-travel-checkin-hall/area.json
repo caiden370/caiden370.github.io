@@ -4,7 +4,7 @@
   "kind": "interior",
   "chapterId": "travel",
   "region": "Chapter 6: Travel Terminal",
-  "cefrLevel": "B1+",
+  "cefrLevel": "B2",
   "teaches": ["facturar equipaje", "documentos", "tarjeta de embarque", "restricciones"],
   "legend": { "w": "insideWall", "r": "lightRedFloor" },
   "playerStart": { "x": 14, "y": 18, "facing": "up" },
@@ -26,7 +26,17 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Para facturar necesito una respuesta completa: motivo del viaje, duración y zona del hotel."
+              "text": "En facturación no basta con decir el motivo del viaje. Debes añadir cuánto tiempo te quedarás y en qué zona dormirás."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Por ejemplo, una expositora me dijo: 'Viajo por una feria, me quedaré cuatro noches y mi hotel está cerca de la estación'. Eso me permitió registrarla sin demoras."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Ahora formula tu propio plan con la misma precisión, pero aplicado a este viaje."
             },
             {
               "type": "askText",
@@ -37,7 +47,7 @@
                 "Viajo por trabajo y me quedare tres noches en el centro"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Javier", "text": "Correcto. Te emito el itinerario oficial." },
+                { "type": "showDialogue", "speaker": "Javier", "text": "Perfecto. Con esa respuesta ya puedo emitir tu itinerario oficial." },
                 { "type": "addItem", "itemId": "scheduleCard", "count": 1 },
                 { "type": "completeMission", "missionId": "travel-checkin-docs" }
               ],
@@ -45,7 +55,11 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "Sin identificación válida no hay facturación." }] }
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Javier", "text": "Sin la identificación del viaje no puedo abrir tu registro." }
+          ]
+        }
       ]
     },
     {
@@ -59,30 +73,39 @@
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "La maleta pasa, pero debes conservar etiqueta y pase de ruta para evitar bloqueos posteriores."
+              "text": "Una pasajera guardó la etiqueta de su maleta en un bolsillo roto y después nadie pudo localizar el equipaje durante la escala."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Otro viajero facturó sin conservar el pase de ruta y en seguridad tuvo que volver atrás para demostrar su conexión."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué exige Elena para cerrar facturación?",
+              "prompt": "Antes de salir hacia seguridad, ¿qué debes conservar contigo para evitar esos problemas?",
               "options": [
                 {
-                  "label": "Conservar etiqueta de equipaje y pase de ruta.",
+                  "label": "La etiqueta del equipaje y el pase de ruta.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Elena", "text": "Listo. Aquí tienes ambos documentos." },
+                    { "type": "showDialogue", "speaker": "Elena", "text": "Exacto. Aquí tienes ambos documentos; te ahorrarán una pérdida de tiempo más tarde." },
                     { "type": "addItem", "itemId": "nameTag", "count": 1 },
                     { "type": "addItem", "itemId": "routePass", "count": 1 },
                     { "type": "completeMission", "missionId": "travel-checkin-complete" }
                   ]
                 },
-                { "label": "Entregar el pasaporte y seguir sin etiqueta.", "correct": false },
-                { "label": "Revisar la maleta en el hotel después del vuelo.", "correct": false }
+                { "label": "Solo la maleta cerrada; los papeles pueden esperar en el mostrador.", "correct": false },
+                { "label": "El recibo del hotel, aunque todavía no llegaste a la ciudad.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Primero valida la documentación con Javier." }] }
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Elena", "text": "Primero deja que Javier registre bien tu itinerario." }
+          ]
+        }
       ]
     }
   ],

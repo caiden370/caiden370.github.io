@@ -62,12 +62,12 @@
             {
               "type": "showDialogue",
               "speaker": "Mentor del Horario",
-              "text": "Entrevista de jefatura: cada error reinicia la ronda completa."
+              "text": "Esta es tu entrevista para el primer turno formal. Cada error reinicia la ronda completa."
             },
             {
               "type": "showDialogue",
               "speaker": "Mentor del Horario",
-              "text": "No busco frases bonitas; busco decisiones correctas bajo presión."
+              "text": "No busco frases bonitas; busco decisiones correctas cuando oficina, mercado y recepción chocan al mismo tiempo."
             },
             {
               "type": "askBossQuiz",
@@ -159,30 +159,29 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Qué área del capítulo te entrenó para resumir casos y prometer seguimiento?",
+                  "prompt": "Si recepción está llena y además debes entregar un manual actualizado, ¿qué acción mantiene la confianza del cliente?",
                   "options": [
                     {
-                      "label": "La recepción de servicios.",
+                      "label": "Resumir el caso, revisar el manual y confirmar un tiempo concreto.",
                       "correct": true
                     },
                     {
-                      "label": "Solo la calle del mercado.",
+                      "label": "Guardar el manual y responder sin verificar nada.",
                       "correct": false
                     },
                     {
-                      "label": "Ninguna; no se practicó eso.",
+                      "label": "Pedir al cliente que espere sin explicación.",
                       "correct": false
                     }
                   ]
                 },
                 {
                   "type": "askText",
-                  "prompt": "Write in Spanish: The complete package included notebook, calculator, manual, and coffee.",
+                  "prompt": "Write in Spanish: The package was ready because each area verified its part.",
                   "placeholder": "Respuesta en español",
                   "correctAnswers": [
-                    "El paquete completo incluyó cuaderno calculadora manual y café",
-                    "El paquete completo incluyó cuaderno, calculadora, manual y café",
-                    "El paquete completo incluyo cuaderno calculadora manual y cafe"
+                    "El paquete estaba listo porque cada área verificó su parte",
+                    "El paquete estaba listo porque cada area verifico su parte"
                   ]
                 }
               ],

@@ -77,24 +77,24 @@
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Bienvenido a recepción. Aquí resolvemos problemas bajo presión y con calma."
+              "text": "En recepción no gana quien habla primero; gana quien escucha, separa el problema y responde con calma."
             },
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Escuchar no es opcional: cada cliente trae información clave."
+              "text": "En un turno anterior confundieron una factura duplicada con un faltante de pedido y terminaron empeorando dos casos a la vez."
             },
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Habla con Nico e Isabel, resume sus casos y luego vuelve conmigo."
+              "text": "Habla con Nico e Isabel, identifica qué necesita cada uno y después consigue con Marcos el manual actualizado que usará la oficina."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál es el primer paso en recepción?",
+              "prompt": "Si dos clientes llegan molestos al mismo tiempo, ¿cuál es el mejor primer paso?",
               "options": [
                 {
-                  "label": "Escuchar todo el caso antes de responder.",
+                  "label": "Escuchar cada caso completo antes de prometer una solución.",
                   "correct": true,
                   "actions": [
                     {
@@ -109,11 +109,11 @@
                   ]
                 },
                 {
-                  "label": "Interrumpir para ahorrar tiempo.",
+                  "label": "Responder rápido aunque todavía no entiendas el problema.",
                   "correct": false
                 },
                 {
-                  "label": "Culpar al cliente de inmediato.",
+                  "label": "Pedirles que vuelvan mañana sin revisar nada.",
                   "correct": false
                 }
               ],
@@ -139,18 +139,20 @@
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Ya escuchaste dos casos y trajiste el manual actualizado."
+              "text": "Ya distinguiste dos problemas distintos y trajiste el manual actualizado."
             },
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Cierra la tarea con una frase de seguimiento profesional."
+              "text": "Ahora cierra como alguien confiable: revisión hecha y seguimiento el mismo día."
             },
             {
               "type": "askSpeech",
-              "prompt": "Di en español: Revisé ambos casos y haré seguimiento hoy.",
+              "prompt": "Di en español: Revisé ambos casos y haré seguimiento hoy mismo.",
               "placeholder": "Respuesta hablada",
               "correctAnswers": [
+                "Revisé ambos casos y haré seguimiento hoy mismo",
+                "Revise ambos casos y hare seguimiento hoy mismo",
                 "Revisé ambos casos y haré seguimiento hoy",
                 "Revise ambos casos y hare seguimiento hoy"
               ],
@@ -174,7 +176,7 @@
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Necesito resumen de Nico e Isabel, y el manual actualizado."
+              "text": "Necesito resumen de Nico e Isabel, y el manual actualizado para la oficina."
             }
           ]
         }
@@ -198,12 +200,12 @@
             {
               "type": "showDialogue",
               "speaker": "Nico",
-              "text": "Mi pedido llegó sin una pieza y nadie confirmó la hora de reposición."
+              "text": "Mi pedido llegó sin una pieza y nadie me dijo cuándo la repondrían."
             },
             {
               "type": "showDialogue",
               "speaker": "Nico",
-              "text": "No quiero excusas; quiero un plan concreto."
+              "text": "Si me dices “ya veremos”, pierdo confianza. Quiero saber qué revisarás y cuándo."
             },
             {
               "type": "askChoice",
@@ -266,12 +268,12 @@
             {
               "type": "showDialogue",
               "speaker": "Isabel",
-              "text": "Recibí una factura duplicada y me preocupa pagar dos veces."
+              "text": "Recibí una factura duplicada. Si nadie la corrige, podría pagar dos veces."
             },
             {
               "type": "showDialogue",
               "speaker": "Isabel",
-              "text": "Quiero una explicación breve y una acción concreta."
+              "text": "No necesito una excusa larga; necesito una acción y el documento correcto."
             },
             {
               "type": "askText",
@@ -326,16 +328,16 @@
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Buen trabajo con los clientes. Para cerrar recepción necesitas el manual actualizado."
+              "text": "Buen trabajo con los clientes. Para cerrar recepción necesitas el manual actualizado que luego volverá a la oficina."
             },
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Demuestra comprensión del protocolo antes de entregártelo."
+              "text": "Antes de entregártelo, demuestra que entiendes el orden del protocolo."
             },
             {
               "type": "askAudioChoice",
-              "prompt": "Escucha el protocolo.",
+              "prompt": "Escucha el protocolo y elige la síntesis correcta.",
               "audioText": "Primero registramos el problema, después proponemos una solución y finalmente confirmamos el seguimiento.",
               "options": [
                 {

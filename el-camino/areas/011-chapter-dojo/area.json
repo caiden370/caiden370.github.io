@@ -1,0 +1,106 @@
+{
+  "id": "chapter-dojo",
+  "name": "Dojo del Camino",
+  "kind": "interior",
+  "chapterId": "home-base",
+  "region": "Home Base",
+  "cefrLevel": "A1-C1",
+  "teaches": [
+    "chapter vocabulary",
+    "sentence comprehension",
+    "listening comprehension",
+    "typed Spanish",
+    "story preparation"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "t": "tatamiFloor"
+  },
+  "playerStart": {
+    "x": 11,
+    "y": 13,
+    "facing": "up"
+  },
+  "objects": [
+    {
+      "type": "dojoBanner",
+      "x": 2,
+      "y": 1,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "dojoBanner",
+      "x": 20,
+      "y": 1,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "trophyCase",
+      "x": 9,
+      "y": 1,
+      "w": 6,
+      "h": 1
+    },
+    {
+      "type": "weaponRack",
+      "x": 2,
+      "y": 5,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "weaponRack",
+      "x": 19,
+      "y": 5,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "trainingDummy",
+      "x": 4,
+      "y": 10
+    },
+    {
+      "type": "trainingDummy",
+      "x": 19,
+      "y": 10
+    }
+  ],
+  "people": [
+    {
+      "personId": "guardian-aula",
+      "x": 11,
+      "y": 5,
+      "message": "El entrenamiento convierte las palabras del capítulo en decisiones que podrás reconocer dentro de la historia.",
+      "interactions": [
+        {
+          "actions": [
+            {
+              "type": "openDojoMenu"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [
+    {
+      "x": 11,
+      "y": 15,
+      "targetArea": "plaza-del-camino",
+      "targetX": 15,
+      "targetY": 12,
+      "facing": "down"
+    },
+    {
+      "x": 12,
+      "y": 15,
+      "targetArea": "plaza-del-camino",
+      "targetX": 15,
+      "targetY": 12,
+      "facing": "down"
+    }
+  ]
+}

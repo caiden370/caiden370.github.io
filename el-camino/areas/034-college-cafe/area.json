@@ -23,15 +23,16 @@
         {
           "when": { "completedMissions": ["college-buy-supplies", "college-library-complete"], "missingMissions": ["college-buy-coffee"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Carlos", "text": "Después de estudiar, mucha gente compra café y repasa con amigos." },
-            { "type": "showDialogue", "speaker": "Carlos", "text": "Puedes decir: me gustaría un café, por favor." },
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Después de estudiar, muchos grupos se reúnen aquí para repasar en voz alta y descansar un poco." },
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Si quieres sonar amable, no copies mi pedido. Fíjate en el modelo: me gustaría un té caliente, por favor." },
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Ahora pide lo tuyo para cerrar tu día universitario." },
             {
               "type": "askSpeech",
-              "prompt": "Politely ask for a coffee in Spanish.",
+              "prompt": "Ask politely for a coffee in Spanish.",
               "placeholder": "Respuesta hablada",
-              "correctAnswers": ["Me gustaría un café por favor", "Me gustaria un cafe por favor", "Quiero un café por favor", "Quiero un cafe por favor"],
+              "correctAnswers": ["Me gustaría un café por favor", "Me gustaria un cafe por favor", "Me gustaría un café, por favor", "Me gustaria un cafe, por favor", "Quisiera un café por favor", "Quisiera un cafe por favor"],
               "actions": [
-                { "type": "showDialogue", "speaker": "Carlos", "text": "Aquí tienes café." },
+                { "type": "showDialogue", "speaker": "Carlos", "text": "Perfecto. Un café para el repaso final." },
                 { "type": "addItem", "itemId": "coffeeCup", "count": 1 },
                 { "type": "completeMission", "missionId": "college-buy-coffee" }
               ],
@@ -39,7 +40,7 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Estudia primero; después café." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Primero estudia; después pide tu café con calma." }] }
       ]
     },
     {
@@ -48,36 +49,41 @@
       "y": 12,
       "interactions": [
         {
-          "when": { "hasItems": [{ "itemId": "coffeeCup", "count": 1 }, { "itemId": "textbook", "count": 1 }, { "itemId": "calculator", "count": 1 }, { "itemId": "studyNotes", "count": 1 }], "completedMissions": ["college-buy-coffee"], "missingMissions": ["college-final-review"] },
+          "when": { "hasItems": [{ "itemId": "campusId", "count": 1 }, { "itemId": "coffeeCup", "count": 1 }, { "itemId": "textbook", "count": 1 }, { "itemId": "calculator", "count": 1 }, { "itemId": "studyNotes", "count": 1 }], "completedMissions": ["college-buy-coffee", "college-plan"], "missingMissions": ["college-final-review"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Tienes libro, calculadora, apuntes y café. Parece un verdadero día universitario." },
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Ahora explica tu plan: comprar, estudiar, descansar y repasar." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Tu mochila ya cuenta la historia completa: credencial, materiales, apuntes y café para seguir despierto." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "En la universidad, estar listo significa conectar pasos: resolver el cuarto, comprar, estudiar y luego explicar tu plan con calma." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Piensa en este ejemplo: después de clase reviso los apuntes y más tarde descanso. No repetiré tu plan; tú tienes que aplicarlo." },
             {
               "type": "askChoice",
-              "prompt": "If someone says: Después de estudiar, voy al café, when do they go to the café?",
+              "prompt": "¿Qué situación demuestra que de verdad estás listo para el repaso final con la rectora?",
               "options": [
-                { "label": "after studying", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Marcos", "text": "Correcto." },
-                  {
-                    "type": "askText",
-                    "prompt": "Write in Spanish: I should study tomorrow.",
-                    "placeholder": "Respuesta en español",
-                    "correctAnswers": ["Debería estudiar mañana", "Deberia estudiar manana", "Deberia estudiar mañana"],
-                    "actions": [
-                      { "type": "showDialogue", "speaker": "Marcos", "text": "Repaso completo. La sala de jefes está abierta." },
-                      { "type": "completeMission", "missionId": "college-final-review" }
-                    ],
-                    "wrongMessage": "No. Intenta otra vez."
-                  }
-                ] },
-                { "label": "before studying", "correct": false },
-                { "label": "instead of studying", "correct": false }
+                {
+                  "label": "Terminaste tus recados, llevas materiales y puedes explicar cuándo estudiarás y cuándo descansarás.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Marcos", "text": "Sí. Ahora exprésalo en español." },
+                    {
+                      "type": "askText",
+                      "prompt": "Write in Spanish: Tomorrow I should review with my study group before the final exam.",
+                      "placeholder": "Respuesta en español",
+                      "correctAnswers": ["Mañana debería repasar con mi grupo de estudio antes del examen final", "Manana deberia repasar con mi grupo de estudio antes del examen final", "Mañana debo repasar con mi grupo de estudio antes del examen final", "Manana debo repasar con mi grupo de estudio antes del examen final"],
+                      "actions": [
+                        { "type": "showDialogue", "speaker": "Marcos", "text": "Muy bien. La ruta a las salas de reto ya está abierta." },
+                        { "type": "completeMission", "missionId": "college-final-review" }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "Solo compraste café y decidiste olvidar los apuntes.", "correct": false },
+                { "label": "Fuiste al dormitorio y nunca organizaste el resto del día.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Trae libro, calculadora, apuntes y café." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Trae credencial, libro, calculadora, apuntes y café para el repaso final." }] }
       ]
     }
   ],

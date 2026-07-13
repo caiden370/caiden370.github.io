@@ -15,7 +15,7 @@
     { "type": "restaurant", "x": 3, "y": 14, "w": 6, "h": 4, "entrance": { "x": 6, "y": 18, "targetArea": "high-school-cafeteria", "targetX": 14, "targetY": 1, "facing": "down" } },
     { "type": "auditorium", "x": 19, "y": 14, "w": 6, "h": 4, "entrance": { "x": 22, "y": 18, "targetArea": "high-school-club-lab", "targetX": 14, "targetY": 1, "facing": "down" } },
     { "type": "schoolBell", "x": 13, "y": 8 },
-    { "type": "bulletinBoard", "x": 12, "y": 12, "w": 4, "h": 1, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Tablón: primero horario, después casillero, gimnasio, cafetería y club." }] }] },
+    { "type": "bulletinBoard", "x": 12, "y": 12, "w": 4, "h": 1, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Meta del día: entiende tu horario, consigue el pase del gimnasio, ayuda en la cafetería y llega listo para la feria de clubes." }] }] },
     { "type": "bench", "x": 6, "y": 10, "w": 2, "h": 1 },
     { "type": "bench", "x": 20, "y": 10, "w": 2, "h": 1 }
   ],
@@ -28,35 +28,40 @@
         {
           "when": { "missingMissions": ["hs-schedule"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Bienvenido al instituto. Aquí no basta con saludar; tienes que leer el horario." },
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Mi horario dice: primero ciencias, después almuerzo, y por la tarde club." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Bienvenido al instituto. Tu meta hoy es terminar el primer día sin perderte: entiende tu horario, ayuda a tus compañeros y llega listo para el club." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Por ejemplo, yo voy primero a historia y después al gimnasio. Cuando hablo del orden del día, cada palabra importa." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Si entiendes qué va primero y cómo se llama tu plan del día, podrás empezar El Camino con buen paso." },
             {
               "type": "askChoice",
-              "prompt": "Valeria says: primero ciencias, después almuerzo. What happens first?",
+              "prompt": "Una estudiante dice: primero voy a la biblioteca y después a arte. ¿Qué hace primero?",
               "options": [
-                { "label": "science class", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Valeria", "text": "Exacto. Primero ciencias." },
-                  {
-                    "type": "askText",
-                    "prompt": "Escribe en español: schedule.",
-                    "placeholder": "Respuesta en español",
-                    "correctAnswers": ["horario"],
-                    "actions": [
-                      { "type": "showDialogue", "speaker": "Valeria", "text": "Muy bien. Toma tu horario." },
-                      { "type": "addItem", "itemId": "scheduleCard", "count": 1 },
-                      { "type": "completeMission", "missionId": "hs-schedule" }
-                    ],
-                    "wrongMessage": "No. Intenta otra vez."
-                  }
-                ] },
-                { "label": "lunch", "correct": false },
-                { "label": "club meeting", "correct": false }
+                {
+                  "label": "Va a la biblioteca.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Valeria", "text": "Bien. Ya entiendes cómo seguir el orden del día." },
+                    {
+                      "type": "askText",
+                      "prompt": "Escribe en español la palabra para the student's daily schedule.",
+                      "placeholder": "Respuesta en español",
+                      "correctAnswers": ["horario"],
+                      "actions": [
+                        { "type": "showDialogue", "speaker": "Valeria", "text": "Perfecto. Aquí tienes tu horario. Ahora habla con Marcos y luego entra al pasillo." },
+                        { "type": "addItem", "itemId": "scheduleCard", "count": 1 },
+                        { "type": "completeMission", "missionId": "hs-schedule" }
+                      ],
+                      "wrongMessage": "No. Intenta otra vez."
+                    }
+                  ]
+                },
+                { "label": "Va a arte.", "correct": false },
+                { "label": "Va al club.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Usa el horario. Ve al pasillo y busca tu casillero." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Con tu horario listo, habla con Marcos y después busca el pase en el pasillo." }] }
       ]
     },
     {
@@ -67,24 +72,29 @@
         {
           "when": { "completedMissions": ["hs-schedule"], "missingMissions": ["hs-opinions"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Marcos", "text": "A mí me gusta el club de música, pero prefiero ciencias hoy." },
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Cuando digo prefiero, estoy comparando opciones." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Me gustan muchas actividades del instituto, pero prefiero ciencias cuando quiero resolver un problema." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Si digo me gusta música, hablo de un gusto general. Si digo prefiero ciencias hoy, estoy eligiendo entre opciones." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Esa diferencia te ayudará cuando más tarde te pregunten por clubes, compañeros y planes." },
             {
               "type": "askChoice",
-              "prompt": "Marcos says: me gusta música, pero prefiero ciencias hoy. What is his choice today?",
+              "prompt": "Una estudiante dice: me gusta el dibujo, pero hoy prefiero robótica. ¿Qué elige hoy?",
               "options": [
-                { "label": "science", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Marcos", "text": "Sí. Prefiero ciencias hoy." },
-                  { "type": "completeMission", "missionId": "hs-opinions" }
-                ] },
-                { "label": "music", "correct": false },
-                { "label": "lunch", "correct": false }
+                {
+                  "label": "Robótica.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Marcos", "text": "Exacto. Ya sabes expresar una preferencia para tu primer día." },
+                    { "type": "completeMission", "missionId": "hs-opinions" }
+                  ]
+                },
+                { "label": "El dibujo.", "correct": false },
+                { "label": "El almuerzo.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Me gusta música, pero prefiero ciencias hoy." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Ahora ya puedes entrar al pasillo, al gimnasio y luego volver al club con una opinión clara." }] }
       ]
     }
   ],

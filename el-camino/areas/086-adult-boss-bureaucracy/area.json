@@ -59,7 +59,12 @@
             {
               "type": "showDialogue",
               "speaker": "Inspector de Burocracia",
-              "text": "Primer duelo: precisión administrativa total. Un error y reinicias desde la pregunta uno."
+              "text": "Aquí no gana quien reconoce palabras aisladas. Gana quien detecta el dato que invalida un trámite y sabe frenarlo a tiempo."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Inspector de Burocracia",
+              "text": "Piensa en otro expediente: firma legible, sello correcto y copia completa, pero número de contacto inútil. Se ve ordenado y aun así fracasa."
             },
             {
               "type": "askBossQuiz",
@@ -96,7 +101,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "Historia: Una persona entrega firma, sello y licencia, pero olvida número de contacto. ¿Qué refleja mejor la decisión correcta?",
+                  "prompt": "Historia: una persona trae firma, sello y licencia, pero el teléfono escrito no coincide con la cita registrada. ¿Qué decisión refleja mejor un criterio burocrático correcto?",
                   "options": [
                     {
                       "label": "Solicitar corrección inmediata porque un dato crítico incompleto invalida el expediente.",
@@ -151,7 +156,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Qué par de áreas entrenó más la exactitud de campos y sellos?",
+                  "prompt": "¿Qué par de áreas te obligó más a cruzar sellos, fechas y coherencia documental?",
                   "options": [
                     {
                       "label": "Ayuntamiento y Centro Documental.",
@@ -173,7 +178,8 @@
                   "placeholder": "Respuesta en español",
                   "correctAnswers": [
                     "La burocracia es lenta solo cuando la gente omite pasos de verificación",
-                    "La burocracia es lenta sólo cuando la gente omite pasos de verificación"
+                    "La burocracia es lenta sólo cuando la gente omite pasos de verificación",
+                    "La burocracia es lenta solo cuando la gente se salta pasos de verificación"
                   ]
                 }
               ],
@@ -181,7 +187,7 @@
                 {
                   "type": "showDialogue",
                   "speaker": "Inspector de Burocracia",
-                  "text": "Has superado la cámara burocrática."
+                  "text": "Has superado la cámara burocrática sin saltarte ninguna comprobación."
                 },
                 {
                   "type": "completeMission",
@@ -196,7 +202,7 @@
             {
               "type": "showDialogue",
               "speaker": "Inspector de Burocracia",
-              "text": "Continúa al duelo de negociación."
+              "text": "Pasa a la sala donde la precisión debe convertirse en negociación."
             }
           ]
         }

@@ -62,12 +62,12 @@
             {
               "type": "showDialogue",
               "speaker": "Capitana del Equipo",
-              "text": "Soy la cliente estratégica. No evalúo simpatía; evalúo precisión y confianza."
+              "text": "Soy la cliente estratégica. No evalúo simpatía; evalúo si puedes recuperar confianza después de un error."
             },
             {
               "type": "showDialogue",
               "speaker": "Capitana del Equipo",
-              "text": "Responderás todo sin pistas. Un error reinicia la negociación."
+              "text": "Responderás sin pistas. Un error reinicia la negociación."
             },
             {
               "type": "askBossQuiz",
@@ -159,18 +159,18 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Qué estación del capítulo te entrenó para hablar con cortesía y pedidos claros al mismo tiempo?",
+                  "prompt": "Lucía detecta una suma incorrecta antes de cerrar el pedido. ¿Qué problema evitas al corregirla a tiempo?",
                   "options": [
                     {
-                      "label": "La calle del mercado con proveedores.",
+                      "label": "Una factura equivocada y otra pérdida de confianza del cliente.",
                       "correct": true
                     },
                     {
-                      "label": "Solo la sala de descanso.",
+                      "label": "Que el café llegue demasiado caliente.",
                       "correct": false
                     },
                     {
-                      "label": "Ninguna estación.",
+                      "label": "Tener que hablar con el proveedor otra vez jamás.",
                       "correct": false
                     }
                   ]

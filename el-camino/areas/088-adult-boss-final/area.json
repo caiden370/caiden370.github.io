@@ -70,12 +70,12 @@
             {
               "type": "showDialogue",
               "speaker": "Rectora del Tribunal",
-              "text": "Duelo final: burocracia, seguro, taller y negociación en una sola evaluación."
+              "text": "El tribunal final escucha como escucha un comité real: si una oficina habla sin pruebas, todo el caso pierde fuerza."
             },
             {
               "type": "showDialogue",
               "speaker": "Rectora del Tribunal",
-              "text": "Si fallas una respuesta, el tribunal reinicia completo."
+              "text": "Piensa en una entrega profesional: cada promesa debe apoyarse en documentos, tiempos y un canal de seguimiento."
             },
             {
               "type": "askBossQuiz",
@@ -112,7 +112,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "Historia larga: Una persona llegó con formulario incompleto, recibió cita de seguro, detectó frenos críticos, obtuvo auto temporal y cerró expediente con sellos. ¿Qué principio sostuvo todo el proceso?",
+                  "prompt": "Historia larga: una persona llegó con formulario incompleto, recibió cita de seguro, detectó frenos críticos, obtuvo auto temporal y cerró expediente con sellos y cronograma firmado. ¿Qué principio sostuvo todo el proceso?",
                   "options": [
                     {
                       "label": "Verificación progresiva con comunicación clara entre áreas.",
@@ -167,7 +167,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Qué área funcionó como puerta obligatoria para abrir la cadena 086 → 087 → 088?",
+                  "prompt": "¿Qué espacio funcionó como puerta obligatoria para abrir la cadena 086 → 087 → 088?",
                   "options": [
                     {
                       "label": "El Centro de Repaso de Responsabilidades.",
@@ -194,7 +194,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Cuál resumen representa mejor todo el capítulo ocho?",
+                  "prompt": "¿Cuál resumen defenderías ante el tribunal como síntesis del capítulo ocho?",
                   "options": [
                     {
                       "label": "Documentar, verificar, negociar con realismo y cerrar con seguimiento.",
@@ -215,7 +215,7 @@
                 {
                   "type": "showDialogue",
                   "speaker": "Rectora del Tribunal",
-                  "text": "Superaste el tribunal final. Ganaste la insignia del capítulo ocho."
+                  "text": "Superaste el tribunal final. La ciudad reconoce que puedes manejar responsabilidades adultas de principio a fin."
                 },
                 {
                   "type": "addItem",
@@ -235,7 +235,7 @@
             {
               "type": "showDialogue",
               "speaker": "Rectora del Tribunal",
-              "text": "La insignia del capítulo ocho ya está en tu bolsa."
+              "text": "La insignia del capítulo ocho ya certifica tu expediente."
             }
           ]
         }

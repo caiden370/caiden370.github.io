@@ -77,7 +77,7 @@
           "actions": [
             {
               "type": "showDialogue",
-              "text": "Encuentras un paquete de formularios de alquiler con notas pendientes."
+              "text": "Encuentras formularios de alquiler con una nota subrayada: \"sin comprobantes, el expediente vuelve al inicio\"."
             },
             {
               "type": "addItem",
@@ -117,24 +117,24 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "El arrendador exige un paquete completo: formularios firmados, comprobante del supermercado, comprobante bancario y plan de salud."
+              "text": "Tu objetivo aquí es conseguir que el arrendador confirme tu primer apartamento. Para eso no basta con entusiasmo; cada papel debe contar la misma historia."
             },
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "No basta con decir \"ya fui\". Necesitamos pruebas concretas porque la auditoría revisa cada documento."
+              "text": "A otro inquilino le devolvieron el expediente porque tenía formularios firmados, pero ningún recibo sellado. El problema no era hablar mucho, sino demostrar cada paso."
             },
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Empieza en supermercado para conseguir el sello, después banco y clínica para cerrar pagos y salud."
+              "text": "Empieza con los formularios, luego busca el sello del supermercado y después cierra banco y clínica para que el paquete tenga lógica completa."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué combinación pide Valeria para validar el apartamento?",
+              "prompt": "Si ya recogiste los formularios, pero todavía no tienes el sello del supermercado, ¿qué debes priorizar?",
               "options": [
                 {
-                  "label": "Formularios, sello del supermercado, comprobante bancario y plan de salud.",
+                  "label": "Ir al supermercado, completar la compra base y pedir el recibo sellado.",
                   "correct": true,
                   "actions": [
                     {
@@ -144,11 +144,11 @@
                   ]
                 },
                 {
-                  "label": "Solo una conversación en el parque.",
+                  "label": "Volver al apartamento y esperar sin más documentos.",
                   "correct": false
                 },
                 {
-                  "label": "Dos cafés y una foto familiar.",
+                  "label": "Ir al parque sin revisar la lista del supermercado.",
                   "correct": false
                 }
               ],
@@ -189,15 +189,22 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Veo todos los comprobantes. Ahora necesito confirmar que entiendes el proceso completo de principio a fin."
+              "text": "Ahora sí veo el paquete casi completo. El arrendador quiere una frase clara que una recibo, banco y salud antes de confirmar el apartamento."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "No repitas una lista aislada; resume el proceso como si estuvieras entregando el expediente en ventanilla."
             },
             {
               "type": "askText",
-              "prompt": "Write in Spanish: I already delivered all the documents and now I can confirm the apartment.",
+              "prompt": "Write in Spanish: I already gathered the stamped receipt, the bank record, and the health plan to confirm the apartment.",
               "placeholder": "Respuesta en español",
               "correctAnswers": [
-                "Ya entregué todos los documentos y ahora puedo confirmar el apartamento",
-                "Ya entregue todos los documentos y ahora puedo confirmar el apartamento"
+                "Ya reuní el recibo sellado el comprobante bancario y el plan de salud para confirmar el apartamento",
+                "Ya reuni el recibo sellado el comprobante bancario y el plan de salud para confirmar el apartamento",
+                "Ya reuní el recibo sellado, el comprobante bancario y el plan de salud para confirmar el apartamento",
+                "Ya reuni el recibo sellado, el comprobante bancario y el plan de salud para confirmar el apartamento"
               ],
               "actions": [
                 {
@@ -223,7 +230,7 @@
                 {
                   "type": "showDialogue",
                   "speaker": "Valeria",
-                  "text": "Verificación del apartamento completada."
+                  "text": "Perfecto. El apartamento queda verificado y listo para tu primera semana independiente."
                 },
                 {
                   "type": "completeMission",
@@ -239,7 +246,7 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Trae pruebas reales de cada trámite para cerrar el apartamento."
+              "text": "Trae pruebas reales de supermercado, banco y salud para cerrar el apartamento."
             }
           ]
         }
@@ -255,7 +262,12 @@
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Cuando vivas solo, revisa fechas, montos y firmas antes de entregar papeles."
+              "text": "Yo siempre reviso fecha, monto y firma por separado antes de entregar un papel."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Vivir solo significa detectar un error antes de que otra persona te devuelva el expediente."
             }
           ]
         }

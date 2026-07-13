@@ -23,45 +23,53 @@
         {
           "when": { "missingMissions": ["college-boss-dorm"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Duelo universitario uno. Piensa antes de responder." },
+            { "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Primer duelo universitario: convivencia, rutinas y recados." },
+            { "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Aquí no basta memorizar palabras; debes entender decisiones de un dormitorio compartido." },
             {
               "type": "askBossQuiz",
               "bossId": "college-boss-dorm",
               "title": "Duelo del Dormitorio",
-              "restartMessage": "No. La rutina vuelve a empezar.",
+              "restartMessage": "No. Empieza otra vez.",
               "questions": [
                 { "type": "askChoice", "prompt": "Translate: Mi compañero de cuarto necesita detergente, así que voy a la tienda antes de estudiar.", "options": [
                   { "label": "My roommate needs detergent, so I go to the store before studying.", "correct": true },
                   { "label": "My professor needs coffee, so I go to class after sleeping.", "correct": false },
-                  { "label": "My friend needs a notebook, so I close the dorm.", "correct": false }
+                  { "label": "My friend needs a notebook, so I close the dorm forever.", "correct": false }
                 ] },
-                { "type": "askText", "prompt": "Write in Spanish: I would like to rest after finishing my notes.", "placeholder": "Respuesta en español", "correctAnswers": ["Me gustaría descansar después de terminar mis apuntes", "Me gustaria descansar despues de terminar mis apuntes", "Me gustaría descansar después de terminar los apuntes"] },
-                { "type": "askChoice", "prompt": "Historia: En el dormitorio, Rosa lava ropa. Su compañero estudia. Ella dice que hará café cuando termine la ropa. ¿Qué hará Rosa después de lavar?",
+                { "type": "askText", "prompt": "Write in Spanish: I would like to rest after finishing my notes.", "placeholder": "Respuesta en español", "correctAnswers": ["Me gustaría descansar después de terminar mis apuntes", "Me gustaria descansar despues de terminar mis apuntes", "Me gustaría descansar después de terminar los apuntes", "Me gustaria descansar despues de terminar los apuntes"] },
+                { "type": "askChoice", "prompt": "Historia: Rosa termina la lavandería, guarda la llave y lleva apuntes a su compañero antes de bajar al café. ¿Qué hace justo antes de bajar al café?",
                   "options": [
-                    { "label": "Hará café.", "correct": true },
-                    { "label": "Comprará un libro.", "correct": false },
-                    { "label": "Tomará un examen.", "correct": false }
+                    { "label": "Lleva apuntes a su compañero.", "correct": true },
+                    { "label": "Compra un libro nuevo.", "correct": false },
+                    { "label": "Empieza el examen final.", "correct": false }
                   ]
                 },
-                { "type": "askAudioChoice", "prompt": "Escucha y elige el resumen correcto.", "audioText": "No puedo salir ahora; tengo que limpiar el cuarto y entregar los apuntes a mi compañero.", "options": [
-                  { "label": "They cannot leave now because they must clean the room and deliver notes.", "correct": true },
-                  { "label": "They cannot study because the bookstore is closed.", "correct": false },
-                  { "label": "They cannot drink coffee because the library is quiet.", "correct": false }
+                { "type": "askAudioChoice", "prompt": "Escucha y elige el resumen correcto.", "audioText": "No puedo salir ahora; tengo que limpiar el cuarto y entregar los apuntes a mi compañero antes de la reunión.", "options": [
+                  { "label": "They cannot leave now because they must clean the room and deliver notes before the meeting.", "correct": true },
+                  { "label": "They cannot study because the bookstore is closed all month.", "correct": false },
+                  { "label": "They cannot drink coffee because the library is too small.", "correct": false }
                 ] },
                 { "type": "askChoice", "prompt": "--¿Puedes traer detergente? --Tengo clase en diez minutos. --____", "options": [
                   { "label": "Está bien; tráelo después de clase, por favor.", "correct": true },
                   { "label": "No, el examen vive en la cafetería.", "correct": false },
-                  { "label": "Sí, la bicicleta lee despacio.", "correct": false }
-                ] }
+                  { "label": "Sí, la bicicleta estudia conmigo.", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "¿Qué hábito ayuda más a convivir bien en el dormitorio universitario?",
+                  "options": [
+                    { "label": "Avisar, compartir horarios y dejar listo tu espacio antes de salir.", "correct": true },
+                    { "label": "Esconder la llave y salir sin hablar.", "correct": false },
+                    { "label": "Usar la lavadora y olvidar la ropa del compañero.", "correct": false }
+                  ]
+                }
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Rutina universitaria dominada." },
+                { "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Dominas la rutina compartida." },
                 { "type": "completeMission", "missionId": "college-boss-dorm" }
               ]
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Sigue a la biblioteca." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Dormitorio", "text": "Bien. Ahora demuestra tu comprensión en la sala de estudio." }] }
       ]
     }
   ],

@@ -117,44 +117,44 @@
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Perfecto, llegaste a tiempo. Aquí coordinamos pedidos para clientes corporativos."
+              "text": "Hoy preparas el paquete de bienvenida para un cliente que tendrá su primera reunión con la empresa."
             },
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Necesito un paquete de bienvenida: cuaderno, calculadora, manual de servicio y café para la reunión."
+              "text": "Ayer otro aprendiz llevó materiales bonitos, pero olvidó validar una herramienta con proveedores y el cliente perdió tiempo antes de sentarse."
             },
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "No basta con traer objetos; debes confirmar que cada pieza fue verificada por el área correcta."
+              "text": "Empieza con el cuaderno de esta oficina; después busca la calculadora en el mercado, el manual actualizado en recepción y el café de la sala de descanso."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué elemento NO forma parte del paquete de bienvenida?",
+              "prompt": "Si una parte del paquete viene de otra estación, ¿qué debes hacer antes de decir que todo está listo?",
               "options": [
                 {
-                  "label": "Un cuaderno de inventario.",
-                  "correct": false
-                },
-                {
-                  "label": "Una calculadora funcional.",
-                  "correct": false
-                },
-                {
-                  "label": "Una pelota del patio.",
+                  "label": "Verificarla con el área responsable y registrar la entrega.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "showDialogue",
                       "speaker": "Elena",
-                      "text": "Correcto. Empieza con el cuaderno y vuelve cuando tengas todo."
+                      "text": "Exacto. Trae todo validado y yo cerraré el paquete."
                     },
                     {
                       "type": "completeMission",
                       "missionId": "firstjob-office-intro"
                     }
                   ]
+                },
+                {
+                  "label": "Suponer que está bien si llegó rápido.",
+                  "correct": false
+                },
+                {
+                  "label": "Entregarlo sin preguntar para ahorrar tiempo.",
+                  "correct": false
                 }
               ],
               "wrongMessage": "No. Intenta otra vez."
@@ -192,26 +192,28 @@
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Veo el paquete completo. Antes de aceptarlo, confirma el estado del pedido en español formal."
+              "text": "Un paquete profesional no se cierra diciendo solo “ya está”. Debes mostrar que pasó por cada filtro correcto."
             },
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Usa una frase completa, no palabras sueltas."
+              "text": "Por ejemplo, yo podría informar: “recepción validó el manual y proveedores confirmaron la calculadora”."
             },
             {
               "type": "askText",
-              "prompt": "Escribe en español: I already prepared the welcome package for the client.",
+              "prompt": "Escribe en español: I already prepared the welcome package and confirmed each part with the correct area.",
               "placeholder": "Respuesta en español",
               "correctAnswers": [
-                "Ya preparé el paquete de bienvenida para el cliente",
-                "Ya prepare el paquete de bienvenida para el cliente"
+                "Ya preparé el paquete de bienvenida y confirmé cada parte con el área correcta",
+                "Ya prepare el paquete de bienvenida y confirme cada parte con el area correcta",
+                "Ya preparé el paquete de bienvenida y confirmé cada parte con su área correcta",
+                "Ya prepare el paquete de bienvenida y confirme cada parte con su area correcta"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Elena",
-                  "text": "Excelente. Entrega validada y registrada."
+                  "text": "Excelente. Ya suenas como alguien que sí deja un turno listo."
                 },
                 {
                   "type": "removeItem",
@@ -247,7 +249,7 @@
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Trae cuaderno, calculadora, manual y café; después yo verifico el paquete."
+              "text": "Trae cuaderno, calculadora, manual y café, pero sobre todo tráelos validados por cada área."
             }
           ]
         }
@@ -271,25 +273,25 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Cuando entregues documentos, primero anuncia el contenido y luego el destino."
+              "text": "Cuando entregas algo, nombra primero el contenido, luego el destino y al final el propósito."
             },
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Decir 'esto' no sirve. Debes ser preciso."
+              "text": "Ayer escuché “toma esto” y nadie supo si era para archivo, cliente o reunión."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál frase suena más profesional?",
+              "prompt": "¿Qué frase suena más profesional para informar una entrega?",
               "options": [
                 {
-                  "label": "Aquí está el paquete de bienvenida para el cliente de recepción.",
+                  "label": "Aquí está el paquete de bienvenida para la recepción del cliente.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "showDialogue",
                       "speaker": "Javier",
-                      "text": "Exacto. Precisión primero."
+                      "text": "Exacto. Así sí queda claro qué entregas y para quién."
                     },
                     {
                       "type": "completeMission",
@@ -340,16 +342,16 @@
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Yo reviso que los paquetes sean útiles. Un paquete útil evita preguntas en recepción."
+              "text": "Yo no miro solo si el paquete llegó; miro si le ahorrará preguntas al cliente cuando se siente en la reunión."
             },
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Si falta una herramienta, el cliente pierde tiempo y confianza."
+              "text": "Piensa en otro kit: si trae materiales pero no instrucciones, recepción pierde tiempo explicando todo desde cero."
             },
             {
               "type": "askAudioChoice",
-              "prompt": "Escucha el criterio de verificación.",
+              "prompt": "Escucha un criterio de control y elige qué demuestra calidad.",
               "audioText": "Un paquete está completo cuando contiene materiales, instrucciones y una confirmación final.",
               "options": [
                 {
@@ -385,7 +387,7 @@
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Calidad es claridad, utilidad y verificación."
+              "text": "Calidad es utilidad, claridad y confirmación final."
             }
           ]
         }

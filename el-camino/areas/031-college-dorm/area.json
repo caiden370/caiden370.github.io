@@ -5,7 +5,7 @@
   "chapterId": "college",
   "region": "Chapter 3: Universidad",
   "cefrLevel": "A2",
-  "teaches": ["compañero", "llave", "lavar ropa", "ordenar", "debería"],
+  "teaches": ["compañero", "llave", "lavar ropa", "ordenar", "antes de", "responsabilidad"],
   "legend": { "w": "insideWall", "c": "carpetBlue", "p": "woodFloor" },
   "playerStart": { "x": 14, "y": 17, "facing": "up" },
   "objects": [
@@ -14,7 +14,7 @@
     { "type": "computerDesk", "x": 6, "y": 12, "w": 2, "h": 1 },
     { "type": "laundryMachine", "x": 21, "y": 12 },
     { "type": "itemSparkle", "x": 20, "y": 15, "walkable": true, "interactions": [{ "when": { "missingSteps": ["found-dorm-key"] }, "actions": [
-      { "type": "showDialogue", "text": "Encuentras una llave del dormitorio debajo de la cama." },
+      { "type": "showDialogue", "text": "Encuentras la llave del dormitorio debajo de la cama, junto a una bolsa de lavandería." },
       { "type": "addItem", "itemId": "dormKey", "count": 1 },
       { "type": "completeStep", "stepId": "found-dorm-key" }
     ] }, { "actions": [{ "type": "showDialogue", "text": "La llave ya está en tu mochila." }] }] }
@@ -28,41 +28,47 @@
         {
           "when": { "missingMissions": ["college-roommate"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Soy tu compañera de cuarto. Perdí la llave y tengo que lavar ropa antes de estudiar." },
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Si encuentras la llave, podemos cerrar el dormitorio y salir a comprar libros." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "En un dormitorio compartido, cada detalle cuenta. Si una persona pierde algo, las dos salen tarde." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Ayer mi amiga me dijo: antes de salir, guardo la llave y reviso la ropa. Ese orden evita problemas." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Yo ya organicé mi lado, pero ahora no encuentro la llave del cuarto y necesito dejar todo listo antes de comprar materiales." },
             {
               "type": "askChoice",
-              "prompt": "Valeria lost la llave. What did she lose?",
+              "prompt": "Si quieres salir del dormitorio sin preocupaciones, ¿qué deberías resolver primero?",
               "options": [
-                { "label": "the key", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Valeria", "text": "Sí. Busca la llave en el dormitorio." },
-                  { "type": "completeMission", "missionId": "college-roommate" }
-                ] },
-                { "label": "the textbook", "correct": false },
-                { "label": "the coffee", "correct": false }
+                {
+                  "label": "Encontrar la llave y asegurar el cuarto.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Valeria", "text": "Eso es. Mira cerca de las camas." },
+                    { "type": "completeMission", "missionId": "college-roommate" }
+                  ]
+                },
+                { "label": "Ir al café antes de buscar nada.", "correct": false },
+                { "label": "Olvidar la ropa y salir corriendo.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
         {
-          "when": { "hasItems": [{ "itemId": "dormKey", "count": 1 }], "missingMissions": ["college-dorm-complete"] },
+          "when": { "hasItems": [{ "itemId": "dormKey", "count": 1 }], "completedMissions": ["college-roommate"], "missingMissions": ["college-dorm-complete"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Gracias. Con la llave, el dormitorio está seguro." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Perfecto, ya apareció la llave. Cuando digo ya tengo mis cosas, significa que puedo pasar al siguiente recado." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Por ejemplo: ya tengo mi cuaderno, ahora puedo ir a clase. Haz lo mismo con esta situación." },
             {
               "type": "askText",
-              "prompt": "Translate to Spanish: I have the key.",
+              "prompt": "Write in Spanish: Now we can go to the bookstore.",
               "placeholder": "Respuesta en español",
-              "correctAnswers": ["Tengo la llave"],
+              "correctAnswers": ["Ahora podemos ir a la librería", "Ya podemos ir a la librería"],
               "actions": [
-                { "type": "showDialogue", "speaker": "Valeria", "text": "Perfecto. Ve a la librería." },
+                { "type": "showDialogue", "speaker": "Valeria", "text": "Muy bien. El dormitorio ya está bajo control; sigue con los materiales." },
                 { "type": "completeMission", "missionId": "college-dorm-complete" }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Busca la llave y organiza el dormitorio." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Con la llave lista, ya puedes seguir a la librería." }] }
       ]
     }
   ],

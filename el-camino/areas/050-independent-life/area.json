@@ -94,7 +94,11 @@
           "actions": [
             {
               "type": "showDialogue",
-              "text": "Agenda del día: apartamento, supermercado, banco, clínica y parque."
+              "text": "Meta de la semana: confirmar tu primer apartamento, sostener tus gastos básicos y demostrar que eres una persona confiable en el barrio."
+            },
+            {
+              "type": "showDialogue",
+              "text": "Si falta un comprobante o una confirmación, el repaso final sigue cerrado."
             }
           ]
         }
@@ -141,30 +145,30 @@
             {
               "type": "showDialogue",
               "speaker": "Isabel",
-              "text": "Hoy empiezas tu vida independiente. Nadie te va a recordar cada paso: tú debes organizar compras, pagos, citas y entregas."
+              "text": "Bienvenido a tu primera semana viviendo por tu cuenta en El Camino. La meta no es sobrevivir un día; es cerrar la semana con apartamento aprobado, gastos en orden y buena reputación en el barrio."
             },
             {
               "type": "showDialogue",
               "speaker": "Isabel",
-              "text": "El plan real tiene varios lugares conectados. Si fallas un detalle, el trámite completo se retrasa."
+              "text": "Ayer ayudé a otra residente: compró comida, guardó recibos, corrigió una transferencia y avisó a un vecino cuando cambió el horario. Por eso terminó todo sin retrasos."
             },
             {
               "type": "showDialogue",
               "speaker": "Isabel",
-              "text": "Empieza por hablar con Tomás para conseguir tu identificación y luego entra al apartamento para revisar los documentos."
+              "text": "Tú harás algo parecido. Habla con Tomás para conseguir tu identificación, revisa el apartamento y luego conecta supermercado, banco, clínica y parque."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál es la idea principal de Isabel?",
+              "prompt": "Al final de la semana, ¿qué debe demostrar tu personaje?",
               "options": [
                 {
-                  "label": "Debes coordinar tareas en varios lugares, no solo una conversación.",
+                  "label": "Que puede coordinar documentos, presupuesto, salud y compromisos del vecindario.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "showDialogue",
                       "speaker": "Isabel",
-                      "text": "Exacto. Toma este cuaderno para anotar cada trámite."
+                      "text": "Exacto. Toma este cuaderno y úsalo para no perder el hilo entre un trámite y otro."
                     },
                     {
                       "type": "addItem",
@@ -178,11 +182,11 @@
                   ]
                 },
                 {
-                  "label": "Solo necesitas comprar café y descansar.",
+                  "label": "Que solo sabe entrar y salir del apartamento.",
                   "correct": false
                 },
                 {
-                  "label": "La clínica y el banco no importan para vivir solo.",
+                  "label": "Que puede improvisar sin comprobantes ni horarios.",
                   "correct": false
                 }
               ],
@@ -195,7 +199,7 @@
             {
               "type": "showDialogue",
               "speaker": "Isabel",
-              "text": "Haz cada recado con calma y verifica todo antes del repaso."
+              "text": "Haz cada recado con calma y piensa siempre en la meta semanal completa."
             }
           ]
         }
@@ -219,26 +223,28 @@
             {
               "type": "showDialogue",
               "speaker": "Tomás",
-              "text": "Sin identificación no puedes hacer transferencia ni abrir expediente médico."
+              "text": "Cuando otra inquilina vino esta mañana, no dijo solo su nombre: presentó su tarjeta y explicó para qué trámite la necesitaba."
             },
             {
               "type": "showDialogue",
               "speaker": "Tomás",
-              "text": "Escucha la frase completa: Necesito mi tarjeta para autorizar pagos y confirmar mis datos personales."
+              "text": "En el banco y en la clínica funciona mejor una frase completa: primero el documento, luego el motivo del trámite."
             },
             {
               "type": "askText",
-              "prompt": "Translate to Spanish: I need my card to confirm my personal data.",
+              "prompt": "Write in Spanish: I need my identification card to review the contract and confirm my data.",
               "placeholder": "Respuesta en español",
               "correctAnswers": [
-                "Necesito mi tarjeta para confirmar mis datos personales",
-                "Necesito la tarjeta para confirmar mis datos personales"
+                "Necesito mi tarjeta de identificación para revisar el contrato y confirmar mis datos",
+                "Necesito la tarjeta de identificación para revisar el contrato y confirmar mis datos",
+                "Necesito mi identificación para revisar el contrato y confirmar mis datos",
+                "Necesito la identificación para revisar el contrato y confirmar mis datos"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Tomás",
-                  "text": "Perfecto. Aquí tienes la tarjeta."
+                  "text": "Perfecto. Aquí tienes la tarjeta para que no te rechacen en el banco ni en la clínica."
                 },
                 {
                   "type": "addItem",
@@ -259,7 +265,7 @@
             {
               "type": "showDialogue",
               "speaker": "Tomás",
-              "text": "Lleva tu tarjeta al banco y guarda una copia del trámite."
+              "text": "Lleva tu tarjeta al banco y úsala también si te piden datos en la clínica."
             }
           ]
         }
@@ -273,6 +279,62 @@
         {
           "when": {
             "completedMissions": [
+              "independent-docs-id",
+              "independent-apartment-verified",
+              "independent-grocery-complete",
+              "independent-bank-clinic-complete",
+              "independent-park-complete"
+            ],
+            "missingMissions": [
+              "independent-hub-check"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucia",
+              "text": "Ya casi terminas la semana. Antes del repaso, piensa como alguien que vive solo: si un bloque queda pendiente, todo el paquete sigue incompleto."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucia",
+              "text": "Una persona puede pagar el alquiler y comprar comida, pero si no confirma una entrega o un plan de salud, todavía no cierra la semana."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "Si ya validaste apartamento, supermercado y banco-clínica, pero aún no confirmas el parque, ¿qué debes hacer?",
+              "options": [
+                {
+                  "label": "Volver al parque, completar la entrega y luego reportarte aquí para abrir el repaso.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Lucia",
+                      "text": "Eso es. Ahora sí puedo abrirte el camino al Centro de Repaso de Autonomía."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "independent-hub-check"
+                    }
+                  ]
+                },
+                {
+                  "label": "Entrar al repaso de todos modos porque tres bloques ya son suficientes.",
+                  "correct": false
+                },
+                {
+                  "label": "Ignorar el parque y volver a empezar el supermercado.",
+                  "correct": false
+                }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
+          ]
+        },
+        {
+          "when": {
+            "completedMissions": [
               "independent-docs-id"
             ],
             "missingMissions": [
@@ -283,32 +345,12 @@
             {
               "type": "showDialogue",
               "speaker": "Lucia",
-              "text": "Antes del repaso final, necesitas cuatro verificaciones: apartamento, supermercado, banco-clínica y parque."
+              "text": "Revisa tu cuaderno: apartamento, supermercado, banco-clínica y parque. Cuando los cuatro queden cerrados, vuelve conmigo."
             },
             {
-              "type": "askChoice",
-              "prompt": "¿Qué bloque abre la puerta al repaso?",
-              "options": [
-                {
-                  "label": "Completar las cuatro verificaciones principales.",
-                  "correct": true,
-                  "actions": [
-                    {
-                      "type": "completeMission",
-                      "missionId": "independent-hub-check"
-                    }
-                  ]
-                },
-                {
-                  "label": "Terminar solo el supermercado.",
-                  "correct": false
-                },
-                {
-                  "label": "Hablar una vez con cada NPC sin entregar nada.",
-                  "correct": false
-                }
-              ],
-              "wrongMessage": "No. Intenta otra vez."
+              "type": "showDialogue",
+              "speaker": "Lucia",
+              "text": "El repaso no mide una tarea suelta; mide si supiste sostener toda la semana independiente."
             }
           ]
         },
@@ -317,7 +359,7 @@
             {
               "type": "showDialogue",
               "speaker": "Lucia",
-              "text": "El portón del repaso se abre al completar todas las verificaciones."
+              "text": "El portón del repaso reconoce a quien cierra los cuatro bloques y luego se reporta aquí."
             }
           ]
         }
@@ -345,10 +387,11 @@
           "independent-apartment-verified",
           "independent-grocery-complete",
           "independent-bank-clinic-complete",
-          "independent-park-complete"
+          "independent-park-complete",
+          "independent-hub-check"
         ]
       },
-      "blockedMessage": "Completa apartamento, supermercado, banco-clínica y parque."
+      "blockedMessage": "Completa los cuatro bloques y repórtate con Lucía."
     }
   ]
 }

@@ -4,7 +4,7 @@
   "kind": "interior",
   "chapterId": "travel",
   "region": "Chapter 6: Travel Terminal",
-  "cefrLevel": "B1+",
+  "cefrLevel": "B2",
   "teaches": ["reserva", "preferencias de habitación", "entrega", "confirmación"],
   "legend": { "w": "insideWall", "c": "carpetBlue" },
   "playerStart": { "x": 14, "y": 1, "facing": "down" },
@@ -32,29 +32,38 @@
           "actions": [
             {
               "type": "showDialogue",
-              "speaker": "Sofia",
-              "text": "Para confirmar la reserva necesito una respuesta completa: piso alto, habitación tranquila y salida temprana."
+              "speaker": "Sofía",
+              "text": "Ayer llegó una consultora agotada. No pidió lujo; pidió silencio, un piso alto y salida temprana para una reunión al amanecer."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Cuando las preferencias se dicen con precisión, el hotel puede proteger el descanso del viajero y evitar cambios de última hora."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué respuesta cumple exactamente las tres condiciones?",
+              "prompt": "¿Qué respuesta encaja mejor con una estancia de trabajo tranquila como la tuya?",
               "options": [
                 {
-                  "label": "Quiero piso alto, habitación tranquila y salida temprana.",
+                  "label": "Solicito una habitación tranquila en un piso alto y salida temprana, por favor.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Sofia", "text": "Reserva confirmada. Habla con Emma para una entrega urgente." },
+                    { "type": "showDialogue", "speaker": "Sofía", "text": "Perfecto. La reserva queda activa y Emma ya puede encargarte el siguiente paso." },
                     { "type": "completeMission", "missionId": "travel-hotel-booking" }
                   ]
                 },
-                { "label": "Prefiero ruido, planta baja y salida indefinida.", "correct": false },
-                { "label": "Solo necesito pagar mañana sin registrarme.", "correct": false }
+                { "label": "Cualquier cuarto me sirve; ya veré mañana si necesito dormir.", "correct": false },
+                { "label": "Prefiero ruido, planta baja y salida indefinida.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Sofia", "text": "Sin validación de seguridad no puedo activar la reserva." }] }
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Sofía", "text": "Sin el registro del viaje y la validación de seguridad no puedo activar la reserva." }
+          ]
+        }
       ]
     },
     {
@@ -68,22 +77,78 @@
             {
               "type": "showDialogue",
               "speaker": "Emma",
-              "text": "Lleva este paquete de notas al barista del Café de la Ciudad y tráeme el comprobante."
+              "text": "El hotel coordina con el Café de la Ciudad la entrega de materiales para el encuentro de esta noche."
             },
-            { "type": "addItem", "itemId": "studyNotes", "count": 1 },
-            { "type": "completeMission", "missionId": "travel-delivery-start" }
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "A otro viajero lo retrasaron porque dijo 'traigo algo para alguien' sin explicar que eran notas del foro ni pedir un comprobante al entregarlas."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "Si Carlos te pregunta por el paquete, ¿qué idea debes comunicar?",
+              "options": [
+                {
+                  "label": "Que son notas del encuentro para el café y que necesitas un comprobante de entrega.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Emma", "text": "Muy bien. Lleva las notas, consigue el comprobante y vuelve para cerrar tu llegada." },
+                    { "type": "addItem", "itemId": "studyNotes", "count": 1 },
+                    { "type": "completeMission", "missionId": "travel-delivery-start" }
+                  ]
+                },
+                { "label": "Que es un paquete cualquiera y que no hace falta registrar nada.", "correct": false },
+                { "label": "Que primero quieres la llave y luego quizá buscarás al barista.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
           ]
         },
         {
           "when": { "hasItems": [{ "itemId": "coffeeCup", "count": 1 }], "missingMissions": ["travel-hotel-complete"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Emma", "text": "Comprobante recibido. Aquí tienes la llave de habitación." },
-            { "type": "removeItem", "itemId": "coffeeCup", "count": 1 },
-            { "type": "addItem", "itemId": "dormKey", "count": 1 },
-            { "type": "completeMission", "missionId": "travel-hotel-complete" }
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "Perfecto, volviste con el comprobante del café. Sin esa prueba no podría cerrar tu llegada ni entregarte la llave."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "En este viaje cada recado deja una huella: documentos en el aeropuerto, constancia en el hotel y referencias claras en la ciudad."
+            },
+            {
+              "type": "askChoice",
+              "prompt": "¿Qué demuestra tu regreso con el comprobante?",
+              "options": [
+                {
+                  "label": "Que la entrega quedó registrada y ya puedes recoger la llave de la habitación.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Emma", "text": "Exacto. Aquí tienes la llave; ahora ya puedes moverte como huésped confirmado." },
+                    { "type": "removeItem", "itemId": "coffeeCup", "count": 1 },
+                    { "type": "addItem", "itemId": "dormKey", "count": 1 },
+                    { "type": "completeMission", "missionId": "travel-hotel-complete" }
+                  ]
+                },
+                { "label": "Que la reserva quedó anulada y debes volver a facturación.", "correct": false },
+                { "label": "Que ya no hace falta confirmar nada más en la ciudad.", "correct": false }
+              ],
+              "wrongMessage": "No. Intenta otra vez."
+            }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Emma", "text": "Entrega el paquete en el café y vuelve sin retrasarte." }] }
+        {
+          "when": { "completedMissions": ["travel-delivery-start"], "missingMissions": ["travel-hotel-complete"] },
+          "actions": [
+            { "type": "showDialogue", "speaker": "Emma", "text": "Entrega las notas a Carlos y vuelve con el comprobante del café." }
+          ]
+        },
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Emma", "text": "Primero confirma la reserva con Sofía; luego te explicaré el encargo del hotel." }
+          ]
+        }
       ]
     }
   ],

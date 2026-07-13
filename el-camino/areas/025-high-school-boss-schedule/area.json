@@ -23,33 +23,39 @@
         {
           "when": { "missingMissions": ["hs-boss-schedule"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Duelo del horario. No hay pistas." },
+            { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Has llegado a la primera sala final. Aquí ordenas el día completo sin pistas largas." },
+            { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Recuerda: horario, obligación y secuencia. Un error y vuelves al inicio." },
             {
               "type": "askBossQuiz",
               "bossId": "hs-boss-schedule",
               "title": "Duelo del Horario",
               "restartMessage": "No. Repite el horario desde el inicio.",
               "questions": [
-                { "type": "askChoice", "prompt": "Translate: Tengo que ir al laboratorio después del almuerzo, pero antes del club.", "options": [
-                  { "label": "I have to go to the lab after lunch, but before club.", "correct": true },
-                  { "label": "I prefer lunch after club and before sports.", "correct": false },
-                  { "label": "I cannot enter the lab because I lost my pass.", "correct": false }
+                { "type": "askChoice", "prompt": "Translate: Después del almuerzo, tengo que ir al laboratorio antes del club de ciencias.", "options": [
+                  { "label": "After lunch, I have to go to the lab before science club.", "correct": true },
+                  { "label": "Before lunch, I prefer to go to the gym after science club.", "correct": false },
+                  { "label": "I cannot go to the lab because lunch is in the hallway.", "correct": false }
                 ] },
-                { "type": "askText", "prompt": "Write in Spanish: I have to study before gym class.", "placeholder": "Respuesta en español", "correctAnswers": ["Tengo que estudiar antes de la clase de gimnasia", "Tengo que estudiar antes de gimnasia"] },
-                { "type": "askChoice", "prompt": "Historia: Elena revisa su horario. Primero tiene matemáticas, después almuerzo y finalmente club de ciencias. ¿Qué ocurre justo después de matemáticas?", "options": [
-                  { "label": "Almuerzo.", "correct": true },
-                  { "label": "Club de ciencias.", "correct": false },
-                  { "label": "Gimnasio.", "correct": false }
+                { "type": "askText", "prompt": "Write in Spanish: I have to check my schedule before gym class.", "placeholder": "Respuesta en español", "correctAnswers": ["Tengo que revisar mi horario antes de la clase de gimnasia", "Tengo que revisar mi horario antes de gimnasia"] },
+                { "type": "askChoice", "prompt": "Historia: Sofía mira su tarjeta. Primero tiene historia, después va al pasillo por su pase y al final corre al gimnasio para no llegar tarde. ¿Qué hace justo antes del gimnasio?", "options": [
+                  { "label": "Va al pasillo por su pase.", "correct": true },
+                  { "label": "Tiene historia otra vez.", "correct": false },
+                  { "label": "Va a la cafetería.", "correct": false }
                 ] },
-                { "type": "askAudioChoice", "prompt": "Escucha. ¿Cuál plan es correcto?", "audioText": "Después de educación física, necesito entregar el formulario del club.", "options": [
-                  { "label": "After PE, they need to turn in the club form.", "correct": true },
-                  { "label": "Before lunch, they need to buy a sandwich.", "correct": false },
-                  { "label": "During math, they need to play basketball.", "correct": false }
+                { "type": "askAudioChoice", "prompt": "Escucha. ¿Cuál plan se menciona?", "audioText": "Antes de la cafetería, necesito dejar mi libro en el casillero; después voy al laboratorio.", "options": [
+                  { "label": "Leave the book in the locker before the cafeteria, then go to the lab.", "correct": true },
+                  { "label": "Buy lunch before class, then sleep in the locker room.", "correct": false },
+                  { "label": "Go to the lab first and never visit the cafeteria.", "correct": false }
                 ] },
-                { "type": "askChoice", "prompt": "Conversación: --Llegas tarde. --Lo siento, tuve que comprar almuerzo para Luis. --Entonces entra rápido y abre el cuaderno. ¿Cuál respuesta conviene?", "options": [
-                  { "label": "Gracias, abro el cuaderno ahora.", "correct": true },
-                  { "label": "Prefiero dormir en la cafetería.", "correct": false },
-                  { "label": "No tengo hambre, pero compro dos jugos.", "correct": false }
+                { "type": "askChoice", "prompt": "Conversación: --La campana suena en un minuto. --Entonces ____.", "options": [
+                  { "label": "entro ahora y reviso mi horario", "correct": true },
+                  { "label": "prefiero dormir junto al trofeo", "correct": false },
+                  { "label": "compro tres almuerzos en el laboratorio", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "¿Qué plan muestra un orden lógico para prepararte para el club de ciencias?", "options": [
+                  { "label": "Reviso el horario, consigo el formulario y luego voy al laboratorio.", "correct": true },
+                  { "label": "Voy al club final, después busco mi horario y luego desayuno en el pasillo.", "correct": false },
+                  { "label": "Entro al gimnasio, me duermo y después pregunto por mi primera clase.", "correct": false }
                 ] }
               ],
               "actions": [
@@ -59,7 +65,7 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Sigue al duelo social." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Bien. Ahora demuestra tu español social en la siguiente sala." }] }
       ]
     }
   ],

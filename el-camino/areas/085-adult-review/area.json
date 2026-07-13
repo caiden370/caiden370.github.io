@@ -13,6 +13,7 @@
   ],
   "legend": {
     "w": "insideWall",
+    "p": "stoneFloor",
     "c": "campusStone",
     "s": "stoneFloor"
   },
@@ -72,7 +73,12 @@
             {
               "type": "showDialogue",
               "speaker": "Marcos",
-              "text": "Repaso serio: quiero secuencia y propósito de cada oficina en una sola lógica."
+              "text": "En el repaso no basta recordar vocabulario. Debes reconstruir la lógica que mantuvo vivo el caso."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Un expediente puede tener muchos documentos y aun así fracasar si el orden de decisiones fue incoherente."
             },
             {
               "type": "askChoice",
@@ -85,7 +91,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Marcos",
-                      "text": "Bien. Tu secuencia no tiene huecos."
+                      "text": "Bien. Esa secuencia muestra control, no improvisación."
                     },
                     {
                       "type": "completeMission",
@@ -135,7 +141,12 @@
             {
               "type": "showDialogue",
               "speaker": "Valeria",
-              "text": "Segundo filtro: comprensión auditiva de una negociación real con presión de tiempo."
+              "text": "Ahora escucharás presión real: una persona apurada, una pieza que tarda y una propuesta que debe seguir siendo honesta."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "No elijas la frase más amable; elige la que combina alternativa concreta y seguimiento verificable."
             },
             {
               "type": "askAudioChoice",
@@ -143,13 +154,13 @@
               "audioText": "El cliente exige entrega hoy, pero la pieza crítica llega mañana. Ofrecemos auto temporal, reporte escrito y confirmación a primera hora.",
               "options": [
                 {
-                  "label": "Ofrecer solución temporal y seguimiento escrito en vez de promesa imposible.",
+                  "label": "Ofrecer una salida temporal y seguimiento escrito en vez de inventar una fecha imposible.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "showDialogue",
                       "speaker": "Valeria",
-                      "text": "Exacto. Gestionar expectativas evita conflictos mayores."
+                      "text": "Exacto. Un buen tono sin plan concreto no resuelve nada."
                     },
                     {
                       "type": "completeMission",
@@ -200,7 +211,12 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Último filtro: cierre ejecutivo. Debe sonar claro, responsable y verificable."
+              "text": "El cierre ejecutivo no repite todo el caso; destila lo esencial para que otra oficina continúe sin llamarte otra vez."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Necesito una frase que suene archivable, no improvisada."
             },
             {
               "type": "askText",
@@ -209,13 +225,14 @@
               "correctAnswers": [
                 "Verifiqué documentos coordiné oficinas y confirmé seguimiento para cerrar el caso sin pendientes",
                 "Verifiqué documentos, coordiné oficinas y confirmé seguimiento para cerrar el caso sin pendientes",
-                "Verifique documentos coordine oficinas y confirme seguimiento para cerrar el caso sin pendientes"
+                "Verifique documentos coordine oficinas y confirme seguimiento para cerrar el caso sin pendientes",
+                "Verifiqué los documentos, coordiné oficinas y confirmé seguimiento para cerrar el caso sin pendientes"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Javier",
-                  "text": "Repaso completado. Se abre la cadena de jefes."
+                  "text": "Perfecto. Esa síntesis abre el corredor de jefes."
                 },
                 {
                   "type": "completeMission",
