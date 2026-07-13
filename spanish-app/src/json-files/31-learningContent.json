@@ -1,0 +1,304 @@
+{
+  "31": {
+    "words": [
+      { "spanish": "será", "english": "will be" },
+      { "spanish": "tendrá", "english": "will have" },
+      { "spanish": "iré", "english": "I will go" },
+      { "spanish": "haremos", "english": "we will do" },
+      { "spanish": "habré terminado", "english": "I will have finished" },
+      { "spanish": "habrá llegado", "english": "he or she will have arrived" },
+      { "spanish": "habremos decidido", "english": "we will have decided" },
+      { "spanish": "para entonces", "english": "by then" },
+      { "spanish": "dentro de poco", "english": "soon" },
+      { "spanish": "la previsión", "english": "the forecast" },
+      { "spanish": "el plazo", "english": "the deadline" },
+      { "spanish": "la meta", "english": "the goal" },
+      { "spanish": "cumplir", "english": "to fulfill" },
+      { "spanish": "lograr", "english": "to achieve" },
+      { "spanish": "organizar", "english": "to organize" },
+      { "spanish": "prever", "english": "to foresee" },
+      { "spanish": "seguramente", "english": "surely" },
+      { "spanish": "probablemente", "english": "probably" },
+      { "spanish": "tal vez estará", "english": "maybe he or she is" },
+      { "spanish": "¿Qué hora será?", "english": "What time could it be?" },
+      { "spanish": "estará en casa", "english": "he or she is probably at home" },
+      { "spanish": "mañana mismo", "english": "as early as tomorrow" },
+      { "spanish": "el próximo trimestre", "english": "next quarter" },
+      { "spanish": "la reunión", "english": "the meeting" },
+      { "spanish": "el itinerario", "english": "the itinerary" },
+      { "spanish": "la reserva", "english": "the reservation" },
+      { "spanish": "el lanzamiento", "english": "the launch" },
+      { "spanish": "la entrega", "english": "the delivery" },
+      { "spanish": "el resultado", "english": "the result" },
+      { "spanish": "la inversión", "english": "the investment" },
+      { "spanish": "cuando termine", "english": "when it finishes" },
+      { "spanish": "antes del viernes", "english": "before Friday" },
+      { "spanish": "para fin de mes", "english": "by the end of the month" },
+      { "spanish": "en unos años", "english": "in a few years" },
+      { "spanish": "el pronóstico", "english": "the forecast" },
+      { "spanish": "el contrato", "english": "the contract" },
+      { "spanish": "la propuesta", "english": "the proposal" },
+      { "spanish": "el avance", "english": "the progress" },
+      { "spanish": "¿Dónde estará?", "english": "Where could he or she be?" },
+      { "spanish": "habrás oído", "english": "you will have heard" },
+      { "spanish": "habrán resuelto", "english": "they will have solved" },
+      { "spanish": "seguirá creciendo", "english": "it will keep growing" },
+      { "spanish": "nos tocará", "english": "it will be our turn" },
+      { "spanish": "valdrá la pena", "english": "it will be worth it" }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Lanzamiento de la aplicación",
+        "dialog": [
+          { "speaker": "Sofía", "spanish": "Si todo sale bien, lanzaremos la aplicación en octubre.", "english": "If everything goes well, we will launch the app in October." },
+          { "speaker": "Raúl", "spanish": "Para entonces, ya habremos probado la versión nueva con cien usuarios.", "english": "By then, we will already have tested the new version with one hundred users." },
+          { "speaker": "Sofía", "spanish": "¿Y el equipo de diseño habrá terminado las pantallas pendientes antes del viernes?", "english": "And will the design team have finished the remaining screens before Friday?" },
+          { "speaker": "Raúl", "spanish": "Sí, y marketing también habrá preparado la campaña inicial.", "english": "Yes, and marketing will also have prepared the initial campaign." },
+          { "speaker": "Sofía", "spanish": "Perfecto. Si cumplimos el plazo, el producto tendrá más impacto en Navidad.", "english": "Perfect. If we meet the deadline, the product will have more impact at Christmas." },
+          { "speaker": "Raúl", "spanish": "Además, la competencia no se habrá movido tan rápido como nosotros.", "english": "Besides, the competition will not have moved as fast as we have." }
+        ],
+        "questions": [
+          {
+            "question": "¿Para qué momento ya habrán probado la versión nueva con cien usuarios?",
+            "options": [
+              "Para octubre, antes del lanzamiento.",
+              "Para Navidad, después de la campaña.",
+              "Para el próximo trimestre, con el segundo equipo.",
+              "Para mañana mismo, con veinte usuarios."
+            ],
+            "answer": "Para octubre, antes del lanzamiento.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Por qué cree Sofía que el producto tendrá más impacto en Navidad?",
+            "options": [
+              "Porque cambiarán el nombre de la aplicación.",
+              "Porque llegarán a tiempo para esa temporada.",
+              "Porque cerrarán la competencia.",
+              "Porque retrasarán el lanzamiento hasta diciembre."
+            ],
+            "answer": "Porque llegarán a tiempo para esa temporada.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué espera Raúl con respecto a la competencia?",
+            "options": [
+              "Que habrá lanzado dos productos nuevos.",
+              "Que no se habrá movido tan rápido.",
+              "Que comprará su aplicación.",
+              "Que cambiará de mercado inmediatamente."
+            ],
+            "answer": "Que no se habrá movido tan rápido.",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Llegada al aeropuerto",
+        "dialog": [
+          { "speaker": "Elena", "spanish": "¿A qué hora llegará tu hermana al aeropuerto?", "english": "What time will your sister arrive at the airport?" },
+          { "speaker": "Miguel", "spanish": "No estoy seguro; será cerca de las ocho, si no cambia el vuelo.", "english": "I am not sure; it will probably be around eight, if the flight does not change." },
+          { "speaker": "Elena", "spanish": "Para cuando la recojamos, ¿ya habrá pasado por inmigración?", "english": "By the time we pick her up, will she already have gone through immigration?" },
+          { "speaker": "Miguel", "spanish": "Seguramente sí. Como viaja solo con equipaje de mano, habrá salido rápido.", "english": "Most likely yes. Since she is traveling with carry-on only, she will probably have gotten out quickly." },
+          { "speaker": "Elena", "spanish": "Entonces iremos primero al hotel y luego cenaremos cerca del río.", "english": "Then we will go to the hotel first and later have dinner near the river." },
+          { "speaker": "Miguel", "spanish": "Buena idea; a esa hora mi padre ya habrá reservado la mesa.", "english": "Good idea; by that time my father will already have reserved the table." }
+        ],
+        "questions": [
+          {
+            "question": "¿A qué hora calcula Miguel que llegará su hermana?",
+            "options": [
+              "Cerca de las ocho.",
+              "Antes de las seis.",
+              "A medianoche.",
+              "Justo al mediodía."
+            ],
+            "answer": "Cerca de las ocho.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Por qué cree Miguel que su hermana saldrá rápido del aeropuerto?",
+            "options": [
+              "Porque ya conoce al personal.",
+              "Porque el vuelo llegará vacío.",
+              "Porque viaja solo con equipaje de mano.",
+              "Porque un chofer la estará esperando en la puerta."
+            ],
+            "answer": "Porque viaja solo con equipaje de mano.",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Quién habrá reservado la mesa para la cena?",
+            "options": [
+              "Elena.",
+              "La hermana de Miguel.",
+              "Un empleado del hotel.",
+              "El padre de Miguel."
+            ],
+            "answer": "El padre de Miguel.",
+            "answerIndex": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Plan de carrera",
+        "dialog": [
+          { "speaker": "Carla", "spanish": "Dentro de dos años, ¿te seguirás viendo en el hospital o cambiarás de especialidad?", "english": "Two years from now, do you still see yourself at the hospital or will you change specialties?" },
+          { "speaker": "Nicolás", "spanish": "Creo que me quedaré. Para entonces, ya habré terminado la residencia y podré elegir mejor.", "english": "I think I will stay. By then, I will already have finished my residency and I will be able to choose better." },
+          { "speaker": "Carla", "spanish": "¿Y no te irás al extranjero?", "english": "And will you not go abroad?" },
+          { "speaker": "Nicolás", "spanish": "Tal vez haré una estancia corta, pero no me mudaré todavía.", "english": "Maybe I will do a short placement, but I will not move away yet." },
+          { "speaker": "Carla", "spanish": "Suena razonable. Además, tendrás más opciones si publicas tu investigación.", "english": "That sounds sensible. You will also have more options if you publish your research." },
+          { "speaker": "Nicolás", "spanish": "Exacto; para fin de año, ya habré enviado el artículo a una revista.", "english": "Exactly; by the end of the year, I will already have sent the article to a journal." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué cree Nicolás que podrá elegir mejor dentro de dos años?",
+            "options": [
+              "Porque habrá cambiado de ciudad.",
+              "Porque ya habrá terminado la residencia y podrá elegir mejor.",
+              "Porque su familia abrirá una clínica.",
+              "Porque dejará de trabajar en el hospital."
+            ],
+            "answer": "Porque ya habrá terminado la residencia y podrá elegir mejor.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué posibilidad contempla Nicolás con respecto al extranjero?",
+            "options": [
+              "Hará una estancia corta, pero no se mudará todavía.",
+              "Se mudará definitivamente el mes próximo.",
+              "No volverá a hablar del tema.",
+              "Abrirá una consulta privada allí."
+            ],
+            "answer": "Hará una estancia corta, pero no se mudará todavía.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué habrá enviado Nicolás para fin de año?",
+            "options": [
+              "Una solicitud de beca.",
+              "Una carta al director del hospital.",
+              "Un artículo a una revista.",
+              "Un informe sobre el laboratorio."
+            ],
+            "answer": "Un artículo a una revista.",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Tarde de tormenta",
+        "dialog": [
+          { "speaker": "Diego", "spanish": "Lucía no contesta el teléfono. ¿Dónde estará?", "english": "Lucía is not answering the phone. Where could she be?" },
+          { "speaker": "Marina", "spanish": "Estará en el metro; cuando llueve, siempre pierde señal allí.", "english": "She is probably on the subway; when it rains, she always loses signal there." },
+          { "speaker": "Diego", "spanish": "Puede ser. A estas horas ya habrá salido de la oficina.", "english": "Could be. By this hour she will already have left the office." },
+          { "speaker": "Marina", "spanish": "Y seguramente habrá visto tus mensajes, pero no habrá podido responder.", "english": "And she will probably have seen your messages, but she will not have been able to reply." },
+          { "speaker": "Diego", "spanish": "Entonces esperaré diez minutos y luego la llamaré otra vez.", "english": "Then I will wait ten minutes and call her again." },
+          { "speaker": "Marina", "spanish": "Haz eso; si no aparece, iremos a buscarla a la cafetería de siempre.", "english": "Do that; if she does not show up, we will go look for her at the usual café." }
+        ],
+        "questions": [
+          {
+            "question": "¿Dónde cree Marina que está Lucía?",
+            "options": [
+              "En la oficina todavía.",
+              "En el metro, donde suele perder señal.",
+              "En su casa con la familia.",
+              "En el aeropuerto esperando un vuelo."
+            ],
+            "answer": "En el metro, donde suele perder señal.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué piensa Marina sobre los mensajes de Diego?",
+            "options": [
+              "Lucía seguramente los habrá visto, pero no habrá podido responder.",
+              "Lucía no los recibió porque apagó el teléfono.",
+              "Diego los envió al número equivocado.",
+              "Los mensajes serán contestados por la noche."
+            ],
+            "answer": "Lucía seguramente los habrá visto, pero no habrá podido responder.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué harán si Lucía no aparece?",
+            "options": [
+              "Llamarán a la policía inmediatamente.",
+              "Esperarán hasta la mañana siguiente.",
+              "Irán a buscarla a la cafetería de siempre.",
+              "Volverán a la oficina de Diego."
+            ],
+            "answer": "Irán a buscarla a la cafetería de siempre.",
+            "answerIndex": 2
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "Para fin de mes",
+        "sentences": [
+          { "spanish": "Si seguimos a este ritmo, para fin de mes habremos cerrado el acuerdo con tres proveedores.", "english": "If we keep up this pace, by the end of the month we will have closed the deal with three suppliers." },
+          { "spanish": "El equipo de ventas habrá visitado todas las tiendas clave antes de la feria.", "english": "The sales team will have visited all the key stores before the trade fair." },
+          { "spanish": "Yo habré revisado los contratos y habré corregido las cláusulas más arriesgadas.", "english": "I will have reviewed the contracts and corrected the riskiest clauses." },
+          { "spanish": "Cuando llegue el director, ya tendremos un panorama mucho más claro.", "english": "When the director arrives, we will already have a much clearer picture." },
+          { "spanish": "Probablemente también habremos aprendido qué clientes responden mejor a nuestra propuesta.", "english": "We will probably also have learned which clients respond best to our proposal." },
+          { "spanish": "Si todo sale bien, el próximo trimestre será menos caótico y más rentable.", "english": "If everything goes well, next quarter will be less chaotic and more profitable." }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "La ciudad dentro de diez años",
+        "sentences": [
+          { "spanish": "Dentro de diez años, esta avenida tendrá menos coches y más carriles para bicicletas.", "english": "In ten years, this avenue will have fewer cars and more bike lanes." },
+          { "spanish": "Muchos edificios viejos habrán sido renovados y se convertirán en viviendas más eficientes.", "english": "Many old buildings will have been renovated and will become more efficient housing." },
+          { "spanish": "Para entonces, el metro habrá ampliado su red hasta los barrios del sur.", "english": "By then, the subway will have expanded its network to the southern neighborhoods." },
+          { "spanish": "Las escuelas usarán más tecnología, pero seguirán necesitando buenos profesores.", "english": "Schools will use more technology, but they will still need good teachers." },
+          { "spanish": "La gente se moverá de otra manera y quizá trabajará desde casa varios días por semana.", "english": "People will get around differently and may work from home several days a week." },
+          { "spanish": "Aun así, el centro seguirá siendo el lugar donde todos querrán encontrarse.", "english": "Even so, downtown will keep being the place where everyone will want to meet." }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Cuando termine la travesía",
+        "sentences": [
+          { "spanish": "Cuando termine la travesía, Julia habrá cruzado tres cordilleras y dos desiertos.", "english": "When the journey ends, Julia will have crossed three mountain ranges and two deserts." },
+          { "spanish": "Habrá dormido en refugios mínimos y habrá aprendido a medir cada gota de agua.", "english": "She will have slept in tiny shelters and learned to measure every drop of water." },
+          { "spanish": "A veces pensará que no puede más, pero al día siguiente seguirá avanzando.", "english": "At times she will think she cannot go on, but the next day she will keep moving forward." },
+          { "spanish": "Cuando vuelva a casa, escribirá un libro sobre las personas que habrá conocido en el camino.", "english": "When she gets back home, she will write a book about the people she will have met along the way." },
+          { "spanish": "Sus amigos no sabrán exactamente cómo lo logró hasta que vean las fotos.", "english": "Her friends will not know exactly how she did it until they see the photos." },
+          { "spanish": "Nadie dudará de que la experiencia la habrá cambiado para siempre.", "english": "No one will doubt that the experience will have changed her forever." }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Hablar del futuro y de lo que ya estará hecho",
+      "description": "Practica predicciones, planes y acciones completadas en el futuro con el futuro simple, el futuro perfecto y el futuro de probabilidad.",
+      "questions_and_answers": [
+        { "question": { "spanish": "Di en español: I will finish the presentation tonight.", "english": "Say in Spanish: I will finish the presentation tonight." }, "answer": { "spanish": "Terminaré la presentación esta noche.", "english": "I will finish the presentation tonight." } },
+        { "question": { "spanish": "Traduce al español: By Friday we will have signed the contract.", "english": "Translate into Spanish: By Friday we will have signed the contract." }, "answer": { "spanish": "Para el viernes, habremos firmado el contrato.", "english": "By Friday we will have signed the contract." } },
+        { "question": { "spanish": "Formula la pregunta en español: What time could it be?", "english": "Form the question in Spanish: What time could it be?" }, "answer": { "spanish": "¿Qué hora será?", "english": "What time could it be?" } },
+        { "question": { "spanish": "Di en español: She is probably at home.", "english": "Say in Spanish: She is probably at home." }, "answer": { "spanish": "Estará en casa.", "english": "She is probably at home." } },
+        { "question": { "spanish": "Responde en español: Tomorrow I will go to the embassy early.", "english": "Answer in Spanish: Tomorrow I will go to the embassy early." }, "answer": { "spanish": "Mañana iré a la embajada temprano.", "english": "Tomorrow I will go to the embassy early." } },
+        { "question": { "spanish": "Traduce al español: By the time you arrive, I will have prepared dinner.", "english": "Translate into Spanish: By the time you arrive, I will have prepared dinner." }, "answer": { "spanish": "Para cuando llegues, habré preparado la cena.", "english": "By the time you arrive, I will have prepared dinner." } },
+        { "question": { "spanish": "Di en español: We will make a decision after the meeting.", "english": "Say in Spanish: We will make a decision after the meeting." }, "answer": { "spanish": "Tomaremos una decisión después de la reunión.", "english": "We will make a decision after the meeting." } },
+        { "question": { "spanish": "Responde en español: The package will probably arrive before noon.", "english": "Answer in Spanish: The package will probably arrive before noon." }, "answer": { "spanish": "El paquete llegará probablemente antes del mediodía.", "english": "The package will probably arrive before noon." } },
+        { "question": { "spanish": "Traduce al español: By the end of the month they will have solved the problem.", "english": "Translate into Spanish: By the end of the month they will have solved the problem." }, "answer": { "spanish": "Para fin de mes, habrán resuelto el problema.", "english": "By the end of the month they will have solved the problem." } },
+        { "question": { "spanish": "Di en español: In a few years this neighborhood will be very different.", "english": "Say in Spanish: In a few years this neighborhood will be very different." }, "answer": { "spanish": "En unos años, este barrio será muy diferente.", "english": "In a few years this neighborhood will be very different." } },
+        { "question": { "spanish": "Formula la pregunta en español: Will you have finished the report before the call?", "english": "Form the question in Spanish: Will you have finished the report before the call?" }, "answer": { "spanish": "¿Habrás terminado el informe antes de la llamada?", "english": "Will you have finished the report before the call?" } },
+        { "question": { "spanish": "Di en español: The team will keep growing next year.", "english": "Say in Spanish: The team will keep growing next year." }, "answer": { "spanish": "El equipo seguirá creciendo el próximo año.", "english": "The team will keep growing next year." } },
+        { "question": { "spanish": "Responde en español: He probably has your keys.", "english": "Answer in Spanish: He probably has your keys." }, "answer": { "spanish": "Tendrá tus llaves.", "english": "He probably has your keys." } },
+        { "question": { "spanish": "Traduce al español: By then, we will have decided where to live.", "english": "Translate into Spanish: By then, we will have decided where to live." }, "answer": { "spanish": "Para entonces, habremos decidido dónde vivir.", "english": "By then, we will have decided where to live." } },
+        { "question": { "spanish": "Di en español: The forecast says it will rain.", "english": "Say in Spanish: The forecast says it will rain." }, "answer": { "spanish": "El pronóstico dice que lloverá.", "english": "The forecast says it will rain." } },
+        { "question": { "spanish": "Formula la pregunta en español: Will it be worth the investment?", "english": "Form the question in Spanish: Will it be worth the investment?" }, "answer": { "spanish": "¿Valdrá la pena la inversión?", "english": "Will it be worth the investment?" } },
+        { "question": { "spanish": "Traduce al español: When the client arrives, we will already have organized everything.", "english": "Translate into Spanish: When the client arrives, we will already have organized everything." }, "answer": { "spanish": "Cuando llegue el cliente, ya habremos organizado todo.", "english": "When the client arrives, we will already have organized everything." } },
+        { "question": { "spanish": "Di en español: I will not change jobs yet.", "english": "Say in Spanish: I will not change jobs yet." }, "answer": { "spanish": "No cambiaré de trabajo todavía.", "english": "I will not change jobs yet." } },
+        { "question": { "spanish": "Responde en español: They will surely hear the news today.", "english": "Answer in Spanish: They will surely hear the news today." }, "answer": { "spanish": "Seguramente oirán la noticia hoy.", "english": "They will surely hear the news today." } },
+        { "question": { "spanish": "Traduce al español: By midnight, the doctors will have completed the operation.", "english": "Translate into Spanish: By midnight, the doctors will have completed the operation." }, "answer": { "spanish": "Para la medianoche, los médicos habrán terminado la operación.", "english": "By midnight, the doctors will have completed the operation." } }
+      ]
+    }
+  }
+}

@@ -1,0 +1,758 @@
+{
+  "28": {
+    "words": [
+      {
+        "spanish": "Si tuviera más tiempo",
+        "english": "If I had more time"
+      },
+      {
+        "spanish": "Si fuera posible",
+        "english": "If it were possible"
+      },
+      {
+        "spanish": "Si pudiera elegir",
+        "english": "If I could choose"
+      },
+      {
+        "spanish": "Si supiera la respuesta",
+        "english": "If I knew the answer"
+      },
+      {
+        "spanish": "Si viniera conmigo",
+        "english": "If he or she came with me"
+      },
+      {
+        "spanish": "Si pusieras más atención",
+        "english": "If you paid more attention"
+      },
+      {
+        "spanish": "Si dijeran la verdad",
+        "english": "If they told the truth"
+      },
+      {
+        "spanish": "Si hubiera menos ruido",
+        "english": "If there were less noise"
+      },
+      {
+        "spanish": "Me hablaron como si fuera experta",
+        "english": "They spoke to me as if I were an expert"
+      },
+      {
+        "spanish": "Ojalá pudiera descansar",
+        "english": "I wish I could rest"
+      },
+      {
+        "spanish": "Ojalá no lloviera mañana",
+        "english": "I wish it would not rain tomorrow"
+      },
+      {
+        "spanish": "Aunque fuera difícil",
+        "english": "Even if it were difficult"
+      },
+      {
+        "spanish": "Si me ofrecieran el puesto",
+        "english": "If they offered me the job"
+      },
+      {
+        "spanish": "Si no estuviera tan cansado",
+        "english": "If I were not so tired"
+      },
+      {
+        "spanish": "Si nos mudáramos",
+        "english": "If we moved"
+      },
+      {
+        "spanish": "Si saliera más temprano",
+        "english": "If I left earlier"
+      },
+      {
+        "spanish": "Si hicieras ejercicio",
+        "english": "If you exercised"
+      },
+      {
+        "spanish": "Si tuviera sentido",
+        "english": "If it made sense"
+      },
+      {
+        "spanish": "La situación hipotética",
+        "english": "The hypothetical situation"
+      },
+      {
+        "spanish": "El deseo poco probable",
+        "english": "The unlikely wish"
+      },
+      {
+        "spanish": "La beca internacional",
+        "english": "The international scholarship"
+      },
+      {
+        "spanish": "El cambio radical",
+        "english": "The radical change"
+      },
+      {
+        "spanish": "La segunda oportunidad",
+        "english": "The second chance"
+      },
+      {
+        "spanish": "El arrepentimiento",
+        "english": "The regret"
+      },
+      {
+        "spanish": "La decisión arriesgada",
+        "english": "The risky decision"
+      },
+      {
+        "spanish": "La reacción inesperada",
+        "english": "The unexpected reaction"
+      },
+      {
+        "spanish": "La versión ideal",
+        "english": "The ideal version"
+      },
+      {
+        "spanish": "La mudanza soñada",
+        "english": "The dreamed-of move"
+      },
+      {
+        "spanish": "El horario flexible",
+        "english": "The flexible schedule"
+      },
+      {
+        "spanish": "La confianza suficiente",
+        "english": "Enough confidence"
+      },
+      {
+        "spanish": "El jefe comprensivo",
+        "english": "The understanding boss"
+      },
+      {
+        "spanish": "El vecino ruidoso",
+        "english": "The noisy neighbor"
+      },
+      {
+        "spanish": "El proyecto solidario",
+        "english": "The community support project"
+      },
+      {
+        "spanish": "La inversión inicial",
+        "english": "The initial investment"
+      },
+      {
+        "spanish": "La meta ambiciosa",
+        "english": "The ambitious goal"
+      },
+      {
+        "spanish": "La respuesta sincera",
+        "english": "The sincere response"
+      },
+      {
+        "spanish": "La salida de emergencia",
+        "english": "The emergency exit"
+      },
+      {
+        "spanish": "La experiencia previa",
+        "english": "Previous experience"
+      },
+      {
+        "spanish": "La condición necesaria",
+        "english": "The necessary condition"
+      },
+      {
+        "spanish": "La comparación exagerada",
+        "english": "The exaggerated comparison"
+      },
+      {
+        "spanish": "El consejo contrafactual",
+        "english": "The counterfactual advice"
+      },
+      {
+        "spanish": "La posibilidad remota",
+        "english": "The remote possibility"
+      }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Una beca para estudiar en Lisboa",
+        "dialog": [
+          {
+            "speaker": "Paula",
+            "spanish": "Si me concedieran la beca de Lisboa, me mudaría en septiembre, pero todavía no sé si mi expediente sería suficiente.",
+            "english": "If they granted me the Lisbon scholarship, I would move in September, but I still do not know whether my academic record would be enough."
+          },
+          {
+            "speaker": "Andrés",
+            "spanish": "Yo creo que sí. Tus profesores hablan de ti como si fueras una investigadora joven con mucha experiencia.",
+            "english": "I think so. Your professors speak about you as if you were a young researcher with a great deal of experience."
+          },
+          {
+            "speaker": "Paula",
+            "spanish": "Ojalá pensaran igual en el comité. Si no tuviera que trabajar tantas horas, prepararía mejor la entrevista.",
+            "english": "I wish the committee thought the same. If I did not have to work so many hours, I would prepare better for the interview."
+          },
+          {
+            "speaker": "Andrés",
+            "spanish": "Aunque fuera una entrevista muy exigente, responderías bien. Si yo fuera tú, practicaría en voz alta esta semana.",
+            "english": "Even if it were a very demanding interview, you would do well. If I were you, I would practice out loud this week."
+          },
+          {
+            "speaker": "Paula",
+            "spanish": "Lo haría encantada. También me preocupa el dinero; si el alojamiento fuera demasiado caro, tendría que compartir piso.",
+            "english": "I would gladly do it. I am also worried about the money; if the housing were too expensive, I would have to share an apartment."
+          },
+          {
+            "speaker": "Andrés",
+            "spanish": "Pues si te aceptaran, varios antiguos becarios te darían consejos y quizá hasta te recomendarían una residencia asequible.",
+            "english": "Well, if they accepted you, several former scholarship recipients would give you advice and might even recommend an affordable residence hall."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Cuál es la meta principal de Paula?",
+            "options": [
+              "Mudarse a Chile por trabajo",
+              "Conseguir una beca para estudiar en Lisboa",
+              "Abrir un negocio con Andrés",
+              "Cambiar de carrera de inmediato"
+            ],
+            "answerIndex": 1,
+            "answer": "Conseguir una beca para estudiar en Lisboa"
+          },
+          {
+            "question": "¿Por qué dice Paula que prepararía mejor la entrevista en otras circunstancias?",
+            "options": [
+              "Porque no tendría que trabajar tantas horas",
+              "Porque hablaría portugués con fluidez",
+              "Porque ya conocería la ciudad",
+              "Porque tendría más cartas de recomendación"
+            ],
+            "answerIndex": 0,
+            "answer": "Porque no tendría que trabajar tantas horas"
+          },
+          {
+            "question": "Si la aceptaran, ¿qué apoyo menciona Andrés?",
+            "options": [
+              "Un contrato garantizado en una empresa",
+              "Consejos de antiguos becarios y quizá una residencia asequible",
+              "Un coche para moverse por la ciudad",
+              "Clases privadas gratis durante un año"
+            ],
+            "answerIndex": 1,
+            "answer": "Consejos de antiguos becarios y quizá una residencia asequible"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "La búsqueda de un piso más tranquilo",
+        "dialog": [
+          {
+            "speaker": "Rosa",
+            "spanish": "Si el vecino de arriba no tocara la batería a medianoche, dormiría mucho mejor y rendiría más en el trabajo.",
+            "english": "If the upstairs neighbor did not play the drums at midnight, I would sleep much better and perform better at work."
+          },
+          {
+            "speaker": "Miguel",
+            "spanish": "Ya lo sé. Ayer actuó como si el edificio fuera suyo y nadie más necesitara descansar.",
+            "english": "I know. Yesterday he acted as if the building were his and nobody else needed to rest."
+          },
+          {
+            "speaker": "Rosa",
+            "spanish": "Ojalá la administradora le pusiera una advertencia formal. Si pudiera mudarme este mes, lo haría sin pensarlo.",
+            "english": "I wish the building manager would give him a formal warning. If I could move this month, I would do it without thinking twice."
+          },
+          {
+            "speaker": "Miguel",
+            "spanish": "Aunque el alquiler fuera más alto en otro barrio, vivirías con mucha más tranquilidad.",
+            "english": "Even if the rent were higher in another neighborhood, you would live much more peacefully."
+          },
+          {
+            "speaker": "Rosa",
+            "spanish": "Sí, pero si encontrara un piso cercano a la oficina, ahorraría tiempo y también dinero en transporte.",
+            "english": "Yes, but if I found an apartment near the office, I would save time and also money on transportation."
+          },
+          {
+            "speaker": "Miguel",
+            "spanish": "Entonces yo hablaría con una amiga agente inmobiliaria; si surgiera algo razonable, te avisaría hoy mismo.",
+            "english": "Then I would speak with a friend who is a real estate agent; if something reasonable came up, I would let you know today."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Cómo afecta el ruido del vecino a Rosa?",
+            "options": [
+              "La obliga a cambiar de trabajo",
+              "Hace que duerma peor y rinda menos",
+              "Le impide estudiar portugués",
+              "La hace llegar tarde al gimnasio"
+            ],
+            "answerIndex": 1,
+            "answer": "Hace que duerma peor y rinda menos"
+          },
+          {
+            "question": "¿Qué desearía Rosa que hiciera la administradora?",
+            "options": [
+              "Que organizara una reunión de vecinos",
+              "Que redujera el alquiler del edificio",
+              "Que le pusiera una advertencia formal al vecino",
+              "Que cerrara la sala común"
+            ],
+            "answerIndex": 2,
+            "answer": "Que le pusiera una advertencia formal al vecino"
+          },
+          {
+            "question": "¿Quién podría ayudar a Rosa a encontrar otro piso?",
+            "options": [
+              "Una amiga agente inmobiliaria de Miguel",
+              "El vecino de arriba",
+              "Un profesor de la universidad",
+              "La hermana menor de Rosa"
+            ],
+            "answerIndex": 0,
+            "answer": "Una amiga agente inmobiliaria de Miguel"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Un centro de apoyo escolar para el barrio",
+        "dialog": [
+          {
+            "speaker": "Elena",
+            "spanish": "Si el ayuntamiento nos cediera el local vacío, abriríamos un centro de apoyo escolar para adolescentes del barrio.",
+            "english": "If city hall gave us the empty space, we would open an academic support center for teenagers in the neighborhood."
+          },
+          {
+            "speaker": "Diego",
+            "spanish": "Sería increíble. Incluso la gente colaboraría como si el proyecto fuera suyo, porque hace falta un espacio así.",
+            "english": "That would be incredible. People would even collaborate as if the project were their own, because a space like that is needed."
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "Ojalá algunos negocios donaran computadoras. Si tuviéramos ese material, podríamos ofrecer tutorías y talleres de empleo.",
+            "english": "I wish some businesses would donate computers. If we had that equipment, we could offer tutoring and job workshops."
+          },
+          {
+            "speaker": "Diego",
+            "spanish": "Aunque fuera difícil al principio, conseguiríamos voluntarios. La clave sería presentar un plan muy concreto.",
+            "english": "Even if it were difficult at first, we would get volunteers. The key would be to present a very concrete plan."
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "También pienso que, si viniera más gente jubilada, los estudiantes recibirían ayuda personalizada y compañía.",
+            "english": "I also think that, if more retired people came, the students would receive personalized help and company."
+          },
+          {
+            "speaker": "Diego",
+            "spanish": "Exacto. Si lanzáramos la campaña esta semana, llegaríamos a septiembre con tiempo para organizarnos bien.",
+            "english": "Exactly. If we launched the campaign this week, we would reach September with enough time to organize ourselves well."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué abrirían si el ayuntamiento les cediera el local?",
+            "options": [
+              "Una tienda de tecnología",
+              "Un centro de apoyo escolar para adolescentes",
+              "Una oficina turística",
+              "Un restaurante comunitario"
+            ],
+            "answerIndex": 1,
+            "answer": "Un centro de apoyo escolar para adolescentes"
+          },
+          {
+            "question": "¿Qué tipo de donación espera Elena?",
+            "options": [
+              "Computadoras para ofrecer tutorías y talleres",
+              "Uniformes deportivos para un club",
+              "Billetes de tren para los voluntarios",
+              "Instrumentos musicales para conciertos"
+            ],
+            "answerIndex": 0,
+            "answer": "Computadoras para ofrecer tutorías y talleres"
+          },
+          {
+            "question": "¿Por qué propone Diego lanzar la campaña esta semana?",
+            "options": [
+              "Para cerrar el proyecto antes del verano",
+              "Para llegar a septiembre con tiempo para organizarse",
+              "Para competir con otro barrio",
+              "Para evitar hablar con el ayuntamiento"
+            ],
+            "answerIndex": 1,
+            "answer": "Para llegar a septiembre con tiempo para organizarse"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "La oportunidad de trabajar en otro país",
+        "dialog": [
+          {
+            "speaker": "Sara",
+            "spanish": "Si aceptara el puesto en Chile, cambiaría de vida por completo, pero me asusta dejar a mi familia aquí.",
+            "english": "If I accepted the position in Chile, my life would change completely, but I am afraid of leaving my family here."
+          },
+          {
+            "speaker": "Nicolás",
+            "spanish": "Es normal. Sin embargo, hablas del proyecto como si ya supieras que te haría crecer muchísimo.",
+            "english": "That is normal. Even so, you talk about the project as if you already knew it would help you grow enormously."
+          },
+          {
+            "speaker": "Sara",
+            "spanish": "Puede ser. Ojalá mi madre no se preocupara tanto; si me viera más segura, quizá me apoyaría más.",
+            "english": "That may be true. I wish my mother did not worry so much; if she saw me more confident, maybe she would support me more."
+          },
+          {
+            "speaker": "Nicolás",
+            "spanish": "Aunque fuera un cambio enorme, podrías volver después de un año con más experiencia y contactos.",
+            "english": "Even if it were a huge change, you could come back after a year with more experience and contacts."
+          },
+          {
+            "speaker": "Sara",
+            "spanish": "Sí, y si no aprovechara ahora la oportunidad, me arrepentiría durante mucho tiempo.",
+            "english": "Yes, and if I did not take advantage of the opportunity now, I would regret it for a long time."
+          },
+          {
+            "speaker": "Nicolás",
+            "spanish": "Entonces haz una lista. Si las ventajas superaran tus miedos, tomarías la decisión con más claridad.",
+            "english": "Then make a list. If the advantages outweighed your fears, you would make the decision more clearly."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué es lo que más asusta a Sara sobre el puesto en Chile?",
+            "options": [
+              "No entender el acento local",
+              "Dejar a su familia en su país",
+              "Perder su pasaporte durante el viaje",
+              "No encontrar vivienda amueblada"
+            ],
+            "answerIndex": 1,
+            "answer": "Dejar a su familia en su país"
+          },
+          {
+            "question": "Según Nicolás, ¿qué haría el proyecto por Sara?",
+            "options": [
+              "La haría crecer muchísimo",
+              "Le quitaría toda su energía",
+              "La obligaría a cambiar de profesión",
+              "Le resolvería los problemas familiares"
+            ],
+            "answerIndex": 0,
+            "answer": "La haría crecer muchísimo"
+          },
+          {
+            "question": "¿Qué método le sugiere Nicolás para decidir?",
+            "options": [
+              "Preguntar a diez desconocidos",
+              "Esperar sin hablar con nadie",
+              "Hacer una lista y comparar ventajas con miedos",
+              "Aceptar el puesto esa misma noche"
+            ],
+            "answerIndex": 2,
+            "answer": "Hacer una lista y comparar ventajas con miedos"
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "Si Marta tuviera un día extra",
+        "sentences": [
+          {
+            "spanish": "Si Marta tuviera un día libre más cada semana, retomaría sus clases de piano y visitaría a su abuela con calma.",
+            "english": "If Marta had one more free day each week, she would return to her piano lessons and visit her grandmother without rushing."
+          },
+          {
+            "spanish": "Ahora sale del trabajo tan cansada que a veces cena como si todavía estuviera en la oficina.",
+            "english": "Now she leaves work so tired that sometimes she eats dinner as if she were still at the office."
+          },
+          {
+            "spanish": "Ojalá su jefe le ofreciera un horario más flexible durante el verano.",
+            "english": "She wishes her boss would offer her a more flexible schedule during the summer."
+          },
+          {
+            "spanish": "Aunque fuera un cambio pequeño, sentiría que recupera una parte importante de su vida.",
+            "english": "Even if it were a small change, she would feel that she was getting back an important part of her life."
+          },
+          {
+            "spanish": "Su amiga Paula le dijo que, si aprendiera a delegar algunas tareas, dormiría mejor y se concentraría más.",
+            "english": "Her friend Paula told her that if she learned to delegate some tasks, she would sleep better and focus more."
+          },
+          {
+            "spanish": "Marta sabe que no puede cambiarlo todo de inmediato, pero imaginarlo la ayuda a decidir por dónde empezar.",
+            "english": "Marta knows she cannot change everything immediately, but imagining it helps her decide where to start."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Ojalá no estuviera tan lejos",
+        "sentences": [
+          {
+            "spanish": "Desde que su hermano se mudó a Canadá, Verónica habla con él cada domingo y le pregunta cómo sería su vida si vivieran en la misma ciudad.",
+            "english": "Ever since her brother moved to Canada, Verónica talks with him every Sunday and asks him what life would be like if they lived in the same city."
+          },
+          {
+            "spanish": "Él responde que, si estuviera más cerca, cuidaría a los sobrinos algunos fines de semana y compartirían más tiempo en familia.",
+            "english": "He replies that if he were closer, he would watch the nieces and nephews on some weekends and they would spend more time together as a family."
+          },
+          {
+            "spanish": "Verónica lo escucha con nostalgia, porque a veces siente que las videollamadas no bastan.",
+            "english": "Verónica listens to him with nostalgia because sometimes she feels video calls are not enough."
+          },
+          {
+            "spanish": "Ojalá pudiera visitarlo este invierno, aunque fuera solo por diez días.",
+            "english": "She wishes she could visit him this winter, even if it were only for ten days."
+          },
+          {
+            "spanish": "Mientras ahorra, mira vuelos y actúa como si la decisión dependiera únicamente del calendario.",
+            "english": "While she saves up, she looks at flights and acts as if the decision depended only on the calendar."
+          },
+          {
+            "spanish": "Ese pequeño sueño la anima a seguir organizando sus gastos con paciencia.",
+            "english": "That small dream encourages her to keep organizing her expenses patiently."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Aunque fuera arriesgado",
+        "sentences": [
+          {
+            "spanish": "Elías siempre ha dicho que, si encontrara un local asequible, abriría una panadería de barrio.",
+            "english": "Elías has always said that if he found an affordable storefront, he would open a neighborhood bakery."
+          },
+          {
+            "spanish": "Sus amigos lo apoyan y hablan del proyecto como si ya probaran el pan caliente cada mañana.",
+            "english": "His friends support him and talk about the project as if they were already tasting warm bread every morning."
+          },
+          {
+            "spanish": "Ojalá un banco pequeño le concediera el préstamo inicial que necesita.",
+            "english": "He wishes a small bank would grant him the initial loan he needs."
+          },
+          {
+            "spanish": "Aunque fuera arriesgado dejar su empleo actual, él aceptaría el reto porque confía en su experiencia.",
+            "english": "Even if it were risky to leave his current job, he would take on the challenge because he trusts his experience."
+          },
+          {
+            "spanish": "Si lograra empezar antes de diciembre, aprovecharía la temporada de fiestas para darse a conocer.",
+            "english": "If he managed to start before December, he would take advantage of the holiday season to make himself known."
+          },
+          {
+            "spanish": "Por ahora sigue haciendo cuentas y buscando el momento en que la idea deje de ser hipotética.",
+            "english": "For now he keeps doing the math and looking for the moment when the idea stops being hypothetical."
+          }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Hipótesis, deseos y situaciones improbables",
+      "description": "Practica el imperfecto de subjuntivo con si clauses, deseos poco probables y comparaciones irreales.",
+      "questions_and_answers": [
+        {
+          "question": {
+            "spanish": "¿Qué harías si tuvieras un mes libre?",
+            "english": "What would you do if you had a free month?"
+          },
+          "answer": {
+            "spanish": "Si tuviera un mes libre, viajaría por el sur de España.",
+            "english": "If I had a free month, I would travel through southern Spain."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Dónde vivirías si pudieras trabajar desde cualquier lugar?",
+            "english": "Where would you live if you could work from anywhere?"
+          },
+          "answer": {
+            "spanish": "Si pudiera trabajar desde cualquier lugar, viviría cerca del mar.",
+            "english": "If I could work from anywhere, I would live near the sea."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué estudiarías si te concedieran una beca?",
+            "english": "What would you study if they granted you a scholarship?"
+          },
+          "answer": {
+            "spanish": "Si me concedieran una beca, estudiaría políticas públicas.",
+            "english": "If they granted me a scholarship, I would study public policy."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué comprarías si ganaras un premio grande?",
+            "english": "What would you buy if you won a big prize?"
+          },
+          "answer": {
+            "spanish": "Si ganara un premio grande, compraría un apartamento pequeño para mi madre.",
+            "english": "If I won a big prize, I would buy a small apartment for my mother."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo reaccionarías si un vecino hiciera ruido cada noche?",
+            "english": "How would you react if a neighbor made noise every night?"
+          },
+          "answer": {
+            "spanish": "Si un vecino hiciera ruido cada noche, hablaría con la administración.",
+            "english": "If a neighbor made noise every night, I would speak with the building management."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué desearías cambiar de tu rutina?",
+            "english": "What would you wish to change about your routine?"
+          },
+          "answer": {
+            "spanish": "Ojalá tuviera un horario más flexible.",
+            "english": "I wish I had a more flexible schedule."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué harías si hablaras cinco idiomas?",
+            "english": "What would you do if you spoke five languages?"
+          },
+          "answer": {
+            "spanish": "Si hablara cinco idiomas, trabajaría en proyectos internacionales.",
+            "english": "If I spoke five languages, I would work on international projects."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo te sentirías si tu equipo perdiera el apoyo financiero?",
+            "english": "How would you feel if your team lost financial support?"
+          },
+          "answer": {
+            "spanish": "Si mi equipo perdiera el apoyo financiero, buscaría donaciones y aliados nuevos.",
+            "english": "If my team lost financial support, I would look for donations and new partners."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué harías si te ofrecieran trabajo en otro país?",
+            "english": "What would you do if they offered you a job in another country?"
+          },
+          "answer": {
+            "spanish": "Si me ofrecieran trabajo en otro país, lo pensaría con calma y hablaría con mi familia.",
+            "english": "If they offered me a job in another country, I would think it over calmly and talk with my family."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo describirías a alguien muy dramático?",
+            "english": "How would you describe someone very dramatic?"
+          },
+          "answer": {
+            "spanish": "Habla como si cada problema fuera una catástrofe.",
+            "english": "He or she talks as if every problem were a catastrophe."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué harías si tuvieras más energía por las mañanas?",
+            "english": "What would you do if you had more energy in the mornings?"
+          },
+          "answer": {
+            "spanish": "Si tuviera más energía por las mañanas, haría ejercicio antes de trabajar.",
+            "english": "If I had more energy in the mornings, I would exercise before work."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué desearías para tu ciudad?",
+            "english": "What would you wish for your city?"
+          },
+          "answer": {
+            "spanish": "Ojalá hubiera más parques y bibliotecas públicas.",
+            "english": "I wish there were more parks and public libraries."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué harías aunque fuera difícil?",
+            "english": "What would you do even if it were difficult?"
+          },
+          "answer": {
+            "spanish": "Aunque fuera difícil, terminaría el máster.",
+            "english": "Even if it were difficult, I would finish the master’s degree."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo actuarías si supieras que la oportunidad no volvería?",
+            "english": "How would you act if you knew the opportunity would not return?"
+          },
+          "answer": {
+            "spanish": "Si supiera que la oportunidad no volvería, aceptaría el riesgo.",
+            "english": "If I knew the opportunity would not return, I would accept the risk."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué pasaría si salieras una hora antes del trabajo?",
+            "english": "What would happen if you left work an hour earlier?"
+          },
+          "answer": {
+            "spanish": "Si saliera una hora antes del trabajo, cocinaría con más calma.",
+            "english": "If I left work an hour earlier, I would cook more calmly."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué harías si tuvieras un mentor excelente?",
+            "english": "What would you do if you had an excellent mentor?"
+          },
+          "answer": {
+            "spanish": "Si tuviera un mentor excelente, aprovecharía cada reunión para aprender.",
+            "english": "If I had an excellent mentor, I would make the most of every meeting to learn."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo ayudarías a tu barrio si tuvieras recursos?",
+            "english": "How would you help your neighborhood if you had resources?"
+          },
+          "answer": {
+            "spanish": "Si tuviera recursos, abriría un centro comunitario para jóvenes.",
+            "english": "If I had resources, I would open a community center for young people."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué dirías de una persona muy segura de sí misma?",
+            "english": "What would you say about someone very self-assured?"
+          },
+          "answer": {
+            "spanish": "Habla como si nunca dudara de sí misma.",
+            "english": "She talks as if she never doubted herself."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué harías si no tuvieras miedo al fracaso?",
+            "english": "What would you do if you were not afraid of failure?"
+          },
+          "answer": {
+            "spanish": "Si no tuviera miedo al fracaso, lanzaría mi propio negocio.",
+            "english": "If I were not afraid of failure, I would launch my own business."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué te gustaría que cambiara este año?",
+            "english": "What would you like to be different this year?"
+          },
+          "answer": {
+            "spanish": "Ojalá pudiera pasar más tiempo con mi familia.",
+            "english": "I wish I could spend more time with my family."
+          }
+        }
+      ]
+    }
+  }
+}

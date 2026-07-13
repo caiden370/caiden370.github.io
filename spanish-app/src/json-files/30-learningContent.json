@@ -1,0 +1,304 @@
+{
+  "30": {
+    "words": [
+      { "spanish": "había llegado", "english": "had arrived" },
+      { "spanish": "había terminado", "english": "had finished" },
+      { "spanish": "había dicho", "english": "had said" },
+      { "spanish": "había visto", "english": "had seen" },
+      { "spanish": "había hecho", "english": "had done" },
+      { "spanish": "había salido", "english": "had left" },
+      { "spanish": "había dejado", "english": "had left behind" },
+      { "spanish": "había guardado", "english": "had put away" },
+      { "spanish": "había ocurrido", "english": "had happened" },
+      { "spanish": "había olvidado", "english": "had forgotten" },
+      { "spanish": "había roto", "english": "had broken" },
+      { "spanish": "había cambiado", "english": "had changed" },
+      { "spanish": "había descubierto", "english": "had discovered" },
+      { "spanish": "había mentido", "english": "had lied" },
+      { "spanish": "había llamado", "english": "had called" },
+      { "spanish": "había vuelto", "english": "had come back" },
+      { "spanish": "había escondido", "english": "had hidden" },
+      { "spanish": "había perdido", "english": "had lost" },
+      { "spanish": "había seguido", "english": "had followed" },
+      { "spanish": "había esperado", "english": "had waited" },
+      { "spanish": "la pista", "english": "the clue" },
+      { "spanish": "el testigo", "english": "the witness" },
+      { "spanish": "el sospechoso", "english": "the suspect" },
+      { "spanish": "la coartada", "english": "the alibi" },
+      { "spanish": "el informe", "english": "the report" },
+      { "spanish": "la escena", "english": "the scene" },
+      { "spanish": "la huella", "english": "the trace" },
+      { "spanish": "el barrio", "english": "the neighborhood" },
+      { "spanish": "el archivo", "english": "the file" },
+      { "spanish": "revisar", "english": "to review" },
+      { "spanish": "interrogar", "english": "to question" },
+      { "spanish": "reconstruir", "english": "to reconstruct" },
+      { "spanish": "darse cuenta de", "english": "to realize" },
+      { "spanish": "antes de eso", "english": "before that" },
+      { "spanish": "para entonces", "english": "by then" },
+      { "spanish": "ya se había ido", "english": "had already left" },
+      { "spanish": "todavía no había empezado", "english": "had still not started" },
+      { "spanish": "en cuanto llegué", "english": "as soon as I arrived" },
+      { "spanish": "nunca había visto algo así", "english": "I had never seen anything like that" },
+      { "spanish": "apenas había dormido", "english": "had barely slept" },
+      { "spanish": "la infancia", "english": "childhood" },
+      { "spanish": "el traslado", "english": "the move" },
+      { "spanish": "el recuerdo", "english": "the memory" },
+      { "spanish": "la versión oficial", "english": "the official version" }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Robo en el museo",
+        "dialog": [
+          { "speaker": "Lucía", "spanish": "Cuando llegué al museo, el ladrón ya se había ido y el guardia apenas había llamado a la policía.", "english": "When I arrived at the museum, the thief had already left and the guard had only just called the police." },
+          { "speaker": "Andrés", "spanish": "Entonces la alarma había sonado antes de que tú entraras. ¿El guardia dijo algo útil?", "english": "So the alarm had gone off before you went in. Did the guard say anything useful?" },
+          { "speaker": "Lucía", "spanish": "Sí. Había visto a una mujer con un abrigo rojo salir por la puerta de servicio, pero no la había detenido porque pensó que era restauradora.", "english": "Yes. He had seen a woman in a red coat leave through the service door, but he had not stopped her because he thought she was a restorer." },
+          { "speaker": "Andrés", "spanish": "Eso explica por qué la vitrina estaba abierta. Alguien había copiado la llave unos días antes.", "english": "That explains why the display case was open. Someone had copied the key a few days earlier." },
+          { "speaker": "Lucía", "spanish": "Además, el director había cambiado el turno del guardia esa misma mañana y nadie lo había anotado en el informe.", "english": "On top of that, the director had changed the guard's shift that same morning and nobody had written it down in the report." },
+          { "speaker": "Andrés", "spanish": "Con esas pistas, ya sabemos que el robo no había sido improvisado.", "english": "With those clues, we already know the robbery had not been improvised." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué no detuvo el guardia a la mujer del abrigo rojo?",
+            "options": [
+              "Porque pensó que era restauradora.",
+              "Porque había perdido las llaves.",
+              "Porque el museo ya estaba cerrado.",
+              "Porque la policía ya había llegado."
+            ],
+            "answer": "Porque pensó que era restauradora.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué detalle sugiere que el robo fue planeado?",
+            "options": [
+              "Que el director había salido temprano.",
+              "Que alguien había copiado la llave y el cambio de turno no se anotó.",
+              "Que la sala egipcia estaba vacía.",
+              "Que la mujer llevaba un abrigo rojo."
+            ],
+            "answer": "Que alguien había copiado la llave y el cambio de turno no se anotó.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué había pasado antes de que Lucía entrara al museo?",
+            "options": [
+              "La vitrina había sido reparada.",
+              "La alarma había sonado.",
+              "El director había interrogado al guardia.",
+              "La policía había cerrado el edificio."
+            ],
+            "answer": "La alarma había sonado.",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "El apagón del barrio",
+        "dialog": [
+          { "speaker": "Elena", "spanish": "Cuando salimos a grabar, la calle ya estaba llena de vecinos porque la luz se había ido en todo el barrio.", "english": "When we went out to film, the street was already full of neighbors because the power had gone out across the whole neighborhood." },
+          { "speaker": "Tomás", "spanish": "Sí, y el problema había empezado después de que una excavadora rompiera un cable cerca de la estación.", "english": "Yes, and the problem had started after a digger broke a cable near the station." },
+          { "speaker": "Elena", "spanish": "¿Alguien había avisado del riesgo antes de empezar la obra?", "english": "Had anyone warned them about the risk before the work began?" },
+          { "speaker": "Tomás", "spanish": "Los técnicos habían enviado un informe, pero la empresa no había marcado bien la zona.", "english": "The technicians had sent a report, but the company had not marked the area properly." },
+          { "speaker": "Elena", "spanish": "Con razón el comercio de la esquina perdió la mercancía congelada.", "english": "No wonder the shop on the corner lost its frozen goods." },
+          { "speaker": "Tomás", "spanish": "Exacto. Cuando llegó el gerente, los refrigeradores ya habían dejado de funcionar.", "english": "Exactly. When the manager arrived, the refrigerators had already stopped working." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué había causado el apagón?",
+            "options": [
+              "Los vecinos habían apagado la red.",
+              "Una excavadora había roto un cable.",
+              "El gerente había cerrado la tienda.",
+              "Los técnicos habían salido temprano."
+            ],
+            "answer": "Una excavadora había roto un cable.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Por qué perdió mercancía el comercio de la esquina?",
+            "options": [
+              "Porque la calle había sido cerrada.",
+              "Porque el gerente había llegado tarde.",
+              "Porque los refrigeradores habían dejado de funcionar.",
+              "Porque la empresa había cambiado el horario."
+            ],
+            "answer": "Porque los refrigeradores habían dejado de funcionar.",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué se puede inferir sobre la empresa de la obra?",
+            "options": [
+              "Había contratado más técnicos de los necesarios.",
+              "No había señalado bien la zona de riesgo.",
+              "Había reparado el cable esa misma noche.",
+              "No había recibido ningún informe."
+            ],
+            "answer": "No había señalado bien la zona de riesgo.",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "La historia de la abuela",
+        "dialog": [
+          { "speaker": "Marta", "spanish": "La abuela siempre contaba que, cuando llegó a Madrid, ya había aprendido a coser en el pueblo.", "english": "Grandma always said that, by the time she got to Madrid, she had already learned to sew in her village." },
+          { "speaker": "Diego", "spanish": "Sí, y también había cuidado a sus hermanos menores desde muy joven, así que no le asustó trabajar tanto.", "english": "Yes, and she had also taken care of her younger siblings from a very young age, so hard work did not scare her." },
+          { "speaker": "Marta", "spanish": "Antes de mudarse, había querido estudiar enfermería, pero su familia no había tenido dinero.", "english": "Before moving, she had wanted to study nursing, but her family had not had the money." },
+          { "speaker": "Diego", "spanish": "Por eso aceptó el empleo en la fábrica. Para entonces, el abuelo ya la había conocido en una fiesta.", "english": "That is why she took the factory job. By then, Grandpa had already met her at a party." },
+          { "speaker": "Marta", "spanish": "Lo que más me impresiona es que nunca había vivido sola y aun así se adaptó enseguida.", "english": "What impresses me most is that she had never lived alone and still adapted right away." },
+          { "speaker": "Diego", "spanish": "Supongo que esa etapa la volvió tan decidida como la recordamos.", "english": "I suppose that stage made her as determined as we remember her." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué no estudió enfermería la abuela?",
+            "options": [
+              "Porque no había querido salir del pueblo.",
+              "Porque su familia no había tenido dinero.",
+              "Porque ya había aceptado otro empleo en un hospital.",
+              "Porque el abuelo no estaba de acuerdo."
+            ],
+            "answer": "Porque su familia no había tenido dinero.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué experiencia la había preparado para trabajar tanto?",
+            "options": [
+              "Había cuidado a sus hermanos menores.",
+              "Había viajado por todo el país.",
+              "Había estudiado contabilidad.",
+              "Había vendido ropa en el mercado."
+            ],
+            "answer": "Había cuidado a sus hermanos menores.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué ya había ocurrido para cuando aceptó el empleo en la fábrica?",
+            "options": [
+              "La abuela ya había abierto su propio negocio.",
+              "El abuelo ya la había conocido en una fiesta.",
+              "La familia ya había comprado una casa en Madrid.",
+              "La abuela ya había terminado enfermería."
+            ],
+            "answer": "El abuelo ya la había conocido en una fiesta.",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "El contrato perdido",
+        "dialog": [
+          { "speaker": "Paula", "spanish": "Cuando empezó la reunión con el cliente, el contrato todavía no había aparecido y todos estaban tensos.", "english": "When the meeting with the client began, the contract still had not turned up and everyone was tense." },
+          { "speaker": "Javier", "spanish": "Luego descubrimos que alguien lo había guardado en la carpeta equivocada después de imprimirlo.", "english": "Then we found out that someone had put it in the wrong folder after printing it." },
+          { "speaker": "Paula", "spanish": "Yo pensé que tú lo habías enviado por correo la noche anterior.", "english": "I thought you had emailed it the night before." },
+          { "speaker": "Javier", "spanish": "Había preparado el mensaje, pero no lo había mandado porque quería revisar una cláusula más.", "english": "I had prepared the message, but I had not sent it because I wanted to review one more clause." },
+          { "speaker": "Paula", "spanish": "Entonces el problema no había sido el cliente, sino nuestra falta de coordinación.", "english": "So the problem had not been the client, but our lack of coordination." },
+          { "speaker": "Javier", "spanish": "Sí, y menos mal que Inés ya había hecho una copia digital antes del caos.", "english": "Yes, and luckily Inés had already made a digital copy before the chaos." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué no había enviado Javier el contrato por correo?",
+            "options": [
+              "Porque el cliente había cancelado la reunión.",
+              "Porque la impresora había dejado de funcionar.",
+              "Porque quería revisar una cláusula más.",
+              "Porque Paula ya lo había mandado."
+            ],
+            "answer": "Porque quería revisar una cláusula más.",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué permitió resolver el problema al final?",
+            "options": [
+              "El cliente había traído otra copia.",
+              "Inés ya había hecho una copia digital.",
+              "La reunión había sido aplazada.",
+              "Javier había encontrado el contrato en su coche."
+            ],
+            "answer": "Inés ya había hecho una copia digital.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Cuál fue la causa real de la tensión?",
+            "options": [
+              "La falta de coordinación del equipo.",
+              "La mala actitud del cliente.",
+              "Un error en la factura.",
+              "La ausencia del director."
+            ],
+            "answer": "La falta de coordinación del equipo.",
+            "answerIndex": 0
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "El informe final",
+        "sentences": [
+          { "spanish": "Cuando la inspectora Nora abrió el expediente, ya había leído tres versiones distintas del mismo robo.", "english": "When Inspector Nora opened the case file, she had already read three different versions of the same robbery." },
+          { "spanish": "El vecino del quinto había dicho que oyó pasos en la escalera, pero nadie más había escuchado ese ruido.", "english": "The neighbor on the fifth floor had said he heard footsteps on the stairs, but nobody else had heard that sound." },
+          { "spanish": "Sin embargo, la cámara del ascensor había mostrado a un repartidor que entró dos veces en menos de una hora.", "english": "However, the elevator camera had shown a delivery man who went in twice in less than an hour." },
+          { "spanish": "Antes de entrar al piso, Nora ya había notado que la cerradura no tenía señales de fuerza.", "english": "Before going into the apartment, Nora had already noticed that the lock showed no signs of force." },
+          { "spanish": "Al revisar la cocina, descubrió que alguien había dejado una taza todavía tibia junto a la ventana.", "english": "While checking the kitchen, she discovered that someone had left a still-warm cup by the window." },
+          { "spanish": "Al final comprendió que el sospechoso había inventado su coartada después del crimen, no antes.", "english": "In the end, she realized the suspect had invented his alibi after the crime, not before it." }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Antes de empezar de nuevo",
+        "sentences": [
+          { "spanish": "Antes de abrir su propio taller, Marcos había trabajado quince años para otra empresa.", "english": "Before opening his own workshop, Marcos had worked for another company for fifteen years." },
+          { "spanish": "Durante ese tiempo, había aprendido a negociar, a reparar máquinas antiguas y a tratar con clientes difíciles.", "english": "During that time, he had learned to negotiate, to repair old machines, and to deal with difficult clients." },
+          { "spanish": "Cuando por fin perdió su empleo, ya había pensado muchas veces en independizarse.", "english": "By the time he finally lost his job, he had already thought many times about going independent." },
+          { "spanish": "Su hermana le prestó dinero porque había visto cuánto se había esforzado.", "english": "His sister lent him money because she had seen how hard he had worked." },
+          { "spanish": "Para entonces, Marcos ya había encontrado un local pequeño cerca del mercado.", "english": "By then, Marcos had already found a small place near the market." },
+          { "spanish": "Aunque tenía miedo, sintió que toda su experiencia lo había preparado para ese momento.", "english": "Although he was afraid, he felt that all his experience had prepared him for that moment." }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "El viaje que casi perdemos",
+        "sentences": [
+          { "spanish": "Cuando llegamos a la estación, el tren hacia Sevilla ya había salido hacía cinco minutos.", "english": "When we got to the station, the train to Seville had already left five minutes earlier." },
+          { "spanish": "Yo estaba furiosa porque había revisado el horario la noche anterior, pero había mirado la fecha equivocada.", "english": "I was furious because I had checked the schedule the night before, but I had looked at the wrong date." },
+          { "spanish": "Mi hermano, en cambio, apenas había dormido y no había notado el cambio en el billete.", "english": "My brother, on the other hand, had barely slept and had not noticed the change on the ticket." },
+          { "spanish": "Mientras discutíamos, una empleada nos explicó que el siguiente tren salía una hora después.", "english": "While we argued, an employee explained that the next train left an hour later." },
+          { "spanish": "Para entonces, ya habíamos dejado las maletas en consigna y habíamos comprado café para calmarnos.", "english": "By then, we had already left the suitcases in storage and bought coffee to calm down." },
+          { "spanish": "Al final, el retraso nos sirvió porque habíamos olvidado un pasaporte en el hotel y todavía pudimos recuperarlo.", "english": "In the end, the delay helped us because we had forgotten a passport at the hotel and still managed to get it back." }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Hablar de lo que ya había pasado",
+      "description": "Practica el pluscuamperfecto para reconstruir investigaciones, recuerdos y causas anteriores a otro momento pasado.",
+      "questions_and_answers": [
+        { "question": { "spanish": "Di en español: By the time I arrived, they had already left.", "english": "Say in Spanish: By the time I arrived, they had already left." }, "answer": { "spanish": "Cuando llegué, ellos ya se habían ido.", "english": "By the time I arrived, they had already left." } },
+        { "question": { "spanish": "Responde en español: We had never seen such a confusing clue.", "english": "Answer in Spanish: We had never seen such a confusing clue." }, "answer": { "spanish": "Nunca habíamos visto una pista tan confusa.", "english": "We had never seen such a confusing clue." } },
+        { "question": { "spanish": "Di en español: The witness had told the truth at the beginning.", "english": "Say in Spanish: The witness had told the truth at the beginning." }, "answer": { "spanish": "El testigo había dicho la verdad al principio.", "english": "The witness had told the truth at the beginning." } },
+        { "question": { "spanish": "Traduce al español: Before the police arrived, someone had hidden the documents.", "english": "Translate into Spanish: Before the police arrived, someone had hidden the documents." }, "answer": { "spanish": "Antes de que llegara la policía, alguien había escondido los documentos.", "english": "Before the police arrived, someone had hidden the documents." } },
+        { "question": { "spanish": "Di en español: She had barely slept before the interview.", "english": "Say in Spanish: She had barely slept before the interview." }, "answer": { "spanish": "Ella apenas había dormido antes de la entrevista.", "english": "She had barely slept before the interview." } },
+        { "question": { "spanish": "Formula la pregunta en español: Had you already finished the report when the boss called?", "english": "Form the question in Spanish: Had you already finished the report when the boss called?" }, "answer": { "spanish": "¿Ya habías terminado el informe cuando llamó el jefe?", "english": "Had you already finished the report when the boss called?" } },
+        { "question": { "spanish": "Responde en español: We realized that the suspect had lied.", "english": "Answer in Spanish: We realized that the suspect had lied." }, "answer": { "spanish": "Nos dimos cuenta de que el sospechoso había mentido.", "english": "We realized that the suspect had lied." } },
+        { "question": { "spanish": "Di en español: My grandmother had learned to sew before moving to the city.", "english": "Say in Spanish: My grandmother had learned to sew before moving to the city." }, "answer": { "spanish": "Mi abuela había aprendido a coser antes de mudarse a la ciudad.", "english": "My grandmother had learned to sew before moving to the city." } },
+        { "question": { "spanish": "Traduce al español: By then, I had already changed careers twice.", "english": "Translate into Spanish: By then, I had already changed careers twice." }, "answer": { "spanish": "Para entonces, ya había cambiado de carrera dos veces.", "english": "By then, I had already changed careers twice." } },
+        { "question": { "spanish": "Di en español: The neighbors had heard a noise during the night.", "english": "Say in Spanish: The neighbors had heard a noise during the night." }, "answer": { "spanish": "Los vecinos habían oído un ruido durante la noche.", "english": "The neighbors had heard a noise during the night." } },
+        { "question": { "spanish": "Responde en español: He had left the keys in the wrong drawer.", "english": "Answer in Spanish: He had left the keys in the wrong drawer." }, "answer": { "spanish": "Había dejado las llaves en el cajón equivocado.", "english": "He had left the keys in the wrong drawer." } },
+        { "question": { "spanish": "Di en español: I had forgotten the meeting because I had changed phones.", "english": "Say in Spanish: I had forgotten the meeting because I had changed phones." }, "answer": { "spanish": "Había olvidado la reunión porque había cambiado de teléfono.", "english": "I had forgotten the meeting because I had changed phones." } },
+        { "question": { "spanish": "Traduce al español: When we opened the store, the customers had already formed a line outside.", "english": "Translate into Spanish: When we opened the store, the customers had already formed a line outside." }, "answer": { "spanish": "Cuando abrimos la tienda, los clientes ya habían formado una fila afuera.", "english": "When we opened the store, the customers had already formed a line outside." } },
+        { "question": { "spanish": "Di en español: The journalist had reconstructed the story before publishing it.", "english": "Say in Spanish: The journalist had reconstructed the story before publishing it." }, "answer": { "spanish": "La periodista había reconstruido la historia antes de publicarla.", "english": "The journalist had reconstructed the story before publishing it." } },
+        { "question": { "spanish": "Responde en español: Nobody had noticed the broken window.", "english": "Answer in Spanish: Nobody had noticed the broken window." }, "answer": { "spanish": "Nadie había notado la ventana rota.", "english": "Nobody had noticed the broken window." } },
+        { "question": { "spanish": "Di en español: I had followed the wrong address.", "english": "Say in Spanish: I had followed the wrong address." }, "answer": { "spanish": "Había seguido la dirección equivocada.", "english": "I had followed the wrong address." } },
+        { "question": { "spanish": "Traduce al español: By that morning, the director had changed the schedule.", "english": "Translate into Spanish: By that morning, the director had changed the schedule." }, "answer": { "spanish": "Para esa mañana, el director había cambiado el horario.", "english": "By that morning, the director had changed the schedule." } },
+        { "question": { "spanish": "Di en español: We had lost the file, but Ana had saved a copy.", "english": "Say in Spanish: We had lost the file, but Ana had saved a copy." }, "answer": { "spanish": "Habíamos perdido el archivo, pero Ana había guardado una copia.", "english": "We had lost the file, but Ana had saved a copy." } },
+        { "question": { "spanish": "Formula la pregunta en español: Had she told you why she had come back so late?", "english": "Form the question in Spanish: Had she told you why she had come back so late?" }, "answer": { "spanish": "¿Te había dicho por qué había vuelto tan tarde?", "english": "Had she told you why she had come back so late?" } },
+        { "question": { "spanish": "Responde en español: The official version had omitted an important detail.", "english": "Answer in Spanish: The official version had omitted an important detail." }, "answer": { "spanish": "La versión oficial había omitido un detalle importante.", "english": "The official version had omitted an important detail." } }
+      ]
+    }
+  }
+}

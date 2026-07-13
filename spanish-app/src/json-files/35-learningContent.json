@@ -1,0 +1,299 @@
+{
+  "35": {
+    "words": [
+      { "spanish": "según fuentes cercanas", "english": "according to sources close to the matter" },
+      { "spanish": "se afirma que", "english": "it is claimed that" },
+      { "spanish": "presuntamente", "english": "allegedly" },
+      { "spanish": "de acuerdo con", "english": "according to" },
+      { "spanish": "el artículo sostiene que", "english": "the article argues that" },
+      { "spanish": "la fuente primaria", "english": "the primary source" },
+      { "spanish": "verificar la información", "english": "to verify the information" },
+      { "spanish": "contrastar versiones", "english": "to compare versions" },
+      { "spanish": "el sesgo editorial", "english": "editorial bias" },
+      { "spanish": "la desinformación", "english": "misinformation" },
+      { "spanish": "el bulo", "english": "the hoax" },
+      { "spanish": "el titular engañoso", "english": "the misleading headline" },
+      { "spanish": "contextualizar un dato", "english": "to put a data point in context" },
+      { "spanish": "una captura manipulada", "english": "a manipulated screenshot" },
+      { "spanish": "un testigo presencial", "english": "an eyewitness" },
+      { "spanish": "una declaración oficial", "english": "an official statement" },
+      { "spanish": "la atribución correcta", "english": "proper attribution" },
+      { "spanish": "la evidencia verificable", "english": "verifiable evidence" },
+      { "spanish": "una conclusión precipitada", "english": "a hasty conclusion" },
+      { "spanish": "la cobertura mediática", "english": "media coverage" },
+      { "spanish": "el rumor viral", "english": "the viral rumor" },
+      { "spanish": "la cadena de reenvíos", "english": "the forwarding chain" },
+      { "spanish": "sacar de contexto", "english": "to take out of context" },
+      { "spanish": "comprobar la fecha", "english": "to check the date" },
+      { "spanish": "identificar la autoría", "english": "to identify authorship" },
+      { "spanish": "rastrear el origen", "english": "to trace the origin" },
+      { "spanish": "un medio fiable", "english": "a reliable outlet" },
+      { "spanish": "una fuente anónima", "english": "an anonymous source" },
+      { "spanish": "la edición del video", "english": "the video editing" },
+      { "spanish": "una omisión relevante", "english": "a relevant omission" },
+      { "spanish": "rectificar una noticia", "english": "to correct a news story" },
+      { "spanish": "difundir sin verificar", "english": "to spread without verifying" },
+      { "spanish": "un montaje digital", "english": "a digital fabrication" },
+      { "spanish": "el relato dominante", "english": "the dominant narrative" },
+      { "spanish": "la interpretación interesada", "english": "a self-serving interpretation" },
+      { "spanish": "los hechos confirmados", "english": "the confirmed facts" },
+      { "spanish": "una versión no corroborada", "english": "an uncorroborated version" },
+      { "spanish": "hablar en condicional", "english": "to use the conditional" },
+      { "spanish": "citar textualmente", "english": "to quote verbatim" },
+      { "spanish": "reformular con cautela", "english": "to rephrase cautiously" },
+      { "spanish": "un dato incompleto", "english": "an incomplete data point" },
+      { "spanish": "alfabetización mediática", "english": "media literacy" }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Verificar un video viral antes de publicarlo",
+        "dialog": [
+          { "speaker": "Lucía", "spanish": "Según fuentes locales, el video que circula desde anoche mostraría el desbordamiento del río; sin embargo, nadie ha confirmado todavía la fecha exacta de la grabación.", "english": "According to local sources, the video circulating since last night would show the river overflowing; however, nobody has yet confirmed the exact date of the recording." },
+          { "speaker": "Mateo", "spanish": "Antes de publicarlo, verifica la ubicación y contrasta el paisaje con las imágenes de archivo, porque un clip fuera de contexto puede alimentar la desinformación.", "english": "Before publishing it, verify the location and compare the landscape with archive footage, because a clip taken out of context can fuel misinformation." },
+          { "speaker": "Lucía", "spanish": "Ya comparé los edificios del fondo con fotos satelitales, y una vecina afirma que fue grabado ayer, aunque su testimonio sigue siendo una fuente única.", "english": "I already compared the buildings in the background with satellite photos, and a neighbor states that it was recorded yesterday, although her testimony is still a single source." },
+          { "speaker": "Mateo", "spanish": "Bien, pero necesito una segunda confirmación. De acuerdo con protección civil, el caudal subió esta madrugada, lo cual haría plausible el video sin demostrarlo por completo.", "english": "Good, but I need a second confirmation. According to civil protection, the water level rose early this morning, which would make the video plausible without proving it completely." },
+          { "speaker": "Lucía", "spanish": "También encontré una publicación anterior, presuntamente del mismo autor, donde se ve la misma calle seca hace tres días; por lo tanto, el material no parece reciclado de otro mes.", "english": "I also found an earlier post, allegedly from the same author, showing the same street dry three days ago; therefore, the footage does not seem to have been recycled from another month." },
+          { "speaker": "Mateo", "spanish": "Entonces redacta que el video coincide con reportes recientes, pero aclara qué hechos están confirmados y cuáles siguen en verificación.", "english": "Then write that the video aligns with recent reports, but make clear which facts are confirmed and which are still being verified." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué Mateo no quiere publicar el video de inmediato?",
+            "options": ["Porque duda de que el río exista", "Porque teme que el video esté fuera de contexto o incompleto", "Porque la redacción no publica imágenes de desastres", "Porque Lucía no sabe usar fotos satelitales"],
+            "answer": "Porque teme que el video esté fuera de contexto o incompleto",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué hallazgo de Lucía fortalece más la plausibilidad del video?",
+            "options": ["Que una sola vecina lo compartió", "Que encontró una publicación previa del mismo lugar y el mismo autor", "Que el video tiene música dramática", "Que nadie cuestionó el clip en redes sociales"],
+            "answer": "Que encontró una publicación previa del mismo lugar y el mismo autor",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Cómo quiere Mateo que se presente la información al público?",
+            "options": ["Como un hecho totalmente confirmado", "Como una sospecha sin valor informativo", "Distinguiendo entre lo confirmado y lo que sigue en verificación", "Sin mencionar ninguna fuente"],
+            "answer": "Distinguiendo entre lo confirmado y lo que sigue en verificación",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Analizar un titular alarmista",
+        "dialog": [
+          { "speaker": "Sofía", "spanish": "El artículo sostiene que el transporte público está al borde del colapso, pero al leerlo completo vi que la fuente principal era un informe parcial.", "english": "The article claims that public transport is on the verge of collapse, but when I read it fully I saw that the main source was only a partial report." },
+          { "speaker": "Andrés", "spanish": "A mí me pasó igual. El titular parece diseñado para alarmar, mientras que el cuerpo del texto admite que varias líneas mejoraron su frecuencia este mes.", "english": "The same thing happened to me. The headline seems designed to alarm, while the body of the article admits that several lines improved their frequency this month." },
+          { "speaker": "Sofía", "spanish": "De hecho, los datos que omite sobre puntualidad cambian bastante la interpretación, porque el problema real parece concentrarse en dos rutas periféricas.", "english": "In fact, the punctuality data it leaves out changes the interpretation quite a bit, because the real problem seems concentrated on two outlying routes." },
+          { "speaker": "Andrés", "spanish": "Según el sindicato, los retrasos se agravaron por falta de conductores; en cambio, la empresa dice que el ajuste de horarios ya está reduciendo el impacto.", "english": "According to the union, delays worsened because of a shortage of drivers; by contrast, the company says the schedule adjustment is already reducing the impact." },
+          { "speaker": "Sofía", "spanish": "Por eso conviene contrastar ambas versiones y revisar quién financia el medio, ya que el sesgo no siempre está en lo que se dice, sino en lo que se calla.", "english": "That is why it is useful to compare both versions and review who funds the outlet, since bias is not always in what is said, but in what is left unsaid." },
+          { "speaker": "Andrés", "spanish": "Exacto, y si compartimos la noticia, deberíamos añadir contexto para que nadie crea que todo el sistema falló de un día para otro.", "english": "Exactly, and if we share the story, we should add context so that nobody believes the entire system failed overnight." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué problema detectan Sofía y Andrés en el titular?",
+            "options": ["Que usa demasiados términos técnicos", "Que exagera una situación más limitada de lo que parece", "Que cita demasiadas fuentes primarias", "Que describe mejoras en lugar de fallos"],
+            "answer": "Que exagera una situación más limitada de lo que parece",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué dato omitido menciona Sofía como relevante para interpretar mejor la noticia?",
+            "options": ["Los datos sobre puntualidad", "La edad de los conductores", "El precio del combustible", "El color de los autobuses nuevos"],
+            "answer": "Los datos sobre puntualidad",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué actitud recomiendan adoptar si se comparte el artículo?",
+            "options": ["Difundirlo sin comentario para no influir", "Esperar a que desaparezca de las redes", "Añadir contexto para evitar una impresión distorsionada", "Citar solo el titular y no el contenido"],
+            "answer": "Añadir contexto para evitar una impresión distorsionada",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Debate sobre una noticia basada en una fuente anónima",
+        "dialog": [
+          { "speaker": "Clara", "spanish": "Se afirma que el ministerio cerrará tres centros de salud, pero la noticia se apoya casi por completo en una fuente anónima.", "english": "It is being claimed that the ministry will close three health centers, but the story relies almost entirely on an anonymous source." },
+          { "speaker": "Diego", "spanish": "Eso me hace desconfiar, aunque la periodista que la firma suele rectificar cuando detecta un dato incompleto o una atribución débil.", "english": "That makes me suspicious, although the journalist who signed it usually corrects stories when she detects incomplete data or weak attribution." },
+          { "speaker": "Clara", "spanish": "De acuerdo con el documento filtrado, habría un plan de reorganización; no obstante, el texto no menciona cierres inmediatos, sino una evaluación preliminar.", "english": "According to the leaked document, there would be a reorganization plan; nevertheless, the text does not mention immediate closures, but rather a preliminary evaluation." },
+          { "speaker": "Diego", "spanish": "Entonces el problema quizá no sea la existencia del documento, sino el salto entre lo que sugiere y lo que el titular asegura.", "english": "Then the problem may not be the existence of the document, but the jump between what it suggests and what the headline asserts." },
+          { "speaker": "Clara", "spanish": "Exactamente. Además, ningún portavoz confirmó la medida, por lo cual hablar en condicional sería más honesto que presentar la decisión como definitiva.", "english": "Exactly. Moreover, no spokesperson confirmed the measure, which is why using the conditional would be more honest than presenting the decision as final." },
+          { "speaker": "Diego", "spanish": "Esa diferencia es clave, porque mucha gente solo lee el encabezado y acaba difundiendo una versión no corroborada como si fuera un hecho cerrado.", "english": "That difference is crucial, because many people only read the headline and end up spreading an uncorroborated version as if it were a settled fact." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué objeción principal plantea Clara sobre la noticia?",
+            "options": ["Que el documento filtrado está escrito en otro idioma", "Que depende demasiado de una fuente anónima y de una interpretación fuerte del titular", "Que la periodista nunca corrige errores", "Que los centros de salud ya fueron cerrados hace años"],
+            "answer": "Que depende demasiado de una fuente anónima y de una interpretación fuerte del titular",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué diferencia subraya Diego entre el documento y el titular?",
+            "options": ["Que el documento confirma más cierres que el titular", "Que el documento habla de compras médicas, no de salud pública", "Que el titular afirma más de lo que realmente sugiere el documento", "Que ambos textos son idénticos en contenido y tono"],
+            "answer": "Que el titular afirma más de lo que realmente sugiere el documento",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Por qué Clara considera más honesto hablar en condicional?",
+            "options": ["Porque ningún portavoz ha confirmado la medida como definitiva", "Porque así la noticia parece más dramática", "Porque el ministerio prohibió usar verbos en presente", "Porque el documento carece de fecha y firma oficial"],
+            "answer": "Porque ningún portavoz ha confirmado la medida como definitiva",
+            "answerIndex": 0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Desmentir un mensaje reenviado en familia",
+        "dialog": [
+          { "speaker": "Elena", "spanish": "Mi tía reenvió un mensaje que dice que varias marcas de leche infantil están contaminadas, pero no cita ni una fuente oficial.", "english": "My aunt forwarded a message saying that several brands of infant formula are contaminated, but it does not cite a single official source." },
+          { "speaker": "Pablo", "spanish": "Yo también lo recibí. Presuntamente proviene de un trabajador del sector, aunque ese tipo de atribución anónima suele usarse en los bulos para parecer creíble.", "english": "I received it too. It allegedly comes from a worker in the industry, although that kind of anonymous attribution is often used in hoaxes to seem credible." },
+          { "speaker": "Elena", "spanish": "Busqué la alerta en la agencia sanitaria y no encontré nada; en cambio, sí vi un comunicado antiguo sobre un lote distinto retirado el año pasado.", "english": "I searched for the alert on the health agency's site and found nothing; by contrast, I did see an old statement about a different batch that was withdrawn last year." },
+          { "speaker": "Pablo", "spanish": "Eso explicaría por qué la captura parece real y, sin embargo, induce a error: mezcla un hecho verdadero con una advertencia actual que nadie ha emitido.", "english": "That would explain why the screenshot looks real and yet is misleading: it mixes a true fact with a current warning that nobody has issued." },
+          { "speaker": "Elena", "spanish": "Entonces responderé en el grupo que la información está sacada de contexto y compartiré el enlace oficial para evitar más reenvíos.", "english": "Then I will reply in the group that the information has been taken out of context and share the official link to prevent more forwarding." },
+          { "speaker": "Pablo", "spanish": "Buena idea. Verificar antes de alarmar a la familia es una forma concreta de frenar la desinformación.", "english": "Good idea. Verifying before alarming the family is a concrete way to slow misinformation." }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué hace sospechoso el mensaje reenviado para Elena y Pablo?",
+            "options": ["Que cita demasiadas declaraciones oficiales", "Que no menciona una fuente oficial y usa una atribución anónima", "Que está escrito con un lenguaje demasiado técnico", "Que incluye una fecha muy reciente y verificable"],
+            "answer": "Que no menciona una fuente oficial y usa una atribución anónima",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué descubre Elena al verificar la información?",
+            "options": ["Que existe una alerta actual idéntica", "Que todas las marcas fueron retiradas ayer", "Que hay un comunicado antiguo sobre otro lote y no una alerta nueva", "Que la agencia sanitaria cerró su página web"],
+            "answer": "Que hay un comunicado antiguo sobre otro lote y no una alerta nueva",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué estrategia decide seguir Elena en el grupo familiar?",
+            "options": ["Ignorar el mensaje para no crear discusión", "Pedir que eliminen todos los enlaces del grupo", "Compartir el enlace oficial y explicar que el contenido está fuera de contexto", "Volver a reenviar la captura con un comentario irónico"],
+            "answer": "Compartir el enlace oficial y explicar que el contenido está fuera de contexto",
+            "answerIndex": 2
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "El audio que cerraba la escuela",
+        "sentences": [
+          { "spanish": "Un domingo por la noche empezó a circular un audio en el que una voz anónima afirmaba que la escuela del barrio cerraría por una supuesta plaga.", "english": "On a Sunday night, an audio clip started circulating in which an anonymous voice claimed that the neighborhood school would close because of an alleged infestation." },
+          { "spanish": "Muchas familias lo reenviaron sin verificar, porque la persona que hablaba parecía conocer detalles internos y usaba un tono muy seguro.", "english": "Many families forwarded it without verifying, because the person speaking seemed to know internal details and used a very confident tone." },
+          { "spanish": "Sin embargo, una madre comprobó la fecha del archivo y descubrió que el mismo mensaje ya había circulado dos años antes en otra ciudad.", "english": "However, one mother checked the file's date and discovered that the same message had already circulated two years earlier in another city." },
+          { "spanish": "Después llamó a la dirección, cuya respuesta oficial confirmó que las clases seguirían con normalidad y que no existía ninguna alerta sanitaria.", "english": "She then called the administration, whose official response confirmed that classes would continue normally and that no health alert existed." },
+          { "spanish": "Gracias a esa verificación, el rumor perdió fuerza y varias personas entendieron que un mensaje convincente no siempre contiene hechos confirmados.", "english": "Thanks to that verification, the rumor lost momentum and several people understood that a convincing message does not always contain confirmed facts." }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "La entrevista recortada",
+        "sentences": [
+          { "spanish": "Un programa de debate publicó un fragmento de entrevista en el que una científica parecía afirmar que una vacuna era inútil.", "english": "A debate program published an interview clip in which a scientist appeared to claim that a vaccine was useless." },
+          { "spanish": "El corte se volvió viral porque reforzaba el relato dominante de varios grupos que ya desconfiaban de las instituciones sanitarias.", "english": "The clip went viral because it reinforced the dominant narrative of several groups that already distrusted health institutions." },
+          { "spanish": "No obstante, la versión completa mostraba que la experta se refería solo a una dosis antigua cuya eficacia había disminuido con nuevas variantes.", "english": "Nevertheless, the full version showed that the expert was referring only to an older dose whose effectiveness had declined with new variants." },
+          { "spanish": "Cuando algunos periodistas citaron textualmente el pasaje entero, quedó claro que el video había sido editado para producir una conclusión precipitada.", "english": "When some journalists quoted the entire passage verbatim, it became clear that the video had been edited to produce a hasty conclusion." },
+          { "spanish": "A partir de entonces, varios espectadores empezaron a exigir contexto antes de compartir clips que parecieran demasiado perfectos para confirmar sus prejuicios.", "english": "From that point on, several viewers began demanding context before sharing clips that seemed too perfect for confirming their biases." }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "La noticia que tuvo que corregirse",
+        "sentences": [
+          { "spanish": "Un medio digital publicó de madrugada que un puente nuevo presentaba grietas graves, de acuerdo con una fuente técnica que pidió anonimato.", "english": "A digital outlet reported overnight that a new bridge had serious cracks, according to a technical source who asked to remain anonymous." },
+          { "spanish": "La noticia generó alarma inmediata, y muchos usuarios la difundieron como si los hechos confirmados ya incluyeran un riesgo de derrumbe.", "english": "The story caused immediate alarm, and many users spread it as if the confirmed facts already included a risk of collapse." },
+          { "spanish": "Horas después, una inspección oficial explicó que las marcas observadas correspondían a un material superficial que se sustituía habitualmente durante las primeras semanas.", "english": "Hours later, an official inspection explained that the marks observed corresponded to a surface material that is routinely replaced during the first weeks." },
+          { "spanish": "El medio rectificó la noticia y admitió que había formulado el titular con más contundencia de la que permitía la evidencia verificable.", "english": "The outlet corrected the story and admitted that it had framed the headline more forcefully than the verifiable evidence allowed." },
+          { "spanish": "Aunque la corrección fue pública, el primer impacto ya había dejado una impresión duradera en lectores que no volvieron a revisar el asunto.", "english": "Although the correction was public, the initial impact had already left a lasting impression on readers who never checked the issue again." }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Hablar sobre noticias, sesgo y verificación",
+      "description": "Practica discurso referido, verificación de fuentes y alfabetización mediática.",
+      "questions_and_answers": [
+        {
+          "question": { "spanish": "Explica por qué no compartirías una noticia de inmediato.", "english": "Explain why you would not share a news story immediately." },
+          "answer": { "spanish": "No la compartiría de inmediato porque primero necesito verificar la fuente, comprobar la fecha y contrastar si otros medios fiables dicen lo mismo.", "english": "I would not share it immediately because I first need to verify the source, check the date, and compare whether other reliable outlets say the same thing." }
+        },
+        {
+          "question": { "spanish": "Resume una noticia usando discurso referido con cautela.", "english": "Summarize a news story using cautious reported speech." },
+          "answer": { "spanish": "Según fuentes locales, se habría producido un corte eléctrico en la zona norte, aunque las autoridades todavía no han confirmado la causa.", "english": "According to local sources, there may have been a power outage in the northern area, although authorities have not yet confirmed the cause." }
+        },
+        {
+          "question": { "spanish": "Describe qué es un titular engañoso.", "english": "Describe what a misleading headline is." },
+          "answer": { "spanish": "Un titular engañoso es aquel que simplifica o exagera los hechos confirmados para provocar una reacción más fuerte de la que justifican los datos.", "english": "A misleading headline is one that simplifies or exaggerates the confirmed facts to provoke a stronger reaction than the data justify." }
+        },
+        {
+          "question": { "spanish": "Di cómo verificarías un video viral.", "english": "Say how you would verify a viral video." },
+          "answer": { "spanish": "Verificaría el video rastreando su origen, comparando la ubicación con imágenes previas y buscando una declaración oficial que respalde el contexto.", "english": "I would verify the video by tracing its origin, comparing the location with earlier images, and looking for an official statement that supports the context." }
+        },
+        {
+          "question": { "spanish": "Explica por qué una fuente anónima requiere cautela.", "english": "Explain why an anonymous source requires caution." },
+          "answer": { "spanish": "Una fuente anónima requiere cautela porque puede aportar información valiosa, pero sin una atribución correcta es más difícil medir su fiabilidad y sus intereses.", "english": "An anonymous source requires caution because it may provide valuable information, but without proper attribution it is harder to assess its reliability and interests." }
+        },
+        {
+          "question": { "spanish": "Habla de una vez en que una noticia te pareció sesgada.", "english": "Talk about a time when a news story seemed biased to you." },
+          "answer": { "spanish": "Una vez leí un reportaje que omitía datos clave sobre vivienda, y ese silencio producía un sesgo editorial más claro que sus opiniones explícitas.", "english": "Once I read a report that omitted key housing data, and that silence created a clearer editorial bias than its explicit opinions." }
+        },
+        {
+          "question": { "spanish": "Menciona qué harías antes de reenviar una alerta preocupante.", "english": "Mention what you would do before forwarding a worrying alert." },
+          "answer": { "spanish": "Antes de reenviar una alerta, comprobaría si procede de una institución reconocida y si el mensaje reproduce un comunicado actual en lugar de uno antiguo.", "english": "Before forwarding an alert, I would check whether it comes from a recognized institution and whether the message reproduces a current statement rather than an old one." }
+        },
+        {
+          "question": { "spanish": "Define la desinformación con tus palabras.", "english": "Define misinformation in your own words." },
+          "answer": { "spanish": "La desinformación es la difusión de contenido falso o engañoso que, presuntamente informativo, termina distorsionando la comprensión pública de un hecho.", "english": "Misinformation is the spread of false or misleading content that, while supposedly informative, ends up distorting the public understanding of an event." }
+        },
+        {
+          "question": { "spanish": "Explica por qué importa contextualizar un dato.", "english": "Explain why it matters to put a data point in context." },
+          "answer": { "spanish": "Contextualizar un dato importa porque una cifra aislada puede apoyar una conclusión precipitada, mientras que su contexto revela límites y comparaciones relevantes.", "english": "Putting a data point in context matters because an isolated figure can support a hasty conclusion, whereas its context reveals limits and relevant comparisons." }
+        },
+        {
+          "question": { "spanish": "Cuenta cómo reaccionarías ante una captura manipulada.", "english": "Tell how you would react to a manipulated screenshot." },
+          "answer": { "spanish": "Si sospechara que una captura está manipulada, buscaría la publicación original y evitaría comentar como si los hechos ya estuvieran confirmados.", "english": "If I suspected a screenshot was manipulated, I would look for the original post and avoid commenting as if the facts had already been confirmed." }
+        },
+        {
+          "question": { "spanish": "Di qué significa hablar en condicional en una noticia.", "english": "Say what it means to use the conditional in a news story." },
+          "answer": { "spanish": "Hablar en condicional significa reconocer que una información todavía no ha sido corroborada y que, por lo tanto, debe presentarse con cautela.", "english": "Using the conditional means recognizing that a piece of information has not yet been corroborated and therefore must be presented cautiously." }
+        },
+        {
+          "question": { "spanish": "Explica qué te hace confiar en un medio fiable.", "english": "Explain what makes you trust a reliable outlet." },
+          "answer": { "spanish": "Confío más en un medio fiable cuando cita fuentes primarias, corrige errores con transparencia y diferencia claramente entre análisis y hechos confirmados.", "english": "I trust a reliable outlet more when it cites primary sources, corrects errors transparently, and clearly distinguishes analysis from confirmed facts." }
+        },
+        {
+          "question": { "spanish": "Resume una discusión sobre un bulo familiar.", "english": "Summarize a discussion about a family hoax." },
+          "answer": { "spanish": "En mi familia circuló un bulo sobre salud y, después de consultar a la agencia oficial, expliqué que el mensaje mezclaba un hecho antiguo con una advertencia falsa.", "english": "A health hoax circulated in my family, and after consulting the official agency, I explained that the message mixed an old fact with a false warning." }
+        },
+        {
+          "question": { "spanish": "Habla de la diferencia entre un testigo y una prueba verificable.", "english": "Talk about the difference between a witness and verifiable evidence." },
+          "answer": { "spanish": "Un testigo puede aportar contexto inmediato, pero la prueba verificable permite contrastar su relato y reducir el riesgo de interpretación interesada.", "english": "A witness can provide immediate context, but verifiable evidence makes it possible to test that account and reduce the risk of a self-serving interpretation." }
+        },
+        {
+          "question": { "spanish": "Explica por qué los sesgos no siempre son evidentes.", "english": "Explain why biases are not always obvious." },
+          "answer": { "spanish": "Los sesgos no siempre son evidentes porque a veces aparecen en las omisiones relevantes, en la selección de expertos o en el orden de los datos.", "english": "Biases are not always obvious because they sometimes appear in relevant omissions, the selection of experts, or the order of the data." }
+        },
+        {
+          "question": { "spanish": "Di cómo rectificarías una información incorrecta.", "english": "Say how you would correct inaccurate information." },
+          "answer": { "spanish": "Rectificaría la información citando la fuente correcta, explicando el error y dejando claro qué parte del relato anterior no estaba corroborada.", "english": "I would correct the information by citing the correct source, explaining the error, and making clear which part of the previous account was not corroborated." }
+        },
+        {
+          "question": { "spanish": "Describe una noticia que exigiría varias fuentes.", "english": "Describe a story that would require several sources." },
+          "answer": { "spanish": "Una denuncia sobre corrupción exigiría varias fuentes porque las acusaciones graves no deberían difundirse basándose en una sola versión no corroborada.", "english": "An allegation of corruption would require several sources because serious accusations should not be spread based on a single uncorroborated version." }
+        },
+        {
+          "question": { "spanish": "Habla de por qué la autoría importa en internet.", "english": "Talk about why authorship matters online." },
+          "answer": { "spanish": "La autoría importa en internet porque identificar quién publica permite evaluar intereses, trayectoria y posibles motivos para difundir un contenido dudoso.", "english": "Authorship matters online because identifying who publishes something allows us to evaluate interests, track record, and possible motives for spreading doubtful content." }
+        },
+        {
+          "question": { "spanish": "Explica qué es la alfabetización mediática.", "english": "Explain what media literacy is." },
+          "answer": { "spanish": "La alfabetización mediática es la capacidad de leer, cuestionar y verificar mensajes públicos en lugar de aceptarlos solo porque confirman lo que uno ya piensa.", "english": "Media literacy is the ability to read, question, and verify public messages instead of accepting them simply because they confirm what one already thinks." }
+        },
+        {
+          "question": { "spanish": "Cuenta cómo ayudarías a otra persona a contrastar una noticia.", "english": "Tell how you would help someone else cross-check a news story." },
+          "answer": { "spanish": "Ayudaría a otra persona a contrastar una noticia buscando la fuente primaria, comparando medios distintos y reformulando con cautela lo que todavía no está confirmado.", "english": "I would help someone else compare a news story by finding the primary source, comparing different outlets, and cautiously rephrasing what has not yet been confirmed." }
+        }
+      ]
+    }
+  }
+}

@@ -142,5 +142,95 @@
     "title": "School",
     "color": "rgb(0, 0, 0)",
     "icon": "SchoolIcon"
+  },
+  {
+    "number": 25,
+    "title": "Wishes & Doubts",
+    "color": "#7f8c8d",
+    "icon": "SubjunctiveIcon"
+  },
+  {
+    "number": 26,
+    "title": "Commands & Directions",
+    "color": "#2ecc71",
+    "icon": "CommandsIcon"
+  },
+  {
+    "number": 27,
+    "title": "Por vs. Para",
+    "color": "#e74c3c",
+    "icon": "PorParaIcon"
+  },
+  {
+    "number": 28,
+    "title": "Conditional Requests",
+    "color": "#3498db",
+    "icon": "ConditionalIcon"
+  },
+  {
+    "number": 29,
+    "title": "If Only... (Si Clauses)",
+    "color": "#9b59b6",
+    "icon": "SiClausesIcon"
+  },
+  {
+    "number": 30,
+    "title": "Life Experiences",
+    "color": "#f39c12",
+    "icon": "PresentPerfectIcon"
+  },
+  {
+    "number": 31,
+    "title": "Past Perfect Stories",
+    "color": "#795548",
+    "icon": "PastPerfectIcon"
+  },
+  {
+    "number": 32,
+    "title": "Future Plans",
+    "color": "#00bcd4",
+    "icon": "FutureIcon"
+  },
+  {
+    "number": 33,
+    "title": "Passive Voice & Se",
+    "color": "#607d8b",
+    "icon": "PassiveVoiceIcon"
+  },
+  {
+    "number": 34,
+    "title": "Nuanced Descriptions",
+    "color": "#8e44ad",
+    "icon": "RelativeClausesIcon"
+  },
+  {
+    "number": 35,
+    "title": "Workplace Negotiation",
+    "color": "#34495e",
+    "icon": "WorkplaceIcon"
+  },
+  {
+    "number": 36,
+    "title": "News & Media Literacy",
+    "color": "#c0392b",
+    "icon": "NewsIcon"
+  },
+  {
+    "number": 37,
+    "title": "Environment & Sustainability",
+    "color": "#27ae60",
+    "icon": "EnvironmentIcon"
+  },
+  {
+    "number": 38,
+    "title": "Technology & Privacy",
+    "color": "#2980b9",
+    "icon": "TechnologyIcon"
+  },
+  {
+    "number": 39,
+    "title": "Civic Life & Law",
+    "color": "#16a085",
+    "icon": "CivicLifeIcon"
   }
 ]

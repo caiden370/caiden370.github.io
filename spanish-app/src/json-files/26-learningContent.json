@@ -1,0 +1,302 @@
+{
+  "26": {
+    "words": [
+      { "spanish": "Por la lluvia", "english": "Because of the rain" },
+      { "spanish": "Por dos horas", "english": "For two hours" },
+      { "spanish": "Por correo electrónico", "english": "By email" },
+      { "spanish": "Por la mañana", "english": "In the morning" },
+      { "spanish": "Por cinco dólares", "english": "For five dollars" },
+      { "spanish": "Caminar por el parque", "english": "To walk through the park" },
+      { "spanish": "Hecho por artesanos locales", "english": "Made by local artisans" },
+      { "spanish": "Dos veces por semana", "english": "Twice per week" },
+      { "spanish": "Gracias por venir", "english": "Thanks for coming" },
+      { "spanish": "Preguntar por el gerente", "english": "To ask for the manager" },
+      { "spanish": "Para mañana", "english": "By tomorrow" },
+      { "spanish": "Para mi abuela", "english": "For my grandmother" },
+      { "spanish": "Para aprender", "english": "In order to learn" },
+      { "spanish": "Salir para Madrid", "english": "To leave for Madrid" },
+      { "spanish": "Trabajar para una ONG", "english": "To work for an NGO" },
+      { "spanish": "Para mí", "english": "In my opinion" },
+      { "spanish": "Esta mesa es para seis personas", "english": "This table is for six people" },
+      { "spanish": "Por error", "english": "By mistake" },
+      { "spanish": "Por costumbre", "english": "Out of habit" },
+      { "spanish": "Por internet", "english": "Online" },
+      { "spanish": "Por fin", "english": "At last" },
+      { "spanish": "Para siempre", "english": "Forever" },
+      { "spanish": "Por ciento", "english": "Percent" },
+      { "spanish": "Por persona", "english": "Per person" },
+      { "spanish": "Para el viernes", "english": "By Friday" },
+      { "spanish": "Por mi culpa", "english": "Because of my fault" },
+      { "spanish": "Para que descanses", "english": "So that you can rest" },
+      { "spanish": "Por todo el barrio", "english": "All through the neighborhood" },
+      { "spanish": "Por teléfono", "english": "By phone" },
+      { "spanish": "Para los clientes nuevos", "english": "For new customers" },
+      { "spanish": "Por el autor", "english": "By the author" },
+      { "spanish": "Para el sur", "english": "Toward the south" },
+      { "spanish": "Por ahora", "english": "For now" },
+      { "spanish": "Estar por salir", "english": "To be about to leave" },
+      { "spanish": "Para servirle", "english": "At your service" },
+      { "spanish": "Cambiarlo por otro", "english": "To exchange it for another" },
+      { "spanish": "Por suerte", "english": "Fortunately" },
+      { "spanish": "Para nada", "english": "Not at all" },
+      { "spanish": "Por la autopista", "english": "Via the highway" },
+      { "spanish": "Para dentro de un mes", "english": "Within a month" },
+      { "spanish": "Por razones médicas", "english": "For medical reasons" },
+      { "spanish": "Para uso profesional", "english": "For professional use" }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Cambio de vuelo y preparativos de viaje",
+        "dialog": [
+          { "speaker": "Inés", "spanish": "Salimos para Lima mañana a las seis, pero la aerolínea cambió el vuelo por la tormenta.", "english": "We are leaving for Lima tomorrow at six, but the airline changed the flight because of the storm." },
+          { "speaker": "Mateo", "spanish": "Qué mala suerte. ¿Nos reprogramaron para la noche o para el viernes?", "english": "What bad luck. Did they reschedule us for tonight or for Friday?" },
+          { "speaker": "Inés", "spanish": "Para esta noche, aunque tendremos que esperar en el aeropuerto por varias horas.", "english": "For tonight, although we will have to wait at the airport for several hours." },
+          { "speaker": "Mateo", "spanish": "Entonces te mando los documentos por correo electrónico para que no los busques en la maleta.", "english": "Then I will send you the documents by email so you do not have to look for them in the suitcase." },
+          { "speaker": "Inés", "spanish": "Gracias. También necesito cambiar unos euros por soles antes de abordar.", "english": "Thanks. I also need to exchange some euros for soles before boarding." },
+          { "speaker": "Mateo", "spanish": "Hazlo en la casa de cambio que está por la puerta ocho; suele ser más rápida.", "english": "Do it at the exchange booth by gate eight; it is usually faster." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué cambió la aerolínea el vuelo?",
+            "options": [
+              "Por una huelga del personal",
+              "Por la tormenta",
+              "Por un error en el pasaporte",
+              "Por una avería en la maleta"
+            ],
+            "answer": "Por la tormenta",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Cómo piensa Mateo enviar los documentos?",
+            "options": [
+              "Por correo electrónico",
+              "Por mensajero",
+              "Por teléfono",
+              "Por taxi"
+            ],
+            "answer": "Por correo electrónico",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué quiere cambiar Inés antes de abordar?",
+            "options": [
+              "Unos dólares por euros",
+              "Unos euros por soles",
+              "Un asiento por otro",
+              "Una maleta por otra"
+            ],
+            "answer": "Unos euros por soles",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Cambiar un regalo en una tienda",
+        "dialog": [
+          { "speaker": "Clara", "spanish": "Busco un regalo para mi abuela y quiero cambiar esta bufanda por algo más ligero.", "english": "I am looking for a gift for my grandmother and I want to exchange this scarf for something lighter." },
+          { "speaker": "Leo", "spanish": "Claro. ¿La compró por internet o aquí en la tienda?", "english": "Of course. Did you buy it online or here in the store?" },
+          { "speaker": "Clara", "spanish": "La compré aquí por recomendación de mi hermana, pero es demasiado pesada para el clima de su ciudad.", "english": "I bought it here on my sister's recommendation, but it is too heavy for the climate in her city." },
+          { "speaker": "Leo", "spanish": "En ese caso, le sugiero este pañuelo de seda. Es perfecto para viajar y está en oferta por treinta dólares.", "english": "In that case, I suggest this silk scarf. It is perfect for traveling and it is on sale for thirty dollars." },
+          { "speaker": "Clara", "spanish": "Me gusta. ¿Puede envolverlo para regalo y enviarlo para el lunes?", "english": "I like it. Can you wrap it as a gift and send it by Monday?" },
+          { "speaker": "Leo", "spanish": "Sí, se lo enviamos por mensajería exprés para que llegue a tiempo.", "english": "Yes, we will send it by express delivery so that it arrives on time." }
+        ],
+        "questions": [
+          {
+            "question": "¿Para quién busca Clara el regalo?",
+            "options": [
+              "Para su hermana",
+              "Para su jefa",
+              "Para su abuela",
+              "Para su vecina"
+            ],
+            "answer": "Para su abuela",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Por qué quiere cambiar la bufanda?",
+            "options": [
+              "Porque llegó rota",
+              "Porque es demasiado pesada para ese clima",
+              "Porque la compró por internet",
+              "Porque ya no tiene el recibo"
+            ],
+            "answer": "Porque es demasiado pesada para ese clima",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Para cuándo quiere Clara que envíen el nuevo regalo?",
+            "options": [
+              "Para el lunes",
+              "Para mañana por la mañana",
+              "Para dentro de un mes",
+              "Para el viernes siguiente"
+            ],
+            "answer": "Para el lunes",
+            "answerIndex": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Entregas y plazos en la oficina",
+        "dialog": [
+          { "speaker": "Sofía", "spanish": "Terminé el informe por la mañana, pero todavía falta una gráfica para la presentación del jueves.", "english": "I finished the report in the morning, but a chart is still missing for Thursday's presentation." },
+          { "speaker": "Bruno", "spanish": "Envíamela por correo hoy, por favor, para que el equipo de diseño la revise antes de las cinco.", "english": "Send it to me by email today, please, so that the design team can review it before five." },
+          { "speaker": "Sofía", "spanish": "De acuerdo. También hablé por teléfono con el cliente y pidió dos copias por persona para la reunión.", "english": "All right. I also spoke with the client by phone and he asked for two copies per person for the meeting." },
+          { "speaker": "Bruno", "spanish": "Perfecto. Ese proyecto es para una cadena de hoteles, así que cuidemos cada detalle.", "english": "Perfect. That project is for a hotel chain, so let us take care with every detail." },
+          { "speaker": "Sofía", "spanish": "¿Quiere que vaya por la autopista o por el centro para entregar las muestras?", "english": "Do you want me to go via the highway or through downtown to deliver the samples?" },
+          { "speaker": "Bruno", "spanish": "Ve por la autopista; llegarás más rápido y volverás para el almuerzo.", "english": "Go via the highway; you will arrive faster and be back for lunch." }
+        ],
+        "questions": [
+          {
+            "question": "¿Cuándo terminó Sofía el informe?",
+            "options": [
+              "Por la mañana",
+              "Por la noche",
+              "Para el almuerzo",
+              "Para la próxima semana"
+            ],
+            "answer": "Por la mañana",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Cuántas copias pidió el cliente?",
+            "options": [
+              "Dos copias por persona",
+              "Una copia por oficina",
+              "Tres copias por mesa",
+              "Cinco copias para el gerente"
+            ],
+            "answer": "Dos copias por persona",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué ruta le recomienda Bruno para entregar las muestras?",
+            "options": [
+              "Por el centro",
+              "Por la autopista",
+              "Por la costa",
+              "Por la estación de tren"
+            ],
+            "answer": "Por la autopista",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Trabajo comunitario y organización de voluntarios",
+        "dialog": [
+          { "speaker": "Elena", "spanish": "Trabajo para una fundación que reparte comida por todo el barrio los sábados.", "english": "I work for a foundation that distributes food all through the neighborhood on Saturdays." },
+          { "speaker": "Raúl", "spanish": "Qué bien. A mí me eligieron por mi experiencia en logística para coordinar a los voluntarios.", "english": "That is great. I was chosen because of my logistics experience to coordinate the volunteers." },
+          { "speaker": "Elena", "spanish": "Entonces, para mí, tú eres la persona ideal para organizar la ruta.", "english": "Then, in my opinion, you are the ideal person to organize the route." },
+          { "speaker": "Raúl", "spanish": "Gracias. Los paquetes fueron preparados por estudiantes de la universidad y están listos desde temprano.", "english": "Thanks. The packages were prepared by university students and have been ready since early morning." },
+          { "speaker": "Elena", "spanish": "Perfecto. ¿Salimos para el centro comunitario ahora o esperamos a Julia?", "english": "Perfect. Do we leave for the community center now or do we wait for Julia?" },
+          { "speaker": "Raúl", "spanish": "Esperemos diez minutos por cortesía, pero después nos vamos para no llegar tarde.", "english": "Let us wait ten minutes out of courtesy, but after that we should go so we are not late." }
+        ],
+        "questions": [
+          {
+            "question": "¿Quién preparó los paquetes?",
+            "options": [
+              "Los vecinos del barrio",
+              "Los estudiantes de la universidad",
+              "La gerente de la fundación",
+              "Los conductores del camión"
+            ],
+            "answer": "Los estudiantes de la universidad",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Por qué eligieron a Raúl para coordinar a los voluntarios?",
+            "options": [
+              "Por su experiencia en logística",
+              "Por su coche nuevo",
+              "Por su amistad con Julia",
+              "Por su trabajo en la universidad"
+            ],
+            "answer": "Por su experiencia en logística",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Por qué deciden esperar diez minutos antes de salir?",
+            "options": [
+              "Por cortesía",
+              "Por la lluvia intensa",
+              "Por falta de mapas",
+              "Por una avería en el camión"
+            ],
+            "answer": "Por cortesía",
+            "answerIndex": 0
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "El informe para el viernes",
+        "sentences": [
+          { "spanish": "Sofía empezó a trabajar en el informe por la mañana para terminarlo con calma antes de la reunión.", "english": "Sofía started working on the report in the morning so she could finish it calmly before the meeting." },
+          { "spanish": "Lo escribió por tres horas seguidas y luego se lo mandó a Bruno por correo electrónico.", "english": "She worked on it for three straight hours and then sent it to Bruno by email." },
+          { "spanish": "El cliente quería las versiones impresas para el viernes, así que el equipo revisó cada detalle con cuidado.", "english": "The client wanted the printed versions by Friday, so the team reviewed every detail carefully." },
+          { "spanish": "Más tarde, Sofía salió por la autopista para entregar unas muestras en un hotel del centro.", "english": "Later, Sofía left via the highway to deliver some samples to a downtown hotel." },
+          { "spanish": "Volvió cansada, pero contenta, porque todo había salido según el plan.", "english": "She came back tired but happy because everything had gone according to plan." },
+          { "spanish": "Para ella, ese día demostró que la organización vale tanto como el talento.", "english": "For her, that day showed that organization matters just as much as talent." }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Un regalo con intención",
+        "sentences": [
+          { "spanish": "Clara quería comprar un regalo para su abuela, pero cambió de idea por el clima cálido de su ciudad.", "english": "Clara wanted to buy a gift for her grandmother, but she changed her mind because of the warm climate in her city." },
+          { "spanish": "Había elegido una bufanda por recomendación de su hermana, aunque no era la opción más práctica.", "english": "She had chosen a scarf on her sister's recommendation, although it was not the most practical option." },
+          { "spanish": "En la tienda encontró un pañuelo de seda hecho por artesanos locales y decidió cambiar la bufanda por ese detalle más ligero.", "english": "At the store, she found a silk scarf made by local artisans and decided to exchange the scarf for that lighter gift." },
+          { "spanish": "Pagó por mensajería exprés para que el paquete llegara para el lunes sin falta.", "english": "She paid for express delivery so that the package would arrive by Monday without fail." },
+          { "spanish": "Cuando su abuela la llamó por teléfono, le dio las gracias por pensar en algo tan útil.", "english": "When her grandmother called her by phone, she thanked her for choosing something so useful." },
+          { "spanish": "Clara sonrió porque, para ella, un buen regalo debe servir y emocionar al mismo tiempo.", "english": "Clara smiled because, for her, a good gift should be useful and moving at the same time." }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "La brigada del barrio",
+        "sentences": [
+          { "spanish": "Cada sábado, Elena sale para el centro comunitario antes de las ocho para organizar la distribución de comida.", "english": "Every Saturday, Elena leaves for the community center before eight to organize the food distribution." },
+          { "spanish": "Raúl fue elegido por su experiencia en logística y por su paciencia con los voluntarios nuevos.", "english": "Raúl was chosen because of his logistics experience and his patience with the new volunteers." },
+          { "spanish": "Los paquetes, preparados por estudiantes universitarios, llegan clasificados por zona y por número de familias.", "english": "The packages, prepared by university students, arrive sorted by zone and by number of families." },
+          { "spanish": "Luego el equipo recorre el barrio por varias horas para entregar todo antes del mediodía.", "english": "Then the team goes through the neighborhood for several hours to deliver everything before noon." },
+          { "spanish": "Para muchos vecinos, esa visita semanal es importante no solo por la comida, sino también por la conversación.", "english": "For many neighbors, that weekly visit matters not only because of the food but also because of the conversation." },
+          { "spanish": "Al terminar, Elena siempre agradece a todos por su tiempo y por su compromiso.", "english": "At the end, Elena always thanks everyone for their time and commitment." }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Práctica oral de por y para",
+      "description": "Contrasta por y para al hablar de causa, propósito, plazos, intercambio, duración y destino.",
+      "questions_and_answers": [
+        { "question": { "spanish": "Di en español: I work for an international company.", "english": "Say in Spanish: I work for an international company." }, "answer": { "spanish": "Trabajo para una empresa internacional.", "english": "I work for an international company." } },
+        { "question": { "spanish": "Di en español: I called you by phone last night.", "english": "Say in Spanish: I called you by phone last night." }, "answer": { "spanish": "Te llamé por teléfono anoche.", "english": "I called you by phone last night." } },
+        { "question": { "spanish": "Di en español: We are leaving for Seville tomorrow morning.", "english": "Say in Spanish: We are leaving for Seville tomorrow morning." }, "answer": { "spanish": "Salimos para Sevilla mañana temprano.", "english": "We are leaving for Seville tomorrow morning." } },
+        { "question": { "spanish": "Di en español: Thanks for helping me with the move.", "english": "Say in Spanish: Thanks for helping me with the move." }, "answer": { "spanish": "Gracias por ayudarme con la mudanza.", "english": "Thanks for helping me with the move." } },
+        { "question": { "spanish": "Di en español: I need the report by Friday.", "english": "Say in Spanish: I need the report by Friday." }, "answer": { "spanish": "Necesito el reporte para el viernes.", "english": "I need the report by Friday." } },
+        { "question": { "spanish": "Di en español: We walked through the forest for one hour.", "english": "Say in Spanish: We walked through the forest for one hour." }, "answer": { "spanish": "Caminamos por el bosque durante una hora.", "english": "We walked through the forest for one hour." } },
+        { "question": { "spanish": "Di en español: I bought these flowers for my mother.", "english": "Say in Spanish: I bought these flowers for my mother." }, "answer": { "spanish": "Compré estas flores para mi madre.", "english": "I bought these flowers for my mother." } },
+        { "question": { "spanish": "Di en español: I exchanged my seat for one by the window.", "english": "Say in Spanish: I exchanged my seat for one by the window." }, "answer": { "spanish": "Cambié mi asiento por uno junto a la ventana.", "english": "I exchanged my seat for one by the window." } },
+        { "question": { "spanish": "Di en español: I did it out of curiosity, not out of obligation.", "english": "Say in Spanish: I did it out of curiosity, not out of obligation." }, "answer": { "spanish": "Lo hice por curiosidad, no por obligación.", "english": "I did it out of curiosity, not out of obligation." } },
+        { "question": { "spanish": "Di en español: This gift is for you.", "english": "Say in Spanish: This gift is for you." }, "answer": { "spanish": "Este regalo es para ti.", "english": "This gift is for you." } },
+        { "question": { "spanish": "Di en español: The bridge was designed by a Chilean engineer.", "english": "Say in Spanish: The bridge was designed by a Chilean engineer." }, "answer": { "spanish": "El puente fue diseñado por una ingeniera chilena.", "english": "The bridge was designed by a Chilean engineer." } },
+        { "question": { "spanish": "Di en español: We studied for three hours before the exam.", "english": "Say in Spanish: We studied for three hours before the exam." }, "answer": { "spanish": "Estudiamos por tres horas antes del examen.", "english": "We studied for three hours before the exam." } },
+        { "question": { "spanish": "Di en español: I am sending you the contract by email.", "english": "Say in Spanish: I am sending you the contract by email." }, "answer": { "spanish": "Te envío el contrato por correo electrónico.", "english": "I am sending you the contract by email." } },
+        { "question": { "spanish": "Di en español: In my opinion, that solution is the fairest.", "english": "Say in Spanish: In my opinion, that solution is the fairest." }, "answer": { "spanish": "Para mí, esa solución es la más justa.", "english": "In my opinion, that solution is the fairest." } },
+        { "question": { "spanish": "Di en español: We need ten chairs for the meeting.", "english": "Say in Spanish: We need ten chairs for the meeting." }, "answer": { "spanish": "Necesitamos diez sillas para la reunión.", "english": "We need ten chairs for the meeting." } },
+        { "question": { "spanish": "Di en español: We went through the market before going home.", "english": "Say in Spanish: We went through the market before going home." }, "answer": { "spanish": "Pasamos por el mercado antes de volver a casa.", "english": "We went through the market before going home." } },
+        { "question": { "spanish": "Di en español: I work here to pay for my studies.", "english": "Say in Spanish: I work here to pay for my studies." }, "answer": { "spanish": "Trabajo aquí para pagar mis estudios.", "english": "I work here to pay for my studies." } },
+        { "question": { "spanish": "Di en español: They sold the bicycle for two hundred euros.", "english": "Say in Spanish: They sold the bicycle for two hundred euros." }, "answer": { "spanish": "Vendieron la bicicleta por doscientos euros.", "english": "They sold the bicycle for two hundred euros." } },
+        { "question": { "spanish": "Di en español: Leave home now so that you arrive on time.", "english": "Say in Spanish: Leave home now so that you arrive on time." }, "answer": { "spanish": "Sal de casa ahora para llegar a tiempo.", "english": "Leave home now so that you arrive on time." } },
+        { "question": { "spanish": "Di en español: We have meetings twice per week.", "english": "Say in Spanish: We have meetings twice per week." }, "answer": { "spanish": "Hacemos reuniones dos veces por semana.", "english": "We have meetings twice per week." } }
+      ]
+    }
+  }
+}

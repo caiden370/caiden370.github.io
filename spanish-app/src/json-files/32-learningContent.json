@@ -1,0 +1,304 @@
+{
+  "32": {
+    "words": [
+      { "spanish": "ser aprobado por", "english": "to be approved by" },
+      { "spanish": "ser construido por", "english": "to be built by" },
+      { "spanish": "ser entregado por", "english": "to be delivered by" },
+      { "spanish": "ser producido por", "english": "to be produced by" },
+      { "spanish": "ser investigado por", "english": "to be investigated by" },
+      { "spanish": "ser redactado por", "english": "to be drafted by" },
+      { "spanish": "ser distribuido por", "english": "to be distributed by" },
+      { "spanish": "se dice que", "english": "it is said that" },
+      { "spanish": "se prohíbe fumar", "english": "smoking is prohibited" },
+      { "spanish": "se venden boletos", "english": "tickets are sold" },
+      { "spanish": "se necesita experiencia", "english": "experience is required" },
+      { "spanish": "se ruega silencio", "english": "silence is requested" },
+      { "spanish": "aquí se habla español", "english": "Spanish is spoken here" },
+      { "spanish": "se alquilan oficinas", "english": "offices are rented out" },
+      { "spanish": "se busca personal", "english": "staff wanted" },
+      { "spanish": "se recomienda reservar", "english": "booking is recommended" },
+      { "spanish": "se anuncian cambios", "english": "changes are announced" },
+      { "spanish": "se publicaron los resultados", "english": "the results were published" },
+      { "spanish": "el trámite", "english": "the procedure" },
+      { "spanish": "la solicitud", "english": "the application" },
+      { "spanish": "el formulario", "english": "the form" },
+      { "spanish": "la normativa", "english": "the regulations" },
+      { "spanish": "el aviso", "english": "the notice" },
+      { "spanish": "la fábrica", "english": "the factory" },
+      { "spanish": "el producto", "english": "the product" },
+      { "spanish": "el reportaje", "english": "the report" },
+      { "spanish": "la ley", "english": "the law" },
+      { "spanish": "la propuesta", "english": "the proposal" },
+      { "spanish": "la medida", "english": "the measure" },
+      { "spanish": "la conferencia de prensa", "english": "the press conference" },
+      { "spanish": "el proceso", "english": "the process" },
+      { "spanish": "el envío", "english": "the shipment" },
+      { "spanish": "la recepción", "english": "the reception desk" },
+      { "spanish": "el acceso", "english": "the access" },
+      { "spanish": "por motivos de seguridad", "english": "for security reasons" },
+      { "spanish": "de forma automática", "english": "automatically" },
+      { "spanish": "según se informa", "english": "as reported" },
+      { "spanish": "quedó suspendido", "english": "was suspended" },
+      { "spanish": "fue diseñado por", "english": "was designed by" },
+      { "spanish": "son atendidos", "english": "are assisted" },
+      { "spanish": "se verifican los datos", "english": "the data are verified" },
+      { "spanish": "se agradece su paciencia", "english": "your patience is appreciated" },
+      { "spanish": "se emiten facturas", "english": "invoices are issued" },
+      { "spanish": "fue inaugurado por", "english": "was inaugurated by" }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Permiso para abrir un café",
+        "dialog": [
+          { "speaker": "Laura", "spanish": "Buenos días. ¿Aquí se tramitan los permisos para abrir un café?", "english": "Good morning. Are the permits for opening a café processed here?" },
+          { "speaker": "Empleado", "spanish": "Sí, aquí se reciben las solicitudes y luego los documentos son revisados por el departamento jurídico.", "english": "Yes, applications are received here and then the documents are reviewed by the legal department." },
+          { "speaker": "Laura", "spanish": "¿También se verifica la dirección del local antes de aprobar todo?", "english": "Is the address of the premises also verified before everything is approved?" },
+          { "speaker": "Empleado", "spanish": "Exactamente. Primero se comprueban los datos y después la licencia es firmada por la directora.", "english": "Exactly. First the data are checked and then the license is signed by the director." },
+          { "speaker": "Laura", "spanish": "Entiendo. ¿Se puede entregar todo en línea o solo en persona?", "english": "I see. Can everything be submitted online or only in person?" },
+          { "speaker": "Empleado", "spanish": "La solicitud puede ser enviada por internet, pero el contrato original debe ser presentado en ventanilla.", "english": "The application can be sent online, but the original contract must be presented at the desk." }
+        ],
+        "questions": [
+          {
+            "question": "¿Quién revisa los documentos después de que se recibe la solicitud?",
+            "options": [
+              "El departamento jurídico.",
+              "La policía local.",
+              "La dueña del café.",
+              "Un notario externo."
+            ],
+            "answer": "El departamento jurídico.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué debe presentarse en ventanilla?",
+            "options": [
+              "La carta de recomendación.",
+              "El contrato original.",
+              "Una foto del local.",
+              "El menú completo."
+            ],
+            "answer": "El contrato original.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué se hace antes de que la licencia sea firmada por la directora?",
+            "options": [
+              "Se publica el permiso en internet.",
+              "Se abre el café al público.",
+              "Se comprueban los datos.",
+              "Se cambia la dirección del local."
+            ],
+            "answer": "Se comprueban los datos.",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Cobertura de una rueda de prensa",
+        "dialog": [
+          { "speaker": "Pablo", "spanish": "El comunicado ya fue publicado por el ministerio, pero todavía no entendemos bien el alcance.", "english": "The statement was already published by the ministry, but we still do not fully understand its scope." },
+          { "speaker": "Inés", "spanish": "Según se informa, varias medidas serán aplicadas por fases y se anunciarán nuevos detalles mañana.", "english": "As reported, several measures will be applied in phases and new details will be announced tomorrow." },
+          { "speaker": "Pablo", "spanish": "Entonces, en el reportaje no diremos que todo cambia hoy.", "english": "Then, in the report we will not say that everything changes today." },
+          { "speaker": "Inés", "spanish": "Claro que no. Además, se pidió prudencia porque los datos aún están siendo verificados.", "english": "Of course not. Besides, caution was requested because the data are still being verified." },
+          { "speaker": "Pablo", "spanish": "¿La rueda de prensa será encabezada por la ministra?", "english": "Will the press conference be led by the minister?" },
+          { "speaker": "Inés", "spanish": "Sí, y las preguntas serán respondidas por su equipo técnico.", "english": "Yes, and the questions will be answered by her technical team." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué no dirán en el reportaje que todo cambia hoy?",
+            "options": [
+              "Porque la rueda de prensa fue cancelada.",
+              "Porque las medidas serán aplicadas por fases.",
+              "Porque el ministerio retiró el comunicado.",
+              "Porque nadie leyó el documento completo."
+            ],
+            "answer": "Porque las medidas serán aplicadas por fases.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué es lo que todavía se está verificando?",
+            "options": [
+              "Los horarios del metro.",
+              "La lista de periodistas.",
+              "Los datos.",
+              "Las preguntas del público."
+            ],
+            "answer": "Los datos.",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Quién responderá las preguntas en la rueda de prensa?",
+            "options": [
+              "El equipo técnico de la ministra.",
+              "El alcalde de la ciudad.",
+              "Solo Pablo.",
+              "Los representantes sindicales."
+            ],
+            "answer": "El equipo técnico de la ministra.",
+            "answerIndex": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Normas en el museo",
+        "dialog": [
+          { "speaker": "Guía", "spanish": "Se ruega silencio en esta sala porque aquí se conservan manuscritos muy frágiles.", "english": "Silence is requested in this room because very fragile manuscripts are kept here." },
+          { "speaker": "Visitante", "spanish": "Entiendo. ¿Ese mural fue restaurado por un equipo local?", "english": "I understand. Was that mural restored by a local team?" },
+          { "speaker": "Guía", "spanish": "Sí, fue restaurado por especialistas de Toledo y después fue protegido con un vidrio especial.", "english": "Yes, it was restored by specialists from Toledo and afterward it was protected with a special glass panel." },
+          { "speaker": "Visitante", "spanish": "También vi que se prohíbe usar flash. ¿Es por los colores?", "english": "I also saw that using flash is prohibited. Is it because of the colors?" },
+          { "speaker": "Guía", "spanish": "Exactamente. Con la luz intensa, los pigmentos pueden dañarse y la conservación se vuelve más difícil.", "english": "Exactly. With strong light, the pigments can be damaged and preservation becomes more difficult." },
+          { "speaker": "Visitante", "spanish": "Ahora veo por qué tantas normas se explican al entrar.", "english": "Now I see why so many rules are explained at the entrance." }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué se ruega silencio en esa sala?",
+            "options": [
+              "Porque hay una conferencia grabándose.",
+              "Porque se conservan manuscritos muy frágiles.",
+              "Porque el museo cerrará temprano.",
+              "Porque los visitantes están haciendo un examen."
+            ],
+            "answer": "Porque se conservan manuscritos muy frágiles.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Quién restauró el mural?",
+            "options": [
+              "Un equipo del ayuntamiento.",
+              "Especialistas de Toledo.",
+              "Estudiantes de arte del museo.",
+              "Una empresa extranjera."
+            ],
+            "answer": "Especialistas de Toledo.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Por qué se prohíbe usar flash?",
+            "options": [
+              "Porque los pigmentos pueden dañarse.",
+              "Porque la batería de las cámaras se descarga rápido.",
+              "Porque el guardia no permite fotos de ningún tipo.",
+              "Porque la sala está siendo limpiada."
+            ],
+            "answer": "Porque los pigmentos pueden dañarse.",
+            "answerIndex": 0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Control de envíos en la planta",
+        "dialog": [
+          { "speaker": "Sonia", "spanish": "Me sorprende que aquí se registren todos los paquetes antes de salir.", "english": "I am surprised that all the packages are logged here before they leave." },
+          { "speaker": "Ricardo", "spanish": "Sí, y cada envío es pesado por dos empleados para evitar errores.", "english": "Yes, and each shipment is weighed by two employees to avoid errors." },
+          { "speaker": "Sonia", "spanish": "¿También se revisa la temperatura de los camiones?", "english": "Is the temperature of the trucks also checked?" },
+          { "speaker": "Ricardo", "spanish": "Claro. Si hay una falla, el producto no es distribuido por la planta central.", "english": "Of course. If there is a fault, the product is not distributed by the main plant." },
+          { "speaker": "Sonia", "spanish": "Ahora entiendo por qué se agradece la paciencia en la recepción.", "english": "Now I understand why patience is appreciated at the reception desk." },
+          { "speaker": "Ricardo", "spanish": "Exacto; cuando hay mucho volumen, los turnos son reorganizados por el supervisor.", "english": "Exactly; when there is a lot of volume, shifts are reorganized by the supervisor." }
+        ],
+        "questions": [
+          {
+            "question": "¿Para qué se pesa cada envío por dos empleados?",
+            "options": [
+              "Para evitar errores.",
+              "Para entrenar al personal nuevo.",
+              "Para ahorrar combustible.",
+              "Para acelerar el cierre de la planta."
+            ],
+            "answer": "Para evitar errores.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué pasa si hay una falla en la temperatura de los camiones?",
+            "options": [
+              "Se cambia inmediatamente al supervisor.",
+              "El producto no es distribuido por la planta central.",
+              "Los paquetes se entregan con descuento.",
+              "La recepción deja de emitir facturas."
+            ],
+            "answer": "El producto no es distribuido por la planta central.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Por qué se agradece la paciencia en la recepción?",
+            "options": [
+              "Porque los clientes esperan a un solo cajero.",
+              "Porque la planta cierra durante el almuerzo.",
+              "Porque los turnos se reorganizan cuando hay mucho volumen.",
+              "Porque los camiones llegan desde muy lejos."
+            ],
+            "answer": "Porque los turnos se reorganizan cuando hay mucho volumen.",
+            "answerIndex": 2
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "El puente del norte",
+        "sentences": [
+          { "spanish": "El nuevo puente fue inaugurado por la alcaldesa en una ceremonia breve.", "english": "The new bridge was inaugurated by the mayor in a brief ceremony." },
+          { "spanish": "La obra fue diseñada por un equipo de ingeniería local y fue financiada por fondos regionales.", "english": "The project was designed by a local engineering team and funded by regional funds." },
+          { "spanish": "Durante el acto, se anunció que el tránsito pesado se desviará por esa ruta.", "english": "During the event, it was announced that heavy traffic will be redirected along that route." },
+          { "spanish": "También se informó que los accesos serán vigilados por cámaras.", "english": "It was also reported that the access points will be monitored by cameras." },
+          { "spanish": "En los primeros días, se recomienda conducir despacio por las curvas nuevas.", "english": "In the first few days, driving slowly through the new curves is recommended." },
+          { "spanish": "Según se explicó, el proyecto reducirá los atascos en el centro.", "english": "As was explained, the project will reduce traffic jams downtown." }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Cómo se solicita la beca",
+        "sentences": [
+          { "spanish": "Primero, se completa un formulario en línea con los datos personales.", "english": "First, an online form is filled out with personal details." },
+          { "spanish": "Después, los documentos son subidos al portal y son revisados por una comisión.", "english": "After that, the documents are uploaded to the portal and reviewed by a committee." },
+          { "spanish": "Si falta algún archivo, se envía un aviso automático al estudiante.", "english": "If any file is missing, an automatic notice is sent to the student." },
+          { "spanish": "Más tarde, se verifican los ingresos familiares y las cartas de recomendación.", "english": "Later, family income and recommendation letters are verified." },
+          { "spanish": "La decisión final es tomada por el comité académico.", "english": "The final decision is made by the academic committee." },
+          { "spanish": "Al final del proceso, los resultados se publican en la página oficial.", "english": "At the end of the process, the results are published on the official website." }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Avisos en el edificio",
+        "sentences": [
+          { "spanish": "En la entrada se colocó un cartel nuevo porque el ascensor será reparado esta semana.", "english": "A new sign was put up at the entrance because the elevator will be repaired this week." },
+          { "spanish": "Se ruega usar la escalera de emergencia solo si es necesario.", "english": "Please use the emergency stairway only if necessary." },
+          { "spanish": "También se recuerda que los paquetes no son recibidos por el portero después de las nueve.", "english": "Residents are also reminded that packages are not received by the doorman after nine." },
+          { "spanish": "En el garaje, se prohíbe dejar bicicletas frente a la salida.", "english": "In the garage, leaving bicycles in front of the exit is prohibited." },
+          { "spanish": "Además, se dice que la administración cambiará el sistema de llaves el mes próximo.", "english": "In addition, it is said that the administration will change the key system next month." },
+          { "spanish": "Por eso, los residentes serán avisados por correo con varios días de anticipación.", "english": "Because of that, residents will be notified by email several days in advance." }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Procesos, avisos y voz pasiva",
+      "description": "Practica la voz pasiva y las construcciones con se para describir procesos, noticias y normas públicas.",
+      "questions_and_answers": [
+        { "question": { "spanish": "Di en español: Tickets are sold online.", "english": "Say in Spanish: Tickets are sold online." }, "answer": { "spanish": "Se venden boletos en línea.", "english": "Tickets are sold online." } },
+        { "question": { "spanish": "Traduce al español: The report was written by two analysts.", "english": "Translate into Spanish: The report was written by two analysts." }, "answer": { "spanish": "El informe fue redactado por dos analistas.", "english": "The report was written by two analysts." } },
+        { "question": { "spanish": "Di en español: Smoking is prohibited in this area.", "english": "Say in Spanish: Smoking is prohibited in this area." }, "answer": { "spanish": "Se prohíbe fumar en esta zona.", "english": "Smoking is prohibited in this area." } },
+        { "question": { "spanish": "Responde en español: Spanish is spoken here.", "english": "Answer in Spanish: Spanish is spoken here." }, "answer": { "spanish": "Aquí se habla español.", "english": "Spanish is spoken here." } },
+        { "question": { "spanish": "Traduce al español: The law was approved by parliament.", "english": "Translate into Spanish: The law was approved by parliament." }, "answer": { "spanish": "La ley fue aprobada por el parlamento.", "english": "The law was approved by parliament." } },
+        { "question": { "spanish": "Di en español: Experience is required for this position.", "english": "Say in Spanish: Experience is required for this position." }, "answer": { "spanish": "Se necesita experiencia para este puesto.", "english": "Experience is required for this position." } },
+        { "question": { "spanish": "Responde en español: The packages are checked before shipping.", "english": "Answer in Spanish: The packages are checked before shipping." }, "answer": { "spanish": "Los paquetes son revisados antes del envío.", "english": "The packages are checked before shipping." } },
+        { "question": { "spanish": "Traduce al español: Silence is requested during the exam.", "english": "Translate into Spanish: Silence is requested during the exam." }, "answer": { "spanish": "Se ruega silencio durante el examen.", "english": "Silence is requested during the exam." } },
+        { "question": { "spanish": "Di en español: The building was designed by a Brazilian female architect.", "english": "Say in Spanish: The building was designed by a Brazilian female architect." }, "answer": { "spanish": "El edificio fue diseñado por una arquitecta brasileña.", "english": "The building was designed by a Brazilian female architect." } },
+        { "question": { "spanish": "Responde en español: The data are verified automatically.", "english": "Answer in Spanish: The data are verified automatically." }, "answer": { "spanish": "Se verifican los datos de forma automática.", "english": "The data are verified automatically." } },
+        { "question": { "spanish": "Traduce al español: Invoices are issued at reception.", "english": "Translate into Spanish: Invoices are issued at reception." }, "answer": { "spanish": "Se emiten facturas en la recepción.", "english": "Invoices are issued at reception." } },
+        { "question": { "spanish": "Di en español: The product is distributed by the main plant.", "english": "Say in Spanish: The product is distributed by the main plant." }, "answer": { "spanish": "El producto es distribuido por la planta central.", "english": "The product is distributed by the main plant." } },
+        { "question": { "spanish": "Responde en español: Offices are rented out on the second floor.", "english": "Answer in Spanish: Offices are rented out on the second floor." }, "answer": { "spanish": "Se alquilan oficinas en el segundo piso.", "english": "Offices are rented out on the second floor." } },
+        { "question": { "spanish": "Traduce al español: The changes will be announced tomorrow.", "english": "Translate into Spanish: The changes will be announced tomorrow." }, "answer": { "spanish": "Los cambios serán anunciados mañana.", "english": "The changes will be announced tomorrow." } },
+        { "question": { "spanish": "Di en español: The museum was inaugurated by the king.", "english": "Say in Spanish: The museum was inaugurated by the king." }, "answer": { "spanish": "El museo fue inaugurado por el rey.", "english": "The museum was inaugurated by the king." } },
+        { "question": { "spanish": "Responde en español: Staff is being sought for the night shift.", "english": "Answer in Spanish: Staff is being sought for the night shift." }, "answer": { "spanish": "Se busca personal para el turno de noche.", "english": "Staff is being sought for the night shift." } },
+        { "question": { "spanish": "Traduce al español: The proposal was debated by the committee.", "english": "Translate into Spanish: The proposal was debated by the committee." }, "answer": { "spanish": "La propuesta fue debatida por el comité.", "english": "The proposal was debated by the committee." } },
+        { "question": { "spanish": "Di en español: Booking is recommended in summer.", "english": "Say in Spanish: Booking is recommended in summer." }, "answer": { "spanish": "Se recomienda reservar en verano.", "english": "Booking is recommended in summer." } },
+        { "question": { "spanish": "Responde en español: Customers are assisted in order.", "english": "Answer in Spanish: Customers are assisted in order." }, "answer": { "spanish": "Los clientes son atendidos por orden.", "english": "Customers are assisted in order." } },
+        { "question": { "spanish": "Traduce al español: It is said that the process will change soon.", "english": "Translate into Spanish: It is said that the process will change soon." }, "answer": { "spanish": "Se dice que el proceso cambiará pronto.", "english": "It is said that the process will change soon." } }
+      ]
+    }
+  }
+}

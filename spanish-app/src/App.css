@@ -2052,3 +2052,42 @@ outline: none;
 .homescreen-prompt-step-content strong {
   font-weight: 600;
 }
+.offline-status {
+  position: fixed;
+  top: max(68px, calc(env(safe-area-inset-top) + 56px));
+  left: 50%;
+  z-index: 12000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  padding: 9px 12px;
+  border: 2px solid #7c2d12;
+  border-radius: 12px;
+  background: #ffedd5;
+  box-shadow: 0 5px 14px rgba(15, 23, 42, 0.24);
+  color: #7c2d12;
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-align: left;
+  transform: translateX(-50%);
+}
+
+.offline-status.update-ready {
+  border-color: #1e3a8a;
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.offline-status button {
+  flex: none;
+  padding: 6px 10px;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  background: #ffffff;
+  color: inherit;
+  font: inherit;
+  font-weight: 950;
+}

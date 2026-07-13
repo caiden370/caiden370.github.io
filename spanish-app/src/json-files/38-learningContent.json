@@ -1,0 +1,770 @@
+{
+  "38": {
+    "words": [
+      {
+        "spanish": "los derechos civiles",
+        "english": "civil rights"
+      },
+      {
+        "spanish": "el trámite administrativo",
+        "english": "administrative procedure"
+      },
+      {
+        "spanish": "la denuncia formal",
+        "english": "formal complaint"
+      },
+      {
+        "spanish": "el ayuntamiento",
+        "english": "city hall"
+      },
+      {
+        "spanish": "la junta vecinal",
+        "english": "neighborhood council"
+      },
+      {
+        "spanish": "el jurado",
+        "english": "jury"
+      },
+      {
+        "spanish": "la ley",
+        "english": "the law"
+      },
+      {
+        "spanish": "el reglamento",
+        "english": "regulation"
+      },
+      {
+        "spanish": "la ordenanza municipal",
+        "english": "municipal ordinance"
+      },
+      {
+        "spanish": "el funcionario público",
+        "english": "public official"
+      },
+      {
+        "spanish": "la participación ciudadana",
+        "english": "citizen participation"
+      },
+      {
+        "spanish": "presentar una queja",
+        "english": "to file a complaint"
+      },
+      {
+        "spanish": "solicitar un permiso",
+        "english": "to request a permit"
+      },
+      {
+        "spanish": "el expediente",
+        "english": "case file"
+      },
+      {
+        "spanish": "el plazo de resolución",
+        "english": "decision deadline"
+      },
+      {
+        "spanish": "la ventanilla única",
+        "english": "one-stop service desk"
+      },
+      {
+        "spanish": "el certificado de empadronamiento",
+        "english": "residence registration certificate"
+      },
+      {
+        "spanish": "el recurso administrativo",
+        "english": "administrative appeal"
+      },
+      {
+        "spanish": "la audiencia pública",
+        "english": "public hearing"
+      },
+      {
+        "spanish": "la mediación",
+        "english": "mediation"
+      },
+      {
+        "spanish": "la comparecencia",
+        "english": "appearance"
+      },
+      {
+        "spanish": "el acta oficial",
+        "english": "official record"
+      },
+      {
+        "spanish": "el acceso a la información pública",
+        "english": "access to public information"
+      },
+      {
+        "spanish": "la licencia de obras",
+        "english": "building permit"
+      },
+      {
+        "spanish": "el permiso de ocupación",
+        "english": "occupancy permit"
+      },
+      {
+        "spanish": "las pruebas documentales",
+        "english": "documentary evidence"
+      },
+      {
+        "spanish": "la firma electrónica",
+        "english": "electronic signature"
+      },
+      {
+        "spanish": "la cita previa",
+        "english": "appointment booking"
+      },
+      {
+        "spanish": "la resolución motivada",
+        "english": "reasoned decision"
+      },
+      {
+        "spanish": "el silencio administrativo",
+        "english": "administrative silence"
+      },
+      {
+        "spanish": "el servicio de limpieza",
+        "english": "sanitation service"
+      },
+      {
+        "spanish": "la vía pública",
+        "english": "public roadway"
+      },
+      {
+        "spanish": "la convivencia vecinal",
+        "english": "neighborhood coexistence"
+      },
+      {
+        "spanish": "la infracción",
+        "english": "violation"
+      },
+      {
+        "spanish": "la sanción",
+        "english": "penalty"
+      },
+      {
+        "spanish": "el derecho de audiencia",
+        "english": "right to be heard"
+      },
+      {
+        "spanish": "la oficina de atención ciudadana",
+        "english": "citizen service office"
+      },
+      {
+        "spanish": "el registro oficial",
+        "english": "official registry"
+      },
+      {
+        "spanish": "subsanar documentación",
+        "english": "to remedy missing documents"
+      },
+      {
+        "spanish": "el reglamento interno",
+        "english": "internal regulation"
+      },
+      {
+        "spanish": "el horario de atención",
+        "english": "office hours"
+      },
+      {
+        "spanish": "el servicio esencial",
+        "english": "essential service"
+      },
+      {
+        "spanish": "el espacio público",
+        "english": "public space"
+      },
+      {
+        "spanish": "la asociación vecinal",
+        "english": "neighborhood association"
+      },
+      {
+        "spanish": "la solicitud por escrito",
+        "english": "written request"
+      }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Solicitud de permiso para una feria vecinal",
+        "dialog": [
+          {
+            "speaker": "Ana",
+            "spanish": "Buenos días. Represento a una asociación vecinal y querríamos solicitar un permiso para organizar una feria de reparación en la plaza del barrio.",
+            "english": "Good morning. I represent a neighborhood association, and we would like to request a permit to organize a repair fair in the neighborhood square."
+          },
+          {
+            "speaker": "Señor Ruiz",
+            "spanish": "Con mucho gusto. Para tramitar la solicitud, necesitarán un plan de seguridad, el horario previsto y un justificante del seguro de responsabilidad civil.",
+            "english": "Certainly. To process the request, you will need a safety plan, the proposed schedule, and proof of liability insurance."
+          },
+          {
+            "speaker": "Ana",
+            "spanish": "Algunos puestos serían educativos y no habría música amplificada después de las nueve. ¿Podríamos presentar todo por vía digital si la documentación estuviera firmada electrónicamente?",
+            "english": "Some booths would be educational, and there would be no amplified music after nine. Could we submit everything digitally if the paperwork were electronically signed?"
+          },
+          {
+            "speaker": "Señor Ruiz",
+            "spanish": "Sí, pueden registrarlo en línea, pero si faltara algún documento, se les requerirá que lo subsanen en un plazo de diez días hábiles.",
+            "english": "Yes, you can file it online, but if any document is missing, you will be asked to correct it within ten business days."
+          },
+          {
+            "speaker": "Ana",
+            "spanish": "Entiendo. Como se trata de una actividad sin ánimo de lucro, quisiera saber si existe alguna reducción o exención de la tasa municipal.",
+            "english": "I understand. Since this is a non-profit activity, I would like to know whether any reduction or exemption from the municipal fee exists."
+          },
+          {
+            "speaker": "Señor Ruiz",
+            "spanish": "Podría concederse si se acredita el interés público del evento y si quedan previstas medidas claras de limpieza y convivencia vecinal.",
+            "english": "It could be granted if the event's public interest is demonstrated and if clear sanitation and neighborhood coexistence measures are included."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué documentación básica menciona el funcionario para iniciar el trámite?",
+            "options": [
+              "Un plan de seguridad, el horario y un justificante del seguro.",
+              "Solo una carta de invitación y una lista de voluntarios.",
+              "El acta de la última junta escolar y un presupuesto privado.",
+              "Únicamente una fotografía de la plaza donde se celebrará la feria."
+            ],
+            "answer": "Un plan de seguridad, el horario y un justificante del seguro.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué tendría que demostrar la asociación para obtener una exención de la tasa?",
+            "options": [
+              "Que el evento se hará en secreto para evitar aglomeraciones.",
+              "Que el evento tiene interés público y prevé medidas de limpieza y convivencia.",
+              "Que la feria se celebrará de madrugada y sin puestos educativos.",
+              "Que el barrio renuncia a cualquier servicio municipal durante ese día."
+            ],
+            "answer": "Que el evento tiene interés público y prevé medidas de limpieza y convivencia.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué ocurre si la solicitud digital se presenta incompleta?",
+            "options": [
+              "Se cancela automáticamente sin posibilidad de corrección.",
+              "Se archiva durante un año sin notificar a la asociación.",
+              "Se pide que la documentación faltante se subsane dentro del plazo indicado.",
+              "Se transfiere al juzgado para que decida sobre el permiso."
+            ],
+            "answer": "Se pide que la documentación faltante se subsane dentro del plazo indicado.",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Presentar una queja por una parada inaccesible",
+        "dialog": [
+          {
+            "speaker": "Elena",
+            "spanish": "Vengo a presentar una queja formal porque la rampa de la parada central lleva meses rota y varias personas en silla de ruedas no pueden subir con seguridad.",
+            "english": "I am here to file a formal complaint because the ramp at the central bus stop has been broken for months, and several wheelchair users cannot board safely."
+          },
+          {
+            "speaker": "Señora Gómez",
+            "spanish": "Para dejar constancia en el expediente, convendría adjuntar fotografías, fechas aproximadas de los incidentes y, si fuera posible, los números de las líneas afectadas.",
+            "english": "To leave a record in the case file, it would be advisable to attach photographs, approximate dates of the incidents, and, if possible, the numbers of the affected routes."
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "Los vecinos ya lo comunicaron verbalmente en dos ocasiones, pero nunca recibimos respuesta por escrito ni supimos si alguien había revisado la parada.",
+            "english": "The neighbors already reported it verbally twice, but we never received a written response or learned whether anyone had inspected the stop."
+          },
+          {
+            "speaker": "Señora Gómez",
+            "spanish": "Precisamente por eso es importante la presentación formal: así se abre un expediente, se fija un plazo de resolución y la administración debe contestar.",
+            "english": "That is precisely why a formal filing matters: it opens a case file, sets a decision deadline, and requires the administration to respond."
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "¿Podremos consultar el estado del trámite o aportar nueva información si se produce otro accidente?",
+            "english": "Will we be able to check the status of the procedure or provide new information if another accident happens?"
+          },
+          {
+            "speaker": "Señora Gómez",
+            "spanish": "Sí. Además, si no hubiera respuesta dentro del plazo, podrían presentar un recordatorio o solicitar información pública sobre las actuaciones realizadas.",
+            "english": "Yes. In addition, if there were no response within the deadline, you could submit a follow-up request or ask for public information about the actions taken."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué considera la funcionaria que la presentación formal es importante?",
+            "options": [
+              "Porque sustituye automáticamente la necesidad de reparar la parada.",
+              "Porque obliga a la administración a abrir un expediente y a responder dentro de un plazo.",
+              "Porque impide que otros vecinos vuelvan a aportar pruebas.",
+              "Porque traslada el problema directamente al jurado popular."
+            ],
+            "answer": "Porque obliga a la administración a abrir un expediente y a responder dentro de un plazo.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué tipo de pruebas recomienda aportar con la queja?",
+            "options": [
+              "Fotografías, fechas de los incidentes y datos de las líneas afectadas.",
+              "Solo una opinión personal sin detalles concretos.",
+              "Una lista de comercios cercanos y el horario del mercado.",
+              "El reglamento interno del ayuntamiento firmado por los vecinos."
+            ],
+            "answer": "Fotografías, fechas de los incidentes y datos de las líneas afectadas.",
+            "answerIndex": 0
+          },
+          {
+            "question": "Si el ayuntamiento no respondiera a tiempo, ¿qué opción menciona la funcionaria?",
+            "options": [
+              "Esperar indefinidamente sin realizar ninguna otra acción.",
+              "Presentar un recordatorio o pedir información pública sobre lo actuado.",
+              "Retirar la queja y abrir un negocio privado de transporte.",
+              "Enviar la parada a mantenimiento sin registro oficial."
+            ],
+            "answer": "Presentar un recordatorio o pedir información pública sobre lo actuado.",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Debate en la junta vecinal sobre una ordenanza",
+        "dialog": [
+          {
+            "speaker": "Diego",
+            "spanish": "La nueva ordenanza sobre terrazas nocturnas pretende reducir el ruido, pero varios hosteleros dicen que perderán ingresos si se limita demasiado el horario.",
+            "english": "The new ordinance on late-night terraces aims to reduce noise, but several restaurant owners say they will lose income if the schedule is restricted too much."
+          },
+          {
+            "speaker": "Patricia",
+            "spanish": "Lo comprendo, aunque el derecho al descanso no debería quedar en segundo plano cuando hay edificios donde la gente lleva años sin dormir bien.",
+            "english": "I understand that, although the right to rest should not take a back seat when there are buildings where people have spent years unable to sleep properly."
+          },
+          {
+            "speaker": "Diego",
+            "spanish": "Lo que me preocupa es que la norma se apruebe sin escuchar con detalle ni a los residentes ni a quienes dependen del trabajo nocturno.",
+            "english": "What worries me is that the rule might be approved without listening carefully either to residents or to those who depend on nighttime work."
+          },
+          {
+            "speaker": "Patricia",
+            "spanish": "Por eso la junta ha abierto un periodo de consulta; si la participación es real, quizá se puedan ajustar horarios y exigir medidas acústicas más eficaces.",
+            "english": "That is why the council has opened a consultation period; if participation is genuine, schedules may be adjusted and more effective acoustic measures required."
+          },
+          {
+            "speaker": "Diego",
+            "spanish": "Me parecería razonable siempre que las decisiones se apoyen en datos del barrio y no en una idea abstracta de convivencia.",
+            "english": "That would seem reasonable to me as long as the decisions are based on neighborhood data and not on an abstract notion of coexistence."
+          },
+          {
+            "speaker": "Patricia",
+            "spanish": "En eso coincidimos: una regulación funciona mejor cuando se percibe como legítima y no como una imposición ciega.",
+            "english": "On that we agree: regulation works better when it is seen as legitimate and not as a blind imposition."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué equilibrio intenta buscar la conversación sobre la ordenanza?",
+            "options": [
+              "Entre el descanso vecinal y la actividad económica nocturna.",
+              "Entre el horario escolar y los festivales deportivos.",
+              "Entre la construcción de una carretera y la apertura de un museo.",
+              "Entre la elección del jurado y el registro civil."
+            ],
+            "answer": "Entre el descanso vecinal y la actividad económica nocturna.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué condición pone Patricia para que la consulta tenga sentido?",
+            "options": [
+              "Que solo participen representantes del sector hostelero.",
+              "Que la participación sea real y permita ajustar medidas concretas.",
+              "Que la votación se retrase hasta el próximo año sin debatir nada.",
+              "Que la norma se apruebe antes de escuchar a los residentes."
+            ],
+            "answer": "Que la participación sea real y permita ajustar medidas concretas.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Cómo resume Patricia una regulación eficaz al final?",
+            "options": [
+              "Como una orden que debe imponerse aunque nadie la entienda.",
+              "Como una norma que se acepta mejor si se percibe como legítima.",
+              "Como un trámite que no necesita datos locales ni consultas.",
+              "Como una medida provisional que nunca llega a aplicarse."
+            ],
+            "answer": "Como una norma que se acepta mejor si se percibe como legítima.",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Citación para jurado y solicitud de aplazamiento",
+        "dialog": [
+          {
+            "speaker": "Clara",
+            "spanish": "He recibido una citación para formar parte de un jurado justo la semana en que tendré que cuidar a mi madre después de una operación, y no sé cómo pedir un aplazamiento.",
+            "english": "I have received a summons to serve on a jury the very week I will need to care for my mother after surgery, and I do not know how to request a postponement."
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "Un amigo abogado me dijo que no conviene ignorar la citación; hay que presentar una solicitud formal con documentos que acrediten la situación.",
+            "english": "A lawyer friend told me it is unwise to ignore the summons; you need to submit a formal request with documents proving the situation."
+          },
+          {
+            "speaker": "Clara",
+            "spanish": "Entonces reuniré los certificados médicos y explicaré por escrito por qué mi ausencia pondría en riesgo un cuidado que no puede delegarse fácilmente.",
+            "english": "Then I will gather the medical certificates and explain in writing why my absence would put at risk care that cannot easily be delegated."
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "Eso es lo adecuado, porque si la petición se rechazara, todavía tendrías la obligación de comparecer en la fecha indicada.",
+            "english": "That is the right approach, because if the request were rejected, you would still have the obligation to appear on the indicated date."
+          },
+          {
+            "speaker": "Clara",
+            "spanish": "Me tranquiliza saber que existe un procedimiento, ya que participar en la justicia es importante, pero también debería reconocerse cuando hay una carga familiar excepcional.",
+            "english": "It reassures me to know that a procedure exists, since taking part in justice is important, but there should also be recognition when there is an exceptional family burden."
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "Exactamente; los deberes cívicos se sostienen mejor cuando las normas son claras y accesibles para quien necesita justificarse.",
+            "english": "Exactly; civic duties hold up better when the rules are clear and accessible for someone who needs to justify their situation."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué consejo principal recibe Clara sobre la citación?",
+            "options": [
+              "Que la ignore hasta que el juzgado vuelva a escribirle.",
+              "Que presente una solicitud formal acompañada de pruebas documentales.",
+              "Que pida a un vecino que acuda en su lugar sin avisar.",
+              "Que espere a que termine la operación para decidir."
+            ],
+            "answer": "Que presente una solicitud formal acompañada de pruebas documentales.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué entiende Clara sobre la participación en un jurado?",
+            "options": [
+              "Que es opcional y puede cancelarse por teléfono sin explicación.",
+              "Que carece de importancia cuando alguien tiene trabajo pendiente.",
+              "Que es valiosa, aunque deberían existir vías para justificar situaciones excepcionales.",
+              "Que solo afecta a profesionales del derecho y no a ciudadanos comunes."
+            ],
+            "answer": "Que es valiosa, aunque deberían existir vías para justificar situaciones excepcionales.",
+            "answerIndex": 2
+          },
+          {
+            "question": "Si su solicitud fuera rechazada, ¿qué implicación menciona Marcos?",
+            "options": [
+              "Que quedaría exenta automáticamente durante varios años.",
+              "Que aún tendría que comparecer en la fecha prevista.",
+              "Que debería acudir únicamente si el juicio dura más de un día.",
+              "Que se archivaría la citación sin más trámites."
+            ],
+            "answer": "Que aún tendría que comparecer en la fecha prevista.",
+            "answerIndex": 1
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "La queja que sí obtuvo respuesta",
+        "sentences": [
+          {
+            "spanish": "Durante meses, los vecinos de una calle estrecha habían pedido que se revisara el alumbrado porque varias farolas dejaron de funcionar y aumentó la sensación de inseguridad.",
+            "english": "For months, residents on a narrow street had been asking for the lighting to be reviewed because several streetlights stopped working and the sense of insecurity grew."
+          },
+          {
+            "spanish": "Como las llamadas informales no daban resultado, una residente presentó una queja por escrito y adjuntó fotografías, fechas y firmas de apoyo.",
+            "english": "Since informal calls were getting nowhere, one resident filed a written complaint and attached photographs, dates, and supporting signatures."
+          },
+          {
+            "spanish": "A partir de ese momento, se abrió un expediente y se comunicó un plazo dentro del cual debía emitirse una respuesta motivada.",
+            "english": "From that moment on, a case file was opened and a deadline was communicated within which a reasoned response had to be issued."
+          },
+          {
+            "spanish": "Aunque la reparación no fue inmediata, el servicio municipal explicó qué piezas faltaban y cuándo se había programado la intervención.",
+            "english": "Although the repair was not immediate, the municipal service explained which parts were missing and when the intervention had been scheduled."
+          },
+          {
+            "spanish": "Los vecinos valoraron sobre todo que se les tratara como interlocutores legítimos y no como personas a las que se pudiera ignorar indefinidamente.",
+            "english": "The neighbors valued above all that they were treated as legitimate interlocutors and not as people who could be ignored indefinitely."
+          },
+          {
+            "spanish": "La experiencia les recordó que presentar una queja bien documentada no garantiza milagros, pero sí obliga a la administración a dar la cara.",
+            "english": "The experience reminded them that filing a well-documented complaint does not guarantee miracles, but it does force the administration to be accountable."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Un permiso para la plaza del barrio",
+        "sentences": [
+          {
+            "spanish": "Una asociación quiso organizar una feria cultural en la plaza principal para recaudar fondos destinados a un comedor social.",
+            "english": "An association wanted to organize a cultural fair in the main square to raise funds for a community kitchen."
+          },
+          {
+            "spanish": "Antes de presentar la solicitud, sus miembros revisaron la ordenanza municipal para asegurarse de que el horario y el sonido cumplieran el reglamento.",
+            "english": "Before submitting the request, its members reviewed the municipal ordinance to make sure the schedule and sound levels complied with the regulations."
+          },
+          {
+            "spanish": "Cuando entregaron el expediente, se les indicó que faltaba un plano de evacuación y que debía subsanarse esa falta antes de diez días hábiles.",
+            "english": "When they submitted the file, they were told that an evacuation plan was missing and that the omission had to be remedied within ten business days."
+          },
+          {
+            "spanish": "Lejos de interpretarlo como una negativa, entendieron que el trámite solo avanzaría si quedaba acreditado que la actividad sería segura para todos.",
+            "english": "Far from taking it as a denial, they understood that the procedure would move forward only if it was shown that the event would be safe for everyone."
+          },
+          {
+            "spanish": "Finalmente, el permiso fue concedido con condiciones específicas de limpieza, accesibilidad y cierre escalonado.",
+            "english": "In the end, the permit was granted with specific conditions regarding cleaning, accessibility, and a phased closing schedule."
+          },
+          {
+            "spanish": "Gracias a ese proceso, la feria no solo se celebró con éxito, sino que también se convirtió en un ejemplo de participación ciudadana bien preparada.",
+            "english": "Thanks to that process, the fair was not only held successfully, but also became an example of well-prepared civic participation."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "El deber de participar",
+        "sentences": [
+          {
+            "spanish": "Clara pensó al principio que la citación para jurado era una molestia absurda que solo interrumpiría una semana ya complicada.",
+            "english": "At first Clara thought the jury summons was an absurd nuisance that would only interrupt an already difficult week."
+          },
+          {
+            "spanish": "Sin embargo, cuando leyó con atención la documentación, comprendió que se trataba de una responsabilidad civil vinculada al derecho de todos a un proceso justo.",
+            "english": "However, when she read the paperwork carefully, she understood that it was a civic responsibility tied to everyone's right to a fair process."
+          },
+          {
+            "spanish": "Como debía cuidar a su madre tras una operación, presentó una solicitud razonada para que se valorara un aplazamiento excepcional.",
+            "english": "Because she had to care for her mother after surgery, she submitted a reasoned request so that an exceptional postponement could be considered."
+          },
+          {
+            "spanish": "La respuesta no llegó de inmediato, pero al menos quedó claro qué pruebas se requerían y qué plazos se habían fijado para decidir.",
+            "english": "The response did not arrive immediately, but at least it became clear what evidence was required and what deadlines had been set to decide."
+          },
+          {
+            "spanish": "Esa transparencia hizo que Clara dejara de ver el procedimiento como una carga opaca y empezara a entenderlo como una obligación que también debía respetar sus circunstancias.",
+            "english": "That transparency led Clara to stop seeing the procedure as an opaque burden and begin to understand it as an obligation that should also respect her circumstances."
+          },
+          {
+            "spanish": "Al final, más que resolver solo su caso, la experiencia le enseñó que las instituciones ganan legitimidad cuando explican bien cómo deben cumplirse los deberes públicos.",
+            "english": "In the end, more than merely resolving her case, the experience taught her that institutions gain legitimacy when they clearly explain how public duties must be fulfilled."
+          }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Hablar sobre vida cívica y trámites públicos",
+      "description": "Practica solicitudes formales, quejas documentadas y explicaciones sobre derechos, deberes y participación ciudadana.",
+      "questions_and_answers": [
+        {
+          "question": {
+            "spanish": "¿Cómo solicitarías un permiso para usar un espacio público?",
+            "english": "How would you request a permit to use a public space?"
+          },
+          "answer": {
+            "spanish": "Presentaría una solicitud por escrito con la fecha, el horario, las medidas de seguridad y la documentación exigida.",
+            "english": "I would submit a written request with the date, schedule, safety measures, and required documentation."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Para qué sirve presentar una queja formal y no solo verbal?",
+            "english": "What is the purpose of filing a formal complaint rather than just making a verbal one?"
+          },
+          "answer": {
+            "spanish": "Sirve para que se abra un expediente y la administración tenga la obligación de responder dentro de un plazo.",
+            "english": "It serves to open a case file and require the administration to respond within a deadline."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué documentos podrían pedirte para un trámite municipal?",
+            "english": "What documents might they ask you for in a municipal procedure?"
+          },
+          "answer": {
+            "spanish": "Podrían pedirme un formulario firmado, un documento de identidad y pruebas que justifiquen la solicitud.",
+            "english": "They might ask me for a signed form, an ID document, and evidence supporting the request."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Formula una petición cortés a un funcionario público.",
+            "english": "Make a polite request to a public official."
+          },
+          "answer": {
+            "spanish": "Le agradecería que me indicara qué pasos debo seguir para subsanar la documentación pendiente.",
+            "english": "I would appreciate it if you could tell me what steps I must follow to correct the pending documentation."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué harías si una oficina no respondiera dentro del plazo legal?",
+            "english": "What would you do if an office did not respond within the legal deadline?"
+          },
+          "answer": {
+            "spanish": "Presentaría un recordatorio formal y pediría información sobre el estado exacto del expediente.",
+            "english": "I would submit a formal reminder and request information about the exact status of the case file."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Explica por qué la participación ciudadana mejora una ordenanza.",
+            "english": "Explain why citizen participation improves an ordinance."
+          },
+          "answer": {
+            "spanish": "La mejora porque permite que se escuchen necesidades reales antes de que la norma se apruebe definitivamente.",
+            "english": "It improves it because it allows real needs to be heard before the rule is approved definitively."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué significa tener derecho de audiencia en un procedimiento?",
+            "english": "What does it mean to have the right to be heard in a procedure?"
+          },
+          "answer": {
+            "spanish": "Significa poder presentar alegaciones y pruebas antes de que la administración tome una decisión que me afecte.",
+            "english": "It means being able to present arguments and evidence before the administration makes a decision that affects me."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Usa un registro formal para pedir una cita previa.",
+            "english": "Use a formal register to request an appointment."
+          },
+          "answer": {
+            "spanish": "Quisiera solicitar una cita previa para revisar un trámite que sigue pendiente de resolución.",
+            "english": "I would like to request an appointment to review a procedure that is still awaiting resolution."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué debe incluir una denuncia bien documentada?",
+            "english": "What should a well-documented complaint include?"
+          },
+          "answer": {
+            "spanish": "Debe incluir fechas, hechos verificables, pruebas documentales y una petición clara de actuación.",
+            "english": "It should include dates, verifiable facts, documentary evidence, and a clear request for action."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Por qué conviene leer el reglamento antes de organizar un evento?",
+            "english": "Why is it wise to read the regulations before organizing an event?"
+          },
+          "answer": {
+            "spanish": "Conviene leerlo para evitar incumplimientos y para saber qué condiciones deben respetarse desde el principio.",
+            "english": "It is wise to read it to avoid violations and to know what conditions must be respected from the start."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Si te citaran para un jurado, ¿qué harías si tuvieras una causa grave para aplazarlo?",
+            "english": "If you were summoned for jury duty, what would you do if you had a serious reason to postpone it?"
+          },
+          "answer": {
+            "spanish": "Presentaría una solicitud formal con certificados y explicaría por qué no puedo comparecer en esa fecha.",
+            "english": "I would submit a formal request with certificates and explain why I cannot appear on that date."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué diferencia hay entre una respuesta verbal y una resolución motivada?",
+            "english": "What is the difference between a verbal response and a reasoned decision?"
+          },
+          "answer": {
+            "spanish": "La resolución motivada deja constancia oficial de las razones y permite recurrir si fuera necesario.",
+            "english": "A reasoned decision leaves an official record of the reasons and allows an appeal if necessary."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Menciona un servicio público que deba tratarse como esencial.",
+            "english": "Mention a public service that should be treated as essential."
+          },
+          "answer": {
+            "spanish": "El transporte accesible debería tratarse como esencial porque condiciona el acceso al trabajo, la salud y la educación.",
+            "english": "Accessible transportation should be treated as essential because it affects access to work, healthcare, and education."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo pedirías información sobre un expediente atrasado?",
+            "english": "How would you request information about a delayed case file?"
+          },
+          "answer": {
+            "spanish": "Solicitaría por escrito que se me informe del estado del expediente y de las actuaciones ya realizadas.",
+            "english": "I would request in writing that I be informed of the status of the case file and of the actions already taken."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Usa el subjuntivo para expresar una exigencia administrativa.",
+            "english": "Use the subjunctive to express an administrative requirement."
+          },
+          "answer": {
+            "spanish": "Es necesario que la solicitud esté firmada electrónicamente para que pueda admitirse a trámite.",
+            "english": "It is necessary for the request to be electronically signed so that it can be accepted for processing."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Por qué puede ser útil la mediación en un conflicto vecinal?",
+            "english": "Why can mediation be useful in a neighborhood conflict?"
+          },
+          "answer": {
+            "spanish": "Puede ser útil porque permite que las partes busquen un acuerdo antes de que el problema se vuelva más hostil.",
+            "english": "It can be useful because it allows the parties to seek an agreement before the problem becomes more hostile."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué derecho protege el acceso a la información pública?",
+            "english": "What right does access to public information protect?"
+          },
+          "answer": {
+            "spanish": "Protege el derecho de la ciudadanía a saber cómo actúan las instituciones y en qué basan sus decisiones.",
+            "english": "It protects the public's right to know how institutions act and what they base their decisions on."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Describe una situación en la que tendrías que subsanar documentación.",
+            "english": "Describe a situation in which you would have to remedy missing documents."
+          },
+          "answer": {
+            "spanish": "Tendría que subsanar la documentación si presentara una solicitud de permiso sin adjuntar el seguro o un plano exigido por la ordenanza.",
+            "english": "I would have to correct the documentation if I submitted a permit request without attaching the insurance or a plan required by the ordinance."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué se gana cuando un trámite es claro y accesible?",
+            "english": "What is gained when a procedure is clear and accessible?"
+          },
+          "answer": {
+            "spanish": "Se gana confianza institucional y es más probable que la gente cumpla las normas sin sentirse desorientada.",
+            "english": "Institutional trust is gained and people are more likely to follow the rules without feeling lost."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Resume la relación entre derechos y deberes en la vida cívica.",
+            "english": "Summarize the relationship between rights and duties in civic life."
+          },
+          "answer": {
+            "spanish": "Los derechos se vuelven más sólidos cuando las instituciones respetan los procedimientos y la ciudadanía participa de manera informada.",
+            "english": "Rights become stronger when institutions respect procedures and citizens participate in an informed way."
+          }
+        }
+      ]
+    }
+  }
+}

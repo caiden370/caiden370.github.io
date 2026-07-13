@@ -14,6 +14,7 @@ import { initMascotStorage } from './utils/mascotStorage';
 import Store from './store';
 import TopWordsPage from './top-words-page';
 import HomeScreenInstallPrompt from './HomeScreenInstallPrompt';
+import OfflineStatus from './offline-status';
 
 const ElCaminoPage = lazy(() => import('./el-camino/ElCaminoPage'));
 
@@ -137,6 +138,7 @@ function App() {
       </div>)}
       <div className='app-background'></div>
       <HomeScreenInstallPrompt />
+      <OfflineStatus />
     </div>
   );
 }

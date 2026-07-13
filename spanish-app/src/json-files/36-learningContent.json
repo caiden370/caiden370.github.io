@@ -1,0 +1,770 @@
+{
+  "36": {
+    "words": [
+      {
+        "spanish": "el cambio climático",
+        "english": "climate change"
+      },
+      {
+        "spanish": "la huella de carbono",
+        "english": "carbon footprint"
+      },
+      {
+        "spanish": "reducir emisiones",
+        "english": "to reduce emissions"
+      },
+      {
+        "spanish": "compensar emisiones",
+        "english": "to offset emissions"
+      },
+      {
+        "spanish": "las energías renovables",
+        "english": "renewable energy"
+      },
+      {
+        "spanish": "la energía solar distribuida",
+        "english": "distributed solar power"
+      },
+      {
+        "spanish": "la energía eólica marina",
+        "english": "offshore wind power"
+      },
+      {
+        "spanish": "el almacenamiento energético",
+        "english": "energy storage"
+      },
+      {
+        "spanish": "la red eléctrica",
+        "english": "the power grid"
+      },
+      {
+        "spanish": "la transición energética",
+        "english": "the energy transition"
+      },
+      {
+        "spanish": "los combustibles fósiles",
+        "english": "fossil fuels"
+      },
+      {
+        "spanish": "el impuesto al carbono",
+        "english": "carbon tax"
+      },
+      {
+        "spanish": "el subsidio verde",
+        "english": "green subsidy"
+      },
+      {
+        "spanish": "la deforestación",
+        "english": "deforestation"
+      },
+      {
+        "spanish": "la reforestación",
+        "english": "reforestation"
+      },
+      {
+        "spanish": "la biodiversidad",
+        "english": "biodiversity"
+      },
+      {
+        "spanish": "el corredor ecológico",
+        "english": "wildlife corridor"
+      },
+      {
+        "spanish": "el hábitat protegido",
+        "english": "protected habitat"
+      },
+      {
+        "spanish": "la sequía prolongada",
+        "english": "prolonged drought"
+      },
+      {
+        "spanish": "la ola de calor",
+        "english": "heat wave"
+      },
+      {
+        "spanish": "la resiliencia climática",
+        "english": "climate resilience"
+      },
+      {
+        "spanish": "la adaptación climática",
+        "english": "climate adaptation"
+      },
+      {
+        "spanish": "la mitigación",
+        "english": "mitigation"
+      },
+      {
+        "spanish": "la economía circular",
+        "english": "circular economy"
+      },
+      {
+        "spanish": "el reciclaje selectivo",
+        "english": "sorted recycling"
+      },
+      {
+        "spanish": "el compostaje comunitario",
+        "english": "community composting"
+      },
+      {
+        "spanish": "el vertedero saturado",
+        "english": "overfilled landfill"
+      },
+      {
+        "spanish": "la contaminación atmosférica",
+        "english": "air pollution"
+      },
+      {
+        "spanish": "la huella hídrica",
+        "english": "water footprint"
+      },
+      {
+        "spanish": "la cadena de suministro",
+        "english": "supply chain"
+      },
+      {
+        "spanish": "el consumo responsable",
+        "english": "responsible consumption"
+      },
+      {
+        "spanish": "la compra a granel",
+        "english": "bulk buying"
+      },
+      {
+        "spanish": "las políticas medioambientales",
+        "english": "environmental policies"
+      },
+      {
+        "spanish": "el desarrollo sostenible",
+        "english": "sustainable development"
+      },
+      {
+        "spanish": "la justicia ambiental",
+        "english": "environmental justice"
+      },
+      {
+        "spanish": "la evaluación de impacto ambiental",
+        "english": "environmental impact assessment"
+      },
+      {
+        "spanish": "el acuerdo vinculante",
+        "english": "binding agreement"
+      },
+      {
+        "spanish": "el cumplimiento normativo",
+        "english": "regulatory compliance"
+      },
+      {
+        "spanish": "la movilidad sostenible",
+        "english": "sustainable mobility"
+      },
+      {
+        "spanish": "el transporte público eléctrico",
+        "english": "electric public transport"
+      },
+      {
+        "spanish": "restaurar ecosistemas",
+        "english": "to restore ecosystems"
+      },
+      {
+        "spanish": "la pérdida de especies",
+        "english": "loss of species"
+      },
+      {
+        "spanish": "la responsabilidad colectiva",
+        "english": "collective responsibility"
+      },
+      {
+        "spanish": "los incentivos fiscales verdes",
+        "english": "green tax incentives"
+      },
+      {
+        "spanish": "prohibir plásticos de un solo uso",
+        "english": "to ban single-use plastics"
+      }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Zona de bajas emisiones y comercio local",
+        "dialog": [
+          {
+            "speaker": "Marta",
+            "spanish": "El ayuntamiento quiere ampliar la zona de bajas emisiones porque la calidad del aire ha empeorado y ya no basta con campañas voluntarias.",
+            "english": "The city council wants to expand the low-emission zone because air quality has worsened and voluntary campaigns are no longer enough."
+          },
+          {
+            "speaker": "Javier",
+            "spanish": "Entiendo la urgencia, pero varios comerciantes temen que, si se restringiera el acceso sin una transición clara, perderían clientela antes de poder adaptarse.",
+            "english": "I understand the urgency, but several business owners fear that if access were restricted without a clear transition, they would lose customers before being able to adapt."
+          },
+          {
+            "speaker": "Marta",
+            "spanish": "Por eso se propone que se refuercen los autobuses eléctricos y que las entregas se concentren a primera hora, de modo que el cambio no recaiga solo en los negocios.",
+            "english": "That is why the proposal includes strengthening electric bus service and concentrating deliveries early in the day, so the burden does not fall only on businesses."
+          },
+          {
+            "speaker": "Javier",
+            "spanish": "Aun así, me preocupa que se anuncie la medida como si todos partieran de la misma situación, cuando muchos vecinos mayores dependen del coche para moverse.",
+            "english": "Even so, I worry that the measure is being announced as if everyone were starting from the same place, when many older residents depend on the car to get around."
+          },
+          {
+            "speaker": "Marta",
+            "spanish": "Los técnicos dicen que, a menos que se reduzcan pronto las emisiones, seguirán aumentando los casos de asma y el coste sanitario acabará pagándolo todo el barrio.",
+            "english": "Technical experts say that unless emissions are reduced soon, asthma cases will keep rising and the whole neighborhood will end up paying the health costs."
+          },
+          {
+            "speaker": "Javier",
+            "spanish": "Si el plan incluyera revisiones mensuales y ayudas para modernizar la logística, creo que sería más fácil pedirle a la comunidad que asuma su parte.",
+            "english": "If the plan included monthly reviews and support to modernize logistics, I think it would be easier to ask the community to do its part."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué Javier no rechaza por completo la propuesta municipal?",
+            "options": [
+              "Porque acepta la meta ambiental, pero quiere que se mitiguen los efectos sobre el comercio y la movilidad.",
+              "Porque cree que la contaminación no tiene relación con el tráfico urbano.",
+              "Porque ya ha decidido cerrar su negocio y mudarse del barrio.",
+              "Porque piensa que los vecinos mayores deberían dejar de conducir inmediatamente."
+            ],
+            "answer": "Porque acepta la meta ambiental, pero quiere que se mitiguen los efectos sobre el comercio y la movilidad.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué condición menciona Marta para que el cambio no recaiga solo en los negocios?",
+            "options": [
+              "Que se construya un aparcamiento subterráneo privado.",
+              "Que se refuercen el transporte público y las entregas en horarios regulados.",
+              "Que se cancelen todas las restricciones durante el invierno.",
+              "Que se sustituya la medida por campañas publicitarias."
+            ],
+            "answer": "Que se refuercen el transporte público y las entregas en horarios regulados.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué desenlace parece más probable al final de la conversación?",
+            "options": [
+              "Que la propuesta se abandone por completo sin debate adicional.",
+              "Que se apruebe una versión gradual con seguimiento y apoyo económico.",
+              "Que solo los comercios voten la medida en una consulta privada.",
+              "Que el barrio renuncie a cualquier política climática futura."
+            ],
+            "answer": "Que se apruebe una versión gradual con seguimiento y apoyo económico.",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Proveedores, costes y sostenibilidad empresarial",
+        "dialog": [
+          {
+            "speaker": "Elena",
+            "spanish": "He revisado la huella de carbono de nuestros proveedores y el más barato también es el que más depende del carbón y de rutas marítimas ineficientes.",
+            "english": "I reviewed the carbon footprint of our suppliers, and the cheapest one is also the one that relies most heavily on coal and inefficient shipping routes."
+          },
+          {
+            "speaker": "Diego",
+            "spanish": "No dudo del informe, pero si cambiáramos de proveedor este trimestre, el presupuesto podría desajustarse justo cuando el mercado sigue inestable.",
+            "english": "I do not doubt the report, but if we switched suppliers this quarter, the budget could be thrown off just as the market remains unstable."
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "La cuestión es que llevamos años anunciando objetivos climáticos; sería incoherente que siguiéramos comprando igual solo porque la factura inmediata resulte menor.",
+            "english": "The issue is that we have spent years announcing climate goals; it would be inconsistent to keep buying the same way just because the immediate bill is lower."
+          },
+          {
+            "speaker": "Diego",
+            "spanish": "¿Y si negociáramos un contrato escalonado para que el nuevo proveedor garantice trazabilidad y nosotros no absorbamos todo el coste de golpe?",
+            "english": "What if we negotiated a phased contract so the new supplier guarantees traceability and we do not absorb the whole cost all at once?"
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "Eso ayudaría, siempre que se audite de verdad la cadena de suministro y que no se nos venda sostenibilidad de escaparate.",
+            "english": "That would help, as long as the supply chain is genuinely audited and we are not being sold cosmetic sustainability."
+          },
+          {
+            "speaker": "Diego",
+            "spanish": "Entonces apoyaría el cambio, porque podríamos demostrar que la transición se ha diseñado con criterios financieros y medioambientales a la vez.",
+            "english": "In that case I would support the change, because we could show that the transition was designed with both financial and environmental criteria in mind."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Cuál es el conflicto principal que se discute en la reunión?",
+            "options": [
+              "La empresa quiere abandonar todos sus objetivos ambientales de inmediato.",
+              "La empresa debe elegir entre coherencia climática y presión presupuestaria a corto plazo.",
+              "Los empleados no saben qué proveedor vende productos más duraderos.",
+              "Los directivos quieren trasladar la fábrica a otro país sin avisar."
+            ],
+            "answer": "La empresa debe elegir entre coherencia climática y presión presupuestaria a corto plazo.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Para qué insiste Elena en que se audite la cadena de suministro?",
+            "options": [
+              "Para asegurarse de que las promesas ecológicas puedan comprobarse y no sean puro marketing.",
+              "Para despedir al proveedor actual antes de hablar con el nuevo.",
+              "Para evitar que el departamento financiero revise el contrato.",
+              "Para retrasar la decisión hasta el próximo año fiscal."
+            ],
+            "answer": "Para asegurarse de que las promesas ecológicas puedan comprobarse y no sean puro marketing.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Qué tendría que ocurrir para que Diego apoye el cambio?",
+            "options": [
+              "Que la empresa deje de medir sus emisiones durante seis meses.",
+              "Que el proveedor antiguo reduzca los precios de forma drástica.",
+              "Que se acuerde una transición escalonada con garantías verificables.",
+              "Que el informe se mantenga confidencial y no llegue a la dirección."
+            ],
+            "answer": "Que se acuerde una transición escalonada con garantías verificables.",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Reforestación tras el incendio",
+        "dialog": [
+          {
+            "speaker": "Sofía",
+            "spanish": "Después del incendio, algunos proponen plantar pinos de crecimiento rápido para que el monte vuelva a verse verde cuanto antes.",
+            "english": "After the fire, some people are proposing fast-growing pines so the hillside looks green again as soon as possible."
+          },
+          {
+            "speaker": "Carlos",
+            "spanish": "El problema es que, si solo pensáramos en la rapidez, repetiríamos el mismo modelo vulnerable que ya había facilitado que el fuego se extendiera.",
+            "english": "The problem is that if we thought only about speed, we would repeat the same vulnerable model that had already helped the fire spread."
+          },
+          {
+            "speaker": "Sofía",
+            "spanish": "La bióloga del proyecto insiste en que se combinen especies autóctonas y que se recupere el suelo antes de abrir de nuevo la pista turística.",
+            "english": "The project biologist insists that native species be combined and that the soil recover before the tourist trail reopens."
+          },
+          {
+            "speaker": "Carlos",
+            "spanish": "Tiene sentido, aunque habrá vecinos que se impacienten si no ven resultados visibles durante los primeros años.",
+            "english": "That makes sense, although there will be neighbors who grow impatient if they do not see visible results during the first years."
+          },
+          {
+            "speaker": "Sofía",
+            "spanish": "Precisamente por eso se está explicando que restaurar un ecosistema no equivale a pintar de verde una ladera, sino a devolverle diversidad y resistencia.",
+            "english": "That is exactly why people are being told that restoring an ecosystem is not the same as painting a hillside green, but rather giving it back diversity and resilience."
+          },
+          {
+            "speaker": "Carlos",
+            "spanish": "Si el mensaje cala, quizá se entienda que la recuperación lenta también puede ser la más responsable.",
+            "english": "If the message sinks in, people may understand that the slower recovery can also be the most responsible one."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué se critica la idea de plantar solo pinos de crecimiento rápido?",
+            "options": [
+              "Porque los pinos no pueden crecer en zonas de montaña.",
+              "Porque sería una solución vistosa, pero volvería a crear un bosque frágil.",
+              "Porque la ley prohíbe cualquier reforestación después de un incendio.",
+              "Porque los turistas prefieren ver el suelo sin vegetación."
+            ],
+            "answer": "Porque sería una solución vistosa, pero volvería a crear un bosque frágil.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué debe ocurrir antes de reabrir la pista turística?",
+            "options": [
+              "Que se construya un aparcamiento junto al bosque.",
+              "Que se recupere el suelo y se planifique con especies autóctonas.",
+              "Que se talen todos los árboles quemados en una semana.",
+              "Que los vecinos voten entre hoteles y cámpines."
+            ],
+            "answer": "Que se recupere el suelo y se planifique con especies autóctonas.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué mensaje intenta transmitir el proyecto a la comunidad?",
+            "options": [
+              "Que lo importante es ocultar cuanto antes las huellas del incendio.",
+              "Que la restauración consiste sobre todo en atraer más visitantes al valle.",
+              "Que un ecosistema sano requiere diversidad y no solo una apariencia verde inmediata.",
+              "Que la recuperación del bosque depende exclusivamente de la lluvia."
+            ],
+            "answer": "Que un ecosistema sano requiere diversidad y no solo una apariencia verde inmediata.",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Vuelos cortos y transporte ferroviario",
+        "dialog": [
+          {
+            "speaker": "Laura",
+            "spanish": "En el seminario se planteó que, cuando exista una alternativa ferroviaria razonable, se limiten los vuelos nacionales más cortos para reducir emisiones.",
+            "english": "In the seminar, the idea came up that once a reasonable rail alternative exists, the shortest domestic flights should be limited to reduce emissions."
+          },
+          {
+            "speaker": "Andrés",
+            "spanish": "La idea no me parece absurda, pero dudo que sea justa si primero no se invierte en trenes fiables y asequibles para quienes viajan por trabajo.",
+            "english": "The idea does not seem absurd to me, but I doubt it is fair if reliable and affordable trains are not funded first for people who travel for work."
+          },
+          {
+            "speaker": "Laura",
+            "spanish": "Claro, por eso varios profesores defendieron que la restricción solo debería aplicarse una vez que el servicio haya mejorado y que las regiones periféricas no queden aisladas.",
+            "english": "Of course, which is why several professors argued that the restriction should apply only once service has improved and peripheral regions are not left isolated."
+          },
+          {
+            "speaker": "Andrés",
+            "spanish": "Además, habría que calcular el efecto real, porque a veces se anuncian medidas simbólicas que sirven para tranquilizar conciencias más que para transformar hábitos.",
+            "english": "Besides, the real effect would have to be measured, because sometimes symbolic measures are announced that soothe consciences more than they change habits."
+          },
+          {
+            "speaker": "Laura",
+            "spanish": "También se habló de eso: nadie dijo que bastara con prohibir, sino que la medida tendría que formar parte de una política más amplia de movilidad sostenible.",
+            "english": "That was discussed too: nobody said banning alone would be enough, but rather that the measure would have to be part of a broader sustainable mobility policy."
+          },
+          {
+            "speaker": "Andrés",
+            "spanish": "Si se abordara así, dejaría de verse como castigo individual y podría entenderse como una responsabilidad compartida.",
+            "english": "If it were approached that way, it would stop being seen as an individual punishment and could be understood as a shared responsibility."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué requisito considera Andrés indispensable antes de limitar vuelos cortos?",
+            "options": [
+              "Que se prohíba viajar por trabajo durante el invierno.",
+              "Que se construyan aeropuertos más pequeños en las regiones periféricas.",
+              "Que existan trenes fiables y asequibles como alternativa real.",
+              "Que los estudiantes gestionen la política de transporte directamente."
+            ],
+            "answer": "Que existan trenes fiables y asequibles como alternativa real.",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué crítica hace Andrés a algunas medidas climáticas?",
+            "options": [
+              "Que a veces son simbólicas y cambian poco en la práctica.",
+              "Que siempre se diseñan pensando únicamente en turistas.",
+              "Que suelen beneficiar demasiado al transporte ferroviario privado.",
+              "Que se aprueban sin apoyo de ningún experto universitario."
+            ],
+            "answer": "Que a veces son simbólicas y cambian poco en la práctica.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Bajo qué enfoque final estaría más dispuesto a aceptar la medida?",
+            "options": [
+              "Si se presentara como castigo ejemplar para los viajeros frecuentes.",
+              "Si formara parte de una estrategia amplia y compartida de movilidad sostenible.",
+              "Si se aplicara solo a quienes viven en grandes capitales.",
+              "Si sustituyera todas las demás políticas medioambientales."
+            ],
+            "answer": "Si formara parte de una estrategia amplia y compartida de movilidad sostenible.",
+            "answerIndex": 1
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "El barrio que cambió sus hábitos",
+        "sentences": [
+          {
+            "spanish": "Cuando se anunció que el barrio había superado varios límites de contaminación, muchos vecinos pensaron que la responsabilidad recaía únicamente en las fábricas cercanas.",
+            "english": "When it was announced that the neighborhood had exceeded several pollution limits, many residents thought the responsibility fell only on the nearby factories."
+          },
+          {
+            "spanish": "Sin embargo, un informe que se había presentado semanas antes mostró que también influían el tráfico diario, el desperdicio energético de los edificios y el consumo desechable.",
+            "english": "However, a report that had been presented weeks earlier showed that daily traffic, wasteful building energy use, and disposable consumption also played a role."
+          },
+          {
+            "spanish": "A partir de entonces, se organizaron talleres para que se redujera el uso del coche, se separaran mejor los residuos y se aprovechara el compost comunitario.",
+            "english": "From then on, workshops were organized so that car use would be reduced, waste would be sorted better, and community compost would be put to use."
+          },
+          {
+            "spanish": "Aunque al principio hubo dudas sobre si esas medidas serían suficientes, varias comunidades instalaron paneles solares y revisaron el aislamiento de sus bloques.",
+            "english": "Although there were doubts at first about whether those measures would be enough, several housing communities installed solar panels and improved their buildings' insulation."
+          },
+          {
+            "spanish": "Lo más importante fue que nadie pretendió quedar exento: incluso los comercios que temían perder ventas acabaron participando en campañas de entrega sostenible.",
+            "english": "Most importantly, nobody tried to exempt themselves: even the shops that feared losing sales ended up taking part in sustainable delivery campaigns."
+          },
+          {
+            "spanish": "Un año después, no solo había bajado la huella de carbono del barrio, sino que también se había fortalecido la idea de que la transición debía repartirse con justicia.",
+            "english": "A year later, not only had the neighborhood's carbon footprint gone down, but the idea that the transition had to be shared fairly had also grown stronger."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "La cooperativa del valle y el parque eólico",
+        "sentences": [
+          {
+            "spanish": "La cooperativa agrícola recibió una propuesta para ceder terrenos a un parque eólico que prometía empleo e ingresos estables.",
+            "english": "The farming cooperative received a proposal to lease land to a wind farm that promised jobs and steady income."
+          },
+          {
+            "spanish": "Algunos socios celebraron que por fin se apostara por energías renovables, mientras que otros exigieron que se evaluara el impacto sobre las aves migratorias y el paisaje.",
+            "english": "Some members welcomed the long-awaited commitment to renewable energy, while others demanded that the impact on migratory birds and the landscape be assessed."
+          },
+          {
+            "spanish": "Como el contrato no estaba del todo claro, se pidió que se hiciera una consulta pública antes de que se firmara nada.",
+            "english": "Since the contract was not fully clear, a public consultation was requested before anything was signed."
+          },
+          {
+            "spanish": "Durante las reuniones, se repitió que no bastaba con llamar verde a un proyecto para que este resultara sostenible.",
+            "english": "During the meetings, people kept repeating that simply calling a project green was not enough to make it sustainable."
+          },
+          {
+            "spanish": "Tras meses de debate, se aceptó una versión más reducida del parque, la cual incluía corredores ecológicos y fondos para restauración ambiental.",
+            "english": "After months of debate, a scaled-down version of the wind farm was accepted, one that included wildlife corridors and funds for environmental restoration."
+          },
+          {
+            "spanish": "La decisión no dejó a todo el mundo satisfecho, pero sí mostró que el desarrollo sostenible exige negociación, datos y límites.",
+            "english": "The decision did not leave everyone satisfied, but it did show that sustainable development requires negotiation, evidence, and limits."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Cuando el río volvió a respirar",
+        "sentences": [
+          {
+            "spanish": "Durante años, se había desviado tanta agua para usos industriales que el río del municipio casi dejó de sostener vida.",
+            "english": "For years, so much water had been diverted for industrial use that the town's river almost stopped sustaining life."
+          },
+          {
+            "spanish": "Cuando la sequía se volvió más severa, quedó claro que no se podía seguir gestionando el recurso como si fuera infinito.",
+            "english": "When the drought grew more severe, it became clear that the resource could no longer be managed as if it were endless."
+          },
+          {
+            "spanish": "Entonces se aprobó un plan por el que se limitaron ciertas extracciones, se modernizó el riego y se restauraron las riberas que habían sido degradadas.",
+            "english": "A plan was then approved through which certain withdrawals were limited, irrigation was modernized, and the riverbanks that had been degraded were restored."
+          },
+          {
+            "spanish": "Varios sectores protestaron, ya que temían que la producción disminuyera, pero los estudios indicaban que el coste de no actuar sería aún mayor.",
+            "english": "Several sectors protested because they feared output would fall, but the studies indicated that the cost of failing to act would be even greater."
+          },
+          {
+            "spanish": "A medida que regresaron los insectos, los peces y las aves, muchos habitantes entendieron que la biodiversidad no era un lujo, sino una condición para la resiliencia.",
+            "english": "As insects, fish, and birds returned, many residents came to understand that biodiversity was not a luxury, but a condition for resilience."
+          },
+          {
+            "spanish": "El río no se recuperó de la noche a la mañana, pero volvió a respirar en cuanto la comunidad aceptó que cuidar el ecosistema era cuidar su propio futuro.",
+            "english": "The river did not recover overnight, but it began to breathe again once the community accepted that caring for the ecosystem meant caring for its own future."
+          }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Hablar sobre sostenibilidad avanzada",
+      "description": "Practica respuestas complejas sobre clima, políticas públicas, consumo y responsabilidad colectiva.",
+      "questions_and_answers": [
+        {
+          "question": {
+            "spanish": "¿Qué debería hacer una ciudad para que se reduzca la contaminación del aire?",
+            "english": "What should a city do so that air pollution decreases?"
+          },
+          "answer": {
+            "spanish": "Debería ampliar el transporte público y abaratar los abonos para que más gente deje el coche en casa.",
+            "english": "It should expand public transportation and lower pass prices so that more people leave the car at home."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo explicarías qué es la huella de carbono de una empresa?",
+            "english": "How would you explain what a company's carbon footprint is?"
+          },
+          "answer": {
+            "spanish": "Es la cantidad total de emisiones que genera una empresa directa e indirectamente a lo largo de su actividad.",
+            "english": "It is the total amount of emissions a company generates directly and indirectly throughout its operations."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Si el gobierno subvencionara paneles solares, ¿qué cambiaría?",
+            "english": "If the government subsidized solar panels, what would change?"
+          },
+          "answer": {
+            "spanish": "Muchas familias podrían instalar energía limpia y dependerían menos de los combustibles fósiles.",
+            "english": "Many families could install clean energy and would depend less on fossil fuels."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué recomiendas para que se recicle mejor en un edificio grande?",
+            "english": "What do you recommend so that recycling works better in a large building?"
+          },
+          "answer": {
+            "spanish": "Recomiendo que se coloquen contenedores claros en cada planta y que se expliquen las normas con ejemplos sencillos.",
+            "english": "I recommend placing clear bins on every floor and explaining the rules with simple examples."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué conflicto puede surgir con un parque eólico nuevo?",
+            "english": "What conflict can arise with a new wind farm?"
+          },
+          "answer": {
+            "spanish": "Puede surgir un conflicto porque produce energía limpia, pero también puede afectar al paisaje o a las rutas de aves si no se planifica bien.",
+            "english": "A conflict may arise because it produces clean energy, but it can also affect the landscape or bird routes if it is not planned well."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Di una recomendación para que las empresas reduzcan sus emisiones.",
+            "english": "Give one recommendation so that companies reduce their emissions."
+          },
+          "answer": {
+            "spanish": "Es importante que revisen su cadena de suministro y que no compren siempre la opción más contaminante solo porque sea barata.",
+            "english": "It is important that they review their supply chain and do not always buy the most polluting option just because it is cheap."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué medidas se han tomado ya en tu comunidad para ser más sostenible?",
+            "english": "What measures has your community already taken to become more sustainable?"
+          },
+          "answer": {
+            "spanish": "En mi comunidad se han instalado luces eficientes y se ha empezado a separar mejor los residuos orgánicos.",
+            "english": "In my community, efficient lighting has been installed and organic waste has started to be sorted more carefully."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo reducirías el consumo de agua durante una sequía prolongada?",
+            "english": "How would you reduce water consumption during a prolonged drought?"
+          },
+          "answer": {
+            "spanish": "Limitaría el riego innecesario, repararía fugas y promovería aparatos que gasten menos agua.",
+            "english": "I would limit unnecessary irrigation, fix leaks, and promote appliances that use less water."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Por qué es esencial proteger la biodiversidad?",
+            "english": "Why is it essential to protect biodiversity?"
+          },
+          "answer": {
+            "spanish": "Porque los ecosistemas que conservan su diversidad suelen resistir mejor las plagas, los incendios y los cambios bruscos.",
+            "english": "Because ecosystems that retain their diversity usually withstand pests, fires, and sudden changes better."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Menciona una política ambiental que pueda parecer impopular, pero necesaria.",
+            "english": "Mention one environmental policy that may seem unpopular but necessary."
+          },
+          "answer": {
+            "spanish": "Cobrar por contaminar puede parecer impopular, pero a veces es necesario para que se acelere la transición energética.",
+            "english": "Charging for pollution may seem unpopular, but it is sometimes necessary to speed up the energy transition."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué ocurrirá si se siguen priorizando los combustibles fósiles?",
+            "english": "What will happen if fossil fuels keep being prioritized?"
+          },
+          "answer": {
+            "spanish": "Seguirán aumentando las emisiones y será más difícil adaptarse a fenómenos extremos que ya se han intensificado.",
+            "english": "Emissions will keep rising and it will be harder to adapt to extreme events that have already intensified."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo definirías la economía circular con un ejemplo?",
+            "english": "How would you define the circular economy with an example?"
+          },
+          "answer": {
+            "spanish": "La definiría como un modelo en el que se reutilizan materiales; por ejemplo, reparar aparatos para que no terminen enseguida en el vertedero.",
+            "english": "I would define it as a model in which materials are reused; for example, repairing devices so they do not end up in landfill so quickly."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Explica por qué no basta con plantar árboles sin un plan serio.",
+            "english": "Explain why planting trees without a serious plan is not enough."
+          },
+          "answer": {
+            "spanish": "No basta porque, si no se eligen especies adecuadas y no se cuida el suelo, el proyecto puede fracasar aunque se vea bien al principio.",
+            "english": "It is not enough because if suitable species are not chosen and the soil is not cared for, the project can fail even if it looks good at first."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué responsabilidad tienen los consumidores en la sostenibilidad?",
+            "english": "What responsibility do consumers have in sustainability?"
+          },
+          "answer": {
+            "spanish": "Tienen la responsabilidad de informarse y de apoyar productos cuya producción sea menos dañina para el entorno.",
+            "english": "They have the responsibility to stay informed and support products whose production is less harmful to the environment."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Menciona algo que hayas dejado de comprar para consumir de forma más responsable.",
+            "english": "Mention something you have stopped buying in order to consume more responsibly."
+          },
+          "answer": {
+            "spanish": "He dejado de comprar botellas pequeñas de plástico y ahora llevo una reutilizable casi siempre.",
+            "english": "I have stopped buying small plastic bottles and now I carry a reusable one almost all the time."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Describe un proyecto que deba aprobarse solo después de una evaluación ambiental.",
+            "english": "Describe a project that should be approved only after an environmental assessment."
+          },
+          "answer": {
+            "spanish": "Una carretera nueva que atraviese un hábitat protegido debería aprobarse solo si se demuestra que el daño puede evitarse o compensarse.",
+            "english": "A new road crossing a protected habitat should be approved only if it is shown that the damage can be avoided or offset."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo deberían restaurarse los bosques después de un incendio?",
+            "english": "How should forests be restored after a fire?"
+          },
+          "answer": {
+            "spanish": "Deberían restaurarse con especies autóctonas y con medidas que permitan que el suelo se recupere de verdad.",
+            "english": "They should be restored with native species and with measures that allow the soil to recover properly."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Compara un coste inmediato con un beneficio a largo plazo en política climática.",
+            "english": "Compare an immediate cost with a long-term benefit in climate policy."
+          },
+          "answer": {
+            "spanish": "Puede costar modernizar edificios ahora, pero a largo plazo se ahorra energía y se reducen emisiones durante décadas.",
+            "english": "It may be costly to retrofit buildings now, but in the long term energy is saved and emissions are reduced for decades."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Usa una frase impersonal con se para hablar de reciclaje en tu ciudad.",
+            "english": "Use an impersonal se sentence to talk about recycling in your city."
+          },
+          "answer": {
+            "spanish": "En mi ciudad se recicla más desde que se colocaron puntos limpios en los mercados.",
+            "english": "In my city, more recycling is done since drop-off points were placed in the markets."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Resume la idea de responsabilidad colectiva frente al cambio climático.",
+            "english": "Summarize the idea of collective responsibility in the face of climate change."
+          },
+          "answer": {
+            "spanish": "Significa que ni los gobiernos, ni las empresas, ni los ciudadanos pueden actuar como si el problema perteneciera siempre a otro.",
+            "english": "It means that neither governments, nor companies, nor citizens can act as if the problem always belonged to someone else."
+          }
+        }
+      ]
+    }
+  }
+}

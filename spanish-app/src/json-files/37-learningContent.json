@@ -1,0 +1,765 @@
+{
+  "37": {
+    "words": [
+      {
+        "spanish": "la inteligencia artificial",
+        "english": "artificial intelligence"
+      },
+      {
+        "spanish": "el algoritmo",
+        "english": "algorithm"
+      },
+      {
+        "spanish": "el aprendizaje automático",
+        "english": "machine learning"
+      },
+      {
+        "spanish": "el modelo generativo",
+        "english": "generative model"
+      },
+      {
+        "spanish": "la ética de la IA",
+        "english": "AI ethics"
+      },
+      {
+        "spanish": "el sesgo algorítmico",
+        "english": "algorithmic bias"
+      },
+      {
+        "spanish": "la transparencia algorítmica",
+        "english": "algorithmic transparency"
+      },
+      {
+        "spanish": "la trazabilidad de decisiones",
+        "english": "decision traceability"
+      },
+      {
+        "spanish": "la automatización",
+        "english": "automation"
+      },
+      {
+        "spanish": "la supervisión humana",
+        "english": "human oversight"
+      },
+      {
+        "spanish": "la privacidad de datos",
+        "english": "data privacy"
+      },
+      {
+        "spanish": "el consentimiento informado",
+        "english": "informed consent"
+      },
+      {
+        "spanish": "la huella digital",
+        "english": "digital footprint"
+      },
+      {
+        "spanish": "el reconocimiento facial",
+        "english": "facial recognition"
+      },
+      {
+        "spanish": "la ciberseguridad",
+        "english": "cybersecurity"
+      },
+      {
+        "spanish": "la autenticación multifactor",
+        "english": "multi-factor authentication"
+      },
+      {
+        "spanish": "el cifrado de extremo a extremo",
+        "english": "end-to-end encryption"
+      },
+      {
+        "spanish": "la filtración de datos",
+        "english": "data breach"
+      },
+      {
+        "spanish": "la suplantación de identidad",
+        "english": "identity theft"
+      },
+      {
+        "spanish": "la contraseña robusta",
+        "english": "strong password"
+      },
+      {
+        "spanish": "el ataque de phishing",
+        "english": "phishing attack"
+      },
+      {
+        "spanish": "la copia de seguridad cifrada",
+        "english": "encrypted backup"
+      },
+      {
+        "spanish": "el derecho al olvido",
+        "english": "right to be forgotten"
+      },
+      {
+        "spanish": "la brecha digital",
+        "english": "digital divide"
+      },
+      {
+        "spanish": "el perfilado automatizado",
+        "english": "automated profiling"
+      },
+      {
+        "spanish": "la toma de decisiones automatizada",
+        "english": "automated decision-making"
+      },
+      {
+        "spanish": "la moderación de contenido",
+        "english": "content moderation"
+      },
+      {
+        "spanish": "la vigilancia masiva",
+        "english": "mass surveillance"
+      },
+      {
+        "spanish": "la nube pública",
+        "english": "public cloud"
+      },
+      {
+        "spanish": "el centro de datos",
+        "english": "data center"
+      },
+      {
+        "spanish": "anonimizar información",
+        "english": "to anonymize information"
+      },
+      {
+        "spanish": "minimizar datos",
+        "english": "to minimize data collection"
+      },
+      {
+        "spanish": "auditar un sistema",
+        "english": "to audit a system"
+      },
+      {
+        "spanish": "entrenar un modelo",
+        "english": "to train a model"
+      },
+      {
+        "spanish": "corregir un sesgo",
+        "english": "to correct a bias"
+      },
+      {
+        "spanish": "el acceso desigual a la tecnología",
+        "english": "unequal access to technology"
+      },
+      {
+        "spanish": "el video manipulado",
+        "english": "manipulated video"
+      },
+      {
+        "spanish": "la firma biométrica",
+        "english": "biometric signature"
+      },
+      {
+        "spanish": "la identidad digital",
+        "english": "digital identity"
+      },
+      {
+        "spanish": "la alfabetización digital",
+        "english": "digital literacy"
+      },
+      {
+        "spanish": "el código abierto",
+        "english": "open source"
+      },
+      {
+        "spanish": "la interoperabilidad",
+        "english": "interoperability"
+      },
+      {
+        "spanish": "la actualización de seguridad",
+        "english": "security update"
+      },
+      {
+        "spanish": "el incidente de seguridad",
+        "english": "security incident"
+      },
+      {
+        "spanish": "el uso responsable de la IA",
+        "english": "responsible use of AI"
+      }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "topic": "Reconocimiento facial en la escuela",
+        "dialog": [
+          {
+            "speaker": "Lucía",
+            "spanish": "La dirección quiere instalar reconocimiento facial en las entradas porque hubo varios robos y dice que así se evitarían accesos no autorizados.",
+            "english": "The school administration wants to install facial recognition at the entrances because there were several thefts, and it says this would prevent unauthorized access."
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "Entiendo la preocupación, pero me inquieta que se normalice la vigilancia y que los errores del sistema afecten más a algunos alumnos que a otros.",
+            "english": "I understand the concern, but I am troubled by the idea of normalizing surveillance and by the possibility that the system's errors may affect some students more than others."
+          },
+          {
+            "speaker": "Lucía",
+            "spanish": "La directora insiste en que los datos se guardarían solo por poco tiempo y que únicamente se consultarían si ocurriera un incidente.",
+            "english": "The principal insists that the data would be stored only briefly and consulted only if an incident occurred."
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "Eso no bastaría si las familias no pudieran negarse o si ninguna auditoría independiente comprobara que el algoritmo no reproduce sesgos ocultos.",
+            "english": "That would not be enough if families could not opt out or if no independent audit verified that the algorithm does not reproduce hidden biases."
+          },
+          {
+            "speaker": "Lucía",
+            "spanish": "Además, una asociación de derechos digitales advirtió que, una vez creada la infraestructura, suele ampliarse su uso más allá del objetivo inicial.",
+            "english": "Besides, a digital rights group warned that once the infrastructure is in place, its use often expands beyond the initial purpose."
+          },
+          {
+            "speaker": "Marcos",
+            "spanish": "Si aun así siguieran adelante, al menos debería ser un plan limitado, transparente y fácil de revocar.",
+            "english": "If they went ahead anyway, it should at least be a plan that is limited, transparent, and easy to revoke."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué temor principal expresa Marcos sobre el reconocimiento facial?",
+            "options": [
+              "Que la escuela pierda el control de las llaves del edificio.",
+              "Que la vigilancia se normalice y que el sistema perjudique de forma desigual a ciertos alumnos.",
+              "Que los estudiantes olviden sus horarios por culpa de la tecnología.",
+              "Que el proyecto solo funcione durante los fines de semana."
+            ],
+            "answer": "Que la vigilancia se normalice y que el sistema perjudique de forma desigual a ciertos alumnos.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Por qué no le basta a Marcos con que los datos se guarden poco tiempo?",
+            "options": [
+              "Porque cree que el problema también incluye el consentimiento y los posibles sesgos del algoritmo.",
+              "Porque piensa que los robos nunca ocurrieron realmente.",
+              "Porque quiere sustituir el sistema por cámaras ocultas.",
+              "Porque le preocupa únicamente el coste eléctrico de los servidores."
+            ],
+            "answer": "Porque cree que el problema también incluye el consentimiento y los posibles sesgos del algoritmo.",
+            "answerIndex": 0
+          },
+          {
+            "question": "Si el plan se aplicara de todos modos, ¿qué condiciones considera mínimas?",
+            "options": [
+              "Que solo los profesores puedan entrar en el edificio principal.",
+              "Que se amplíe su uso a todas las actividades extraescolares sin debate.",
+              "Que sea limitado, transparente y revocable.",
+              "Que la escuela no informe a las familias hasta el final del curso."
+            ],
+            "answer": "Que sea limitado, transparente y revocable.",
+            "answerIndex": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "topic": "Ataque de phishing en la empresa",
+        "dialog": [
+          {
+            "speaker": "Inés",
+            "spanish": "El departamento financiero estuvo a punto de transferir dinero a una cuenta falsa porque llegó un correo que imitaba perfectamente a uno de nuestros proveedores.",
+            "english": "The finance department was about to transfer money to a fake account because an email arrived that perfectly imitated one of our suppliers."
+          },
+          {
+            "speaker": "Tomás",
+            "spanish": "Menos mal que la autenticación multifactor retrasó el acceso, aunque eso demuestra que el atacante ya tenía suficientes datos como para sonar creíble.",
+            "english": "It is a good thing multi-factor authentication slowed things down, although that shows the attacker already had enough data to sound credible."
+          },
+          {
+            "speaker": "Inés",
+            "spanish": "Algunos quieren culpar a la becaria que abrió el mensaje, pero yo creo que el proceso era débil, porque aceptábamos cambios de cuenta solo por correo.",
+            "english": "Some people want to blame the intern who opened the message, but I think the process was weak because we accepted account changes by email alone."
+          },
+          {
+            "speaker": "Tomás",
+            "spanish": "Estoy de acuerdo; aunque se forme al personal, el sistema seguirá fallando si no exigimos dos validaciones y un contacto alternativo con el proveedor.",
+            "english": "I agree; even if staff are trained, the system will keep failing unless we require two validations and an alternate contact with the supplier."
+          },
+          {
+            "speaker": "Inés",
+            "spanish": "También habrá que notificar el incidente y avisar a los clientes cuyos datos podrían haberse visto comprometidos.",
+            "english": "We will also have to report the incident and notify the clients whose data may have been compromised."
+          },
+          {
+            "speaker": "Tomás",
+            "spanish": "Si actuamos con transparencia desde el principio, será más probable que la confianza pueda recuperarse.",
+            "english": "If we act transparently from the start, it is more likely that trust can be rebuilt."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Qué problema de fondo identifica Inés en la empresa?",
+            "options": [
+              "Que faltan proveedores en el mercado internacional.",
+              "Que el proceso permitía cambiar datos bancarios sin una verificación sólida.",
+              "Que nadie del departamento financiero sabe leer correos electrónicos.",
+              "Que la autenticación multifactor bloquea todas las compras legítimas."
+            ],
+            "answer": "Que el proceso permitía cambiar datos bancarios sin una verificación sólida.",
+            "answerIndex": 1
+          },
+          {
+            "question": "Según Tomás, ¿qué haría falta además de formar al personal?",
+            "options": [
+              "Eliminar la autenticación multifactor para agilizar pagos.",
+              "Cerrar el departamento financiero durante una semana.",
+              "Exigir dos validaciones y confirmar por otra vía con el proveedor.",
+              "Compartir todas las contraseñas con la dirección general."
+            ],
+            "answer": "Exigir dos validaciones y confirmar por otra vía con el proveedor.",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Por qué consideran importante informar pronto sobre el incidente?",
+            "options": [
+              "Porque así será más fácil recuperar la confianza afectada.",
+              "Porque la ley obliga a borrar todos los correos inmediatamente.",
+              "Porque quieren evitar cualquier revisión interna del caso.",
+              "Porque el proveedor falso puede corregir sus errores técnicos."
+            ],
+            "answer": "Porque así será más fácil recuperar la confianza afectada.",
+            "answerIndex": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "topic": "Automatización en el hospital",
+        "dialog": [
+          {
+            "speaker": "Paula",
+            "spanish": "El hospital está probando una herramienta de IA que clasifica mensajes no urgentes para que el personal sanitario responda más rápido.",
+            "english": "The hospital is testing an AI tool that classifies non-urgent messages so healthcare staff can respond more quickly."
+          },
+          {
+            "speaker": "Raúl",
+            "spanish": "Puede ahorrar tiempo, pero me preocupa que los casos ambiguos o los pacientes mayores queden mal clasificados si se confía demasiado en la automatización.",
+            "english": "It may save time, but I worry that ambiguous cases or older patients may be misclassified if people rely too heavily on automation."
+          },
+          {
+            "speaker": "Paula",
+            "spanish": "La empresa proveedora dice que una enfermera revisará todo lo que el sistema marque como dudoso antes de enviar una respuesta.",
+            "english": "The vendor says a nurse will review everything the system flags as uncertain before any response is sent."
+          },
+          {
+            "speaker": "Raúl",
+            "spanish": "Entonces deberían publicarse los criterios y tendría que existir un recurso sencillo si una respuesta automatizada afectara la atención de alguien.",
+            "english": "Then the criteria should be published and there should be a simple appeal process if an automated response affected someone's care."
+          },
+          {
+            "speaker": "Paula",
+            "spanish": "Además, sería clave que la comunidad supiera que la herramienta sirve de apoyo y no pretende sustituir el juicio clínico.",
+            "english": "It would also be crucial for the community to know that the tool is meant to support care and not replace clinical judgment."
+          },
+          {
+            "speaker": "Raúl",
+            "spanish": "Si se desplegara con supervisión real y con canales alternativos para quien los necesite, yo no me opondría.",
+            "english": "If it were deployed with real oversight and with alternative channels for those who need them, I would not oppose it."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Cuál es la condición principal que plantea Raúl para no oponerse a la herramienta?",
+            "options": [
+              "Que se use solo en horarios nocturnos y sin supervisión.",
+              "Que se despliegue con supervisión real y vías alternativas de atención.",
+              "Que todos los pacientes acepten respuestas automáticas obligatorias.",
+              "Que la empresa privada gestione directamente las historias clínicas."
+            ],
+            "answer": "Que se despliegue con supervisión real y vías alternativas de atención.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Por qué pide Raúl que se publiquen los criterios del sistema?",
+            "options": [
+              "Porque cree que los pacientes deberían poder entender y cuestionar decisiones automatizadas.",
+              "Porque quiere que los médicos dejen de responder mensajes.",
+              "Porque piensa que la IA no puede clasificar ningún texto en absoluto.",
+              "Porque desea que el hospital cambie todos sus servidores por otros nuevos."
+            ],
+            "answer": "Porque cree que los pacientes deberían poder entender y cuestionar decisiones automatizadas.",
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Cómo presenta Paula el papel de la IA dentro del hospital?",
+            "options": [
+              "Como un sustituto total del personal sanitario.",
+              "Como una herramienta de apoyo que no reemplaza el criterio clínico.",
+              "Como un sistema secreto reservado a la dirección.",
+              "Como una campaña temporal de marketing tecnológico."
+            ],
+            "answer": "Como una herramienta de apoyo que no reemplaza el criterio clínico.",
+            "answerIndex": 1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "topic": "Brecha digital y tareas escolares",
+        "dialog": [
+          {
+            "speaker": "Elena",
+            "spanish": "La academia quiere ofrecer un asistente de IA para ayudar con los deberes, y algunos profesores creen que podría mejorar mucho la práctica individual.",
+            "english": "The school wants to offer an AI assistant to help with homework, and some teachers believe it could greatly improve individual practice."
+          },
+          {
+            "speaker": "Nicolás",
+            "spanish": "Puede ser útil, pero no todos los hogares tienen internet estable ni adultos que sepan orientar a los estudiantes cuando la herramienta se equivoca.",
+            "english": "It can be useful, but not every household has stable internet or adults who know how to guide students when the tool gets something wrong."
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "Se ha propuesto prestar dispositivos y ampliar el horario de la biblioteca para que nadie quede fuera por falta de recursos.",
+            "english": "There has been a proposal to lend devices and extend library hours so that no one is left out for lack of resources."
+          },
+          {
+            "speaker": "Nicolás",
+            "spanish": "Eso ayudaría, aunque también habría que enseñar a los alumnos a cuestionar las respuestas en vez de copiar lo primero que sugiera el algoritmo.",
+            "english": "That would help, although students would also need to be taught to question the answers instead of copying whatever the algorithm suggests first."
+          },
+          {
+            "speaker": "Elena",
+            "spanish": "Exacto; si no se combina acceso con alfabetización digital, la herramienta podría ampliar la desigualdad en lugar de reducirla.",
+            "english": "Exactly; if access is not combined with digital literacy, the tool could widen inequality instead of reducing it."
+          }
+        ],
+        "questions": [
+          {
+            "question": "¿Por qué Nicolás cree que el asistente no basta por sí solo?",
+            "options": [
+              "Porque quiere que la biblioteca cierre más temprano.",
+              "Porque teme que el alumnado deje de usar cuadernos impresos.",
+              "Porque el acceso desigual y la falta de guía pueden limitar su utilidad.",
+              "Porque piensa que los profesores no deberían usar ninguna tecnología."
+            ],
+            "answer": "Porque el acceso desigual y la falta de guía pueden limitar su utilidad.",
+            "answerIndex": 2
+          },
+          {
+            "question": "¿Qué medida concreta se menciona para evitar que algunos estudiantes queden excluidos?",
+            "options": [
+              "Cobrar una tarifa extra por el uso del asistente.",
+              "Prestar dispositivos y ampliar el horario de la biblioteca.",
+              "Restringir la herramienta a quienes tengan mejores notas.",
+              "Sustituir todas las clases por tutorías automáticas."
+            ],
+            "answer": "Prestar dispositivos y ampliar el horario de la biblioteca.",
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué idea resume mejor la conclusión de Elena?",
+            "options": [
+              "La tecnología siempre reduce la desigualdad por sí misma.",
+              "Solo deberían usar la herramienta los estudiantes más avanzados.",
+              "El acceso debe ir acompañado de alfabetización digital para que el beneficio sea real.",
+              "La academia debería cancelar cualquier innovación futura."
+            ],
+            "answer": "El acceso debe ir acompañado de alfabetización digital para que el beneficio sea real.",
+            "answerIndex": 2
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "La asistente virtual del museo",
+        "sentences": [
+          {
+            "spanish": "Un museo lanzó una asistente virtual para recomendar recorridos personalizados según la edad, el idioma y los intereses declarados por cada visitante.",
+            "english": "A museum launched a virtual assistant to recommend personalized tours based on each visitor's age, language, and stated interests."
+          },
+          {
+            "spanish": "Al principio, el sistema parecía brillante, pero pronto se vio que ofrecía rutas menos complejas a muchas mujeres jóvenes, como si hubiera aprendido un patrón injusto.",
+            "english": "At first the system seemed brilliant, but it soon became clear that it was offering less complex routes to many young women, as if it had learned an unfair pattern."
+          },
+          {
+            "spanish": "Cuando varias guías pidieron que se revisara el modelo, la empresa admitió que lo había entrenado con datos antiguos que reflejaban sesgos ya normalizados.",
+            "english": "When several guides asked for the model to be reviewed, the company admitted it had trained it on old data that reflected biases already taken for granted."
+          },
+          {
+            "spanish": "Se suspendió temporalmente la función mientras se auditaban las recomendaciones y se rediseñaban los criterios con mayor transparencia.",
+            "english": "The feature was temporarily suspended while the recommendations were audited and the criteria were redesigned with greater transparency."
+          },
+          {
+            "spanish": "Lo interesante fue que nadie quiso renunciar por completo a la herramienta, sino que se exigió que funcionara de manera más justa y explicable.",
+            "english": "The interesting part was that nobody wanted to abandon the tool completely; instead, they demanded that it work in a fairer and more explainable way."
+          },
+          {
+            "spanish": "Meses después, el museo había recuperado la confianza del público porque demostró que corregir un sistema también forma parte de usar la IA con responsabilidad.",
+            "english": "Months later, the museum had regained the public's trust because it showed that correcting a system is also part of using AI responsibly."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Después de la filtración",
+        "sentences": [
+          {
+            "spanish": "Una empresa pequeña descubrió que se habían expuesto datos de clientes después de que un empleado reutilizara una contraseña en un servicio externo.",
+            "english": "A small company discovered that customer data had been exposed after an employee reused a password on an external service."
+          },
+          {
+            "spanish": "Aunque la dirección quiso minimizar el problema al principio, el equipo jurídico insistió en que se notificara cuanto antes a las personas afectadas.",
+            "english": "Although management wanted to downplay the issue at first, the legal team insisted that the affected people be notified as soon as possible."
+          },
+          {
+            "spanish": "Se activaron copias de seguridad cifradas, se revisaron los accesos y se obligó a toda la plantilla a usar autenticación multifactor.",
+            "english": "Encrypted backups were activated, access was reviewed, and the entire staff was required to use multi-factor authentication."
+          },
+          {
+            "spanish": "También se contrató una auditoría externa para que quedara claro qué falló y por qué ciertas alertas no se habían atendido a tiempo.",
+            "english": "An external audit was also commissioned so it would be clear what had failed and why certain alerts had not been addressed in time."
+          },
+          {
+            "spanish": "La recuperación fue lenta, pero los clientes valoraron que la empresa hubiera reconocido sus errores en vez de ocultarlos.",
+            "english": "The recovery was slow, but customers appreciated that the company had acknowledged its mistakes instead of hiding them."
+          },
+          {
+            "spanish": "A partir de entonces, la seguridad dejó de verse como un gasto incómodo y pasó a entenderse como una condición básica de la confianza digital.",
+            "english": "From then on, security stopped being seen as an annoying expense and came to be understood as a basic condition of digital trust."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "El centro comunitario y la brecha digital",
+        "sentences": [
+          {
+            "spanish": "En un barrio periférico se abrió un centro comunitario porque muchas familias habían quedado rezagadas cada vez que los trámites y las clases se trasladaban a internet.",
+            "english": "A community center opened in an outer neighborhood because many families had fallen behind each time paperwork and classes moved online."
+          },
+          {
+            "spanish": "Al principio, algunos responsables pensaban que bastaría con repartir tabletas, pero los monitores recordaron que el acceso sin formación rara vez resuelve la desigualdad.",
+            "english": "At first, some officials thought handing out tablets would be enough, but the instructors pointed out that access without training rarely solves inequality."
+          },
+          {
+            "spanish": "Por eso se organizaron talleres en los que se enseñaba a detectar estafas, proteger la privacidad y cuestionar respuestas generadas por inteligencia artificial.",
+            "english": "That is why workshops were organized to teach people how to spot scams, protect privacy, and question answers generated by artificial intelligence."
+          },
+          {
+            "spanish": "También se ofreció apoyo a quienes nunca habían creado una cuenta segura o no sabían cómo activar una copia de seguridad.",
+            "english": "Support was also offered to those who had never created a secure account or did not know how to enable a backup."
+          },
+          {
+            "spanish": "Con el tiempo, se vio que la confianza crecía cuando la tecnología dejaba de imponerse y empezaba a explicarse con paciencia.",
+            "english": "Over time, it became clear that trust grew when technology stopped being imposed and began to be explained patiently."
+          },
+          {
+            "spanish": "El proyecto no eliminó la brecha digital de un día para otro, pero sí evitó que la automatización ampliara una exclusión que ya existía.",
+            "english": "The project did not erase the digital divide overnight, but it did prevent automation from widening an exclusion that already existed."
+          }
+        ]
+      }
+    ],
+    "speaking": {
+      "title": "Hablar sobre IA, privacidad y vida digital",
+      "description": "Practica argumentos avanzados sobre automatización, ciberseguridad, sesgos, consentimiento y riesgos tecnológicos.",
+      "questions_and_answers": [
+        {
+          "question": {
+            "spanish": "¿Qué ventajas puede aportar la inteligencia artificial en un hospital?",
+            "english": "What advantages can artificial intelligence bring to a hospital?"
+          },
+          "answer": {
+            "spanish": "Puede agilizar tareas repetitivas y ayudar a priorizar casos, siempre que haya supervisión humana.",
+            "english": "It can speed up repetitive tasks and help prioritize cases, as long as there is human oversight."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué riesgo ves en el reconocimiento facial en espacios públicos?",
+            "english": "What risk do you see in facial recognition in public spaces?"
+          },
+          "answer": {
+            "spanish": "Veo el riesgo de que se normalice la vigilancia y de que se identifique mal a personas inocentes.",
+            "english": "I see the risk that surveillance becomes normalized and that innocent people are misidentified."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Si un algoritmo negara un préstamo, ¿qué debería poder hacer el ciudadano?",
+            "english": "If an algorithm denied a loan, what should the citizen be able to do?"
+          },
+          "answer": {
+            "spanish": "Debería poder pedir una explicación clara y solicitar que una persona revise la decisión.",
+            "english": "They should be able to request a clear explanation and ask for a person to review the decision."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Cómo protegerías a una empresa contra la suplantación de identidad?",
+            "english": "How would you protect a company against identity theft?"
+          },
+          "answer": {
+            "spanish": "Exigiría autenticación multifactor, confirmaciones por otra vía y formación frecuente contra el phishing.",
+            "english": "I would require multi-factor authentication, confirmations through another channel, and frequent anti-phishing training."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Explica por qué la privacidad de datos no debería tratarse como un detalle menor.",
+            "english": "Explain why data privacy should not be treated as a minor detail."
+          },
+          "answer": {
+            "spanish": "No debería tratarse como algo secundario porque, si se recopilan demasiados datos, el daño de una filtración puede ser enorme.",
+            "english": "It should not be treated as secondary because if too much data is collected, the damage from a breach can be enormous."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué tendría que ocurrir para que confiaras más en una herramienta de IA?",
+            "english": "What would have to happen for you to trust an AI tool more?"
+          },
+          "answer": {
+            "spanish": "Tendría que saberse con qué datos se entrenó, cómo se audita y qué límites tiene.",
+            "english": "It would have to be clear what data it was trained on, how it is audited, and what its limits are."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué significa tener una huella digital?",
+            "english": "What does it mean to have a digital footprint?"
+          },
+          "answer": {
+            "spanish": "Significa dejar rastros de actividad en línea que pueden revelar hábitos, gustos y relaciones.",
+            "english": "It means leaving traces of online activity that can reveal habits, tastes, and relationships."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Di una medida para reducir la brecha digital en tu comunidad.",
+            "english": "Give one measure to reduce the digital divide in your community."
+          },
+          "answer": {
+            "spanish": "Sería útil que se prestaran dispositivos y que hubiera talleres gratuitos de alfabetización digital.",
+            "english": "It would be useful for devices to be lent out and for free digital literacy workshops to be available."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Por qué la automatización no debería sustituir siempre a una persona?",
+            "english": "Why should automation not always replace a person?"
+          },
+          "answer": {
+            "spanish": "Porque hay decisiones que afectan derechos o contextos complejos y no deberían resolverse sin criterio humano.",
+            "english": "Because some decisions affect rights or complex contexts and should not be resolved without human judgment."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué harías si recibieras un mensaje sospechoso de tu banco?",
+            "english": "What would you do if you received a suspicious message from your bank?"
+          },
+          "answer": {
+            "spanish": "No abriría enlaces, comprobaría el remitente y contactaría con el banco por un canal oficial.",
+            "english": "I would not open links, I would verify the sender, and I would contact the bank through an official channel."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Usa el condicional para hablar de una ciudad más automatizada.",
+            "english": "Use the conditional to talk about a more automated city."
+          },
+          "answer": {
+            "spanish": "Una ciudad más automatizada podría ser más eficiente, pero también sería más vulnerable si no protegiera bien los datos.",
+            "english": "A more automated city could be more efficient, but it would also be more vulnerable if it did not protect data properly."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué importancia tiene el consentimiento informado en una app?",
+            "english": "How important is informed consent in an app?"
+          },
+          "answer": {
+            "spanish": "Tiene mucha importancia, porque el usuario debería entender qué datos cede y para qué se van a usar.",
+            "english": "It is very important because the user should understand what data they are giving away and what it will be used for."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Menciona un caso en el que se necesite una auditoría independiente.",
+            "english": "Mention a case in which an independent audit is needed."
+          },
+          "answer": {
+            "spanish": "Se necesita cuando un sistema decide sobre empleo, crédito o acceso a servicios y podría reproducir sesgos invisibles.",
+            "english": "It is needed when a system decides on employment, credit, or access to services and could reproduce invisible biases."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué se ha vuelto más difícil desde que circulan videos manipulados?",
+            "english": "What has become harder since manipulated videos began circulating?"
+          },
+          "answer": {
+            "spanish": "Se ha vuelto más difícil distinguir rápidamente entre una prueba real y un montaje convincente.",
+            "english": "It has become harder to quickly distinguish between real evidence and a convincing fake."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Explica por qué conviene minimizar los datos que una empresa recopila.",
+            "english": "Explain why it is wise to minimize the data a company collects."
+          },
+          "answer": {
+            "spanish": "Conviene porque, cuanto menos se almacene, menos información quedará expuesta si ocurre un incidente de seguridad.",
+            "english": "It is wise because the less that is stored, the less information will be exposed if a security incident happens."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué debería enseñarse a los estudiantes sobre herramientas de IA?",
+            "english": "What should students be taught about AI tools?"
+          },
+          "answer": {
+            "spanish": "Debería enseñárseles a comprobar fuentes, detectar errores y no confiar ciegamente en una respuesta bien redactada.",
+            "english": "They should be taught to check sources, detect errors, and not blindly trust a well-written answer."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Pon un ejemplo de uso responsable de la IA en el trabajo.",
+            "english": "Give an example of responsible AI use at work."
+          },
+          "answer": {
+            "spanish": "Un uso responsable sería resumir documentos con IA, pero revisar después cada dato antes de enviarlo a un cliente.",
+            "english": "A responsible use would be summarizing documents with AI, but then checking every fact before sending it to a client."
+          }
+        },
+        {
+          "question": {
+            "spanish": "¿Qué consecuencia puede tener una filtración de datos para una persona?",
+            "english": "What consequence can a data breach have for a person?"
+          },
+          "answer": {
+            "spanish": "Puede exponer su identidad digital y facilitar fraudes que no siempre se corrigen rápidamente.",
+            "english": "It can expose their digital identity and make fraud easier, which is not always fixed quickly."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Usa una frase con subjuntivo para recomendar ciberseguridad básica.",
+            "english": "Use a sentence with the subjunctive to recommend basic cybersecurity."
+          },
+          "answer": {
+            "spanish": "Es recomendable que cada usuario actualice sus dispositivos y cambie contraseñas débiles antes de que surja un problema.",
+            "english": "It is advisable for every user to update their devices and change weak passwords before a problem arises."
+          }
+        },
+        {
+          "question": {
+            "spanish": "Resume el dilema ético principal de la inteligencia artificial actual.",
+            "english": "Summarize the main ethical dilemma of today's artificial intelligence."
+          },
+          "answer": {
+            "spanish": "El dilema principal es cómo aprovechar su eficacia sin permitir que opaque derechos, responsabilidades y desigualdades ya existentes.",
+            "english": "The main dilemma is how to benefit from its efficiency without letting it overshadow rights, responsibilities, and inequalities that already exist."
+          }
+        }
+      ]
+    }
+  }
+}

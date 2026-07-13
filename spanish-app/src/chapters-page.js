@@ -28,6 +28,19 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StarIcon from '@mui/icons-material/Star';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import WavingHandIcon from '@mui/icons-material/WavingHand';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+import ExploreIcon from '@mui/icons-material/Explore';
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+import ScheduleIcon from '@mui/icons-material/Schedule';
+import ArticleIcon from '@mui/icons-material/Article';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import NatureIcon from '@mui/icons-material/Nature';
+import SecurityIcon from '@mui/icons-material/Security';
+import GavelIcon from '@mui/icons-material/Gavel';
 
 // This constant maps a string name to the actual MUI component
 export const topicIcons = {
@@ -54,7 +67,22 @@ export const topicIcons = {
   "MedicineIcon": LocalHospitalIcon,
   "PregnancyIcon": PregnantWomanIcon,
   "TenseIcon": AccessTimeIcon,
-  "SchoolIcon": SchoolIcon
+  "SchoolIcon": SchoolIcon,
+  "SubjunctiveIcon": EmojiObjectsIcon,
+  "CommandsIcon": ExploreIcon,
+  "PorParaIcon": SwapHorizIcon,
+  "ConditionalIcon": ChatBubbleIcon,
+  "SiClausesIcon": HelpOutlineIcon,
+  "PresentPerfectIcon": EmojiEventsIcon,
+  "PastPerfectIcon": HistoryEduIcon,
+  "FutureIcon": ScheduleIcon,
+  "PassiveVoiceIcon": ArticleIcon,
+  "RelativeClausesIcon": ForumIcon,
+  "WorkplaceIcon": BusinessCenterIcon,
+  "NewsIcon": NewspaperIcon,
+  "EnvironmentIcon": NatureIcon,
+  "TechnologyIcon": SecurityIcon,
+  "CivicLifeIcon": GavelIcon
 };
 
 
