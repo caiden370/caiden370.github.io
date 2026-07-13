@@ -23,24 +23,29 @@
         {
           "when": { "hasItems": [{ "itemId": "gymPass", "count": 1 }], "missingMissions": ["hs-gym-practice"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Diego", "text": "En el instituto no solo decimos corre. Ahora hablamos de equipos y responsabilidades." },
-            { "type": "showDialogue", "speaker": "Diego", "text": "Tienes que entrenar, escuchar al equipo y llegar a tiempo." },
+            { "type": "showDialogue", "speaker": "Diego", "text": "En un equipo seguimos una rutina: primero calentamos, después escuchamos la estrategia y al final entrenamos fuerte." },
+            { "type": "showDialogue", "speaker": "Diego", "text": "Si el entrenador dice tienes que estirar, no es una sugerencia; es una obligación." },
+            { "type": "showDialogue", "speaker": "Diego", "text": "Quiero ver si entiendes esas instrucciones antes de entrar a la práctica." },
             {
               "type": "askChoice",
-              "prompt": "Diego says: Tienes que entrenar. What is the obligation?",
+              "prompt": "Si el entrenador te dice: tienes que estirar antes de correr, ¿qué debes hacer?",
               "options": [
-                { "label": "You have to practice.", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Diego", "text": "Sí. Tener que expresa obligación." },
-                  { "type": "completeMission", "missionId": "hs-gym-practice" }
-                ] },
-                { "label": "You want lunch.", "correct": false },
-                { "label": "You lost a book.", "correct": false }
+                {
+                  "label": "Estirar antes de correr.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Diego", "text": "Eso es. Ya puedes entrar a la práctica sin perderte." },
+                    { "type": "completeMission", "missionId": "hs-gym-practice" }
+                  ]
+                },
+                { "label": "Comprar almuerzo primero.", "correct": false },
+                { "label": "Dormir en la cancha.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Necesitas el pase del gimnasio." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Necesitas el pase del gimnasio para empezar la práctica." }] }
       ]
     },
     {
@@ -51,22 +56,23 @@
         {
           "when": { "completedMissions": ["hs-gym-practice"], "missingMissions": ["hs-team-talk"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Nuestro equipo quiere ganar, pero también quiere jugar bien." },
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Si perdemos, decimos: está bien, practicamos más." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Cuando el equipo pierde un punto, nadie se rinde enseguida. Hablamos, respiramos y practicamos otra vez." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Un buen compañero no solo quiere ganar; también anima al grupo cuando algo sale mal." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Necesito oír que puedes responder como parte del equipo." },
             {
               "type": "askSpeech",
-              "prompt": "Responde como compañero de equipo: We practice more.",
+              "prompt": "Di en español: We practice more together.",
               "placeholder": "Respuesta hablada",
-              "correctAnswers": ["Practicamos más", "Practicamos mas"],
+              "correctAnswers": ["Practicamos más juntos", "Practicamos mas juntos", "Practicamos más como equipo", "Practicamos mas como equipo"],
               "actions": [
-                { "type": "showDialogue", "speaker": "Marcos", "text": "Buen compañero. Gimnasio completo." },
+                { "type": "showDialogue", "speaker": "Marcos", "text": "Bien dicho. Esa actitud te servirá en el duelo social." },
                 { "type": "completeMission", "missionId": "hs-team-talk" }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Practicamos más." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Escucha a Diego primero. Después practicaremos cómo hablar como equipo." }] }
       ]
     }
   ],

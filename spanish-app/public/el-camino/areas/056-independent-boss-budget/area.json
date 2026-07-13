@@ -12,6 +12,7 @@
   ],
   "legend": {
     "w": "insideWall",
+    "p": "stoneFloor",
     "r": "lightRedFloor"
   },
   "playerStart": {

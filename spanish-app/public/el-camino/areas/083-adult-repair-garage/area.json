@@ -13,6 +13,7 @@
   ],
   "legend": {
     "w": "insideWall",
+    "p": "stoneFloor",
     "a": "asphalt",
     "s": "stoneFloor"
   },
@@ -97,11 +98,16 @@
             {
               "type": "showDialogue",
               "speaker": "Diego",
-              "text": "Jefatura mecánica: ya vi tu póliza, ahora necesito registro técnico inicial."
+              "text": "Cuando alguien dice 'el coche suena raro', eso no sirve. Un ingreso técnico útil identifica síntoma, contexto y urgencia."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Ayer llegó un auto con ruido leve solo al arrancar; ese caso no se trata igual que una falla al frenar en carretera."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué incluye un registro técnico útil al recibir un auto?",
+              "prompt": "Para abrir una orden responsable en este taller, ¿qué debe quedar escrito desde el check-in?",
               "options": [
                 {
                   "label": "Síntoma principal, condiciones de uso y urgencia del cliente.",
@@ -115,7 +121,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Diego",
-                      "text": "Correcto. Te entrego la hoja de diagnóstico."
+                      "text": "Correcto. Sin ese registro, cualquier diagnóstico se vuelve discutible."
                     },
                     {
                       "type": "completeMission",
@@ -165,7 +171,12 @@
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "Control de piezas: escucha el reporte y decide qué prioridad evita una avería mayor."
+              "text": "En un taller adulto no se negocia contra la física: primero va lo que compromete seguridad, después lo cosmético o diferible."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Un retrovisor rayado molesta; unos frenos inestables cambian toda la prioridad del caso."
             },
             {
               "type": "askAudioChoice",
@@ -184,7 +195,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Carlos",
-                      "text": "Exacto. Orden de piezas autorizada."
+                      "text": "Exacto. Esa orden de piezas protege al cliente y también tu credibilidad."
                     },
                     {
                       "type": "completeMission",
@@ -235,7 +246,12 @@
             {
               "type": "showDialogue",
               "speaker": "Emma",
-              "text": "Verificación de entrega: necesito una confirmación clara para cerrar la orden del taller."
+              "text": "Cerrar una orden no es decir 'ya casi'. Es dejar diagnóstico, pieza crítica y fecha verificable."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "Si la entrega completa se retrasa, aun así debes sonar precisa y responsable."
             },
             {
               "type": "askSpeech",
@@ -243,13 +259,14 @@
               "placeholder": "Respuesta hablada",
               "correctAnswers": [
                 "Confirmo diagnóstico piezas críticas y fecha de entrega para circular con seguridad",
-                "Confirmo diagnóstico, piezas críticas y fecha de entrega para circular con seguridad"
+                "Confirmo diagnóstico, piezas críticas y fecha de entrega para circular con seguridad",
+                "Confirmo el diagnóstico, las piezas críticas y la fecha de entrega para circular con seguridad"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Emma",
-                  "text": "Perfecto. Reparación validada y cerrada."
+                  "text": "Muy bien. Esa confirmación sí se puede archivar y defender."
                 },
                 {
                   "type": "addItem",

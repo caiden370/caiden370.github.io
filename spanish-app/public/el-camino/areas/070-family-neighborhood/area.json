@@ -5,9 +5,23 @@
   "chapterId": "family",
   "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["convivencia", "escucha profunda", "memorias", "coordinación familiar", "acuerdos"],
-  "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass" },
-  "playerStart": { "x": 14, "y": 17, "facing": "up" },
+  "teaches": [
+    "reencuentro familiar",
+    "escucha profunda",
+    "memorias",
+    "coordinación familiar",
+    "acuerdos"
+  ],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "q": "flowerGrass"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 17,
+    "facing": "up"
+  },
   "objects": [
     {
       "type": "houseGreen",
@@ -15,7 +29,14 @@
       "y": 1,
       "w": 6,
       "h": 4,
-      "entrance": { "x": 5, "y": 5, "targetArea": "family-casa-verde", "targetX": 10, "targetY": 1, "facing": "down" }
+      "entrance": {
+        "x": 5,
+        "y": 5,
+        "targetArea": "family-casa-verde",
+        "targetX": 10,
+        "targetY": 1,
+        "facing": "down"
+      }
     },
     {
       "type": "houseRed",
@@ -23,7 +44,14 @@
       "y": 1,
       "w": 6,
       "h": 4,
-      "entrance": { "x": 14, "y": 5, "targetArea": "family-casa-roja", "targetX": 10, "targetY": 1, "facing": "down" }
+      "entrance": {
+        "x": 14,
+        "y": 5,
+        "targetArea": "family-casa-roja",
+        "targetX": 10,
+        "targetY": 1,
+        "facing": "down"
+      }
     },
     {
       "type": "houseBlue",
@@ -31,7 +59,14 @@
       "y": 1,
       "w": 6,
       "h": 4,
-      "entrance": { "x": 23, "y": 5, "targetArea": "family-casa-azul", "targetX": 10, "targetY": 1, "facing": "down" }
+      "entrance": {
+        "x": 23,
+        "y": 5,
+        "targetArea": "family-casa-azul",
+        "targetX": 10,
+        "targetY": 1,
+        "facing": "down"
+      }
     },
     {
       "type": "restaurant",
@@ -39,7 +74,14 @@
       "y": 14,
       "w": 9,
       "h": 4,
-      "entrance": { "x": 14, "y": 18, "targetArea": "family-plaza-fiesta", "targetX": 14, "targetY": 1, "facing": "down" }
+      "entrance": {
+        "x": 14,
+        "y": 18,
+        "targetArea": "family-plaza-fiesta",
+        "targetX": 14,
+        "targetY": 1,
+        "facing": "down"
+      }
     },
     {
       "type": "townBoard",
@@ -48,14 +90,32 @@
       "interactions": [
         {
           "actions": [
-            { "type": "showDialogue", "text": "Semana familiar: historias largas, emociones reales y acuerdos concretos." },
-            { "type": "showDialogue", "text": "Completa casas y plaza para abrir el repaso final." }
+            {
+              "type": "showDialogue",
+              "text": "Objetivo del barrio: reabrir la conversación familiar antes de la fiesta comunitaria de esta noche."
+            },
+            {
+              "type": "showDialogue",
+              "text": "Ruta sugerida: Casa Verde, Casa Roja, Casa Azul, regreso con ingredientes y acuerdos, Plaza Fiesta, repaso y duelos."
+            }
           ]
         }
       ]
     },
-    { "type": "bench", "x": 9, "y": 13, "w": 2, "h": 1 },
-    { "type": "bench", "x": 18, "y": 13, "w": 2, "h": 1 }
+    {
+      "type": "bench",
+      "x": 9,
+      "y": 13,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 18,
+      "y": 13,
+      "w": 2,
+      "h": 1
+    }
   ],
   "people": [
     {
@@ -64,32 +124,73 @@
       "y": 9,
       "interactions": [
         {
-          "when": { "missingMissions": ["family-hub-orientation"] },
+          "when": {
+            "missingMissions": [
+              "family-hub-orientation"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Lucía", "text": "Bienvenido al Barrio de la Familia. Aquí nadie se entiende rápido: hay que escuchar de verdad." },
-            { "type": "showDialogue", "speaker": "Lucía", "text": "Ana, Diego y Sofía preparan una noche difícil: hay recuerdos bonitos y heridas viejas." },
-            { "type": "showDialogue", "speaker": "Lucía", "text": "Después coordina la plaza. Sin síntesis, la reunión puede romperse." },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Bienvenido al Barrio de la Familia. Tu meta es ayudar a este vecindario a reencontrarse antes de la fiesta comunitaria de esta noche."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Empieza en Casa Verde con Ana: ella abre la reconciliación. Después sigue la carta hasta Casa Roja, lleva el cuaderno a Casa Azul y vuelve con ingredientes, historias y acuerdos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Si logras que la plaza reciba a todos con respeto, Tomás abrirá el repaso y luego los tres duelos familiares."
+            },
             {
               "type": "askChoice",
-              "prompt": "¿Qué exige Lucía para avanzar en este capítulo?",
+              "prompt": "¿Cuál es el plan principal de Lucía para este capítulo?",
               "options": [
                 {
-                  "label": "Entender emociones y relaciones en conversaciones largas.",
+                  "label": "Reconectar a la familia visitando las casas, coordinando la fiesta y llegando preparado al repaso y los duelos.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Lucía", "text": "Exacto. Empieza por las tres casas y termina en la plaza." },
-                    { "type": "addItem", "itemId": "routePass", "count": 1 },
-                    { "type": "completeMission", "missionId": "family-hub-orientation" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Lucía",
+                      "text": "Eso es. Ve primero a Casa Verde y no pierdas el hilo entre una casa y otra."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "routePass",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "family-hub-orientation"
+                    }
                   ]
                 },
-                { "label": "Memorizar palabras aisladas sin hablar con nadie.", "correct": false },
-                { "label": "Ir directamente al jefe final.", "correct": false }
+                {
+                  "label": "Memorizar palabras aisladas sin visitar a nadie.",
+                  "correct": false
+                },
+                {
+                  "label": "Ir a los jefes antes de preparar la reunión del barrio.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Primero casas, luego plaza, después repaso y jefes." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Sigue el hilo del reencuentro: Ana, Diego, Sofía y Javier, Elena, la plaza, el repaso y después los duelos."
+            }
+          ]
+        }
       ]
     },
     {
@@ -99,8 +200,16 @@
       "interactions": [
         {
           "actions": [
-            { "type": "showDialogue", "speaker": "Tomás", "text": "En familia, hablar lento y claro evita guerras largas." },
-            { "type": "showDialogue", "speaker": "Tomás", "text": "No confundas silencio con indiferencia; a veces es dolor." }
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "En familia, un buen mediador no corre: escucha lo que falta, lo que duele y lo que todavía se puede reparar."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "No confundas silencio con indiferencia; a veces alguien calla porque necesita turno, contexto o consuelo."
+            }
           ]
         }
       ]
@@ -114,7 +223,14 @@
       "targetX": 1,
       "targetY": 6,
       "facing": "right",
-      "requires": { "completedMissions": ["family-verde-ready", "family-roja-bread", "family-azul-emotions", "family-plaza-ready"] },
+      "requires": {
+        "completedMissions": [
+          "family-verde-ready",
+          "family-roja-bread",
+          "family-azul-emotions",
+          "family-plaza-ready"
+        ]
+      },
       "blockedMessage": "Termina primero todas las tareas del vecindario."
     }
   ]

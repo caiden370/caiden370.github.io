@@ -93,11 +93,21 @@
             {
               "type": "showDialogue",
               "speaker": "Sofía",
-              "text": "Recepción documental: aquí no gana quien habla más, sino quien presenta pruebas coherentes."
+              "text": "Recibo expedientes que parecen completos hasta que comparo fechas, nombres y sellos: ahí aparece la verdad."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Si la licencia dice una cosa, la póliza otra y el taller una tercera, no importa cuántas copias traigas."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Antes de certificar, necesito saber que entiendes qué vuelve trazable un caso."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué requiere la recepción documental antes de certificar un expediente?",
+              "prompt": "Antes de enviar el caso a validación final, ¿qué exige recepción para comprobar la trazabilidad?",
               "options": [
                 {
                   "label": "Identificación, trazabilidad de trámites y orden cronológico.",
@@ -111,7 +121,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Sofía",
-                      "text": "Bien. Te registro en la cola de validación."
+                      "text": "Bien. Sin ese orden, el archivo solo acumula papeles."
                     },
                     {
                       "type": "completeMission",
@@ -161,7 +171,12 @@
             {
               "type": "showDialogue",
               "speaker": "Isabel",
-              "text": "Mesa de pruebas: necesito una frase que conecte póliza activa, reparación cerrada y licencia vigente."
+              "text": "Una frase útil no enumera documentos sin relación; muestra por qué juntos prueban consistencia."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Imagina que hablas con alguien del tribunal: debe entender en una línea por qué no hay contradicción entre oficinas."
             },
             {
               "type": "askText",
@@ -169,7 +184,8 @@
               "placeholder": "Respuesta en español",
               "correctAnswers": [
                 "Presento licencia vigente póliza activa y cierre técnico para probar consistencia",
-                "Presento licencia vigente, póliza activa y cierre técnico para probar consistencia"
+                "Presento licencia vigente, póliza activa y cierre técnico para probar consistencia",
+                "Presento la licencia vigente, la póliza activa y el cierre técnico para probar consistencia"
               ],
               "actions": [
                 {
@@ -180,7 +196,7 @@
                 {
                   "type": "showDialogue",
                   "speaker": "Isabel",
-                  "text": "Perfecto. Tu evidencia quedó archivada."
+                  "text": "Perfecto. Esa línea une cobertura, permiso y reparación en un solo hilo probatorio."
                 },
                 {
                   "type": "completeMission",
@@ -224,11 +240,16 @@
             {
               "type": "showDialogue",
               "speaker": "Ana",
-              "text": "Control final: voy a comparar cada oficina. Si detecto contradicción, el trámite regresa al principio."
+              "text": "En control final no busco cantidad de sellos; busco que cada oficina confirme la misma historia."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Si una sola pieza contradice a las demás, todo el expediente vuelve a empezar."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál combinación demuestra expediente adulto completo para este capítulo?",
+              "prompt": "¿Qué conjunto permite afirmar que este caso ya puede defenderse ante el tribunal del capítulo?",
               "options": [
                 {
                   "label": "Licencia municipal, póliza aprobada, reparación validada y archivo documental sellado.",
@@ -237,7 +258,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Ana",
-                      "text": "Exacto. Expediente verificado y liberado."
+                      "text": "Exacto. El expediente queda verificado, sellado y listo para el repaso."
                     },
                     {
                       "type": "addItem",

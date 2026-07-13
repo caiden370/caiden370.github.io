@@ -4,7 +4,7 @@
   "kind": "interior",
   "chapterId": "travel",
   "region": "Chapter 6: Travel Terminal",
-  "cefrLevel": "B1+",
+  "cefrLevel": "B2",
   "teaches": ["pedido detallado", "entrega", "direcciones urbanas", "inferencia"],
   "legend": { "w": "insideWall", "p": "woodFloor" },
   "playerStart": { "x": 14, "y": 1, "facing": "down" },
@@ -28,17 +28,22 @@
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "Veo el paquete. Confirma el pedido final: café sin azúcar, leche aparte y factura digital."
+              "text": "Cuando recibo un pedido profesional necesito escuchar tres cosas: bebida, detalle adicional y cómo debe quedar el comprobante."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Hace poco una clienta pidió té helado, limón aparte y factura impresa. Como fue precisa, pude entregarlo y registrarlo en un minuto."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué pedido coincide exactamente?",
+              "prompt": "Ahora aplica esa lógica al encargo del hotel. ¿Qué pedido debo preparar?",
               "options": [
                 {
                   "label": "Café sin azúcar, leche aparte y factura digital.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Carlos", "text": "Entrega cerrada. Toma el comprobante." },
+                    { "type": "showDialogue", "speaker": "Carlos", "text": "Exacto. Entrega registrada; toma el comprobante y llévalo de vuelta al hotel." },
                     { "type": "removeItem", "itemId": "studyNotes", "count": 1 },
                     { "type": "addItem", "itemId": "coffeeCup", "count": 1 },
                     { "type": "completeMission", "missionId": "travel-delivery-cafe" }
@@ -51,7 +56,11 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Necesito primero el paquete de notas del hotel." }] }
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Carlos", "text": "Necesito primero las notas del hotel para preparar el encargo correcto." }
+          ]
+        }
       ]
     },
     {
@@ -65,29 +74,43 @@
             {
               "type": "showDialogue",
               "speaker": "Ana",
-              "text": "Sal del café, gira a la izquierda, toma la segunda calle a la derecha y encontrarás el hotel frente al parque."
+              "text": "Las direcciones útiles mezclan giros, referencias visibles y una forma de comprobar que sigues bien la ruta."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Si te digo 'cruza la plaza, gira en la farmacia y busca el edificio frente al parque', el parque te sirve como confirmación final aunque olvides una palabra."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Ahora usa esa lógica con el camino de regreso al hotel."
             },
             {
               "type": "askChoice",
-              "prompt": "¿En qué punto aparece el hotel según Ana?",
+              "prompt": "Sales del café, giras a la izquierda, tomas la segunda calle a la derecha y sigues hasta el parque. ¿Dónde debes buscar el hotel?",
               "options": [
                 {
-                  "label": "Después de la segunda calle a la derecha, frente al parque.",
+                  "label": "Frente al parque, después de la segunda calle a la derecha.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Ana", "text": "Exacto. Tu orientación urbana ya es avanzada." },
+                    { "type": "showDialogue", "speaker": "Ana", "text": "Muy bien. Ya no dependes de una sola palabra; entiendes la estructura de la ruta." },
                     { "type": "addItem", "itemId": "marketStamp", "count": 1 },
                     { "type": "completeMission", "missionId": "travel-directions" }
                   ]
                 },
-                { "label": "Antes de salir del café, detrás de la barra.", "correct": false },
-                { "label": "Dentro del aeropuerto, junto al control.", "correct": false }
+                { "label": "Dentro del café, detrás de la barra principal.", "correct": false },
+                { "label": "Antes de salir, junto a la cinta del equipaje.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Primero completa la entrega con Carlos." }] }
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Ana", "text": "Primero completa la entrega con Carlos; luego te ayudo a orientarte por la ciudad." }
+          ]
+        }
       ]
     }
   ],

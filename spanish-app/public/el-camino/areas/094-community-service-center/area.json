@@ -5,16 +5,60 @@
   "chapterId": "community-leader",
   "region": "Chapter 9: Community Leader",
   "cefrLevel": "C1+",
-  "teaches": ["ventanilla pública", "coordinación interinstitucional", "lenguaje formal", "plan operativo"],
-  "legend": { "w": "insideWall", "s": "stoneFloor", "p": "woodFloor", "c": "carpetBlue" },
-  "playerStart": { "x": 10, "y": 10, "facing": "up" },
+  "teaches": [
+    "ventanilla pública",
+    "coordinación interinstitucional",
+    "lenguaje formal",
+    "plan operativo"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor",
+    "c": "carpetBlue"
+  },
+  "playerStart": {
+    "x": 10,
+    "y": 10,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "serviceCounter", "x": 5, "y": 4, "w": 10, "h": 1 },
-    { "type": "formDesk", "x": 4, "y": 8, "w": 3, "h": 1 },
-    { "type": "formDesk", "x": 13, "y": 8, "w": 3, "h": 1 },
-    { "type": "printer", "x": 16, "y": 2 },
-    { "type": "filingCabinet", "x": 3, "y": 2 },
-    { "type": "chair", "x": 9, "y": 9 }
+    {
+      "type": "serviceCounter",
+      "x": 5,
+      "y": 4,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "formDesk",
+      "x": 4,
+      "y": 8,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "formDesk",
+      "x": 13,
+      "y": 8,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "printer",
+      "x": 16,
+      "y": 2
+    },
+    {
+      "type": "filingCabinet",
+      "x": 3,
+      "y": 2
+    },
+    {
+      "type": "chair",
+      "x": 9,
+      "y": 9
+    }
   ],
   "people": [
     {
@@ -23,10 +67,30 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "completedMissions": ["community-hub-orientation"], "missingMissions": ["community-service-intake"] },
+          "when": {
+            "completedMissions": [
+              "community-hub-orientation"
+            ],
+            "missingMissions": [
+              "community-service-intake"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Elena", "text": "Aquí aterrizamos promesas en trámites reales. Un líder débil promete; un líder serio diseña procesos." },
-            { "type": "showDialogue", "speaker": "Elena", "text": "Para abrir expediente necesitamos trazabilidad: acuerdo político, respaldo comercial y carta de debate." },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Aquí aterrizamos promesas en trámites reales. Un líder débil promete; un líder serio diseña procesos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Para abrir expediente necesitamos trazabilidad: acuerdo político, respaldo comercial y carta de debate."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Marcos no te envió para prometer más; te envió para demostrar responsables, plazos y registro."
+            },
             {
               "type": "askChoice",
               "prompt": "¿Qué define una ventanilla pública confiable?",
@@ -35,18 +99,39 @@
                   "label": "Criterios transparentes, tiempos claros y seguimiento verificable.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Elena", "text": "Exacto. Pasa con Nico para validar antecedentes interzonales." },
-                    { "type": "completeMission", "missionId": "community-service-intake" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Elena",
+                      "text": "Exacto. Pasa con Nico para probar que tu cadena interzonal no tiene huecos."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "community-service-intake"
+                    }
                   ]
                 },
-                { "label": "Decisiones improvisadas según simpatía personal.", "correct": false },
-                { "label": "Falta de registro para acelerar respuestas.", "correct": false }
+                {
+                  "label": "Decisiones improvisadas según simpatía personal.",
+                  "correct": false
+                },
+                {
+                  "label": "Falta de registro para acelerar respuestas.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Si no puedes explicar el proceso, tampoco podrás sostenerlo." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Si no puedes explicar el proceso, tampoco podrás sostenerlo."
+            }
+          ]
+        }
       ]
     },
     {
@@ -56,12 +141,40 @@
       "interactions": [
         {
           "when": {
-            "completedMissions": ["community-service-intake", "community-market-coalition"],
-            "hasItems": [{ "itemId": "marketStamp", "count": 1 }, { "itemId": "scheduleCard", "count": 1 }],
-            "missingMissions": ["community-service-window"]
+            "completedMissions": [
+              "community-service-intake",
+              "community-market-coalition"
+            ],
+            "hasItems": [
+              {
+                "itemId": "marketStamp",
+                "count": 1
+              },
+              {
+                "itemId": "scheduleCard",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "community-service-window"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Nico", "text": "Veo sello del mercado y agenda del ayuntamiento. Falta comprobar coherencia temporal." },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "La agenda del ayuntamiento fija el calendario; el sello del mercado prueba que el acuerdo no existe solo en papel."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Si fechas, controles y actores no coinciden, el expediente nace débil aunque suene convincente."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Ahora escucha la condición operativa y decide qué exige realmente."
+            },
             {
               "type": "askAudioChoice",
               "prompt": "Escucha la condición operativa y elige la interpretación correcta.",
@@ -71,18 +184,39 @@
                   "label": "La evaluación inicial debe ser temprana, pública y documentada.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Nico", "text": "Validación correcta. Ya puedes cerrar el plan con Isabel." },
-                    { "type": "completeMission", "missionId": "community-service-window" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Nico",
+                      "text": "Validación correcta. Ya puedes cerrar el plan con Isabel."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "community-service-window"
+                    }
                   ]
                 },
-                { "label": "La revisión puede hacerse en cualquier momento y sin registro.", "correct": false },
-                { "label": "La condición trata de ampliar horario de restaurantes únicamente.", "correct": false }
+                {
+                  "label": "La revisión puede hacerse en cualquier momento y sin registro.",
+                  "correct": false
+                },
+                {
+                  "label": "La condición trata de ampliar horario de restaurantes únicamente.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Nico", "text": "Sin sello y agenda no puedo validar la cadena administrativa." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Sin sello y agenda no puedo validar la cadena administrativa."
+            }
+          ]
+        }
       ]
     },
     {
@@ -92,12 +226,37 @@
       "interactions": [
         {
           "when": {
-            "completedMissions": ["community-service-window", "community-debate-charter", "community-hall-minutes"],
-            "hasItems": [{ "itemId": "clubForm", "count": 1 }],
-            "missingMissions": ["community-service-plan"]
+            "completedMissions": [
+              "community-service-window",
+              "community-debate-charter",
+              "community-hall-minutes"
+            ],
+            "hasItems": [
+              {
+                "itemId": "clubForm",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "community-service-plan"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Isabel", "text": "Último filtro administrativo: redacta un cierre operativo completo." },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Antes cerré un plan de alumbrado que parecía brillante, pero fracasó porque nadie definió quién corregía desvíos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "El cierre operativo no vende optimismo; reparte tareas, vigilancia y margen de rectificación."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Redacta un final que pueda leerse en público y cumplirse después."
+            },
             {
               "type": "askText",
               "prompt": "Escribe en español: We will implement the plan in phases, publish weekly reports, and correct failures with community oversight.",
@@ -107,19 +266,45 @@
                 "Implementaremos el plan por fases, publicaremos reportes semanales y corregiremos fallas con supervisión comunitaria"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Isabel", "text": "Plan operativo aprobado. Ahora sí: repaso final." },
-                { "type": "addItem", "itemId": "studyNotes", "count": 1 },
-                { "type": "completeMission", "missionId": "community-service-plan" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Isabel",
+                  "text": "Plan operativo aprobado. Ahora sí: repaso final."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "studyNotes",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "community-service-plan"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Isabel", "text": "Tu cierre debe incluir implementación, monitoreo y corrección." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Tu cierre debe incluir implementación, monitoreo y corrección."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 10, "y": 11, "targetArea": "community-leader", "targetX": 14, "targetY": 17, "facing": "down" }
+    {
+      "x": 10,
+      "y": 11,
+      "targetArea": "community-leader",
+      "targetX": 14,
+      "targetY": 17,
+      "facing": "down"
+    }
   ]
 }

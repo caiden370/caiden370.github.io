@@ -5,17 +5,67 @@
   "chapterId": "community-leader",
   "region": "Chapter 9: Community Leader",
   "cefrLevel": "C1+",
-  "teaches": ["argumentación", "contraargumento", "reformulación", "registro público"],
-  "legend": { "g": "grass", "p": "dirtPath", "s": "stoneFloor", "q": "flowerGrass" },
-  "playerStart": { "x": 14, "y": 18, "facing": "up" },
+  "teaches": [
+    "argumentación",
+    "contraargumento",
+    "reformulación",
+    "registro público"
+  ],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "s": "stoneFloor",
+    "q": "flowerGrass"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 18,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "auditorium", "x": 9, "y": 1, "w": 12, "h": 5 },
-    { "type": "podium", "x": 14, "y": 7 },
-    { "type": "microphone", "x": 13, "y": 9 },
-    { "type": "microphone", "x": 15, "y": 9 },
-    { "type": "queueRope", "x": 10, "y": 10, "w": 8, "h": 1 },
-    { "type": "bench", "x": 7, "y": 13, "w": 2, "h": 1 },
-    { "type": "bench", "x": 20, "y": 13, "w": 2, "h": 1 }
+    {
+      "type": "auditorium",
+      "x": 9,
+      "y": 1,
+      "w": 12,
+      "h": 5
+    },
+    {
+      "type": "podium",
+      "x": 14,
+      "y": 7
+    },
+    {
+      "type": "microphone",
+      "x": 13,
+      "y": 9
+    },
+    {
+      "type": "microphone",
+      "x": 15,
+      "y": 9
+    },
+    {
+      "type": "queueRope",
+      "x": 10,
+      "y": 10,
+      "w": 8,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 7,
+      "y": 13,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 20,
+      "y": 13,
+      "w": 2,
+      "h": 1
+    }
   ],
   "people": [
     {
@@ -24,10 +74,27 @@
       "y": 11,
       "interactions": [
         {
-          "when": { "missingMissions": ["community-debate-open"] },
+          "when": {
+            "missingMissions": [
+              "community-debate-open"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Mateo", "text": "En debate comunitario, ganar no basta: debes construir una propuesta que el otro lado pueda ejecutar sin humillación." },
-            { "type": "showDialogue", "speaker": "Mateo", "text": "Primero formula tesis, luego reconoce límites, después ofrece ajuste verificable." },
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "En debate comunitario, ganar no basta: debes construir una propuesta que el otro lado pueda ejecutar sin humillación."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "En otra asamblea fracasó un plan porque solo repitió consignas y nunca explicó cómo corregiría los daños colaterales."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "Primero formula la tesis; luego reconoce límites; después ofrece ajuste verificable."
+            },
             {
               "type": "askChoice",
               "prompt": "¿Cuál apertura suena rigurosa y cooperativa?",
@@ -36,18 +103,39 @@
                   "label": "Nuestra propuesta reduce ruido gradualmente y protege el empleo local con revisión pública.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Mateo", "text": "Apertura aceptable. Ahora prepara tu contraargumento." },
-                    { "type": "completeMission", "missionId": "community-debate-open" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Mateo",
+                      "text": "Apertura aceptable. Ahora Sofía pondrá a prueba tus costos y tus límites."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "community-debate-open"
+                    }
                   ]
                 },
-                { "label": "Tenemos razón y quien no acepte está contra el barrio.", "correct": false },
-                { "label": "No hay plan, pero pedimos confianza total.", "correct": false }
+                {
+                  "label": "Tenemos razón y quien no acepte está contra el barrio.",
+                  "correct": false
+                },
+                {
+                  "label": "No hay plan, pero pedimos confianza total.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Mateo", "text": "Sin estructura argumentativa, el debate se convierte en ruido." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "Sin estructura argumentativa, el debate se convierte en ruido."
+            }
+          ]
+        }
       ]
     },
     {
@@ -57,11 +145,30 @@
       "interactions": [
         {
           "when": {
-            "completedMissions": ["community-debate-open", "community-market-negotiation"],
-            "missingMissions": ["community-debate-rebuttal"]
+            "completedMissions": [
+              "community-debate-open",
+              "community-market-negotiation"
+            ],
+            "missingMissions": [
+              "community-debate-rebuttal"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Sofía", "text": "Te responderán que tu plan es caro. No niegues el costo: explica por qué el costo de no actuar es mayor." },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Cuando una crítica llega con datos, negarla te hace perder credibilidad."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "La réplica fuerte concede el riesgo real y enseguida ofrece mitigación verificable."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Escucha la objeción completa y responde sin caricaturizarla."
+            },
             {
               "type": "askAudioChoice",
               "prompt": "Escucha la réplica ciudadana y elige la refutación más sólida.",
@@ -71,18 +178,39 @@
                   "label": "Por eso incluimos transición por fases y apoyo logístico municipal durante el ajuste.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Sofía", "text": "Refutación precisa: reconoces costos y ofreces mitigación concreta." },
-                    { "type": "completeMission", "missionId": "community-debate-rebuttal" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Sofía",
+                      "text": "Refutación precisa: reconoces costos y ofreces mitigación concreta."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "community-debate-rebuttal"
+                    }
                   ]
                 },
-                { "label": "Ese problema no existe; la gente exagera sin datos.", "correct": false },
-                { "label": "Cancelaremos la política para evitar cualquier resistencia.", "correct": false }
+                {
+                  "label": "Ese problema no existe; la gente exagera sin datos.",
+                  "correct": false
+                },
+                {
+                  "label": "Cancelaremos la política para evitar cualquier resistencia.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Sofía", "text": "Un buen contraargumento reconoce la objeción antes de responderla." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofía",
+              "text": "Un buen contraargumento reconoce la objeción antes de responderla."
+            }
+          ]
+        }
       ]
     },
     {
@@ -92,11 +220,30 @@
       "interactions": [
         {
           "when": {
-            "completedMissions": ["community-debate-rebuttal", "community-hall-minutes"],
-            "missingMissions": ["community-debate-charter"]
+            "completedMissions": [
+              "community-debate-rebuttal",
+              "community-hall-minutes"
+            ],
+            "missingMissions": [
+              "community-debate-charter"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Último paso: redacta un principio de debate para futuras sesiones." },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Una carta de debate no sirve para sonar elegante; sirve para que la próxima mesa no empiece desde cero."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Piensa en otro caso, como el uso del parque: la regla útil protege personas y procedimiento, no egos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Redacta ahora un principio que aguante futuras discusiones."
+            },
             {
               "type": "askText",
               "prompt": "Escribe en español: We debate hard ideas, but we evaluate people with respect and evidence.",
@@ -106,19 +253,45 @@
                 "Debatimos ideas dificiles pero evaluamos a las personas con respeto y evidencia"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Valeria", "text": "Carta de debate aprobada. Llévala al centro de servicios." },
-                { "type": "addItem", "itemId": "clubForm", "count": 1 },
-                { "type": "completeMission", "missionId": "community-debate-charter" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Valeria",
+                  "text": "Carta de debate aprobada. Llévala al centro de servicios para convertirla en trámite."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "clubForm",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "community-debate-charter"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Sin carta de principios, cada mesa vuelve a empezar desde cero." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Sin carta de principios, cada mesa vuelve a empezar desde cero."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 14, "y": 19, "targetArea": "community-leader", "targetX": 23, "targetY": 6, "facing": "down" }
+    {
+      "x": 14,
+      "y": 19,
+      "targetArea": "community-leader",
+      "targetX": 23,
+      "targetY": 6,
+      "facing": "down"
+    }
   ]
 }

@@ -94,24 +94,24 @@
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "Soy el proveedor principal. La oficina necesita leche, pan y una calculadora revisada."
+              "text": "La oficina abrirá una reunión importante y yo coordino a los proveedores del turno."
             },
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "No acepto entregas incompletas. Primero recoge, luego confirma conmigo."
+              "text": "En otro pedido, alguien trajo comida pero olvidó la herramienta de cálculo; la entrega llegó, pero el cliente no pudo revisar cantidades."
             },
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "Emma maneja lácteos, Diego panadería y Lucía equipos."
+              "text": "Hoy el encargo está dividido entre Emma, Diego y Lucía. Solo vuelve cuando cada parte quede validada."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Con quién debes hablar para revisar la calculadora?",
+              "prompt": "Si un pedido se reparte entre tres puestos, ¿qué lo cierra de forma profesional?",
               "options": [
                 {
-                  "label": "Con Lucía, en el puesto de equipos.",
+                  "label": "Recojo cada parte, verifico la herramienta y luego lo confirmo contigo.",
                   "correct": true,
                   "actions": [
                     {
@@ -126,11 +126,11 @@
                   ]
                 },
                 {
-                  "label": "Con Diego, porque hornea pan.",
+                  "label": "Recojo solo lo más rápido y digo que el resto llegará después.",
                   "correct": false
                 },
                 {
-                  "label": "Con nadie; la calculadora no importa.",
+                  "label": "Vuelvo enseguida aunque la herramienta siga sin revisar.",
                   "correct": false
                 }
               ],
@@ -165,44 +165,46 @@
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "Veo los tres elementos. Ahora verifica el estado de la entrega."
+              "text": "Ya tienes los tres elementos. Ahora dime el estado de la entrega como lo haría un proveedor serio."
             },
             {
-              "type": "askChoice",
-              "prompt": "¿Qué frase confirma una entrega completa?",
-              "options": [
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Menciona productos y verificación, no solo que “trajiste cosas”."
+            },
+            {
+              "type": "askText",
+              "prompt": "Escribe en español: I brought the milk and bread, and the calculator is already verified.",
+              "placeholder": "Respuesta en español",
+              "correctAnswers": [
+                "Traigo la leche y el pan, y la calculadora ya está verificada",
+                "Traigo la leche y el pan y la calculadora ya está verificada",
+                "Traigo leche y pan, y la calculadora ya está verificada",
+                "Traigo leche y pan y la calculadora ya está verificada",
+                "Traigo la leche y el pan, y la calculadora ya esta verificada",
+                "Traigo la leche y el pan y la calculadora ya esta verificada",
+                "Traigo leche y pan, y la calculadora ya esta verificada",
+                "Traigo leche y pan y la calculadora ya esta verificada"
+              ],
+              "actions": [
                 {
-                  "label": "Traigo leche y pan, y la calculadora está verificada.",
-                  "correct": true,
-                  "actions": [
-                    {
-                      "type": "showDialogue",
-                      "speaker": "Carlos",
-                      "text": "Excelente. Registro final aprobado."
-                    },
-                    {
-                      "type": "removeItem",
-                      "itemId": "milk",
-                      "count": 1
-                    },
-                    {
-                      "type": "removeItem",
-                      "itemId": "bread",
-                      "count": 1
-                    },
-                    {
-                      "type": "completeMission",
-                      "missionId": "firstjob-market-delivery"
-                    }
-                  ]
+                  "type": "showDialogue",
+                  "speaker": "Carlos",
+                  "text": "Excelente. Registro final aprobado."
                 },
                 {
-                  "label": "Traigo cosas, pero no las revisé.",
-                  "correct": false
+                  "type": "removeItem",
+                  "itemId": "milk",
+                  "count": 1
                 },
                 {
-                  "label": "No recuerdo qué traigo.",
-                  "correct": false
+                  "type": "removeItem",
+                  "itemId": "bread",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "firstjob-market-delivery"
                 }
               ],
               "wrongMessage": "No. Intenta otra vez."
@@ -238,12 +240,12 @@
             {
               "type": "showDialogue",
               "speaker": "Emma",
-              "text": "Antes de darte la leche, dime para qué área la necesitas."
+              "text": "Si una caja va a cocina y otra a oficina, no basta con decir “es para allí”."
             },
             {
               "type": "showDialogue",
               "speaker": "Emma",
-              "text": "En el trabajo siempre se etiqueta el destino del producto."
+              "text": "Etiquetar el destino evita que el pedido se pierda antes de llegar."
             },
             {
               "type": "askText",
@@ -251,7 +253,8 @@
               "placeholder": "Respuesta en español",
               "correctAnswers": [
                 "La leche es para la sala de descanso de la oficina",
-                "La leche es para la sala de descanso"
+                "La leche es para la sala de descanso",
+                "La leche es para el descanso de la oficina"
               ],
               "actions": [
                 {
@@ -302,12 +305,12 @@
             {
               "type": "showDialogue",
               "speaker": "Diego",
-              "text": "Pan listo, pero necesito una solicitud cortés. En atención laboral la cortesía importa."
+              "text": "Cuando alguien me pide pan para un pedido laboral, escucho mejor si me lo dice con cortesía y destino claro."
             },
             {
               "type": "showDialogue",
               "speaker": "Diego",
-              "text": "No pidas como orden; pide como colaboración."
+              "text": "Por ejemplo: “¿me prepara dos piezas para recepción, por favor?”. Ahora te toca a ti con la oficina."
             },
             {
               "type": "askSpeech",
@@ -367,12 +370,12 @@
             {
               "type": "showDialogue",
               "speaker": "Lucía",
-              "text": "Esta calculadora no se entrega sin prueba. Debes demostrar que entiendes su uso en un pedido."
+              "text": "La calculadora sale solo si demuestras que entiendes por qué evita errores en una factura."
             },
             {
               "type": "showDialogue",
               "speaker": "Lucía",
-              "text": "Si hay cantidades mal sumadas, el cliente recibe facturas incorrectas."
+              "text": "En otro turno corrigieron un total mal sumado a tiempo y evitaron una disculpa enorme al cliente."
             },
             {
               "type": "askChoice",

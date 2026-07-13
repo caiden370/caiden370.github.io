@@ -53,7 +53,11 @@
           "actions": [
             {
               "type": "showDialogue",
-              "text": "La máquina pide una orden completa antes de servir."
+              "text": "La máquina reconoce pedidos completos, no frases cortadas."
+            },
+            {
+              "type": "showDialogue",
+              "text": "Ayer aceptó “prepare un té para recepción”; ahora necesita un pedido igual de claro para la reunión de oficina."
             },
             {
               "type": "askText",
@@ -138,24 +142,24 @@
             {
               "type": "showDialogue",
               "speaker": "Mateo",
-              "text": "La sala de descanso parece tranquila, pero aquí se coordinan cambios de turno."
+              "text": "La sala de descanso también forma parte del trabajo. Aquí se evita que el turno se rompa cuando alguien necesita relevo."
             },
             {
               "type": "showDialogue",
               "speaker": "Mateo",
-              "text": "Si nadie comunica descansos, la recepción se queda sola y el cliente espera."
+              "text": "Si una persona sale sin avisar, recepción se queda sola y el siguiente cliente paga el desorden."
             },
             {
               "type": "showDialogue",
               "speaker": "Mateo",
-              "text": "Habla con Ana y luego prepara un café para la reunión."
+              "text": "Confirma cobertura con Ana y deja listo el café que necesita la reunión de la oficina."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál es la función principal de esta sala?",
+              "prompt": "¿Qué protege mejor al equipo durante un descanso?",
               "options": [
                 {
-                  "label": "Coordinar descansos y apoyar al equipo.",
+                  "label": "Avisar, asegurar cobertura y dejar listo lo que el turno necesita.",
                   "correct": true,
                   "actions": [
                     {
@@ -170,11 +174,11 @@
                   ]
                 },
                 {
-                  "label": "Evitar toda comunicación.",
+                  "label": "Irse en silencio para no molestar a nadie.",
                   "correct": false
                 },
                 {
-                  "label": "Cerrar la recepción durante una hora.",
+                  "label": "Cerrar recepción hasta volver del descanso.",
                   "correct": false
                 }
               ],
@@ -211,12 +215,12 @@
             {
               "type": "showDialogue",
               "speaker": "Ana",
-              "text": "Antes de la reunión, confirma que puedes cubrir recepción si alguien está en descanso."
+              "text": "Cuando yo cubro una mesa, digo quién queda a cargo y por cuánto tiempo."
             },
             {
               "type": "showDialogue",
               "speaker": "Ana",
-              "text": "Responder 'sí' sin contexto no sirve; necesito un compromiso claro."
+              "text": "Solo decir “sí” no sirve; necesito un compromiso claro para no dejar huecos."
             },
             {
               "type": "askSpeech",
@@ -271,7 +275,12 @@
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Veo coordinación y café listo. Falta cerrar con una decisión de prioridad."
+              "text": "Ya resolviste cobertura y café. Eso ayuda a la reunión y a la recepción al mismo tiempo."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Elena",
+              "text": "Ahora dime qué prioridad manda cuando descanso y atención chocan."
             },
             {
               "type": "askChoice",

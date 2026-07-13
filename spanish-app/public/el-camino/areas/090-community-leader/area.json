@@ -5,9 +5,24 @@
   "chapterId": "community-leader",
   "region": "Chapter 9: Community Leader",
   "cefrLevel": "C1",
-  "teaches": ["persuasión", "negociación", "mediación", "planificación pública", "consenso"],
-  "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass", "s": "stoneFloor" },
-  "playerStart": { "x": 14, "y": 17, "facing": "up" },
+  "teaches": [
+    "persuasión",
+    "negociación",
+    "mediación",
+    "planificación pública",
+    "consenso"
+  ],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "q": "flowerGrass",
+    "s": "stoneFloor"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 17,
+    "facing": "up"
+  },
   "objects": [
     {
       "type": "office",
@@ -15,7 +30,14 @@
       "y": 1,
       "w": 6,
       "h": 4,
-      "entrance": { "x": 5, "y": 5, "targetArea": "community-town-hall", "targetX": 10, "targetY": 10, "facing": "up" }
+      "entrance": {
+        "x": 5,
+        "y": 5,
+        "targetArea": "community-town-hall",
+        "targetX": 10,
+        "targetY": 10,
+        "facing": "up"
+      }
     },
     {
       "type": "store",
@@ -23,7 +45,14 @@
       "y": 1,
       "w": 6,
       "h": 4,
-      "entrance": { "x": 14, "y": 5, "targetArea": "community-market-corridor", "targetX": 14, "targetY": 18, "facing": "up" }
+      "entrance": {
+        "x": 14,
+        "y": 5,
+        "targetArea": "community-market-corridor",
+        "targetX": 14,
+        "targetY": 18,
+        "facing": "up"
+      }
     },
     {
       "type": "auditorium",
@@ -31,7 +60,14 @@
       "y": 1,
       "w": 6,
       "h": 4,
-      "entrance": { "x": 23, "y": 5, "targetArea": "community-debate-stage", "targetX": 14, "targetY": 18, "facing": "up" }
+      "entrance": {
+        "x": 23,
+        "y": 5,
+        "targetArea": "community-debate-stage",
+        "targetX": 14,
+        "targetY": 18,
+        "facing": "up"
+      }
     },
     {
       "type": "office",
@@ -39,7 +75,20 @@
       "y": 14,
       "w": 9,
       "h": 4,
-      "entrance": { "x": 14, "y": 18, "targetArea": "community-service-center", "targetX": 10, "targetY": 10, "facing": "up" }
+      "entrance": {
+        "x": 14,
+        "y": 18,
+        "targetArea": "community-service-center",
+        "targetX": 10,
+        "targetY": 10,
+        "facing": "up",
+        "requires": {
+          "completedMissions": [
+            "community-hub-chain"
+          ]
+        },
+        "blockedMessage": "Primero coordina ayuntamiento, mercado y debate con Marcos."
+      }
     },
     {
       "type": "townBoard",
@@ -48,14 +97,36 @@
       "interactions": [
         {
           "actions": [
-            { "type": "showDialogue", "text": "Agenda comunitaria: vivienda, comercio local, seguridad nocturna y red de apoyo vecinal." },
-            { "type": "showDialogue", "text": "Sin acuerdos verificables, no se abre la sala de repaso." }
+            {
+              "type": "showDialogue",
+              "text": "Ruta del capítulo: escucha en el ayuntamiento, contrasta costos en el mercado, defiende la propuesta en el debate y conviértela en procedimiento en el centro de servicios."
+            },
+            {
+              "type": "showDialogue",
+              "text": "Cada parada debe devolverte algo distinto: criterios, evidencia, lenguaje público y seguimiento."
+            },
+            {
+              "type": "showDialogue",
+              "text": "Cuando todo encaje, la sala de repaso abrirá el acceso a los jefes."
+            }
           ]
         }
       ]
     },
-    { "type": "bench", "x": 9, "y": 12, "w": 2, "h": 1 },
-    { "type": "bench", "x": 18, "y": 12, "w": 2, "h": 1 }
+    {
+      "type": "bench",
+      "x": 9,
+      "y": 12,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 18,
+      "y": 12,
+      "w": 2,
+      "h": 1
+    }
   ],
   "people": [
     {
@@ -64,11 +135,27 @@
       "y": 9,
       "interactions": [
         {
-          "when": { "missingMissions": ["community-hub-orientation"] },
+          "when": {
+            "missingMissions": [
+              "community-hub-orientation"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Lucía", "text": "No vienes a repetir frases; vienes a sostener una ciudad con palabras precisas." },
-            { "type": "showDialogue", "speaker": "Lucía", "text": "En el ayuntamiento negociarás prioridades, en el mercado convencerás sin imponer, en el escenario debatirás con matices y en el centro de servicios cerrarás compromisos." },
-            { "type": "showDialogue", "speaker": "Lucía", "text": "Cuando cada zona confirme su parte, podrás entrar al repaso final y a la secuencia de jefes." },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "No vienes a repetir frases; vienes a sostener una ciudad con palabras precisas."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "En el ayuntamiento negociarás prioridades, en el mercado convencerás sin imponer, en el escenario debatirás con matices y en el centro de servicios cerrarás compromisos."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Cuando cada zona confirme su parte, podrás entrar al repaso final y a la secuencia de jefes."
+            },
             {
               "type": "askChoice",
               "prompt": "¿Qué resume mejor la misión de este capítulo?",
@@ -77,18 +164,39 @@
                   "label": "Construir acuerdos comunitarios mediante negociación, evidencia y lenguaje claro.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Lucía", "text": "Exacto. Liderar aquí significa escuchar, sintetizar y decidir con responsabilidad pública." },
-                    { "type": "completeMission", "missionId": "community-hub-orientation" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Lucía",
+                      "text": "Exacto. Liderar aquí significa escuchar, sintetizar y decidir con responsabilidad pública."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "community-hub-orientation"
+                    }
                   ]
                 },
-                { "label": "Recoger objetos al azar y evitar conversaciones largas.", "correct": false },
-                { "label": "Entrar directamente al último jefe sin hablar con nadie.", "correct": false }
+                {
+                  "label": "Recoger objetos al azar y evitar conversaciones largas.",
+                  "correct": false
+                },
+                {
+                  "label": "Entrar directamente al último jefe sin hablar con nadie.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Lucía", "text": "Primero consolida acuerdos; después defiéndelos bajo presión." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Lucía",
+              "text": "Primero consolida acuerdos; después defiéndelos bajo presión."
+            }
+          ]
+        }
       ]
     },
     {
@@ -98,11 +206,31 @@
       "interactions": [
         {
           "when": {
-            "completedMissions": ["community-hall-listen", "community-market-negotiation", "community-debate-open"],
-            "missingMissions": ["community-hub-chain"]
+            "completedMissions": [
+              "community-hall-listen",
+              "community-market-negotiation",
+              "community-debate-open"
+            ],
+            "missingMissions": [
+              "community-hub-chain"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Buen avance. Ahora necesito una síntesis transversal: instituciones, comercio y debate deben apuntar al mismo objetivo." },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Tomás te enseña a priorizar; Emma te obliga a contar costos reales; Mateo comprueba si tu propuesta resiste objeciones públicas."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Si una de esas piezas falla, el barrio o la administración se te caerán después."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Une esas tres lógicas y yo abriré la ruta hacia la ejecución."
+            },
             {
               "type": "askChoice",
               "prompt": "Si una propuesta es técnicamente correcta pero socialmente inviable, ¿qué haría un líder comunitario competente?",
@@ -111,19 +239,44 @@
                   "label": "Reformularla con actores afectados, medir impacto y negociar implementación gradual.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Marcos", "text": "Eso es liderazgo estratégico. Ya tienes autorización para cerrar la cadena interzonal." },
-                    { "type": "addItem", "itemId": "routePass", "count": 1 },
-                    { "type": "completeMission", "missionId": "community-hub-chain" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Marcos",
+                      "text": "Eso es liderazgo estratégico. Toma este pase de ruta: el centro de servicios ya puede recibir tu plan."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "routePass",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "community-hub-chain"
+                    }
                   ]
                 },
-                { "label": "Imponerla sin consulta para demostrar autoridad.", "correct": false },
-                { "label": "Posponerla indefinidamente para evitar críticas.", "correct": false }
+                {
+                  "label": "Imponerla sin consulta para demostrar autoridad.",
+                  "correct": false
+                },
+                {
+                  "label": "Posponerla indefinidamente para evitar críticas.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Sin síntesis interzonal no hay gobernanza estable." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Primero reúne prioridades, costos y lenguaje público; luego conviértelo en procedimiento."
+            }
+          ]
+        }
       ]
     },
     {
@@ -133,8 +286,21 @@
       "interactions": [
         {
           "actions": [
-            { "type": "showDialogue", "speaker": "Ana", "text": "Recuerda: persuadir no es presionar; es justificar, escuchar objeciones y ajustar el plan." },
-            { "type": "showDialogue", "speaker": "Ana", "text": "Aquí cada frase puede abrir cooperación o bloquearla." }
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Si un comerciante objeta, resume su miedo antes de defender tu idea."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Si una vecina te apoya, pídele también una condición medible."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Persuadir aquí significa salir de la plaza con compromisos que sobrevivan al día siguiente."
+            }
           ]
         }
       ]

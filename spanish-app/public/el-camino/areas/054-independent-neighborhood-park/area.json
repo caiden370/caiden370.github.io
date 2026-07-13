@@ -92,19 +92,19 @@
             {
               "type": "showDialogue",
               "speaker": "Diego",
-              "text": "El vecino Nico trabaja doble turno. Necesita entrega puntual: pan y leche antes de las seis."
+              "text": "Nico me escribió desde el trabajo: sale tarde y solo puede recibir el pedido si alguien coordina bien la hora."
             },
             {
               "type": "showDialogue",
               "speaker": "Diego",
-              "text": "Esta misión mide coordinación: comprar, entregar, confirmar y volver con respuesta."
+              "text": "Este encargo conecta lo que compraste en el supermercado con tu reputación en el barrio. No basta con comprar; hay que cumplir y avisar."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué debe entregar el jugador a Nico?",
+              "prompt": "Si sales del súper a las cinco y media, ¿qué debes priorizar?",
               "options": [
                 {
-                  "label": "Pan y leche antes de la hora límite.",
+                  "label": "Ir con pan y leche al parque, entregarlos a tiempo y confirmar el horario con Nico.",
                   "correct": true,
                   "actions": [
                     {
@@ -114,11 +114,11 @@
                   ]
                 },
                 {
-                  "label": "Solo una botella de agua.",
+                  "label": "Volver al apartamento y dejar la entrega para otro día.",
                   "correct": false
                 },
                 {
-                  "label": "Formulario bancario y calculadora.",
+                  "label": "Ignorar el horario y llevar solo una botella de agua.",
                   "correct": false
                 }
               ],
@@ -139,21 +139,21 @@
             {
               "type": "showDialogue",
               "speaker": "Diego",
-              "text": "Nico confirmó la entrega. Falta verificar que entendiste la cadena completa de acciones."
+              "text": "Nico confirmó la entrega. Ahora explica el favor como si reportaras el recado a una vecina del edificio."
             },
             {
               "type": "askText",
-              "prompt": "Write in Spanish: I delivered the order and confirmed the schedule with the neighbor.",
+              "prompt": "Write in Spanish: I delivered the order on time and confirmed the schedule with the neighbor.",
               "placeholder": "Respuesta en español",
               "correctAnswers": [
-                "Entregué el pedido y confirmé el horario con el vecino",
-                "Entregue el pedido y confirme el horario con el vecino"
+                "Entregué el pedido a tiempo y confirmé el horario con el vecino",
+                "Entregue el pedido a tiempo y confirme el horario con el vecino"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Diego",
-                  "text": "Parque verificado."
+                  "text": "Bien. Ya demostraste que también sabes responder al barrio."
                 },
                 {
                   "type": "completeMission",
@@ -169,7 +169,7 @@
             {
               "type": "showDialogue",
               "speaker": "Diego",
-              "text": "Coordina compra, entrega y confirmación sin perder tiempo."
+              "text": "Primero coordina la entrega con Nico y luego vuelve para confirmar el recado."
             }
           ]
         }
@@ -203,14 +203,19 @@
             {
               "type": "showDialogue",
               "speaker": "Nico",
-              "text": "Gracias por llegar a tiempo. Cuando todo se retrasa, mi turno se complica."
+              "text": "Llegaste justo a tiempo. Cuando alguien avisa y cumple, yo puedo reorganizar mi turno sin estrés."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Lo importante no es solo la bolsa; es saber que el vecino entiende horarios y responde con claridad."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué valora Nico en esta entrega?",
+              "prompt": "¿Qué le conviene a Nico en una comunidad confiable?",
               "options": [
                 {
-                  "label": "La puntualidad y la confirmación clara.",
+                  "label": "Que las personas entreguen a tiempo y confirmen cualquier cambio con claridad.",
                   "correct": true,
                   "actions": [
                     {
@@ -231,7 +236,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Nico",
-                      "text": "Toma este café para tu repaso."
+                      "text": "Toma este café para el repaso. Ya veo que también sabes cuidar al vecindario."
                     },
                     {
                       "type": "completeMission",
@@ -240,11 +245,11 @@
                   ]
                 },
                 {
-                  "label": "Cambiar la receta de la clínica.",
+                  "label": "Que nadie avise y que todos improvisen las entregas.",
                   "correct": false
                 },
                 {
-                  "label": "Cancelar todos los trámites.",
+                  "label": "Que el banco resuelva los encargos del parque.",
                   "correct": false
                 }
               ],
@@ -257,7 +262,7 @@
             {
               "type": "showDialogue",
               "speaker": "Nico",
-              "text": "Necesito pan y leche para cerrar mi día."
+              "text": "Necesito pan y leche antes de cerrar el día."
             }
           ]
         }

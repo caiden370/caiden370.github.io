@@ -87,19 +87,24 @@
             {
               "type": "showDialogue",
               "speaker": "Ana",
-              "text": "Ventanilla uno: sin formulario correcto, no existe trámite."
+              "text": "Ventanilla uno. Ayer llegó una persona con autorización de contacto y declaración de datos, pero sin la solicitud base: tuve que devolverle todo."
             },
             {
               "type": "showDialogue",
               "speaker": "Ana",
-              "text": "Debes diferenciar solicitud inicial, declaración de datos y autorización de contacto."
+              "text": "En el ayuntamiento primero se abre el expediente; los anexos vienen después, cuando ya existe un trámite reconocible."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Necesito que distingas entre documento inicial, anexos y validaciones."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué documento entrega la ventanilla uno para iniciar el expediente municipal?",
+              "prompt": "Una solicitante mezcló anexos con autorizaciones. Antes de adjuntar nada, ¿qué documento abre realmente el expediente municipal?",
               "options": [
                 {
-                  "label": "El formulario base de solicitud.",
+                  "label": "El formulario base de solicitud que abre el expediente.",
                   "correct": true,
                   "actions": [
                     {
@@ -110,7 +115,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Ana",
-                      "text": "Listo. Revisa que no falte firma ni fecha."
+                      "text": "Bien. Con esta base ya puedes revisar firma, fecha y datos sin improvisar."
                     },
                     {
                       "type": "completeMission",
@@ -119,11 +124,11 @@
                   ]
                 },
                 {
-                  "label": "Un boleto de cafetería.",
+                  "label": "La resolución final firmada antes de revisar el caso.",
                   "correct": false
                 },
                 {
-                  "label": "La resolución final ya aprobada.",
+                  "label": "Una autorización de contacto sin expediente abierto.",
                   "correct": false
                 }
               ],
@@ -160,11 +165,16 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Archivo técnico: verifico si tu actividad requiere declaración complementaria."
+              "text": "Cuando un aviso oficial llega a una dirección vieja, el problema no es postal: todo el expediente pierde trazabilidad."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Javier",
+              "text": "Esta mañana atendí a alguien con firma impecable y papeles completos, pero con domicilio sin actualizar. Primero corrigió eso y recién después pasó a licencia."
             },
             {
               "type": "askAudioChoice",
-              "prompt": "Escucha el criterio del archivo.",
+              "prompt": "Escucha el criterio del archivo para otro caso.",
               "audioText": "Si cambiaste de domicilio este año, necesitas sello de actualización antes de pedir la licencia.",
               "options": [
                 {
@@ -179,7 +189,7 @@
                     {
                       "type": "showDialogue",
                       "speaker": "Javier",
-                      "text": "Perfecto. Aquí tienes el sello de actualización."
+                      "text": "Exacto. Este sello viaja con tu licencia y evita devoluciones innecesarias."
                     },
                     {
                       "type": "completeMission",
@@ -230,7 +240,12 @@
             {
               "type": "showDialogue",
               "speaker": "Tomás",
-              "text": "Dirección municipal: voy a aprobar solo si puedes resumir el trámite completo en una frase formal."
+              "text": "Una respuesta floja dice: 'ya traje todo'. Una respuesta formal resume qué entregas y con qué propósito administrativo."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Quiero una frase que pueda archivarse tal cual, como constancia de que entendiste el proceso completo."
             },
             {
               "type": "askText",
@@ -238,13 +253,15 @@
               "placeholder": "Respuesta en español",
               "correctAnswers": [
                 "Entrego formulario sello y datos verificados para recibir la licencia municipal",
-                "Entrego formulario, sello y datos verificados para recibir la licencia municipal"
+                "Entrego formulario, sello y datos verificados para recibir la licencia municipal",
+                "Entrego el formulario, el sello y los datos verificados para recibir la licencia municipal",
+                "Entrego el formulario y el sello con los datos verificados para recibir la licencia municipal"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Tomás",
-                  "text": "Redacción clara. Licencia aprobada."
+                  "text": "Claro y profesional. La licencia queda aprobada y lista para abrir el expediente del seguro."
                 },
                 {
                   "type": "addItem",

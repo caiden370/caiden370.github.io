@@ -3,7 +3,9 @@
   inset: 0;
   z-index: 1000;
   overflow: hidden;
-  background: #111827;
+  background:
+    radial-gradient(circle at 50% 35%, #263b52 0, #111827 62%),
+    #111827;
   touch-action: manipulation;
   user-select: none;
 }
@@ -24,6 +26,7 @@
   height: 100% !important;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  filter: saturate(1.08) contrast(1.04);
 }
 
 .el-camino-exit-button {
@@ -323,9 +326,13 @@
   min-height: 48px;
   margin: 0 auto;
   padding: 10px 12px;
-  border: 3px solid #111827;
-  background: #fff7cf;
-  box-shadow: 0 5px 0 #0b1020;
+  border: 4px solid #f8fafc;
+  border-radius: 10px;
+  background: #fffdf1;
+  box-shadow:
+    0 0 0 3px #243b67,
+    0 7px 0 #0b1020,
+    inset 0 -4px 0 #e8dfb9;
   color: #1f2937;
   font-family: "Inter", sans-serif;
   font-size: 0.82rem;
@@ -341,10 +348,16 @@
   bottom: calc(max(18px, env(safe-area-inset-bottom)) + 0px);
   z-index: 10010;
   box-sizing: border-box;
+  max-height: min(82dvh, 680px);
+  overflow-y: auto;
   padding: 12px;
-  border: 3px solid #111827;
-  background: #fff7cf;
-  box-shadow: 0 5px 0 #0b1020;
+  border: 4px solid #f8fafc;
+  border-radius: 10px;
+  background: #fffdf1;
+  box-shadow:
+    0 0 0 3px #243b67,
+    0 7px 0 #0b1020,
+    inset 0 -4px 0 #e8dfb9;
   color: #111827;
   font-family: "Inter", sans-serif;
 }
@@ -421,9 +434,9 @@
   width: 100%;
   margin-top: 7px;
   padding: 10px 12px;
-  border: 2px solid #111827;
-  border-radius: 0;
-  background: #ffffff;
+  border: 2px solid #243b67;
+  border-radius: 6px;
+  background: linear-gradient(#ffffff, #eef5ff);
   color: #111827;
   font-size: 0.86rem;
   font-weight: 850;
@@ -433,6 +446,11 @@
 .el-camino-choice-button:active {
   transform: translateY(2px);
   background: #f5df8f;
+}
+
+.el-camino-choice-button:hover {
+  border-color: #d4573b;
+  background: #fff4cf;
 }
 
 .el-camino-audio-button,
@@ -494,7 +512,7 @@
   display: grid;
   grid-template-columns: repeat(3, 60px);
   grid-template-rows: repeat(3, 60px);
-  gap: 5px;
+  gap: 3px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -505,15 +523,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.62);
-  border-radius: 999px;
-  background: rgba(17, 24, 39, 0.42);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-  color: rgba(255, 247, 207, 0.9);
+  border: 3px solid #cbd5e1;
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(51, 65, 85, 0.94), rgba(15, 23, 42, 0.96));
+  box-shadow:
+    0 5px 0 rgba(3, 7, 18, 0.9),
+    inset 0 2px 0 rgba(255, 255, 255, 0.22);
+  color: #fff7cf;
   font-size: 1rem;
   font-weight: 950;
   line-height: 1;
-  touch-action: manipulation;
+  touch-action: none;
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
@@ -521,8 +541,9 @@
 
 .camino-control:active {
   transform: translateY(2px);
-  background: rgba(17, 24, 39, 0.64);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18), inset 0 2px 5px rgba(0, 0, 0, 0.22);
+  border-color: #f8d66d;
+  background: #243b67;
+  box-shadow: 0 2px 0 rgba(3, 7, 18, 0.9), inset 0 2px 5px rgba(0, 0, 0, 0.22);
 }
 
 .camino-up {

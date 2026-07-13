@@ -5,15 +5,56 @@
   "chapterId": "dream-future",
   "region": "Chapter 10: Dream Future",
   "cefrLevel": "C1",
-  "teaches": ["prototipado", "ética tecnológica", "hipótesis"],
-  "legend": { "w": "insideWall", "c": "campusStone", "s": "stoneFloor" },
-  "playerStart": { "x": 14, "y": 15, "facing": "up" },
+  "teaches": [
+    "prototipado",
+    "ética tecnológica",
+    "hipótesis"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "campusStone",
+    "s": "stoneFloor"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 15,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "labTable", "x": 4, "y": 3, "w": 5, "h": 2 },
-    { "type": "labSink", "x": 11, "y": 3, "w": 2, "h": 1 },
-    { "type": "computerDesk", "x": 16, "y": 3, "w": 4, "h": 1 },
-    { "type": "whiteboard", "x": 7, "y": 8, "w": 10, "h": 1 },
-    { "type": "itemSparkle", "x": 20, "y": 10, "walkable": true }
+    {
+      "type": "labTable",
+      "x": 4,
+      "y": 3,
+      "w": 5,
+      "h": 2
+    },
+    {
+      "type": "labSink",
+      "x": 11,
+      "y": 3,
+      "w": 2,
+      "h": 1
+    },
+    {
+      "type": "computerDesk",
+      "x": 16,
+      "y": 3,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "whiteboard",
+      "x": 7,
+      "y": 8,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "itemSparkle",
+      "x": 20,
+      "y": 10,
+      "walkable": true
+    }
   ],
   "people": [
     {
@@ -22,22 +63,74 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "hasItems": [{ "itemId": "calculator", "count": 1 }], "missingMissions": ["dream-innovation-model"] },
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "calculator",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "dream-innovation-model"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Nico", "text": "Sin métricas, una idea brillante sigue siendo intuición. Modela impacto, costo y riesgo." },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Un equipo puede enamorarse de su prototipo y aun así ignorar costos sociales invisibles."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Vi una demo brillante fracasar cuando descubrieron que ahorraba tiempo, pero excluía a usuarios con conexión limitada."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "La innovación madura corrige esas fricciones antes de presumir escala."
+            },
             {
               "type": "askChoice",
               "prompt": "Tu prototipo mejora acceso, pero consume demasiada energía. ¿Qué decisión demuestra innovación responsable?",
               "options": [
-                { "label": "Rediseñar arquitectura para reducir consumo, aunque retrase el lanzamiento.", "correct": true, "actions": [{ "type": "completeMission", "missionId": "dream-innovation-model" }] },
-                { "label": "Ignorar el consumo para publicar una demo espectacular.", "correct": false },
-                { "label": "Ocultar datos de eficiencia a los usuarios.", "correct": false }
+                {
+                  "label": "Rediseñar arquitectura para reducir consumo, aunque retrase el lanzamiento.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Nico",
+                      "text": "Exacto. Retrasar un lanzamiento para proteger sostenibilidad también es liderazgo técnico."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "dream-innovation-model"
+                    }
+                  ]
+                },
+                {
+                  "label": "Ignorar el consumo para publicar una demo espectacular.",
+                  "correct": false
+                },
+                {
+                  "label": "Ocultar datos de eficiencia a los usuarios.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Nico", "text": "Trae tu calculadora de escenarios para validar el modelo." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Trae tu calculadora de escenarios para validar el modelo."
+            }
+          ]
+        }
       ]
     },
     {
@@ -46,9 +139,30 @@
       "y": 9,
       "interactions": [
         {
-          "when": { "completedMissions": ["dream-innovation-model"], "missingMissions": ["dream-innovation-prototype"] },
+          "when": {
+            "completedMissions": [
+              "dream-innovation-model"
+            ],
+            "missingMissions": [
+              "dream-innovation-prototype"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Sofia", "text": "Convénceme de que tu propuesta es útil, ética y escalable." },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Un prototipo defendible responde tres preguntas: qué problema real resuelve, a quién podría dañar y cómo seguirá siendo útil al crecer."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Piensa en una herramienta excelente para expertos pero inútil para usuarios nuevos: sin accesibilidad, la innovación se rompe."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Ahora formula una síntesis que aguante revisión externa."
+            },
             {
               "type": "askText",
               "prompt": "Write in Spanish: Our prototype should solve a real problem, protect data, and remain accessible.",
@@ -58,19 +172,45 @@
                 "Nuestro prototipo debe resolver un problema real, proteger datos y seguir siendo accesible"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Sofia", "text": "Aprobado. Lleva este dossier al Jardín de Mentoría." },
-                { "type": "addItem", "itemId": "textbook", "count": 1 },
-                { "type": "completeMission", "missionId": "dream-innovation-prototype" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Sofia",
+                  "text": "Aprobado. Tu dossier ya describe utilidad, ética y acceso; llévalo al Jardín de Mentoría."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "textbook",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "dream-innovation-prototype"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Sofia", "text": "Una innovación sin ética no supera evaluación final." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Una innovación sin ética no supera evaluación final."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 14, "y": 16, "targetArea": "dream-future", "targetX": 5, "targetY": 16, "facing": "down" }
+    {
+      "x": 14,
+      "y": 16,
+      "targetArea": "dream-future",
+      "targetX": 5,
+      "targetY": 16,
+      "facing": "down"
+    }
   ]
 }

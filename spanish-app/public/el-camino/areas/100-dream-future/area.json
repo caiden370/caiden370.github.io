@@ -5,18 +5,128 @@
   "chapterId": "dream-future",
   "region": "Chapter 10: Dream Future",
   "cefrLevel": "C1",
-  "teaches": ["visión profesional", "metas de largo plazo", "negociación", "innovación"],
-  "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass", "s": "campusStone" },
-  "playerStart": { "x": 14, "y": 18, "facing": "up" },
+  "teaches": [
+    "visión profesional",
+    "metas de largo plazo",
+    "negociación",
+    "innovación"
+  ],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "q": "flowerGrass",
+    "s": "campusStone"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 18,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "skyline", "x": 1, "y": 1, "w": 26, "h": 2 },
-    { "type": "dreamBoard", "x": 12, "y": 9, "w": 4, "h": 1 },
-    { "type": "office", "x": 2, "y": 4, "w": 6, "h": 4, "entrance": { "x": 5, "y": 8, "targetArea": "dream-career-lab", "targetX": 14, "targetY": 15, "facing": "up" } },
-    { "type": "auditorium", "x": 20, "y": 4, "w": 6, "h": 4, "entrance": { "x": 23, "y": 8, "targetArea": "dream-global-hub", "targetX": 14, "targetY": 15, "facing": "up" } },
-    { "type": "labTable", "x": 2, "y": 12, "w": 6, "h": 3, "entrance": { "x": 5, "y": 15, "targetArea": "dream-innovation-studio", "targetX": 14, "targetY": 15, "facing": "up" } },
-    { "type": "library", "x": 20, "y": 12, "w": 6, "h": 3, "entrance": { "x": 23, "y": 15, "targetArea": "dream-mentor-garden", "targetX": 14, "targetY": 15, "facing": "up" } },
-    { "type": "routeGate", "x": 14, "y": 5 },
-    { "type": "serviceCounter", "x": 11, "y": 4, "w": 6, "h": 1, "entrance": { "x": 14, "y": 5, "targetArea": "dream-review", "targetX": 14, "targetY": 15, "facing": "up" } }
+    {
+      "type": "skyline",
+      "x": 1,
+      "y": 1,
+      "w": 26,
+      "h": 2
+    },
+    {
+      "type": "dreamBoard",
+      "x": 12,
+      "y": 9,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "office",
+      "x": 2,
+      "y": 4,
+      "w": 6,
+      "h": 4,
+      "entrance": {
+        "x": 5,
+        "y": 8,
+        "targetArea": "dream-career-lab",
+        "targetX": 14,
+        "targetY": 15,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "auditorium",
+      "x": 20,
+      "y": 4,
+      "w": 6,
+      "h": 4,
+      "entrance": {
+        "x": 23,
+        "y": 8,
+        "targetArea": "dream-global-hub",
+        "targetX": 14,
+        "targetY": 15,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "labTable",
+      "x": 2,
+      "y": 12,
+      "w": 6,
+      "h": 3,
+      "entrance": {
+        "x": 5,
+        "y": 15,
+        "targetArea": "dream-innovation-studio",
+        "targetX": 14,
+        "targetY": 15,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "library",
+      "x": 20,
+      "y": 12,
+      "w": 6,
+      "h": 3,
+      "entrance": {
+        "x": 23,
+        "y": 15,
+        "targetArea": "dream-mentor-garden",
+        "targetX": 14,
+        "targetY": 15,
+        "facing": "up"
+      }
+    },
+    {
+      "type": "routeGate",
+      "x": 14,
+      "y": 5
+    },
+    {
+      "type": "serviceCounter",
+      "x": 11,
+      "y": 4,
+      "w": 6,
+      "h": 1,
+      "entrance": {
+        "x": 14,
+        "y": 5,
+        "targetArea": "dream-review",
+        "targetX": 14,
+        "targetY": 15,
+        "facing": "up",
+        "requires": {
+          "completedMissions": [
+            "dream-hub-briefing",
+            "dream-career-roadmap",
+            "dream-global-network",
+            "dream-innovation-prototype",
+            "dream-mentor-consensus"
+          ]
+        },
+        "blockedMessage": "Completa primero tu portafolio de futuro antes de entrar al Centro de Síntesis."
+      }
+    }
   ],
   "people": [
     {
@@ -25,27 +135,101 @@
       "y": 11,
       "interactions": [
         {
-          "when": { "missingMissions": ["dream-hub-briefing"] },
+          "when": {
+            "missingMissions": [
+              "dream-hub-briefing"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Bienvenido al Mirador del Futuro. Aquí no memorizas frases: tomas decisiones con consecuencias." },
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Construye una visión completa: carrera, impacto global, innovación y mentoría." },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Bienvenido al Mirador del Futuro. La meta de este capítulo es preparar una defensa convincente de tu futuro ante el Consejo del Horizonte."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Hace poco escuché a una candidata prometer éxito para todos, pero nunca explicó a quién serviría, cómo mediría avances ni qué haría si el plan fallaba."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Por eso recorrerás cuatro núcleos. Cada uno añadirá una pieza a tu portafolio: hoja de ruta, pase global, prototipo responsable y acuerdo de mentoría."
+            },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál enfoque coincide con una visión profesional sostenible?",
+              "prompt": "Si quieres presentar un futuro sostenible ante el Consejo, ¿qué plan inicial demuestra madurez estratégica?",
               "options": [
-                { "label": "Definir metas medibles, revisar riesgos y ajustar estrategias con evidencia.", "correct": true, "actions": [{ "type": "completeMission", "missionId": "dream-hub-briefing" }] },
-                { "label": "Improvisar cada semana sin evaluar resultados.", "correct": false },
-                { "label": "Evitar retroalimentación para avanzar más rápido.", "correct": false }
+                {
+                  "label": "Definir un impacto concreto, convertirlo en metas medibles y revisar supuestos antes de escalar.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Valeria",
+                      "text": "Exacto. Empieza por el Laboratorio de Carrera y construye desde allí la defensa final."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "dream-hub-briefing"
+                    }
+                  ]
+                },
+                {
+                  "label": "Buscar un título impresionante y dejar la estrategia para cuando aparezcan problemas.",
+                  "correct": false
+                },
+                {
+                  "label": "Cambiar de objetivo cada semana para mantener abiertas todas las opciones.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Cuando cierres los cuatro laboratorios, entra al área de repaso." }] }
+        {
+          "when": {
+            "completedMissions": [
+              "dream-hub-briefing"
+            ],
+            "missingMissions": [
+              "dream-final-review"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "No pierdas de vista la defensa final: cada sala debe darte evidencia, no solo inspiración."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Cuando tengas la hoja de ruta, el pase global, el prototipo y la síntesis de mentoría, el Centro de Síntesis se abrirá para ti."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Tu portafolio ya puede sostener una conversación exigente. Cruza el Centro de Síntesis y prepárate para visión, estrategia y horizonte."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 14, "y": 19, "targetArea": "community-leader", "targetX": 8, "targetY": 1, "facing": "down" }
+    {
+      "x": 14,
+      "y": 19,
+      "targetArea": "community-leader",
+      "targetX": 8,
+      "targetY": 1,
+      "facing": "down"
+    }
   ]
 }

@@ -13,6 +13,7 @@
   ],
   "legend": {
     "w": "insideWall",
+    "p": "stoneFloor",
     "s": "stoneFloor",
     "c": "campusStone"
   },
@@ -84,37 +85,44 @@
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Este repaso simula una semana real de vida independiente. No evaluamos palabras sueltas; evaluamos decisiones enlazadas."
+              "text": "Este centro verifica tu primera semana viviendo por tu cuenta. La pregunta real es si puedes mantener apartamento, presupuesto, salud y vecindario sin que uno dañe al otro."
             },
             {
               "type": "showDialogue",
               "speaker": "Sofia",
-              "text": "Debes demostrar comprensión de secuencia, traducción de procesos y escucha detallada en situaciones de presión."
+              "text": "Voy a darte situaciones encadenadas. Usa lo que ya hiciste: recibos, transferencia, plan de salud y la entrega del parque."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Sofia",
+              "text": "Si respondes con precisión, los jefes verán que ya no dependes de recordatorios constantes."
             },
             {
               "type": "askChoice",
-              "prompt": "Si primero validas compra, después haces transferencia y luego cierras plan de salud, ¿qué documento queda listo para el apartamento?",
+              "prompt": "Si el banco corrigió un dato después de tu compra y luego avisaste al vecino del retraso, ¿qué demuestra esa secuencia?",
               "options": [
                 {
-                  "label": "El paquete completo de verificación del alquiler.",
+                  "label": "Que supiste ajustar prioridades y comunicar cambios sin perder el objetivo final.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "askText",
-                      "prompt": "Write in Spanish: After completing all errands, I checked each document before submitting it.",
+                      "prompt": "Write in Spanish: Before submitting the final packet, I compared expenses, confirmed schedules, and reviewed each document.",
                       "placeholder": "Respuesta en español",
                       "correctAnswers": [
-                        "Después de completar todos los recados revisé cada documento antes de entregarlo",
-                        "Despues de completar todos los recados revise cada documento antes de entregarlo"
+                        "Antes de entregar el paquete final comparé gastos confirmé horarios y revisé cada documento",
+                        "Antes de entregar el paquete final, comparé gastos, confirmé horarios y revisé cada documento",
+                        "Antes de entregar el paquete final comparé gastos, confirmé horarios y revisé cada documento",
+                        "Antes de entregar el paquete final, comparé gastos confirmé horarios y revisé cada documento"
                       ],
                       "actions": [
                         {
                           "type": "askAudioChoice",
                           "prompt": "Escucha y elige la interpretación correcta.",
-                          "audioText": "Aunque terminé las compras temprano, esperé en el banco para corregir un dato, y por eso confirmé el alquiler por la tarde.",
+                          "audioText": "Aunque terminé las compras temprano, esperé en el banco para corregir un dato, avisé al vecino del cambio y por eso confirmé el apartamento por la tarde.",
                           "options": [
                             {
-                              "label": "Terminó compras temprano, corrigió un dato en el banco y confirmó el alquiler por la tarde.",
+                              "label": "Terminó compras temprano, corrigió un dato en el banco, avisó al vecino y confirmó el apartamento por la tarde.",
                               "correct": true,
                               "actions": [
                                 {
@@ -138,7 +146,7 @@
                               "correct": false
                             },
                             {
-                              "label": "Fue directo al parque y evitó banco y clínica.",
+                              "label": "Evitó el banco y dejó la entrega sin confirmar.",
                               "correct": false
                             }
                           ],
@@ -150,11 +158,11 @@
                   ]
                 },
                 {
-                  "label": "Solo una nota de compras sin valor legal.",
+                  "label": "Que podías ignorar horarios porque ya habías comprado comida.",
                   "correct": false
                 },
                 {
-                  "label": "Una receta médica sin comprobante bancario.",
+                  "label": "Que el parque reemplaza la verificación del apartamento.",
                   "correct": false
                 }
               ],

@@ -23,7 +23,8 @@
         {
           "when": { "missingMissions": ["hs-boss-social"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Duelo social. Elige respuestas naturales en español." },
+            { "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Aquí no basta con entender palabras sueltas. Necesitas responder como compañero, amigo y estudiante." },
+            { "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Preferencias, razones y apoyo al grupo: un error y el duelo vuelve al inicio." },
             {
               "type": "askBossQuiz",
               "bossId": "hs-boss-social",
@@ -35,21 +36,26 @@
                   { "label": "I prefer buying lunch because the teacher listens to science.", "correct": false },
                   { "label": "I need a hall pass because the team is closed.", "correct": false }
                 ] },
-                { "type": "askText", "prompt": "Write in Spanish: I prefer science because I like to investigate.", "placeholder": "Respuesta en español", "correctAnswers": ["Prefiero ciencias porque me gusta investigar", "Prefiero la ciencia porque me gusta investigar"] },
-                { "type": "askChoice", "prompt": "Historia: Luis no entiende la jugada. La capitana habla despacio, muestra el balón y dice que todos pueden practicar. ¿Qué hace la capitana?", "options": [
-                  { "label": "Ayuda a Luis a entender la jugada.", "correct": true },
-                  { "label": "Compra almuerzo para Luis.", "correct": false },
-                  { "label": "Cierra el laboratorio.", "correct": false }
+                { "type": "askText", "prompt": "Write in Spanish: I prefer helping my team because we learn together.", "placeholder": "Respuesta en español", "correctAnswers": ["Prefiero ayudar a mi equipo porque aprendemos juntos", "Prefiero ayudar al equipo porque aprendemos juntos"] },
+                { "type": "askChoice", "prompt": "Historia: Mateo no quiere hablar en el club porque está nervioso. Su compañera le muestra el formulario, le explica paso a paso y practica con él. ¿Qué hace la compañera?", "options": [
+                  { "label": "Lo ayuda a participar con calma.", "correct": true },
+                  { "label": "Le compra tres almuerzos y se va.", "correct": false },
+                  { "label": "Cierra el laboratorio sin hablar.", "correct": false }
                 ] },
-                { "type": "askAudioChoice", "prompt": "Escucha y responde.", "audioText": "No puedo ir al club ahora porque tengo entrenamiento, pero voy después.", "options": [
-                  { "label": "They cannot go now because they have practice, but they will go later.", "correct": true },
-                  { "label": "They cannot eat because they forgot money, but they will read later.", "correct": false },
-                  { "label": "They cannot study because the lab is loud.", "correct": false }
+                { "type": "askAudioChoice", "prompt": "Escucha y responde.", "audioText": "Me gusta el baloncesto, pero hoy prefiero estudiar con mi amiga porque mañana tenemos examen.", "options": [
+                  { "label": "They like basketball, but today they prefer to study with a friend because they have a test tomorrow.", "correct": true },
+                  { "label": "They dislike basketball and want to eat with a friend tomorrow.", "correct": false },
+                  { "label": "They prefer the gym because the exam is already finished.", "correct": false }
                 ] },
-                { "type": "askChoice", "prompt": "--¿Quieres practicar conmigo? --No sé, el ejercicio parece difícil. --____", "options": [
-                  { "label": "Sí, pero lo hacemos paso a paso.", "correct": true },
-                  { "label": "No, la cafetería está cerrada.", "correct": false },
-                  { "label": "Tengo una calculadora verde.", "correct": false }
+                { "type": "askChoice", "prompt": "Conversación: --¿Quieres sentarte con nosotros en el almuerzo? --Sí, gracias. ____.", "options": [
+                  { "label": "Después puedo ir al club con ustedes.", "correct": true },
+                  { "label": "La pared es azul y duerme rápido.", "correct": false },
+                  { "label": "No tengo laboratorio porque la mesa canta.", "correct": false }
+                ] },
+                { "type": "askChoice", "prompt": "Tu compañero pierde un punto y se ve frustrado. ¿Qué respuesta suena mejor en el equipo?", "options": [
+                  { "label": "Tranquilo, practicamos otra vez juntos.", "correct": true },
+                  { "label": "Mejor compra pan y no vuelvas.", "correct": false },
+                  { "label": "Prefiero cerrar la puerta y dormir.", "correct": false }
                 ] }
               ],
               "actions": [
@@ -59,7 +65,7 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Ve al club final." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Capitana del Equipo", "text": "Bien. Ya puedes entrar al duelo final del club." }] }
       ]
     }
   ],

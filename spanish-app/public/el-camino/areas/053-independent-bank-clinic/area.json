@@ -14,6 +14,7 @@
   ],
   "legend": {
     "w": "insideWall",
+    "p": "stoneFloor",
     "s": "stoneFloor",
     "g": "lightGreenFloor",
     "r": "lightRedFloor"
@@ -83,25 +84,25 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Para activar pago de alquiler debes confirmar identidad, monto mensual y concepto de transferencia."
+              "text": "Cuando un vecino paga el alquiler aquí, primero explica el motivo de la transferencia y luego confirma identidad y monto. Así evitamos comprobantes incompletos."
             },
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "La transferencia no es solo \"enviar dinero\"; también genera un comprobante para auditoría."
+              "text": "Si falta uno de esos datos, el dinero puede salir igual, pero el expediente no queda claro para la auditoría."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Cuál opción describe mejor la transferencia que pide Javier?",
+              "prompt": "Si el banco ya vio tu tarjeta pero aún no entiende para qué es el pago, ¿qué falta antes de aprobar la transferencia?",
               "options": [
                 {
-                  "label": "Confirmar identidad, monto y concepto para obtener comprobante.",
+                  "label": "Confirmar el monto y explicar que es una transferencia de alquiler para recibir comprobante.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "showDialogue",
                       "speaker": "Javier",
-                      "text": "Correcto. Aquí está tu comprobante bancario."
+                      "text": "Correcto. Aquí está tu comprobante bancario para el expediente del apartamento."
                     },
                     {
                       "type": "addItem",
@@ -115,11 +116,11 @@
                   ]
                 },
                 {
-                  "label": "Retirar efectivo sin registrar datos.",
+                  "label": "Retirar efectivo sin registrar el concepto del pago.",
                   "correct": false
                 },
                 {
-                  "label": "Pedir café y cerrar la cuenta.",
+                  "label": "Salir del banco y esperar que otra persona lo explique.",
                   "correct": false
                 }
               ],
@@ -132,7 +133,7 @@
             {
               "type": "showDialogue",
               "speaker": "Javier",
-              "text": "Trae tu tarjeta de identificación para procesar la transferencia."
+              "text": "Trae tu tarjeta y prepárate para explicar monto y concepto de la transferencia."
             }
           ]
         }
@@ -162,12 +163,12 @@
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "La clínica evalúa hábitos reales. Traer fruta y seguir hidratación demuestra prevención, no reacción tardía."
+              "text": "En la clínica no esperamos al cansancio extremo. Un buen plan de salud se arma cuando todavía tienes energía para sostener la semana."
             },
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Escucha la indicación completa: hidratarse, caminar y dormir suficiente para mantener energía laboral."
+              "text": "La manzana sirve como recordatorio: comer mejor y beber agua a tiempo evita errores cuando luego vuelves a revisar documentos."
             },
             {
               "type": "askAudioChoice",
@@ -222,7 +223,7 @@
             {
               "type": "showDialogue",
               "speaker": "Elena",
-              "text": "Necesito una manzana para completar tu expediente nutricional."
+              "text": "Necesito una manzana para completar tu expediente nutricional y registrar hábitos."
             }
           ]
         }
@@ -255,17 +256,27 @@
           },
           "actions": [
             {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Banco y clínica forman un mismo bloque porque uno protege tu dinero y el otro tu energía. Sin los dos, Valeria no puede confiar en que sostendrás el apartamento."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Isabel",
+              "text": "Piensa en el paquete completo, no en dos recados aislados."
+            },
+            {
               "type": "askChoice",
-              "prompt": "Si ya tienes comprobante bancario y plan de salud, ¿qué estado corresponde?",
+              "prompt": "Si Javier ya registró la transferencia y Elena ya aprobó el plan de salud, ¿qué puedes reportar?",
               "options": [
                 {
-                  "label": "Banco y clínica completados y listos para verificación final.",
+                  "label": "Que el bloque banco-clínica quedó validado para la verificación final.",
                   "correct": true,
                   "actions": [
                     {
                       "type": "showDialogue",
                       "speaker": "Isabel",
-                      "text": "Excelente. El bloque banco-clínica está validado."
+                      "text": "Excelente. El bloque banco-clínica ya cuenta como resuelto en tu semana independiente."
                     },
                     {
                       "type": "completeMission",
@@ -274,11 +285,11 @@
                   ]
                 },
                 {
-                  "label": "Falta empezar todos los trámites desde cero.",
+                  "label": "Que todavía debes empezar todos los trámites desde cero.",
                   "correct": false
                 },
                 {
-                  "label": "Solo importa la conversación del parque.",
+                  "label": "Que el parque reemplaza cualquier comprobante de salud.",
                   "correct": false
                 }
               ],
@@ -291,7 +302,7 @@
             {
               "type": "showDialogue",
               "speaker": "Isabel",
-              "text": "Verifica comprobante bancario y plan de salud para cerrar este bloque."
+              "text": "Verifica comprobante bancario y plan de salud antes de salir."
             }
           ]
         }

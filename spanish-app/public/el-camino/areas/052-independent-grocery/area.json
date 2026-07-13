@@ -171,19 +171,19 @@
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "Aquí no compramos al azar. Para una semana independiente necesitas cantidades exactas y prioridades."
+              "text": "Hacer mercado para una semana no es llenar el carrito: es escoger lo necesario y dejar espacio para alquiler y salud."
             },
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "Lista base: un pan integral, una leche y una manzana. Después pagas y pides recibo sellado."
+              "text": "Piensa en otra vecina del barrio: compró solo lo básico, pidió recibo sellado y después usó la fruta para su cita médica. Así una compra resolvió varios recados."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué elemento NO aparece en la lista base de Carlos?",
+              "prompt": "Si quieres seguir ese plan, ¿qué combinación debes reunir antes de ir a caja?",
               "options": [
                 {
-                  "label": "Calculadora",
+                  "label": "Pan, leche y manzana; después pedir el recibo sellado.",
                   "correct": true,
                   "actions": [
                     {
@@ -193,11 +193,11 @@
                   ]
                 },
                 {
-                  "label": "Pan integral",
+                  "label": "Solo ofertas al azar y pagar sin recibo.",
                   "correct": false
                 },
                 {
-                  "label": "Leche",
+                  "label": "Un café y una libreta para evitar el supermercado.",
                   "correct": false
                 }
               ],
@@ -210,7 +210,7 @@
             {
               "type": "showDialogue",
               "speaker": "Carlos",
-              "text": "Recoge pan, leche y manzana antes de ir a caja."
+              "text": "Recoge pan, leche y manzana; después habla con Emma para el recibo sellado."
             }
           ]
         }
@@ -248,21 +248,30 @@
             {
               "type": "showDialogue",
               "speaker": "Emma",
-              "text": "Veo tu compra completa. Para trámites de alquiler necesitas hablar con precisión y pedir recibo formal."
+              "text": "Muy bien. En caja no basta con decir \"dame un papel\". En un trámite formal, pides el recibo y explicas para qué lo necesitas."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Emma",
+              "text": "Si la solicitud es clara, el sello sale rápido y evita que tengas que regresar luego."
             },
             {
               "type": "askText",
-              "prompt": "Write in Spanish: Good afternoon, I need the stamped receipt for rent verification.",
+              "prompt": "Write in Spanish: Good afternoon, could you give me the stamped receipt for the apartment verification?",
               "placeholder": "Respuesta en español",
               "correctAnswers": [
-                "Buenas tardes necesito el recibo sellado para la verificación del alquiler",
-                "Buenas tardes, necesito el recibo sellado para la verificación del alquiler"
+                "Buenas tardes me puede dar el recibo sellado para la verificación del apartamento",
+                "Buenas tardes, me puede dar el recibo sellado para la verificación del apartamento",
+                "Buenas tardes ¿me puede dar el recibo sellado para la verificación del apartamento?",
+                "Buenas tardes, ¿me puede dar el recibo sellado para la verificación del apartamento?",
+                "Buenas tardes necesito el recibo sellado para la verificación del apartamento",
+                "Buenas tardes, necesito el recibo sellado para la verificación del apartamento"
               ],
               "actions": [
                 {
                   "type": "showDialogue",
                   "speaker": "Emma",
-                  "text": "Excelente. Aquí está tu sello del mercado."
+                  "text": "Perfecto. Aquí tienes el sello que le mostrarás a Valeria."
                 },
                 {
                   "type": "addItem",
@@ -283,7 +292,7 @@
             {
               "type": "showDialogue",
               "speaker": "Emma",
-              "text": "Sin compra completa no puedo emitir recibo sellado."
+              "text": "Sin compra completa no puedo emitir el recibo sellado del apartamento."
             }
           ]
         }

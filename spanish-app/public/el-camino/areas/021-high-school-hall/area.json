@@ -24,25 +24,30 @@
         {
           "when": { "hasItems": [{ "itemId": "scheduleCard", "count": 1 }], "missingMissions": ["hs-hall-pass"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Elena", "text": "Veo tu horario. Si tienes ciencias primero, necesitas llegar al laboratorio antes de la campana." },
-            { "type": "showDialogue", "speaker": "Elena", "text": "También necesitas un pase para el gimnasio. Está en el casillero correcto." },
+            { "type": "showDialogue", "speaker": "Elena", "text": "Yo llego antes de la campana, guardo mi mochila y después camino al laboratorio. Así no llego tarde." },
+            { "type": "showDialogue", "speaker": "Elena", "text": "Cuando alguien llega después de la campana, ya perdió tiempo. Tú necesitas entender ese orden para moverte bien hoy." },
+            { "type": "showDialogue", "speaker": "Elena", "text": "Además, Diego en el gimnasio solo acepta estudiantes con pase." },
             {
               "type": "askChoice",
-              "prompt": "Elena says you need to arrive antes de la campana. What does antes imply?",
+              "prompt": "Si la clase empieza a las ocho y tú llegas a las siete y cincuenta, ¿llegas antes o después?",
               "options": [
-                { "label": "before", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Elena", "text": "Correcto. Antes de la campana." },
-                  { "type": "addItem", "itemId": "gymPass", "count": 1 },
-                  { "type": "completeMission", "missionId": "hs-hall-pass" }
-                ] },
-                { "label": "after", "correct": false },
-                { "label": "never", "correct": false }
+                {
+                  "label": "Antes.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Elena", "text": "Muy bien. Entonces puedes moverte sin llegar tarde." },
+                    { "type": "addItem", "itemId": "gymPass", "count": 1 },
+                    { "type": "completeMission", "missionId": "hs-hall-pass" }
+                  ]
+                },
+                { "label": "Después.", "correct": false },
+                { "label": "Nunca.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Trae tu horario. Después puedes ir al gimnasio." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Elena", "text": "Trae tu horario. Después te doy el pase para el gimnasio." }] }
       ]
     },
     {
@@ -53,15 +58,16 @@
         {
           "when": { "completedMissions": ["hs-hall-pass"], "missingMissions": ["hs-club-form"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Javier", "text": "Estoy organizando clubes. Si quieres unirte, necesitas formulario." },
-            { "type": "showDialogue", "speaker": "Javier", "text": "El formulario pregunta: ¿qué prefieres, música, ciencias o deportes?" },
+            { "type": "showDialogue", "speaker": "Javier", "text": "En la feria de clubes no basta decir me gusta todo. Necesitas una preferencia clara y una razón sencilla." },
+            { "type": "showDialogue", "speaker": "Javier", "text": "Por ejemplo, Ana dice: me interesa el arte porque dibuja todos los días. Yo entiendo enseguida por qué quiere entrar." },
+            { "type": "showDialogue", "speaker": "Javier", "text": "Practica ahora, porque más tarde la directora del club te hará preguntas parecidas." },
             {
               "type": "askText",
-              "prompt": "Responde en español con una preferencia: I prefer science.",
+              "prompt": "Escribe en español: I prefer science club because experiments interest me.",
               "placeholder": "Respuesta en español",
-              "correctAnswers": ["Prefiero ciencias", "Yo prefiero ciencias"],
+              "correctAnswers": ["Prefiero el club de ciencias porque me interesan los experimentos", "Prefiero ciencias porque me interesan los experimentos", "Prefiero el club de ciencias porque me interesa experimentar"],
               "actions": [
-                { "type": "showDialogue", "speaker": "Javier", "text": "Buena elección. Lleva este formulario al club." },
+                { "type": "showDialogue", "speaker": "Javier", "text": "Suena claro y natural. Lleva este formulario al laboratorio." },
                 { "type": "addItem", "itemId": "clubForm", "count": 1 },
                 { "type": "completeMission", "missionId": "hs-club-form" }
               ],
@@ -69,7 +75,7 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "Prefiero ciencias. ¿Y tú?" }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Javier", "text": "Consigue primero el pase del pasillo. Después practicarás tu respuesta para el club." }] }
       ]
     }
   ],

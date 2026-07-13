@@ -23,41 +23,49 @@
         {
           "when": { "missingMissions": ["college-boss-final"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Rectora del Campus", "text": "Duelo final universitario. Todo el capítulo cuenta." },
+            { "type": "showDialogue", "speaker": "Rectora del Campus", "text": "Entrevista final: hoy debes demostrar que puedes vivir un día universitario completo en español." },
+            { "type": "showDialogue", "speaker": "Rectora del Campus", "text": "Conecta dormitorio, materiales, estudio y decisiones. Si fallas una vez, empiezas desde el principio." },
             {
               "type": "askBossQuiz",
               "bossId": "college-boss-final",
               "title": "Duelo de la Insignia",
-              "restartMessage": "No. La rectoría reinicia la entrevista.",
+              "restartMessage": "No. Empieza desde la primera pregunta.",
               "questions": [
                 { "type": "askChoice", "prompt": "Translate: Después de comprar el libro y la calculadora, me reuní con mis compañeros para preparar el examen.", "options": [
                   { "label": "After buying the book and calculator, I met with my classmates to prepare for the exam.", "correct": true },
                   { "label": "Before buying coffee and bread, I cleaned the gym for the team.", "correct": false },
                   { "label": "After losing my notes, I left college forever.", "correct": false }
                 ] },
-                { "type": "askText", "prompt": "Write in Spanish: I should organize my time because the final exam is tomorrow.", "placeholder": "Respuesta en español", "correctAnswers": ["Debería organizar mi tiempo porque el examen final es mañana", "Deberia organizar mi tiempo porque el examen final es manana"] },
-                { "type": "askChoice", "prompt": "Historia: Una estudiante tiene poco dinero. Compra un libro usado, comparte apuntes con su grupo y toma café después de estudiar. ¿Qué decisión muestra responsabilidad?",
+                { "type": "askText", "prompt": "Write in Spanish: I should organize my time because the final exam is tomorrow.", "placeholder": "Respuesta en español", "correctAnswers": ["Debería organizar mi tiempo porque el examen final es mañana", "Deberia organizar mi tiempo porque el examen final es manana", "Debo organizar mi tiempo porque el examen final es mañana", "Debo organizar mi tiempo porque el examen final es manana"] },
+                { "type": "askChoice", "prompt": "Historia: Una estudiante tiene poco dinero, comparte apuntes con su grupo y decide descansar solo después de terminar un esquema para el examen. ¿Qué decisión muestra más responsabilidad universitaria?",
                   "options": [
-                    { "label": "Compra usado, comparte apuntes y estudia antes del café.", "correct": true },
+                    { "label": "Termina el esquema y luego descansa con su grupo.", "correct": true },
                     { "label": "Compra tres cafés y evita el examen.", "correct": false },
-                    { "label": "Pierde la calculadora y no avisa al grupo.", "correct": false }
+                    { "label": "Pierde la calculadora y no avisa a nadie.", "correct": false }
                   ]
                 },
-                { "type": "askAudioChoice", "prompt": "Escucha. ¿Cuál es el plan completo?", "audioText": "Primero voy a la librería, después estudio en la biblioteca y finalmente descanso en el café con mis amigos.", "options": [
-                  { "label": "Bookstore, library study, then café rest with friends.", "correct": true },
-                  { "label": "Dorm laundry, science lab, then gym practice.", "correct": false },
-                  { "label": "Cafeteria lunch, art poster, then elementary library.", "correct": false }
+                { "type": "askAudioChoice", "prompt": "Escucha. ¿Cuál es el plan completo?", "audioText": "Primero voy a la librería, después estudio en la biblioteca con mis apuntes y finalmente descanso en el café con mis amigos antes del examen.", "options": [
+                  { "label": "Bookstore, library study with notes, then café rest with friends before the exam.", "correct": true },
+                  { "label": "Dorm laundry, science lab, then gym practice with the team.", "correct": false },
+                  { "label": "Cafeteria lunch, art poster, then elementary library homework.", "correct": false }
                 ] },
                 { "type": "askChoice", "prompt": "--¿Te gustaría participar en el grupo de estudio? --No estoy seguro; hablo despacio. --____", "options": [
                   { "label": "No importa; podemos escucharte y ayudarte a practicar.", "correct": true },
                   { "label": "Entonces no compres ningún libro.", "correct": false },
                   { "label": "La calculadora prefiere dormir.", "correct": false }
                 ] },
-                { "type": "askChoice", "prompt": "¿Qué lugar del capítulo conecta apuntes, silencio y preparación para exámenes?",
+                { "type": "askChoice", "prompt": "¿Qué lugar del capítulo conecta silencio, apuntes y preparación para exámenes?",
                   "options": [
                     { "label": "La biblioteca universitaria.", "correct": true },
-                    { "label": "El dormitorio solamente.", "correct": false },
-                    { "label": "La fuente del campus.", "correct": false }
+                    { "label": "La fuente del campus solamente.", "correct": false },
+                    { "label": "El dormitorio sin compañeros.", "correct": false }
+                  ]
+                },
+                { "type": "askChoice", "prompt": "Antes de esta entrevista final, ¿qué combinación demuestra que completaste tu día universitario?",
+                  "options": [
+                    { "label": "Dormitorio resuelto, materiales comprados, apuntes encontrados y repaso final con café.", "correct": true },
+                    { "label": "Solo una visita rápida al café y ninguna preparación.", "correct": false },
+                    { "label": "Un paseo por la plaza sin libro, sin notas y sin plan.", "correct": false }
                   ]
                 }
               ],
@@ -69,7 +77,7 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Rectora del Campus", "text": "La insignia universitaria está en tu bolsa." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Rectora del Campus", "text": "La insignia universitaria ya está en tu bolsa." }] }
       ]
     }
   ],

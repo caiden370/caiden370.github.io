@@ -13,6 +13,7 @@ export const terrainTiles = {
   asphalt: { color: 0x56616b, walkable: true },
   track: { color: 0xb64c2e, walkable: true },
   gymFloor: { color: 0xd6a348, walkable: true },
+  tatamiFloor: { color: 0xd8c78f, walkable: true },
   carpetBlue: { color: 0x4568a8, walkable: true },
   campusStone: { color: 0xd6d2c4, walkable: true }
 };
@@ -30,6 +31,7 @@ export const objectTypes = {
   school: { color: 0xf0c84b, walkable: false, label: "School" },
   office: { color: 0x7d8aa2, walkable: false, label: "Office" },
   gym: { color: 0xe67e22, walkable: false, label: "Gym" },
+  dojo: { color: 0xb91c1c, walkable: false, label: "Training dojo" },
   library: { color: 0x4f8fd8, walkable: false, label: "Library" },
   dorm: { color: 0x50a96b, walkable: false, label: "Dorm" },
   auditorium: { color: 0x9b59b6, walkable: false, label: "Auditorium" },
@@ -111,7 +113,10 @@ export const objectTypes = {
   skyline: { color: 0x34495e, walkable: false, label: "Skyline" },
   questSparkle: { color: 0xffd166, walkable: true, label: "Quest sparkle" },
   itemSparkle: { color: 0x8ed8ff, walkable: true, label: "Item sparkle" },
-  routeGate: { color: 0xffd166, walkable: false, label: "Route gate" }
+  routeGate: { color: 0xffd166, walkable: false, label: "Route gate" },
+  dojoBanner: { color: 0xb91c1c, walkable: false, label: "Dojo banner" },
+  trainingDummy: { color: 0x9a6733, walkable: false, label: "Training dummy" },
+  weaponRack: { color: 0x5d3519, walkable: false, label: "Practice weapon rack" }
 };
 
 export const people = [

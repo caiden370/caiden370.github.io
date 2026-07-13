@@ -5,15 +5,49 @@
   "chapterId": "family",
   "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["síntesis avanzada", "empatía aplicada", "resolución de conflicto"],
-  "legend": { "w": "insideWall", "s": "stoneFloor", "p": "woodFloor" },
-  "playerStart": { "x": 1, "y": 6, "facing": "right" },
+  "teaches": [
+    "síntesis avanzada",
+    "empatía aplicada",
+    "resolución de conflicto"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "s": "stoneFloor",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 1,
+    "y": 6,
+    "facing": "right"
+  },
   "objects": [
-    { "type": "trophyCase", "x": 9, "y": 2 },
-    { "type": "meetingTable", "x": 5, "y": 8, "w": 10, "h": 1 },
-    { "type": "microphone", "x": 10, "y": 5 },
-    { "type": "familyPhoto", "x": 6, "y": 3 },
-    { "type": "familyPhoto", "x": 13, "y": 3 }
+    {
+      "type": "trophyCase",
+      "x": 9,
+      "y": 2
+    },
+    {
+      "type": "meetingTable",
+      "x": 5,
+      "y": 8,
+      "w": 10,
+      "h": 1
+    },
+    {
+      "type": "microphone",
+      "x": 10,
+      "y": 5
+    },
+    {
+      "type": "familyPhoto",
+      "x": 6,
+      "y": 3
+    },
+    {
+      "type": "familyPhoto",
+      "x": 13,
+      "y": 3
+    }
   ],
   "people": [
     {
@@ -23,9 +57,27 @@
       "boss": true,
       "interactions": [
         {
-          "when": { "missingMissions": ["family-boss-final"] },
+          "when": {
+            "missingMissions": [
+              "family-boss-final"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Mediadora Mayor", "text": "Duelo final: historia, inferencia, consejo y reparación real." },
+            {
+              "type": "showDialogue",
+              "speaker": "Mediadora Mayor",
+              "text": "Último círculo: debes unir recuerdos, emociones, consejo y compromiso sin perder a nadie en el proceso."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Mediadora Mayor",
+              "text": "Una mediación adulta no busca aplastar diferencias; busca que cada persona salga escuchada y con tareas claras."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Mediadora Mayor",
+              "text": "Si fallas, el círculo pierde su forma y empieza otra vez."
+            },
             {
               "type": "askBossQuiz",
               "bossId": "family-boss-final",
@@ -36,24 +88,45 @@
                   "type": "askChoice",
                   "prompt": "Traduce: Aunque me dolió lo que dijiste, prefiero hablar ahora para que no crezca el resentimiento.",
                   "options": [
-                    { "label": "Although what you said hurt me, I prefer to talk now so resentment does not grow.", "correct": true },
-                    { "label": "Even though I agreed with you, I will ignore this forever.", "correct": false },
-                    { "label": "What you said was funny, so no conversation is needed.", "correct": false }
+                    {
+                      "label": "Although what you said hurt me, I prefer to talk now so resentment does not grow.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Even though I agreed with you, I will ignore this forever.",
+                      "correct": false
+                    },
+                    {
+                      "label": "What you said was funny, so no conversation is needed.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
                   "type": "askText",
                   "prompt": "Write in Spanish: We are not looking for winners; we are looking for an honest agreement.",
                   "placeholder": "Respuesta en español",
-                  "correctAnswers": ["No buscamos ganadores buscamos un acuerdo honesto", "No buscamos ganadores; buscamos un acuerdo honesto"]
+                  "correctAnswers": [
+                    "No buscamos ganadores buscamos un acuerdo honesto",
+                    "No buscamos ganadores; buscamos un acuerdo honesto"
+                  ]
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "Historia: Durante la cena, una persona llora en silencio. Otra le ofrece agua y propone una pausa. ¿Qué habilidad aparece?",
+                  "prompt": "Historia: Durante la cena, una prima admite que evitó la reunión por vergüenza; Ana la escucha, Diego resume sin juzgar y Sofía reparte turnos. ¿Qué vuelve útil esa escena?",
                   "options": [
-                    { "label": "Empatía práctica antes de volver al debate.", "correct": true },
-                    { "label": "Controlar a la persona para acelerar la agenda.", "correct": false },
-                    { "label": "Ignorar emociones para evitar incomodidad.", "correct": false }
+                    {
+                      "label": "Que combinan escucha, síntesis y estructura antes de pedir un acuerdo.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Que apresuran la conversación para que nadie llore.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Que cambian de tema antes de entender lo ocurrido.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
@@ -61,27 +134,54 @@
                   "prompt": "Escucha y detecta la intención principal.",
                   "audioText": "No te pido que pienses igual que yo; te pido que no reduzcas mi experiencia a una exageración.",
                   "options": [
-                    { "label": "Pide respeto por su experiencia, no uniformidad total.", "correct": true },
-                    { "label": "Exige que todos adopten su misma postura.", "correct": false },
-                    { "label": "Quiere cancelar toda conversación futura.", "correct": false }
+                    {
+                      "label": "Pide respeto por su experiencia, no uniformidad total.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Exige que todos adopten su misma postura.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Quiere cancelar toda conversación futura.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
                   "type": "askChoice",
                   "prompt": "--Siento que me juzgan cuando hablo de mi error. --____",
                   "options": [
-                    { "label": "Gracias por decirlo; podemos escuchar sin etiquetar tu intención.", "correct": true },
-                    { "label": "Entonces no hables de tus errores en público.", "correct": false },
-                    { "label": "Si te juzgan, mejor no vengas a la cena.", "correct": false }
+                    {
+                      "label": "Gracias por decirlo; podemos escuchar sin etiquetar tu intención.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Entonces no hables de tus errores en público.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Si te juzgan, mejor no vengas a la cena.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Qué secuencia refleja mejor el capítulo completo?",
+                  "prompt": "Ana agradece la presencia, Diego explica el pasado, Sofía organiza turnos y Valeria resume acuerdos. ¿Qué logra esa secuencia?",
                   "options": [
-                    { "label": "Carta empática, turnos, menú común, repaso y duelos.", "correct": true },
-                    { "label": "Duelo final primero y casas después.", "correct": false },
-                    { "label": "Solo compras en plaza sin diálogo familiar.", "correct": false }
+                    {
+                      "label": "Transforma emociones dispersas en un compromiso compartido.",
+                      "correct": true
+                    },
+                    {
+                      "label": "Hace que una sola persona controle toda la cena.",
+                      "correct": false
+                    },
+                    {
+                      "label": "Evita que se nombren los conflictos reales.",
+                      "correct": false
+                    }
                   ]
                 },
                 {
@@ -95,18 +195,44 @@
                 }
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Mediadora Mayor", "text": "Ganaste la insignia del capítulo siete." },
-                { "type": "addItem", "itemId": "chapterSevenBadge", "count": 1 },
-                { "type": "completeMission", "missionId": "family-boss-final" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Mediadora Mayor",
+                  "text": "Ganaste la insignia del capítulo siete y cerraste el reencuentro del barrio."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "chapterSevenBadge",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "family-boss-final"
+                }
               ]
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Mediadora Mayor", "text": "La insignia familiar ya está en tu bolsa." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Mediadora Mayor",
+              "text": "La insignia familiar ya está en tu bolsa."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 0, "y": 6, "targetArea": "family-boss-advice", "targetX": 18, "targetY": 6, "facing": "left" }
+    {
+      "x": 0,
+      "y": 6,
+      "targetArea": "family-boss-advice",
+      "targetX": 18,
+      "targetY": 6,
+      "facing": "left"
+    }
   ]
 }

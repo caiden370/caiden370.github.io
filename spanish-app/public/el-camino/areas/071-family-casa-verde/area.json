@@ -5,16 +5,60 @@
   "chapterId": "family",
   "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["invitación", "recuerdo", "reconciliarse", "agradecer", "escuchar sin interrumpir"],
-  "legend": { "w": "insideWall", "c": "lightGreenFloor", "p": "woodFloor" },
-  "playerStart": { "x": 10, "y": 1, "facing": "down" },
+  "teaches": [
+    "invitación",
+    "recuerdo",
+    "reconciliarse",
+    "agradecer",
+    "reencuentro"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "lightGreenFloor",
+    "p": "woodFloor"
+  },
+  "playerStart": {
+    "x": 10,
+    "y": 1,
+    "facing": "down"
+  },
   "objects": [
-    { "type": "familyPhoto", "x": 4, "y": 3 },
-    { "type": "familyPhoto", "x": 15, "y": 3 },
-    { "type": "couch", "x": 5, "y": 6, "w": 3, "h": 1 },
-    { "type": "table", "x": 12, "y": 6, "w": 3, "h": 1 },
-    { "type": "kitchenCounter", "x": 3, "y": 9, "w": 4, "h": 1 },
-    { "type": "plant", "x": 16, "y": 9 }
+    {
+      "type": "familyPhoto",
+      "x": 4,
+      "y": 3
+    },
+    {
+      "type": "familyPhoto",
+      "x": 15,
+      "y": 3
+    },
+    {
+      "type": "couch",
+      "x": 5,
+      "y": 6,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "table",
+      "x": 12,
+      "y": 6,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "kitchenCounter",
+      "x": 3,
+      "y": 9,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "plant",
+      "x": 16,
+      "y": 9
+    }
   ],
   "people": [
     {
@@ -23,26 +67,59 @@
       "y": 5,
       "interactions": [
         {
-          "when": { "missingMissions": ["family-verde-letter"] },
+          "when": {
+            "missingMissions": [
+              "family-verde-letter"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Ana", "text": "Organizo una noche de historias para que dos primos vuelvan a hablarse con calma." },
-            { "type": "showDialogue", "speaker": "Ana", "text": "Necesito que lleves esta carta a Diego, en la casa roja. No es una orden, es una invitación con cariño." },
-            { "type": "showDialogue", "speaker": "Ana", "text": "La carta reconoce errores y propone escuchar antes de discutir." },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Esta casa inicia el reencuentro. Antes de pedir perdón, me gusta recordar una escena buena: una merienda tranquila, una foto, una risa compartida."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Después recién nombro el problema y abro la puerta a escuchar. Por eso mi carta a Diego no presiona; invita."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Si la entregas con calma, la reunión pasará de recuerdos rotos a historias compartidas."
+            },
             {
               "type": "askChoice",
-              "prompt": "¿Qué busca Ana al enviar la carta?",
+              "prompt": "¿Qué pretende lograr Ana con esta primera carta?",
               "options": [
                 {
-                  "label": "Reconstruir la comunicación familiar con empatía.",
+                  "label": "Abrir un reencuentro empático para que Diego vuelva a contar su parte.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Ana", "text": "Sí. Entrega la carta con respeto." },
-                    { "type": "addItem", "itemId": "rosaLetter", "count": 1 },
-                    { "type": "completeMission", "missionId": "family-verde-letter" }
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Ana",
+                      "text": "Sí. Llévasela a Diego en la Casa Roja y vuelve luego cuando la mesa común tenga comida y calma."
+                    },
+                    {
+                      "type": "addItem",
+                      "itemId": "rosaLetter",
+                      "count": 1
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "family-verde-letter"
+                    }
                   ]
                 },
-                { "label": "Cancelar la reunión y evitar conversaciones difíciles.", "correct": false },
-                { "label": "Pedir dinero para decorar la plaza.", "correct": false }
+                {
+                  "label": "Cerrar la conversación antes de escuchar a nadie.",
+                  "correct": false
+                },
+                {
+                  "label": "Pedir dinero para decorar la plaza sin hablar del conflicto.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
@@ -50,27 +127,94 @@
         },
         {
           "when": {
-            "hasItems": [{ "itemId": "bread", "count": 1 }, { "itemId": "milk", "count": 1 }, { "itemId": "apple", "count": 1 }],
-            "completedMissions": ["family-roja-bread", "family-azul-emotions", "family-plaza-menu"],
-            "missingMissions": ["family-verde-ready"]
+            "hasItems": [
+              {
+                "itemId": "bread",
+                "count": 1
+              },
+              {
+                "itemId": "milk",
+                "count": 1
+              },
+              {
+                "itemId": "apple",
+                "count": 1
+              }
+            ],
+            "completedMissions": [
+              "family-roja-bread",
+              "family-azul-emotions",
+              "family-plaza-menu"
+            ],
+            "missingMissions": [
+              "family-verde-ready"
+            ]
           },
           "actions": [
-            { "type": "showDialogue", "speaker": "Ana", "text": "Ya trajiste pan, leche y manzana. La mesa ya puede unir a todos." },
-            { "type": "showDialogue", "speaker": "Ana", "text": "Antes de empezar, formula una frase completa que combine comida y escucha." },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Ya regresaste con el pan de Elena, la leche de Sofía y la manzana que Javier entregó después de leer el tono."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Eso significa que la familia ya trae comida y también herramientas para escucharse sin interrumpirse."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Cierra la idea con una frase que una mesa compartida y paciencia."
+            },
             {
               "type": "askText",
               "prompt": "Write in Spanish: Tonight we share dinner and listen with patience.",
               "placeholder": "Respuesta en español",
-              "correctAnswers": ["Esta noche compartimos la cena y escuchamos con paciencia", "Esta noche compartimos cena y escuchamos con paciencia"],
+              "correctAnswers": [
+                "Esta noche compartimos la cena y escuchamos con paciencia",
+                "Esta noche compartimos cena y escuchamos con paciencia"
+              ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Ana", "text": "Perfecto. La Casa Verde está lista." },
-                { "type": "completeMission", "missionId": "family-verde-ready" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Ana",
+                  "text": "Muy bien. Con esa idea, la Casa Verde deja de ser recuerdo y se convierte en punto de encuentro."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "family-verde-ready"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Primero carta, luego ingredientes y síntesis emocional." }] }
+        {
+          "when": {
+            "completedMissions": [
+              "family-verde-letter"
+            ],
+            "missingMissions": [
+              "family-verde-ready"
+            ]
+          },
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Diego ya recibió la carta. Ahora sigue el hilo del barrio: Casa Roja, Casa Azul, regreso con ingredientes y luego la plaza."
+            }
+          ]
+        },
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "La carta abrió la puerta; ahora mantén unido todo el circuito del reencuentro."
+            }
+          ]
+        }
       ]
     },
     {
@@ -80,14 +224,29 @@
       "interactions": [
         {
           "actions": [
-            { "type": "showDialogue", "speaker": "Nico", "text": "Si alguien tarda en responder, no siempre es rechazo; puede ser inseguridad." },
-            { "type": "showDialogue", "speaker": "Nico", "text": "En este capítulo, interpretar contexto cambia la respuesta correcta." }
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Una foto familiar puede despertar ternura y también vergüenza; por eso aquí casi nadie dice todo de golpe."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Nico",
+              "text": "Si escuchas solo las palabras, te pierdes la mitad. Mira también lo que cada recuerdo intenta reparar."
+            }
           ]
         }
       ]
     }
   ],
   "exits": [
-    { "x": 10, "y": 11, "targetArea": "family-neighborhood", "targetX": 5, "targetY": 6, "facing": "down" }
+    {
+      "x": 10,
+      "y": 11,
+      "targetArea": "family-neighborhood",
+      "targetX": 5,
+      "targetY": 6,
+      "facing": "down"
+    }
   ]
 }

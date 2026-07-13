@@ -22,12 +22,13 @@
         {
           "when": { "missingMissions": ["travel-boss-directions"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Primer duelo: rutas ambiguas, anuncios rápidos y decisiones precisas." },
+            { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Primer duelo: rutas ambiguas, anuncios rápidos y desvíos urbanos." },
+            { "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Si pierdes una referencia, rehaces todo el trayecto. Aquí solo cuenta la precisión sostenida." },
             {
               "type": "askBossQuiz",
               "bossId": "travel-boss-directions",
               "title": "Duelo de Direcciones",
-              "restartMessage": "No. El recorrido se reinicia desde el inicio.",
+              "restartMessage": "No. El recorrido se reinicia.",
               "questions": [
                 {
                   "type": "askChoice",
@@ -77,7 +78,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Qué zona del capítulo combinó entrega y comprensión de rutas urbanas?",
+                  "prompt": "¿Qué parte del capítulo te obligó a entender una entrega y luego regresar usando referencias urbanas?",
                   "options": [
                     { "label": "El Café de la Ciudad.", "correct": true },
                     { "label": "La sala de facturación solamente.", "correct": false },
@@ -92,7 +93,7 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Continúa al duelo de emergencias." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Mentor del Horario", "text": "Sigue al duelo de emergencias." }] }
       ]
     }
   ],

@@ -5,17 +5,69 @@
   "chapterId": "family",
   "region": "Chapter 7: Family Neighborhood",
   "cefrLevel": "B2",
-  "teaches": ["coordinar", "negociar", "resumir", "escuchar posturas", "acuerdos"],
-  "legend": { "g": "grass", "p": "dirtPath", "s": "stoneFloor" },
-  "playerStart": { "x": 14, "y": 1, "facing": "down" },
+  "teaches": [
+    "coordinar",
+    "negociar",
+    "resumir",
+    "escuchar posturas",
+    "cerrar acuerdos"
+  ],
+  "legend": {
+    "g": "grass",
+    "p": "dirtPath",
+    "s": "stoneFloor"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 1,
+    "facing": "down"
+  },
   "objects": [
-    { "type": "eventBooth", "x": 4, "y": 3, "w": 3, "h": 1 },
-    { "type": "grill", "x": 22, "y": 3 },
-    { "type": "birthdayTable", "x": 22, "y": 5, "w": 3, "h": 1 },
-    { "type": "menuBoard", "x": 4, "y": 5, "w": 3, "h": 1 },
-    { "type": "microphone", "x": 14, "y": 13 },
-    { "type": "table", "x": 10, "y": 17, "w": 3, "h": 1 },
-    { "type": "table", "x": 17, "y": 17, "w": 3, "h": 1 }
+    {
+      "type": "eventBooth",
+      "x": 4,
+      "y": 3,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "grill",
+      "x": 22,
+      "y": 3
+    },
+    {
+      "type": "birthdayTable",
+      "x": 22,
+      "y": 5,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "menuBoard",
+      "x": 4,
+      "y": 5,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "microphone",
+      "x": 14,
+      "y": 13
+    },
+    {
+      "type": "table",
+      "x": 10,
+      "y": 17,
+      "w": 3,
+      "h": 1
+    },
+    {
+      "type": "table",
+      "x": 17,
+      "y": 17,
+      "w": 3,
+      "h": 1
+    }
   ],
   "people": [
     {
@@ -24,31 +76,87 @@
       "y": 10,
       "interactions": [
         {
-          "when": { "hasItems": [{ "itemId": "bread", "count": 1 }, { "itemId": "milk", "count": 1 }, { "itemId": "apple", "count": 1 }], "missingMissions": ["family-plaza-menu"] },
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "bread",
+                "count": 1
+              },
+              {
+                "itemId": "milk",
+                "count": 1
+              },
+              {
+                "itemId": "apple",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "family-plaza-menu"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Carlos", "text": "Excelente: pan, leche y manzana. La comida está, pero falta orden." },
-            { "type": "showDialogue", "speaker": "Carlos", "text": "Sin orden, la plaza se vuelve ruido y nadie escucha a nadie." },
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "La plaza no solo sirve comida; marca el ritmo del reencuentro. Si el orden falla, la conversación también."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "En una fiesta familiar primero ofrecemos algo compartido, luego una bebida que calme y dejamos la fruta para cuando la charla ya se abrió."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Aplica esa lógica aquí sin repetir mis palabras al azar."
+            },
             {
               "type": "askChoice",
-              "prompt": "Si primero compartimos pan, luego bebida y al final fruta, ¿cuál es el orden correcto?",
+              "prompt": "La bienvenida empieza con pan, sigue con una bebida y termina con fruta fresca. ¿Qué secuencia debe aparecer en el menú común?",
               "options": [
                 {
                   "label": "Pan, leche y después manzana.",
                   "correct": true,
                   "actions": [
-                    { "type": "addItem", "itemId": "cafeteriaTicket", "count": 1 },
-                    { "type": "showDialogue", "speaker": "Carlos", "text": "Correcto. Toma este pase para abrir el micrófono comunitario." },
-                    { "type": "completeMission", "missionId": "family-plaza-menu" }
+                    {
+                      "type": "addItem",
+                      "itemId": "cafeteriaTicket",
+                      "count": 1
+                    },
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Carlos",
+                      "text": "Eso. Toma este pase y abre después el micrófono con Valeria."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "family-plaza-menu"
+                    }
                   ]
                 },
-                { "label": "Leche, manzana y después pan.", "correct": false },
-                { "label": "Solo fruta y sin conversación.", "correct": false }
+                {
+                  "label": "Leche, manzana y después pan.",
+                  "correct": false
+                },
+                {
+                  "label": "Solo fruta, para evitar que la gente se quede conversando.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Carlos", "text": "Sin ingredientes y sin orden, la plaza no abre." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Carlos",
+              "text": "Primero reúne pan, leche y manzana en las casas. Sin esos tres pasos, la plaza no abre."
+            }
+          ]
+        }
       ]
     },
     {
@@ -57,24 +165,70 @@
       "y": 12,
       "interactions": [
         {
-          "when": { "hasItems": [{ "itemId": "cafeteriaTicket", "count": 1 }], "missingMissions": ["family-plaza-voices"] },
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "cafeteriaTicket",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "family-plaza-voices"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Con este pase puedes moderar, pero la apertura debe sonar cálida y firme." },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Abrir el micrófono no es dar un discurso perfecto; es crear un tono donde caben alegría, cansancio y tensión."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Yo siempre empiezo agradeciendo la presencia y recordando la regla de respeto."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Haz una apertura breve, cálida y firme."
+            },
             {
               "type": "askSpeech",
               "prompt": "Say in Spanish: Gracias por venir; vamos a escucharnos con respeto.",
               "placeholder": "Respuesta hablada",
-              "correctAnswers": ["Gracias por venir vamos a escucharnos con respeto", "Gracias por venir; vamos a escucharnos con respeto"],
+              "correctAnswers": [
+                "Gracias por venir vamos a escucharnos con respeto",
+                "Gracias por venir; vamos a escucharnos con respeto"
+              ],
               "actions": [
-                { "type": "addItem", "itemId": "coffeeCup", "count": 1 },
-                { "type": "showDialogue", "speaker": "Valeria", "text": "Perfecto. Tu tono invita a participar." },
-                { "type": "completeMission", "missionId": "family-plaza-voices" }
+                {
+                  "type": "addItem",
+                  "itemId": "coffeeCup",
+                  "count": 1
+                },
+                {
+                  "type": "showDialogue",
+                  "speaker": "Valeria",
+                  "text": "Perfecto. Ya puedes ir con Marcos para cerrar el programa de la fiesta."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "family-plaza-voices"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Sin pase de coordinación no hay ronda de voces." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Valeria",
+              "text": "Carlos reparte el pase cuando el menú común ya tiene orden."
+            }
+          ]
+        }
       ]
     },
     {
@@ -83,9 +237,32 @@
       "y": 10,
       "interactions": [
         {
-          "when": { "completedMissions": ["family-plaza-menu", "family-plaza-voices", "family-verde-ready"], "missingMissions": ["family-plaza-ready"] },
+          "when": {
+            "completedMissions": [
+              "family-plaza-menu",
+              "family-plaza-voices",
+              "family-verde-ready"
+            ],
+            "missingMissions": [
+              "family-plaza-ready"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Ya tienes menú, apertura y confirmación de la Casa Verde. Falta cerrar el plan completo." },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Ya tienes ingredientes, apertura y confirmación de que la Casa Verde volverá a sentar a todos en la misma mesa."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Lo que falta es una síntesis que una comida, relatos y acuerdos futuros."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "No copies frases sueltas: ordénalo como lo haría una persona que modera de verdad."
+            },
             {
               "type": "askText",
               "prompt": "Write in Spanish: First we share dinner, then we listen to each story, and finally we agree on next steps.",
@@ -95,18 +272,40 @@
                 "Primero compartimos la cena, luego escuchamos cada historia y al final acordamos los próximos pasos"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Marcos", "text": "Excelente síntesis. La plaza está lista para el repaso final." },
-                { "type": "completeMission", "missionId": "family-plaza-ready" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Marcos",
+                  "text": "Excelente síntesis. La plaza ya quedó lista para el repaso familiar."
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "family-plaza-ready"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Regresa cuando Casa Verde confirme y la ronda de voces esté lista." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Marcos",
+              "text": "Sin la apertura de Valeria y la confirmación de Ana, todavía no cierro el programa."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 14, "y": 0, "targetArea": "family-neighborhood", "targetX": 14, "targetY": 17, "facing": "up" }
+    {
+      "x": 14,
+      "y": 0,
+      "targetArea": "family-neighborhood",
+      "targetX": 14,
+      "targetY": 17,
+      "facing": "up"
+    }
   ]
 }

@@ -1,10 +1,11 @@
 import Phaser from "phaser";
 import { getObjectType, items, people, terrainTiles, TILE_SIZE } from "../maps/objectCatalog";
 import { loadAreaConfigs } from "./levelLoader";
+import { createDojoMenuAction } from "./dojoQuestionBanks";
 
 const SAVE_KEY = "elCamino:save:v6";
 const LEGACY_SAVE_KEY = "elCamino:save:v3";
-const PLAYER_SPEED_MS = 45;
+const PLAYER_SPEED_MS = 36;
 const PLAYER_STEP_TILES = 0.25;
 const STARTING_INVENTORY = { coins: 5 };
 
@@ -26,6 +27,7 @@ const officeObjectTypes = new Set(["podium", "printer", "meetingTable", "intervi
 const lifeObjectTypes = new Set(["fridge", "stove", "atm", "busStop", "doctorBed", "birthdayTable", "familyPhoto", "toyBox", "grill", "car", "toolBench", "campusFountain", "bikeRack", "laundryMachine", "coffeeMachine"]);
 const travelObjectTypes = new Set(["luggage", "ticketKiosk", "airportGate", "taxiStand", "menuBoard", "suitcase", "skyline"]);
 const sparkleTypes = new Set(["questSparkle", "itemSparkle"]);
+const dojoObjectTypes = new Set(["dojoBanner", "trainingDummy", "weaponRack"]);
 
 function normalizeAnswer(answer = "") {
   return answer
@@ -151,6 +153,7 @@ export default class ElCaminoScene extends Phaser.Scene {
     this.playerParts = null;
     this.playerWalkFrame = 0;
     this.isMoving = false;
+    this.pendingMoveDirection = null;
   }
 
   create() {
@@ -175,7 +178,6 @@ export default class ElCaminoScene extends Phaser.Scene {
 
   update() {
     if (!this.areas) return;
-    if (this.isMoving) return;
     if (this.cursors.up.isDown) this.movePlayer("up");
     else if (this.cursors.down.isDown) this.movePlayer("down");
     else if (this.cursors.left.isDown) this.movePlayer("left");
@@ -192,6 +194,7 @@ export default class ElCaminoScene extends Phaser.Scene {
     this.objectsByPosition = new Map();
     this.pendingChoice = null;
     this.isMoving = false;
+    this.pendingMoveDirection = null;
 
     this.children.removeAll();
     this.drawTerrain(area);
@@ -202,7 +205,7 @@ export default class ElCaminoScene extends Phaser.Scene {
     this.createPlayer(safeSpawn.x, safeSpawn.y, facing);
 
     // this.cameras.main.setBounds(0, 0, area.width * TILE_SIZE, area.height * TILE_SIZE);
-    this.cameras.main.startFollow(this.player, true, 0.14, 0.14);
+    this.cameras.main.startFollow(this.player, true, 0.2, 0.2);
     this.updateCameraForViewport();
 
     this.saveGame({ areaId: area.id, x: safeSpawn.x, y: safeSpawn.y, facing });
@@ -249,13 +252,22 @@ export default class ElCaminoScene extends Phaser.Scene {
   addTerrainDetails(terrainName, x, y) {
     const px = x * TILE_SIZE;
     const py = y * TILE_SIZE;
-    if (terrainName === "grass" && (x + y) % 5 === 0) {
-      this.add.rectangle(px + 7, py + 22, 3, 7, 0x4fa146).setOrigin(0);
-      this.add.rectangle(px + 21, py + 9, 3, 6, 0x4fa146).setOrigin(0);
+    if (terrainName === "grass") {
+      if ((x + y) % 3 === 0) {
+        this.add.rectangle(px + 7, py + 22, 2, 6, 0x3f9140).setOrigin(0);
+        this.add.rectangle(px + 9, py + 20, 2, 7, 0x5eaf50).setOrigin(0);
+      }
+      if ((x * 3 + y) % 7 === 0) {
+        this.add.rectangle(px + 22, py + 8, 2, 5, 0x3f9140).setOrigin(0);
+        this.add.rectangle(px + 19, py + 11, 5, 2, 0x5eaf50).setOrigin(0);
+      }
     }
     if (terrainName === "flowerGrass") {
-      this.add.rectangle(px + 9, py + 10, 4, 4, 0xffdc6f).setOrigin(0);
-      this.add.rectangle(px + 22, py + 21, 4, 4, 0xff86b7).setOrigin(0);
+      this.add.rectangle(px + 10, py + 11, 2, 7, 0x3f9140).setOrigin(0);
+      this.add.rectangle(px + 8, py + 9, 6, 5, 0xffdc6f).setOrigin(0);
+      this.add.rectangle(px + 10, py + 10, 2, 2, 0xffffff).setOrigin(0);
+      this.add.rectangle(px + 23, py + 21, 2, 7, 0x3f9140).setOrigin(0);
+      this.add.rectangle(px + 21, py + 19, 6, 5, 0xff86b7).setOrigin(0);
     }
     if (terrainName === "dirtPath") {
       this.add.rectangle(px + 3, py + 9, 5, 3, 0xa96c37).setOrigin(0).setAlpha(0.45);
@@ -264,6 +276,22 @@ export default class ElCaminoScene extends Phaser.Scene {
     if (terrainName === "water") {
       this.add.rectangle(px + 5, py + 9, 14, 3, 0x8ed8ff).setOrigin(0).setAlpha(0.65);
       this.add.rectangle(px + 14, py + 22, 13, 3, 0x8ed8ff).setOrigin(0).setAlpha(0.55);
+      this.add.rectangle(px + 1, py + 29, 18, 2, 0x247ab0).setOrigin(0).setAlpha(0.55);
+    }
+    if (terrainName === "woodFloor") {
+      this.add.rectangle(px, py + 15, TILE_SIZE, 2, 0xa96c37).setOrigin(0).setAlpha(0.55);
+      this.add.rectangle(px + ((x + y) % 2 ? 6 : 20), py + 4, 9, 2, 0xe0a66c).setOrigin(0).setAlpha(0.5);
+    }
+    if (terrainName === "tatamiFloor") {
+      this.add.rectangle(px, py, TILE_SIZE, 1, 0xb09b62).setOrigin(0).setAlpha(0.65);
+      this.add.rectangle(px, py + TILE_SIZE - 2, TILE_SIZE, 2, 0xf0e3b3).setOrigin(0).setAlpha(0.55);
+      if ((x + y) % 2 === 0) {
+        this.add.rectangle(px + 15, py + 3, 2, TILE_SIZE - 6, 0xc5b276).setOrigin(0).setAlpha(0.4);
+      }
+    }
+    if (terrainName === "stoneFloor") {
+      this.add.rectangle(px, py, TILE_SIZE, 1, 0x8f918b).setOrigin(0).setAlpha(0.35);
+      this.add.rectangle(px, py + TILE_SIZE - 1, TILE_SIZE, 1, 0xffffff).setOrigin(0).setAlpha(0.2);
     }
     if (terrainName === "asphalt") {
       this.add.rectangle(px + 4, py + 15, 7, 2, 0x7d8aa2).setOrigin(0).setAlpha(0.45);
@@ -350,18 +378,18 @@ export default class ElCaminoScene extends Phaser.Scene {
     const pixelWidth = width * TILE_SIZE;
     const pixelHeight = height * TILE_SIZE;
 
-    if (object.type.startsWith("house") || ["restaurant", "store", "school", "office", "gym", "library", "dorm", "auditorium"].includes(object.type)) {
+    if (object.type.startsWith("house") || ["restaurant", "store", "school", "office", "gym", "dojo", "library", "dorm", "auditorium"].includes(object.type)) {
       this.drawBuilding(object, type, pixelWidth, pixelHeight);
       return;
     }
 
     if (object.type === "tree") {
       this.add.ellipse(px + 16, py + 26, 20, 7, 0x1f5f2a, 0.25);
-      this.add.rectangle(px + 11, py + 16, 10, 15, 0x765136).setOrigin(0);
+      this.add.rectangle(px + 11, py + 16, 10, 15, 0x765136).setOrigin(0).setStrokeStyle(1, 0x3f2512);
       this.add.rectangle(px + 13, py + 16, 4, 15, 0x9a6733).setOrigin(0);
-      this.add.rectangle(px + 4, py + 8, 24, 16, 0x2f8f3b).setOrigin(0);
-      this.add.rectangle(px + 8, py + 3, 17, 22, 0x24722e).setOrigin(0);
-      this.add.rectangle(px + 12, py, 10, 10, 0x65b65b).setOrigin(0);
+      this.add.rectangle(px + 4, py + 8, 24, 16, 0x2f8f3b).setOrigin(0).setStrokeStyle(2, 0x174e25);
+      this.add.rectangle(px + 8, py + 3, 17, 22, 0x24722e).setOrigin(0).setStrokeStyle(1, 0x174e25);
+      this.add.rectangle(px + 12, py, 10, 10, 0x65b65b).setOrigin(0).setStrokeStyle(1, 0x24722e);
       this.add.rectangle(px + 6, py + 13, 4, 4, 0x8ed16f).setOrigin(0);
       return;
     }
@@ -497,6 +525,11 @@ export default class ElCaminoScene extends Phaser.Scene {
       return;
     }
 
+    if (dojoObjectTypes.has(object.type)) {
+      this.drawDojoObject(object.type, px, py, pixelWidth);
+      return;
+    }
+
     if (object.type === "routeGate") {
       this.drawRouteGate(px, py);
       return;
@@ -508,9 +541,9 @@ export default class ElCaminoScene extends Phaser.Scene {
   drawBuilding(object, type, pixelWidth, pixelHeight) {
     const px = object.x * TILE_SIZE;
     const py = object.y * TILE_SIZE;
-    const roofColor = object.type === "restaurant" ? 0xffb23f : object.type === "store" ? 0xc995ee : object.type === "school" ? 0xf0c84b : object.type === "gym" ? 0xe67e22 : object.type === "library" ? 0x4f8fd8 : object.type === "dorm" ? 0x50a96b : object.type === "auditorium" ? 0x9b59b6 : type.color;
-    const wallColor = object.type === "office" ? 0xd5dbe7 : object.type === "gym" ? 0xf2c078 : object.type === "library" ? 0xd9f2ff : object.type === "dorm" ? 0xd9f5dc : object.type === "auditorium" ? 0xe7d8f6 : 0xf3dfaa;
-    const trimColor = object.type === "restaurant" ? 0xb64c2e : object.type === "store" ? 0x6d3d91 : object.type === "gym" ? 0x8d5524 : object.type === "library" ? 0x2f66d0 : object.type === "dorm" ? 0x24722e : object.type === "auditorium" ? 0x5b2c83 : 0x6b3f24;
+    const roofColor = object.type === "restaurant" ? 0xffb23f : object.type === "store" ? 0xc995ee : object.type === "school" ? 0xf0c84b : object.type === "gym" ? 0xe67e22 : object.type === "dojo" ? 0xc92a2a : object.type === "library" ? 0x4f8fd8 : object.type === "dorm" ? 0x50a96b : object.type === "auditorium" ? 0x9b59b6 : type.color;
+    const wallColor = object.type === "office" ? 0xd5dbe7 : object.type === "gym" ? 0xf2c078 : object.type === "dojo" ? 0xfff4d8 : object.type === "library" ? 0xd9f2ff : object.type === "dorm" ? 0xd9f5dc : object.type === "auditorium" ? 0xe7d8f6 : 0xf3dfaa;
+    const trimColor = object.type === "restaurant" ? 0xb64c2e : object.type === "store" ? 0x6d3d91 : object.type === "gym" ? 0x8d5524 : object.type === "dojo" ? 0x5f1717 : object.type === "library" ? 0x2f66d0 : object.type === "dorm" ? 0x24722e : object.type === "auditorium" ? 0x5b2c83 : 0x6b3f24;
 
     this.add.ellipse(px + pixelWidth / 2, py + pixelHeight - 1, pixelWidth - 8, 12, 0x111827, 0.18);
     this.add.rectangle(px + 2, py + 16, pixelWidth - 4, pixelHeight - 15, 0x9f7a4f).setOrigin(0);
@@ -552,6 +585,13 @@ export default class ElCaminoScene extends Phaser.Scene {
       this.add.rectangle(px + pixelWidth - 22, py + 24, 10, 10, 0xb64c2e).setOrigin(0);
     }
 
+    if (object.type === "dojo") {
+      this.add.rectangle(px + 9, py + 17, pixelWidth - 18, 8, 0xfff7cf).setOrigin(0).setStrokeStyle(1, 0x5f1717);
+      this.add.rectangle(px + pixelWidth / 2 - 8, py + 19, 16, 3, 0xc92a2a).setOrigin(0);
+      this.add.rectangle(px + 7, py + 28, 4, 10, 0x5f1717).setOrigin(0);
+      this.add.rectangle(px + pixelWidth - 11, py + 28, 4, 10, 0x5f1717).setOrigin(0);
+    }
+
     if (object.type === "library") {
       this.add.rectangle(px + 10, py + 17, pixelWidth - 20, 6, 0xf5df8f).setOrigin(0);
       this.add.rectangle(px + 15, py + 19, pixelWidth - 30, 2, 0x2f66d0).setOrigin(0);
@@ -571,8 +611,9 @@ export default class ElCaminoScene extends Phaser.Scene {
 
   drawTable(px, py, pixelWidth) {
     this.add.ellipse(px + pixelWidth / 2, py + 25, pixelWidth - 8, 7, 0x111827, 0.16);
-    this.add.rectangle(px + 4, py + 9, pixelWidth - 8, 13, 0x6d421f).setOrigin(0);
-    this.add.rectangle(px + 6, py + 7, pixelWidth - 12, 10, 0xa96c37).setOrigin(0);
+    this.add.rectangle(px + 4, py + 9, pixelWidth - 8, 13, 0x6d421f).setOrigin(0).setStrokeStyle(1, 0x3f2512);
+    this.add.rectangle(px + 6, py + 7, pixelWidth - 12, 10, 0xa96c37).setOrigin(0).setStrokeStyle(1, 0x5d3519);
+    this.add.rectangle(px + 9, py + 9, pixelWidth - 18, 2, 0xd09a58).setOrigin(0);
     this.add.rectangle(px + 10, py + 17, 5, 10, 0x5d3519).setOrigin(0);
     this.add.rectangle(px + pixelWidth - 15, py + 17, 5, 10, 0x5d3519).setOrigin(0);
   }
@@ -592,15 +633,16 @@ export default class ElCaminoScene extends Phaser.Scene {
   }
 
   drawChair(px, py) {
-    this.add.rectangle(px + 9, py + 6, 14, 8, 0x61432a).setOrigin(0);
-    this.add.rectangle(px + 8, py + 13, 16, 10, 0x8d5524).setOrigin(0);
+    this.add.rectangle(px + 9, py + 6, 14, 8, 0x61432a).setOrigin(0).setStrokeStyle(1, 0x3f2512);
+    this.add.rectangle(px + 8, py + 13, 16, 10, 0x8d5524).setOrigin(0).setStrokeStyle(1, 0x3f2512);
+    this.add.rectangle(px + 11, py + 15, 10, 2, 0xc98b50).setOrigin(0);
     this.add.rectangle(px + 10, py + 22, 4, 7, 0x3f2512).setOrigin(0);
     this.add.rectangle(px + 19, py + 22, 4, 7, 0x3f2512).setOrigin(0);
   }
 
   drawCounter(px, py, pixelWidth) {
-    this.add.rectangle(px + 2, py + 7, pixelWidth - 4, 21, 0x9a8f72).setOrigin(0);
-    this.add.rectangle(px + 4, py + 5, pixelWidth - 8, 9, 0xf0e7bf).setOrigin(0);
+    this.add.rectangle(px + 2, py + 7, pixelWidth - 4, 21, 0x9a8f72).setOrigin(0).setStrokeStyle(1, 0x5d5a49);
+    this.add.rectangle(px + 4, py + 5, pixelWidth - 8, 9, 0xf0e7bf).setOrigin(0).setStrokeStyle(1, 0x8d8468);
     this.add.rectangle(px + 6, py + 16, pixelWidth - 12, 3, 0xd7d0b1).setOrigin(0);
     this.add.rectangle(px + pixelWidth - 18, py + 8, 10, 5, 0x90c9f6).setOrigin(0);
   }
@@ -995,10 +1037,38 @@ export default class ElCaminoScene extends Phaser.Scene {
     this.add.rectangle(px + 11, py + 2, 10, 7, 0xf5df8f).setOrigin(0);
   }
 
+  drawDojoObject(type, px, py, pixelWidth) {
+    if (type === "dojoBanner") {
+      this.add.rectangle(px + 8, py + 2, pixelWidth - 16, 28, 0x5f1717).setOrigin(0).setStrokeStyle(2, 0x241010);
+      this.add.rectangle(px + 11, py + 4, pixelWidth - 22, 22, 0xc92a2a).setOrigin(0);
+      this.add.rectangle(px + pixelWidth / 2 - 2, py + 8, 4, 14, 0xfff7cf).setOrigin(0);
+      this.add.rectangle(px + pixelWidth / 2 - 7, py + 13, 14, 4, 0xfff7cf).setOrigin(0);
+      return;
+    }
+
+    if (type === "trainingDummy") {
+      this.add.ellipse(px + 16, py + 29, 24, 7, 0x111827, 0.22);
+      this.add.rectangle(px + 14, py + 7, 4, 22, 0x5d3519).setOrigin(0).setStrokeStyle(1, 0x2b180f);
+      this.add.rectangle(px + 7, py + 10, 18, 12, 0xb98245).setOrigin(0).setStrokeStyle(2, 0x5d3519);
+      this.add.rectangle(px + 4, py + 14, 24, 4, 0x8d5524).setOrigin(0).setStrokeStyle(1, 0x5d3519);
+      this.add.rectangle(px + 10, py + 13, 12, 2, 0xf5df8f).setOrigin(0);
+      return;
+    }
+
+    this.add.rectangle(px + 3, py + 6, pixelWidth - 6, 23, 0x5d3519).setOrigin(0).setStrokeStyle(2, 0x2b180f);
+    this.add.rectangle(px + 6, py + 9, pixelWidth - 12, 4, 0x9a6733).setOrigin(0);
+    this.add.rectangle(px + 6, py + 22, pixelWidth - 12, 4, 0x9a6733).setOrigin(0);
+    for (let x = px + 9; x < px + pixelWidth - 8; x += 9) {
+      this.add.rectangle(x, py + 5, 3, 21, 0xd7b56d).setOrigin(0).setAngle((x / 9) % 2 === 0 ? 8 : -8);
+    }
+  }
+
   drawCrateObject(px, py, pixelWidth, pixelHeight, color) {
-    this.add.rectangle(px + 4, py + 7, pixelWidth - 8, pixelHeight - 11, 0x4b3421).setOrigin(0);
-    this.add.rectangle(px + 6, py + 6, pixelWidth - 12, pixelHeight - 14, color).setOrigin(0);
+    this.add.ellipse(px + pixelWidth / 2, py + pixelHeight - 3, pixelWidth - 8, 7, 0x111827, 0.2);
+    this.add.rectangle(px + 4, py + 7, pixelWidth - 8, pixelHeight - 11, 0x4b3421).setOrigin(0).setStrokeStyle(1, 0x241b13);
+    this.add.rectangle(px + 6, py + 6, pixelWidth - 12, pixelHeight - 14, color).setOrigin(0).setStrokeStyle(2, 0x2b3442);
     this.add.rectangle(px + 8, py + 9, pixelWidth - 16, 3, 0xffffff).setOrigin(0).setAlpha(0.18);
+    this.add.rectangle(px + Math.floor(pixelWidth / 2) - 2, py + 13, 4, Math.max(6, pixelHeight - 23), 0x111827).setOrigin(0).setAlpha(0.22);
   }
 
   drawPeople(area) {
@@ -1015,18 +1085,35 @@ export default class ElCaminoScene extends Phaser.Scene {
   }
 
   drawBossNpc(px, py, person) {
-    this.add.ellipse(px + 16, py + 28, 30, 9, 0x111827, 0.28);
-    this.add.rectangle(px + 5, py + 2, 22, 28, person.color || 0x7c3aed).setOrigin(0);
-    this.add.rectangle(px + 2, py + 11, 5, 16, person.skin || 0xf2b37e).setOrigin(0);
-    this.add.rectangle(px + 25, py + 11, 5, 16, person.skin || 0xf2b37e).setOrigin(0);
-    this.add.rectangle(px + 8, py - 8, 16, 15, person.skin || 0xf2b37e).setOrigin(0);
-    this.add.rectangle(px + 6, py - 12, 20, 8, person.hair || 0x111827).setOrigin(0);
-    this.add.rectangle(px + 11, py - 3, 3, 3, 0x111827).setOrigin(0);
-    this.add.rectangle(px + 18, py - 3, 3, 3, 0x111827).setOrigin(0);
-    this.add.rectangle(px + 11, py + 16, 10, 3, person.accent || 0xffd166).setOrigin(0);
-    this.add.rectangle(px + 4, py - 15, 24, 3, person.accent || 0xffd166).setOrigin(0);
-    this.add.rectangle(px + 9, py + 29, 5, 4, 0x26334c).setOrigin(0);
-    this.add.rectangle(px + 18, py + 29, 5, 4, 0x26334c).setOrigin(0);
+    const skin = person.skin || 0xf2b37e;
+    const hair = person.hair || 0x111827;
+    const outfit = person.color || 0x7c3aed;
+    const accent = person.accent || 0xffd166;
+    const outline = 0x182033;
+    const rect = (x, y, width, height, color, stroke = outline) => (
+      this.add.rectangle(px + x, py + y, width, height, color)
+        .setOrigin(0)
+        .setStrokeStyle(1, stroke)
+    );
+
+    this.add.ellipse(px + 16, py + 29, 32, 10, 0x111827, 0.32);
+    this.add.ellipse(px + 16, py + 4, 34, 42, accent, 0.13).setStrokeStyle(2, accent, 0.5);
+    rect(8, 27, 6, 6, 0x26334c);
+    rect(18, 27, 6, 6, 0x26334c);
+    rect(3, 10, 6, 18, skin);
+    rect(23, 10, 6, 18, skin);
+    rect(6, 4, 20, 25, outfit);
+    rect(9, -8, 14, 15, skin);
+    rect(7, -13, 18, 8, hair);
+    rect(6, -8, 5, 10, hair);
+    rect(21, -8, 5, 10, hair);
+    rect(11, -3, 3, 3, outline, outline);
+    rect(18, -3, 3, 3, outline, outline);
+    rect(12, 2, 8, 2, 0x934f35, 0x934f35);
+    rect(9, 13, 14, 4, accent);
+    rect(4, -16, 24, 4, accent);
+    rect(12, -15, 8, 2, 0xffffff, 0xffffff);
+    rect(5, 20, 22, 3, 0xffffff, 0xffffff).setAlpha(0.18);
   }
 
   drawNpc(px, py, person) {
@@ -1035,20 +1122,37 @@ export default class ElCaminoScene extends Phaser.Scene {
     const outfit = person.color || 0x3498db;
     const accent = person.accent || 0xffffff;
 
-    this.add.ellipse(px + 16, py + 29, 20, 6, 0x111827, 0.22);
-    this.add.rectangle(px + 9, py + 25, 5, 6, 0x26334c).setOrigin(0);
-    this.add.rectangle(px + 18, py + 25, 5, 6, 0x26334c).setOrigin(0);
-    this.add.rectangle(px + 6, py + 14, 5, 12, skin).setOrigin(0);
-    this.add.rectangle(px + 21, py + 14, 5, 12, skin).setOrigin(0);
-    this.add.rectangle(px + 9, py + 13, 14, 15, outfit).setOrigin(0);
-    this.add.rectangle(px + 11, py + 10, 10, 5, skin).setOrigin(0);
-    this.add.rectangle(px + 9, py + 3, 14, 12, skin).setOrigin(0);
-    this.add.rectangle(px + 8, py, 16, 7, hair).setOrigin(0);
-    this.add.rectangle(px + 7, py + 5, 5, 8, hair).setOrigin(0);
-    this.add.rectangle(px + 20, py + 5, 5, 8, hair).setOrigin(0);
-    this.add.rectangle(px + 12, py + 7, 2, 2, 0x111827).setOrigin(0);
-    this.add.rectangle(px + 18, py + 7, 2, 2, 0x111827).setOrigin(0);
-    this.add.rectangle(px + 13, py + 12, 6, 1, 0x8f4f2d).setOrigin(0);
+    const outline = 0x182033;
+    const hairStyle = person.id.split("").reduce((total, letter) => total + letter.charCodeAt(0), 0) % 3;
+    const rect = (x, y, width, height, color, stroke = outline) => (
+      this.add.rectangle(px + x, py + y, width, height, color)
+        .setOrigin(0)
+        .setStrokeStyle(1, stroke)
+    );
+
+    this.add.ellipse(px + 16, py + 29, 23, 7, 0x111827, 0.28);
+    rect(8, 24, 6, 7, 0x26334c);
+    rect(18, 24, 6, 7, 0x26334c);
+    rect(6, 14, 5, 12, skin);
+    rect(21, 14, 5, 12, skin);
+    rect(9, 13, 14, 15, outfit);
+    rect(11, 10, 10, 5, skin);
+    rect(9, 3, 14, 12, skin);
+    rect(8, 0, 16, 7, hair);
+    rect(7, 4, hairStyle === 1 ? 4 : 5, hairStyle === 2 ? 11 : 8, hair);
+    rect(20, 4, hairStyle === 1 ? 6 : 5, hairStyle === 0 ? 8 : 11, hair);
+    if (hairStyle === 1) {
+      rect(11, -2, 4, 5, hair);
+      rect(16, -3, 6, 6, hair);
+    }
+    if (hairStyle === 2) {
+      rect(5, 8, 4, 12, hair);
+      rect(23, 8, 4, 12, hair);
+    }
+    rect(12, 7, 2, 2, outline, outline);
+    rect(18, 7, 2, 2, outline, outline);
+    rect(14, 12, 4, 1, 0x8f4f2d, 0x8f4f2d);
+    rect(10, 15, 12, 2, 0xffffff, 0xffffff).setAlpha(0.16);
 
     if (person.outfit === "dress") {
       this.add.rectangle(px + 8, py + 20, 16, 8, outfit).setOrigin(0);
@@ -1096,21 +1200,30 @@ export default class ElCaminoScene extends Phaser.Scene {
     this.player.setDepth(100);
     this.playerParts = {
       shadow: this.add.ellipse(0, 13, 21, 8, 0x101827, 0.45),
-      leftLeg: this.add.rectangle(-5, 10, 6, 10, 0x26334c),
-      rightLeg: this.add.rectangle(5, 10, 6, 10, 0x26334c),
-      leftArm: this.add.rectangle(-11, 2, 5, 13, 0xf2b37e),
-      rightArm: this.add.rectangle(11, 2, 5, 13, 0xf2b37e),
-      body: this.add.rectangle(0, 1, 18, 17, 0x2f66d0),
-      collar: this.add.rectangle(0, -7, 12, 4, 0xfff2bf),
-      neck: this.add.rectangle(0, -10, 8, 5, 0xd9905f),
-      head: this.add.rectangle(0, -17, 15, 14, 0xf2b37e),
-      hairBack: this.add.rectangle(0, -23, 18, 8, 0x3b2416),
-      hairFront: this.add.rectangle(-3, -20, 16, 5, 0x2b180f),
+      leftLeg: this.add.rectangle(-5, 9, 7, 11, 0x26334c).setStrokeStyle(1, 0x111827),
+      rightLeg: this.add.rectangle(5, 9, 7, 11, 0x26334c).setStrokeStyle(1, 0x111827),
+      leftShoe: this.add.rectangle(-5, 15, 8, 4, 0xf5df8f).setStrokeStyle(1, 0x111827),
+      rightShoe: this.add.rectangle(5, 15, 8, 4, 0xf5df8f).setStrokeStyle(1, 0x111827),
+      leftArm: this.add.rectangle(-11, 2, 6, 13, 0xf2b37e).setStrokeStyle(1, 0x111827),
+      rightArm: this.add.rectangle(11, 2, 6, 13, 0xf2b37e).setStrokeStyle(1, 0x111827),
+      body: this.add.rectangle(0, 1, 19, 18, 0x2f66d0).setStrokeStyle(2, 0x111827),
+      shirtPanel: this.add.rectangle(0, 4, 10, 7, 0x4c82e6),
+      collar: this.add.rectangle(0, -7, 12, 4, 0xfff2bf).setStrokeStyle(1, 0x111827),
+      neck: this.add.rectangle(0, -10, 8, 5, 0xd9905f).setStrokeStyle(1, 0x111827),
+      head: this.add.rectangle(0, -17, 16, 14, 0xf2b37e).setStrokeStyle(2, 0x111827),
+      leftEar: this.add.rectangle(-9, -16, 3, 5, 0xd9905f).setStrokeStyle(1, 0x111827),
+      rightEar: this.add.rectangle(9, -16, 3, 5, 0xd9905f).setStrokeStyle(1, 0x111827),
+      hairBack: this.add.rectangle(0, -22, 18, 7, 0x3b2416).setStrokeStyle(1, 0x111827),
+      hairFront: this.add.rectangle(-3, -20, 16, 4, 0x2b180f),
+      cap: this.add.rectangle(0, -25, 18, 7, 0xe85d3f).setStrokeStyle(2, 0x111827),
+      capHighlight: this.add.rectangle(-4, -27, 8, 3, 0xff9b54),
+      capBrim: this.add.rectangle(6, -22, 10, 3, 0xb93b2b).setStrokeStyle(1, 0x111827),
       leftEye: this.add.rectangle(-4, -17, 2, 2, 0x111827),
       rightEye: this.add.rectangle(4, -17, 2, 2, 0x111827),
       sideNose: this.add.rectangle(6, -15, 2, 3, 0xd9905f),
       smile: this.add.rectangle(0, -12, 6, 1, 0x8f4f2d),
-      bag: this.add.rectangle(11, 1, 5, 11, 0x8d5524)
+      bag: this.add.rectangle(11, 1, 6, 12, 0x8d5524).setStrokeStyle(1, 0x111827),
+      bagFlap: this.add.rectangle(11, -2, 6, 4, 0xc98b50).setStrokeStyle(1, 0x111827)
     };
     this.player.add(Object.values(this.playerParts));
     this.setPlayerFacing(facing);
@@ -1129,20 +1242,29 @@ export default class ElCaminoScene extends Phaser.Scene {
 
     this.player.setScale(1, 1);
     this.playerParts.body.setFillStyle(bodyColor).setPosition(lean, 1);
+    this.playerParts.shirtPanel.setPosition(lean, 4).setVisible(!isUp);
     this.playerParts.collar.setPosition(lean, -7).setVisible(!isUp);
     this.playerParts.neck.setPosition(lean, -10).setVisible(!isUp);
     this.playerParts.head.setPosition(lean, -17);
-    this.playerParts.hairBack.setPosition(lean, isUp ? -18 : -23);
+    this.playerParts.leftEar.setPosition(lean - 9, -16).setVisible(!isUp && !isSide);
+    this.playerParts.rightEar.setPosition(lean + 9, -16).setVisible(!isUp && !isSide);
+    this.playerParts.hairBack.setPosition(lean, isUp ? -19 : -22);
     this.playerParts.hairFront.setPosition(isSide ? lean + sideDirection * 2 : lean - 3, -20).setVisible(!isUp);
+    this.playerParts.cap.setPosition(lean, -25);
+    this.playerParts.capHighlight.setPosition(lean - 4, -27).setVisible(!isUp);
+    this.playerParts.capBrim.setPosition(lean + sideDirection * 6, -22).setVisible(!isUp);
     this.playerParts.leftEye.setPosition(isSide ? lean + sideDirection * 4 : lean - 4, -17).setVisible(!isUp);
     this.playerParts.rightEye.setPosition(lean + 4, -17).setVisible(!isUp && !isSide);
     this.playerParts.sideNose.setPosition(lean + sideDirection * 7, -15).setVisible(isSide);
     this.playerParts.smile.setPosition(lean, -12).setVisible(!isUp && !isSide);
-    this.playerParts.bag.setPosition(isSide ? lean - sideDirection * 10 : 11, 1).setVisible(!isUp);
+    this.playerParts.bag.setPosition(isUp ? lean : isSide ? lean - sideDirection * 10 : 11, 1);
+    this.playerParts.bagFlap.setPosition(isUp ? lean : isSide ? lean - sideDirection * 10 : 11, isUp ? -3 : -2);
 
     if (isUp) {
       this.playerParts.leftLeg.setPosition(-5, 10 + step);
       this.playerParts.rightLeg.setPosition(5, 10 - step);
+      this.playerParts.leftShoe.setPosition(-5, 15 + step);
+      this.playerParts.rightShoe.setPosition(5, 15 - step);
       this.playerParts.leftArm.setPosition(-11, 2 - armStep);
       this.playerParts.rightArm.setPosition(11, 2 + armStep);
       return;
@@ -1151,6 +1273,8 @@ export default class ElCaminoScene extends Phaser.Scene {
     if (isSide) {
       this.playerParts.leftLeg.setPosition(lean - sideDirection * 2, 10 + step);
       this.playerParts.rightLeg.setPosition(lean + sideDirection * 5, 10 - step);
+      this.playerParts.leftShoe.setPosition(lean - sideDirection * 2, 15 + step);
+      this.playerParts.rightShoe.setPosition(lean + sideDirection * 5, 15 - step);
       this.playerParts.leftArm.setPosition(lean - sideDirection * 8, 2 + armStep);
       this.playerParts.rightArm.setPosition(lean + sideDirection * 8, 2 - armStep);
       return;
@@ -1158,6 +1282,8 @@ export default class ElCaminoScene extends Phaser.Scene {
 
     this.playerParts.leftLeg.setPosition(-5, 10 + step);
     this.playerParts.rightLeg.setPosition(5, 10 - step);
+    this.playerParts.leftShoe.setPosition(-5, 15 + step);
+    this.playerParts.rightShoe.setPosition(5, 15 - step);
     this.playerParts.leftArm.setPosition(-11, 2 + armStep);
     this.playerParts.rightArm.setPosition(11, 2 - armStep);
   }
@@ -1178,7 +1304,11 @@ export default class ElCaminoScene extends Phaser.Scene {
   }
 
   movePlayer(direction) {
-    if (this.isMoving || !directionDeltas[direction]) return;
+    if (!directionDeltas[direction]) return;
+    if (this.isMoving) {
+      this.pendingMoveDirection = direction;
+      return;
+    }
 
     const delta = directionDeltas[direction];
     let nextX = this.roundTilePosition(this.playerTile.x + delta.x * PLAYER_STEP_TILES);
@@ -1228,6 +1358,7 @@ export default class ElCaminoScene extends Phaser.Scene {
 
     this.emitStatus(null);
     this.isMoving = true;
+    this.pendingMoveDirection = null;
     this.playerWalkFrame = (this.playerWalkFrame + 1) % 2;
     this.updatePlayerSprite(direction, this.playerWalkFrame);
     this.playerTile = { x: nextX, y: nextY, facing: direction };
@@ -1240,7 +1371,13 @@ export default class ElCaminoScene extends Phaser.Scene {
       onComplete: () => {
         this.isMoving = false;
         this.updatePlayerSprite(direction, 0);
+        const previousAreaId = this.currentArea?.id;
         this.handleAreaTransition(nextX, nextY, direction);
+        if (this.currentArea?.id === previousAreaId && this.pendingMoveDirection && !this.pendingChoice) {
+          const pendingDirection = this.pendingMoveDirection;
+          this.pendingMoveDirection = null;
+          this.movePlayer(pendingDirection);
+        }
       }
     });
   }
@@ -1263,7 +1400,9 @@ export default class ElCaminoScene extends Phaser.Scene {
   }
 
   getEntranceDestination(entrance, facing) {
-    const savedChapterPosition = this.currentArea.id === this.startingAreaId && entrance.chapterId
+    const savedChapterPosition = entrance.restorePosition !== false
+      && this.currentArea.id === this.startingAreaId
+      && entrance.chapterId
       ? this.chapterPositions[entrance.chapterId]
       : null;
 
@@ -1605,7 +1744,9 @@ export default class ElCaminoScene extends Phaser.Scene {
           break;
         case "askChoice":
         case "askAudioChoice": {
-          const randomizedOptions = shuffleOptions(action.options);
+          const randomizedOptions = action.shuffle === false
+            ? action.options.map((option, index) => ({ ...option, index }))
+            : shuffleOptions(action.options);
           this.pendingChoice = { ...action, options: randomizedOptions };
           this.emitChoices({
             kind: action.type === "askAudioChoice" || action.audioText ? "audioChoice" : "choice",
@@ -1615,6 +1756,9 @@ export default class ElCaminoScene extends Phaser.Scene {
           });
           break;
         }
+        case "openDojoMenu":
+          this.runActions([createDojoMenuAction()]);
+          break;
         case "askText":
         case "askSpeech":
           this.pendingChoice = action;

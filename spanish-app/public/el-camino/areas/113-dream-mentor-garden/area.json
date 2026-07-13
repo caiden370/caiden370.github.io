@@ -5,15 +5,55 @@
   "chapterId": "dream-future",
   "region": "Chapter 10: Dream Future",
   "cefrLevel": "C1",
-  "teaches": ["liderazgo humano", "mentoría", "resolución de conflicto"],
-  "legend": { "w": "insideWall", "c": "campusStone", "g": "lightGreenFloor" },
-  "playerStart": { "x": 14, "y": 15, "facing": "up" },
+  "teaches": [
+    "liderazgo humano",
+    "mentoría",
+    "resolución de conflicto"
+  ],
+  "legend": {
+    "w": "insideWall",
+    "c": "campusStone",
+    "g": "lightGreenFloor"
+  },
+  "playerStart": {
+    "x": 14,
+    "y": 15,
+    "facing": "up"
+  },
   "objects": [
-    { "type": "plant", "x": 4, "y": 3, "w": 2, "h": 2 },
-    { "type": "plant", "x": 21, "y": 3, "w": 2, "h": 2 },
-    { "type": "bench", "x": 8, "y": 8, "w": 4, "h": 1 },
-    { "type": "bench", "x": 16, "y": 8, "w": 4, "h": 1 },
-    { "type": "coffeeMachine", "x": 13, "y": 4 }
+    {
+      "type": "plant",
+      "x": 4,
+      "y": 3,
+      "w": 2,
+      "h": 2
+    },
+    {
+      "type": "plant",
+      "x": 21,
+      "y": 3,
+      "w": 2,
+      "h": 2
+    },
+    {
+      "type": "bench",
+      "x": 8,
+      "y": 8,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "bench",
+      "x": 16,
+      "y": 8,
+      "w": 4,
+      "h": 1
+    },
+    {
+      "type": "coffeeMachine",
+      "x": 13,
+      "y": 4
+    }
   ],
   "people": [
     {
@@ -22,23 +62,78 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "hasItems": [{ "itemId": "routePass", "count": 1 }, { "itemId": "textbook", "count": 1 }], "missingMissions": ["dream-mentor-dialogue"] },
+          "when": {
+            "hasItems": [
+              {
+                "itemId": "routePass",
+                "count": 1
+              },
+              {
+                "itemId": "textbook",
+                "count": 1
+              }
+            ],
+            "missingMissions": [
+              "dream-mentor-dialogue"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Ana", "text": "Un líder no solo decide; crea condiciones para que otros crezcan." },
-            { "type": "showDialogue", "speaker": "Ana", "text": "Interpreta este conflicto: dos equipos compiten por recursos limitados." },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Una mentora fuerte no reparte recursos al azar; convierte tensión en conversación productiva."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "En otro equipo, dos líderes discutían por presupuesto. La solución llegó cuando hicieron visibles los criterios y el objetivo común, no cuando alguien gritó más."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Quiero ver si puedes intervenir sin romper la confianza."
+            },
             {
               "type": "askChoice",
-              "prompt": "¿Qué respuesta refleja mentoría efectiva?",
+              "prompt": "¿Qué intervención refleja mentoría efectiva en ese contexto?",
               "options": [
-                { "label": "Alinear objetivos comunes, transparentar criterios y acordar métricas compartidas.", "correct": true, "actions": [{ "type": "completeMission", "missionId": "dream-mentor-dialogue" }] },
-                { "label": "Elegir un equipo favorito sin justificar la decisión.", "correct": false },
-                { "label": "Retrasar el problema para evitar conversaciones difíciles.", "correct": false }
+                {
+                  "label": "Alinear objetivos comunes, transparentar criterios y acordar métricas compartidas.",
+                  "correct": true,
+                  "actions": [
+                    {
+                      "type": "showDialogue",
+                      "speaker": "Ana",
+                      "text": "Sí. La mentoría útil ordena el conflicto y deja a todos responsables del acuerdo."
+                    },
+                    {
+                      "type": "completeMission",
+                      "missionId": "dream-mentor-dialogue"
+                    }
+                  ]
+                },
+                {
+                  "label": "Elegir un equipo favorito sin justificar la decisión.",
+                  "correct": false
+                },
+                {
+                  "label": "Retrasar el problema para evitar conversaciones difíciles.",
+                  "correct": false
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Ana", "text": "Trae el pase global y el dossier de innovación para continuar." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Ana",
+              "text": "Trae el pase global y el dossier de innovación para continuar."
+            }
+          ]
+        }
       ]
     },
     {
@@ -47,9 +142,25 @@
       "y": 6,
       "interactions": [
         {
-          "when": { "completedMissions": ["dream-mentor-dialogue"], "missingMissions": ["dream-mentor-consensus"] },
+          "when": {
+            "completedMissions": [
+              "dream-mentor-dialogue"
+            ],
+            "missingMissions": [
+              "dream-mentor-consensus"
+            ]
+          },
           "actions": [
-            { "type": "showDialogue", "speaker": "Mateo", "text": "Cierra el proceso con una síntesis oral: visión, estrategia y cultura de aprendizaje." },
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "La defensa final no premiará discursos bonitos, sino una visión que pueda sostener conversaciones difíciles."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "Resume tu liderazgo como si fueras a abrir un proyecto con personas que aún no confían unas en otras."
+            },
             {
               "type": "askSpeech",
               "prompt": "Di en español: Construiremos una visión compartida, mediremos avances y aprenderemos de cada iteración.",
@@ -59,19 +170,45 @@
                 "Construiremos una vision compartida mediremos avances y aprenderemos de cada iteracion"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Mateo", "text": "Síntesis sólida. Este café simbólico abre el repaso final." },
-                { "type": "addItem", "itemId": "coffeeCup", "count": 1 },
-                { "type": "completeMission", "missionId": "dream-mentor-consensus" }
+                {
+                  "type": "showDialogue",
+                  "speaker": "Mateo",
+                  "text": "Síntesis sólida. Este café simbólico marca que ya puedes pasar al Centro de Síntesis."
+                },
+                {
+                  "type": "addItem",
+                  "itemId": "coffeeCup",
+                  "count": 1
+                },
+                {
+                  "type": "completeMission",
+                  "missionId": "dream-mentor-consensus"
+                }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Mateo", "text": "El liderazgo se demuestra en conversaciones difíciles y seguimiento real." }] }
+        {
+          "actions": [
+            {
+              "type": "showDialogue",
+              "speaker": "Mateo",
+              "text": "El liderazgo se demuestra en conversaciones difíciles y seguimiento real."
+            }
+          ]
+        }
       ]
     }
   ],
   "exits": [
-    { "x": 14, "y": 16, "targetArea": "dream-future", "targetX": 23, "targetY": 16, "facing": "down" }
+    {
+      "x": 14,
+      "y": 16,
+      "targetArea": "dream-future",
+      "targetX": 23,
+      "targetY": 16,
+      "facing": "down"
+    }
   ]
 }

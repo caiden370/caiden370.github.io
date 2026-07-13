@@ -4,7 +4,7 @@
   "kind": "interior",
   "chapterId": "travel",
   "region": "Chapter 6: Travel Terminal",
-  "cefrLevel": "B1+",
+  "cefrLevel": "B2",
   "teaches": ["inspección", "objetos permitidos", "secuencias de instrucciones", "justificación"],
   "legend": { "w": "insideWall", "s": "stoneFloor" },
   "playerStart": { "x": 14, "y": 18, "facing": "up" },
@@ -33,28 +33,37 @@
             {
               "type": "showDialogue",
               "speaker": "Diego",
-              "text": "Coloca portátil, líquidos y documentos en bandejas separadas; después avanza sin detenerte."
+              "text": "Hace un momento una violinista puso el portátil en una bandeja, la botella en otra y dejó los documentos visibles. Pasó sin detener toda la fila."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Diego",
+              "text": "Cuando alguien mezcla líquidos, aparatos y papeles, la revisión se alarga y aparecen preguntas que podrían evitarse."
             },
             {
               "type": "askChoice",
-              "prompt": "¿Qué secuencia coincide con la instrucción exacta?",
+              "prompt": "Si llevas portátil, líquidos y documentos, ¿qué haces primero para seguir la secuencia correcta?",
               "options": [
                 {
-                  "label": "Separar objetos en bandejas y luego avanzar sin detenerse.",
+                  "label": "Los separo en bandejas y después avanzo cuando me lo indiquen.",
                   "correct": true,
                   "actions": [
-                    { "type": "showDialogue", "speaker": "Diego", "text": "Inspección inicial aprobada." },
+                    { "type": "showDialogue", "speaker": "Diego", "text": "Bien hecho. Tu inspección inicial queda aprobada." },
                     { "type": "completeMission", "missionId": "travel-security-screening" }
                   ]
                 },
-                { "label": "Avanzar primero y explicar después el contenido.", "correct": false },
-                { "label": "Guardar todo para pasar más rápido.", "correct": false }
+                { "label": "Camino directo por el arco y explico el contenido al final.", "correct": false },
+                { "label": "Guardo todo dentro de la maleta para pasar más rápido.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Diego", "text": "Necesito pase de ruta y etiqueta para comenzar." }] }
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Diego", "text": "Necesito tu pase de ruta y la etiqueta del equipaje antes de empezar." }
+          ]
+        }
       ]
     },
     {
@@ -67,8 +76,18 @@
           "actions": [
             {
               "type": "showDialogue",
-              "speaker": "Tomas",
-              "text": "Justifica por qué llevas dos cargadores y por qué necesitas trabajar durante la escala."
+              "speaker": "Tomás",
+              "text": "Las mejores explicaciones en seguridad combinan objeto, motivo y momento. Si falta una pieza, suena improvisado."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Ayer un pasajero dijo: 'Traigo una batería extra porque debo presentar un informe durante la escala'. Fue claro y suficiente."
+            },
+            {
+              "type": "showDialogue",
+              "speaker": "Tomás",
+              "text": "Ahora justifica tu propio caso con ese mismo nivel de precisión."
             },
             {
               "type": "askText",
@@ -78,7 +97,7 @@
                 "Llevo dos cargadores porque tengo una escala larga y necesito trabajar durante la espera"
               ],
               "actions": [
-                { "type": "showDialogue", "speaker": "Tomas", "text": "Argumento sólido. Puedes continuar." },
+                { "type": "showDialogue", "speaker": "Tomás", "text": "Argumento sólido. Puedes seguir hacia la llegada sin alertas adicionales." },
                 { "type": "addItem", "itemId": "libraryCard", "count": 1 },
                 { "type": "completeMission", "missionId": "travel-security-clearance" }
               ],
@@ -86,7 +105,11 @@
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Tomas", "text": "Primero supera la inspección con Diego." }] }
+        {
+          "actions": [
+            { "type": "showDialogue", "speaker": "Tomás", "text": "Primero supera la inspección inicial con Diego." }
+          ]
+        }
       ]
     }
   ],

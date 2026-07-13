@@ -5,17 +5,17 @@
   "chapterId": "college",
   "region": "Chapter 3: Universidad",
   "cefrLevel": "A2",
-  "teaches": ["universidad", "dormitorio", "biblioteca", "librería", "planear", "debería", "mañana"],
+  "teaches": ["universidad", "dormitorio", "biblioteca", "librería", "planear", "responsabilidades", "mañana"],
   "legend": { "g": "grass", "p": "dirtPath", "q": "flowerGrass", "s": "campusStone" },
   "playerStart": { "x": 14, "y": 17, "facing": "up" },
   "objects": [
     { "type": "dorm", "x": 2, "y": 1, "w": 6, "h": 4, "entrance": { "x": 5, "y": 5, "targetArea": "college-dorm", "targetX": 14, "targetY": 17, "facing": "up" } },
-    { "type": "library", "x": 20, "y": 1, "w": 6, "h": 4, "entrance": { "x": 23, "y": 5, "targetArea": "college-library", "targetX": 14, "targetY": 17, "facing": "up" } },
-    { "type": "store", "x": 2, "y": 14, "w": 6, "h": 4, "entrance": { "x": 5, "y": 18, "targetArea": "college-bookstore", "targetX": 14, "targetY": 1, "facing": "down" } },
-    { "type": "restaurant", "x": 20, "y": 14, "w": 6, "h": 4, "entrance": { "x": 23, "y": 18, "targetArea": "college-cafe", "targetX": 14, "targetY": 1, "facing": "down" } },
+    { "type": "library", "x": 20, "y": 1, "w": 6, "h": 4, "entrance": { "x": 23, "y": 5, "targetArea": "college-library", "targetX": 14, "targetY": 17, "facing": "up", "requires": { "completedMissions": ["college-buy-supplies"] }, "blockedMessage": "Consigue primero libro y calculadora." } },
+    { "type": "store", "x": 2, "y": 14, "w": 6, "h": 4, "entrance": { "x": 5, "y": 18, "targetArea": "college-bookstore", "targetX": 14, "targetY": 1, "facing": "down", "requires": { "completedMissions": ["college-plan", "college-dorm-complete"] }, "blockedMessage": "Habla con Marcos y deja listo el dormitorio primero." } },
+    { "type": "restaurant", "x": 20, "y": 14, "w": 6, "h": 4, "entrance": { "x": 23, "y": 18, "targetArea": "college-cafe", "targetX": 14, "targetY": 1, "facing": "down", "requires": { "completedMissions": ["college-library-complete"] }, "blockedMessage": "Estudia primero en la biblioteca." } },
     { "type": "campusFountain", "x": 13, "y": 10 },
     { "type": "bikeRack", "x": 9, "y": 12, "w": 2, "h": 1 },
-    { "type": "sign", "x": 16, "y": 12, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Dormitorio, biblioteca, librería y café. Planea tu día." }] }] }
+    { "type": "sign", "x": 16, "y": 12, "interactions": [{ "actions": [{ "type": "showDialogue", "text": "Meta de hoy: organiza el dormitorio, consigue materiales, estudia en la biblioteca y llega listo al repaso final." }] }] }
   ],
   "people": [
     {
@@ -26,25 +26,30 @@
         {
           "when": { "missingMissions": ["college-orientation"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Bienvenido a la universidad. Aquí tienes más libertad, pero también más responsabilidades." },
-            { "type": "showDialogue", "speaker": "Valeria", "text": "Si tienes examen mañana, deberías comprar libros, estudiar y descansar." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Bienvenido a tu primer día serio en la universidad. La rectora quiere ver si puedes manejar la vida del campus en español." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Piensa en este ejemplo: si mañana presento un proyecto, hoy organizo mis materiales, busco mi credencial y confirmo dónde voy a estudiar." },
+            { "type": "showDialogue", "speaker": "Valeria", "text": "Tu meta es parecida: deja listo el dormitorio, consigue materiales para el examen y termina el día con tu grupo de estudio." },
             {
               "type": "askChoice",
-              "prompt": "Valeria says you have an exam mañana. When is the exam?",
+              "prompt": "Si tu examen es mañana, ¿qué decisión tiene más sentido para hoy?",
               "options": [
-                { "label": "tomorrow", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Valeria", "text": "Correcto. Mañana." },
-                  { "type": "addItem", "itemId": "campusId", "count": 1 },
-                  { "type": "completeMission", "missionId": "college-orientation" }
-                ] },
-                { "label": "today", "correct": false },
-                { "label": "never", "correct": false }
+                {
+                  "label": "Organizar el día del campus y conseguir tu credencial antes de empezar los recados.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Valeria", "text": "Exacto. Empieza con un plan claro y con tu credencial en la mano." },
+                    { "type": "addItem", "itemId": "campusId", "count": 1 },
+                    { "type": "completeMission", "missionId": "college-orientation" }
+                  ]
+                },
+                { "label": "Esperar hasta mañana sin preparar nada.", "correct": false },
+                { "label": "Ir directamente a dormir y olvidar los materiales.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "Compra libros, estudia y descansa." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Valeria", "text": "La rectora evaluará tu día completo: dormitorio, materiales, biblioteca y café." }] }
       ]
     },
     {
@@ -55,24 +60,29 @@
         {
           "when": { "completedMissions": ["college-orientation"], "missingMissions": ["college-plan"] },
           "actions": [
-            { "type": "showDialogue", "speaker": "Marcos", "text": "Tengo un plan: primero dormitorio, después librería, luego biblioteca y por último café." },
-            { "type": "showDialogue", "speaker": "Marcos", "text": "En la universidad, luego significa later. Por último significa last." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Cuando tengo un día ocupado, no hago todo al azar. Primero aseguro mi cuarto, luego compro lo necesario y después estudio con calma." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "En otro día puedo decir: primero gimnasio, luego clase y por último descanso. Las palabras de orden cambian la ruta." },
+            { "type": "showDialogue", "speaker": "Marcos", "text": "Hoy te conviene seguir una ruta parecida para llegar listo al repaso final del café." },
             {
               "type": "askChoice",
-              "prompt": "Marcos's plan ends at the café. Which phrase showed that?",
+              "prompt": "Si Marcos ya aseguró su cuarto en ese ejemplo, ¿qué paso viene después?",
               "options": [
-                { "label": "por último", "correct": true, "actions": [
-                  { "type": "showDialogue", "speaker": "Marcos", "text": "Sí. Por último: café." },
-                  { "type": "completeMission", "missionId": "college-plan" }
-                ] },
-                { "label": "primero", "correct": false },
-                { "label": "después", "correct": false }
+                {
+                  "label": "Comprar lo necesario para clase.",
+                  "correct": true,
+                  "actions": [
+                    { "type": "showDialogue", "speaker": "Marcos", "text": "Sí. Después del dormitorio, toca conseguir materiales." },
+                    { "type": "completeMission", "missionId": "college-plan" }
+                  ]
+                },
+                { "label": "Dormir hasta mañana.", "correct": false },
+                { "label": "Ir al café antes de estudiar.", "correct": false }
               ],
               "wrongMessage": "No. Intenta otra vez."
             }
           ]
         },
-        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Primero dormitorio, por último café." }] }
+        { "actions": [{ "type": "showDialogue", "speaker": "Marcos", "text": "Empieza por el dormitorio; después busca materiales, estudio y el repaso final." }] }
       ]
     }
   ],

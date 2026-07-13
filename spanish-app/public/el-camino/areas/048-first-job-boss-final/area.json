@@ -66,12 +66,12 @@
             {
               "type": "showDialogue",
               "speaker": "Directora del Club",
-              "text": "Duelo final del primer trabajo. Aquí se combinan todas las habilidades del capítulo."
+              "text": "Consejo final del primer trabajo. Aquí se une todo: preparar, escuchar, priorizar y cerrar con claridad."
             },
             {
               "type": "showDialogue",
               "speaker": "Directora del Club",
-              "text": "Si fallas una sola respuesta, vuelves al inicio del consejo."
+              "text": "Si fallas una sola respuesta, el consejo empieza de nuevo."
             },
             {
               "type": "askBossQuiz",
@@ -163,18 +163,18 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Qué combinación permitió completar el paquete de bienvenida de oficina?",
+                  "prompt": "Si Elena ya recibió el cuaderno y la calculadora, pero falta el manual actualizado, ¿por qué el paquete todavía no puede cerrarse?",
                   "options": [
                     {
-                      "label": "Cuaderno, calculadora, manual y café.",
+                      "label": "Porque recepción aún debe validar su parte antes del cierre final.",
                       "correct": true
                     },
                     {
-                      "label": "Pan, jugo, pelota y mapa.",
+                      "label": "Porque el cuaderno nunca forma parte del paquete.",
                       "correct": false
                     },
                     {
-                      "label": "Solo una calculadora.",
+                      "label": "Porque el café reemplaza siempre al manual.",
                       "correct": false
                     }
                   ]
@@ -190,7 +190,7 @@
                 },
                 {
                   "type": "askChoice",
-                  "prompt": "¿Cuál frase resume mejor el objetivo de este capítulo?",
+                  "prompt": "¿Cuál frase resume mejor cómo ganaste tu primer turno?",
                   "options": [
                     {
                       "label": "Escuchar, coordinar, verificar y comunicar con precisión profesional.",

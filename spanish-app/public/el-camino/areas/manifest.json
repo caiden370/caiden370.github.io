@@ -2,6 +2,7 @@
   "startingAreaId": "plaza-del-camino",
   "areas": [
     "010-plaza-del-camino",
+    "011-chapter-dojo",
     "101-elementary-entrance",
     "102-elementary-classroom",
     "103-elementary-playground",
